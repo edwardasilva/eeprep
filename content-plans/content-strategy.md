@@ -147,6 +147,6 @@ Page names: Resume, Job market ("Getting a job in this market"), How to study, S
 
 ## 5. Open items
 
-- The New York Fed Outcomes by Major table is checked. It covers graduates aged 22 to 27, uses 2024 survey data, and was released February 4, 2026. Computer engineering unemployment is 7.8%. Electrical engineering unemployment is 3.2%. EE underemployment is 21.1%. Cite `nyfed-2026-outcomes-by-major`. `needs: bib entry`.
+- The New York Fed Outcomes by Major table is checked. It covers graduates aged 22 to 27, uses 2024 survey data, and was released February 4, 2026. Computer engineering unemployment is 7.8%. Electrical engineering unemployment is 3.2%. EE underemployment is 21.1%. Cite `nyfed-2026-outcomes-by-major`.
 - 21 Reddit threads had post or comment text visible in search results. 30 were search-only, with the title and URL only. No thread was opened directly. Every Reddit source needs a browser check before a page quotes it.
 - No Reddit search covered Signals and Systems coursework. Item 19 rests on X alone.

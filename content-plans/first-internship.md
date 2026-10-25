@@ -49,7 +49,7 @@ Say that a person gets you past the resume stack. One commenter got no interview
 [@reddit-2026-2nd-year-internship]
 [@reddit-2025-referrals-hardware]
 
-A referral can still end with no interview. A parent referred a daughter with a UT Austin master's, and she got no interview.
+A referral can still end with no interview. One parent's daughter, with a UT Austin master's, got a referral and no interview.
 [@x-gm16108-2025-utaustin]
 Do not name her.
 
@@ -82,12 +82,13 @@ Show where to look. Use company career pages, career fairs, student teams, and p
 ## If this summer falls through
 
 Say that one missed summer is a setback you can recover from. Students from the sophomore year through graduation ask if they are finished. Keep applying. Add a bridge in the same term.
-[@reddit-2026-cooked-junior]
+[@reddit-2026-no-internships-projects]
 
 On the thread with about 500 applications, commenters named three bridges. Look at technologist roles. Join a design team such as FSAE, a student car-racing competition. Or take an 8 to 12 month co-op. A co-op is a long internship split across school terms. Long co-ops often convert to full-time offers.
 [@reddit-2026-no-internships-projects]
 
 The persona file names no missed term. Summer 25 is Undergraduate Research Assistant, Power Electronics Lab, State University. Leave Alex's bridge unset. These threads ask the same question.
+[@reddit-2026-cooked-junior]
 [@reddit-2026-no-internship-cooked]
 [@reddit-2026-sophomore-no-internship]
 [@reddit-2026-graduate-no-internships]
@@ -359,9 +360,9 @@ Set the last-reviewed date when the prose ships. These notes use research dated 
 
 This list is for writers. It does not ship as page prose. The list has 69 cite keys. Every cite key below appears in `content-plans/content-strategy.md`. Keep out any cite key that file does not already list.
 
-The Fed cite key is marked `needs: bib entry`. The other keys support the lesson in the section where they appear.
+Search-only keys show that the question gets asked. They do not carry the lesson.
 
-- nyfed-2026-outcomes-by-major (`needs: bib entry`)
+- nyfed-2026-outcomes-by-major
 - reddit-2025-f1-survive
 - reddit-2025-gpa-matter
 - reddit-2025-not-waste-undergrad
