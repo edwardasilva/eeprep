@@ -2,7 +2,7 @@
 
 This file plans the eeprep.com resume page. The page is for electrical engineering students who want an internship or a first job. Edward Silva wrote the rules for friends on October 25, 2026. [@edward-silva-2026-resume-advice] Edward says that following the wiki got him past automated screeners. Credit that result to Edward's experience. Do not credit the wiki for it. [@edward-silva-2026-resume-advice]
 
-The sample student is Alex Rivera. He is fictional. The page, the issue #7 template, and the issue #8 figure use his lines exactly. Do not name the friend from the October 25 notes. Do not print that friend's resume.
+The sample student is Alex Rivera. He is fictional. The page, the issue #7 template, and the issue #8 figure use his lines exactly. Do not name the friend. Do not print that friend's resume.
 
 ## Section order
 
@@ -33,7 +33,7 @@ The after draft deletes that objective. The freed lines go to the buck converter
 
 ## Projects
 
-Projects take the most lines on the page. Put the tools on a line under the project title. [@edward-silva-2026-resume-advice] Repeat a tool in Skills when a bullet uses it. Edward wants that repeat on the title line. [@edward-silva-2026-resume-advice] A year-long date uses the form Fall 25 - Spring 26. The command `\hfill` pushes that date to the right margin. `\hfill` is the LaTeX command that does that push. [@edward-silva-2026-resume-advice] A bullet fits on one full line, or it fills a second line. [@edward-silva-2026-resume-advice]
+Projects take the most lines on the page. List the tools under each project title and also in Skills. The repeat shows where you used each tool. [@edward-silva-2026-resume-advice] A year-long date uses the form Fall 25 - Spring 26. The command `\hfill` pushes that date to the right margin. `\hfill` is the LaTeX command that does that push. [@edward-silva-2026-resume-advice] A bullet fits on one full line, or it fills a second line. [@edward-silva-2026-resume-advice]
 
 Write each bullet in XYZ form. XYZ means accomplished X as measured by Y by doing Z. [@reddit-engineeringresumes-wiki] Edward tells you to use that form. [@edward-silva-2026-resume-advice] His weak line is "Programmed and optimized drone flight path". His strong line is "Decreased flight path time by x% through a system architecture redesign". Read X as flight path time, Y as x%, and Z as the redesign.
 
@@ -92,7 +92,9 @@ Reduced GaN switching loss measurement error from 12% to 3% by adding probe desk
 Cut test time per device from 40 to 8 minutes by automating oscilloscope capture with Python and PyVISA
 ```
 
-Do not use the heading Extracurricular activities and interests. Alex's finished page has no interests section. The before line "Reading, music, sports" is cut.
+## Interests
+
+Make interests specific, or delete them. [@edward-silva-2026-resume-advice] Edward also allows Other interests or Volunteer experience in place of Extracurricular activities and interests. [@edward-silva-2026-resume-advice] Alex's before line is "Reading, music, sports". That line is not specific, so the finished page deletes it and has no interests section.
 
 ## Education
 
@@ -104,7 +106,7 @@ Add a line named Relevant coursework. Bold that label on the resume. Edward adds
 Signals and Systems, Electronics I and II, Power Electronics, Digital Design, Embedded Systems, Control Systems, Electromagnetics, Probability for Engineers, Microcontroller Lab
 ```
 
-Add an Activities line under coursework. Alex's line is "Tau Beta Pi, IEEE student branch". CubeSat is not on this line. Edward's later note put that team work in Experience. [@edward-silva-2026-resume-advice] Drop the word knowledge unless a certificate backs it. The before skills list uses "Knowledge of orbital mechanics", and the finished page does not. [@edward-silva-2026-resume-advice]
+Add an Activities line under coursework. Alex's line is "Tau Beta Pi, IEEE student branch". CubeSat is not on this line. Edward's later note put that team work in Experience. [@edward-silva-2026-resume-advice] Remove knowledge unless certifiable. Put topics like orbital mechanics in coursework. [@edward-silva-2026-resume-advice]
 
 ## Skills
 
@@ -115,7 +117,7 @@ Certifications: CSWA (Certified SolidWorks Associate), IPC J-STD-001 soldering
 Software: KiCad, LTspice, MATLAB, Vivado, Python, C, Verilog, SolidWorks, Git
 ```
 
-Cut soft skills. Edward's cuts are communication and problem solving. [@edward-silva-2026-resume-advice] The before draft puts those words in two columns, with Teamwork, Leadership, Microsoft Office, and Knowledge of orbital mechanics, plus KiCad and MATLAB.
+Cut soft skills. Edward's cuts are communication and problem solving. [@edward-silva-2026-resume-advice] The before draft puts communication, problem solving, Teamwork, Leadership, and Microsoft Office in two columns. Knowledge of orbital mechanics is in that list too, and it moves to coursework.
 
 ## Dates and spacing
 
@@ -127,7 +129,7 @@ Set the text flush left. Do not center a line. [@edward-silva-2026-resume-advice
 
 Add `\pdfgentounicode=1` in the preamble. The command maps characters to Unicode so a parser can read the text. [@edward-silva-2026-resume-advice] An application tracking system (ATS) is software that reads a resume before a person does. Edward adds the command so the ATS gets Unicode text. [@edward-silva-2026-resume-advice]
 
-Add `\hypersetup` in the preamble too. [@edward-silva-2026-resume-advice] The command writes the PDF properties. Treat that command as a cheap extra. Anyone can open the PDF properties and read the fields. Do not present the fields as a hidden edge. Issue #7 picks the exact fields inside the command.
+Add `\hypersetup` in the preamble too. [@edward-silva-2026-resume-advice] Edward says resume parsers read the PDF metadata this command writes. [@edward-silva-2026-resume-advice] Issue #7 picks the exact fields inside the command.
 
 ## Downloadable template
 
@@ -148,12 +150,12 @@ The page closes with a checklist for a printed draft. Each item is one instructi
 1. Order the sections as header, projects, experience, education, then skills.
 2. Use Alex's contact line, including the words Willing to relocate.
 3. Cut the objective.
-4. Put the tools under each project title.
+4. List each project's tools under the title and in Skills.
 5. Write each bullet in XYZ form, as on the 92% buck converter line.
 6. Push each project date to the right margin with `\hfill`.
 7. Keep Skills as two labeled lines in one column.
 8. Add `\pdfgentounicode=1` so a parser can read Unicode text.
-9. Write the PDF properties with `\hypersetup`, then open them and read them.
+9. Add `\hypersetup` so resume parsers can read the PDF metadata.
 10. Put the CubeSat team role under Experience, not on Activities.
 
 ## Last reviewed
@@ -164,10 +166,6 @@ The page prints one last-reviewed line. Set the date to October 25, 2026. That i
 
 A borrowed rule carries a citation marker in brackets. Put the marker next to the rule it supports. The wiki marker is used in two places only. Those places are the XYZ method and the LaTeX template.
 
-[@edward-silva-2026-resume-advice] Edward Silva, eeprep group chat, October 25, 2026. There is no public URL. The epic path for the notes is `sources/edward-resume-advice-2026-10-25.md`.
+[@edward-silva-2026-resume-advice] Edward Silva, personal communication, Oct 25, 2026. needs: bib entry
 
 [@reddit-engineeringresumes-wiki] https://www.reddit.com/r/EngineeringResumes/wiki/index
-
-The XYZ wording was checked on the January 5, 2024 copy of that page.
-
-https://drive.google.com/file/d/19JbKjQr5NizAmKhwUAAb3ZaIE9vNV99V/view
