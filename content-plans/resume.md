@@ -166,6 +166,6 @@ The page prints one last-reviewed line. Set the date to October 25, 2026. That i
 
 A borrowed rule carries a citation marker in brackets. Put the marker next to the rule it supports. The wiki marker is used in two places only. Those places are the XYZ method and the LaTeX template.
 
-[@edward-silva-2026-resume-advice] Edward Silva, personal communication, Oct 25, 2026. needs: bib entry
+[@edward-silva-2026-resume-advice] Edward Silva, personal communication, Oct 25, 2026.
 
 [@reddit-engineeringresumes-wiki] https://www.reddit.com/r/EngineeringResumes/wiki/index
