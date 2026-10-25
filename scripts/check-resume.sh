@@ -20,7 +20,7 @@ txt=$(pdftotext "$pdf" -)
 order=$(grep -nxE 'Jane Doe|Projects|Experience|Education|Skills' <<<"$txt" | cut -d: -f2 | tr '\n' ' ')
 [ "$order" = "Jane Doe Projects Experience Education Skills " ] && echo "PASS reading order: $order" || { echo "FAIL order: $order"; exit 1; }
 hdr=$(sed -n 2p <<<"$txt")
-if grep -q 'linkedin.com/in/' <<<"$hdr" && grep -q 'US citizen | Willing to relocate$' <<<"$hdr"; then echo "PASS header is one line: $hdr"
+if grep -q 'linkedin.com/in/' <<<"$hdr" && grep -q '\[City, ST\] | \[Work authorization\] | Willing to relocate$' <<<"$hdr"; then echo "PASS header is one line: $hdr"
 else echo "FAIL header line: $hdr"; exit 1; fi
 if grep -q 'Relevant coursework:' <<<"$txt" && grep -q 'Activities:' <<<"$txt"; then echo "PASS education labels extract"; else echo "FAIL education labels"; exit 1; fi
 grep -q '\[Y\] µs' <<<"$txt" && grep -q '\[X\] °C' <<<"$txt" && echo "PASS µ and ° extract as Unicode next to placeholders" || { echo "FAIL µ/° extraction"; exit 1; }

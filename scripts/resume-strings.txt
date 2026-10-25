@@ -1,5 +1,5 @@
 Jane Doe
-(555) 555-0142 | jdoe@example.com | linkedin.com/in/jane-doe-example | Columbus, OH | US citizen | Willing to relocate
+(555) 555-0142 | jdoe@example.com | linkedin.com/in/jane-doe-example | [City, ST] | [Work authorization] | Willing to relocate
 Projects
 Synchronous Buck Converter for a CubeSat Power Board
 Fall 25 - Spring 26
