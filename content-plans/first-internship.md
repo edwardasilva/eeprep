@@ -323,7 +323,8 @@ This block is for writers. It does not ship as page prose. It maps all 20 ranked
 - Question 15 is a first internship with no experience. Answer it in No experience yet.
   [@reddit-2026-internships-before-classes]
   [@x-sTYLz2021-2026-space]
-- Question 16 is whether EE is finished, and what the unemployment figures say. Answer it on Job market, under What the data says. Viral posts mix computer engineering with electrical engineering. Keep [@x-grok-2026-nyfed] off every page until the figures match the New York Fed table.
+- Question 16 is whether EE is finished, and what the unemployment figures say. Answer it on Job market, under What the data says. Viral posts mix computer engineering with electrical engineering. Use the New York Fed Outcomes by Major table. It covers graduates aged 22 to 27. It uses 2024 survey data and was released February 4, 2026. Computer engineering unemployment is 7.8%. Electrical engineering unemployment is 3.2%. EE underemployment is 21.1%. The table is at https://www.newyorkfed.org/research/college-labor-market.
+  [@nyfed-2026-outcomes-by-major]
   [@x-LayoffAI-2026-learncode]
   [@x-Jon_173d-2026-third]
 - Question 17 is whether clubs, design teams, and research count. Answer it in Teams and undergraduate research.
@@ -358,8 +359,9 @@ Set the last-reviewed date when the prose ships. These notes use research dated 
 
 This list is for writers. It does not ship as page prose. The list has 69 cite keys. Every cite key below appears in `content-plans/content-strategy.md`. Keep out any cite key that file does not already list.
 
-`x-grok-2026-nyfed` is here so the page leaves it out. It is not a source for a rate. The other keys support the lesson in the section where they appear.
+The Fed cite key is marked `needs: bib entry`. The other keys support the lesson in the section where they appear.
 
+- nyfed-2026-outcomes-by-major (`needs: bib entry`)
 - reddit-2025-f1-survive
 - reddit-2025-gpa-matter
 - reddit-2025-not-waste-undergrad
@@ -416,7 +418,6 @@ This list is for writers. It does not ship as page prose. The list has 69 cite k
 - x-blind_via-2026-altium
 - x-getemployedd-2026-varda
 - x-gm16108-2025-utaustin
-- x-grok-2026-nyfed
 - x-hilmybox-2026-curricula
 - x-i2cjak-2025-battery
 - x-irishScott2-2026-kendall
