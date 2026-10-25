@@ -194,6 +194,8 @@
 	:root,
 	:root[data-theme='light'] {
 		--sl-nav-height: 6.25rem;
+		/* Match the theme toggle. Starlight's header padding uses this size. */
+		--sl-menu-button-size: 2.25rem;
 	}
 	.header {
 		flex-wrap: wrap;
@@ -203,5 +205,25 @@
 		width: 100%;
 		overflow-x: auto;
 		padding-bottom: 0.15rem;
+	}
+
+	/* Starlight centers the menu button in the full header height. On a phone
+	   that height covers two rows, so the button sits between them. The search
+	   control is the tallest item in the logo row (2.5rem). Center this button
+	   in that same band, and paint it like .eep-theme. */
+	.sl-menu-button {
+		top: calc(var(--sl-nav-pad-y) + (2.5rem - var(--sl-menu-button-size)) / 2);
+		align-items: center;
+		justify-content: center;
+		padding: 0;
+		border: var(--eep-border);
+		border-radius: var(--eep-radius);
+		background: transparent;
+		color: var(--eep-ink);
+		box-shadow: none;
+	}
+	.sl-menu-button:focus-visible {
+		outline: 2px solid var(--eep-accent);
+		outline-offset: 2px;
 	}
 }
