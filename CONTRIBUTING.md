@@ -2,7 +2,7 @@
 
 Work on EE Prep is grouped into epics. An epic is one GitHub issue plus a long-lived branch named `epic/<name>`, cut from `main`.
 
-Small changes use branches named `epic/<name>/<change>` (or `feat/...` and `fix/...` that still include the epic name) and open pull requests into that epic branch. About ten of those can land in one epic. When the epic is done, one pull request from `epic/<name>` into `main` goes to Edward. Only Edward merges to `main`. Delete the branch after it merges.
+Small changes use branches named `feat/<name>/<change>` (the epic name stays in the branch) and open pull requests into that epic branch. About ten of those can land in one epic. When the epic is done, one pull request from `epic/<name>` into `main` goes to Edward. Only Edward merges to `main`. Delete the branch after it merges.
 
 Keep at most three epics open.
 
@@ -34,7 +34,9 @@ This repository's issue templates and pull request template are owned by a separ
 | --- | --- |
 | `main` | Finished epics, merged by Edward |
 | `epic/<name>` | The long-lived epic branch |
-| `epic/<name>/<change>` | One small change, reviewed into the epic |
+| `feat/<name>/<change>` | One small change, reviewed into the epic |
+
+Git stores a branch as a file under `refs/heads/`. While `epic/site-foundation` exists, Git cannot also create `epic/site-foundation/skeleton`, because that path would have to be both a file and a directory. Put the epic name in a `feat/<name>/<change>` branch, and open the pull request into `epic/<name>`.
 
 Do not push straight to `main` or to someone else's epic branch.
 
