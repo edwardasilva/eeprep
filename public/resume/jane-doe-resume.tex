@@ -80,27 +80,27 @@ Columbus, OH\sep US citizen\sep Willing to relocate\par}
 \entry{Synchronous Buck Converter for a CubeSat Power Board}{Fall 25 - Spring 26}
 \skillsused{KiCad, LTspice, STM32, Embedded C, bench testing with an electronic load}
 \begin{itemize}
-  \item Reached 92\% peak efficiency at a 2 A load, measured on an electronic load, by replacing the catch diode with a synchronous MOSFET stage and tuning dead time to 40 ns with an STM32 timer, up from 84\% before
-  \item Cut output ripple from 85 mV to 18 mV peak to peak by redesigning the 4-layer PCB in KiCad with a solid ground plane and a tighter switching loop, then resizing the LC output filter for 500 kHz switching
-  \item Wrote STM32 firmware in C that samples input current at 1 kHz and shuts the rail down within 50 \textmu s of an overcurrent fault, which kept the board alive through 3 deliberate short-circuit tests at a full 12 V input
-  \item Kept the FETs under 50 \textdegree{}C at full load by adding thermal vias and a 2 oz copper pour under them
+  \item Reached [X]\% peak efficiency at a [X] A load, measured on an electronic load, by replacing the catch diode with a synchronous MOSFET stage and tuning dead time to [X] ns with an STM32 timer, up from [X]\% before
+  \item Cut output ripple from [X] mV to [X] mV peak to peak by redesigning the [X]-layer PCB in KiCad with a solid ground plane and a tighter switching loop, then resizing the LC output filter for [X] kHz switching
+  \item Wrote STM32 firmware in C that samples input current at [X] kHz and shuts the rail down within [X] \textmu s of an overcurrent fault, which kept the board alive through [X] deliberate short-circuit tests at a full [X] V input
+  \item Kept the FETs under [X] \textdegree{}C at full load by adding thermal vias and a 2 oz copper pour under them
 \end{itemize}
 \vspace{\itemgap}
 
 \entry{FPGA Five-Band Audio Equalizer}{Spring 25}
 \skillsused{Verilog, Vivado, MATLAB, Basys 3 FPGA, fixed-point DSP}
 \begin{itemize}
-  \item Processed 48 kHz stereo audio at 0.4 ms latency by pipelining five 64-tap FIR filters in Verilog
-  \item Matched the MATLAB response within 0.1 dB from 20 Hz to 20 kHz by testing coefficients in Vivado
-  \item Cut LUT use 35\% by sharing one multiplier per filter across all 64 taps with time-division scheduling
+  \item Processed [X] kHz stereo audio at [X.X] ms latency by pipelining [X] [X]-tap FIR filters in Verilog
+  \item Matched the MATLAB response within [X.X] dB from [X] Hz to [X] kHz by testing coefficients in Vivado
+  \item Cut LUT use [X]\% by sharing [X] multiplier per filter across all [X] taps with time-division scheduling
 \end{itemize}
 \vspace{\itemgap}
 
 \entry{Bluetooth Battery Monitor}{Fall 24}
 \skillsused{ESP32, Arduino C++, Python, INA219 current sensor}
 \begin{itemize}
-  \item Tracked 4 Li-ion cells within 10 mV each with an ESP32 monitor that streams to a Python dashboard
-  \item Extended pack runtime 15\% in field tests by adding a cutoff that drops non-critical loads at 3.3 V
+  \item Tracked [X] Li-ion cells within [X] mV each with an ESP32 monitor that streams to a Python dashboard
+  \item Extended pack runtime [X]\% in field tests by adding a cutoff that drops non-critical loads at [X.X] V
 \end{itemize}
 
 %% ---------------- Experience ----------------
@@ -110,15 +110,15 @@ Columbus, OH\sep US citizen\sep Willing to relocate\par}
 
 \entry{Power Subsystem Engineer, State University CubeSat Team}{Fall 24 - Spring 26}
 \begin{itemize}
-  \item Cut power board mass by 30 g by replacing 6 linear regulators with one buck converter board, which then passed thermal vacuum testing from -20 \textdegree{}C to 60 \textdegree{}C on the first attempt with no board rework needed
-  \item Found 2 battery protection faults before launch review by writing a Python test script that runs 200 charge and discharge cycles overnight and flags any cell that drifts more than 20 mV from the pack average
+  \item Cut power board mass by [X] g by replacing [X] linear regulators with [X] buck converter board, which then passed thermal vacuum testing from -[X] \textdegree{}C to [X] \textdegree{}C on the first attempt with no board rework needed
+  \item Found [X] battery protection faults before launch review by writing a Python test script that runs [X] charge and discharge cycles overnight and flags any cell that drifts more than [X] mV from the pack average
 \end{itemize}
 \vspace{\itemgap}
 
 \entry{Undergraduate Research Assistant, Power Electronics Lab, State University}{Summer 25}
 \begin{itemize}
-  \item Reduced GaN switching loss measurement error from 12\% to 3\% by adding probe deskew calibration to the double-pulse test setup, which the lab now uses as the standard setup for every GaN device it tests
-  \item Cut test time per device from 40 to 8 minutes by automating oscilloscope capture with Python and PyVISA
+  \item Reduced GaN switching loss measurement error from [X]\% to [X]\% by adding probe deskew calibration to the double-pulse test setup, which the lab now uses as the standard setup for every GaN device it tests
+  \item Cut test time per device from [X] to [X] minutes by automating oscilloscope capture with Python and PyVISA
 \end{itemize}
 
 %% ---------------- Education ----------------
@@ -127,7 +127,7 @@ Columbus, OH\sep US citizen\sep Willing to relocate\par}
 %% No period after the last item.
 \section{Education}
 
-\entry{B.S. Electrical Engineering, GPA: 3.62/4.00}{Expected Spring 27}
+\entry{B.S. Electrical Engineering, GPA: [X.XX]/4.00}{Expected Spring 27}
 State University\par
 \textbf{Relevant coursework:} Signals and Systems, Electronics I and II, Power Electronics, Digital Design, Embedded Systems, Control Systems, Electromagnetics, Probability for Engineers, Microcontroller Lab\par
 \textbf{Activities:} Tau Beta Pi, IEEE student branch\par

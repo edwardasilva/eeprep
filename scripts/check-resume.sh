@@ -23,7 +23,29 @@ hdr=$(sed -n 2p <<<"$txt")
 if grep -q 'linkedin.com/in/' <<<"$hdr" && grep -q 'US citizen | Willing to relocate$' <<<"$hdr"; then echo "PASS header is one line: $hdr"
 else echo "FAIL header line: $hdr"; exit 1; fi
 if grep -q 'Relevant coursework:' <<<"$txt" && grep -q 'Activities:' <<<"$txt"; then echo "PASS education labels extract"; else echo "FAIL education labels"; exit 1; fi
-grep -q '50 µs' <<<"$txt" && grep -q '20 °C' <<<"$txt" && echo "PASS µ and ° extract as Unicode" || { echo "FAIL µ/° extraction"; exit 1; }
+grep -q '\[X\] µs' <<<"$txt" && grep -q '\[X\] °C' <<<"$txt" && echo "PASS µ and ° extract as Unicode next to placeholders" || { echo "FAIL µ/° extraction"; exit 1; }
+# Projects and Experience may keep term dates, the 2 oz copper weight, and product names.
+work=$(awk 'BEGIN{s=0} $0=="Projects"{s=1; next} $0=="Education"{s=0} s' <<<"$txt")
+scrubbed=$(printf '%s\n' "$work" | sed -E \
+  -e 's/Fall 25 - Spring 26//g' \
+  -e 's/Fall 24 - Spring 26//g' \
+  -e 's/Spring 25//g' \
+  -e 's/Spring 26//g' \
+  -e 's/Fall 24//g' \
+  -e 's/Fall 25//g' \
+  -e 's/Summer 25//g' \
+  -e 's/2 oz//g' \
+  -e 's/STM32//g' \
+  -e 's/ESP32//g' \
+  -e 's/INA219//g' \
+  -e 's/Basys 3//g')
+if grep -q '[0-9]' <<<"$scrubbed"; then
+  echo "FAIL unexpected digits in Projects or Experience"
+  grep -nE '[0-9]' <<<"$scrubbed" || true
+  exit 1
+else
+  echo "PASS no invented digits in Projects or Experience"
+fi
 if grep -qP '[\x{FB00}-\x{FB06}]|\x{FFFD}' <<<"$txt"; then echo "FAIL ligature or replacement glyphs in text"; exit 1; else echo "PASS no ligature or replacement glyphs"; fi
 boxes=$(grep -cE 'Overfull|Underfull' "$build/build.log" || true)
 [ "$boxes" = 0 ] && echo "PASS no overfull or underfull boxes" || { echo "FAIL $boxes overfull or underfull boxes"; exit 1; }
