@@ -5,8 +5,12 @@ root="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$root/public/resume"
 tex=alex-rivera-resume.tex
 pdf=alex-rivera-resume.pdf
-pdflatex -interaction=nonstopmode -halt-on-error "$tex" >build.log
-pdflatex -interaction=nonstopmode -halt-on-error "$tex" >build.log
+# Build in a temp folder so no .aux, .log, .out or build.log lands in public/, which Astro publishes.
+build="$(mktemp -d)"
+trap 'rm -rf "$build"' EXIT
+pdflatex -interaction=nonstopmode -halt-on-error -output-directory="$build" "$tex" >"$build/build.log"
+pdflatex -interaction=nonstopmode -halt-on-error -output-directory="$build" "$tex" >"$build/build.log"
+cp "$build/$pdf" "$pdf"
 pages=$(pdfinfo "$pdf" | awk '/^Pages:/{print $2}')
 [ "$pages" = 1 ] && echo "PASS one page" || { echo "FAIL $pages pages"; exit 1; }
 for f in Title Author Subject Keywords; do
@@ -21,4 +25,5 @@ else echo "FAIL header line: $hdr"; exit 1; fi
 if grep -q 'Relevant coursework:' <<<"$txt" && grep -q 'Activities:' <<<"$txt"; then echo "PASS education labels extract"; else echo "FAIL education labels"; exit 1; fi
 grep -q '50 µs' <<<"$txt" && grep -q '20 °C' <<<"$txt" && echo "PASS µ and ° extract as Unicode" || { echo "FAIL µ/° extraction"; exit 1; }
 if grep -qP '[\x{FB00}-\x{FB06}]|\x{FFFD}' <<<"$txt"; then echo "FAIL ligature or replacement glyphs in text"; exit 1; else echo "PASS no ligature or replacement glyphs"; fi
-grep -cE 'Overfull|Underfull' build.log | sed 's/^/INFO overfull or underfull boxes: /'
+boxes=$(grep -cE 'Overfull|Underfull' "$build/build.log" || true)
+[ "$boxes" = 0 ] && echo "PASS no overfull or underfull boxes" || { echo "FAIL $boxes overfull or underfull boxes"; exit 1; }
