@@ -1,7 +1,0 @@
-# LaTeX build files. scripts/check-resume.sh builds in a temp folder, this is a backstop.
-*.aux
-*.log
-*.out
-*.fls
-*.fdb_latexmk
-*.synctex.gz
