@@ -1,0 +1,12 @@
+---
+const { entry } = Astro.locals.starlightRoute;
+const splash = entry.data.template === 'splash';
+---
+
+{
+	splash ? null : (
+		<h1 id="_top" data-pagefind-meta="title">
+			{entry.data.title}
+		</h1>
+	)
+}

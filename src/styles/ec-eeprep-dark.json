@@ -1,0 +1,79 @@
+{
+ "name": "eeprep-dark",
+ "type": "dark",
+ "colors": {
+  "editor.background": "#1a1916",
+  "editor.foreground": "#d6d1c8"
+ },
+ "tokenColors": [
+  {
+   "scope": [
+    "keyword",
+    "storage",
+    "keyword.control",
+    "storage.type",
+    "constant.language"
+   ],
+   "settings": {
+    "foreground": "#f08b81",
+    "fontStyle": "bold"
+   }
+  },
+  {
+   "scope": [
+    "constant.numeric"
+   ],
+   "settings": {
+    "foreground": "#8cc0e6"
+   }
+  },
+  {
+   "scope": [
+    "string",
+    "string.quoted"
+   ],
+   "settings": {
+    "foreground": "#a9cf86"
+   }
+  },
+  {
+   "scope": [
+    "entity.name.function",
+    "support.function",
+    "meta.function-call.generic"
+   ],
+   "settings": {
+    "foreground": "#c3a4ef"
+   }
+  },
+  {
+   "scope": [
+    "comment",
+    "punctuation.definition.comment"
+   ],
+   "settings": {
+    "foreground": "#8a857c",
+    "fontStyle": "italic"
+   }
+  },
+  {
+   "scope": [
+    "keyword.operator",
+    "punctuation"
+   ],
+   "settings": {
+    "foreground": "#a39e95"
+   }
+  },
+  {
+   "scope": [
+    "variable",
+    "meta.embedded",
+    "constant.character.format.placeholder"
+   ],
+   "settings": {
+    "foreground": "#d6d1c8"
+   }
+  }
+ ]
+}

@@ -1,0 +1,64 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+      - epic/**
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pr-body:
+    name: PR body
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+      - name: Require an epic issue line
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+          PR_LABELS: ${{ toJSON(github.event.pull_request.labels.*.name) }}
+          PR_ACTOR: ${{ github.event.pull_request.user.login }}
+          PR_SENDER: ${{ github.actor }}
+        run: node scripts/check-pr-body.mjs
+
+  build:
+    name: Build and links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run test:wikilinks
+      - run: npm run check:wikilinks
+      - run: npm run check:figures
+      - run: npm run build
+      - run: npm run check:links
+
+  vale:
+    name: Vale
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Install Vale 3.25.1
+        run: |
+          set -euo pipefail
+          base=https://github.com/vale-cli/vale/releases/download/v3.25.1
+          curl -fsSL -o /tmp/vale.tar.gz "$base/vale_3.25.1_Linux_64-bit.tar.gz"
+          echo "4bf5c5176b682b1da0830f471584d3494f1c2e27ee3029e1ad6f6661d4962182  /tmp/vale.tar.gz" | sha256sum -c -
+          tar -xzf /tmp/vale.tar.gz -C /tmp vale
+          sudo mv /tmp/vale /usr/local/bin/vale
+          vale --version
+      - name: Lint guide prose
+        run: vale src/content/docs

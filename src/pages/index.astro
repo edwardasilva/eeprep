@@ -1,0 +1,67 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import Diagram from '../components/Diagram.astro';
+---
+
+<StarlightPage
+	frontmatter={{
+		title: 'EE Prep',
+		description: 'A prep guide for electrical engineering students.',
+		template: 'splash',
+		pagefind: false,
+	}}
+	hasSidebar={false}
+>
+	<section class="eep-hero">
+		<p class="eep-eyebrow">For EE students</p>
+		<h1>Get hired. Pass the courses. Keep a reference.</h1>
+		<p class="eep-lede">
+			A textbook for electrical engineering students who want a job, a way through school, and a place to look
+			things up. Computer science is the second audience.
+		</p>
+		<p class="eep-actions">
+			<a class="eep-btn" href="/get-hired/">Start with getting hired</a>
+			<a class="eep-btn eep-btn-quiet" href="/reference/sample-page/">See a sample page</a>
+		</p>
+	</section>
+	<Diagram
+		src="reference/sample-spi.svg"
+		num="0.1"
+		wide
+		alt="SPI mode 0 timing. CS falls, then eight SCLK pulses. MOSI changes on the falling edge."
+	>
+		SPI mode 0, drawn when the site builds. The controller drives MOSI.
+	</Diagram>
+	<ul class="eep-cards">
+		<li>
+			<a href="/get-hired/">
+				<span class="eep-eyebrow">01</span>
+				<strong>Get hired</strong>
+				<span>The resume, the applications, and the market you are walking into.</span>
+			</a>
+		</li>
+		<li>
+			<a href="/succeed-in-school/">
+				<span class="eep-eyebrow">02</span>
+				<strong>Succeed in school</strong>
+				<span>How to study the courses that actually show up in interviews.</span>
+			</a>
+		</li>
+		<li>
+			<a href="/reference/">
+				<span class="eep-eyebrow">03</span>
+				<strong>Reference</strong>
+				<span>Short study pages you can open again later.</span>
+			</a>
+		</li>
+	</ul>
+	<section class="eep-start">
+		<h2>Start here</h2>
+		<ol>
+			<li><a href="/get-hired/resume/">Resume</a></li>
+			<li><a href="/get-hired/the-job-market/">The job market</a></li>
+			<li><a href="/succeed-in-school/how-to-study/">How to study</a></li>
+			<li><a href="/reference/signals-and-dsp/">Signals and DSP</a></li>
+		</ol>
+	</section>
+</StarlightPage>
