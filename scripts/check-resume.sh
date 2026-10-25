@@ -23,23 +23,44 @@ hdr=$(sed -n 2p <<<"$txt")
 if grep -q 'linkedin.com/in/' <<<"$hdr" && grep -q 'US citizen | Willing to relocate$' <<<"$hdr"; then echo "PASS header is one line: $hdr"
 else echo "FAIL header line: $hdr"; exit 1; fi
 if grep -q 'Relevant coursework:' <<<"$txt" && grep -q 'Activities:' <<<"$txt"; then echo "PASS education labels extract"; else echo "FAIL education labels"; exit 1; fi
-grep -q '\[X\] µs' <<<"$txt" && grep -q '\[X\] °C' <<<"$txt" && echo "PASS µ and ° extract as Unicode next to placeholders" || { echo "FAIL µ/° extraction"; exit 1; }
-# Projects and Experience may keep term dates only.
-work=$(awk 'BEGIN{s=0} $0=="Projects"{s=1; next} $0=="Education"{s=0} s' <<<"$txt")
-scrubbed=$(printf '%s\n' "$work" | sed -E \
+grep -q '\[Y\] µs' <<<"$txt" && grep -q '\[X\] °C' <<<"$txt" && echo "PASS µ and ° extract as Unicode next to placeholders" || { echo "FAIL µ/° extraction"; exit 1; }
+# Join wrapped lines, then require every canonical row as a substring.
+flat=$(printf '%s' "$txt" | tr '\n' ' ' | sed -E 's/[[:space:]]+/ /g')
+strings="$root/scripts/resume-strings.txt"
+missing=0
+while IFS= read -r line || [ -n "$line" ]; do
+  [ -z "$line" ] && continue
+  want=$(printf '%s' "$line" | sed -E 's/[[:space:]]+/ /g')
+  if ! grep -F -q -- "$want" <<<"$flat"; then
+    echo "FAIL missing string: $want"
+    missing=1
+  fi
+done < "$strings"
+[ "$missing" = 0 ] && echo "PASS canonical strings" || exit 1
+# Bullet text may keep term dates, the example phone, the GPA scale 4.00,
+# and fixed names (STM32, ESP32, INA219, J-STD-001, Basys 3, I and II).
+scrubbed=$(printf '%s' "$flat" | sed -E \
+  -e 's/\(555\) 555-0142//g' \
   -e 's/Fall 25 - Spring 26//g' \
   -e 's/Fall 24 - Spring 26//g' \
+  -e 's/Expected Spring 27//g' \
   -e 's/Spring 25//g' \
   -e 's/Spring 26//g' \
   -e 's/Fall 24//g' \
   -e 's/Fall 25//g' \
-  -e 's/Summer 25//g')
+  -e 's/Summer 25//g' \
+  -e 's/4\.00//g' \
+  -e 's/J-STD-001//g' \
+  -e 's/STM32//g' \
+  -e 's/ESP32//g' \
+  -e 's/INA219//g' \
+  -e 's/Basys 3//g')
 if grep -q '[0-9]' <<<"$scrubbed"; then
-  echo "FAIL unexpected digits in Projects or Experience"
-  grep -nE '[0-9]' <<<"$scrubbed" || true
+  echo "FAIL unexpected digits in resume text"
+  grep -oE '.{0,40}[0-9].{0,40}' <<<"$scrubbed" || true
   exit 1
 else
-  echo "PASS no digits in Projects or Experience except term dates"
+  echo "PASS no digits except dates, phone, GPA scale, and fixed names"
 fi
 if grep -qP '[\x{FB00}-\x{FB06}]|\x{FFFD}' <<<"$txt"; then echo "FAIL ligature or replacement glyphs in text"; exit 1; else echo "PASS no ligature or replacement glyphs"; fi
 boxes=$(grep -cE 'Overfull|Underfull' "$build/build.log" || true)

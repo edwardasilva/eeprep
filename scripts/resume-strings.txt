@@ -1,0 +1,39 @@
+Jane Doe
+(555) 555-0142 | jdoe@example.com | linkedin.com/in/jane-doe-example | Columbus, OH | US citizen | Willing to relocate
+Projects
+Synchronous Buck Converter for a CubeSat Power Board
+Fall 25 - Spring 26
+KiCad, LTspice, STM32, Embedded C, bench testing with an electronic load
+Reached [X]% peak efficiency at a [Y] A load, measured on an electronic load, by replacing the catch diode with a synchronous MOSFET stage and tuning dead time to [Z] ns with an STM32 timer, up from [W]% before
+Cut output ripple from [X] mV to [Y] mV peak to peak by redesigning the [Z]-layer PCB in KiCad with a solid ground plane and a tighter switching loop, then resizing the LC output filter for [W] kHz switching
+Wrote STM32 firmware in C that samples input current at [X] kHz and shuts the rail down within [Y] µs of an overcurrent fault, which kept the board alive through [Z] deliberate short-circuit tests at a full [W] V input
+Kept the FETs under [X] °C at full load by adding thermal vias and a [Y] oz copper pour under them
+FPGA [N]-Band Audio Equalizer
+Spring 25
+Verilog, Vivado, MATLAB, Basys 3 FPGA, fixed-point DSP
+Processed [X] kHz stereo audio at [Y] ms latency by pipelining [Z] [W]-tap FIR filters in Verilog
+Matched the MATLAB response within [X] dB from [Y] Hz to [Z] kHz by testing coefficients in Vivado
+Cut LUT use [X]% by sharing one multiplier per filter across all [Y] taps with time-division scheduling
+Bluetooth Battery Monitor
+Fall 24
+ESP32, Arduino C++, Python, INA219 current sensor
+Tracked [X] Li-ion cells within [Y] mV each with an ESP32 monitor that streams to a Python dashboard
+Extended pack runtime [X]% in field tests by adding a cutoff that drops non-critical loads at [Y] V
+Experience
+Power Subsystem Engineer, State University CubeSat Team
+Fall 24 - Spring 26
+Cut power board mass by [X] g by replacing [Y] linear regulators with one buck converter board, which then passed thermal vacuum testing from [Z] °C to [W] °C on the first attempt with no board rework needed
+Found [X] battery protection faults before launch review by writing a Python test script that runs [Y] charge and discharge cycles overnight and flags any cell that drifts more than [Z] mV from the pack average
+Undergraduate Research Assistant, Power Electronics Lab, State University
+Summer 25
+Reduced GaN switching loss measurement error from [X]% to [Y]% by adding probe deskew calibration to the double-pulse test setup, which the lab now uses as the standard setup for every GaN device it tests
+Cut test time per device from [X] to [Y] minutes by automating oscilloscope capture with Python and PyVISA
+Education
+B.S. Electrical Engineering, GPA: [X.XX]/4.00
+Expected Spring 27
+State University
+Relevant coursework: Signals and Systems, Electronics I and II, Power Electronics, Digital Design, Embedded Systems, Control Systems, Electromagnetics, Probability for Engineers, Microcontroller Lab
+Activities: Tau Beta Pi, IEEE student branch
+Skills
+Certifications: CSWA (Certified SolidWorks Associate), IPC J-STD-001 soldering
+Software: KiCad, LTspice, MATLAB, Vivado, Python, C, Verilog, SolidWorks, Git
