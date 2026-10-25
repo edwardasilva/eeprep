@@ -43,21 +43,21 @@ The first project is the buck converter. Its date sits on the right. Its tool li
 Synchronous Buck Converter for a CubeSat Power Board
 Fall 25 - Spring 26
 KiCad, LTspice, STM32, Embedded C, bench testing with an electronic load
-Reached 92% peak efficiency at a 2 A load, measured on an electronic load, by replacing the catch diode with a synchronous MOSFET stage and tuning dead time to 40 ns with an STM32 timer, up from 84% before
-Cut output ripple from 85 mV to 18 mV peak to peak by redesigning the 4-layer PCB in KiCad with a solid ground plane and a tighter switching loop, then resizing the LC output filter for 500 kHz switching
-Wrote STM32 firmware in C that samples input current at 1 kHz and shuts the rail down within 50 µs of an overcurrent fault, which kept the board alive through 3 deliberate short-circuit tests at a full 12 V input
-Kept the FETs under 50 °C at full load by adding thermal vias and a 2 oz copper pour under them
+Reached [X]% peak efficiency at a [Y] A load, measured on an electronic load, by replacing the catch diode with a synchronous MOSFET stage and tuning dead time to [Z] ns with an STM32 timer, up from [W]% before
+Cut output ripple from [X] mV to [Y] mV peak to peak by redesigning the [Z]-layer PCB in KiCad with a solid ground plane and a tighter switching loop, then resizing the LC output filter for [W] kHz switching
+Wrote STM32 firmware in C that samples input current at [X] kHz and shuts the rail down within [Y] µs of an overcurrent fault, which kept the board alive through [Z] deliberate short-circuit tests at a full [W] V input
+Kept the FETs under [X] °C at full load by adding thermal vias and a [Y] oz copper pour under them
 ```
 
 The second project is the equalizer.
 
 ```
-FPGA Five-Band Audio Equalizer
+FPGA [N]-Band Audio Equalizer
 Spring 25
 Verilog, Vivado, MATLAB, Basys 3 FPGA, fixed-point DSP
-Processed 48 kHz stereo audio at 0.4 ms latency by pipelining five 64-tap FIR filters in Verilog
-Matched the MATLAB response within 0.1 dB from 20 Hz to 20 kHz by testing coefficients in Vivado
-Cut LUT use 35% by sharing one multiplier per filter across all 64 taps with time-division scheduling
+Processed [X] kHz stereo audio at [Y] ms latency by pipelining [Z] [W]-tap FIR filters in Verilog
+Matched the MATLAB response within [X] dB from [Y] Hz to [Z] kHz by testing coefficients in Vivado
+Cut LUT use [X]% by sharing one multiplier per filter across all [Y] taps with time-division scheduling
 ```
 
 The third project is the battery monitor.
@@ -66,21 +66,21 @@ The third project is the battery monitor.
 Bluetooth Battery Monitor
 Fall 24
 ESP32, Arduino C++, Python, INA219 current sensor
-Tracked 4 Li-ion cells within 10 mV each with an ESP32 monitor that streams to a Python dashboard
-Extended pack runtime 15% in field tests by adding a cutoff that drops non-critical loads at 3.3 V
+Tracked [X] Li-ion cells within [Y] mV each with an ESP32 monitor that streams to a Python dashboard
+Extended pack runtime [X]% in field tests by adding a cutoff that drops non-critical loads at [Y] V
 ```
 
 ## Experience
 
-Name the section Experience. Edward rejects the name Work history. [@edward-silva-2026-resume-advice] Drop unrelated paid work. Edward's example of a cut is a retail job. [@edward-silva-2026-resume-advice] Jane's before draft has that job. The title is Sales Associate, Retail store, and the dates are 06/2023 - 08/2024. The bullets are "Helped customers" and "Ran the register and stocked shelves." Show a measured result. A task list with no number fails the test. [@edward-silva-2026-resume-advice]
+Name the section Experience. Edward rejects the name Work history. [@edward-silva-2026-resume-advice] Drop unrelated paid work. Edward's example of a cut is a retail job. [@edward-silva-2026-resume-advice] Jane's before draft has that job. The title line is "Sales Associate, Retail store, 06/2023 - 08/2024". The bullets are "Helped customers" and "Ran the register and stocked shelves." Show a measured result. A task list with no number fails the test. [@edward-silva-2026-resume-advice]
 
 CubeSat team work goes under Experience. Edward's later note overrides the Round 2 example that put CubeSat on the Activities line. [@edward-silva-2026-resume-advice] The buck converter stays in Projects. The team role is the entry below, with the date on the right.
 
 ```
 Power Subsystem Engineer, State University CubeSat Team
 Fall 24 - Spring 26
-Cut power board mass by 30 g by replacing 6 linear regulators with one buck converter board, which then passed thermal vacuum testing from -20 °C to 60 °C on the first attempt with no board rework needed
-Found 2 battery protection faults before launch review by writing a Python test script that runs 200 charge and discharge cycles overnight and flags any cell that drifts more than 20 mV from the pack average
+Cut power board mass by [X] g by replacing [Y] linear regulators with one buck converter board, which then passed thermal vacuum testing from [Z] °C to [W] °C on the first attempt with no board rework needed
+Found [X] battery protection faults before launch review by writing a Python test script that runs [Y] charge and discharge cycles overnight and flags any cell that drifts more than [Z] mV from the pack average
 ```
 
 The lab role sits under that team entry.
@@ -88,8 +88,8 @@ The lab role sits under that team entry.
 ```
 Undergraduate Research Assistant, Power Electronics Lab, State University
 Summer 25
-Reduced GaN switching loss measurement error from 12% to 3% by adding probe deskew calibration to the double-pulse test setup, which the lab now uses as the standard setup for every GaN device it tests
-Cut test time per device from 40 to 8 minutes by automating oscilloscope capture with Python and PyVISA
+Reduced GaN switching loss measurement error from [X]% to [Y]% by adding probe deskew calibration to the double-pulse test setup, which the lab now uses as the standard setup for every GaN device it tests
+Cut test time per device from [X] to [Y] minutes by automating oscilloscope capture with Python and PyVISA
 ```
 
 ## Interests
@@ -98,7 +98,7 @@ Make interests specific, or delete them. [@edward-silva-2026-resume-advice] Edwa
 
 ## Education
 
-Place Education under Experience and above Skills. The degree line comes first, and the school line sits under it. The GPA stays on the degree line. [@edward-silva-2026-resume-advice] Jane's degree line is "B.S. Electrical Engineering, GPA: 3.62/4.00". The school line is State University. The graduation date sits on the right and reads Expected Spring 27. Leave stray periods off the degree line and the school line. [@edward-silva-2026-resume-advice]
+Place Education under Experience and above Skills. The degree line comes first, and the school line sits under it. The GPA stays on the degree line. [@edward-silva-2026-resume-advice] Jane's degree line is "B.S. Electrical Engineering, GPA: [X.XX]/4.00". The school line is State University. The graduation date sits on the right and reads Expected Spring 27. Leave stray periods off the degree line and the school line. [@edward-silva-2026-resume-advice]
 
 Add a line named Relevant coursework. Bold that label on the resume. Edward adds the line because recruiters liked it. [@edward-silva-2026-resume-advice] Jane's courses are these.
 
@@ -121,9 +121,9 @@ Cut soft skills. Edward's cuts are communication and problem solving. [@edward-s
 
 ## Dates and spacing
 
-Keep one gap between sections. Set that gap with `\vspace` and reuse the value. [@edward-silva-2026-resume-advice] `\vspace` is the LaTeX length for the gap between sections. A bullet uses one full line or two full lines. [@edward-silva-2026-resume-advice] Too much white space in the body is a red flag, so put leftover lines on the strongest project. [@edward-silva-2026-resume-advice] For Jane, that project is the buck converter, the one with the 92% efficiency bullet.
+Keep one gap between sections. Set that gap with `\vspace` and reuse the value. [@edward-silva-2026-resume-advice] `\vspace` is the LaTeX length for the gap between sections. A bullet uses one full line or two full lines. [@edward-silva-2026-resume-advice] Too much white space in the body is a red flag, so put leftover lines on the strongest project. [@edward-silva-2026-resume-advice] For Jane, that project is the buck converter, the one with the Reached [X]% peak efficiency bullet.
 
-Set the text flush left. Do not center a line. [@edward-silva-2026-resume-advice] Class dates keep Edward's form. The buck converter date is Fall 25 - Spring 26, pushed right with `\hfill`. The before draft mixes May 2027, 06/2023 - 08/2024, Summer 2025, 2025-2026, Jan 2025 - May 2025, and Fall 2024. It also leaves stray periods, uneven gaps, and short dangling bullets.
+Set the text flush left. Do not center a line. [@edward-silva-2026-resume-advice] Class dates keep Edward's form. The buck converter date is Fall 25 - Spring 26, pushed right with `\hfill`. The before draft mixes May 2027, 06/2023 - 08/2024, Summer 2025, 2025-2026, Jan 2025 - May 2025, Fall 2024. It also leaves stray periods, uneven spacing, and short dangling bullets.
 
 ## LaTeX commands
 
@@ -141,7 +141,7 @@ The file this site ships is the issue #7 template. Do not publish Edward_Silva_R
 
 Issue #8 is the before and after figure for Jane Doe. The outline, the template, and the figure all use that one name and these same lines. Numbered callouts mark the rules. The before draft shows seven mistakes. The header mistake is a centered name, a rule under the name, "Phone:" and "Email:" labels, and a LinkedIn logo. The objective is the sentence in the objective section above.
 
-The retail role is Sales Associate at Retail store. The skills mistake is two columns of Communication, Problem solving, Teamwork, Leadership, Microsoft Office, Knowledge of orbital mechanics, KiCad, MATLAB. The interests line is "Reading, music, sports". The dates mix the six forms listed under Dates and spacing, with stray periods and short dangling bullets. The before section order is the one in Section order. The after side uses Edward's order and the one contact line. It also uses the tool lines, the `\hfill` dates, the XYZ bullets, and the two skill lines.
+The retail role is "Sales Associate, Retail store, 06/2023 - 08/2024". The skills mistake is two columns of Communication, Problem solving, Teamwork, Leadership, Microsoft Office, Knowledge of orbital mechanics, KiCad, MATLAB. The interests line is "Reading, music, sports". The dates mix the six forms listed under Dates and spacing, with stray periods and short dangling bullets. The before section order is the one in Section order. The after side uses Edward's order and the one contact line. It also uses the tool lines, the `\hfill` dates, the XYZ bullets, and the two skill lines.
 
 ## Checklist
 
@@ -151,7 +151,7 @@ The page closes with a checklist for a printed draft. Each item is one instructi
 2. Use Jane's contact line, including the words Willing to relocate.
 3. Cut the objective.
 4. List each project's tools under the title and in Skills.
-5. Write each bullet in XYZ form, as on the 92% buck converter line.
+5. Write each bullet in XYZ form, as on the Reached [X]% peak efficiency line.
 6. Push each project date to the right margin with `\hfill`.
 7. Keep Skills as two labeled lines in one column.
 8. Add `\pdfgentounicode=1` so a parser can read Unicode text.
