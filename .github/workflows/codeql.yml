@@ -1,0 +1,57 @@
+# This repository is private. Code scanning is not enabled.
+# CodeQL needs GitHub Code Security or GitHub Advanced Security
+# before it can upload results.
+# The CodeQL Action README says private use is for an organization
+# with GitHub Advanced Security. This repository belongs to a user account.
+
+name: CodeQL
+
+"on":
+  pull_request:
+    branches:
+      - main
+      - "epic/**"
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "31 6 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    name: Analyze (${{ matrix.language }})
+    runs-on: ubuntu-latest
+    permissions:
+      # Uploads the scan results.
+      security-events: write
+      # Reads CodeQL query packs.
+      packages: read
+      # Reads workflow files in a private repository.
+      actions: read
+      # Checks out a private repository.
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - language: javascript-typescript
+            build-mode: none
+          - language: actions
+            build-mode: none
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@9b3254085494b55a0f7c4c2b3d2d52cc712ce370 # v4.39.1
+        with:
+          languages: ${{ matrix.language }}
+          build-mode: ${{ matrix.build-mode }}
+
+      - name: Perform CodeQL analysis
+        uses: github/codeql-action/analyze@9b3254085494b55a0f7c4c2b3d2d52cc712ce370 # v4.39.1
+        with:
+          category: "/language:${{ matrix.language }}"
