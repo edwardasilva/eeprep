@@ -7,7 +7,7 @@ import rehypeKatex from 'rehype-katex';
 import rehypeCallouts from 'rehype-callouts';
 import starlightSiteGraph from 'starlight-site-graph';
 import rehypeEqIds from './src/plugins/rehype-eq-ids.mjs';
-import { loadWikiIndex } from './src/lib/wiki-index.mjs';
+import { loadWikiIndex, normalizeWikiName, resolveWikiTarget, splitWikiTarget } from './src/lib/wiki-index.mjs';
 
 const wiki = loadWikiIndex();
 
@@ -31,13 +31,20 @@ export default defineConfig({
 					wikiLinkPlugin,
 					{
 						aliasDivider: '|',
-						permalinks: [...wiki.byKey.keys()],
+						// remark-wiki-link only calls permalinks.indexOf() to decide whether a link
+						// exists. A permalink here is "page" or "page#heading", and it exists when the
+						// page part does, so the #heading survives to hrefTemplate.
+						permalinks: {
+							indexOf: (permalink) => (wiki.byKey.has(permalink.split('#')[0] ?? '') ? 0 : -1),
+						},
 						pageResolver(name) {
-							const page = name.split('#')[0]?.split('|')[0] ?? name;
-							return [page.trim().toLowerCase()];
+							const { page, heading } = splitWikiTarget(name);
+							const key = normalizeWikiName(page);
+							return [heading ? `${key}#${heading}` : key];
 						},
 						hrefTemplate(permalink) {
-							return wiki.byKey.get(permalink) ?? `/missing-wikilink/${encodeURIComponent(permalink)}/`;
+							const { href } = resolveWikiTarget(permalink, wiki.byKey);
+							return href ?? `/missing-wikilink/${encodeURIComponent(permalink)}/`;
 						},
 						wikiLinkClassName: 'wikilink',
 						newClassName: 'wikilink-missing',

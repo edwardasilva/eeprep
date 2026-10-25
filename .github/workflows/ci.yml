@@ -40,6 +40,7 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
+      - run: npm run test:wikilinks
       - run: npm run check:wikilinks
       - run: npm run check:figures
       - run: npm run build

@@ -119,13 +119,13 @@
 }
 /* theme.css `.sl-markdown-content a` beats `.eep-btn` and paints ink on crimson. */
 .sl-markdown-content a.eep-btn {
-	background: var(--eep-ink);
-	color: var(--eep-paper);
+	background: var(--eep-accent);
+	color: var(--eep-on-accent);
 	text-decoration: none;
 }
 .sl-markdown-content a.eep-btn:hover {
-	background: var(--eep-ink);
-	color: var(--eep-paper);
+	background: var(--eep-accent-hover);
+	color: var(--eep-on-accent);
 }
 .sl-markdown-content a.eep-btn.eep-btn-quiet {
 	background: transparent;

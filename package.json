@@ -13,6 +13,7 @@
     "render:figures": "node scripts/render-figures.mjs",
     "check:figures": "node scripts/check-figures.mjs",
     "check:wikilinks": "node scripts/check-wikilinks.mjs",
+    "test:wikilinks": "node scripts/test-wikilinks.mjs",
     "check:links": "node scripts/check-links.mjs",
     "check:pr-body": "node scripts/check-pr-body.mjs",
     "postinstall": "node scripts/patch-site-graph.mjs"
@@ -24,6 +25,7 @@
     "@fontsource-variable/jetbrains-mono": "5.3.0",
     "@fontsource-variable/newsreader": "5.3.0",
     "astro": "7.4.2",
+    "github-slugger": "2.0.0",
     "json5": "2.2.3",
     "katex": "0.16.22",
     "onml": "2.3.0",

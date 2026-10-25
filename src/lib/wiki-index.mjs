@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import GithubSlugger, { slug as headingSlug } from 'github-slugger';
 
 const DEFAULT_ROOT = path.resolve('src/content/docs');
 
@@ -62,16 +63,62 @@ export function normalizeWikiName(name) {
 }
 
 /**
+ * Splits a raw wikilink target into its page name and #heading, dropping any |alias.
+ * @param {string} target Raw wikilink target, without brackets.
+ */
+export function splitWikiTarget(target) {
+	const withoutAlias = target.split('|')[0] ?? '';
+	const cut = withoutAlias.indexOf('#');
+	if (cut < 0) return { page: withoutAlias.trim(), heading: '' };
+	return { page: withoutAlias.slice(0, cut).trim(), heading: withoutAlias.slice(cut + 1).trim() };
+}
+
+/**
+ * The id a heading gets on the built page. Astro's rehypeHeadingIds, which Starlight
+ * uses, slugs heading text with github-slugger, so a wikilink hash goes through the same
+ * slug. A repeated heading gets a -1 suffix on the page; a link reaches the first one.
+ * @param {string} heading
+ */
+export function wikiHeadingId(heading) {
+	return headingSlug(heading);
+}
+
+/**
  * @param {string} target Raw wikilink target, without brackets. May include #heading and |alias.
  * @param {Map<string, string>} byKey
  */
 export function resolveWikiTarget(target, byKey) {
-	const withoutAlias = target.split('|')[0] ?? '';
-	const [page, hash] = withoutAlias.split('#');
-	const key = normalizeWikiName(page ?? '');
+	const { page, heading } = splitWikiTarget(target);
+	const key = normalizeWikiName(page);
+	const hash = heading ? wikiHeadingId(heading) : '';
 	const href = key ? byKey.get(key) : undefined;
-	if (!href) return { href: null, key, hash: hash ?? '' };
-	return { href: hash ? `${href}#${hash}` : href, key, hash: hash ?? '' };
+	if (!href) return { href: null, key, hash };
+	return { href: hash ? `${href}#${hash}` : href, key, hash };
+}
+
+/**
+ * Heading ids on a guide page, slugged the way Astro does it, for checking wikilink hashes.
+ * Reads ATX headings outside code fences and strips inline Markdown first.
+ * @param {string} text Page source.
+ */
+export function pageHeadingIds(text) {
+	const slugger = new GithubSlugger();
+	const ids = new Set(['_top']);
+	let body = text;
+	if (body.startsWith('---')) {
+		const end = body.indexOf('\n---', 3);
+		if (end >= 0) body = body.slice(end + 4);
+	}
+	body = body.replace(/```[\s\S]*?```/g, '');
+	for (const match of body.matchAll(/^#{1,6}[ \t]+(.+?)[ \t]*#*[ \t]*$/gm)) {
+		const plain = (match[1] ?? '')
+			.replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, '$2')
+			.replace(/\[\[([^\]]+)\]\]/g, '$1')
+			.replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+			.replace(/[`*_]/g, '');
+		ids.add(slugger.slug(plain));
+	}
+	return ids;
 }
 
 /** @param {string} text @param {string} fallback */
@@ -123,7 +170,7 @@ export function buildPageLinks(wiki) {
 		/** @type {Set<string>} */
 		const targets = new Set();
 		for (const match of body.matchAll(/\[\[([^\]]+)\]\]/g)) {
-			const { href } = resolveWikiTarget(match[1], wiki.byKey);
+			const { href } = resolveWikiTarget(match[1] ?? '', wiki.byKey);
 			if (href) targets.add(toKey(href.split('#')[0]));
 		}
 		for (const match of body.matchAll(/\]\((\/[^)\s#]*)/g)) {
