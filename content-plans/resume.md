@@ -77,7 +77,7 @@ Name the section Experience. Edward rejects the name Work history. [@edward-silv
 CubeSat team work goes under Experience. Edward's later note overrides the Round 2 example that put CubeSat on the Activities line. [@edward-silva-2026-resume-advice] The buck converter stays in Projects. The team role is the entry below, with the date on the right.
 
 ```
-Power Subsystem Engineer, State University CubeSat Team
+Power Subsystem Engineer, [Student satellite team]
 Fall 24 - Spring 26
 Cut power board mass by [X] g by replacing [Y] linear regulators with one buck converter board, which then passed thermal vacuum testing from [Z] °C to [W] °C on the first attempt with no board rework needed
 Found [X] battery protection faults before launch review by writing a Python test script that runs [Y] charge and discharge cycles overnight and flags any cell that drifts more than [Z] mV from the pack average
@@ -86,7 +86,7 @@ Found [X] battery protection faults before launch review by writing a Python tes
 The lab role sits under that team entry.
 
 ```
-Undergraduate Research Assistant, Power Electronics Lab, State University
+Undergraduate Research Assistant, [University lab]
 Summer 25
 Reduced GaN switching loss measurement error from [X]% to [Y]% by adding probe deskew calibration to the double-pulse test setup, which the lab now uses as the standard setup for every GaN device it tests
 Cut test time per device from [X] to [Y] minutes by automating oscilloscope capture with Python and PyVISA
@@ -98,7 +98,7 @@ Make interests specific, or delete them. [@edward-silva-2026-resume-advice] Edwa
 
 ## Education
 
-Place Education under Experience and above Skills. The degree line comes first, and the school line sits under it. The GPA stays on the degree line. [@edward-silva-2026-resume-advice] Jane's degree line is "B.S. Electrical Engineering, GPA: [X.XX]/4.00". The school line is State University. The graduation date sits on the right and reads Expected Spring 27. Leave stray periods off the degree line and the school line. [@edward-silva-2026-resume-advice]
+Place Education under Experience and above Skills. The degree line comes first, and the school line sits under it. The GPA stays on the degree line. [@edward-silva-2026-resume-advice] Jane's degree line is "B.S. Electrical Engineering, GPA: [X.XX]/4.00". The school line is [University]. The graduation date sits on the right and reads Expected Spring 27. Leave stray periods off the degree line and the school line. [@edward-silva-2026-resume-advice]
 
 Add a line named Relevant coursework. Bold that label on the resume. Edward adds the line because recruiters liked it. [@edward-silva-2026-resume-advice] Jane's courses are these.
 
