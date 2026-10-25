@@ -1,0 +1,76 @@
+# eeprep.com matplotlib style — "Clean modern textbook" (light)
+# Use:  plt.style.use("eeprep.mplstyle")   dark: plt.style.use(["eeprep.mplstyle", "eeprep-dark.mplstyle"])
+# Export: fig.savefig("x.svg")  -> text stays live <text> (svg.fonttype none) so site fonts + themeify apply.
+# Fonts must be installed on the build machine: Newsreader, Inter, JetBrains Mono (OFL).
+
+figure.figsize        : 7.0, 3.6        # 7in @ 80dpi ≈ 560px figure width (matches schematic width)
+figure.dpi            : 80
+figure.facecolor      : none
+savefig.facecolor     : none
+savefig.transparent   : True
+savefig.bbox          : tight
+savefig.pad_inches    : 0.12
+svg.fonttype          : none
+
+font.family           : sans-serif
+font.sans-serif       : Inter, DejaVu Sans
+font.serif            : Newsreader, DejaVu Serif
+font.monospace        : JetBrains Mono, DejaVu Sans Mono
+font.size             : 10.5
+
+# Math: Newsreader italic for variables (matches figures/KaTeX feel)
+mathtext.fontset      : custom
+mathtext.rm           : Newsreader
+mathtext.it           : Newsreader:italic
+mathtext.bf           : Newsreader:bold
+mathtext.default      : it
+
+text.color            : 17181c
+axes.labelcolor       : 4a4d55
+axes.edgecolor        : 17181c
+axes.facecolor        : none
+axes.linewidth        : 0.9
+axes.spines.top       : False
+axes.spines.right     : False
+axes.labelsize        : 10.5
+axes.labelpad         : 6
+axes.titlesize        : 12
+axes.titleweight      : 500
+axes.titlelocation    : left
+axes.titlepad         : 10
+axes.grid             : True
+axes.grid.which       : both
+axes.axisbelow        : True
+# series order: ink, crimson accent, blue, green, mute
+axes.prop_cycle       : cycler(color=["17181c", "a3201d", "1d5f8a", "4f7a28", "8a8d94"])
+
+grid.color            : e7e5e0
+grid.linewidth        : 0.7
+grid.linestyle        : -
+
+lines.linewidth       : 1.75
+lines.solid_capstyle  : round
+lines.markersize      : 5
+
+xtick.color           : 6f727a
+ytick.color           : 6f727a
+xtick.labelcolor      : 6f727a
+ytick.labelcolor      : 6f727a
+xtick.labelsize       : 9.5
+ytick.labelsize       : 9.5
+xtick.direction       : out
+ytick.direction       : out
+xtick.major.size      : 3.5
+ytick.major.size      : 3.5
+xtick.minor.size      : 2
+ytick.minor.size      : 2
+xtick.major.width     : 0.9
+ytick.major.width     : 0.9
+
+legend.frameon        : False
+legend.fontsize       : 9.5
+legend.handlelength   : 1.8
+
+patch.linewidth       : 1.2
+patch.edgecolor       : 17181c
+mathtext.fallback     : stix            # Greek (ω, π, τ) — Newsreader has none; stix keeps real Unicode in SVG text
