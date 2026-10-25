@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# Builds alex-rivera-resume.pdf and checks: one page, metadata set, sections extract in order.
+# Builds jane-doe-resume.pdf and checks: one page, metadata set, sections extract in order.
 set -eu
 root="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$root/public/resume"
-tex=alex-rivera-resume.tex
-pdf=alex-rivera-resume.pdf
+tex=jane-doe-resume.tex
+pdf=jane-doe-resume.pdf
 # Build in a temp folder so no .aux, .log, .out or build.log lands in public/, which Astro publishes.
 build="$(mktemp -d)"
 trap 'rm -rf "$build"' EXIT
@@ -17,8 +17,8 @@ for f in Title Author Subject Keywords; do
   pdfinfo "$pdf" | grep -q "^$f: *[^ ]" && echo "PASS metadata $f" || { echo "FAIL metadata $f"; exit 1; }
 done
 txt=$(pdftotext "$pdf" -)
-order=$(grep -nxE 'Alex Rivera|Projects|Experience|Education|Skills' <<<"$txt" | cut -d: -f2 | tr '\n' ' ')
-[ "$order" = "Alex Rivera Projects Experience Education Skills " ] && echo "PASS reading order: $order" || { echo "FAIL order: $order"; exit 1; }
+order=$(grep -nxE 'Jane Doe|Projects|Experience|Education|Skills' <<<"$txt" | cut -d: -f2 | tr '\n' ' ')
+[ "$order" = "Jane Doe Projects Experience Education Skills " ] && echo "PASS reading order: $order" || { echo "FAIL order: $order"; exit 1; }
 hdr=$(sed -n 2p <<<"$txt")
 if grep -q 'linkedin.com/in/' <<<"$hdr" && grep -q 'US citizen | Willing to relocate$' <<<"$hdr"; then echo "PASS header is one line: $hdr"
 else echo "FAIL header line: $hdr"; exit 1; fi
