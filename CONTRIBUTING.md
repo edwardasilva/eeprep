@@ -69,6 +69,6 @@ npm run render:figures
 npm run build
 ```
 
-Open `src/content/docs` as an Obsidian vault. Wikilinks stay in `[[wiki]]` form (`useMarkdownLinks` is off). Do not commit `.obsidian/workspace.json`.
+Open `src/content/docs` as an Obsidian vault. Wikilinks stay in `[[wiki]]` form (`useMarkdownLinks` is off). Same-page links use `[text](#heading)`, because `[[#heading]]` has an empty page name and the wikilink check fails the build. Do not commit `.obsidian/workspace.json`.
 
 Write in sentence case. Callout titles are sentence case. Use "Main idea", not "Key idea". The bibliography file is added on the citations epic.
