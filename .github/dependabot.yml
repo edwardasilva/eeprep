@@ -4,11 +4,19 @@ updates:
     directory: /
     schedule:
       interval: weekly
+    target-branch: epic/site-foundation
     labels:
       - dependencies
+    groups:
+      astro-starlight:
+        patterns:
+          - astro
+          - "@astrojs/*"
+          - starlight-*
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: weekly
+    target-branch: epic/site-foundation
     labels:
       - dependencies

@@ -23,7 +23,7 @@ Pages live in `src/content/docs/` and build as a Starlight site:
 - `succeed-in-school/` for school
 - `reference/` for study pages
 
-Open `src/content/docs` as an Obsidian vault. Links are `[[wikilinks]]`. Each page can show backlinks and a graph. Callouts use Obsidian syntax (`> [!tip] Main idea`). Math is KaTeX. The bibliography placeholder is `src/content/references.bib`.
+Open `src/content/docs` as an Obsidian vault. Links are `[[wikilinks]]`. Each page can show backlinks and a graph. Callouts use Obsidian syntax (`> [!tip] Main idea`). Math is KaTeX. The bibliography file is added on the citations epic.
 
 The four launch pages (resume, the job market, how to study, signals and DSP) are marked placeholders. So is the sample page, which is there to prove the page tools.
 

@@ -9,7 +9,7 @@ const needle = "return (item && typeof item === 'object' && !Array.isArray(item)
 const patched =
 	"return (item && typeof item === 'object' && !Array.isArray(item) && !(item instanceof Map));";
 
-if (source.includes('instanceof Map')) {
+if (source.includes(patched)) {
 	console.log('starlight-site-graph Map patch already applied.');
 	process.exit(0);
 }
