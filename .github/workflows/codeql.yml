@@ -1,8 +1,7 @@
-# This repository is private. Code scanning is not enabled.
-# CodeQL needs GitHub Code Security or GitHub Advanced Security
-# before it can upload results.
-# The CodeQL Action README says private use is for an organization
-# with GitHub Advanced Security. This repository belongs to a user account.
+# CodeQL cannot upload results while this repository is private.
+# That failure would turn every pull request red.
+# The analyze job skips while the repository is private. The check stays neutral.
+# After the repository becomes public at launch, the job runs on its own.
 
 name: CodeQL
 
@@ -16,12 +15,14 @@ name: CodeQL
       - main
   schedule:
     - cron: "31 6 * * 1"
+  workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
   analyze:
+    if: ${{ !github.event.repository.private }}
     name: Analyze (${{ matrix.language }})
     runs-on: ubuntu-latest
     permissions:
