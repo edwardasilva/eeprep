@@ -8,7 +8,7 @@ The short version: students ask most about the first rung. They want to know how
 
 - Reddit: about 30 web searches across r/ECE, r/ElectricalEngineering, r/EngineeringStudents, r/EngineeringResumes, r/cscareerquestions, r/chipdesign, r/MEPEngineering, r/SecurityClearance and r/CollegeMajors. Posts are from September 2025 to October 2026, US-centric, with job-ad spam dropped.
 - X: Chief Bot's 15 themes and 16 lessons, plus 4 posts Edward and Chief Bot sent me. I checked those 4 with the X API on 2026-10-25. All 4 exist and match the descriptions.
-- Link checks: Reddit blocks this box's direct fetches with HTTP 403. So I confirmed each Reddit link through the search index. It returned the thread title and subreddit, and for most threads the post date and comment text. For 22 threads I read the post text or comments. For the other 29 I saw the title and URL only, and I cite them only as evidence that the question gets asked. The `references.bib` note on each entry stays "Accessed 2026-10-25".
+- Link checks: Reddit blocks this box's direct fetches with HTTP 403. No Reddit thread was opened directly. Each link was confirmed through the search index. Read means the post text or a comment was visible in those search results. That was true for 21 threads. Search-only means the index showed the title and URL only. That was true for 30 threads. Search-only threads are cited only as evidence that the question gets asked. Every Reddit source needs a browser check before a page quotes it. The `references.bib` note on each entry stays "Accessed 2026-10-25".
 - Ranking: each question is ranked by the number of independent sources (distinct posts or threads, X plus Reddit) that I cite for it. It is a count of what we found, not a measure of total volume. Ties are broken by Reddit engagement.
 - Each post is one person's case. The lesson column states what holds beyond that one person.
 
@@ -148,5 +148,5 @@ Page names: Resume, Job market ("Getting a job in this market"), How to study, S
 ## 5. Open items
 
 - The New York Fed Outcomes by Major table is checked. It covers graduates aged 22 to 27, uses 2024 survey data, and was released February 4, 2026. Computer engineering unemployment is 7.8%. Electrical engineering unemployment is 3.2%. EE underemployment is 21.1%. Cite `nyfed-2026-outcomes-by-major`. `needs: bib entry`.
-- 30 Reddit threads are cited from title and URL only. Before a page quotes one, open it in a browser and confirm the wording.
+- 21 Reddit threads had post or comment text visible in search results. 30 were search-only, with the title and URL only. No thread was opened directly. Every Reddit source needs a browser check before a page quotes it.
 - No Reddit search covered Signals and Systems coursework. Item 19 rests on X alone.

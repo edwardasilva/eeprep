@@ -6,7 +6,7 @@ The page answers the question inside 8 of the 20 ranked student questions. How d
 
 The only example student is Alex Rivera. The strings below are copied from the persona file. Do not add a school, a GPA, a project, a metric, or a certification unless that file lists it.
 
-Paraphrase Reddit. Do not put Reddit comment text in quotation marks. The strategy confirmed some threads from a search title and a URL only. Open the thread in a browser before a later draft quotes it.
+Paraphrase Reddit. Do not put Reddit comment text in quotation marks. No Reddit thread was opened directly. Read means the post or a comment showed up in search results, and that covers 21 threads. Search-only means the title and URL only, and that covers 30 threads. Every Reddit source needs a browser check before a page quotes it.
 
 ## No experience yet
 
