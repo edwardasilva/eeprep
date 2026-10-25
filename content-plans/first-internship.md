@@ -4,7 +4,7 @@ This file is the outline for the Your first internship page. It is part of #4. T
 
 The page answers the question inside 8 of the 20 ranked student questions. How do you get a first real hardware experience? Those items are 1, 5, 12, 13, 14, 15, 17, and 18 in `content-plans/content-strategy.md`. They carry 52 source citations. Some posts support more than one item, so 52 counts citations.
 
-The only example student is Alex Rivera. Do not invent a school, a GPA, a project, a metric, or a certification. Where a line needs one, leave a placeholder such as `[Alex persona: project 1]`. A later draft fills every placeholder from `sources/alex-rivera-persona.md`.
+The only example student is Alex Rivera. The strings below are copied from the persona file. Do not add a school, a GPA, a project, a metric, or a certification unless that file lists it.
 
 Paraphrase Reddit. Do not put Reddit comment text in quotation marks. The strategy confirmed some threads from a search title and a URL only. Open the thread in a browser before a later draft quotes it.
 
@@ -16,7 +16,7 @@ One commenter got two EE internships at a community college, before any core EE 
 [@reddit-2026-internships-before-classes]
 A PCB is a board you design. Community college and transfer students start in this section.
 
-Show Alex at the start as `[Alex persona: year]` and `[Alex persona: starting job]`. One post asks how a senior in fast food gets a first role in the space industry.
+Show Alex's graduation as Expected Spring 27. Show the earliest job as Sales Associate, Retail store, 06/2023 - 08/2024. That retail line is only on the Before draft. One post asks how a senior in fast food gets a first role in the space industry.
 [@x-sTYLz2021-2026-space]
 That post is the question. Alex stays the only example student.
 
@@ -39,7 +39,7 @@ An EE grad reported 200 or more rejections.
 A junior with a 3.5 GPA applied for Tesla internships and was never contacted.
 [@x-3184_farm_ridge-2025-tesla35]
 
-Show those three counts next to Alex's tally, written as `[Alex persona: application count]`. The longer section stays on the Job market page, under Why online applications go nowhere. This page stops at the 20-application rule, then points the reader to a person.
+Show those three research counts on their own. The persona file has no application count for Alex. The longer section stays on the Job market page, under Why online applications go nowhere. This page stops at the 20-application rule, then points the reader to a person.
 
 ## Cold outreach and career fairs
 
@@ -53,7 +53,7 @@ A referral can still end with no interview. A parent referred a daughter with a 
 [@x-gm16108-2025-utaustin]
 Do not name her.
 
-Show four fair steps. Name who you will talk to. Name what you will hand them. Name what you will ask. Name what you will send the next day. The example note is from Alex, and the text is `[Alex persona: outreach note]`.
+Show four fair steps. Name who you will talk to. Name what you will hand them. Name what you will ask. Name what you will send the next day. The persona file has no outreach note. This outline does not invent one.
 
 If your GPA is under a posted minimum, use the fair. Commenters aimed at a 3.0 where a company sets a floor.
 [@reddit-2025-gpa-matter]
@@ -87,7 +87,7 @@ Say that one missed summer is a setback you can recover from. Students from the 
 On the thread with about 500 applications, commenters named three bridges. Look at technologist roles. Join a design team such as FSAE, a student car-racing competition. Or take an 8 to 12 month co-op. A co-op is a long internship split across school terms. Long co-ops often convert to full-time offers.
 [@reddit-2026-no-internships-projects]
 
-Show the empty summer as `[Alex persona: missed term]`. Leave Alex's bridge unset. These threads ask the same question.
+The persona file names no missed term. Summer 25 is Undergraduate Research Assistant, Power Electronics Lab, State University. Leave Alex's bridge unset. These threads ask the same question.
 [@reddit-2026-no-internship-cooked]
 [@reddit-2026-sophomore-no-internship]
 [@reddit-2026-graduate-no-internships]
@@ -130,7 +130,17 @@ Students also ask what to put in a portfolio, how to join electronics with code,
 Device knowledge matters more than another coding certificate.
 [@x-ElectronJacob-2026-devices]
 
-Show Alex's build only as `[Alex persona: project 1]`. Leave the circuit, the board, and any measured result blank.
+Show Alex's build as Synchronous Buck Converter for a CubeSat Power Board. Copy these persona lines verbatim. Add no line that is not in the block.
+
+```
+Synchronous Buck Converter for a CubeSat Power Board
+Fall 25 - Spring 26
+KiCad, LTspice, STM32, Embedded C, bench testing with an electronic load
+Reached 92% peak efficiency at a 2 A load, measured on an electronic load, by replacing the catch diode with a synchronous MOSFET stage and tuning dead time to 40 ns with an STM32 timer, up from 84% before
+Cut output ripple from 85 mV to 18 mV peak to peak by redesigning the 4-layer PCB in KiCad with a solid ground plane and a tighter switching loop, then resizing the LC output filter for 500 kHz switching
+Wrote STM32 firmware in C that samples input current at 1 kHz and shuts the rail down within 50 µs of an overcurrent fault, which kept the board alive through 3 deliberate short-circuit tests at a full 12 V input
+Kept the FETs under 50 °C at full load by adding thermal vias and a 2 oz copper pour under them
+```
 
 ### Starting on a student budget
 
@@ -146,7 +156,7 @@ Opportunity cost means the other work you give up. That cost is higher than for 
 
 Show a starter list with a price on each line. Look up every price on the day you publish. This research states no prices, so each price is `needs: citation`. Show a three-line note a student can send to book lab time. The idle-scope fact is cited. The note's wording is ours, so leave it uncited.
 
-Alex's money line is `[Alex persona: budget]`. Leave the number blank.
+The persona file states no budget for Alex. Leave the number blank.
 
 ### Teams and undergraduate research
 
@@ -162,7 +172,18 @@ These threads ask the same question.
 [@reddit-2026-undergrad-research]
 [@x-irishScott2-2026-kendall]
 
-Show a rule for a student who can join only one of a team or a lab. The sources say both count. The choice rule is `needs: citation`. Show Alex's seat as `[Alex persona: team or lab]`.
+Show a rule for a student who can join only one of a team or a lab. The sources say both count. The choice rule is `needs: citation`. The persona file lists both seats and does not pick one. One seat is Power Subsystem Engineer, State University CubeSat Team. Its dates are Fall 24 - Spring 26. The other seat is Undergraduate Research Assistant, Power Electronics Lab, State University. Its dates are Summer 25. Copy these persona lines verbatim.
+
+```
+Power Subsystem Engineer, State University CubeSat Team
+Fall 24 - Spring 26
+Cut power board mass by 30 g by replacing 6 linear regulators with one buck converter board, which then passed thermal vacuum testing from -20 °C to 60 °C on the first attempt with no board rework needed
+Found 2 battery protection faults before launch review by writing a Python test script that runs 200 charge and discharge cycles overnight and flags any cell that drifts more than 20 mV from the pack average
+Undergraduate Research Assistant, Power Electronics Lab, State University
+Summer 25
+Reduced GaN switching loss measurement error from 12% to 3% by adding probe deskew calibration to the double-pulse test setup, which the lab now uses as the standard setup for every GaN device it tests
+Cut test time per device from 40 to 8 minutes by automating oscilloscope capture with Python and PyVISA
+```
 
 The projects section holds the disagreement. The side that discounts personal projects points here. That claim is `needs: citation` until the comment is pinned.
 
@@ -192,11 +213,28 @@ Entry-level ads often ask for 2 to 3 years of experience. One engineer took 2 ye
 [@x-thezachpendley-2025-twoyears]
 [@x-HiddenCircuit-2026-200rej]
 
-Show the title list as words a student can paste into a search box. Show Alex's bridge only as `[Alex persona: bridge role]`. Leave the length of stay blank. No source here gives a month count, so a duration is `needs: citation`.
+Show the title list as words a student can paste into a search box. The persona file has no test role and no technician role. Leave the bridge blank. Leave the length of stay blank. No source here gives a month count, so a duration is `needs: citation`.
 
 ## Path map
 
-Issue #15 draws the figure. This file leaves the drawing to that issue. The figure shows each path from zero experience to a first internship. Put the steps and the cite on that path. The caption uses `[Alex persona: path]`.
+Issue #15 draws the figure. This file leaves the drawing to that issue. The figure shows each path from zero experience to a first internship. Put the steps and the cite on that path. The caption copies these persona lines. The dates in the file run from earliest to latest. The file shows no internship. Both Fall 24 entries share that term. The file does not rank those two against each other. The retail line is only on the Before draft.
+
+```
+Sales Associate, Retail store, 06/2023 - 08/2024
+Bluetooth Battery Monitor
+Fall 24
+Power Subsystem Engineer, State University CubeSat Team
+Fall 24 - Spring 26
+FPGA Five-Band Audio Equalizer
+Spring 25
+Undergraduate Research Assistant, Power Electronics Lab, State University
+Summer 25
+Synchronous Buck Converter for a CubeSat Power Board
+Fall 25 - Spring 26
+School: State University
+B.S. Electrical Engineering, GPA: 3.62/4.00
+Expected Spring 27
+```
 
 Use these paths:
 
