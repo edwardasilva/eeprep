@@ -154,6 +154,11 @@
   --sl-nav-height: 4.5rem;
 }
 
+:root:not([data-has-sidebar]),
+:root[data-theme='light']:not([data-has-sidebar]) {
+	--sl-content-width: 67.5rem;
+}
+
 /* ---------- 6. Base typography ---------- */
 body { background: var(--eep-paper); -webkit-font-smoothing: antialiased; font-feature-settings: "cv11", "ss01"; }
 .sl-markdown-content :is(h1, h2, h3, h4), h1#_top {

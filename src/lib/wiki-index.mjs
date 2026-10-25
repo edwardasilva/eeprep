@@ -39,8 +39,7 @@ export function loadWikiIndex(contentRoot = process.env.CONTENT_ROOT
 			pages.push(page);
 			const keys = [
 				title,
-				stem,
-				stem.replaceAll('-', ' '),
+				...(stem === 'index' ? [] : [stem, stem.replaceAll('-', ' ')]),
 				slug,
 				slug.split('/').at(-1) ?? slug,
 				(slug.split('/').at(-1) ?? slug).replaceAll('-', ' '),
