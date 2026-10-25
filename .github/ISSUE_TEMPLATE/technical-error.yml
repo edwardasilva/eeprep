@@ -1,0 +1,54 @@
+name: Technical error
+description: Report a wrong equation, circuit, figure, or code sample.
+title: "Technical error: "
+labels:
+  - bug
+  - technical-accuracy
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form when a page shows a wrong equation, circuit, figure, or code sample.
+        Paste the correct version and name the source.
+  - type: input
+    id: page-url
+    attributes:
+      label: Page URL
+      description: Paste the full URL of the page that has the error.
+      placeholder: https://
+    validations:
+      required: true
+  - type: dropdown
+    id: error-kind
+    attributes:
+      label: Kind of error
+      description: Choose equation, circuit, figure, or code sample.
+      options:
+        - Equation
+        - Circuit
+        - Figure
+        - Code sample
+    validations:
+      required: true
+  - type: textarea
+    id: what-is-wrong
+    attributes:
+      label: What is wrong
+      description: Describe the error. Quote the wrong equation, text, or code.
+    validations:
+      required: true
+  - type: textarea
+    id: correct-version
+    attributes:
+      label: Correct version
+      description: Write the correct equation, circuit, figure note, or code.
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source
+      description: Name the book, standard, or URL that supports the correct version.
+      placeholder: Author, title, year, or URL
+    validations:
+      required: true
