@@ -1,0 +1,146 @@
+%% eeprep.com resume template (single column, one page, pdflatex)
+%% Fictional student: Jane Doe. NOT A REAL PERSON. Every line matches
+%% content-plans/resume.md. Replace it all with your own.
+%% Based on Edward Silva's resume advice and the r/EngineeringResumes wiki:
+%% https://www.reddit.com/r/EngineeringResumes/wiki/index
+\documentclass[letterpaper,11pt]{article}
+
+%% Rule: machine-readable text. glyphtounicode maps every glyph to a Unicode
+%% character, so applicant tracking systems and AI readers parse clean text.
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\usepackage[T1]{fontenc}   % real glyphs for accents and dashes, no odd ligature splits
+\usepackage{lmodern}       % scalable Latin Modern fonts
+\usepackage[margin=0.5in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+
+%% Rule: PDF metadata. Anyone can see it under document properties. It costs
+%% nothing, but do not count on hiring software reading it.
+\hypersetup{
+  pdftitle    = {Jane Doe - Resume},
+  pdfauthor   = {Jane Doe},
+  pdfsubject  = {Electrical engineering internship resume},
+  pdfkeywords = {electrical engineering, power electronics, PCB design, KiCad, LTspice, STM32, embedded C, FPGA, Verilog, Python}
+}
+
+%% Rule: consistent spacing. Every gap between sections comes from this one
+%% length. Change it here, never with a one-off \vspace in the body.
+\newlength{\secgap}
+\setlength{\secgap}{6pt}
+\newlength{\itemgap}           % gap between entries inside a section
+\setlength{\itemgap}{4pt}
+
+\pagestyle{empty}              % no page number on a one-page resume
+\setlength{\parindent}{0pt}    % Rule: left-justify everything
+\raggedright
+\urlstyle{same}
+
+%% Section headings: bold, a thin rule, no centering.
+\titleformat{\section}{\large\bfseries}{}{0pt}{}[\vspace{-6pt}\rule{\textwidth}{0.4pt}]
+\titlespacing*{\section}{0pt}{\secgap}{\itemgap}
+
+%% Tight bullets that use the full line width.
+\setlist[itemize]{leftmargin=1.2em, topsep=1pt, itemsep=0pt, parsep=0pt, partopsep=0pt}
+
+%% \entry{bold title}{right-aligned dates}
+%% Rule: dates go flush right with \hfill so the eye scans titles on the left.
+\newcommand{\entry}[2]{\textbf{#1}\hfill #2\par}
+%% \skillsused{...}
+%% Rule: put the skills you used under the project title. Repeating them in
+%% the Skills section is good, because it shows where you used each one.
+\newcommand{\skillsused}[1]{\textit{#1}\par}
+%% Header separator. The contact line is set at 9.5 pt so all six items fit
+%% on one line, as the persona and Edward's advice ask.
+\newcommand{\sep}{\hspace{0.35em}|\hspace{0.35em}}
+
+\begin{document}
+
+%% ---------------- Header ----------------
+%% Rules: name on top, no line under it, no logos, no "Phone:" or "Email:"
+%% labels. Write the full LinkedIn URL as text. Everything fits on one line
+%% under the name, including citizenship and relocation.
+{\LARGE\bfseries Jane Doe}\par
+\vspace{2pt}
+{\fontsize{9.5}{11.5}\selectfont (555) 555-0142\sep jdoe@example.com\sep
+\href{https://linkedin.com/in/jane-doe-example}{linkedin.com/in/jane-doe-example}\sep
+{[}City, ST{]}\sep {[}Work authorization{]}\sep Willing to relocate\par}
+
+%% Rule: no objective or summary. It takes space and tells a recruiter little.
+%% Rule: no interests section unless you can name specific things.
+
+%% ---------------- Projects ----------------
+%% Rule: projects come first. They are your strongest proof for an internship.
+%% Rule: XYZ bullets. "Accomplished [X] as measured by [Y], by doing [Z]."
+%% Every bullet has a number. Fill the line or keep it to one line.
+\section{Projects}
+
+\entry{Synchronous Buck Converter for a CubeSat Power Board}{Fall 25 - Spring 26}
+\skillsused{KiCad, LTspice, STM32, Embedded C, bench testing with an electronic load}
+\begin{itemize}
+  \item Reached [X]\% peak efficiency at a [Y] A load, measured on an electronic load, by replacing the catch diode with a synchronous MOSFET stage and tuning dead time to [Z] ns with an STM32 timer, up from [W]\% before
+  \item Cut output ripple from [X] mV to [Y] mV peak to peak by redesigning the [Z]-layer PCB in KiCad with a solid ground plane and a tighter switching loop, then resizing the LC output filter for [W] kHz switching
+  \item Wrote STM32 firmware in C that samples input current at [X] kHz and shuts the rail down within [Y] \textmu s of an overcurrent fault, which kept the board alive through [Z] deliberate short-circuit tests at a full [W] V input
+  \item Kept the FETs under [X] \textdegree{}C at full load by adding thermal vias and a [Y] oz copper pour under them
+\end{itemize}
+\vspace{\itemgap}
+
+\entry{FPGA [N]-Band Audio Equalizer}{Spring 25}
+\skillsused{Verilog, Vivado, MATLAB, Basys 3 FPGA, fixed-point DSP}
+\begin{itemize}
+  \item Processed [X] kHz stereo audio at [Y] ms latency by pipelining [Z] [W]-tap FIR filters in Verilog
+  \item Matched the MATLAB response within [X] dB from [Y] Hz to [Z] kHz by testing coefficients in Vivado
+  \item Cut LUT use [X]\% by sharing one multiplier per filter across all [Y] taps with time-division scheduling
+\end{itemize}
+\vspace{\itemgap}
+
+\entry{Bluetooth Battery Monitor}{Fall 24}
+\skillsused{ESP32, Arduino C++, Python, INA219 current sensor}
+\begin{itemize}
+  \item Tracked [X] Li-ion cells within [Y] mV each with an ESP32 monitor that streams to a Python dashboard
+  \item Extended pack runtime [X]\% in field tests by adding a cutoff that drops non-critical loads at [Y] V
+\end{itemize}
+
+%% ---------------- Experience ----------------
+%% Rule: keep only relevant work. Drop unrelated jobs (like retail) once you
+%% have projects and team or lab work to fill the page.
+\section{Experience}
+
+\entry{Power Subsystem Engineer, {[}Student satellite team{]}}{Fall 24 - Spring 26}
+\begin{itemize}
+  \item Cut power board mass by [X] g by replacing [Y] linear regulators with one buck converter board, which then passed thermal vacuum testing from [Z] \textdegree{}C to [W] \textdegree{}C on the first attempt with no board rework needed
+  \item Found [X] battery protection faults before launch review by writing a Python test script that runs [Y] charge and discharge cycles overnight and flags any cell that drifts more than [Z] mV from the pack average
+\end{itemize}
+\vspace{\itemgap}
+
+\entry{Undergraduate Research Assistant, {[}University lab{]}}{Summer 25}
+\begin{itemize}
+  \item Reduced GaN switching loss measurement error from [X]\% to [Y]\% by adding probe deskew calibration to the double-pulse test setup, which the lab now uses as the standard setup for every GaN device it tests
+  \item Cut test time per device from [X] to [Y] minutes by automating oscilloscope capture with Python and PyVISA
+\end{itemize}
+
+%% ---------------- Education ----------------
+%% Rules: degree on top, school under it, GPA on the degree line.
+%% Bold the "Relevant coursework:" and "Activities:" labels so eyes find them.
+%% No period after the last item.
+\section{Education}
+
+\entry{B.S. Electrical Engineering, GPA: [X.XX]/4.00}{Expected Spring 27}
+{[}University{]}\par
+\textbf{Relevant coursework:} Signals and Systems, Electronics I and II, Power Electronics, Digital Design, Embedded Systems, Control Systems, Electromagnetics, Probability for Engineers, Microcontroller Lab\par
+\textbf{Activities:} Tau Beta Pi, IEEE student branch\par
+
+%% ---------------- Skills ----------------
+%% Rules: one labeled line per category, most important first, only what you
+%% can prove. Never two columns. No soft skills ("communication", "problem
+%% solving"). Knowledge areas like orbital mechanics belong in coursework
+%% unless they are certified. Add a "Hardware:" line (scope, logic analyzer,
+%% rework station) if you have bench tools to list.
+\section{Skills}
+
+\textbf{Certifications:} CSWA (Certified SolidWorks Associate), IPC J-STD-001 soldering\par
+\textbf{Software:} KiCad, LTspice, MATLAB, Vivado, Python, C, Verilog, SolidWorks, Git\par
+
+\end{document}
