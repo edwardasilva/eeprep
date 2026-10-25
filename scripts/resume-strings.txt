@@ -20,18 +20,18 @@ ESP32, Arduino C++, Python, INA219 current sensor
 Tracked [X] Li-ion cells within [Y] mV each with an ESP32 monitor that streams to a Python dashboard
 Extended pack runtime [X]% in field tests by adding a cutoff that drops non-critical loads at [Y] V
 Experience
-Power Subsystem Engineer, State University CubeSat Team
+Power Subsystem Engineer, [Student satellite team]
 Fall 24 - Spring 26
 Cut power board mass by [X] g by replacing [Y] linear regulators with one buck converter board, which then passed thermal vacuum testing from [Z] °C to [W] °C on the first attempt with no board rework needed
 Found [X] battery protection faults before launch review by writing a Python test script that runs [Y] charge and discharge cycles overnight and flags any cell that drifts more than [Z] mV from the pack average
-Undergraduate Research Assistant, Power Electronics Lab, State University
+Undergraduate Research Assistant, [University lab]
 Summer 25
 Reduced GaN switching loss measurement error from [X]% to [Y]% by adding probe deskew calibration to the double-pulse test setup, which the lab now uses as the standard setup for every GaN device it tests
 Cut test time per device from [X] to [Y] minutes by automating oscilloscope capture with Python and PyVISA
 Education
 B.S. Electrical Engineering, GPA: [X.XX]/4.00
 Expected Spring 27
-State University
+[University]
 Relevant coursework: Signals and Systems, Electronics I and II, Power Electronics, Digital Design, Embedded Systems, Control Systems, Electromagnetics, Probability for Engineers, Microcontroller Lab
 Activities: Tau Beta Pi, IEEE student branch
 Skills
