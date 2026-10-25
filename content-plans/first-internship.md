@@ -137,10 +137,10 @@ Show Jane Doe's build as Synchronous Buck Converter for a CubeSat Power Board. C
 Synchronous Buck Converter for a CubeSat Power Board
 Fall 25 - Spring 26
 KiCad, LTspice, STM32, Embedded C, bench testing with an electronic load
-Reached 92% peak efficiency at a 2 A load, measured on an electronic load, by replacing the catch diode with a synchronous MOSFET stage and tuning dead time to 40 ns with an STM32 timer, up from 84% before
-Cut output ripple from 85 mV to 18 mV peak to peak by redesigning the 4-layer PCB in KiCad with a solid ground plane and a tighter switching loop, then resizing the LC output filter for 500 kHz switching
-Wrote STM32 firmware in C that samples input current at 1 kHz and shuts the rail down within 50 µs of an overcurrent fault, which kept the board alive through 3 deliberate short-circuit tests at a full 12 V input
-Kept the FETs under 50 °C at full load by adding thermal vias and a 2 oz copper pour under them
+Reached [X]% peak efficiency at a [Y] A load, measured on an electronic load, by replacing the catch diode with a synchronous MOSFET stage and tuning dead time to [Z] ns with an STM32 timer, up from [W]% before
+Cut output ripple from [X] mV to [Y] mV peak to peak by redesigning the [Z]-layer PCB in KiCad with a solid ground plane and a tighter switching loop, then resizing the LC output filter for [W] kHz switching
+Wrote STM32 firmware in C that samples input current at [X] kHz and shuts the rail down within [Y] µs of an overcurrent fault, which kept the board alive through [Z] deliberate short-circuit tests at a full [W] V input
+Kept the FETs under [X] °C at full load by adding thermal vias and a [Y] oz copper pour under them
 ```
 
 ### Starting on a student budget
@@ -178,12 +178,12 @@ Show a rule for a student who can join only one of a team or a lab. The sources 
 ```
 Power Subsystem Engineer, State University CubeSat Team
 Fall 24 - Spring 26
-Cut power board mass by 30 g by replacing 6 linear regulators with one buck converter board, which then passed thermal vacuum testing from -20 °C to 60 °C on the first attempt with no board rework needed
-Found 2 battery protection faults before launch review by writing a Python test script that runs 200 charge and discharge cycles overnight and flags any cell that drifts more than 20 mV from the pack average
+Cut power board mass by [X] g by replacing [Y] linear regulators with one buck converter board, which then passed thermal vacuum testing from [Z] °C to [W] °C on the first attempt with no board rework needed
+Found [X] battery protection faults before launch review by writing a Python test script that runs [Y] charge and discharge cycles overnight and flags any cell that drifts more than [Z] mV from the pack average
 Undergraduate Research Assistant, Power Electronics Lab, State University
 Summer 25
-Reduced GaN switching loss measurement error from 12% to 3% by adding probe deskew calibration to the double-pulse test setup, which the lab now uses as the standard setup for every GaN device it tests
-Cut test time per device from 40 to 8 minutes by automating oscilloscope capture with Python and PyVISA
+Reduced GaN switching loss measurement error from [X]% to [Y]% by adding probe deskew calibration to the double-pulse test setup, which the lab now uses as the standard setup for every GaN device it tests
+Cut test time per device from [X] to [Y] minutes by automating oscilloscope capture with Python and PyVISA
 ```
 
 The projects section holds the disagreement. The side that discounts personal projects points here. That claim is `needs: citation` until the comment is pinned.
@@ -226,14 +226,14 @@ Bluetooth Battery Monitor
 Fall 24
 Power Subsystem Engineer, State University CubeSat Team
 Fall 24 - Spring 26
-FPGA Five-Band Audio Equalizer
+FPGA [N]-Band Audio Equalizer
 Spring 25
 Undergraduate Research Assistant, Power Electronics Lab, State University
 Summer 25
 Synchronous Buck Converter for a CubeSat Power Board
 Fall 25 - Spring 26
 School: State University
-B.S. Electrical Engineering, GPA: 3.62/4.00
+B.S. Electrical Engineering, GPA: [X.XX]/4.00
 Expected Spring 27
 ```
 
