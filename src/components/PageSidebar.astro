@@ -1,0 +1,32 @@
+---
+import Default from '@astrojs/starlight/components/PageSidebar.astro';
+import { PageBacklinks, PageGraph } from 'starlight-site-graph/components';
+
+const { entry } = Astro.locals.starlightRoute;
+const splash = entry.data.template === 'splash';
+const keyTerms = entry.data.keyTerms ?? [];
+---
+
+{
+	splash ? null : (
+		<>
+			<PageGraph class="right-sidebar-panel slsg-graph-panel">
+				<h2 slot="title">On this site</h2>
+			</PageGraph>
+			<Default />
+			{keyTerms.length > 0 && (
+				<div class="right-sidebar-panel eep-margin">
+					<h2>Key terms</h2>
+					<ul>
+						{keyTerms.map((term) => (
+							<li>{term}</li>
+						))}
+					</ul>
+				</div>
+			)}
+			<PageBacklinks class="right-sidebar-panel slsg-backlinks-panel">
+				<h2 slot="title">Linked from</h2>
+			</PageBacklinks>
+		</>
+	)
+}
