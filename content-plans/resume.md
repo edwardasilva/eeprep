@@ -16,7 +16,7 @@ Jane's exact header is this.
 
 ```
 Jane Doe
-(555) 555-0142 | jdoe@example.com | linkedin.com/in/jane-doe-example | Columbus, OH | US citizen | Willing to relocate
+(555) 555-0142 | jdoe@example.com | linkedin.com/in/jane-doe-example | [City, ST] | [Work authorization] | Willing to relocate
 ```
 
 The before draft centers that name. It draws a rule under the name, writes "Phone:" and "Email:" labels, and uses a LinkedIn logo instead of the URL.
