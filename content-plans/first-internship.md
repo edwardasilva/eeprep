@@ -87,7 +87,7 @@ Say that one missed summer is a setback you can recover from. Students from the 
 On the thread with about 500 applications, commenters named three bridges. Look at technologist roles. Join a design team such as FSAE, a student car-racing competition. Or take an 8 to 12 month co-op. A co-op is a long internship split across school terms. Long co-ops often convert to full-time offers.
 [@reddit-2026-no-internships-projects]
 
-The persona file names no missed term. Summer 25 is Undergraduate Research Assistant, Power Electronics Lab, State University. Leave Jane Doe's bridge unset. These threads ask the same question.
+The persona file names no missed term. Summer 25 is Undergraduate Research Assistant, [University lab]. Leave Jane Doe's bridge unset. These threads ask the same question.
 [@reddit-2026-cooked-junior]
 [@reddit-2026-no-internship-cooked]
 [@reddit-2026-sophomore-no-internship]
@@ -173,14 +173,14 @@ These threads ask the same question.
 [@reddit-2026-undergrad-research]
 [@x-irishScott2-2026-kendall]
 
-Show a rule for a student who can join only one of a team or a lab. The sources say both count. The choice rule is `needs: citation`. The persona file lists both seats and does not pick one. One seat is Power Subsystem Engineer, State University CubeSat Team. Its dates are Fall 24 - Spring 26. The other seat is Undergraduate Research Assistant, Power Electronics Lab, State University. Its dates are Summer 25. Copy these persona lines verbatim.
+Show a rule for a student who can join only one of a team or a lab. The sources say both count. The choice rule is `needs: citation`. The persona file lists both seats and does not pick one. One seat is Power Subsystem Engineer, [Student satellite team]. Its dates are Fall 24 - Spring 26. The other seat is Undergraduate Research Assistant, [University lab]. Its dates are Summer 25. Copy these persona lines verbatim.
 
 ```
-Power Subsystem Engineer, State University CubeSat Team
+Power Subsystem Engineer, [Student satellite team]
 Fall 24 - Spring 26
 Cut power board mass by [X] g by replacing [Y] linear regulators with one buck converter board, which then passed thermal vacuum testing from [Z] °C to [W] °C on the first attempt with no board rework needed
 Found [X] battery protection faults before launch review by writing a Python test script that runs [Y] charge and discharge cycles overnight and flags any cell that drifts more than [Z] mV from the pack average
-Undergraduate Research Assistant, Power Electronics Lab, State University
+Undergraduate Research Assistant, [University lab]
 Summer 25
 Reduced GaN switching loss measurement error from [X]% to [Y]% by adding probe deskew calibration to the double-pulse test setup, which the lab now uses as the standard setup for every GaN device it tests
 Cut test time per device from [X] to [Y] minutes by automating oscilloscope capture with Python and PyVISA
@@ -224,15 +224,15 @@ Issue #15 draws the figure. This file leaves the drawing to that issue. The figu
 Sales Associate, Retail store, 06/2023 - 08/2024
 Bluetooth Battery Monitor
 Fall 24
-Power Subsystem Engineer, State University CubeSat Team
+Power Subsystem Engineer, [Student satellite team]
 Fall 24 - Spring 26
 FPGA [N]-Band Audio Equalizer
 Spring 25
-Undergraduate Research Assistant, Power Electronics Lab, State University
+Undergraduate Research Assistant, [University lab]
 Summer 25
 Synchronous Buck Converter for a CubeSat Power Board
 Fall 25 - Spring 26
-School: State University
+School: [University]
 B.S. Electrical Engineering, GPA: [X.XX]/4.00
 Expected Spring 27
 ```
