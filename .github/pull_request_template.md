@@ -17,7 +17,7 @@ Write what changed and why.
 - [ ] The base branch is an `epic/*` branch, not `main`.
 - [ ] The pull request has its `epic:` label and one `type:` label.
 - [ ] Every claim, quote, or lesson cites a source in `references.bib`.
-- [ ] The prose passes the self-check in `STYLE.md`. It has no em dashes or semicolons, no cut words, and sentence-case headings.
+- [ ] The prose passes the self-check in `docs/STYLE.md`. It has no em dashes or semicolons, no cut words, and sentence-case headings.
 - [ ] Technical content (math, circuits, code) is flagged for an Engineer Bot review with the `technical-accuracy` label.
 - [ ] Figures were re-rendered from source.
 - [ ] Nothing gets published or deployed.
