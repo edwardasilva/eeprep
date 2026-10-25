@@ -23,7 +23,7 @@
   pdftitle    = {Jane Doe - Resume},
   pdfauthor   = {Jane Doe},
   pdfsubject  = {Electrical engineering internship resume},
-  pdfkeywords = {electrical engineering, power electronics, PCB design, KiCad, LTspice, STM32, embedded C, FPGA, Verilog, Python}
+  pdfkeywords = {electrical engineering, power electronics, PCB design, KiCad, LTspice, STM[X], embedded C, FPGA, Verilog, Python}
 }
 
 %% Rule: consistent spacing. Every gap between sections comes from this one
@@ -78,17 +78,17 @@ Columbus, OH\sep US citizen\sep Willing to relocate\par}
 \section{Projects}
 
 \entry{Synchronous Buck Converter for a CubeSat Power Board}{Fall 25 - Spring 26}
-\skillsused{KiCad, LTspice, STM32, Embedded C, bench testing with an electronic load}
+\skillsused{KiCad, LTspice, STM[X], Embedded C, bench testing with an electronic load}
 \begin{itemize}
-  \item Reached [X]\% peak efficiency at a [X] A load, measured on an electronic load, by replacing the catch diode with a synchronous MOSFET stage and tuning dead time to [X] ns with an STM32 timer, up from [X]\% before
+  \item Reached [X]\% peak efficiency at a [X] A load, measured on an electronic load, by replacing the catch diode with a synchronous MOSFET stage and tuning dead time to [X] ns with an STM[X] timer, up from [X]\% before
   \item Cut output ripple from [X] mV to [X] mV peak to peak by redesigning the [X]-layer PCB in KiCad with a solid ground plane and a tighter switching loop, then resizing the LC output filter for [X] kHz switching
-  \item Wrote STM32 firmware in C that samples input current at [X] kHz and shuts the rail down within [X] \textmu s of an overcurrent fault, which kept the board alive through [X] deliberate short-circuit tests at a full [X] V input
-  \item Kept the FETs under [X] \textdegree{}C at full load by adding thermal vias and a 2 oz copper pour under them
+  \item Wrote STM[X] firmware in C that samples input current at [X] kHz and shuts the rail down within [X] \textmu s of an overcurrent fault, which kept the board alive through [X] deliberate short-circuit tests at a full [X] V input
+  \item Kept the FETs under [X] \textdegree{}C at full load by adding thermal vias and a [X] oz copper pour under them
 \end{itemize}
 \vspace{\itemgap}
 
 \entry{FPGA Five-Band Audio Equalizer}{Spring 25}
-\skillsused{Verilog, Vivado, MATLAB, Basys 3 FPGA, fixed-point DSP}
+\skillsused{Verilog, Vivado, MATLAB, Basys [X] FPGA, fixed-point DSP}
 \begin{itemize}
   \item Processed [X] kHz stereo audio at [X.X] ms latency by pipelining [X] [X]-tap FIR filters in Verilog
   \item Matched the MATLAB response within [X.X] dB from [X] Hz to [X] kHz by testing coefficients in Vivado
@@ -97,9 +97,9 @@ Columbus, OH\sep US citizen\sep Willing to relocate\par}
 \vspace{\itemgap}
 
 \entry{Bluetooth Battery Monitor}{Fall 24}
-\skillsused{ESP32, Arduino C++, Python, INA219 current sensor}
+\skillsused{ESP[X], Arduino C++, Python, INA[X] current sensor}
 \begin{itemize}
-  \item Tracked [X] Li-ion cells within [X] mV each with an ESP32 monitor that streams to a Python dashboard
+  \item Tracked [X] Li-ion cells within [X] mV each with an ESP[X] monitor that streams to a Python dashboard
   \item Extended pack runtime [X]\% in field tests by adding a cutoff that drops non-critical loads at [X.X] V
 \end{itemize}
 
@@ -127,7 +127,7 @@ Columbus, OH\sep US citizen\sep Willing to relocate\par}
 %% No period after the last item.
 \section{Education}
 
-\entry{B.S. Electrical Engineering, GPA: [X.XX]/4.00}{Expected Spring 27}
+\entry{B.S. Electrical Engineering, GPA: [X.XX]/[X.XX]}{Expected Spring 27}
 State University\par
 \textbf{Relevant coursework:} Signals and Systems, Electronics I and II, Power Electronics, Digital Design, Embedded Systems, Control Systems, Electromagnetics, Probability for Engineers, Microcontroller Lab\par
 \textbf{Activities:} Tau Beta Pi, IEEE student branch\par
@@ -140,7 +140,7 @@ State University\par
 %% rework station) if you have bench tools to list.
 \section{Skills}
 
-\textbf{Certifications:} CSWA (Certified SolidWorks Associate), IPC J-STD-001 soldering\par
+\textbf{Certifications:} CSWA (Certified SolidWorks Associate), IPC J-STD-[X] soldering\par
 \textbf{Software:} KiCad, LTspice, MATLAB, Vivado, Python, C, Verilog, SolidWorks, Git\par
 
 \end{document}
