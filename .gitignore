@@ -5,3 +5,8 @@ public/resume/*.out
 public/resume/*.fls
 public/resume/*.fdb_latexmk
 public/resume/*.synctex.gz
+node_modules/
+dist/
+.astro/
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
