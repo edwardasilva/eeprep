@@ -20,7 +20,7 @@ tokens:
   - '\bhighlights?\b'
   - '\binterplay\b'
   - '\bintricate\b'
-  - '\bkey\b'
+  - '\bkey (?:takeaways?|insights?|factors?|points?|roles?|aspects?|steps?|skills?|lessons?|concepts?|ideas?|things?)\b'
   - '\blandscape\b'
   - '\bleverag(?:e|es|ed|ing)\b'
   - '\bmeticulous(?:ly)?\b'
