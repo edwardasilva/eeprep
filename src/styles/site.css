@@ -117,6 +117,25 @@
 	color: var(--eep-ink);
 	border: var(--eep-border);
 }
+/* theme.css `.sl-markdown-content a` beats `.eep-btn` and paints ink on crimson. */
+.sl-markdown-content a.eep-btn {
+	background: var(--eep-ink);
+	color: var(--eep-paper);
+	text-decoration: none;
+}
+.sl-markdown-content a.eep-btn:hover {
+	background: var(--eep-ink);
+	color: var(--eep-paper);
+}
+.sl-markdown-content a.eep-btn.eep-btn-quiet {
+	background: transparent;
+	color: var(--eep-ink);
+	border: var(--eep-border);
+}
+.sl-markdown-content a.eep-btn.eep-btn-quiet:hover {
+	background: transparent;
+	color: var(--eep-ink);
+}
 .eep-cards {
 	list-style: none;
 	padding: 0;
@@ -172,6 +191,10 @@
 }
 
 @media (max-width: 50rem) {
+	:root,
+	:root[data-theme='light'] {
+		--sl-nav-height: 6.25rem;
+	}
 	.header {
 		flex-wrap: wrap;
 	}

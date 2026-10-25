@@ -14,6 +14,13 @@ const wiki = loadWikiIndex();
 export default defineConfig({
 	site: 'https://eeprep.com',
 	trailingSlash: 'always',
+	vite: {
+		define: {
+			// The site graph bundles micromatch, which reads these in the browser.
+			'process.platform': JSON.stringify('linux'),
+			'process.version': JSON.stringify('v22.23.4'),
+		},
+	},
 	markdown: {
 		processor: unified({
 			gfm: true,

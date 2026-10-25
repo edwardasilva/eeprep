@@ -2,7 +2,7 @@
 // Sun/moon button. With no saved choice, ThemeProvider follows the device.
 ---
 
-<button class="eep-theme" type="button" id="eep-theme" aria-label="Switch color theme">
+<button class="eep-theme" type="button" aria-label="Switch color theme">
 	<svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
 		<circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.75"></circle>
 		<path
@@ -25,24 +25,33 @@
 
 <script>
 	const storageKey = 'starlight-theme';
-	const button = document.getElementById('eep-theme');
+
+	function themeButtons(): HTMLButtonElement[] {
+		return [...document.querySelectorAll('.eep-theme')].filter(
+			(node): node is HTMLButtonElement => node instanceof HTMLButtonElement,
+		);
+	}
 
 	function currentTheme(): 'light' | 'dark' {
 		return document.documentElement.dataset.theme === 'light' ? 'light' : 'dark';
 	}
 
+	function labelFor(theme: 'light' | 'dark'): string {
+		return theme === 'light' ? 'Switch to dark' : 'Switch to light';
+	}
+
 	function applyTheme(theme: 'light' | 'dark'): void {
 		document.documentElement.dataset.theme = theme;
 		localStorage.setItem(storageKey, theme);
-		button?.setAttribute('aria-label', theme === 'light' ? 'Switch to dark' : 'Switch to light');
+		for (const button of themeButtons()) button.setAttribute('aria-label', labelFor(theme));
 	}
 
-	button?.addEventListener('click', () => {
-		applyTheme(currentTheme() === 'light' ? 'dark' : 'light');
-	});
-
-	button?.setAttribute(
-		'aria-label',
-		currentTheme() === 'light' ? 'Switch to dark' : 'Switch to light',
-	);
+	for (const button of themeButtons()) {
+		if (button.dataset.bound === 'true') continue;
+		button.dataset.bound = 'true';
+		button.addEventListener('click', () => {
+			applyTheme(currentTheme() === 'light' ? 'dark' : 'light');
+		});
+		button.setAttribute('aria-label', labelFor(currentTheme()));
+	}
 </script>
