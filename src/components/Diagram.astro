@@ -27,7 +27,7 @@ svg = svg.replace(/<\?xml[^>]*>|<!DOCTYPE[^>]*>|<metadata>[\s\S]*?<\/metadata>/g
          .replace(/#[0-9a-fA-F]{6}\b|#fff\b/g, (h) => MAP[h.toLowerCase()] ?? h)
          .replace(/\s(width|height)="[^"]*pt"/g, '')                      // let CSS size it
          .replace('<svg', `<svg role="img" aria-label="${alt.replace(/"/g, '&quot;')}"`);
-const id = `fig-${num.replace('.', '-')}`;
+const id = `fig-${num.replaceAll('.', '-')}`;
 ---
 <figure class:list={['eep-fig', { wide }]} id={id}>
   <Fragment set:html={svg} />
