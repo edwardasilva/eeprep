@@ -4,7 +4,7 @@ This file is the outline for the Your first internship page. It is part of #4. T
 
 The page answers the question inside 8 of the 20 ranked student questions. How do you get a first real hardware experience? Those items are 1, 5, 12, 13, 14, 15, 17, and 18 in `content-plans/content-strategy.md`. They carry 52 source citations. Some posts support more than one item, so 52 counts citations.
 
-The only example student is Alex Rivera. The strings below are copied from the persona file. Do not add a school, a GPA, a project, a metric, or a certification unless that file lists it.
+The only example student is Jane Doe. The strings below are copied from the persona file. Do not add a school, a GPA, a project, a metric, or a certification unless that file lists it.
 
 Paraphrase Reddit. Do not put Reddit comment text in quotation marks. No Reddit thread was opened directly. Read means the post or a comment showed up in search results, and that covers 21 threads. Search-only means the title and URL only, and that covers 30 threads. Every Reddit source needs a browser check before a page quotes it.
 
@@ -16,9 +16,9 @@ One commenter got two EE internships at a community college, before any core EE 
 [@reddit-2026-internships-before-classes]
 A PCB is a board you design. Community college and transfer students start in this section.
 
-Show Alex's graduation as Expected Spring 27. Show the earliest job as Sales Associate, Retail store, 06/2023 - 08/2024. That retail line is only on the Before draft. One post asks how a senior in fast food gets a first role in the space industry.
+Show Jane Doe's graduation as Expected Spring 27. Show the earliest job as Sales Associate, Retail store, 06/2023 - 08/2024. That retail line is only on the Before draft. One post asks how a senior in fast food gets a first role in the space industry.
 [@x-sTYLz2021-2026-space]
-That post is the question. Alex stays the only example student.
+That post is the question. Jane Doe stays the only example student.
 
 The same lesson is in these threads.
 [@reddit-2026-internships-little-experience]
@@ -39,7 +39,7 @@ An EE grad reported 200 or more rejections.
 A junior with a 3.5 GPA applied for Tesla internships and was never contacted.
 [@x-3184_farm_ridge-2025-tesla35]
 
-Show those three research counts on their own. The persona file has no application count for Alex. The longer section stays on the Job market page, under Why online applications go nowhere. This page stops at the 20-application rule, then points the reader to a person.
+Show those three research counts on their own. The persona file has no application count for Jane Doe. The longer section stays on the Job market page, under Why online applications go nowhere. This page stops at the 20-application rule, then points the reader to a person.
 
 ## Cold outreach and career fairs
 
@@ -87,7 +87,7 @@ Say that one missed summer is a setback you can recover from. Students from the 
 On the thread with about 500 applications, commenters named three bridges. Look at technologist roles. Join a design team such as FSAE, a student car-racing competition. Or take an 8 to 12 month co-op. A co-op is a long internship split across school terms. Long co-ops often convert to full-time offers.
 [@reddit-2026-no-internships-projects]
 
-The persona file names no missed term. Summer 25 is Undergraduate Research Assistant, Power Electronics Lab, State University. Leave Alex's bridge unset. These threads ask the same question.
+The persona file names no missed term. Summer 25 is Undergraduate Research Assistant, Power Electronics Lab, State University. Leave Jane Doe's bridge unset. These threads ask the same question.
 [@reddit-2026-cooked-junior]
 [@reddit-2026-no-internship-cooked]
 [@reddit-2026-sophomore-no-internship]
@@ -131,7 +131,7 @@ Students also ask what to put in a portfolio, how to join electronics with code,
 Device knowledge matters more than another coding certificate.
 [@x-ElectronJacob-2026-devices]
 
-Show Alex's build as Synchronous Buck Converter for a CubeSat Power Board. Copy these persona lines verbatim. Add no line that is not in the block.
+Show Jane Doe's build as Synchronous Buck Converter for a CubeSat Power Board. Copy these persona lines verbatim. Add no line that is not in the block.
 
 ```
 Synchronous Buck Converter for a CubeSat Power Board
@@ -157,7 +157,7 @@ Opportunity cost means the other work you give up. That cost is higher than for 
 
 Show a starter list with a price on each line. Look up every price on the day you publish. This research states no prices, so each price is `needs: citation`. Show a three-line note a student can send to book lab time. The idle-scope fact is cited. The note's wording is ours, so leave it uncited.
 
-The persona file states no budget for Alex. Leave the number blank.
+The persona file states no budget for Jane Doe. Leave the number blank.
 
 ### Teams and undergraduate research
 
