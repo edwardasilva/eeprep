@@ -1,10 +1,17 @@
 ---
 import Default from '@astrojs/starlight/components/PageSidebar.astro';
-import { PageBacklinks, PageGraph } from 'starlight-site-graph/components';
+import { PageGraph } from 'starlight-site-graph/components';
+import { buildPageLinks, loadWikiIndex } from '../lib/wiki-index.mjs';
+
+const links = buildPageLinks(loadWikiIndex());
 
 const { entry } = Astro.locals.starlightRoute;
 const splash = entry.data.template === 'splash';
 const keyTerms = entry.data.keyTerms ?? [];
+const here = links[Astro.url.pathname.replace(/^\/+/, '')];
+const backlinks = (here?.backlinks ?? [])
+	.map((key) => ({ href: `/${key}`, title: links[key]?.title ?? key }))
+	.sort((a, b) => a.title.localeCompare(b.title));
 ---
 
 {
@@ -24,9 +31,18 @@ const keyTerms = entry.data.keyTerms ?? [];
 					</ul>
 				</div>
 			)}
-			<PageBacklinks class="right-sidebar-panel slsg-backlinks-panel">
-				<h2 slot="title">Linked from</h2>
-			</PageBacklinks>
+			{backlinks.length > 0 && (
+				<div class="right-sidebar-panel slsg-backlinks-panel">
+					<h2>Linked from</h2>
+					<ul class="slsg-backlinks">
+						{backlinks.map((link) => (
+							<li>
+								<a class="slsg-backlink" href={link.href}>{link.title}</a>
+							</li>
+						))}
+					</ul>
+				</div>
+			)}
 		</>
 	)
 }

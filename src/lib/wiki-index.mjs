@@ -90,3 +90,62 @@ function frontmatterTitle(text, fallback) {
 	}
 	return title;
 }
+
+/**
+ * @typedef {{
+ *   external: boolean,
+ *   exists: boolean,
+ *   title: string,
+ *   links: string[],
+ *   backlinks: string[],
+ * }} PageNode
+ */
+
+/**
+ * Links and backlinks between guide pages, for the "Linked from" card.
+ * starlight-site-graph builds its server-side backlinks from a Markdown scan that only
+ * sees [text](url) links, so it misses every wikilink. Keys are slugs with a trailing
+ * slash and no leading slash, like the plugin's.
+ * @param {{ pages: WikiPage[], contentRoot: string, byKey: Map<string, string> }} wiki
+ * @returns {Record<string, PageNode>}
+ */
+export function buildPageLinks(wiki) {
+	const toKey = (href) => href.replace(/^\/+/, '');
+	/** @type {Record<string, PageNode>} */
+	const sitemap = {};
+	for (const page of wiki.pages) {
+		sitemap[toKey(page.href)] = { external: false, exists: true, title: page.title, links: [], backlinks: [] };
+	}
+	for (const page of wiki.pages) {
+		const from = toKey(page.href);
+		const text = fs.readFileSync(path.join(wiki.contentRoot, page.file), 'utf8');
+		const body = stripFrontmatterAndCode(text);
+		/** @type {Set<string>} */
+		const targets = new Set();
+		for (const match of body.matchAll(/\[\[([^\]]+)\]\]/g)) {
+			const { href } = resolveWikiTarget(match[1], wiki.byKey);
+			if (href) targets.add(toKey(href.split('#')[0]));
+		}
+		for (const match of body.matchAll(/\]\((\/[^)\s#]*)/g)) {
+			const key = toKey(match[1].endsWith('/') ? match[1] : `${match[1]}/`);
+			if (sitemap[key]) targets.add(key);
+		}
+		targets.delete(from);
+		for (const to of targets) {
+			if (!sitemap[to]) continue;
+			sitemap[from].links.push(to);
+			sitemap[to].backlinks.push(from);
+		}
+	}
+	return sitemap;
+}
+
+/** @param {string} text */
+function stripFrontmatterAndCode(text) {
+	let body = text;
+	if (body.startsWith('---')) {
+		const end = body.indexOf('\n---', 3);
+		if (end >= 0) body = body.slice(end + 4);
+	}
+	return body.replace(/```[\s\S]*?```/g, '').replace(/`[^`\n]*`/g, '');
+}

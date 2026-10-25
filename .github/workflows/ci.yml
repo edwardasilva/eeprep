@@ -55,8 +55,7 @@ jobs:
           set -euo pipefail
           base=https://github.com/vale-cli/vale/releases/download/v3.25.1
           curl -fsSL -o /tmp/vale.tar.gz "$base/vale_3.25.1_Linux_64-bit.tar.gz"
-          curl -fsSL -o /tmp/vale_checksums.txt "$base/vale_3.25.1_checksums.txt"
-          (cd /tmp && sha256sum -c --ignore-missing vale_checksums.txt)
+          echo "4bf5c5176b682b1da0830f471584d3494f1c2e27ee3029e1ad6f6661d4962182  /tmp/vale.tar.gz" | sha256sum -c -
           tar -xzf /tmp/vale.tar.gz -C /tmp vale
           sudo mv /tmp/vale /usr/local/bin/vale
           vale --version

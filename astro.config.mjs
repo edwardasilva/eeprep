@@ -15,10 +15,11 @@ export default defineConfig({
 	site: 'https://eeprep.com',
 	trailingSlash: 'always',
 	vite: {
-		define: {
-			// The site graph bundles micromatch, which reads these in the browser.
-			'process.platform': JSON.stringify('linux'),
-			'process.version': JSON.stringify('v22.23.4'),
+		resolve: {
+			// The site graph's client script imports micromatch 4, whose picomatch 2 reads
+			// process.platform and process.version, and those throw in the browser.
+			// picomatch 4's posix build has the same isMatch and no Node globals.
+			alias: [{ find: /^micromatch$/, replacement: 'picomatch/posix' }],
 		},
 	},
 	markdown: {
