@@ -20,3 +20,7 @@ updates:
     target-branch: epic/site-foundation
     labels:
       - dependencies
+    groups:
+      github-actions:
+        patterns:
+          - "*"
