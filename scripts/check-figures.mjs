@@ -32,7 +32,9 @@ for (const source of sources) {
 }
 
 fs.rmSync(tmp, { recursive: true, force: true });
-if (!pathMapCopiesMatch()) failed = true;
+const published = spawnSync(process.execPath, [path.resolve('scripts/publish-path-map.mjs')], { stdio: 'inherit' });
+if (published.status !== 0) failed = true;
+else if (!pathMapCopiesMatch()) failed = true;
 if (failed) process.exit(1);
 console.log(`Figure SVGs match ${sources.length} source${sources.length === 1 ? '' : 's'}.`);
 

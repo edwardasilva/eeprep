@@ -3,5 +3,6 @@ dist/
 .astro/
 __pycache__/
 *.pyc
+public/diagrams/get-hired/path-map/
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
