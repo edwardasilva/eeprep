@@ -7,8 +7,8 @@
     "node": ">=22.23.4"
   },
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
+    "dev": "node scripts/publish-path-map.mjs && astro dev",
+    "build": "node scripts/publish-path-map.mjs && astro build",
     "preview": "astro preview",
     "render:figures": "node scripts/render-figures.mjs",
     "check:figures": "node scripts/check-figures.mjs",
