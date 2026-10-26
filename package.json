@@ -14,6 +14,8 @@
     "check:figures": "node scripts/check-figures.mjs",
     "check:wikilinks": "node scripts/check-wikilinks.mjs",
     "test:wikilinks": "node scripts/test-wikilinks.mjs",
+    "check:citations": "node scripts/check-citations.mjs",
+    "test:citations": "node scripts/test-citations.mjs",
     "check:links": "node scripts/check-links.mjs",
     "check:pr-body": "node scripts/check-pr-body.mjs",
     "postinstall": "node scripts/patch-site-graph.mjs"

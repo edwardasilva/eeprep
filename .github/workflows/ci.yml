@@ -42,6 +42,8 @@ jobs:
       - run: npm ci
       - run: npm run test:wikilinks
       - run: npm run check:wikilinks
+      - run: npm run test:citations
+      - run: npm run check:citations
       - run: npm run check:figures
       - run: npm run build
       - run: npm run check:links

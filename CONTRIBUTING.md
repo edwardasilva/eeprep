@@ -58,6 +58,8 @@ Pull requests into `main` and `epic/**` run three jobs:
 - `npm ci`, wikilink check, figure regeneration check, production build, and HTML link check
 - Vale, using `docs/STYLE.md`, on `src/content/docs`
 
+The build job also runs `npm run test:citations` and `npm run check:citations`. The check passes with a notice when `references.bib` is absent.
+
 There is no deploy workflow. Do not publish the site, change DNS, or turn on GitHub Pages.
 
 ## Local commands
