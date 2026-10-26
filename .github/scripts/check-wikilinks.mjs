@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { loadWikiIndex, pageHeadingIds, resolveWikiTarget, splitWikiTarget } from '../src/lib/wiki-index.mjs';
+import { loadWikiIndex, pageHeadingIds, resolveWikiTarget, splitWikiTarget } from '../../src/lib/wiki-index.mjs';
 
 const { byKey, pages, contentRoot } = loadWikiIndex();
 const linkRe = /\[\[([^\]\n]+)\]\]/g;

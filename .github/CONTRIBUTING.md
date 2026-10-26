@@ -46,7 +46,7 @@ Lane ownership is this table, not a `CODEOWNERS` file. The lane owner resolves c
 
 | Lane | Paths | Owner |
 | --- | --- | --- |
-| Design | `src/styles/`, figure styles under `diagrams/_style/` | Creative Bot |
+| Design | `src/styles/`, figure styles under `src/diagrams/style/` | Creative Bot |
 | Content | `src/content/` | Strategy Bot |
 | Engineering | config, CI, and the build | Engineer Bot |
 
@@ -56,7 +56,7 @@ Pull requests into `main` and `epic/**` run three jobs:
 
 - the body contains `Part of #<issue>` (Dependabot and `no-epic` skip this)
 - `npm ci`, wikilink check, figure regeneration check, production build, and HTML link check
-- Vale, using `docs/STYLE.md`, on `src/content/docs`
+- Vale, using `docs/STYLE.md`, on `src/content/docs` (`vale --config .github/vale/.vale.ini src/content/docs`)
 
 There is no deploy workflow. Do not publish the site, change DNS, or turn on GitHub Pages.
 
