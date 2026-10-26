@@ -2,9 +2,9 @@
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
 import path from 'node:path';
-import { buildPageLinks, loadWikiIndex, pageHeadingIds, resolveWikiTarget } from '../src/lib/wiki-index.mjs';
+import { buildPageLinks, loadWikiIndex, pageHeadingIds, resolveWikiTarget } from '../../src/lib/wiki-index.mjs';
 
-const fixtures = path.resolve('scripts/fixtures/wikilinks');
+const fixtures = path.resolve('.github/scripts/fixtures/wikilinks');
 const good = loadWikiIndex(path.join(fixtures, 'good'));
 
 assert.equal(resolveWikiTarget('Target page', good.byKey).href, '/target-page/');
@@ -21,7 +21,7 @@ assert.deepEqual(links['target-page/']?.backlinks, ['linker/']);
 
 /** @param {string} dir */
 const check = (dir) =>
-	spawnSync(process.execPath, ['scripts/check-wikilinks.mjs'], {
+	spawnSync(process.execPath, ['.github/scripts/check-wikilinks.mjs'], {
 		env: { ...process.env, CONTENT_ROOT: path.join(fixtures, dir) },
 		encoding: 'utf8',
 	});

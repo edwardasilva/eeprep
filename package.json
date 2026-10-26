@@ -4,19 +4,19 @@
   "type": "module",
   "version": "0.0.0",
   "engines": {
-    "node": ">=22.23.4"
+    "node": ">=22.23.4 <23"
   },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "render:figures": "node scripts/render-figures.mjs",
-    "check:figures": "node scripts/check-figures.mjs",
-    "check:wikilinks": "node scripts/check-wikilinks.mjs",
-    "test:wikilinks": "node scripts/test-wikilinks.mjs",
-    "check:links": "node scripts/check-links.mjs",
-    "check:pr-body": "node scripts/check-pr-body.mjs",
-    "postinstall": "node scripts/patch-site-graph.mjs"
+    "render:figures": "node .github/scripts/render-figures.mjs",
+    "check:figures": "node .github/scripts/check-figures.mjs",
+    "check:wikilinks": "node .github/scripts/check-wikilinks.mjs",
+    "test:wikilinks": "node .github/scripts/test-wikilinks.mjs",
+    "check:links": "node .github/scripts/check-links.mjs",
+    "check:pr-body": "node .github/scripts/check-pr-body.mjs",
+    "postinstall": "node .github/scripts/patch-site-graph.mjs"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "7.3.4",

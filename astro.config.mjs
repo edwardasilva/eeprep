@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import { unified } from '@astrojs/markdown-remark';
@@ -10,6 +11,8 @@ import rehypeEqIds from './src/plugins/rehype-eq-ids.mjs';
 import { loadWikiIndex, normalizeWikiName, resolveWikiTarget, splitWikiTarget } from './src/lib/wiki-index.mjs';
 
 const wiki = loadWikiIndex();
+const lightCodeTheme = JSON.parse(readFileSync(new URL('./src/styles/ec-eeprep-light.json', import.meta.url), 'utf8'));
+const darkCodeTheme = JSON.parse(readFileSync(new URL('./src/styles/ec-eeprep-dark.json', import.meta.url), 'utf8'));
 
 export default defineConfig({
 	site: 'https://eeprep.com',
@@ -88,6 +91,34 @@ export default defineConfig({
 				ThemeSelect: './src/components/ThemeSelect.astro',
 				PageTitle: './src/components/PageTitle.astro',
 				PageSidebar: './src/components/PageSidebar.astro',
+			},
+			// First dark theme, then first light theme. Starlight maps those to the site theme.
+			expressiveCode: {
+				themes: [darkCodeTheme, lightCodeTheme],
+				useStarlightDarkModeSwitch: true,
+				styleOverrides: {
+					borderRadius: '4px',
+					borderColor: 'var(--eep-rule)',
+					borderWidth: '1px',
+					codeFontFamily: 'var(--eep-font-mono)',
+					codeFontSize: '0.875rem',
+					codeLineHeight: '1.75',
+					codePaddingBlock: '1.125rem',
+					codePaddingInline: '1.375rem',
+					uiFontFamily: 'var(--eep-font-mono)',
+					uiFontSize: '0.71875rem',
+					frames: {
+						shadowColor: 'transparent',
+						editorTabBarBackground: 'var(--eep-sunken)',
+						editorActiveTabBackground: 'var(--eep-sunken)',
+						editorActiveTabIndicatorTopColor: 'transparent',
+						editorActiveTabIndicatorBottomColor: 'var(--eep-accent)',
+						editorTabBarBorderBottomColor: 'var(--eep-rule)',
+						terminalTitlebarBackground: 'var(--eep-sunken)',
+						terminalBackground: 'var(--eep-sunken)',
+						frameBoxShadowCssValue: 'none',
+					},
+				},
 			},
 			sidebar: [
 				{
