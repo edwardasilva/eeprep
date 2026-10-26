@@ -25,7 +25,7 @@ Pages live in `src/content/docs/` and build as a Starlight site:
 
 Open `src/content/docs` as an Obsidian vault. Links are `[[wikilinks]]`. Each page can show backlinks and a graph. Callouts use Obsidian syntax (`> [!tip] Main idea`). Math is KaTeX. The bibliography file is added on the citations epic.
 
-The resume page is written. The job market, how to study, and signals and DSP pages are still placeholders. So is the sample page, which is there to prove the page tools.
+The four launch pages (resume, the job market, how to study, signals and DSP) are marked placeholders. So is the sample page, which is there to prove the page tools.
 
 Writing rules are in `docs/STYLE.md`. How epics, branches, and reviews work is in `CONTRIBUTING.md`.
 
