@@ -20,7 +20,10 @@ export const collections = {
 		}),
 	}),
 	resources: defineCollection({
-		loader: glob({ pattern: '**/*.{md,yml,yaml}', base: './src/content/resources' }),
+		loader: glob({
+			pattern: '**/*.{md,yml,yaml}',
+			base: './src/content/resources',
+		}),
 		schema: z.object({
 			title: z.string(),
 			url: z.string().url(),

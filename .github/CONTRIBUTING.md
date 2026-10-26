@@ -30,10 +30,10 @@ This repository's issue templates and pull request template are owned by a separ
 
 ## Branches
 
-| Branch | What lands there |
-| --- | --- |
-| `main` | Finished epics, merged by Edward |
-| `epic/<name>` | The long-lived epic branch |
+| Branch                 | What lands there                         |
+| ---------------------- | ---------------------------------------- |
+| `main`                 | Finished epics, merged by Edward         |
+| `epic/<name>`          | The long-lived epic branch               |
 | `feat/<name>/<change>` | One small change, reviewed into the epic |
 
 Git stores a branch as a file under `refs/heads/`. While `epic/site-foundation` exists, Git cannot also create `epic/site-foundation/skeleton`, because that path would have to be both a file and a directory. Put the epic name in a `feat/<name>/<change>` branch, and open the pull request into `epic/<name>`.
@@ -44,11 +44,11 @@ Do not push straight to `main` or to someone else's epic branch.
 
 Lane ownership is this table, not a `CODEOWNERS` file. The lane owner resolves conflicts in that lane.
 
-| Lane | Paths | Owner |
-| --- | --- | --- |
-| Design | `src/styles/`, figure styles under `src/diagrams/style/` | Creative Bot |
-| Content | `src/content/` | Strategy Bot |
-| Engineering | config, CI, and the build | Engineer Bot |
+| Lane        | Paths                                                    | Owner        |
+| ----------- | -------------------------------------------------------- | ------------ |
+| Design      | `src/styles/`, figure styles under `src/diagrams/style/` | Creative Bot |
+| Content     | `src/content/`                                           | Strategy Bot |
+| Engineering | config, CI, and the build                                | Engineer Bot |
 
 ## Checks
 

@@ -1,6 +1,6 @@
 name: Technical error
 description: Report a wrong equation, circuit, figure, or code sample.
-title: "Technical error: "
+title: 'Technical error: '
 labels:
   - bug
   - technical-accuracy

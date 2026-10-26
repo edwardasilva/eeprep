@@ -1,5 +1,5 @@
 extends: existence
-message: "No bold for emphasis."
+message: 'No bold for emphasis.'
 level: error
 scope: raw
 nonword: true
