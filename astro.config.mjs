@@ -94,6 +94,7 @@ export default defineConfig({
 					label: 'Get hired',
 					items: [
 						{ label: 'Get hired', slug: 'get-hired' },
+						{ label: 'Your first internship', slug: 'get-hired/first-internship' },
 						{ label: 'Resume', slug: 'get-hired/resume' },
 						{ label: 'The job market', slug: 'get-hired/the-job-market' },
 					],

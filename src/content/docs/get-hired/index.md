@@ -6,6 +6,6 @@ placeholder: true
 ---
 
 > [!warning] Placeholder
-> This page is not written yet.
+> This section page is not written yet.
 
-The getting-hired guide will live here. It is empty on purpose.
+[[Your first internship]] is the finished page in this section. The resume page and the job market page are still empty.
