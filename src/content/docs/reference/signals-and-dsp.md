@@ -103,7 +103,7 @@ a_m = \frac{1}{n} \sum_{k=0}^{n-1} A_k \exp\left(2\pi i \frac{m k}{n}\right)
 \tag{1.4}
 $$
 
-[@numpy-fft]
+NumPy writes the imaginary unit as $i$. Engineering texts, and the rest of this page, write $j$. [@numpy-fft]
 
 There is more than one DFT. The sign in the exponent can flip, and the factor $1/n$ can sit on either sum. NumPy's default, called backward, leaves the forward sum alone and scales the inverse by $1/n$. [@numpy-fft]
 
@@ -130,7 +130,7 @@ $z$ is complex. When the signal is zero for negative time, the lower limit is 0.
 
 The transfer function is $H(z) = Y(z) / X(z)$. It is the z-transform of the impulse response. For causal signals, convolution in time is a product of z-transforms. [@jos-filters-transfer] [@jos-filters-convolution-theorem]
 
-The frequency response is that function on the unit circle. Set $z = e^{j\omega T}$, with $T$ the sample period. The result is the discrete-time Fourier transform of the impulse response. Add an integer number of sampling rates to $\omega$ and the value repeats. That step walks whole turns around the unit circle. [@jos-filters-frequency]
+The frequency response is that function on the unit circle. Set $z = e^{j\omega T}$, with $T$ the sample period. The result is the discrete-time Fourier transform of the impulse response. Add an integer multiple of $2\pi/T$ to $\omega$ and the value repeats. That step walks whole turns around the unit circle. [@jos-filters-frequency]
 
 Stability is a statement about the impulse response. Julius O. Smith defines a stable filter as one whose impulse response decays to 0 as time goes to infinity. For an irreducible transfer function, every pole must lie inside the unit circle. He calls an isolated pole on the unit circle marginally stable. The impulse response from that pole neither decays nor grows. A pole outside the circle grows like $R^n$ with $R > 1$. [@jos-filters-stability]
 
