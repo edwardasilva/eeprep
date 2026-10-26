@@ -1,0 +1,14 @@
+# Build output
+dist
+.astro
+coverage
+
+# Dependencies
+node_modules
+
+# Lockfiles
+package-lock.json
+
+# Generated figures and the generated WaveDrom skin
+*.svg
+src/diagrams/style/wavedrom-skin-eeprep.js

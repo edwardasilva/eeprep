@@ -52,11 +52,12 @@ Lane ownership is this table, not a `CODEOWNERS` file. The lane owner resolves c
 
 ## Checks
 
-Pull requests into `main` and `epic/**` run three jobs:
+Pull requests into `main` and `epic/**` run four jobs:
 
 - the body contains `Part of #<issue>` (Dependabot and `no-epic` skip this)
 - `npm ci`, wikilink check, figure regeneration check, production build, and HTML link check
 - Vale, using `docs/STYLE.md`, on `src/content/docs` (`vale --config .github/vale/.vale.ini src/content/docs`)
+- `npm run lint` (ESLint, markdownlint, and Prettier)
 
 There is no deploy workflow. Do not publish the site, change DNS, or turn on GitHub Pages.
 
@@ -67,7 +68,11 @@ npm install
 npm run dev
 npm run render:figures
 npm run build
+npm run lint
+npm run format
 ```
+
+`npm run lint` checks ESLint, markdownlint, and Prettier. `npm run format` writes Prettier formatting and applies ESLint fixes.
 
 Open `src/content/docs` as an Obsidian vault. Wikilinks stay in `[[wiki]]` form (`useMarkdownLinks` is off). Same-page links use `[text](#heading)`, because `[[#heading]]` has an empty page name and the wikilink check fails the build. Do not commit `.obsidian/workspace.json`.
 
