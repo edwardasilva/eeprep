@@ -1,0 +1,202 @@
+<!doctype html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>eeprep resume teardown</title><style>/* eeprep resume teardown. Tokens copied from theme/theme.css (light + dark). */
+body.light{--paper:#fdfcfa;--surface:#ffffff;--rule:#e7e5e0;--rule2:#c9c6bf;--ink:#17181c;--text:#2b2d33;--ink2:#4a4d55;--mute:#6f727a;--accent:#a3201d}
+body.dark {--paper:#151412;--surface:#1c1b18;--rule:#2e2c28;--rule2:#46433d;--ink:#efebe4;--text:#d6d1c8;--ink2:#b3ada3;--mute:#8c867c;--accent:#e06a5f}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--paper);color:var(--text);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;font-feature-settings:"cv11","ss01"}
+body.desktop{padding:40px;width:1200px}
+body.mobile{padding:16px 12px;width:390px}
+figure.eep-fig{margin:0;background:var(--surface);border:1px solid var(--rule);border-radius:4px}
+.desktop figure.eep-fig{padding:36px 36px 22px;width:1112px}
+.mobile figure.eep-fig{padding:20px 14px 16px}
+.pair{display:grid}
+.desktop .pair{grid-template-columns:1fr 1fr}
+.mobile .pair{grid-template-columns:1fr;row-gap:24px}
+.plabel{font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);margin:0 0 12px}
+.desktop .plabel{padding-left:34px}
+.mobile .plabel{padding-left:26px}
+.plabel .pl{color:var(--mute);margin-right:8px}
+.stage{position:relative;display:grid}
+.desktop .stage{grid-template-columns:34px 1fr 34px}
+.mobile .stage{grid-template-columns:26px 1fr 26px}
+.pagewrap{position:relative;overflow:hidden;background:#fff;outline:1px solid var(--rule2)}
+.leaders{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+figcaption{display:flex;gap:12px;margin-top:22px;padding-top:14px;border-top:1px solid var(--rule);font-size:13.5px;line-height:1.55;color:var(--ink2)}
+figcaption b{font:500 12px/1.9 'JetBrains Mono',monospace;letter-spacing:.06em;color:var(--accent);white-space:nowrap}
+ol.key{list-style:none;margin:16px 0 0;padding:14px 0 0;border-top:1px solid var(--rule);display:grid;gap:8px 32px;font-size:13.5px;line-height:1.5;color:var(--text)}
+.desktop ol.key{grid-template-columns:1fr 1fr;grid-auto-flow:column;grid-template-rows:repeat(6,auto)}
+.mobile ol.key{grid-template-columns:1fr}
+ol.key li{display:grid;grid-template-columns:22px 1fr;align-items:baseline}
+.kn{font:600 12px 'JetBrains Mono',monospace;color:var(--accent)}
+.wiki{font:500 10.5px 'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);border:1px solid var(--rule2);border-radius:2px;padding:0 4px;margin-left:4px;white-space:nowrap}
+.credit{margin:14px 0 0;padding-top:12px;border-top:1px solid var(--rule);font-size:12.5px;line-height:1.55;color:var(--mute)}
+.credit a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:3px}
+
+/* ---- the resume sheet: US Letter at 96 dpi, scaled by JS ---- */
+.page{position:absolute;left:0;top:0;width:816px;height:1056px;transform-origin:0 0;background:#fff;color:#17181c;
+  font-family:'LM Roman 10','Latin Modern Roman',serif;font-size:14.6px;line-height:1.24;padding:46px 50px 40px}
+.page b{font-weight:700}
+.page h2{font-family:'LM Roman Caps 10','LM Roman 10',serif;font-weight:400;font-size:17px;letter-spacing:.02em;margin:0 0 4px;padding-bottom:1px;border-bottom:.9px solid #17181c}
+.page ul{margin:1px 0 0;padding-left:22px}
+.page li{margin:0 0 1px;font-size:14px}
+.page .row{display:flex;justify-content:space-between;gap:16px}
+.page .dt{white-space:nowrap}
+.page .it{font-style:italic}
+/* After */
+.after-pg .nm{font-family:'LM Roman 10',serif;font-weight:700;font-size:23px;line-height:1.1} /* .tex: \LARGE at 11pt = 17.28pt */
+.after-pg .contact{font-size:12.6px;margin-top:3px;white-space:nowrap}
+.after-pg .contact .sep{padding:0 1px}
+.after-pg{line-height:1.31}
+.after-pg h2{margin-top:15px;font-family:'LM Roman 10',serif;font-weight:700;font-size:16px;letter-spacing:0} /* .tex: \large\bfseries, no small caps */
+.after-pg .ent{margin-bottom:8px}
+.after-pg .ent:last-child{margin-bottom:0}
+.after-pg .sk{font-style:italic;font-size:13.6px}
+.after-pg .ln{font-size:14px}
+/* Before */
+.before-pg{line-height:1.3}
+.before-pg .b-nm{text-align:center;font-size:27px;font-weight:700;letter-spacing:.06em}
+.before-pg .b-rule{border-bottom:1.6px solid #17181c;margin:4px 0 5px}
+.before-pg .b-contact{text-align:center;font-size:13.5px}
+.inlogo{display:inline-block;background:#17181c;color:#fff;font:700 11px/14px Arial,sans-serif;width:15px;height:15px;text-align:center;border-radius:2px;vertical-align:-2px}
+.before-pg h2{text-transform:none}
+.before-pg .obj{margin:0;font-style:italic}
+.twocol{display:grid;grid-template-columns:1fr 1fr;column-gap:30px;padding-left:10px}
+</style></head>
+<body class="dark desktop">
+<figure class="eep-fig wide" id="fig">
+  <div class="pair">
+    <div class="panel before"><div class="plabel"><span class="pl">Fig A</span> Before</div>
+      <div class="stage"><div class="gut"></div><div class="pagewrap"><div class="page before-pg"><div class="b-nm">JANE DOE</div><div class="b-rule"></div>
+<div class="b-contact">Phone: (555) 555-0142 &nbsp;|&nbsp; Email: jdoe@example.com &nbsp;|&nbsp; <span class="inlogo">in</span> LinkedIn</div>
+<h2 style="margin-top:26px">Objective</h2>
+<p class="obj">Motivated and hardworking electrical engineering student seeking an internship where I can apply my skills and grow as an engineer.</p>
+<h2 style="margin-top:12px">Education</h2>
+<div class="row"><b>[University].</b><span class="dt">May 2027</span></div>
+<div>Bachelor of Science in Electrical Engineering.</div><div>GPA: [X.XX].</div>
+<h2 style="margin-top:30px">Skills</h2><div class="twocol">
+<div>• Communication</div><div>• Problem solving</div><div>• Teamwork</div><div>• Leadership</div><div>• Microsoft Office</div><div>• Knowledge of orbital mechanics</div><div>• KiCad</div><div>• MATLAB</div>
+</div>
+<h2 style="margin-top:8px">Work History</h2>
+<div class="row"><b>Sales Associate, Retail store</b><span class="dt">06/2023 - 08/2024</span></div><ul>
+<li>Helped customers</li><li>Ran the register and stocked shelves.</li></ul>
+<div class="row" style="margin-top:14px"><b>Research Assistant, [University lab]</b><span class="dt">Summer 2025</span></div><ul>
+<li>Did measurements on GaN transistors</li><li>Wrote Python scripts for the lab.</li></ul>
+<h2 style="margin-top:22px">Projects</h2>
+<div class="row"><b>Buck converter</b><span class="dt">2025-2026</span></div><ul><li>Designed a buck converter for the CubeSat team</li><li>Made a PCB</li><li>Programmed and optimized the microcontroller code to monitor current and keep the converter safe when</li><li style="list-style:none;margin-left:-4px">there is a fault.</li></ul>
+<div class="row" style="margin-top:4px"><b>FPGA equalizer</b><span class="dt">Jan 2025 - May 2025</span></div><ul><li>Programmed and optimized an audio filter</li></ul>
+<div class="row" style="margin-top:12px"><b>Battery monitor</b><span class="dt">Fall 2024</span></div><ul><li>Built a battery monitor with an ESP32</li></ul>
+<h2 style="margin-top:34px">Extracurricular Activities and Interests</h2>
+<div>CubeSat team member, Tau Beta Pi, IEEE.</div><div>Interests: Reading, music, sports</div></div></div><div class="gut"></div></div></div>
+    <div class="panel after"><div class="plabel"><span class="pl">Fig B</span> After</div>
+      <div class="stage" id="stageB"><div class="gut"></div><div class="pagewrap"><div class="page after-pg"><div class="nm" data-co="1" data-side="l">Jane Doe</div>
+<div class="contact"><span class="cl">(555) 555-0142 <span class="sep">|</span> jdoe@example.com <span class="sep">|</span> linkedin.com/in/jane-doe-example <span class="sep">|</span> [City, ST] <span class="sep">|</span> [Work authorization] <span class="sep">|</span> </span><span data-co="2" data-side="r">Willing to relocate</span></div>
+<h2><span data-co="3" data-side="l">Projects</span></h2>
+<div class="ent">
+<div class="row"><b>Synchronous Buck Converter for a CubeSat Power Board</b><span class="dt" data-co="5" data-side="r">Fall 25 - Spring 26</span></div>
+<div class="sk"><span data-co="4" data-side="l">KiCad, LTspice, STM32, Embedded C, bench testing with an electronic load</span></div>
+<ul>
+<li data-co="6" data-side="l">Reached [X]% peak efficiency at a [Y] A load, measured on an electronic load, by replacing the catch diode with a synchronous MOSFET stage and tuning dead time to [Z] ns with an STM32 timer, up from [W]% before</li>
+<li>Cut output ripple from [X] mV to [Y] mV peak to peak by redesigning the [Z]-layer PCB in KiCad with a solid ground plane and a tighter switching loop, then resizing the LC output filter for [W] kHz switching</li>
+<li>Wrote STM32 firmware in C that samples input current at [X] kHz and shuts the rail down within [Y] µs of an overcurrent fault, which kept the board alive through [Z] deliberate short-circuit tests at a full [W] V input</li>
+<li>Kept the FETs under [X] °C at full load by adding thermal vias and a [Y] oz copper pour under them</li>
+</ul></div>
+<div class="ent">
+<div class="row"><b>FPGA [N]-Band Audio Equalizer</b><span class="dt">Spring 25</span></div>
+<div class="sk"><span>Verilog, Vivado, MATLAB, Basys 3 FPGA, fixed-point DSP</span></div>
+<ul>
+<li data-co="7" data-side="l">Processed [X] kHz stereo audio at [Y] ms latency by pipelining [Z] [W]-tap FIR filters in Verilog</li>
+<li>Matched the MATLAB response within [X] dB from [Y] Hz to [Z] kHz by testing coefficients in Vivado</li>
+<li>Cut LUT use [X]% by sharing one multiplier per filter across all [Y] taps with time-division scheduling</li>
+</ul></div>
+<div class="ent">
+<div class="row"><b>Bluetooth Battery Monitor</b><span class="dt">Fall 24</span></div>
+<div class="sk"><span>ESP32, Arduino C++, Python, INA219 current sensor</span></div>
+<ul>
+<li>Tracked [X] Li-ion cells within [Y] mV each with an ESP32 monitor that streams to a Python dashboard</li>
+<li>Extended pack runtime [X]% in field tests by adding a cutoff that drops non-critical loads at [Y] V</li>
+</ul></div>
+<h2 id="h-exp"><span data-co="8" data-side="l">Experience</span></h2>
+<div class="ent">
+<div class="row"><b>Power Subsystem Engineer, [Student satellite team]</b><span class="dt">Fall 24 - Spring 26</span></div><ul>
+<li>Cut power board mass by [X] g by replacing [Y] linear regulators with one buck converter board, which then passed thermal vacuum testing from [Z] °C to [W] °C on the first attempt with no board rework needed</li>
+<li>Found [X] battery protection faults before launch review by writing a Python test script that runs [Y] charge and discharge cycles overnight and flags any cell that drifts more than [Z] mV from the pack average</li>
+</ul></div>
+<div class="ent">
+<div class="row"><b>Undergraduate Research Assistant, [University lab]</b><span class="dt">Summer 25</span></div><ul>
+<li>Reduced GaN switching loss measurement error from [X]% to [Y]% by adding probe deskew calibration to the double-pulse test setup, which the lab now uses as the standard setup for every GaN device it tests</li>
+<li>Cut test time per device from [X] to [Y] minutes by automating oscilloscope capture with Python and PyVISA</li>
+</ul></div>
+<h2 id="h-edu" data-co="9" data-side="r" data-gap="1">Education</h2>
+<div class="ent">
+<div class="row"><span data-co="10" data-side="l"><b>B.S. Electrical Engineering, GPA: [X.XX]/4.00</b></span><span class="dt">Expected Spring 27</span></div>
+<div class="row"><span>[University]</span></div>
+<div class="ln"><b data-co="11" data-side="l">Relevant coursework:</b> Signals and Systems, Electronics I and II, Power Electronics, Digital Design, Embedded Systems, Control Systems, Electromagnetics, Probability for Engineers, Microcontroller Lab</div>
+<div class="ln"><b>Activities:</b> Tau Beta Pi, IEEE student branch</div>
+</div>
+<h2>Skills</h2>
+<div class="ln"><b data-co="12" data-side="l">Certifications:</b> CSWA (Certified SolidWorks Associate), IPC J-STD-001 soldering</div>
+<div class="ln"><b>Software:</b> KiCad, LTspice, MATLAB, Vivado, Python, C, Verilog, SolidWorks, Git</div></div></div><div class="gut"></div>
+      <svg class="leaders" id="leaders"></svg></div></div>
+  </div>
+  <figcaption><b>FIG 1</b><span>Fig A is a typical first draft. Fig B is the same placeholder student after the rules from the site&#x27;s author, on the r/EngineeringResumes LaTeX template. Each number marks one change.</span></figcaption>
+  <ol class="key"><li><span class="kn">1</span><span>Put your name at the top left. Center nothing and leave the line out from under it.</span></li><li><span class="kn">2</span><span>Keep contact info on one line with the full linkedin.com URL. Add your work authorization, such as US citizen, and Willing to relocate, and skip the logo and the &quot;Phone:&quot; label.</span></li><li><span class="kn">3</span><span>Cut the objective. Lead with projects, then experience, education and skills.</span></li><li><span class="kn">4</span><span>List the skills you used under each project title. Repeating them in Skills is fine, because it shows where you used them.</span></li><li><span class="kn">5</span><span>Right-align dates by semester. A year-long project is Fall 25 - Spring 26.</span></li><li><span class="kn">6</span><span>Write bullets with the XYZ method. Say what you did, the number that proves it, and how you did it. <span class="wiki">wiki</span></span></li><li><span class="kn">7</span><span>Fill the second line of a bullet or fit it on one. Ragged white space looks thin.</span></li><li><span class="kn">8</span><span>Call it Experience. Move real team work like CubeSat here and drop the retail job.</span></li><li><span class="kn">9</span><span>Keep the space between sections equal. Use the same \vspace everywhere.</span></li><li><span class="kn">10</span><span>Put the degree first with the GPA on the same line. The school goes underneath.</span></li><li><span class="kn">11</span><span>Bold Relevant coursework, because recruiters liked it. Add an Activities line the same way.</span></li><li><span class="kn">12</span><span>Keep skills to two labeled lines, Certifications and Software. Cut fluff like communication.</span></li></ol>
+  <p class="credit">The advice comes from the site's author. Rule 6 and the page layout follow the <a>r/EngineeringResumes wiki</a> (reddit.com/r/EngineeringResumes/wiki/index) and its LaTeX template. Jane Doe is a placeholder name.</p>
+</figure>
+<script>// Scale the letter-size sheets, then place numbered callouts with leader lines.
+(async function(){
+  await document.fonts.ready;
+  const NS='http://www.w3.org/2000/svg';
+  document.querySelectorAll('.pagewrap').forEach(w=>{
+    const s=w.clientWidth/816; w.style.height=(1056*s)+'px';
+    w.querySelector('.page').style.transform=`scale(${s})`;
+  });
+  const stage=document.getElementById('stageB'), svg=document.getElementById('leaders');
+  const sr=stage.getBoundingClientRect();
+  const wrap=stage.querySelector('.pagewrap').getBoundingClientRect();
+  const cs=getComputedStyle(document.body), accent=cs.getPropertyValue('--accent').trim(), surface=cs.getPropertyValue('--surface').trim();
+  const gw=stage.querySelector('.gut').getBoundingClientRect().width;
+  const R=document.body.classList.contains('mobile')?8:9.5, MIN=2*R+5;
+  const items=[...stage.querySelectorAll('[data-co]')].map(el=>{
+    const r=el.getBoundingClientRect(); const side=el.dataset.side; const n=+el.dataset.co;
+    let tx,ty,gap=null;
+    if(el.dataset.gap){ // dimension mark for the gap above this heading
+      const prev=el.previousElementSibling.getBoundingClientRect();
+      const y1=prev.bottom-sr.top, y2=r.top-sr.top, x=wrap.right-sr.left-6;
+      gap={x,y1,y2}; tx=x; ty=(y1+y2)/2;
+    } else {
+      const rects=el.getClientRects(); const f=rects[0];
+      ty=f.top+f.height/2-sr.top;
+      const s=wrap.width/816;
+      tx= side==='l' ? wrap.left-sr.left+(el.tagName==='LI'?34:47)*s : rects[rects.length-1].right-sr.left+2;
+    }
+    return {n,side,tx,ty,gap,y:ty};
+  });
+  for(const side of ['l','r']){
+    const g=items.filter(i=>i.side===side).sort((a,b)=>a.ty-b.ty);
+    for(let i=1;i<g.length;i++) if(g[i].y-g[i-1].y<MIN) g[i].y=g[i-1].y+MIN;
+  }
+  const mk=(t,a)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);svg.appendChild(e);return e};
+  for(const it of items){
+    const cx= it.side==='l' ? gw/2 - 2 : sr.width-gw/2 + 2;
+    if(it.gap){
+      const {x,y1,y2}=it.gap;
+      mk('line',{x1:x,y1:y1,x2:x,y2:y2,stroke:accent,'stroke-width':1});
+      mk('line',{x1:x-3,y1:y1,x2:x+3,y2:y1,stroke:accent,'stroke-width':1});
+      mk('line',{x1:x-3,y1:y2,x2:x+3,y2:y2,stroke:accent,'stroke-width':1});
+    }
+    const dx=it.tx-cx, dy=it.ty-it.y, d=Math.hypot(dx,dy);
+    if(d>R+1){
+      const sx=cx+dx/d*R, sy=it.y+dy/d*R;
+      mk('line',{x1:sx,y1:sy,x2:it.tx,y2:it.ty,stroke:accent,'stroke-width':1});
+      if(!it.gap) mk('circle',{cx:it.tx,cy:it.ty,r:1.6,fill:accent});
+    }
+    mk('circle',{cx:cx,cy:it.y,r:R,fill:surface,stroke:accent,'stroke-width':1.75});
+    const t=mk('text',{x:cx,y:it.y,'text-anchor':'middle','dominant-baseline':'central',fill:accent,
+      'font-family':'JetBrains Mono','font-weight':600,'font-size':R>9?11:9.5});
+    t.textContent=it.n;
+  }
+  document.body.dataset.ready='1';
+})();
+</script></body></html>

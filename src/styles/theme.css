@@ -214,6 +214,21 @@ figure.eep-fig figcaption {
 }
 figure.eep-fig figcaption .eep-fignum { font: 500 0.75rem/1.9 var(--eep-font-mono); letter-spacing: .06em; color: var(--eep-accent); white-space: nowrap; text-transform: uppercase; }
 
+/* Resume teardown PNGs already include a frame. Desktop swaps the dark sheet.
+   Narrow viewports use the stacked mobile sheets. :root is dark. */
+figure.eep-fig.eep-teardown {
+  padding: 0; border: 0; background: transparent;
+}
+figure.eep-fig.eep-teardown > img { display: none; max-width: none; }
+:root[data-theme='light'] figure.eep-fig.eep-teardown > img.is-light { display: block; }
+:root:not([data-theme='light']) figure.eep-fig.eep-teardown > img.is-dark { display: block; }
+@media (max-width: 50rem) {
+  :root[data-theme='light'] figure.eep-fig.eep-teardown > img.is-light,
+  :root:not([data-theme='light']) figure.eep-fig.eep-teardown > img.is-dark { display: none; }
+  :root[data-theme='light'] figure.eep-fig.eep-teardown > img.is-mobile { display: block; }
+  :root:not([data-theme='light']) figure.eep-fig.eep-teardown > img.is-mobile-dark { display: block; }
+}
+
 /* ---------- 9. Equations (KaTeX) ---------- */
 .katex { font-size: var(--eep-text-eq); color: var(--eep-ink); }
 .katex-display { margin: var(--eep-space-6) 0; overflow-x: auto; overflow-y: hidden; padding: var(--eep-space-2) 0; }

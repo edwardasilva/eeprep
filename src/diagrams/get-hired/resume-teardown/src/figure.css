@@ -1,0 +1,63 @@
+/* eeprep resume teardown. Tokens copied from theme/theme.css (light + dark). */
+body.light{--paper:#fdfcfa;--surface:#ffffff;--rule:#e7e5e0;--rule2:#c9c6bf;--ink:#17181c;--text:#2b2d33;--ink2:#4a4d55;--mute:#6f727a;--accent:#a3201d}
+body.dark {--paper:#151412;--surface:#1c1b18;--rule:#2e2c28;--rule2:#46433d;--ink:#efebe4;--text:#d6d1c8;--ink2:#b3ada3;--mute:#8c867c;--accent:#e06a5f}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--paper);color:var(--text);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;font-feature-settings:"cv11","ss01"}
+body.desktop{padding:40px;width:1200px}
+body.mobile{padding:16px 12px;width:390px}
+figure.eep-fig{margin:0;background:var(--surface);border:1px solid var(--rule);border-radius:4px}
+.desktop figure.eep-fig{padding:36px 36px 22px;width:1112px}
+.mobile figure.eep-fig{padding:20px 14px 16px}
+.pair{display:grid}
+.desktop .pair{grid-template-columns:1fr 1fr}
+.mobile .pair{grid-template-columns:1fr;row-gap:24px}
+.plabel{font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);margin:0 0 12px}
+.desktop .plabel{padding-left:34px}
+.mobile .plabel{padding-left:26px}
+.plabel .pl{color:var(--mute);margin-right:8px}
+.stage{position:relative;display:grid}
+.desktop .stage{grid-template-columns:34px 1fr 34px}
+.mobile .stage{grid-template-columns:26px 1fr 26px}
+.pagewrap{position:relative;overflow:hidden;background:#fff;outline:1px solid var(--rule2)}
+.leaders{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+figcaption{display:flex;gap:12px;margin-top:22px;padding-top:14px;border-top:1px solid var(--rule);font-size:13.5px;line-height:1.55;color:var(--ink2)}
+figcaption b{font:500 12px/1.9 'JetBrains Mono',monospace;letter-spacing:.06em;color:var(--accent);white-space:nowrap}
+ol.key{list-style:none;margin:16px 0 0;padding:14px 0 0;border-top:1px solid var(--rule);display:grid;gap:8px 32px;font-size:13.5px;line-height:1.5;color:var(--text)}
+.desktop ol.key{grid-template-columns:1fr 1fr;grid-auto-flow:column;grid-template-rows:repeat(6,auto)}
+.mobile ol.key{grid-template-columns:1fr}
+ol.key li{display:grid;grid-template-columns:22px 1fr;align-items:baseline}
+.kn{font:600 12px 'JetBrains Mono',monospace;color:var(--accent)}
+.wiki{font:500 10.5px 'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);border:1px solid var(--rule2);border-radius:2px;padding:0 4px;margin-left:4px;white-space:nowrap}
+.credit{margin:14px 0 0;padding-top:12px;border-top:1px solid var(--rule);font-size:12.5px;line-height:1.55;color:var(--mute)}
+.credit a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:3px}
+
+/* ---- the resume sheet: US Letter at 96 dpi, scaled by JS ---- */
+.page{position:absolute;left:0;top:0;width:816px;height:1056px;transform-origin:0 0;background:#fff;color:#17181c;
+  font-family:'LM Roman 10','Latin Modern Roman',serif;font-size:14.6px;line-height:1.24;padding:46px 50px 40px}
+.page b{font-weight:700}
+.page h2{font-family:'LM Roman Caps 10','LM Roman 10',serif;font-weight:400;font-size:17px;letter-spacing:.02em;margin:0 0 4px;padding-bottom:1px;border-bottom:.9px solid #17181c}
+.page ul{margin:1px 0 0;padding-left:22px}
+.page li{margin:0 0 1px;font-size:14px}
+.page .row{display:flex;justify-content:space-between;gap:16px}
+.page .dt{white-space:nowrap}
+.page .it{font-style:italic}
+/* After */
+.after-pg .nm{font-family:'LM Roman 10',serif;font-weight:700;font-size:23px;line-height:1.1} /* .tex: \LARGE at 11pt = 17.28pt */
+.after-pg .contact{font-size:12.6px;margin-top:3px;white-space:nowrap}
+.after-pg .contact .sep{padding:0 1px}
+.after-pg{line-height:1.31}
+.after-pg h2{margin-top:15px;font-family:'LM Roman 10',serif;font-weight:700;font-size:16px;letter-spacing:0} /* .tex: \large\bfseries, no small caps */
+.after-pg .ent{margin-bottom:8px}
+.after-pg .ent:last-child{margin-bottom:0}
+.after-pg .sk{font-style:italic;font-size:13.6px}
+.after-pg .ln{font-size:14px}
+/* Before */
+.before-pg{line-height:1.3}
+.before-pg .b-nm{text-align:center;font-size:27px;font-weight:700;letter-spacing:.06em}
+.before-pg .b-rule{border-bottom:1.6px solid #17181c;margin:4px 0 5px}
+.before-pg .b-contact{text-align:center;font-size:13.5px}
+.inlogo{display:inline-block;background:#17181c;color:#fff;font:700 11px/14px Arial,sans-serif;width:15px;height:15px;text-align:center;border-radius:2px;vertical-align:-2px}
+.before-pg h2{text-transform:none}
+.before-pg .obj{margin:0;font-style:italic}
+.twocol{display:grid;grid-template-columns:1fr 1fr;column-gap:30px;padding-left:10px}

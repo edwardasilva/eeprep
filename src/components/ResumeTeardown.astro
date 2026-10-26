@@ -1,0 +1,35 @@
+---
+// Before-and-after resume teardown. The sheets are pre-rendered PNGs, so dark
+// mode swaps in the dark file. Diagram.astro's palette swap does not apply.
+// Usage (MDX): <ResumeTeardown num="1" alt="…" caption="…" />
+import light from '../diagrams/get-hired/resume-teardown/before-after.png';
+import dark from '../diagrams/get-hired/resume-teardown/before-after-dark.png';
+import mobile from '../diagrams/get-hired/resume-teardown/before-after-mobile.png';
+import mobileDark from '../diagrams/get-hired/resume-teardown/before-after-mobile-dark.png';
+
+interface Props {
+	num: string;
+	alt: string;
+	caption: string;
+}
+
+const { num, alt, caption } = Astro.props;
+const id = `fig-${num.replace('.', '-')}`;
+---
+
+<figure class:list={['eep-fig', 'wide', 'eep-teardown']} id={id}>
+	<img class="is-light" src={light.src} width={light.width} height={light.height} alt={alt} />
+	<img class="is-dark" src={dark.src} width={dark.width} height={dark.height} alt={alt} />
+	<img class="is-mobile" src={mobile.src} width={mobile.width} height={mobile.height} alt={alt} />
+	<img
+		class="is-mobile-dark"
+		src={mobileDark.src}
+		width={mobileDark.width}
+		height={mobileDark.height}
+		alt={alt}
+	/>
+	<figcaption>
+		<span class="eep-fignum">Fig {num}</span>
+		<span>{caption}</span>
+	</figcaption>
+</figure>
