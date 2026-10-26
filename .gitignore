@@ -10,3 +10,6 @@ dist/
 .astro/
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
+
+__pycache__/
+*.pyc
