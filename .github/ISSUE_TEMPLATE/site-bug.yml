@@ -1,6 +1,6 @@
 name: Site bug
 description: Report a broken page, link, layout, or build.
-title: "Site bug: "
+title: 'Site bug: '
 labels:
   - bug
 body:

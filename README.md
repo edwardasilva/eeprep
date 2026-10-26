@@ -14,11 +14,11 @@ The guide is for electrical engineering students. It follows the courses and the
 
 ## What's inside
 
-Three sections are in the site now.
+Three sections are in the site now. The pages are still placeholders.
 
-- Get hired, with Resume and The job market. Both pages are still placeholders.
+- Get hired, with Resume and The job market
 - Succeed in school, with How to study
-- Reference, with Signals and DSP and a sample page. Signals and DSP is still a placeholder.
+- Reference, with Signals and DSP and a sample page
 
 The sample page is there to show a wikilink, a callout, an equation, and a figure. It is not a study guide.
 

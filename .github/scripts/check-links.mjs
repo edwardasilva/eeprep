@@ -49,7 +49,9 @@ function listHtml(dir, out = []) {
 
 /** @param {string} html */
 function hrefsIn(html) {
-	return [...html.matchAll(/\shref="([^"]+)"/g)].map((match) => decode(match[1] ?? ''));
+	return [...html.matchAll(/\shref="([^"]+)"/g)].map((match) =>
+		decode(match[1] ?? ''),
+	);
 }
 
 /**
@@ -58,7 +60,13 @@ function hrefsIn(html) {
  * @returns {{ pathname: string, hash: string } | null}
  */
 function resolveLocal(href, fromFile) {
-	if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('javascript:') || href.startsWith('data:')) {
+	if (
+		!href ||
+		href.startsWith('#') ||
+		href.startsWith('mailto:') ||
+		href.startsWith('javascript:') ||
+		href.startsWith('data:')
+	) {
 		return null;
 	}
 	let pathname = href;
@@ -75,7 +83,8 @@ function resolveLocal(href, fromFile) {
 	}
 	const hashAt = pathname.indexOf('#');
 	const hash = hashAt >= 0 ? pathname.slice(hashAt + 1) : '';
-	pathname = (hashAt >= 0 ? pathname.slice(0, hashAt) : pathname).split('?')[0] ?? '';
+	pathname =
+		(hashAt >= 0 ? pathname.slice(0, hashAt) : pathname).split('?')[0] ?? '';
 	if (!pathname) return { pathname: `/${path.posix.dirname(fromFile)}/`, hash };
 	if (!pathname.startsWith('/')) {
 		const dir = path.posix.dirname(fromFile);
@@ -88,8 +97,10 @@ function resolveLocal(href, fromFile) {
 function fileFor(pathname) {
 	const rel = decode(pathname).replace(/^\/+/, '');
 	// Starlight emits the not-found page as dist/404.html, and links to /404/.
-	if (rel === '404' || rel === '404/' || rel === '404.html') return path.join(dist, '404.html');
-	if (rel === '' || rel.endsWith('/')) return path.join(dist, rel, 'index.html');
+	if (rel === '404' || rel === '404/' || rel === '404.html')
+		return path.join(dist, '404.html');
+	if (rel === '' || rel.endsWith('/'))
+		return path.join(dist, rel, 'index.html');
 	const direct = path.join(dist, rel);
 	if (fs.existsSync(direct) && fs.statSync(direct).isFile()) return direct;
 	return path.join(dist, rel, 'index.html');

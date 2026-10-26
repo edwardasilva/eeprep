@@ -82,7 +82,7 @@ Also cut "not just X, but Y", "not X, but Y", "Y rather than X" used for drama, 
 
 5. Never touch code, identifiers, commands, file paths, quoted errors, product names, or facts when rewriting.
 
-## 6. Self-check before delivering 
+## 6. Self-check before delivering
 
 1. Search the text for `—`, `;`, `**`, and lines starting with `#` or `-` in a chat reply. Fix every hit.
 

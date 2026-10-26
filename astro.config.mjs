@@ -8,11 +8,26 @@ import rehypeKatex from 'rehype-katex';
 import rehypeCallouts from 'rehype-callouts';
 import starlightSiteGraph from 'starlight-site-graph';
 import rehypeEqIds from './src/plugins/rehype-eq-ids.mjs';
-import { loadWikiIndex, normalizeWikiName, resolveWikiTarget, splitWikiTarget } from './src/lib/wiki-index.mjs';
+import {
+	loadWikiIndex,
+	normalizeWikiName,
+	resolveWikiTarget,
+	splitWikiTarget,
+} from './src/lib/wiki-index.mjs';
 
 const wiki = loadWikiIndex();
-const lightCodeTheme = JSON.parse(readFileSync(new URL('./src/styles/ec-eeprep-light.json', import.meta.url), 'utf8'));
-const darkCodeTheme = JSON.parse(readFileSync(new URL('./src/styles/ec-eeprep-dark.json', import.meta.url), 'utf8'));
+const lightCodeTheme = JSON.parse(
+	readFileSync(
+		new URL('./src/styles/ec-eeprep-light.json', import.meta.url),
+		'utf8',
+	),
+);
+const darkCodeTheme = JSON.parse(
+	readFileSync(
+		new URL('./src/styles/ec-eeprep-dark.json', import.meta.url),
+		'utf8',
+	),
+);
 
 // The site graph's client script imports micromatch 4, whose picomatch 2 reads
 // process.platform and process.version, and those throw in the browser.
@@ -53,7 +68,8 @@ export default defineConfig({
 						// exists. A permalink here is "page" or "page#heading", and it exists when the
 						// page part does, so the #heading survives to hrefTemplate.
 						permalinks: {
-							indexOf: (permalink) => (wiki.byKey.has(permalink.split('#')[0] ?? '') ? 0 : -1),
+							indexOf: (permalink) =>
+								wiki.byKey.has(permalink.split('#')[0] ?? '') ? 0 : -1,
 						},
 						pageResolver(name) {
 							const { page, heading } = splitWikiTarget(name);
@@ -62,7 +78,9 @@ export default defineConfig({
 						},
 						hrefTemplate(permalink) {
 							const { href } = resolveWikiTarget(permalink, wiki.byKey);
-							return href ?? `/missing-wikilink/${encodeURIComponent(permalink)}/`;
+							return (
+								href ?? `/missing-wikilink/${encodeURIComponent(permalink)}/`
+							);
 						},
 						wikiLinkClassName: 'wikilink',
 						newClassName: 'wikilink-missing',
@@ -98,7 +116,12 @@ export default defineConfig({
 				'./src/styles/site.css',
 				'katex/dist/katex.min.css',
 			],
-			head: [{ tag: 'meta', attrs: { name: 'robots', content: 'noindex, nofollow' } }],
+			head: [
+				{
+					tag: 'meta',
+					attrs: { name: 'robots', content: 'noindex, nofollow' },
+				},
+			],
 			components: {
 				Head: './src/components/Head.astro',
 				Header: './src/components/Header.astro',
