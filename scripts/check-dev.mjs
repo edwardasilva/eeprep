@@ -6,6 +6,7 @@ import net from 'node:net';
 import path from 'node:path';
 
 const readyTimeoutMs = 180_000;
+const ansiPattern = /\u001b\[[0-9;]*m/g;
 const requestTimeoutMs = 120_000;
 const shutdownTimeoutMs = 5_000;
 const pages = ['/', '/get-hired/'];
@@ -92,7 +93,10 @@ function waitForReady(timeoutMs) {
 			reject(new Error(`astro dev exited before ready (${signal ?? code}).`));
 		};
 		const onData = () => {
-			if (/ready in \d+/i.test(log)) {
+			// Astro dims "ready in" and leaves the millisecond count outside that style.
+			// With color on, an ANSI reset sits between them. GitHub Actions turns color on.
+			const plain = log.replace(ansiPattern, '');
+			if (/ready in \d+/i.test(plain)) {
 				cleanup();
 				resolve();
 			}
