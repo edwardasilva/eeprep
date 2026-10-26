@@ -46,7 +46,7 @@ Lane ownership is this table, not a `CODEOWNERS` file. The lane owner resolves c
 
 | Lane | Paths | Owner |
 | --- | --- | --- |
-| Design | `src/styles/`, figure styles under `diagrams/_style/` | Creative Bot |
+| Design | `src/styles/`, figure styles under `src/diagrams/style/` | Creative Bot |
 | Content | `src/content/` | Strategy Bot |
 | Engineering | config, CI, and the build | Engineer Bot |
 
@@ -56,7 +56,7 @@ Pull requests into `main` and `epic/**` run three jobs:
 
 - the body contains `Part of #<issue>` (Dependabot and `no-epic` skip this)
 - `npm ci`, wikilink check, figure regeneration check, production build, and HTML link check
-- Vale, using `docs/STYLE.md`, on `src/content/docs`
+- Vale, using `docs/STYLE.md`, on `src/content/docs` (`vale --config .github/vale/.vale.ini src/content/docs`)
 
 The deploy workflow is manual. Edward runs `.github/workflows/deploy.yml` when he decides to publish. Do not run that workflow, change DNS, or turn on GitHub Pages.
 
@@ -74,7 +74,7 @@ Write in sentence case. Callout titles are sentence case. Use "Main idea", not "
 
 ## Run it locally
 
-You need Git and Node 22.23.4. Node is pinned in `package.json` under `engines`.
+You need Git and Node 22.23.4 or later in the 22 line. The range is in `package.json` under `engines`.
 
 Clone the repo and install the lockfile:
 
@@ -117,10 +117,10 @@ npm run check:figures
 npm run build
 npm run check:links
 npm run check:pr-body
-vale src/content/docs
+vale --config .github/vale/.vale.ini src/content/docs
 ```
 
-`npm run check:links` needs a `dist/` folder, so run `npm run build` first. `npm run check:pr-body` reads `PR_BODY` from the environment. Vale is a separate program. CI installs Vale 3.25.1 and runs it on `src/content/docs`.
+`npm run check:links` needs a `dist/` folder, so run `npm run build` first. `npm run check:pr-body` reads `PR_BODY` from the environment. Vale is a separate program. CI installs Vale 3.25.1 and runs `vale --config .github/vale/.vale.ini src/content/docs`.
 
 <!-- run-locally:end -->
 

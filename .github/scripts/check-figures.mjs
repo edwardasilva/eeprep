@@ -3,7 +3,8 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 
-const renderer = path.resolve('diagrams/_style/render-wavedrom.js');
+const styleDir = path.resolve('src/diagrams/style');
+const renderer = path.join(styleDir, 'render-wavedrom.js');
 const sources = listSources(path.resolve('src/diagrams'));
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'eeprep-figures-'));
 let failed = false;
@@ -40,6 +41,8 @@ function listSources(dir, out = []) {
 	if (!fs.existsSync(dir)) return out;
 	for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
 		const full = path.join(dir, ent.name);
+		// Style samples sit next to the renderer and are not page figures.
+		if (path.resolve(full) === styleDir) continue;
 		if (ent.isDirectory()) listSources(full, out);
 		else if (ent.name.endsWith('.json5')) out.push(full);
 	}
