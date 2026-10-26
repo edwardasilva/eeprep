@@ -1,0 +1,37 @@
+---
+title: Sample page
+description: A sample page with a wikilink, a callout, an equation, and a figure.
+pageType: study
+placeholder: true
+keyTerms:
+  - SPI
+  - cutoff frequency
+---
+
+import Diagram from '../../../components/Diagram.astro'
+
+> [!warning] Placeholder
+> This page is not a study guide. It only shows the page tools.
+
+See [[Signals and DSP|the signals page]] for the empty study stub.
+
+> [!tip] Main idea
+> A series RC filter passes low frequencies and cuts high ones.
+
+## Cutoff frequency
+
+The cutoff frequency of that filter is
+
+$$
+f_c = \frac{1}{2\pi RC}
+\tag{0.1}
+$$
+
+<Diagram
+  src="reference/sample-spi.svg"
+  num="0.1"
+  wide
+  alt="SPI mode 0 timing. CS falls, then eight SCLK pulses. MOSI changes on the falling edge."
+>
+  SPI mode 0. The controller drives MOSI. The peripheral drives MISO.
+</Diagram>

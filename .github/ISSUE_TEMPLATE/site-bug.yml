@@ -1,0 +1,45 @@
+name: Site bug
+description: Report a broken page, link, layout, or build.
+title: "Site bug: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form when a page, link, layout, or build is broken.
+        For a wrong equation or circuit, use Technical error.
+  - type: dropdown
+    id: bug-kind
+    attributes:
+      label: What broke
+      description: Choose page, link, layout, or build.
+      options:
+        - Page
+        - Link
+        - Layout
+        - Build
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      description: Paste the page URL, the broken link, or the workflow run URL.
+      placeholder: https://
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: Describe what you saw. Paste the error text if you have it.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+      description: Describe the result you expected from the page, link, layout, or build.
+    validations:
+      required: true

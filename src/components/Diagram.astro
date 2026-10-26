@@ -1,0 +1,35 @@
+---
+// src/components/Diagram.astro — inline an SVG figure and swap sentinel colours for CSS vars,
+// so schemdraw / matplotlib / CircuiTikZ output follows the light/dark toggle.
+// Usage (MDX): <Diagram src="ch03/rc-lowpass.svg" num="3.4" alt="RC low-pass…">Caption…</Diagram>
+import fs from 'node:fs/promises';
+import path from 'node:path';
+interface Props { src: string; num: string; alt: string; wide?: boolean }
+const { src, num, alt, wide = false } = Astro.props;
+// The prerender bundle moves this file, so import.meta.url no longer sits next to src/diagrams.
+const diagramsRoot = path.resolve(process.cwd(), 'src/diagrams');
+const figureFile = path.resolve(diagramsRoot, src);
+if (figureFile !== diagramsRoot && !figureFile.startsWith(diagramsRoot + path.sep)) {
+	throw new Error(`Figure path is outside src/diagrams: ${src}`);
+}
+const MAP: Record<string, string> = {
+  '#17181c': 'var(--eep-dg-ink)',  '#a3201d': 'var(--eep-dg-accent)',
+  '#8a8d94': 'var(--eep-dg-mute)', '#ffffff': 'var(--eep-dg-fill)',  '#fff': 'var(--eep-dg-fill)',
+  '#1d5f8a': 'var(--eep-dg-s2)',   '#4f7a28': 'var(--eep-dg-s3)',
+  '#4a4d55': 'var(--eep-ink-2)',   '#6f727a': 'var(--eep-mute)',
+  '#e7e5e0': 'var(--eep-dg-grid)', '#f0eee9': 'var(--eep-dg-grid)',
+  // tints (WaveDrom data cells, callout-like fills in diagrams)
+  '#f6f5f1': 'var(--eep-sunken)',  '#f8ecea': 'var(--eep-accent-soft)',
+  '#eef4f8': 'var(--eep-ex-soft)', '#eff4ea': 'var(--eep-check-soft)', '#fbf3e4': 'var(--eep-warn-soft)',
+};
+let svg = await fs.readFile(figureFile, 'utf8');
+svg = svg.replace(/<\?xml[^>]*>|<!DOCTYPE[^>]*>|<metadata>[\s\S]*?<\/metadata>/g, '')
+         .replace(/#[0-9a-fA-F]{6}\b|#fff\b/g, (h) => MAP[h.toLowerCase()] ?? h)
+         .replace(/\s(width|height)="[^"]*pt"/g, '')                      // let CSS size it
+         .replace('<svg', `<svg role="img" aria-label="${alt.replace(/"/g, '&quot;')}"`);
+const id = `fig-${num.replaceAll('.', '-')}`;
+---
+<figure class:list={['eep-fig', { wide }]} id={id}>
+  <Fragment set:html={svg} />
+  <figcaption><span class="eep-fignum">Fig {num}</span><span><slot /></span></figcaption>
+</figure>

@@ -1,0 +1,48 @@
+---
+import Default from '@astrojs/starlight/components/PageSidebar.astro';
+import { PageGraph } from 'starlight-site-graph/components';
+import { buildPageLinks, loadWikiIndex } from '../lib/wiki-index.mjs';
+
+const links = buildPageLinks(loadWikiIndex());
+
+const { entry } = Astro.locals.starlightRoute;
+const splash = entry.data.template === 'splash';
+const keyTerms = entry.data.keyTerms ?? [];
+const here = links[Astro.url.pathname.replace(/^\/+/, '')];
+const backlinks = (here?.backlinks ?? [])
+	.map((key) => ({ href: `/${key}`, title: links[key]?.title ?? key }))
+	.sort((a, b) => a.title.localeCompare(b.title));
+---
+
+{
+	splash ? null : (
+		<>
+			<PageGraph class="right-sidebar-panel slsg-graph-panel">
+				<h2 slot="title">On this site</h2>
+			</PageGraph>
+			<Default />
+			{keyTerms.length > 0 && (
+				<div class="right-sidebar-panel eep-margin">
+					<h2>Key terms</h2>
+					<ul>
+						{keyTerms.map((term) => (
+							<li>{term}</li>
+						))}
+					</ul>
+				</div>
+			)}
+			{backlinks.length > 0 && (
+				<div class="right-sidebar-panel slsg-backlinks-panel">
+					<h2>Linked from</h2>
+					<ul class="slsg-backlinks">
+						{backlinks.map((link) => (
+							<li>
+								<a class="slsg-backlink" href={link.href}>{link.title}</a>
+							</li>
+						))}
+					</ul>
+				</div>
+			)}
+		</>
+	)
+}
