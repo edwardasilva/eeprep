@@ -106,7 +106,7 @@ Under that, add an Activities line. Jane's line is "Tau Beta Pi, IEEE student br
 
 ## Skills
 
-Name the section Skills and keep one column of about two lines, so projects and experience keep the page. A two-column list looks like hiding thin experience, Edward says, so order the entries from most important to least important. Label the lines Software and Certifications.
+Name the section Skills and keep one column of about two lines, so projects and experience keep the page. A two-column list looks like hiding thin experience, Edward says. Order the entries from most important to least important. Label the lines Software and Certifications.
 
 ```
 Certifications: CSWA (Certified SolidWorks Associate), IPC J-STD-001 soldering
@@ -121,7 +121,7 @@ Keep one gap between sections by setting `\vspace` once and reusing that value. 
 
 ## Preamble commands
 
-Add `\pdfgentounicode=1` in the preamble. It maps characters to Unicode so a parser can read the text. Edward adds it so an application tracking system (ATS), the software that reads a resume before a person does, gets that text.
+Add `\pdfgentounicode=1` in the preamble. It maps characters to Unicode so a parser can read the text. Edward adds it so an applicant tracking system (ATS), the software that reads a resume before a person does, gets that text.
 
 Add `\hypersetup` in the preamble too, because Edward says resume parsers read the PDF metadata this command writes.
 
@@ -148,7 +148,7 @@ Jane's before draft shows seven mistakes. The finished sample on this page, and 
 Each of these 10 items is one instruction for a printed draft.
 
 1. Order the sections as header, projects, experience, education, then skills.
-2. Use Jane's contact line, including the words Willing to relocate.
+2. Fit your contact details on one line under your name, and add Willing to relocate if it is true.
 3. Cut the objective.
 4. List each project's tools under the title and in Skills.
 5. Write each bullet in XYZ form, as on the Reached [X]% peak efficiency line.
@@ -156,7 +156,7 @@ Each of these 10 items is one instruction for a printed draft.
 7. Keep Skills as two labeled lines in one column.
 8. Add `\pdfgentounicode=1` so a parser can read Unicode text.
 9. Add `\hypersetup` so resume parsers can read the PDF metadata.
-10. Put the CubeSat team role under Experience, not on Activities.
+10. Put team and lab roles under Experience, not on an Activities line.
 
 ## Last reviewed
 
