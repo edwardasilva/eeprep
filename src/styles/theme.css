@@ -213,6 +213,23 @@ figure.eep-fig figcaption {
   font-size: var(--eep-text-caption); line-height: 1.55; color: var(--eep-ink-2);
 }
 figure.eep-fig figcaption .eep-fignum { font: 500 0.75rem/1.9 var(--eep-font-mono); letter-spacing: .06em; color: var(--eep-accent); white-space: nowrap; text-transform: uppercase; }
+/* FIG 4.1 ships separate SVGs. Dark is the default theme. Narrow screens use the mobile SVG. */
+figure.eep-fig.eep-pathmap > :is(.eep-pathmap-light, .eep-pathmap-dark, .eep-pathmap-mobile) {
+  display: none; max-width: none;
+}
+figure.eep-fig.eep-pathmap > .eep-pathmap-dark { display: block; }
+:root[data-theme='light'] figure.eep-fig.eep-pathmap > .eep-pathmap-dark { display: none; }
+:root[data-theme='light'] figure.eep-fig.eep-pathmap > .eep-pathmap-light { display: block; }
+@media (max-width: 50rem) {
+  figure.eep-fig.eep-pathmap > :is(.eep-pathmap-light, .eep-pathmap-dark),
+  :root[data-theme='light'] figure.eep-fig.eep-pathmap > :is(.eep-pathmap-light, .eep-pathmap-dark) {
+    display: none;
+  }
+  figure.eep-fig.eep-pathmap > .eep-pathmap-mobile,
+  :root[data-theme='light'] figure.eep-fig.eep-pathmap > .eep-pathmap-mobile {
+    display: block;
+  }
+}
 
 /* ---------- 9. Equations (KaTeX) ---------- */
 .katex { font-size: var(--eep-text-eq); color: var(--eep-ink); }

@@ -32,8 +32,29 @@ for (const source of sources) {
 }
 
 fs.rmSync(tmp, { recursive: true, force: true });
+if (!pathMapCopiesMatch()) failed = true;
 if (failed) process.exit(1);
 console.log(`Figure SVGs match ${sources.length} source${sources.length === 1 ? '' : 's'}.`);
+
+/** Public copies are what the Markdown page loads. They must match the source SVGs. */
+function pathMapCopiesMatch() {
+	const names = ['path-map.svg', 'path-map-dark.svg', 'path-map-mobile.svg'];
+	let ok = true;
+	for (const name of names) {
+		const source = path.resolve('src/diagrams/get-hired/path-map', name);
+		const published = path.resolve('public/diagrams/get-hired/path-map', name);
+		if (!fs.existsSync(source) || !fs.existsSync(published)) {
+			console.error(`Missing path map SVG: ${path.relative(process.cwd(), source)} or ${path.relative(process.cwd(), published)}.`);
+			ok = false;
+			continue;
+		}
+		if (!fs.readFileSync(source).equals(fs.readFileSync(published))) {
+			console.error(`Public path map SVG is stale: ${path.relative(process.cwd(), published)}. Re-run src/diagrams/get-hired/path-map/src/build_path_map.py.`);
+			ok = false;
+		}
+	}
+	return ok;
+}
 
 /** @param {string} dir @param {string[]} out */
 function listSources(dir, out = []) {
