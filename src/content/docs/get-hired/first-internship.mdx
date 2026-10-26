@@ -112,7 +112,7 @@ One commenter built a DC-DC converter that made 180 to 250 V from a 12 V battery
 Another student built an Arduino plant monitor with a few LEDs and basic conditional logic. He says it led to a 6-month engineering internship at a defense company that makes sonobuoys. Build a small version of what that company makes. The circuit ideas carried over, even though a plant monitor is not a military device. Write down the problems, how you bought the parts, the calculations, and the fixes. Send that with the resume, or send a video of the build working. He made the monitor wireless later, after the search no longer needed it.
 [reddit-2025-projects-got-hired](https://www.reddit.com/r/EngineeringStudents/comments/1odiu6l/personal_projects_that_got_you_hired_for/)
 
-Astranis is hiring a summer 2027 intern to design, build, and lab-test the software-defined radio hardware in its satellites. The post asks for EE students who have designed and built a PCB from scratch, on-site in San Francisco, at $29 an hour.
+Astranis is hiring a summer 2027 intern to design, build, and lab-test the software-defined radio hardware in its satellites. The post asks for EE students who have designed and built a PCB from scratch, on-site in San Francisco, at \$29 an hour.
 [x-ApplyBoltApp-2026-astranis](https://x.com/ApplyBoltApp/status/2104728614407164037)
 
 On a resume roast, one commenter said HR sees the same basic Arduino builds about 100 times a day. He had no personal projects and still got internships and job offers. On the converter thread, that same commenter says recruiters ignore those projects and count team competitions such as Formula SAE, plus undergraduate research. A copied kit is the Arduino build he says they already know.
@@ -134,19 +134,21 @@ One engineer wrote that silicon carbide modules are taking inverter work from si
 
 Jane has not held an internship, so the converter is the build she can defend. List it the way she would, and replace each bracket with a number you measured.
 
-Synchronous Buck Converter for a CubeSat Power Board
+- Synchronous Buck Converter for a CubeSat Power Board, Fall 25 - Spring 26, KiCad, LTspice, STM32, Embedded C, bench testing with an electronic load
+  - Reached [X]% peak efficiency at a [Y] A load, measured on an electronic load, by replacing the catch diode with a synchronous MOSFET stage and tuning dead time to [Z] ns with an STM32 timer, up from [W]% before
+  - Cut output ripple from [X] mV to [Y] mV peak to peak by redesigning the [Z]-layer PCB in KiCad with a solid ground plane and a tighter switching loop, then resizing the LC output filter for [W] kHz switching
+  - Wrote STM32 firmware in C that samples input current at [X] kHz and shuts the rail down within [Y] µs of an overcurrent fault, which kept the board alive through [Z] deliberate short-circuit tests at a full [W] V input
+  - Kept the FETs under [X] °C at full load by adding thermal vias and a [Y] oz copper pour under them
 
-Fall 25 - Spring 26
+The battery monitor and the equalizer are earlier builds on the same resume.
 
-KiCad, LTspice, STM32, Embedded C, bench testing with an electronic load
-
-Reached [X]% peak efficiency at a [Y] A load, measured on an electronic load, by replacing the catch diode with a synchronous MOSFET stage and tuning dead time to [Z] ns with an STM32 timer, up from [W]% before
-
-Cut output ripple from [X] mV to [Y] mV peak to peak by redesigning the [Z]-layer PCB in KiCad with a solid ground plane and a tighter switching loop, then resizing the LC output filter for [W] kHz switching
-
-Wrote STM32 firmware in C that samples input current at [X] kHz and shuts the rail down within [Y] µs of an overcurrent fault, which kept the board alive through [Z] deliberate short-circuit tests at a full [W] V input
-
-Kept the FETs under [X] °C at full load by adding thermal vias and a [Y] oz copper pour under them
+- Bluetooth Battery Monitor, Fall 24, ESP32, Arduino C++, Python, INA219 current sensor
+  - Tracked [X] Li-ion cells within [Y] mV each with an ESP32 monitor that streams to a Python dashboard
+  - Extended pack runtime [X]% in field tests by adding a cutoff that drops non-critical loads at [Y] V
+- FPGA [N]-Band Audio Equalizer, Spring 25, Verilog, Vivado, MATLAB, Basys 3 FPGA, fixed-point DSP
+  - Processed [X] kHz stereo audio at [Y] ms latency by pipelining [Z] [W]-tap FIR filters in Verilog
+  - Matched the MATLAB response within [X] dB from [Y] Hz to [Z] kHz by testing coefficients in Vivado
+  - Cut LUT use [X]% by sharing one multiplier per filter across all [Y] taps with time-division scheduling
 
 ### Starting on a student budget
 
@@ -183,27 +185,18 @@ Students argue over an internship versus a research seat, and they ask what unde
 [reddit-2026-internship-or-research](https://www.reddit.com/r/EngineeringStudents/comments/1qbbfra/internship_or_research/)
 [reddit-2026-undergrad-research](https://www.reddit.com/r/ElectricalEngineering/comments/1u0q7n5/undergraduate_research/)
 
-Power Subsystem Engineer, [Student satellite team]
-
-Fall 24 - Spring 26
-
-Cut power board mass by [X] g by replacing [Y] linear regulators with one buck converter board, which then passed thermal vacuum testing from [Z] °C to [W] °C on the first attempt with no board rework needed
-
-Found [X] battery protection faults before launch review by writing a Python test script that runs [Y] charge and discharge cycles overnight and flags any cell that drifts more than [Z] mV from the pack average
-
-Undergraduate Research Assistant, [University lab]
-
-Summer 25
-
-Reduced GaN switching loss measurement error from [X]% to [Y]% by adding probe deskew calibration to the double-pulse test setup, which the lab now uses as the standard setup for every GaN device it tests
-
-Cut test time per device from [X] to [Y] minutes by automating oscilloscope capture with Python and PyVISA
+- Power Subsystem Engineer, [Student satellite team], Fall 24 - Spring 26
+  - Cut power board mass by [X] g by replacing [Y] linear regulators with one buck converter board, which then passed thermal vacuum testing from [Z] °C to [W] °C on the first attempt with no board rework needed
+  - Found [X] battery protection faults before launch review by writing a Python test script that runs [Y] charge and discharge cycles overnight and flags any cell that drifts more than [Z] mV from the pack average
+- Undergraduate Research Assistant, [University lab], Summer 25
+  - Reduced GaN switching loss measurement error from [X]% to [Y]% by adding probe deskew calibration to the double-pulse test setup, which the lab now uses as the standard setup for every GaN device it tests
+  - Cut test time per device from [X] to [Y] minutes by automating oscilloscope capture with Python and PyVISA
 
 ## Test or technician roles as a way in
 
 Junior design titles are scarce, so search under other names and treat a test role or a technician role as a bridge. Write the design title you still want before you accept.
 
-One digest read 1,285 engineering roles in 24 hours. Of the 120 read line by line, six carried a junior or intern tag. Five of those six came from one company, and the sixth was a social media job. The more open role that day was Test Engineer II at Blue Canyon Technologies in Boulder. It is on-site work testing flight hardware, posted at $80,000 to $120,000, and the experience ask stopped at two years.
+One digest read 1,285 engineering roles in 24 hours. Of the 120 read line by line, six carried a junior or intern tag. Five of those six came from one company, and the sixth was a social media job. The more open role that day was Test Engineer II at Blue Canyon Technologies in Boulder. It is on-site work testing flight hardware, posted at \$80,000 to \$120,000, and the experience ask stopped at two years.
 [x-tech_withrobin-2026-sixjunior](https://x.com/tech_withrobin/status/2094768485448536101)
 
 Entry-level ads often ask for 2 to 3 years. One engineer who graduated in 2021 took 2 years to land a first electrical engineer role. Other ads ask for 10 or more years and still call the job entry-level.
@@ -218,7 +211,7 @@ Paste these words into a search box.
 - controls
 - field applications engineer
 
-One new graduate took a short technician stint at SpaceX. Five months after graduation he was still in final rounds for FPGA and analog roles, with no offer. An FPGA is a chip you set up by writing a configuration. The paycheck from SpaceX was still not paid in full. Search the titles above, apply on the company site, and write down the questions you missed when a final round goes quiet.
+One new graduate took a short technician stint at SpaceX. Five months after graduation he was still in final rounds for FPGA and analog roles, with no offer. An FPGA is a chip you set up by writing a configuration. Search the titles above, apply on the company site, and write down the questions you missed when a final round goes quiet.
 [reddit-2026-constant-rejection](https://www.reddit.com/r/ElectricalEngineering/comments/1ub50g2/where_do_i_apply_now_with_constant_rejection_and/)
 
 Another person started as a lab engineer technician, then moved to data center tech, and now does hardware and system validation while still in school.
@@ -228,49 +221,22 @@ Jane has no test role and no technician role on her resume, so she can still tak
 
 ## Paths from zero to a first internship
 
-Jane's dates run from the retail job up to Expected Spring 27, and the two Fall 24 lines happened in the same term. That retail line comes off the resume you send once a build replaces it. The full satellite, lab, and converter lines are in the sections above.
+<figure class="eep-fig wide eep-pathmap" id="fig-4-1">
+  <img class="eep-pathmap-light" src="/diagrams/get-hired/path-map/path-map.svg" alt="A path map. Four routes build proof: a personal hardware project, a student design team, research with a professor, and bench skills in the lab. They join one path: resume, career fairs and referrals, hardware interviews, then a first internship offer. Dashed lines loop back when applications get no interviews, and when a summer falls through." />
+  <img class="eep-pathmap-dark" src="/diagrams/get-hired/path-map/path-map-dark.svg" alt="A path map. Four routes build proof: a personal hardware project, a student design team, research with a professor, and bench skills in the lab. They join one path: resume, career fairs and referrals, hardware interviews, then a first internship offer. Dashed lines loop back when applications get no interviews, and when a summer falls through." />
+  <img class="eep-pathmap-mobile" src="/diagrams/get-hired/path-map/path-map-mobile.svg" alt="A path map. Four routes build proof: a personal hardware project, a student design team, research with a professor, and bench skills in the lab. They join one path: resume, career fairs and referrals, hardware interviews, then a first internship offer. Dashed lines loop back when applications get no interviews, and when a summer falls through." />
+  <figcaption><span class="eep-fignum">Fig 4.1</span><span>Routes from no experience to a first internship offer. Solid lines are the main path. Dashed lines show what to do when a step fails. Source: eeprep's review of public X and Reddit posts from September 2025 to October 2026. Q numbers are questions in eeprep's top-20 list.</span></figcaption>
+</figure>
 
-Sales Associate, Retail store, 06/2023 - 08/2024
+Jane's dates run from the retail job up to Expected Spring 27, and the two Fall 24 lines happened in the same term. That retail line comes off the resume you send once a build replaces it. The full lines for each of these builds are in the sections above.
 
-Bluetooth Battery Monitor
-
-Fall 24
-
-ESP32, Arduino C++, Python, INA219 current sensor
-
-Tracked [X] Li-ion cells within [Y] mV each with an ESP32 monitor that streams to a Python dashboard
-
-Extended pack runtime [X]% in field tests by adding a cutoff that drops non-critical loads at [Y] V
-
-Power Subsystem Engineer, [Student satellite team]
-
-Fall 24 - Spring 26
-
-FPGA [N]-Band Audio Equalizer
-
-Spring 25
-
-Verilog, Vivado, MATLAB, Basys 3 FPGA, fixed-point DSP
-
-Processed [X] kHz stereo audio at [Y] ms latency by pipelining [Z] [W]-tap FIR filters in Verilog
-
-Matched the MATLAB response within [X] dB from [Y] Hz to [Z] kHz by testing coefficients in Vivado
-
-Cut LUT use [X]% by sharing one multiplier per filter across all [Y] taps with time-division scheduling
-
-Undergraduate Research Assistant, [University lab]
-
-Summer 25
-
-Synchronous Buck Converter for a CubeSat Power Board
-
-Fall 25 - Spring 26
-
-School: [University]
-
-B.S. Electrical Engineering, GPA: [X.XX]/4.00
-
-Expected Spring 27
+1. Sales Associate, Retail store, 06/2023 - 08/2024
+2. Bluetooth Battery Monitor, Fall 24
+3. Power Subsystem Engineer, [Student satellite team], Fall 24 - Spring 26
+4. FPGA [N]-Band Audio Equalizer, Spring 25
+5. Undergraduate Research Assistant, [University lab], Summer 25
+6. Synchronous Buck Converter for a CubeSat Power Board, Fall 25 - Spring 26
+7. B.S. Electrical Engineering, Expected Spring 27
 
 Five routes cross the gap between no experience and a first internship.
 
@@ -323,4 +289,4 @@ Do these before you send another batch.
 - Read the eligibility line before you apply.
   [x-getemployedd-2026-varda](https://x.com/getemployedd/status/2105557978330128795)
 
-Last reviewed October 26, 2026.
+Last reviewed October 25, 2026.
