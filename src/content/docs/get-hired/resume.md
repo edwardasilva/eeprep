@@ -6,8 +6,10 @@ pageType: guide
 
 Jane Doe is not a real student. Copy her layout, then replace every line with your own work. Leave invented numbers in brackets, like `[X]%`.
 
+Edward Silva says that following the wiki got him past automated screeners. [@edward-silva-2026-resume-advice]
+
 > [!tip] Main idea
-> Use five sections in this order: header, projects, experience, education, skills. Edward Silva says that following the wiki got him past automated screeners. Credit that result to his experience. Do not credit the wiki for it. [@edward-silva-2026-resume-advice]
+> Use five sections in this order: header, projects, experience, education, skills. Put projects first, and cut the objective. [@edward-silva-2026-resume-advice]
 
 ## Section order
 
