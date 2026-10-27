@@ -86,7 +86,7 @@ npm ci
 npm run dev
 ```
 
-The dev server listens at http://localhost:4321.
+The dev server listens at <http://localhost:4321>.
 
 Build the static site and serve `dist/`:
 
@@ -124,4 +124,3 @@ vale --config .github/vale/.vale.ini src/content/docs
 `npm run check:links` needs a `dist/` folder, so run `npm run build` first. `npm run check:pr-body` reads `PR_BODY` from the environment. Vale is a separate program. CI installs Vale 3.25.1 and runs `vale --config .github/vale/.vale.ini src/content/docs`.
 
 <!-- run-locally:end -->
-

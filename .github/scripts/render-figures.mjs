@@ -7,8 +7,8 @@ const renderer = path.join(styleDir, 'render-wavedrom.js');
 const sources = listSources(path.resolve('src/diagrams'));
 
 if (sources.length === 0) {
-	console.error('No WaveDrom sources under src/diagrams.');
-	process.exit(1);
+	console.log('No WaveDrom sources under src/diagrams.');
+	process.exit(0);
 }
 
 for (const source of sources) {

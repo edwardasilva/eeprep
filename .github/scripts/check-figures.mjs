@@ -6,13 +6,14 @@ import path from 'node:path';
 const styleDir = path.resolve('src/diagrams/style');
 const renderer = path.join(styleDir, 'render-wavedrom.js');
 const sources = listSources(path.resolve('src/diagrams'));
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'eeprep-figures-'));
-let failed = false;
 
 if (sources.length === 0) {
-	console.error('No WaveDrom sources under src/diagrams.');
-	process.exit(1);
+	console.log('No WaveDrom sources under src/diagrams.');
+	process.exit(0);
 }
+
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'eeprep-figures-'));
+let failed = false;
 
 for (const source of sources) {
 	const svg = source.replace(/\.json5$/, '.svg');

@@ -40,9 +40,13 @@ function micromatchBrowserAlias() {
 		enforce: 'pre',
 		async resolveId(source, importer, options) {
 			if (source !== 'micromatch' || options?.ssr) return null;
-			const resolved = await this.resolve('picomatch/posix', importer, { skipSelf: true });
+			const resolved = await this.resolve('picomatch/posix', importer, {
+				skipSelf: true,
+			});
 			if (!resolved) {
-				throw new Error('picomatch/posix did not resolve for the browser micromatch alias.');
+				throw new Error(
+					'picomatch/posix did not resolve for the browser micromatch alias.',
+				);
 			}
 			return resolved.id;
 		},

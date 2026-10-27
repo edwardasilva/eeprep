@@ -1,6 +1,5 @@
 ---
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
-import Diagram from '../components/Diagram.astro';
 ---
 
 <StarlightPage
@@ -26,14 +25,6 @@ import Diagram from '../components/Diagram.astro';
 			</a>
 		</p>
 	</section>
-	<Diagram
-		src="reference/sample-spi.svg"
-		num="0.1"
-		wide
-		alt="SPI mode 0 timing. CS falls, then eight SCLK pulses. MOSI changes on the falling edge."
-	>
-		SPI mode 0, drawn when the site builds. The controller drives MOSI.
-	</Diagram>
 	<ul class="eep-cards">
 		<li>
 			<a href="/get-hired/">

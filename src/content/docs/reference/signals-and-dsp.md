@@ -204,30 +204,54 @@ Use these in the order above. Each one is a primary source for a piece of this p
 7. MIT OpenCourseWare 6.341, fall 2005, after the background list in its syllabus, for filter design and the MATLAB projects. [^8]
 8. The NumPy FFT manual and the SciPy `signal` pages for `convolve`, `lfilter`, `butter`, and `freqz`. [^15] [^11]
 
-
 [^1]: Massachusetts Institute of Technology. Syllabus, 6.003 Signals and Systems, Fall 2011. MIT OpenCourseWare, 2011. <https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/pages/syllabus/> Accessed 2026-10-25.
+
 [^2]: Massachusetts Institute of Technology. 6.003 homepage, Fall 2011, handouts. MIT, 2011. <https://web.mit.edu/6.003/F11/www/handouts.html> Accessed 2026-10-25.
+
 [^3]: Massachusetts Institute of Technology. Readings, 6.003 Signals and Systems, Fall 2011. MIT OpenCourseWare, 2011. <https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/pages/readings/> Accessed 2026-10-25.
+
 [^4]: Steven W. Smith. The Scientist and Engineer's Guide to Digital Signal Processing, Chapter 3, ADC and DAC. 1997. <http://www.dspguide.com/CH3.PDF> Accessed 2026-10-25.
+
 [^5]: Steven W. Smith. The Scientist and Engineer's Guide to Digital Signal Processing, Chapter 6, Convolution. 1997. <https://dspguide.com/CH6.PDF> Accessed 2026-10-25.
+
 [^6]: Steven W. Smith. The Scientist and Engineer's Guide to Digital Signal Processing, Chapter 8, The Discrete Fourier Transform. 1997. <https://dspguide.com/CH8.PDF> Accessed 2026-10-25.
+
 [^7]: Steven W. Smith. The Scientist and Engineer's Guide to Digital Signal Processing, Chapter 16, Windowed-Sinc Filters. 1997. <https://www.dspguide.com/CH16.PDF> Accessed 2026-10-25.
+
 [^8]: Alan V. Oppenheim. Syllabus, 6.341 Discrete-Time Signal Processing, Fall 2005. MIT OpenCourseWare, 2005. <https://ocw.mit.edu/courses/6-341-discrete-time-signal-processing-fall-2005/pages/syllabus/> Accessed 2026-10-25.
+
 [^9]: Dennis Freeman. Lecture 8: Convolution, 6.003 Signals and Systems, Fall 2011. MIT OpenCourseWare, 2011. <https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/resources/lecture-8-convolution/> Accessed 2026-10-25.
+
 [^10]: Richard G. Lyons. Understanding Digital Signal Processing. 3rd edition. Pearson, 2011. Sample pages, preface and chapter 1. <https://ptgmedia.pearsoncmg.com/images/9780137027415/samplepages/0137027419.pdf> Accessed 2026-10-25.
+
 [^11]: SciPy Developers. scipy.signal.convolve, SciPy v1.18.0 Manual. 2026. <https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.convolve.html> Accessed 2026-10-25.
+
 [^12]: Julius O. Smith. Introduction to Digital Filters, Convolution Representation. CCRMA, Stanford University. <https://ccrma.stanford.edu/~jos/filters/Convolution_Representation.html> Accessed 2026-10-25.
+
 [^13]: Claude E. Shannon. Communication in the Presence of Noise. Proceedings of the IRE, 1949. Reprint. DOI 10.1109/jrproc.1949.232969. <https://faculty.washington.edu/jar7/EEclasses/EE506/Notes/shannon.pdf> Accessed 2026-10-25.
+
 [^14]: Allen B. Downey. Think DSP: Digital Signal Processing in Python. Green Tea Press. <https://greenteapress.com/thinkdsp/thinkdsp.pdf> and <https://allendowney.github.io/ThinkDSP2/> Accessed 2026-10-25.
+
 [^15]: NumPy Developers. Discrete Fourier Transform, NumPy v2.5 Manual. 2026. <https://numpy.org/doc/stable/reference/routines.fft.html> Accessed 2026-10-25.
+
 [^16]: Julius O. Smith. Mathematics of the DFT, The Discrete Fourier Transform. CCRMA, Stanford University. <https://ccrma.stanford.edu/~jos/dft/Discrete_Fourier_Transform_DFT.html> and <https://ccrma.stanford.edu/~jos/dft/DFT_Definition.html> Accessed 2026-10-25.
+
 [^17]: Julius O. Smith. Introduction to Digital Filters, The Z Transform. CCRMA, Stanford University. <https://ccrma.stanford.edu/~jos/filters/Z_Transform.html> Accessed 2026-10-25.
+
 [^18]: Julius O. Smith. Introduction to Digital Filters, Transfer Function Analysis. CCRMA, Stanford University. <https://ccrma.stanford.edu/~jos/filters/Transfer_Function_Analysis.html> Accessed 2026-10-25.
+
 [^19]: Julius O. Smith. Introduction to Digital Filters, Convolution Theorem. CCRMA, Stanford University. <https://ccrma.stanford.edu/~jos/filters/Convolution_Theorem.html> Accessed 2026-10-25.
+
 [^20]: Julius O. Smith. Introduction to Digital Filters, Frequency Response. CCRMA, Stanford University. <https://ccrma.stanford.edu/~jos/filters/Frequency_Response_I.html> Accessed 2026-10-25.
+
 [^21]: Julius O. Smith. Introduction to Digital Filters, Stability Revisited. CCRMA, Stanford University. <https://ccrma.stanford.edu/~jos/filters/Stability.html> Accessed 2026-10-25.
+
 [^22]: SciPy Developers. scipy.signal.lfilter, SciPy v1.18.0 Manual. 2026. <https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.lfilter.html> Accessed 2026-10-25.
+
 [^23]: SciPy Developers. scipy.signal.butter, SciPy v1.18.0 Manual. 2026. <https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.butter.html> Accessed 2026-10-25.
+
 [^24]: SciPy Developers. scipy.signal.freqz, SciPy v1.18.0 Manual. 2026. <https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.freqz.html> Accessed 2026-10-25.
+
 [^25]: Alan V. Oppenheim. Discrete-Time Signal Processing, 6.341, Fall 2005. MIT OpenCourseWare, 2005. <https://ocw.mit.edu/courses/6-341-discrete-time-signal-processing-fall-2005/> Accessed 2026-10-25.
+
 [^26]: Simon Frieder, Luca Pinchetti, Alexis Chevalier, Ryan-Rhys Griffiths, Tommaso Salvatori, Thomas Lukasiewicz, Philipp Christian Petersen, and Julius Berner. Mathematical Capabilities of ChatGPT. 2023. arXiv:2301.13867v2. <https://arxiv.org/html/2301.13867v2> Accessed 2026-10-25.
