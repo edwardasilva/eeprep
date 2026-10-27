@@ -7,6 +7,7 @@ export default tseslint.config(
 	{
 		ignores: [
 			'dist/**',
+			'.astro/**',
 			'coverage/**',
 			// Generated figure output. check:figures compares these bytes to a fresh render.
 			'src/diagrams/**/*.svg',

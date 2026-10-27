@@ -29,35 +29,30 @@ const darkCodeTheme = JSON.parse(
 	),
 );
 
-// The site graph's client script imports micromatch 4, whose picomatch 2 reads
-// process.platform and process.version, and those throw in the browser.
-// picomatch 4's posix build has the same isMatch and no Node globals.
-// Dev SSR must keep Node's micromatch. picomatch/posix is CommonJS, and Vite's
-// dev server throws "module is not defined" when it loads that file for SSR.
-function micromatchBrowserAlias() {
-	return {
-		name: 'micromatch-browser-alias',
-		enforce: 'pre',
-		async resolveId(source, importer, options) {
-			if (source !== 'micromatch' || options?.ssr) return null;
-			const resolved = await this.resolve('picomatch/posix', importer, {
-				skipSelf: true,
-			});
-			if (!resolved) {
-				throw new Error(
-					'picomatch/posix did not resolve for the browser micromatch alias.',
-				);
-			}
-			return resolved.id;
-		},
-	};
-}
-
 export default defineConfig({
 	site: 'https://eeprep.com',
 	trailingSlash: 'always',
 	vite: {
-		plugins: [micromatchBrowserAlias()],
+		plugins: [
+			{
+				// The site graph's client script imports micromatch 4, whose picomatch 2 reads
+				// process.platform and process.version, and those throw in the browser.
+				// picomatch 4's posix build has the same isMatch and no Node globals.
+				// Swap it only for the browser build. On the server, picomatch/posix is
+				// CommonJS and Vite's SSR runner can't evaluate it inline.
+				name: 'eeprep:micromatch-browser',
+				enforce: 'pre',
+				applyToEnvironment: (env) => env.config.consumer === 'client',
+				resolveId(id, importer, options) {
+					if (id !== 'micromatch') return null;
+					return this.resolve('picomatch/posix', importer, {
+						...options,
+						skipSelf: true,
+					});
+				},
+			},
+		],
+		optimizeDeps: { include: ['picomatch/posix'] },
 	},
 	markdown: {
 		processor: unified({

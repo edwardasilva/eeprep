@@ -67,6 +67,13 @@ Clone, install, and serve steps are in the Run it locally section.
 
 After you edit a `.json5` figure, run `npm run render:figures` and commit the SVG next to it.
 
+`npm run lint` checks ESLint, markdownlint, and Prettier. `npm run format` writes Prettier formatting and applies ESLint fixes.
+
+```bash
+npm run lint
+npm run format
+```
+
 Open `src/content/docs` as an Obsidian vault. Wikilinks stay in `[[wiki]]` form (`useMarkdownLinks` is off). Same-page links use `[text](#heading)`, because `[[#heading]]` has an empty page name and the wikilink check fails the build. Do not commit `.obsidian/workspace.json`.
 
 Write in sentence case. Callout titles are sentence case. Use "Main idea", not "Key idea". The bibliography file is added on the citations epic.
@@ -118,6 +125,7 @@ npm run check:figures
 npm run build
 npm run check:links
 npm run check:pr-body
+npm run lint
 vale --config .github/vale/.vale.ini src/content/docs
 ```
 
