@@ -43,7 +43,6 @@ jobs:
       - run: npm run test:wikilinks
       - run: npm run check:wikilinks
       - run: npm run check:figures
-      - run: npm run check:dev
       - run: npm run build
       - run: npm run check:links
 

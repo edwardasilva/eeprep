@@ -104,7 +104,9 @@
 	margin-top: 1.5rem;
 }
 .eep-btn {
-	display: inline-block;
+	display: inline-flex;
+	align-items: center;
+	box-sizing: border-box;
 	background: var(--eep-accent);
 	color: var(--eep-on-accent);
 	text-decoration: none;
@@ -136,6 +138,10 @@
 	background: transparent;
 	color: var(--eep-ink);
 }
+/* Starlight sets the shortcut in the UI font. The theme's code font is mono. */
+button[data-open-modal] kbd {
+	font-family: var(--eep-font-mono);
+}
 .eep-cards {
 	list-style: none;
 	padding: 0;
@@ -143,6 +149,11 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
 	gap: 1rem;
+}
+/* Starlight adds 0.25rem above every list item after the first. In this row
+   that drops cards 2 and 3 by 4px and shortens them by the same amount. */
+.eep-cards > li {
+	margin-top: 0;
 }
 .eep-cards a {
 	display: grid;
@@ -182,12 +193,40 @@
 	color: var(--eep-mute);
 	margin: 0 0 var(--eep-space-4);
 }
+/* Graph and backlink panels get 1rem of sidebar padding from the graph package.
+   Key terms is our panel, so it missed that inset and sat 16px further left.
+   Below 72rem the sidebar is a wrapping row, and this padding would push Key
+   terms onto its own line. The right column exists from 72rem up. */
+@media (min-width: 72rem) {
+	.right-sidebar-panel.eep-margin {
+		padding: 1rem var(--sl-sidebar-pad-x);
+	}
+}
 .eep-margin ul {
 	margin: 0;
 	padding-left: 1.1rem;
 }
 .wikilink-missing {
 	color: var(--eep-accent);
+}
+
+/* The graph box is 250px. The right column content is the sidebar width minus
+   its horizontal padding, 240px at 17rem. Fit the column and stay square.
+   Fullscreen puts .slsg-is-fullscreen on the container, so leave that alone. */
+.slsg-graph-panel graph-component.slsg-graph-component,
+.slsg-graph-panel .slsg-graph-container:not(.slsg-is-fullscreen),
+.slsg-graph-panel .slsg-graph-container:not(.slsg-is-fullscreen) canvas {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	aspect-ratio: 1;
+}
+.slsg-graph-panel graph-component.slsg-graph-component,
+.slsg-graph-panel .slsg-graph-container:not(.slsg-is-fullscreen) canvas {
+	display: block;
+}
+.slsg-graph-panel graph-component.slsg-graph-component {
+	width: min(100%, calc(var(--sl-sidebar-width) - 2 * var(--sl-sidebar-pad-x)));
 }
 
 @media (max-width: 50rem) {
@@ -225,5 +264,11 @@
 	.sl-menu-button:focus-visible {
 		outline: 2px solid var(--eep-accent);
 		outline-offset: 2px;
+	}
+
+	/* Wrapped buttons no longer share a flex line, so the quiet border makes
+	   that one 2px taller. Both need a 40px tap target. */
+	.eep-btn {
+		min-height: 2.5rem;
 	}
 }
