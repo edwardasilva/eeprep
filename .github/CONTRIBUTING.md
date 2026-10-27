@@ -56,7 +56,7 @@ Pull requests into `main` and `epic/**` run four jobs:
 
 - the body contains `Part of #<issue>` (Dependabot and `no-epic` skip this)
 - `npm ci`, wikilink check, figure regeneration check, production build, and HTML link check
-- Vale, using `docs/STYLE.md`, on `src/content/docs` (`vale --config .github/vale/.vale.ini src/content/docs`)
+- Vale, using `.github/STYLE.md`, on `src/content/docs` (`vale --config .github/vale/.vale.ini src/content/docs`)
 - `npm run lint` (ESLint, markdownlint, and Prettier)
 
 The deploy workflow is manual. Edward runs `.github/workflows/deploy.yml` when he decides to publish. Do not run that workflow, change DNS, or turn on GitHub Pages.

@@ -83,7 +83,7 @@ Lyons calls periodic sampling the most frequently misunderstood process in digit
 
 Put a low-pass filter in front of the converter, before any sample exists. Smith calls that filter the antialias filter. It removes frequencies above half the sampling rate. A second low-pass after the converter is the reconstruction filter. [^4]
 
-The [[Sample page#Cutoff frequency|series RC low-pass]] is one capacitor and one resistor. Smith shows why a gentle cutoff spends bandwidth on the slope. Take a 12-bit converter at 10000 samples per second. He wants every frequency above 5 kHz reduced by a factor of 100. An 8-pole Chebyshev then has its cutoff set to 3.7 kHz. The band from 3.7 kHz to 5 kHz is spent on the roll-off. [^4]
+The series RC low-pass is one capacitor and one resistor. Smith shows why a gentle cutoff spends bandwidth on the slope. Take a 12-bit converter at 10000 samples per second. He wants every frequency above 5 kHz reduced by a factor of 100. An 8-pole Chebyshev then has its cutoff set to 3.7 kHz. The band from 3.7 kHz to 5 kHz is spent on the roll-off. [^4]
 
 Keep sampling and quantization apart. Sampling drops what happens between the sample times. Quantization rounds each held voltage. Smith bounds that rounding by half of one least significant bit. He models it as noise with standard deviation about 0.29 of that step. An 8-bit converter then adds rms noise of about 1/900 of full scale. [^4]
 

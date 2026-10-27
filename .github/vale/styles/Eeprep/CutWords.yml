@@ -1,7 +1,7 @@
-# Decorative groups of three are banned in docs/STYLE.md section 3.
+# Decorative groups of three are banned in .github/STYLE.md section 3.
 # Vale cannot tell a real list of three from a decorative one, so this style does not flag them.
 extends: existence
-message: "Cut '%s'. See docs/STYLE.md section 3."
+message: "Cut '%s'. See .github/STYLE.md section 3."
 level: error
 ignorecase: true
 tokens:

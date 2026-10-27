@@ -23,9 +23,10 @@ coverage/
 !.vscode/extensions.json
 !.vscode/launch.json
 
-# Obsidian vault UI state. app.json is shared on purpose.
+# Obsidian vault UI state.
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
+src/content/docs/.obsidian/
 
 # LaTeX build artifacts. Keep .tex sources and PDFs, including a public resume.
 *.aux
