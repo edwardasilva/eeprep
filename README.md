@@ -1,6 +1,6 @@
 <picture>
-<source media="(prefers-color-scheme: dark)" srcset="public/brand/eeprep-lockup-stacked-dark-outlined.svg" />
-<img alt="eeprep" src="public/brand/eeprep-lockup-stacked-outlined.svg" width="162" height="204" />
+<source media="(prefers-color-scheme: dark)" srcset="public/brand/eeprep-lockup-stacked-dark.png" />
+<img alt="eeprep" src="public/brand/eeprep-lockup-stacked.png" width="162" height="204" />
 </picture>
 
 # EE Prep
