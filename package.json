@@ -67,7 +67,6 @@
         ],
         "options": {
           "useTabs": false,
-          "proseWrap": "preserve",
           "embeddedLanguageFormatting": "off"
         }
       },

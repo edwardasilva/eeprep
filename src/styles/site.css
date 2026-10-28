@@ -105,11 +105,6 @@
 button[data-open-modal] kbd {
 	font-family: var(--eep-font-mono);
 }
-.eep-btn-quiet {
-	background: transparent;
-	color: var(--eep-ink);
-	border: var(--eep-border);
-}
 /* theme.css `.sl-markdown-content a` beats `.eep-btn` and paints ink on crimson. */
 .sl-markdown-content a.eep-btn {
 	background: var(--eep-accent);
@@ -119,15 +114,6 @@ button[data-open-modal] kbd {
 .sl-markdown-content a.eep-btn:hover {
 	background: var(--eep-accent-hover);
 	color: var(--eep-on-accent);
-}
-.sl-markdown-content a.eep-btn.eep-btn-quiet {
-	background: transparent;
-	color: var(--eep-ink);
-	border: var(--eep-border);
-}
-.sl-markdown-content a.eep-btn.eep-btn-quiet:hover {
-	background: transparent;
-	color: var(--eep-ink);
 }
 .eep-cards {
 	list-style: none;
@@ -258,8 +244,7 @@ button[data-open-modal] kbd {
 		outline-offset: 2px;
 	}
 
-	/* Wrapped buttons no longer share a flex line, so the quiet border makes
-	   that one 2px taller. Both need a 40px tap target. */
+	/* The phone header and this button both need a 40px tap target. */
 	.eep-btn {
 		min-height: 2.5rem;
 	}
