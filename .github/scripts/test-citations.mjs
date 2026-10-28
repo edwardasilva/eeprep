@@ -120,4 +120,25 @@ assert.match(
 );
 assert.doesNotMatch(exemptPandoc.stderr, /link text /);
 
+const handle = check('handle-prose');
+assert.equal(handle.status, 1);
+assert.match(handle.stderr, /prose contains a handle "@ada_writer"/);
+assert.doesNotMatch(handle.stderr, /not linked from any page/);
+
+const handleOk = check('handle-ok');
+assert.equal(handleOk.status, 0, `${handleOk.stdout}\n${handleOk.stderr}`);
+assert.equal(handleOk.stderr, '');
+assert.match(
+	handleOk.stdout,
+	/Citation URLs match 1 bibliography entries across 1 pages/,
+);
+
+const exemptHandle = check('exempt-handle');
+assert.equal(
+	exemptHandle.status,
+	0,
+	`${exemptHandle.stdout}\n${exemptHandle.stderr}`,
+);
+assert.equal(exemptHandle.stderr, '');
+
 console.log('Citation checks pass.');

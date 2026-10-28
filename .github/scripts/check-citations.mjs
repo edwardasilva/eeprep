@@ -1,7 +1,7 @@
 // Fails when a page under src/content/docs links an external source URL that
 // references.bib does not list, or when a bibliography entry is linked from no page.
-// Also fails on a Pandoc [@key] cite, and on Markdown link text that is a
-// citation key, a handle, or a bare URL.
+// Also fails on a Pandoc [@key] cite, on Markdown link text that is a
+// citation key, a handle, or a bare URL, and on an @handle in page prose.
 // Bibliography matching is on the url, not on link text.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -331,16 +331,35 @@ function checkCitationStyle(file, text) {
 		for (const match of stripped.matchAll(/<(https?:\/\/[^>\s]+)>/g)) {
 			reportLinkText(file, index + 1, match[1] ?? '');
 		}
+		reportHandles(file, index + 1, stripped);
 	}
 }
 
 /**
  * TODO(#67): get-hired/first-internship.mdx still uses key-style link text.
- * Remove this exclusion when #67 rewrites that page.
+ * The link-text check and the @handle prose check skip it until #67 rewrites that page.
  * @param {string} file
  */
 function isLinkTextExempt(file) {
 	return display(file).endsWith('get-hired/first-internship.mdx');
+}
+
+/**
+ * An @handle in prose is a username. URLs and code are not prose.
+ * Inline code is already blanked. Call this with a fence line skipped.
+ * @param {string} file
+ * @param {number} line
+ * @param {string} stripped
+ */
+function reportHandles(file, line, stripped) {
+	const visible = stripped.replace(/https?:\/\/[^\s)]+/g, (url) =>
+		' '.repeat(url.length),
+	);
+	for (const match of visible.matchAll(/(^|[^\w])@([A-Za-z0-9_]+)/g)) {
+		failures.push(
+			`${display(file)}:${line}: prose contains a handle "@${match[2]}"`,
+		);
+	}
 }
 
 /** @param {string} file @param {number} line @param {string} raw */

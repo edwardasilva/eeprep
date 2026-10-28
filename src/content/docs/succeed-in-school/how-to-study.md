@@ -44,7 +44,7 @@ Jane writes step 2 on paper, in her own words.
 
 ## When a model writes the work
 
-An incoming student posted a house wiring plan from ChatGPT and asked if AI would replace electrical engineers, on an [EE and AI thread](https://www.reddit.com/r/ElectricalEngineering/comments/1sujlpy/will_ai_slowly_replace_some_electrical/). The commenter socal_nerdtastic answered on that thread. Looks good and is good are different. On the drawing, the range outlet went to the fridge. One light switch went to another switch. The porch light was not connected at all. They say you will use AI, whatever your career is. They say it will not replace engineers for a very long time. It will not replace them in your career.
+An incoming student posted a house wiring plan from ChatGPT and asked if AI would replace electrical engineers, on an [EE and AI thread](https://www.reddit.com/r/ElectricalEngineering/comments/1sujlpy/will_ai_slowly_replace_some_electrical/). One commenter answered on that thread. Looks good and is good are different. On the drawing, the range outlet went to the fridge. One light switch went to another switch. The porch light was not connected at all. They say you will use AI, whatever your career is. They say it will not replace engineers for a very long time. It will not replace them in your career.
 
 One person says programs still train the junior rung, in a [junior rung post](https://x.com/hilmybox/status/2067277355111092413). That rung is CAD, PCB layout, test scripts, and basic analysis. He says AI automates that rung first.
 
@@ -52,11 +52,11 @@ One student lists one model beside each course they are learning, and says that 
 
 One person says AI will not replace electrical engineers, in an [AI tool post](https://x.com/Kila_Tech/status/2061704871456145812). It will replace engineers who refuse to use it. The engineer who uses it as a tool outpaces the one who fears it.
 
-Before you trust a model-drawn plan, look for the miss socal_nerdtastic found on an [EE and AI thread](https://www.reddit.com/r/ElectricalEngineering/comments/1sujlpy/will_ai_slowly_replace_some_electrical/). On that plan the porch light had no connection. Then write the circuit the way step 2 says in the [analog design post](https://x.com/siliconcodesign/status/2080669341016805488).
+Before you trust a model-drawn plan, look for the miss one commenter found on an [EE and AI thread](https://www.reddit.com/r/ElectricalEngineering/comments/1sujlpy/will_ai_slowly_replace_some_electrical/). On that plan the porch light had no connection. Then write the circuit the way step 2 says in the [analog design post](https://x.com/siliconcodesign/status/2080669341016805488).
 
 ## Homework and exams
 
-Bupod, on a [KiCad learning thread](https://www.reddit.com/r/ElectricalEngineering/comments/1rw9i3j/kicad_online_learning/), says an interviewer rejected EE candidates who could not identify a diode symbol on a schematic. Learn the symbol. Learn to read one.
+One commenter on a [KiCad learning thread](https://www.reddit.com/r/ElectricalEngineering/comments/1rw9i3j/kicad_online_learning/) says an interviewer rejected EE candidates who could not identify a diode symbol on a schematic. Learn the symbol. Learn to read one.
 
 One student says a closed-book signals exam was much easier, because the exam was designed to be finished in the time, in an [exam format post](https://x.com/yoruis27/status/2092075207012098440).
 
@@ -66,14 +66,14 @@ One person calls out EE students who cannot run an oscilloscope or a function ge
 
 One person says college EE labs are moving onto software, in a [lab skills post](https://x.com/labs_yy/status/1984368758216147412). Few students have real lab skills.
 
-Bupod names four bench skills on a [KiCad learning thread](https://www.reddit.com/r/ElectricalEngineering/comments/1rw9i3j/kicad_online_learning/).
+One commenter names four bench skills on a [KiCad learning thread](https://www.reddit.com/r/ElectricalEngineering/comments/1rw9i3j/kicad_online_learning/).
 
 - On a DMM, current and voltage are read in different ways. A DMM is a digital multimeter. Learn both readings.
 - On a scope, learn AC coupling, DC coupling, and what triggering does.
 - Learn what a spectrum analyzer shows, when you can use one, and why.
 - Do not start a fire. Practice soldering.
 
-Bupod also says to learn LTspice, on that [KiCad learning thread](https://www.reddit.com/r/ElectricalEngineering/comments/1rw9i3j/kicad_online_learning/). Lay out the circuit in it. Analyze it there. Check that the simulation works in theory before you build.
+The same commenter also says to learn LTspice, on that [KiCad learning thread](https://www.reddit.com/r/ElectricalEngineering/comments/1rw9i3j/kicad_online_learning/). Lay out the circuit in it. Analyze it there. Check that the simulation works in theory before you build.
 
 ## Builds you can show
 
@@ -92,7 +92,7 @@ One engineer has 35 years or more in EE and RF, and teaches in a university EE a
 
 One person says an engineering student can request an Altium student license and practice the tool before the job search, in an [Altium license post](https://x.com/blind_via/status/2061016080370573758).
 
-Bupod says KiCad is the right tool when it is the one you can get, on that [KiCad learning thread](https://www.reddit.com/r/ElectricalEngineering/comments/1rw9i3j/kicad_online_learning/). Use it to learn schematics and how a PCB is laid out. A PCB is a board you design. If you can get a student copy of Altium, he recommends that, and he calls Altium the industry tool. Either way, design a board, have it built, assemble it, and show it working. He says you are unlikely to be marked down for a KiCad board instead of an Altium board. Demonstrated Altium use gets more attention.
+One commenter on a [KiCad learning thread](https://www.reddit.com/r/ElectricalEngineering/comments/1rw9i3j/kicad_online_learning/) says KiCad is the right tool when it is the one you can get. Use it to learn schematics and how a PCB is laid out. A PCB is a board you design. If you can get a student copy of Altium, he recommends that, and he calls Altium the industry tool. Either way, design a board, have it built, assemble it, and show it working. He says you are unlikely to be marked down for a KiCad board instead of an Altium board. Demonstrated Altium use gets more attention.
 
 One person says a plain Arduino or Pi project will not carry you, in a [project depth post](https://x.com/joelteply/status/1995534628065780018). Dig into the EE. He wants a degree in electrical or computer engineering for that work.
 
@@ -100,27 +100,27 @@ An EE student is not building hardware, because the parts cost too much, in a [p
 
 One person says learning hardware costs more than learning software, in a [hardware cost post](https://x.com/karanbhilhatiya/status/2078038754368065816). Software needs a computer and a network connection. Hardware needs a scope, diodes, transistors, and breadboards, plus a computer if the work is embedded.
 
-AtmosphereLucky164 says learn Python for automation, and show the thinking by splitting one large project into small ones, on a [freshman skills thread](https://www.reddit.com/r/EngineeringStudents/comments/1si0rp5/as_a_freshman_ee_student_what_skills_should_i/). Their freshman summer was an FPGA project. They designed and simulated an 8-bit CPU. That single project used Python, data notes, Excel, system design, and design verification.
+One commenter says learn Python for automation, and show the thinking by splitting one large project into small ones, on a [freshman skills thread](https://www.reddit.com/r/EngineeringStudents/comments/1si0rp5/as_a_freshman_ee_student_what_skills_should_i/). Their freshman summer was an FPGA project. They designed and simulated an 8-bit CPU. That single project used Python, data notes, Excel, system design, and design verification.
 
-EffectiveClient5080 says bring working demos to interviews, on that [freshman skills thread](https://www.reddit.com/r/EngineeringStudents/comments/1si0rp5/as_a_freshman_ee_student_what_skills_should_i/). They carry a briefcase with the last two or three projects and a power strip.
+Another commenter says bring working demos to interviews, on that [freshman skills thread](https://www.reddit.com/r/EngineeringStudents/comments/1si0rp5/as_a_freshman_ee_student_what_skills_should_i/). They carry a briefcase with the last two or three projects and a power strip.
 
 ## When the term is too full
 
-Amadeus3698, on a [GPA advice thread](https://www.reddit.com/r/ElectricalEngineering/comments/1oyd4a7/how_much_does_gpa_matter_when_applying_for/), says you need friends in the program who help you do homework and study. If a low GPA comes from not studying, the work starts next term. If you are overextended, drop extras.
+One commenter on a [GPA advice thread](https://www.reddit.com/r/ElectricalEngineering/comments/1oyd4a7/how_much_does_gpa_matter_when_applying_for/) says you need friends in the program who help you do homework and study. If a low GPA comes from not studying, the work starts next term. If you are overextended, drop extras.
 
-HoldOptimal5595, on the [freshman skills thread](https://www.reddit.com/r/EngineeringStudents/comments/1si0rp5/as_a_freshman_ee_student_what_skills_should_i/), says buy an Arduino kit and play with it. They would not fill the summer with intense math or physics study. If you study during the summer anyway, they name 3Blue1Brown and Walter Lewin.
+Another commenter on the [freshman skills thread](https://www.reddit.com/r/EngineeringStudents/comments/1si0rp5/as_a_freshman_ee_student_what_skills_should_i/) says buy an Arduino kit and play with it. They would not fill the summer with intense math or physics study. If you study during the summer anyway, they name 3Blue1Brown and Walter Lewin.
 
-TopCompany9406 says a little C or Python, plus an Arduino, is enough, on that [freshman skills thread](https://www.reddit.com/r/EngineeringStudents/comments/1si0rp5/as_a_freshman_ee_student_what_skills_should_i/). The courses teach the rest. Enjoy that summer. The next four summers or so will not be as free.
+Another commenter says a little C or Python, plus an Arduino, is enough, on that [freshman skills thread](https://www.reddit.com/r/EngineeringStudents/comments/1si0rp5/as_a_freshman_ee_student_what_skills_should_i/). The courses teach the rest. Enjoy that summer. The next four summers or so will not be as free.
 
 ## A posted grade minimum
 
 The freshman who opened the [GPA advice thread](https://www.reddit.com/r/ElectricalEngineering/comments/1oyd4a7/how_much_does_gpa_matter_when_applying_for/) did the arithmetic. A good case was about 2.99. A bad case was 2.6. They can program a PLC, solder, and use AutoCAD and SolidWorks. They are one of two people in charge of communications for a school lunar robot. They asked if that file can beat the grade.
 
-saplinglearningsucks says GPA matters when the job posts a minimum, on that [GPA advice thread](https://www.reddit.com/r/ElectricalEngineering/comments/1oyd4a7/how_much_does_gpa_matter_when_applying_for/). Otherwise leave it off unless they ask.
+Another commenter says GPA matters when the job posts a minimum, on that [GPA advice thread](https://www.reddit.com/r/ElectricalEngineering/comments/1oyd4a7/how_much_does_gpa_matter_when_applying_for/). Otherwise leave it off unless they ask.
 
-almotnw3, writing from another country, asked professors, teaching assistants, and alumni, on that [GPA advice thread](https://www.reddit.com/r/ElectricalEngineering/comments/1oyd4a7/how_much_does_gpa_matter_when_applying_for/). Those people said to aim for a GPA of 3. The projects and the CAD work are what show that you applied the course.
+A student writing from another country asked professors, teaching assistants, and alumni, on that [GPA advice thread](https://www.reddit.com/r/ElectricalEngineering/comments/1oyd4a7/how_much_does_gpa_matter_when_applying_for/). Those people said to aim for a GPA of 3. The projects and the CAD work are what show that you applied the course.
 
-Amadeus3698 wants a GPA on an intern application, on that [GPA advice thread](https://www.reddit.com/r/ElectricalEngineering/comments/1oyd4a7/how_much_does_gpa_matter_when_applying_for/). It shows that you are serious about school. It also shows they are less likely to have to teach you every concept for your year. They have had interns who could not do basic concepts, and that summer was a waste. A low GPA is likely filtered online at a large company, before a person sees the resume. Apply where a person can hear the rest of the file.
+A commenter who hires interns wants a GPA on an intern application, on that [GPA advice thread](https://www.reddit.com/r/ElectricalEngineering/comments/1oyd4a7/how_much_does_gpa_matter_when_applying_for/). It shows that you are serious about school. It also shows they are less likely to have to teach you every concept for your year. They have had interns who could not do basic concepts, and that summer was a waste. A low GPA is likely filtered online at a large company, before a person sees the resume. Apply where a person can hear the rest of the file.
 
 Jane compares her [X.XX] with any minimum the posting prints. If she is under it, she talks to a person, as that [GPA advice thread](https://www.reddit.com/r/ElectricalEngineering/comments/1oyd4a7/how_much_does_gpa_matter_when_applying_for/) says.
 
@@ -132,7 +132,7 @@ Run this list on the current course. Each line is one instruction from a source 
 
 1. After each analog chapter, write how one circuit works, in your own words, as an [analog design post](https://x.com/siliconcodesign/status/2080669341016805488) says.
 2. Map the topologies, then add a harder block such as a folded cascode OTA, as that [analog design post](https://x.com/siliconcodesign/status/2080669341016805488) says.
-3. On a model-drawn plan, look for a load on the wrong circuit and a light with no connection. That is what socal_nerdtastic found on an [EE and AI thread](https://www.reddit.com/r/ElectricalEngineering/comments/1sujlpy/will_ai_slowly_replace_some_electrical/).
+3. On a model-drawn plan, look for a load on the wrong circuit and a light with no connection. That is what one commenter found on an [EE and AI thread](https://www.reddit.com/r/ElectricalEngineering/comments/1sujlpy/will_ai_slowly_replace_some_electrical/).
 4. Learn to use an oscilloscope and a function generator, as a [bench skills post](https://x.com/OnosSpeaks/status/2001938854585270650) says.
 5. On a DMM, practice current and voltage as separate measurements, as a [KiCad learning thread](https://www.reddit.com/r/ElectricalEngineering/comments/1rw9i3j/kicad_online_learning/) says.
 6. On a scope, practice AC coupling, DC coupling, and triggering, as that [KiCad learning thread](https://www.reddit.com/r/ElectricalEngineering/comments/1rw9i3j/kicad_online_learning/) says.
