@@ -104,21 +104,20 @@ assert.match(
 assert.doesNotMatch(pandoc.stderr, /not linked from any page/);
 assert.doesNotMatch(pandoc.stderr, /link text /);
 
-const exempt = check('exempt-keys');
-assert.equal(exempt.status, 0, `${exempt.stdout}\n${exempt.stderr}`);
-assert.equal(exempt.stderr, '');
-assert.match(
-	exempt.stdout,
-	/Citation URLs match 2 bibliography entries across 1 pages/,
-);
-
-const exemptPandoc = check('exempt-pandoc');
-assert.equal(exemptPandoc.status, 1);
-assert.match(
-	exemptPandoc.stderr,
-	/Pandoc citation "\[@still-raw\]" is not allowed/,
-);
-assert.doesNotMatch(exemptPandoc.stderr, /link text /);
+const ownLine = check('own-line');
+assert.equal(ownLine.status, 1);
+assert.match(ownLine.stderr, /page\.md:7: line is only Markdown links/);
+assert.match(ownLine.stderr, /page\.md:9: line is only Markdown links/);
+assert.match(ownLine.stderr, /page\.md:13: line is only Markdown links/);
+assert.match(ownLine.stderr, /page\.md:21: line is only Markdown links/);
+assert.doesNotMatch(ownLine.stderr, /page\.md:5:/);
+assert.doesNotMatch(ownLine.stderr, /page\.md:11:/);
+assert.doesNotMatch(ownLine.stderr, /page\.md:15:/);
+assert.doesNotMatch(ownLine.stderr, /page\.md:18:/);
+assert.doesNotMatch(ownLine.stderr, /page\.md:23:/);
+assert.doesNotMatch(ownLine.stderr, /link text /);
+assert.doesNotMatch(ownLine.stderr, /not linked from any page/);
+assert.doesNotMatch(ownLine.stderr, /is not in /);
 
 const handle = check('handle-prose');
 assert.equal(handle.status, 1);
@@ -132,13 +131,5 @@ assert.match(
 	handleOk.stdout,
 	/Citation URLs match 1 bibliography entries across 1 pages/,
 );
-
-const exemptHandle = check('exempt-handle');
-assert.equal(
-	exemptHandle.status,
-	0,
-	`${exemptHandle.stdout}\n${exemptHandle.stderr}`,
-);
-assert.equal(exemptHandle.stderr, '');
 
 console.log('Citation checks pass.');
