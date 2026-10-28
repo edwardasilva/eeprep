@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="256" height="256" role="img" aria-label="eeprep">
+  <title>eeprep</title>
+  <g fill="none" stroke="#efebe4" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter">
+    <path d="M18 24V56L46 40Z"/>
+    <path d="M21 32H27"/>
+    <path d="M21 48H27M24 45.5V50.5"/>
+    <path d="M18 32H10V12H20"/>
+    <path d="M44 12H52V40"/>
+    <path d="M46 40H55.5"/>
+    <path d="M8.5 48H18"/>
+    <path stroke="#e06a5f" d="M20 12L22 8L26 16L30 8L34 16L38 8L42 16L44 12"/>
+    <circle cx="6" cy="48" r="2.5"/>
+    <circle cx="58" cy="40" r="2.5"/>
+  </g>
+  <circle cx="52" cy="40" r="2.5" fill="#efebe4"/>
+</svg>
