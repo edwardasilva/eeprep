@@ -164,6 +164,10 @@ export default defineConfig({
 						{ label: 'Get hired', slug: 'get-hired' },
 						{ label: 'Resume', slug: 'get-hired/resume' },
 						{ label: 'The job market', slug: 'get-hired/the-job-market' },
+						{
+							label: 'Your first internship',
+							slug: 'get-hired/first-internship',
+						},
 					],
 				},
 				{
