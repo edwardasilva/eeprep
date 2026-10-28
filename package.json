@@ -15,6 +15,7 @@
     "check:wikilinks": "node .github/scripts/check-wikilinks.mjs",
     "test:wikilinks": "node .github/scripts/test-wikilinks.mjs",
     "check:links": "node .github/scripts/check-links.mjs",
+    "check:dev": "node .github/scripts/check-dev.mjs",
     "check:pr-body": "node .github/scripts/check-pr-body.mjs",
     "lint": "eslint . && markdownlint-cli2 && prettier --check .",
     "format": "prettier --write . && eslint . --fix",
