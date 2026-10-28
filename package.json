@@ -14,6 +14,8 @@
     "check:figures": "node .github/scripts/check-figures.mjs",
     "check:wikilinks": "node .github/scripts/check-wikilinks.mjs",
     "test:wikilinks": "node .github/scripts/test-wikilinks.mjs",
+    "check:citations": "node .github/scripts/check-citations.mjs",
+    "test:citations": "node .github/scripts/test-citations.mjs",
     "check:links": "node .github/scripts/check-links.mjs",
     "check:dev": "node .github/scripts/check-dev.mjs",
     "check:pr-body": "node .github/scripts/check-pr-body.mjs",

@@ -19,7 +19,7 @@ EE courses teach circuits and signals, but they rarely teach you how to study th
 
 ## How sources are handled
 
-Every claim links to the source behind it, so you can check it yourself. If a claim can't be backed up, it stays off the site.
+Every claim links to the source behind it, so you can check it yourself. If a claim can't be backed up, it stays off the site. The linked sources are listed in [`src/content/references.bib`](src/content/references.bib).
 
 ## Read it
 
