@@ -10,7 +10,7 @@ Keep at most three epics open.
 
 Every piece of work is a GitHub issue. Assign it, label it, and mark it in progress before you open a branch or hand it to an agent. A claimed issue is off limits to everyone else.
 
-GitHub issues are currently disabled on this repository. Document the claim in the epic issue thread once issues are on. Do not change repository settings to turn them on.
+Document the claim on the epic issue. Do not change repository settings.
 
 Status lives on the GitHub Project board, not in a comment thread.
 
@@ -26,7 +26,7 @@ Use the epic's issue number. CI fails a pull request into `main` or `epic/**` wh
 
 Dependabot is exempt, and so is a pull request labeled `no-epic`. That label is the exemption. Do not add it to feature work.
 
-This repository's issue templates and pull request template are owned by a separate change. Do not add them here.
+Issue templates and the pull request templates live under `.github/`. Do not paste copies of them into this file.
 
 ## Branches
 
