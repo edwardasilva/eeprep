@@ -1,0 +1,81 @@
+\def\eeprepfigure{1}
+\def\eepH{560}
+\input{../style/circuitikz-preamble.tex}
+\input{colors.tex}
+\begin{document}
+\begin{tikzpicture}[x=1pt,y=1pt,line cap=round,line join=round]
+  \up{0}{16}{eepaccent}{\sffamily\bfseries\fontsize{12}{14}\selectfont\addfontfeature{LetterSpace=12}}{FIGURE 4 · LAYOUT DO'S AND DON'TS}
+  \up{0}{54}{eepink}{\rmfamily\bfseries\fontsize{26}{31}\selectfont}{Boring layouts read faster}
+
+  % Three cards. Wireframes are drawn in a y-down scope so the mockup paths match.
+  \draw[rounded corners=4pt, draw=eeprule, fill=eepfill] (0,{\eepH-530}) rectangle (316,{\eepH-90});
+  \draw[rounded corners=4pt, draw=eeprule, fill=eepfill] (336,{\eepH-530}) rectangle (652,{\eepH-90});
+  \draw[rounded corners=4pt, draw=eeprule, fill=eepfill] (672,{\eepH-530}) rectangle (988,{\eepH-90});
+
+  \up{16}{118}{eepink}{\sffamily\bfseries\fontsize{15}{18}\selectfont}{Columns}
+  \up{352}{118}{eepink}{\sffamily\bfseries\fontsize{15}{18}\selectfont}{Dates}
+  \up{688}{118}{eepink}{\sffamily\bfseries\fontsize{15}{18}\selectfont}{Space}
+
+  \begin{scope}[shift={(16,{\eepH-148})}, yscale=-1]
+    \draw[fill=eepfill] (0.5,0.5) rectangle (129.5,167.5);
+    \draw (40,14) -- (90,14) (28,22) -- (102,22);
+    \draw[eepdont] (12,38) -- (118,38) (12,46) -- (110,46) (12,54) -- (114,54)
+      (12,70) -- (118,70) (12,78) -- (104,78) (12,86) -- (116,86) (12,94) -- (108,94)
+      (12,110) -- (118,110) (12,118) -- (100,118) (12,126) -- (112,126)
+      (12,142) -- (118,142) (12,150) -- (96,150);
+  \end{scope}
+  \begin{scope}[shift={(168,{\eepH-148})}, yscale=-1]
+    \draw[draw=eepdont, fill=eepfill] (0.5,0.5) rectangle (129.5,167.5);
+    \fill[eepsoft] (8,8) rectangle (46,160);
+    \draw[eepdont] (27,26) circle (10);
+    \draw[eepdont] (14,46) -- (40,46) (14,54) -- (36,54) (14,62) -- (40,62)
+      (14,80) -- (38,80) (14,88) -- (32,88)
+      (54,14) -- (120,14) (54,30) -- (122,30) (54,38) -- (116,38) (54,46) -- (120,46)
+      (54,62) -- (122,62) (54,70) -- (110,70) (54,78) -- (118,78)
+      (54,94) -- (120,94) (54,102) -- (114,102);
+  \end{scope}
+
+  \begin{scope}[shift={(352,{\eepH-148})}, yscale=-1]
+    \draw[fill=eepfill] (0.5,0.5) rectangle (129.5,167.5);
+    \draw[eepdont] (12,20) -- (62,20) (12,28) -- (112,28) (12,36) -- (104,36)
+      (12,60) -- (58,60) (12,68) -- (114,68) (12,76) -- (100,76)
+      (12,100) -- (66,100) (12,108) -- (110,108);
+    \draw[eepaccent, line width=1.6pt] (92,20) -- (118,20) (92,60) -- (118,60) (92,100) -- (118,100);
+    \draw[eepaccent, dashed, dash pattern=on 2pt off 3pt] (118.5,12) -- (118.5,110);
+  \end{scope}
+  \begin{scope}[shift={(504,{\eepH-148})}, yscale=-1]
+    \draw[fill=eepfill] (0.5,0.5) rectangle (129.5,167.5);
+    \draw[eepdont] (12,20) -- (62,20) (12,28) -- (112,28) (12,36) -- (104,36)
+      (12,60) -- (58,60) (12,68) -- (114,68) (12,76) -- (100,76)
+      (12,100) -- (66,100) (12,108) -- (110,108);
+    \draw[eepmute, line width=1.6pt] (68,20) -- (92,20) (64,60) -- (90,60) (12,116) -- (38,116);
+  \end{scope}
+
+  \begin{scope}[shift={(688,{\eepH-148})}, yscale=-1]
+    \draw[fill=eepfill] (0.5,0.5) rectangle (129.5,167.5);
+    \draw[eepdont] (12,16) -- (118,16) (12,24) -- (112,24) (12,32) -- (116,32)
+      (12,48) -- (118,48) (12,56) -- (108,56) (12,64) -- (114,64)
+      (12,80) -- (118,80) (12,88) -- (110,88) (12,96) -- (116,96)
+      (12,112) -- (118,112) (12,120) -- (104,120) (12,128) -- (114,128)
+      (12,144) -- (118,144) (12,152) -- (112,152);
+  \end{scope}
+  \begin{scope}[shift={(840,{\eepH-148})}, yscale=-1]
+    \draw[fill=eepfill] (0.5,0.5) rectangle (129.5,167.5);
+    \draw[eepdont] (12,16) -- (118,16) (12,24) -- (40,24)
+      (12,44) -- (96,44) (12,52) -- (30,52)
+      (12,80) -- (110,80) (12,88) -- (34,88);
+  \end{scope}
+
+  % One label under each wireframe. A fixed width keeps the six labels from running together.
+  \node[anchor=north, align=center, text width=146pt, inner sep=0pt, text=eepaccent] at (81,{\eepH-328}) {\sffamily\bfseries\fontsize{10.5}{13}\selectfont\tick{eepaccent}DO · ONE COLUMN};
+  \node[anchor=north, align=center, text width=146pt, inner sep=0pt, text=eepmute] at (233,{\eepH-328}) {\sffamily\bfseries\fontsize{10.5}{13}\selectfont\cross{eepmute}DON'T · SIDEBAR, PHOTO};
+  \node[anchor=north, align=center, text width=146pt, inner sep=0pt, text=eepaccent] at (417,{\eepH-328}) {\sffamily\bfseries\fontsize{10.5}{13}\selectfont\tick{eepaccent}DO · RIGHT MARGIN};
+  \node[anchor=north, align=center, text width=146pt, inner sep=0pt, text=eepmute] at (569,{\eepH-328}) {\sffamily\bfseries\fontsize{10.5}{13}\selectfont\cross{eepmute}DON'T · SCATTERED};
+  \node[anchor=north, align=center, text width=146pt, inner sep=0pt, text=eepaccent] at (753,{\eepH-328}) {\sffamily\bfseries\fontsize{10.5}{13}\selectfont\tick{eepaccent}DO · FULL, EVEN GAPS};
+  \node[anchor=north, align=center, text width=146pt, inner sep=0pt, text=eepmute] at (905,{\eepH-328}) {\sffamily\bfseries\fontsize{10.5}{13}\selectfont\cross{eepmute}DON'T · EMPTY OR CRAMMED};
+
+  \node[anchor=north west, inner sep=0pt, text width=284pt, align=left, text=eepmute, font=\sffamily\fontsize{13}{17}\selectfont] at (16,{\eepH-378}) {A skills sidebar hides which tool you used where. No photo, icons, or logos.};
+  \node[anchor=north west, inner sep=0pt, text width=284pt, align=left, text=eepmute, font=\sffamily\fontsize{13}{17}\selectfont] at (352,{\eepH-378}) {Companies, titles, and dates get read first. Line the dates up so the eye can scan them.};
+  \node[anchor=north west, inner sep=0pt, text width=284pt, align=left, text=eepmute, font=\sffamily\fontsize{13}{17}\selectfont] at (688,{\eepH-378}) {Fill the page without shrinking margins below 0.4 in or text below 10.5 pt. Two words alone on a line are wasted space.};
+\end{tikzpicture}
+\end{document}

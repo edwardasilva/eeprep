@@ -249,3 +249,30 @@ button[data-open-modal] kbd {
 		min-height: 2.5rem;
 	}
 }
+
+/* Light and dark copies of one figure. Starlight's page is dark unless
+   data-theme is light, including when the attribute is "dark". */
+.eep-theme-fig > .eep-theme-fig-dark {
+	display: none;
+}
+:root:not([data-theme='light']) .eep-theme-fig > .eep-theme-fig-light {
+	display: none;
+}
+:root:not([data-theme='light']) .eep-theme-fig > .eep-theme-fig-dark {
+	display: block;
+}
+
+.sl-markdown-content .eep-kicker {
+	margin: 0 0 0.35rem;
+	max-width: none;
+	font: 600 0.75rem/1 var(--eep-font-sans);
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--eep-accent);
+}
+.sl-markdown-content .eep-figtitle {
+	margin: 0 0 0.6rem;
+	max-width: none;
+	font: 600 1.625rem/1.2 var(--eep-font-serif);
+	color: var(--eep-ink);
+}

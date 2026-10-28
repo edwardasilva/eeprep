@@ -40,6 +40,12 @@
 }
 \newcommand{\val}[1]{\textcolor{eepaccent}{\ttfamily\footnotesize #1}}
 
+% Resume figures define \eeprepfigure and \input this file for the house
+% colours, fonts, and line weight, then draw their own picture.
+\ifdefined\eeprepfigure
+  \expandafter\endinput
+\fi
+
 % ---- example (delete when reusing) ----
 \begin{document}
 \begin{circuitikz}
