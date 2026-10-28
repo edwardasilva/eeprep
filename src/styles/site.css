@@ -16,19 +16,6 @@
 	--slsg-graph-outline-color: var(--eep-rule);
 }
 
-.eep-wordmark {
-	font-family: var(--eep-font-serif);
-	font-weight: 560;
-	font-size: 1.45rem;
-	letter-spacing: -0.03em;
-	color: var(--eep-ink);
-	text-decoration: none;
-	font-variation-settings: 'opsz' 48;
-}
-.eep-wordmark span {
-	color: var(--eep-accent);
-}
-
 .eep-nav {
 	display: flex;
 	gap: 1.25rem;

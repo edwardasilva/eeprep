@@ -109,6 +109,11 @@ export default defineConfig({
 			description: 'A prep guide for electrical engineering students.',
 			credits: false,
 			favicon: '/favicon.svg',
+			logo: {
+				light: './public/brand/eeprep-lockup-outlined.svg',
+				dark: './public/brand/eeprep-lockup-dark-outlined.svg',
+				replacesTitle: true,
+			},
 			customCss: [
 				'./src/styles/fonts.css',
 				'./src/styles/theme.css',
@@ -120,11 +125,58 @@ export default defineConfig({
 					tag: 'meta',
 					attrs: { name: 'robots', content: 'noindex, nofollow' },
 				},
+				{
+					tag: 'link',
+					attrs: {
+						rel: 'icon',
+						href: '/favicon-32.png',
+						type: 'image/png',
+						sizes: '32x32',
+						media: '(prefers-color-scheme: light)',
+					},
+				},
+				{
+					tag: 'link',
+					attrs: {
+						rel: 'icon',
+						href: '/favicon-32-dark.png',
+						type: 'image/png',
+						sizes: '32x32',
+						media: '(prefers-color-scheme: dark)',
+					},
+				},
+				{
+					tag: 'link',
+					attrs: {
+						rel: 'icon',
+						href: '/favicon-16.png',
+						type: 'image/png',
+						sizes: '16x16',
+						media: '(prefers-color-scheme: light)',
+					},
+				},
+				{
+					tag: 'link',
+					attrs: {
+						rel: 'icon',
+						href: '/favicon-16-dark.png',
+						type: 'image/png',
+						sizes: '16x16',
+						media: '(prefers-color-scheme: dark)',
+					},
+				},
+				{
+					tag: 'link',
+					attrs: {
+						rel: 'apple-touch-icon',
+						href: '/apple-touch-icon-180.png',
+						sizes: '180x180',
+					},
+				},
 			],
 			components: {
 				Head: './src/components/Head.astro',
 				Header: './src/components/Header.astro',
-				SiteTitle: './src/components/SiteTitle.astro',
 				ThemeSelect: './src/components/ThemeSelect.astro',
 				PageTitle: './src/components/PageTitle.astro',
 				PageSidebar: './src/components/PageSidebar.astro',
