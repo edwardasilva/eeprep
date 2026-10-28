@@ -1,34 +1,25 @@
+![EE Prep](.github/assets/banner.svg)
+
 # EE Prep
 
-A prep guide for electrical engineering students. The public site stays `noindex` until launch. Nothing in this repo deploys it.
+EE Prep helps electrical engineering students and new grads get ahead in the AI era: study smarter, build a resume that works, find real experience, and land a first internship.
 
-## Run it locally
+## Why it exists
 
-Node 22.23.4 or later. The version is pinned in `.nvmrc` and `package.json`.
+EE courses teach circuits and signals, but they rarely teach you how to study them well or how to turn coursework into a first job. EE Prep puts that advice in one place, written plainly, with sources you can check.
 
-```bash
-npm install
-npm run dev
-```
+## What you'll find
 
-`npm run build` writes the static site to `dist/`. `npm run preview` serves that build.
+- **Succeed in school.** How to study for EE courses and keep up when the material gets hard.
+- **Get hired.** Resumes, the job market, and landing your first internship.
+- **Reference.** Study pages for core topics, starting with signals and DSP.
 
-Figures are drawn at build time from WaveDrom sources in `src/diagrams/`. After you edit a `.json5` file, run `npm run render:figures` and commit the SVG next to it. CI fails when the SVG does not match the source.
+## How sources are handled
 
-## How the content is organized
+Every claim links to the source behind it, so you can check it yourself. If a claim can't be backed up, it stays off the site.
 
-Pages live in `src/content/docs/` and build as a Starlight site:
+## Read it
 
-- `get-hired/` for the job guide
-- `succeed-in-school/` for school
-- `reference/` for study pages
+The site will live at [eeprep.com](https://eeprep.com). It isn't live yet.
 
-Open `src/content/docs` as an Obsidian vault. Links are `[[wikilinks]]`. Each page can show backlinks and a graph. Callouts use Obsidian syntax (`> [!tip] Main idea`). Math is KaTeX. The bibliography file is added on the citations epic.
-
-The four launch pages (resume, the job market, how to study, signals and DSP) are marked placeholders. So is the sample page, which is there to prove the page tools.
-
-Writing rules are in `docs/STYLE.md`. How epics, branches, and reviews work is in `CONTRIBUTING.md`.
-
-## Stack
-
-Astro and Starlight, with the textbook theme in `src/styles/theme.css`. Exact package versions are pinned in `package.json`. The Obsidian-style pieces are `remark-wiki-link`, `rehype-callouts`, `remark-math`, `rehype-katex`, and `starlight-site-graph`.
+Want to help improve the guide? See [CONTRIBUTING](.github/CONTRIBUTING.md).
