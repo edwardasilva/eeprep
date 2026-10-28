@@ -1,12 +1,42 @@
 ---
 // One light SVG and one dark SVG. site.css shows the file for the current theme.
+import fs from 'node:fs';
+
 interface Props {
 	light: string;
 	dark: string;
+	lightFile: string;
+	darkFile: string;
 	alt: string;
 }
-const { light, dark, alt } = Astro.props;
+const { light, dark, lightFile, darkFile, alt } = Astro.props;
+
+/** @param {string} file */
+function viewBoxSize(file: string): { width: string; height: string } {
+	const svg = fs.readFileSync(file, 'utf8');
+	const match = /viewBox=['"]([^'"]+)['"]/.exec(svg);
+	if (!match) throw new Error(`SVG is missing a viewBox: ${file}`);
+	const parts = match[1].trim().split(/\s+/);
+	if (parts.length !== 4)
+		throw new Error(`SVG viewBox is not four numbers: ${file}`);
+	return { width: parts[2] ?? '', height: parts[3] ?? '' };
+}
+
+const lightSize = viewBoxSize(lightFile);
+const darkSize = viewBoxSize(darkFile);
 ---
 
-<img class="eep-theme-fig-light" src={light} alt={alt} />
-<img class="eep-theme-fig-dark" src={dark} alt={alt} />
+<img
+	class="eep-theme-fig-light"
+	src={light}
+	alt={alt}
+	width={lightSize.width}
+	height={lightSize.height}
+/>
+<img
+	class="eep-theme-fig-dark"
+	src={dark}
+	alt={alt}
+	width={darkSize.width}
+	height={darkSize.height}
+/>

@@ -5,21 +5,21 @@
 \usetikzlibrary{arrows.meta,positioning}
 \begin{document}
 \begin{tikzpicture}[x=1pt,y=1pt,line cap=round,line join=round]
-  \up{0}{16}{eepaccent}{\sffamily\bfseries\fontsize{12}{14}\selectfont\addfontfeature{LetterSpace=120}}{FIGURE 2 · ONE BULLET, BEFORE AND AFTER}
+  \up{0}{16}{eepaccent}{\sffamily\bfseries\fontsize{12}{14}\selectfont\addfontfeature{LetterSpace=12}}{FIGURE 2 · ONE BULLET, BEFORE AND AFTER}
   \up{0}{54}{eepink}{\rmfamily\bfseries\fontsize{26}{31}\selectfont}{Did X with Y to get Z}
 
-  \up{0}{100}{eepmute}{\sffamily\bfseries\fontsize{12}{14}\selectfont\addfontfeature{LetterSpace=100}}{\cross{eepmute}BEFORE}
+  \up{0}{100}{eepmute}{\sffamily\bfseries\fontsize{12}{14}\selectfont\addfontfeature{LetterSpace=10}}{\cross{eepmute}BEFORE}
   \draw[rounded corners=4pt, draw=eeprule, fill=eepfill] (0,{\eepH-168}) rectangle (980,{\eepH-112});
   \up{18}{148}{eepmute}{\sffamily\fontsize{16.5}{22}\selectfont}{Worked on a buck converter for a CubeSat using LTspice and KiCad.}
   \up{0}{196}{eepmute}{\sffamily\fontsize{13.5}{18}\selectfont}{"Worked on" hides what Jane did. There's no spec, no check, and no result.}
 
-  \up{0}{240}{eepaccent}{\sffamily\bfseries\fontsize{12}{14}\selectfont\addfontfeature{LetterSpace=100}}{\tick{eepaccent}AFTER}
+  \up{0}{240}{eepaccent}{\sffamily\bfseries\fontsize{12}{14}\selectfont\addfontfeature{LetterSpace=10}}{\tick{eepaccent}AFTER}
   \draw[rounded corners=4pt, draw=eepaccent, fill=eepfill] (0,{\eepH-400}) rectangle (980,{\eepH-252});
 
-  \node[anchor=base west, inner sep=0pt, outer sep=0pt] (xa) at (18,{\eepH-320}) {\sffamily\fontsize{16.5}{22}\selectfont Designed a [X] W synchronous buck converter};
-  \node[anchor=base west, inner sep=0pt, outer sep=0pt] (yb) at (xa.base east) {\sffamily\fontsize{16.5}{22}\selectfont \space in KiCad};
-  \node[anchor=base west, inner sep=0pt, outer sep=0pt] (mid) at (yb.base east) {\sffamily\fontsize{16.5}{22}\selectfont \space for a CubeSat power board,\space};
-  \node[anchor=base west, inner sep=0pt, outer sep=0pt] (zc) at (mid.base east) {\sffamily\fontsize{16.5}{22}\selectfont ~measuring [X]\% efficiency};
+  \node[anchor=base west, inner sep=0pt, outer sep=0pt] (xa) at (18,{\eepH-320}) {\sffamily\fontsize{16.5}{22}\selectfont Designed a [X] W synchronous buck converter\mbox{\space}};
+  \node[anchor=base west, inner sep=0pt, outer sep=0pt] (yb) at (xa.base east) {\sffamily\fontsize{16.5}{22}\selectfont in KiCad};
+  \node[anchor=base west, inner sep=0pt, outer sep=0pt] (mid) at (yb.base east) {\sffamily\fontsize{16.5}{22}\selectfont \space for a CubeSat power board,\mbox{\space}};
+  \node[anchor=base west, inner sep=0pt, outer sep=0pt] (zc) at (mid.base east) {\sffamily\fontsize{16.5}{22}\selectfont measuring [X]\% efficiency};
   \node[anchor=base west, inner sep=0pt, outer sep=0pt] (tail) at (zc.base east) {\sffamily\fontsize{16.5}{22}\selectfont \space with an};
   \node[anchor=base west, inner sep=0pt, outer sep=0pt] (line2) at (18,{\eepH-360}) {\sffamily\fontsize{16.5}{22}\selectfont electronic load against an LTspice model};
 
@@ -27,9 +27,9 @@
   \draw[eepaccent, line width=1.5pt] (yb.south west) -- (yb.south east);
   \draw[eepaccent, line width=1.5pt] (zc.south west) -- (zc.south east);
 
-  \node[anchor=base west, inner sep=0pt, text=eepaccent] at ([yshift=18pt]xa.north west) {\sffamily\bfseries\fontsize{11.5}{13}\selectfont\addfontfeature{LetterSpace=80} X · ACTION + ONE SPEC};
-  \node[anchor=base west, inner sep=0pt, text=eepaccent] at ([yshift=18pt]yb.north west) {\sffamily\bfseries\fontsize{11.5}{13}\selectfont\addfontfeature{LetterSpace=80} Y · TOOL};
-  \node[anchor=base west, inner sep=0pt, text=eepaccent] at ([yshift=18pt]zc.north west) {\sffamily\bfseries\fontsize{11.5}{13}\selectfont\addfontfeature{LetterSpace=80} Z · MEASURED RESULT};
+  \node[anchor=base west, inner sep=0pt, text=eepaccent] at ([yshift=18pt]xa.north west) {\sffamily\bfseries\fontsize{11.5}{13}\selectfont\addfontfeature{LetterSpace=8} X · ACTION + ONE SPEC};
+  \node[anchor=base west, inner sep=0pt, text=eepaccent] at ([yshift=18pt]yb.north west) {\sffamily\bfseries\fontsize{11.5}{13}\selectfont\addfontfeature{LetterSpace=8} Y · TOOL};
+  \node[anchor=base west, inner sep=0pt, text=eepaccent] at ([yshift=18pt]zc.north west) {\sffamily\bfseries\fontsize{11.5}{13}\selectfont\addfontfeature{LetterSpace=8} Z · MEASURED RESULT};
 
   \up{0}{430}{eepmute}{\sffamily\fontsize{13.5}{18}\selectfont}{Screeners filter on X and Y. Hiring managers choose from the Zs. Every [X] is a number you measure yourself.}
 \end{tikzpicture}

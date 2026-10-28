@@ -2,13 +2,22 @@
 import ThemeSvg from './ThemeSvg.astro';
 import light from '../../diagrams/resume/bullet.svg?url';
 import dark from '../../diagrams/resume/bullet-dark.svg?url';
+import path from 'node:path';
+
+const dir = path.resolve('src/diagrams/resume');
 
 const alt =
 	"Did X with Y to get Z. Before: Worked on a buck converter for a CubeSat using LTspice and KiCad. Worked on hides what Jane did. There's no spec, no check, and no result. After: Designed a [X] W synchronous buck converter in KiCad for a CubeSat power board, measuring [X]% efficiency with an electronic load against an LTspice model. X is the action and one spec, Y is the tool, and Z is the measured result. Screeners filter on X and Y. Hiring managers choose from the Zs. Every [X] is a number you measure yourself.";
 ---
 
 <figure class="eep-fig wide eep-theme-fig" id="fig-2">
-	<ThemeSvg light={light} dark={dark} alt={alt} />
+	<ThemeSvg
+		light={light}
+		dark={dark}
+		lightFile={path.join(dir, 'bullet.svg')}
+		darkFile={path.join(dir, 'bullet-dark.svg')}
+		alt={alt}
+	/>
 	<figcaption>
 		<span class="eep-fignum">Fig 2</span>
 		<span>
