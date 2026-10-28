@@ -1,35 +1,25 @@
-![EE Prep](docs/assets/banner.svg)
+![EE Prep](.github/assets/banner.svg)
 
-A practical guide for electrical engineering students in the AI era: how to study, how to land your first internship, and the resources worth your time.
+# EE Prep
 
-[![CI](https://github.com/edwardasilva/eeprep/actions/workflows/ci.yml/badge.svg)](https://github.com/edwardasilva/eeprep/actions/workflows/ci.yml)
+EE Prep helps electrical engineering students and new grads get ahead in the AI era: study smarter, build a resume that works, find real experience, and land a first internship.
 
-## What it is
+## Why it exists
 
-EE Prep is a guide for electrical engineering students. It covers how to study, how to get a first internship, and which references are worth keeping. The pages are a static site built with Astro and Starlight.
+EE courses teach circuits and signals, but they rarely teach you how to study them well or how to turn coursework into a first job. EE Prep puts that advice in one place, written plainly, with sources you can check.
 
-## Who it is for
+## What you'll find
 
-The guide is for electrical engineering students. It follows the courses and the job search those students actually have.
-
-## What's inside
-
-Three sections are in the site now. The pages are still placeholders.
-
-- Get hired, with Resume and The job market
-- Succeed in school, with How to study
-- Reference, with Signals and DSP and a sample page
-
-The sample page is there to show a wikilink, a callout, an equation, and a figure. It is not a study guide.
+- **Succeed in school.** How to study for EE courses and keep up when the material gets hard.
+- **Get hired.** Resumes, the job market, and landing your first internship.
+- **Reference.** Study pages for core topics, starting with signals and DSP.
 
 ## How sources are handled
 
-Every claim in the guide cites a source. The page gives that source credit, so a reader can check the claim. A claim with no source stays out of the guide.
+Every claim links to the source behind it, so you can check it yourself. If a claim can't be backed up, it stays off the site.
 
-## Status
+## Read it
 
-The public site will be at [eeprep.com](https://eeprep.com). It is coming soon, and it is not live yet.
+The site will live at [eeprep.com](https://eeprep.com). It isn't live yet.
 
-Contributing: see .github/CONTRIBUTING.md
-
-Security: see .github/SECURITY.md
+Want to help improve the guide? See [CONTRIBUTING](.github/CONTRIBUTING.md).

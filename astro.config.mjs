@@ -178,7 +178,6 @@ export default defineConfig({
 					items: [
 						{ label: 'Reference', slug: 'reference' },
 						{ label: 'Signals and DSP', slug: 'reference/signals-and-dsp' },
-						{ label: 'Sample page', slug: 'reference/sample-page' },
 					],
 				},
 			],
