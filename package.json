@@ -10,12 +10,14 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "diagrams": "node .github/scripts/render-tikz.mjs",
     "check:wikilinks": "node .github/scripts/check-wikilinks.mjs",
     "test:wikilinks": "node .github/scripts/test-wikilinks.mjs",
     "check:citations": "node .github/scripts/check-citations.mjs",
     "test:citations": "node .github/scripts/test-citations.mjs",
     "check:links": "node .github/scripts/check-links.mjs",
     "check:dev": "node .github/scripts/check-dev.mjs",
+    "check:deploy": "wrangler deploy --dry-run",
     "check:pr-body": "node .github/scripts/check-pr-body.mjs",
     "lint": "eslint . && markdownlint-cli2 && prettier --check .",
     "format": "prettier --write . && eslint . --fix",
@@ -46,7 +48,8 @@
     "prettier": "3.9.10",
     "prettier-plugin-astro": "1.1.2",
     "typescript": "5.9.3",
-    "typescript-eslint": "8.72.0"
+    "typescript-eslint": "8.72.0",
+    "wrangler": "4.154.0"
   },
   "prettier": {
     "useTabs": true,

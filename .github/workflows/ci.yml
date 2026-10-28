@@ -50,6 +50,7 @@ jobs:
       - run: npm run check:citations
       - run: npm run check:dev
       - run: npm run build
+      - run: npm run check:deploy
       - run: npm run check:links
 
   lint:

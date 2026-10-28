@@ -59,11 +59,15 @@ Pull requests into `main` and `epic/**` run four jobs:
 - Vale, using `.github/STYLE.md`, on `src/content/docs` (`vale --config .github/vale/.vale.ini src/content/docs`)
 - `npm run lint` (ESLint, markdownlint, and Prettier)
 
-The deploy workflow is manual. Edward runs `.github/workflows/deploy.yml` when he decides to publish. Do not run that workflow, change DNS, or turn on GitHub Pages.
+## Deploy
+
+Merges to `main` build the site and dry-run the deployment using Wrangler. Publishing to Cloudflare Workers happens only when the `DEPLOY_ENABLED` repository variable is `true`. Deployments use the `production` environment secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`. The custom domain is added at launch.
 
 ## Local commands
 
 Clone, install, and serve steps are in the Run it locally section.
+
+After you edit a resume TikZ figure under `src/diagrams/resume/`, run `npm run diagrams` and commit the SVG next to the `.tex` file. The script needs LuaLaTeX, dvisvgm, and the Newsreader, Inter, and JetBrains Mono fonts. Each figure inputs `src/diagrams/style/circuitikz-preamble.tex` for the house colours and line weight. The site build and CI do not run TeX.
 
 `npm run lint` checks ESLint, markdownlint, and Prettier. `npm run format` writes Prettier formatting and applies ESLint fixes.
 
@@ -74,7 +78,7 @@ npm run format
 
 Open `src/content/docs` as an Obsidian vault. Wikilinks stay in `[[wiki]]` form (`useMarkdownLinks` is off). Same-page links use `[text](#heading)`, because `[[#heading]]` has an empty page name and the wikilink check fails the build. Do not commit `.obsidian/workspace.json`.
 
-Write in sentence case. Callout titles are sentence case. Use "Main idea", not "Key idea". External source links in `src/content/docs` are listed in `src/content/references.bib`. A citation is an ordinary Markdown link inside the sentence, with plain words as the link text. `npm run check:citations` fails if a linked source is missing from that file, or if a bibliography entry is linked from no page. It also fails on a Pandoc cite such as `[@key]`, and on link text that starts with `reddit-` or `x-`, contains `@`, is a bare URL, or is one token longer than 20 characters. It fails when page prose contains an `@handle` outside code or a URL. The link-text check and that handle check skip `get-hired/first-internship.mdx` until #67 rewrites that page.
+Write in sentence case. Callout titles are sentence case. Use "Main idea", not "Key idea". External source links in `src/content/docs` are listed in `src/content/references.bib`. A citation is an ordinary Markdown link inside the sentence, with plain words as the link text. `npm run check:citations` fails if a linked source is missing from that file, or if a bibliography entry is linked from no page. It also fails on a Pandoc cite such as `[@key]`, and on link text that starts with `reddit-` or `x-`, contains `@`, is a bare URL, or is one token longer than 20 characters. It fails when page prose contains an `@handle` outside code or a URL. It fails when a content line is made only of Markdown links.
 
 <!-- run-locally:start -->
 
