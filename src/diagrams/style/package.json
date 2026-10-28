@@ -1,4 +1,0 @@
-{
-  "private": true,
-  "description": "Marks this folder as CommonJS so render-wavedrom.js can use require(). Package versions live in the root package.json."
-}

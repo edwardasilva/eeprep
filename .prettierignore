@@ -9,6 +9,5 @@ node_modules
 # Lockfiles
 package-lock.json
 
-# Generated figures and the generated WaveDrom skin
+# Generated figures
 *.svg
-src/diagrams/style/wavedrom-skin-eeprep.js

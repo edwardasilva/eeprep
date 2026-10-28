@@ -55,7 +55,7 @@ Lane ownership is this table, not a `CODEOWNERS` file. The lane owner resolves c
 Pull requests into `main` and `epic/**` run four jobs:
 
 - the body contains `Part of #<issue>` (Dependabot and `no-epic` skip this)
-- `npm ci`, wikilink check, citation check, figure regeneration check, production build, and HTML link check
+- `npm ci`, wikilink check, citation check, production build, and HTML link check
 - Vale, using `.github/STYLE.md`, on `src/content/docs` (`vale --config .github/vale/.vale.ini src/content/docs`)
 - `npm run lint` (ESLint, markdownlint, and Prettier)
 
@@ -66,8 +66,6 @@ Merges to `main` build the site and dry-run the deployment using Wrangler. Publi
 ## Local commands
 
 Clone, install, and serve steps are in the Run it locally section.
-
-After you edit a `.json5` figure, run `npm run render:figures` and commit the SVG next to it.
 
 After you edit a resume TikZ figure under `src/diagrams/resume/`, run `npm run diagrams` and commit the SVG next to the `.tex` file. The script needs LuaLaTeX, dvisvgm, and the Newsreader, Inter, and JetBrains Mono fonts. Each figure inputs `src/diagrams/style/circuitikz-preamble.tex` for the house colours and line weight. The site build and CI do not run TeX.
 
@@ -127,7 +125,6 @@ npm run test:wikilinks
 npm run check:wikilinks
 npm run test:citations
 npm run check:citations
-npm run check:figures
 npm run build
 npm run check:links
 npm run check:pr-body
