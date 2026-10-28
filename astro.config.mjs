@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import { unified } from '@astrojs/markdown-remark';
@@ -7,9 +8,26 @@ import rehypeKatex from 'rehype-katex';
 import rehypeCallouts from 'rehype-callouts';
 import starlightSiteGraph from 'starlight-site-graph';
 import rehypeEqIds from './src/plugins/rehype-eq-ids.mjs';
-import { loadWikiIndex, normalizeWikiName, resolveWikiTarget, splitWikiTarget } from './src/lib/wiki-index.mjs';
+import {
+	loadWikiIndex,
+	normalizeWikiName,
+	resolveWikiTarget,
+	splitWikiTarget,
+} from './src/lib/wiki-index.mjs';
 
 const wiki = loadWikiIndex();
+const lightCodeTheme = JSON.parse(
+	readFileSync(
+		new URL('./src/styles/ec-eeprep-light.json', import.meta.url),
+		'utf8',
+	),
+);
+const darkCodeTheme = JSON.parse(
+	readFileSync(
+		new URL('./src/styles/ec-eeprep-dark.json', import.meta.url),
+		'utf8',
+	),
+);
 
 export default defineConfig({
 	site: 'https://eeprep.com',
@@ -27,7 +45,10 @@ export default defineConfig({
 				applyToEnvironment: (env) => env.config.consumer === 'client',
 				resolveId(id, importer, options) {
 					if (id !== 'micromatch') return null;
-					return this.resolve('picomatch/posix', importer, { ...options, skipSelf: true });
+					return this.resolve('picomatch/posix', importer, {
+						...options,
+						skipSelf: true,
+					});
 				},
 			},
 		],
@@ -46,7 +67,8 @@ export default defineConfig({
 						// exists. A permalink here is "page" or "page#heading", and it exists when the
 						// page part does, so the #heading survives to hrefTemplate.
 						permalinks: {
-							indexOf: (permalink) => (wiki.byKey.has(permalink.split('#')[0] ?? '') ? 0 : -1),
+							indexOf: (permalink) =>
+								wiki.byKey.has(permalink.split('#')[0] ?? '') ? 0 : -1,
 						},
 						pageResolver(name) {
 							const { page, heading } = splitWikiTarget(name);
@@ -55,7 +77,9 @@ export default defineConfig({
 						},
 						hrefTemplate(permalink) {
 							const { href } = resolveWikiTarget(permalink, wiki.byKey);
-							return href ?? `/missing-wikilink/${encodeURIComponent(permalink)}/`;
+							return (
+								href ?? `/missing-wikilink/${encodeURIComponent(permalink)}/`
+							);
 						},
 						wikiLinkClassName: 'wikilink',
 						newClassName: 'wikilink-missing',
@@ -91,7 +115,12 @@ export default defineConfig({
 				'./src/styles/site.css',
 				'katex/dist/katex.min.css',
 			],
-			head: [{ tag: 'meta', attrs: { name: 'robots', content: 'noindex, nofollow' } }],
+			head: [
+				{
+					tag: 'meta',
+					attrs: { name: 'robots', content: 'noindex, nofollow' },
+				},
+			],
 			components: {
 				Head: './src/components/Head.astro',
 				Header: './src/components/Header.astro',
@@ -99,6 +128,34 @@ export default defineConfig({
 				ThemeSelect: './src/components/ThemeSelect.astro',
 				PageTitle: './src/components/PageTitle.astro',
 				PageSidebar: './src/components/PageSidebar.astro',
+			},
+			// First dark theme, then first light theme. Starlight maps those to the site theme.
+			expressiveCode: {
+				themes: [darkCodeTheme, lightCodeTheme],
+				useStarlightDarkModeSwitch: true,
+				styleOverrides: {
+					borderRadius: '4px',
+					borderColor: 'var(--eep-rule)',
+					borderWidth: '1px',
+					codeFontFamily: 'var(--eep-font-mono)',
+					codeFontSize: '0.875rem',
+					codeLineHeight: '1.75',
+					codePaddingBlock: '1.125rem',
+					codePaddingInline: '1.375rem',
+					uiFontFamily: 'var(--eep-font-mono)',
+					uiFontSize: '0.71875rem',
+					frames: {
+						shadowColor: 'transparent',
+						editorTabBarBackground: 'var(--eep-sunken)',
+						editorActiveTabBackground: 'var(--eep-sunken)',
+						editorActiveTabIndicatorTopColor: 'transparent',
+						editorActiveTabIndicatorBottomColor: 'var(--eep-accent)',
+						editorTabBarBorderBottomColor: 'var(--eep-rule)',
+						terminalTitlebarBackground: 'var(--eep-sunken)',
+						terminalBackground: 'var(--eep-sunken)',
+						frameBoxShadowCssValue: 'none',
+					},
+				},
 			},
 			sidebar: [
 				{
@@ -121,7 +178,6 @@ export default defineConfig({
 					items: [
 						{ label: 'Reference', slug: 'reference' },
 						{ label: 'Signals and DSP', slug: 'reference/signals-and-dsp' },
-						{ label: 'Sample page', slug: 'reference/sample-page' },
 					],
 				},
 			],
