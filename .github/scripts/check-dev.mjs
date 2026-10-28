@@ -11,7 +11,17 @@ const readyTimeoutMs = 180_000;
 const ansiPattern = /\u001b\[[0-9;]*m/g;
 const requestTimeoutMs = 120_000;
 const shutdownTimeoutMs = 5_000;
-const pages = ['/', '/get-hired/'];
+const pages = [
+	'/',
+	'/get-hired/',
+	'/get-hired/resume/',
+	'/get-hired/the-job-market/',
+	'/get-hired/first-internship/',
+	'/succeed-in-school/',
+	'/succeed-in-school/how-to-study/',
+	'/reference/',
+	'/reference/signals-and-dsp/',
+];
 const errorMarkers = ['ReferenceError', 'An error occurred'];
 
 const astroBin = path.resolve('node_modules/astro/bin/astro.mjs');
@@ -63,7 +73,7 @@ try {
 }
 
 if (failed) process.exitCode = 1;
-else console.log('Dev server returned 200 for / and /get-hired/.');
+else console.log('Dev server returned 200 for every checked page.');
 
 /** @returns {Promise<number>} */
 function freePort() {
