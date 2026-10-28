@@ -1,7 +1,5 @@
-<picture>
-<source media="(prefers-color-scheme: dark)" srcset="public/brand/eeprep-lockup-stacked-dark.png" />
-<img alt="eeprep" src="public/brand/eeprep-lockup-stacked.png" width="162" height="204" />
-</picture>
+![eeprep](public/brand/eeprep-lockup-stacked.png#gh-light-mode-only)
+![eeprep](public/brand/eeprep-lockup-stacked-dark.png#gh-dark-mode-only)
 
 # EE Prep
 
