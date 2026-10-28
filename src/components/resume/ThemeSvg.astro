@@ -1,0 +1,12 @@
+---
+// One light SVG and one dark SVG. site.css shows the file for the current theme.
+interface Props {
+	light: string;
+	dark: string;
+	alt: string;
+}
+const { light, dark, alt } = Astro.props;
+---
+
+<img class="eep-theme-fig-light" src={light} alt={alt} />
+<img class="eep-theme-fig-dark" src={dark} alt={alt} />

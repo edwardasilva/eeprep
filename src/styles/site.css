@@ -249,3 +249,21 @@ button[data-open-modal] kbd {
 		min-height: 2.5rem;
 	}
 }
+
+/* Light and dark copies of one figure. Starlight sets data-theme="dark" on
+   the document, and the theme toggle switches that attribute to light. */
+.eep-theme-fig > .eep-theme-fig-dark {
+	display: none;
+}
+:root[data-theme='dark'] .eep-theme-fig > .eep-theme-fig-light {
+	display: none;
+}
+:root[data-theme='dark'] .eep-theme-fig > .eep-theme-fig-dark {
+	display: block;
+}
+:root:not([data-theme='light']) .eep-theme-fig > .eep-theme-fig-light {
+	display: none;
+}
+:root:not([data-theme='light']) .eep-theme-fig > .eep-theme-fig-dark {
+	display: block;
+}

@@ -1,0 +1,144 @@
+---
+const content = [
+	'1 column, 1 page, black text, no icons, photo, or tables',
+	'Header centered, everything else left-aligned',
+	'Strongest section first, no generic objective',
+	'One contact line, plus work status and relocation',
+	'Degree, GPA if listed, one line of coursework',
+	'Each bullet has an action, a tool, and a number you can explain',
+	'Projects get the most room',
+	'Unrelated jobs cut or held to one line',
+	'Skills on a couple of labeled lines, no soft skills',
+];
+const polish = [
+	'Every gap between sections is the same size',
+	'Each bullet fills one line or most of two',
+	'Project titles list tools and end with right-aligned dates',
+	'One date style, semesters or months',
+	'Only the coursework and activities labels are bold inside text',
+	'Every tool in Skills appears in a bullet',
+	'No typos, stray periods, or mismatched GPA decimals',
+];
+---
+
+<figure class="eep-fig wide eep-checks" id="fig-5">
+	<p class="eep-kicker">Figure 5 · Two-pass checklist</p>
+	<p class="eep-figtitle">Fix the content, then fix the page</p>
+	<div class="eep-checks-grid">
+		<section class="eep-pass">
+			<p class="eep-kicker">Pass 1</p>
+			<h3 class="eep-pass-title">Content</h3>
+			<p class="eep-pass-sub">What the page says</p>
+			<ul>
+				{content.map((item) => (
+					<li>
+						<span class="eep-box" aria-hidden="true"></span>
+						{item}
+					</li>
+				))}
+			</ul>
+		</section>
+		<svg
+			class="eep-checks-arrow"
+			viewBox="0 0 44 20"
+			aria-hidden="true"
+			focusable="false"
+		>
+			<path
+				d="M2 10H40M33 3L40 10L33 17"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="1.4"
+			></path>
+		</svg>
+		<section class="eep-pass">
+			<p class="eep-kicker">Pass 2</p>
+			<h3 class="eep-pass-title">Polish</h3>
+			<p class="eep-pass-sub">How the page looks</p>
+			<ul>
+				{polish.map((item) => (
+					<li>
+						<span class="eep-box" aria-hidden="true"></span>
+						{item}
+					</li>
+				))}
+			</ul>
+		</section>
+	</div>
+	<figcaption>
+		<span class="eep-fignum">Fig 5</span>
+		<span>eeprep's author reviews resumes in these two passes.</span>
+	</figcaption>
+</figure>
+
+<style>
+	.eep-kicker {
+		margin: 0 0 0.25rem;
+		font: 600 0.75rem/1 var(--eep-font-sans);
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--eep-accent);
+	}
+	.eep-figtitle {
+		margin: 0 0 1rem;
+		font: 600 1.625rem/1.2 var(--eep-font-serif);
+		color: var(--eep-ink);
+	}
+	.eep-checks-grid {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) 2.75rem minmax(0, 1fr);
+		gap: 0.5rem;
+		align-items: start;
+	}
+	.eep-pass {
+		border: 1px solid var(--eep-ink);
+		border-radius: 4px;
+		padding: 0.9rem 1rem 0.7rem;
+	}
+	:global(.sl-markdown-content) h3.eep-pass-title {
+		margin: 0;
+		font: 600 1.125rem/1.2 var(--eep-font-serif);
+		color: var(--eep-ink);
+	}
+	.eep-pass-sub {
+		margin: 0.15rem 0 0.55rem;
+		color: var(--eep-mute);
+		font-size: 0.8125rem;
+	}
+	.eep-pass ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.eep-pass li {
+		display: flex;
+		gap: 0.55rem;
+		margin: 0.35rem 0;
+		max-width: none;
+		font-size: 0.875rem;
+		line-height: 1.4;
+	}
+	.eep-box {
+		flex: none;
+		width: 0.85rem;
+		height: 0.85rem;
+		margin-top: 0.15rem;
+		border: 1.2px solid var(--eep-ink);
+		border-radius: 2px;
+	}
+	.eep-checks-arrow {
+		width: 2.4rem;
+		height: 1.1rem;
+		margin-top: 4.5rem;
+		color: var(--eep-accent);
+	}
+	@media (max-width: 50rem) {
+		.eep-checks-grid {
+			grid-template-columns: 1fr;
+		}
+		.eep-checks-arrow {
+			transform: rotate(90deg);
+			margin: 0.25rem auto;
+		}
+	}
+</style>

@@ -44,3 +44,6 @@ tokens:
   - 'not just'
   - 'not only'
   - 'rather than'
+exceptions:
+  # The resume page keeps this hedged ATS sentence exactly as approved.
+  - resume rather than auto-rejecting
