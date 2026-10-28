@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import { unified } from '@astrojs/markdown-remark';
@@ -7,31 +8,52 @@ import rehypeKatex from 'rehype-katex';
 import rehypeCallouts from 'rehype-callouts';
 import starlightSiteGraph from 'starlight-site-graph';
 import rehypeEqIds from './src/plugins/rehype-eq-ids.mjs';
-import { loadWikiIndex, normalizeWikiName, resolveWikiTarget, splitWikiTarget } from './src/lib/wiki-index.mjs';
+import {
+	loadWikiIndex,
+	normalizeWikiName,
+	resolveWikiTarget,
+	splitWikiTarget,
+} from './src/lib/wiki-index.mjs';
 
 const wiki = loadWikiIndex();
+const lightCodeTheme = JSON.parse(
+	readFileSync(
+		new URL('./src/styles/ec-eeprep-light.json', import.meta.url),
+		'utf8',
+	),
+);
+const darkCodeTheme = JSON.parse(
+	readFileSync(
+		new URL('./src/styles/ec-eeprep-dark.json', import.meta.url),
+		'utf8',
+	),
+);
+
+// The site graph's client script imports micromatch 4, whose picomatch 2 reads
+// process.platform and process.version, and those throw in the browser.
+// picomatch 4's posix build has the same isMatch and no Node globals.
+// Dev SSR must keep Node's micromatch. picomatch/posix is CommonJS, and Vite's
+// dev server throws "module is not defined" when it loads that file for SSR.
+function micromatchBrowserAlias() {
+	return {
+		name: 'micromatch-browser-alias',
+		enforce: 'pre',
+		async resolveId(source, importer, options) {
+			if (source !== 'micromatch' || options?.ssr) return null;
+			const resolved = await this.resolve('picomatch/posix', importer, { skipSelf: true });
+			if (!resolved) {
+				throw new Error('picomatch/posix did not resolve for the browser micromatch alias.');
+			}
+			return resolved.id;
+		},
+	};
+}
 
 export default defineConfig({
 	site: 'https://eeprep.com',
 	trailingSlash: 'always',
 	vite: {
-		plugins: [
-			{
-				// The site graph's client script imports micromatch 4, whose picomatch 2 reads
-				// process.platform and process.version, and those throw in the browser.
-				// picomatch 4's posix build has the same isMatch and no Node globals.
-				// Swap it only for the browser build. On the server, picomatch/posix is
-				// CommonJS and Vite's SSR runner can't evaluate it inline.
-				name: 'eeprep:micromatch-browser',
-				enforce: 'pre',
-				applyToEnvironment: (env) => env.config.consumer === 'client',
-				resolveId(id, importer, options) {
-					if (id !== 'micromatch') return null;
-					return this.resolve('picomatch/posix', importer, { ...options, skipSelf: true });
-				},
-			},
-		],
-		optimizeDeps: { include: ['picomatch/posix'] },
+		plugins: [micromatchBrowserAlias()],
 	},
 	markdown: {
 		processor: unified({
@@ -46,7 +68,8 @@ export default defineConfig({
 						// exists. A permalink here is "page" or "page#heading", and it exists when the
 						// page part does, so the #heading survives to hrefTemplate.
 						permalinks: {
-							indexOf: (permalink) => (wiki.byKey.has(permalink.split('#')[0] ?? '') ? 0 : -1),
+							indexOf: (permalink) =>
+								wiki.byKey.has(permalink.split('#')[0] ?? '') ? 0 : -1,
 						},
 						pageResolver(name) {
 							const { page, heading } = splitWikiTarget(name);
@@ -55,7 +78,9 @@ export default defineConfig({
 						},
 						hrefTemplate(permalink) {
 							const { href } = resolveWikiTarget(permalink, wiki.byKey);
-							return href ?? `/missing-wikilink/${encodeURIComponent(permalink)}/`;
+							return (
+								href ?? `/missing-wikilink/${encodeURIComponent(permalink)}/`
+							);
 						},
 						wikiLinkClassName: 'wikilink',
 						newClassName: 'wikilink-missing',
@@ -91,7 +116,12 @@ export default defineConfig({
 				'./src/styles/site.css',
 				'katex/dist/katex.min.css',
 			],
-			head: [{ tag: 'meta', attrs: { name: 'robots', content: 'noindex, nofollow' } }],
+			head: [
+				{
+					tag: 'meta',
+					attrs: { name: 'robots', content: 'noindex, nofollow' },
+				},
+			],
 			components: {
 				Head: './src/components/Head.astro',
 				Header: './src/components/Header.astro',
@@ -99,6 +129,34 @@ export default defineConfig({
 				ThemeSelect: './src/components/ThemeSelect.astro',
 				PageTitle: './src/components/PageTitle.astro',
 				PageSidebar: './src/components/PageSidebar.astro',
+			},
+			// First dark theme, then first light theme. Starlight maps those to the site theme.
+			expressiveCode: {
+				themes: [darkCodeTheme, lightCodeTheme],
+				useStarlightDarkModeSwitch: true,
+				styleOverrides: {
+					borderRadius: '4px',
+					borderColor: 'var(--eep-rule)',
+					borderWidth: '1px',
+					codeFontFamily: 'var(--eep-font-mono)',
+					codeFontSize: '0.875rem',
+					codeLineHeight: '1.75',
+					codePaddingBlock: '1.125rem',
+					codePaddingInline: '1.375rem',
+					uiFontFamily: 'var(--eep-font-mono)',
+					uiFontSize: '0.71875rem',
+					frames: {
+						shadowColor: 'transparent',
+						editorTabBarBackground: 'var(--eep-sunken)',
+						editorActiveTabBackground: 'var(--eep-sunken)',
+						editorActiveTabIndicatorTopColor: 'transparent',
+						editorActiveTabIndicatorBottomColor: 'var(--eep-accent)',
+						editorTabBarBorderBottomColor: 'var(--eep-rule)',
+						terminalTitlebarBackground: 'var(--eep-sunken)',
+						terminalBackground: 'var(--eep-sunken)',
+						frameBoxShadowCssValue: 'none',
+					},
+				},
 			},
 			sidebar: [
 				{

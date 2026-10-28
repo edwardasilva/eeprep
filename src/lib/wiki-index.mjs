@@ -10,9 +10,11 @@ const DEFAULT_ROOT = path.resolve('src/content/docs');
  * Pages keyed by the names an Obsidian wikilink can use.
  * Keys are trimmed and lowercased: the title, the filename, and the slug.
  */
-export function loadWikiIndex(contentRoot = process.env.CONTENT_ROOT
-	? path.resolve(process.env.CONTENT_ROOT)
-	: DEFAULT_ROOT) {
+export function loadWikiIndex(
+	contentRoot = process.env.CONTENT_ROOT
+		? path.resolve(process.env.CONTENT_ROOT)
+		: DEFAULT_ROOT,
+) {
 	/** @type {Map<string, string>} */
 	const byKey = new Map();
 	/** @type {WikiPage[]} */
@@ -69,7 +71,10 @@ export function splitWikiTarget(target) {
 	const withoutAlias = target.split('|')[0] ?? '';
 	const cut = withoutAlias.indexOf('#');
 	if (cut < 0) return { page: withoutAlias.trim(), heading: '' };
-	return { page: withoutAlias.slice(0, cut).trim(), heading: withoutAlias.slice(cut + 1).trim() };
+	return {
+		page: withoutAlias.slice(0, cut).trim(),
+		heading: withoutAlias.slice(cut + 1).trim(),
+	};
 }
 
 /**
@@ -160,11 +165,20 @@ export function buildPageLinks(wiki) {
 	/** @type {Record<string, PageNode>} */
 	const sitemap = {};
 	for (const page of wiki.pages) {
-		sitemap[toKey(page.href)] = { external: false, exists: true, title: page.title, links: [], backlinks: [] };
+		sitemap[toKey(page.href)] = {
+			external: false,
+			exists: true,
+			title: page.title,
+			links: [],
+			backlinks: [],
+		};
 	}
 	for (const page of wiki.pages) {
 		const from = toKey(page.href);
-		const text = fs.readFileSync(path.join(wiki.contentRoot, page.file), 'utf8');
+		const text = fs.readFileSync(
+			path.join(wiki.contentRoot, page.file),
+			'utf8',
+		);
 		const body = stripFrontmatterAndCode(text);
 		/** @type {Set<string>} */
 		const targets = new Set();

@@ -4,7 +4,14 @@
 
 <button class="eep-theme" type="button" aria-label="Switch color theme">
 	<svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
-		<circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.75"></circle>
+		<circle
+			cx="12"
+			cy="12"
+			r="4"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="1.75"
+		></circle>
 		<path
 			fill="none"
 			stroke="currentColor"
@@ -19,7 +26,8 @@
 			stroke="currentColor"
 			stroke-width="1.75"
 			stroke-linejoin="round"
-			d="M16 3.5A8.5 8.5 0 1 0 20.5 14 6.5 6.5 0 0 1 16 3.5z"></path>
+			d="M16 3.5A8.5 8.5 0 1 0 20.5 14 6.5 6.5 0 0 1 16 3.5z"
+		></path>
 	</svg>
 </button>
 
@@ -33,7 +41,9 @@
 	}
 
 	function currentTheme(): 'light' | 'dark' {
-		return document.documentElement.dataset.theme === 'light' ? 'light' : 'dark';
+		return document.documentElement.dataset.theme === 'light'
+			? 'light'
+			: 'dark';
 	}
 
 	function labelFor(theme: 'light' | 'dark'): string {
@@ -43,7 +53,8 @@
 	function applyTheme(theme: 'light' | 'dark'): void {
 		document.documentElement.dataset.theme = theme;
 		localStorage.setItem(storageKey, theme);
-		for (const button of themeButtons()) button.setAttribute('aria-label', labelFor(theme));
+		for (const button of themeButtons())
+			button.setAttribute('aria-label', labelFor(theme));
 	}
 
 	for (const button of themeButtons()) {

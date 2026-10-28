@@ -1,6 +1,6 @@
 name: Epic
 description: Propose a new epic branch and the pull requests inside it.
-title: "Epic: "
+title: 'Epic: '
 labels:
   - epic
 body:

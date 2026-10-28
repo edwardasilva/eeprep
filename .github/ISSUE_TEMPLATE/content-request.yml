@@ -1,8 +1,8 @@
 name: Content request
 description: Ask for a page that answers a student question.
-title: "Content request: "
+title: 'Content request: '
 labels:
-  - "type: content"
+  - 'type: content'
 body:
   - type: markdown
     attributes:

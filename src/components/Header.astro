@@ -6,7 +6,8 @@ import SiteTitle from 'virtual:starlight/components/SiteTitle';
 import ThemeSelect from 'virtual:starlight/components/ThemeSelect';
 
 const shouldRenderSearch =
-	config.pagefind || config.components.Search !== '@astrojs/starlight/components/Search.astro';
+	config.pagefind ||
+	config.components.Search !== '@astrojs/starlight/components/Search.astro';
 
 const links = [
 	{ href: '/get-hired/', label: 'Guide' },
@@ -18,9 +19,13 @@ const links = [
 const pathname = Astro.url.pathname;
 
 function isCurrent(href: string): boolean {
-	if (href === '/get-hired/the-job-market/') return pathname.startsWith('/get-hired/the-job-market');
+	if (href === '/get-hired/the-job-market/')
+		return pathname.startsWith('/get-hired/the-job-market');
 	if (href === '/get-hired/') {
-		return pathname.startsWith('/get-hired/') && !pathname.startsWith('/get-hired/the-job-market');
+		return (
+			pathname.startsWith('/get-hired/') &&
+			!pathname.startsWith('/get-hired/the-job-market')
+		);
 	}
 	return pathname.startsWith(href);
 }
@@ -31,17 +36,16 @@ function isCurrent(href: string): boolean {
 		<SiteTitle />
 	</div>
 	<nav class="eep-nav" aria-label="Sections">
-		{
-			links.map((link) => (
-				<a href={link.href} aria-current={isCurrent(link.href) ? 'page' : undefined}>
-					{link.label}
-				</a>
-			))
-		}
+		{links.map((link) => (
+			<a
+				href={link.href}
+				aria-current={isCurrent(link.href) ? 'page' : undefined}
+			>
+				{link.label}
+			</a>
+		))}
 	</nav>
-	<div class="sl-flex print:hidden">
-		{shouldRenderSearch && <Search />}
-	</div>
+	<div class="sl-flex print:hidden">{shouldRenderSearch && <Search />}</div>
 	<div class="sl-flex print:hidden right-group">
 		<ThemeSelect />
 	</div>
@@ -77,18 +81,26 @@ function isCurrent(href: string): boolean {
 				--__toc-width: 0rem;
 			}
 			.header {
-				--__sidebar-width: max(0rem, var(--sl-content-inline-start, 0rem) - var(--sl-nav-pad-x));
+				--__sidebar-width: max(
+					0rem,
+					var(--sl-content-inline-start, 0rem) - var(--sl-nav-pad-x)
+				);
 				--__main-column-fr: calc(
 					(
-							100% + var(--__sidebar-pad, 0rem) - var(--__toc-width, var(--sl-sidebar-width)) -
-								(2 * var(--__toc-width, var(--sl-nav-pad-x))) - var(--sl-content-inline-start, 0rem) -
-								var(--sl-content-width)
-						) / 2
+							100% + var(--__sidebar-pad, 0rem) -
+								var(--__toc-width, var(--sl-sidebar-width)) -
+								(2 * var(--__toc-width, var(--sl-nav-pad-x))) -
+								var(--sl-content-inline-start, 0rem) - var(--sl-content-width)
+						) /
+						2
 				);
 				display: grid;
 				grid-template-columns:
 					minmax(
-						calc(var(--__sidebar-width) + max(0rem, var(--__main-column-fr) - var(--sl-nav-gap))),
+						calc(
+							var(--__sidebar-width) +
+								max(0rem, var(--__main-column-fr) - var(--sl-nav-gap))
+						),
 						auto
 					)
 					auto
