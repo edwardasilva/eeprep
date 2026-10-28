@@ -1,6 +1,3 @@
-![eeprep](public/brand/eeprep-lockup-stacked.png#gh-light-mode-only)
-![eeprep](public/brand/eeprep-lockup-stacked-dark.png#gh-dark-mode-only)
-
 # EE Prep
 
 EE Prep helps electrical engineering students and new grads get ahead in the AI era: study smarter, build a resume that works, find real experience, and land a first internship.
