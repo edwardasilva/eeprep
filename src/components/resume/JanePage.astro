@@ -1,0 +1,273 @@
+---
+// Jane's page is real text. The five callouts are a list. Pins repeat those numbers for sighted readers.
+const notes = [
+	{
+		title: 'Centered header.',
+		body: 'One contact line with plain-text links, plus work status and relocation.',
+	},
+	{
+		title: 'Dates at the right margin.',
+		body: 'One style for every date.',
+	},
+	{
+		title: 'One line of coursework.',
+		body: 'Upper-level electives that match the posting.',
+	},
+	{
+		title: 'Projects above Experience.',
+		body: 'Jane has no engineering job yet, so her strongest section goes first. Each bullet states the action, the tool, and a number.',
+	},
+	{
+		title: 'Every skill has a bullet behind it.',
+		body: 'KiCad, LTspice, the scope, and the load all appear in a project.',
+	},
+];
+---
+
+<figure class="eep-fig wide eep-jane" id="fig-3">
+	<p class="eep-kicker">Figure 3 · Jane's finished page</p>
+	<p class="eep-figtitle">One page, one column, dates on the right</p>
+	<p class="eep-jane-flag">
+		<span class="eep-tag">Made-up example</span>
+		<span>
+			Jane Doe is not a real student. Every [X] is a number you measure
+			yourself.
+		</span>
+	</p>
+	<div class="eep-jane-wrap">
+		<div class="eep-jane-sheet">
+			<header class="eep-jane-head eep-jane-mark">
+				<span class="eep-pin" aria-hidden="true">
+					1
+				</span>
+				<p class="eep-jane-name">Jane Doe</p>
+				<p>
+					[phone] | jane@[school].edu | linkedin.com/in/janedoe |
+					github.com/janedoe
+				</p>
+				<p>City, ST | US Citizen | Willing to relocate</p>
+			</header>
+			<p class="eep-jane-sec">Education</p>
+			<div class="eep-jane-row">
+				<p>
+					<strong>B.S. Electrical Engineering</strong>, GPA [X.XX]/4.00
+				</p>
+				<p class="eep-jane-date eep-jane-mark">
+					<span class="eep-pin eep-pin-right" aria-hidden="true">
+						2
+					</span>
+					Expected Spring 2027
+				</p>
+			</div>
+			<p>[University]</p>
+			<p class="eep-jane-mark">
+				<span class="eep-pin" aria-hidden="true">
+					3
+				</span>
+				<strong>Relevant coursework:</strong> Power Electronics, Embedded
+				Systems, Digital Design with FPGAs
+			</p>
+			<p>
+				<strong>Activities:</strong> CubeSat team, IEEE student branch
+			</p>
+			<div class="eep-jane-mark">
+				<span class="eep-pin" aria-hidden="true">
+					4
+				</span>
+				<p class="eep-jane-sec">Projects</p>
+				<div class="eep-jane-row">
+					<p>
+						<strong>CubeSat Power Board (KiCad, LTspice)</strong>
+					</p>
+					<p class="eep-jane-date">Fall 2025 – Spring 2026</p>
+				</div>
+				<ul>
+					<li>
+						Designed a [X] W synchronous buck converter in KiCad for a CubeSat
+						power board, measuring [X]% efficiency with an electronic load
+						against an LTspice model
+					</li>
+					<li>
+						Cut output ripple from [X] mV to [X] mV on an oscilloscope by
+						shrinking the switching loop on the second board revision, checked
+						against a hand calculation
+					</li>
+				</ul>
+			</div>
+			<p class="eep-jane-sec">Experience</p>
+			<div class="eep-jane-row">
+				<p>
+					<strong>Sales Associate, [Retail store]</strong>
+				</p>
+				<p class="eep-jane-date">Summer 2023 – Summer 2024</p>
+			</div>
+			<p class="eep-jane-sec">Skills</p>
+			<div class="eep-jane-mark">
+				<span class="eep-pin" aria-hidden="true">
+					5
+				</span>
+				<p>
+					<strong>Software:</strong> KiCad, LTspice
+				</p>
+				<p>
+					<strong>Hardware/Lab:</strong> oscilloscope, electronic load
+				</p>
+			</div>
+		</div>
+		<ol class="eep-jane-notes">
+			{notes.map((note) => (
+				<li>
+					<span>
+						<strong>{note.title}</strong> {note.body}
+					</span>
+				</li>
+			))}
+		</ol>
+	</div>
+	<p class="eep-jane-aside">
+		Bold only on section titles, entry titles, and the two labels. Dashed
+		outlines are callouts and don't appear on the real page.
+	</p>
+	<figcaption>
+		<span class="eep-fignum">Fig 3</span>
+		<span>
+			Layout rules from the r/EngineeringResumes wiki, plus the centered header
+			eeprep's author uses on his own resume.
+		</span>
+	</figcaption>
+</figure>
+
+<style>
+	.eep-jane-flag {
+		margin: 0 0 1rem;
+		color: var(--eep-ink-2);
+		font-size: 0.875rem;
+	}
+	.eep-tag {
+		display: inline-block;
+		margin-right: 0.5rem;
+		padding: 0.15rem 0.45rem;
+		border: 1px solid var(--eep-accent);
+		border-radius: 3px;
+		color: var(--eep-accent);
+		font: 600 0.6875rem/1.2 var(--eep-font-sans);
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		vertical-align: 0.05em;
+	}
+	.eep-jane-wrap {
+		display: grid;
+		grid-template-columns: minmax(0, 1.35fr) minmax(14rem, 0.9fr);
+		gap: 1.5rem;
+		align-items: start;
+	}
+	.eep-jane-sheet {
+		position: relative;
+		padding: 1.35rem 1.6rem 1.1rem 1.7rem;
+		background: var(--eep-paper);
+		border: 1px solid var(--eep-rule);
+		color: var(--eep-ink);
+		font: 0.72rem/1.45 var(--eep-font-sans);
+	}
+	.eep-jane-sheet p {
+		margin: 0;
+		max-width: none;
+	}
+	.eep-jane-head {
+		text-align: center;
+	}
+	.eep-jane-name {
+		font-size: 1rem;
+		font-weight: 700;
+	}
+	:global(.sl-markdown-content) p.eep-jane-sec {
+		margin: 0.7rem 0 0.2rem;
+		padding-bottom: 0.05rem;
+		border-bottom: 1px solid var(--eep-ink);
+		font: 700 0.72rem/1.3 var(--eep-font-sans);
+		color: var(--eep-ink);
+	}
+	:global(.sl-markdown-content) .eep-jane-mark > p.eep-jane-sec {
+		margin-top: 0.15rem;
+	}
+	.eep-jane-row {
+		display: flex;
+		justify-content: space-between;
+		gap: 0.75rem;
+	}
+	.eep-jane-sheet ul {
+		margin: 0.15rem 0 0;
+		padding-left: 1.1rem;
+	}
+	.eep-jane-mark {
+		position: relative;
+		outline: 1.5px dashed var(--eep-accent);
+		outline-offset: 2px;
+	}
+	.eep-jane-date {
+		flex: none;
+		white-space: nowrap;
+	}
+	.eep-pin {
+		position: absolute;
+		z-index: 1;
+		top: 0.05rem;
+		left: -1.45rem;
+		width: 1.35rem;
+		height: 1.35rem;
+		border-radius: 50%;
+		background: var(--eep-accent);
+		color: var(--eep-on-accent);
+		font: 700 0.75rem/1.35rem var(--eep-font-sans);
+		text-align: center;
+	}
+	.eep-pin-right {
+		left: auto;
+		right: -1.45rem;
+	}
+	.eep-jane-notes {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		counter-reset: jane;
+	}
+	.eep-jane-notes li {
+		display: flex;
+		gap: 0.6rem;
+		align-items: flex-start;
+		margin: 0 0 0.85rem;
+		color: var(--eep-text);
+		font-size: 0.9rem;
+		line-height: 1.45;
+		max-width: none;
+	}
+	.eep-jane-notes li > span {
+		min-width: 0;
+	}
+	.eep-jane-notes li::before {
+		counter-increment: jane;
+		content: counter(jane);
+		flex: none;
+		width: 1.35rem;
+		height: 1.35rem;
+		border-radius: 50%;
+		background: var(--eep-accent);
+		color: var(--eep-on-accent);
+		font: 700 0.75rem/1.35rem var(--eep-font-sans);
+		text-align: center;
+	}
+	.eep-jane-notes strong {
+		font-weight: 700;
+	}
+	.eep-jane-aside {
+		margin: 0.9rem 0 0;
+		color: var(--eep-mute);
+		font-size: 0.8125rem;
+		max-width: none;
+	}
+	@media (max-width: 50rem) {
+		.eep-jane-wrap {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

@@ -83,7 +83,7 @@ export function splitWikiTarget(target) {
  * slug. A repeated heading gets a -1 suffix on the page; a link reaches the first one.
  * @param {string} heading
  */
-export function wikiHeadingId(heading) {
+function wikiHeadingId(heading) {
 	return headingSlug(heading);
 }
 

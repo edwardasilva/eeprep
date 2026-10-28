@@ -1,0 +1,28 @@
+---
+import ThemeSvg from './ThemeSvg.astro';
+import light from '../../diagrams/resume/dodont.svg?url';
+import dark from '../../diagrams/resume/dodont-dark.svg?url';
+import path from 'node:path';
+
+const dir = path.resolve('src/diagrams/resume');
+
+const alt =
+	"Boring layouts read faster. Columns: do use one column. Don't use a sidebar or a photo. A skills sidebar hides which tool you used where. No photo, icons, or logos. Dates: do put them on the right margin. Don't scatter them. Companies, titles, and dates get read first. Line the dates up so the eye can scan them. Space: do fill the page with full, even gaps. Don't leave it empty or crammed. Fill the page without shrinking margins below 0.4 in or text below 10.5 pt. Two words alone on a line are wasted space.";
+---
+
+<figure class="eep-fig wide eep-theme-fig" id="fig-4">
+	<ThemeSvg
+		light={light}
+		dark={dark}
+		lightFile={path.join(dir, 'dodont.svg')}
+		darkFile={path.join(dir, 'dodont-dark.svg')}
+		alt={alt}
+	/>
+	<figcaption>
+		<span class="eep-fignum">Fig 4</span>
+		<span>
+			Rules from the r/EngineeringResumes wiki, recruiters on X, and eeprep's
+			author. Wireframes are schematic, not to scale.
+		</span>
+	</figcaption>
+</figure>

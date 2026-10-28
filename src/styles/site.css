@@ -16,19 +16,6 @@
 	--slsg-graph-outline-color: var(--eep-rule);
 }
 
-.eep-wordmark {
-	font-family: var(--eep-font-serif);
-	font-weight: 560;
-	font-size: 1.45rem;
-	letter-spacing: -0.03em;
-	color: var(--eep-ink);
-	text-decoration: none;
-	font-variation-settings: 'opsz' 48;
-}
-.eep-wordmark span {
-	color: var(--eep-accent);
-}
-
 .eep-nav {
 	display: flex;
 	gap: 1.25rem;
@@ -118,11 +105,6 @@
 button[data-open-modal] kbd {
 	font-family: var(--eep-font-mono);
 }
-.eep-btn-quiet {
-	background: transparent;
-	color: var(--eep-ink);
-	border: var(--eep-border);
-}
 /* theme.css `.sl-markdown-content a` beats `.eep-btn` and paints ink on crimson. */
 .sl-markdown-content a.eep-btn {
 	background: var(--eep-accent);
@@ -132,15 +114,6 @@ button[data-open-modal] kbd {
 .sl-markdown-content a.eep-btn:hover {
 	background: var(--eep-accent-hover);
 	color: var(--eep-on-accent);
-}
-.sl-markdown-content a.eep-btn.eep-btn-quiet {
-	background: transparent;
-	color: var(--eep-ink);
-	border: var(--eep-border);
-}
-.sl-markdown-content a.eep-btn.eep-btn-quiet:hover {
-	background: transparent;
-	color: var(--eep-ink);
 }
 .eep-cards {
 	list-style: none;
@@ -271,9 +244,35 @@ button[data-open-modal] kbd {
 		outline-offset: 2px;
 	}
 
-	/* Wrapped buttons no longer share a flex line, so the quiet border makes
-	   that one 2px taller. Both need a 40px tap target. */
+	/* The phone header and this button both need a 40px tap target. */
 	.eep-btn {
 		min-height: 2.5rem;
 	}
+}
+
+/* Light and dark copies of one figure. Starlight's page is dark unless
+   data-theme is light, including when the attribute is "dark". */
+.eep-theme-fig > .eep-theme-fig-dark {
+	display: none;
+}
+:root:not([data-theme='light']) .eep-theme-fig > .eep-theme-fig-light {
+	display: none;
+}
+:root:not([data-theme='light']) .eep-theme-fig > .eep-theme-fig-dark {
+	display: block;
+}
+
+.sl-markdown-content .eep-kicker {
+	margin: 0 0 0.35rem;
+	max-width: none;
+	font: 600 0.75rem/1 var(--eep-font-sans);
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--eep-accent);
+}
+.sl-markdown-content .eep-figtitle {
+	margin: 0 0 0.6rem;
+	max-width: none;
+	font: 600 1.625rem/1.2 var(--eep-font-serif);
+	color: var(--eep-ink);
 }

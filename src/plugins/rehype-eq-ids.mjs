@@ -1,6 +1,5 @@
 /**
  * Give each display equation an id from its KaTeX \tag, so "0.1" becomes eq-0-1.
- * @returns {import('unified').Plugin}
  */
 export default function rehypeEqIds() {
 	return (tree) => {

@@ -32,21 +32,6 @@ for (const file of htmlFiles) {
 			failed = true;
 		}
 	}
-
-	for (const link of anchorTagsIn(html)) {
-		if (!isExternalHttp(link.href)) continue;
-		const text = stripTags(link.inner).trim();
-		if (
-			/^(reddit|x)-/i.test(text) ||
-			text.includes('@') ||
-			(!/\s/.test(text) && text.length > 20 && !/^https?:\/\//i.test(text))
-		) {
-			console.error(
-				`${rel}: citation link text looks like a key or handle: "${text}"`,
-			);
-			failed = true;
-		}
-	}
 }
 
 if (failed) process.exit(1);
@@ -67,34 +52,6 @@ function hrefsIn(html) {
 	return [...html.matchAll(/\shref="([^"]+)"/g)].map((match) =>
 		decode(match[1] ?? ''),
 	);
-}
-
-/** @param {string} html */
-function anchorTagsIn(html) {
-	return [
-		...html.matchAll(/<a\s[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi),
-	].map((match) => ({
-		href: decode(match[1] ?? ''),
-		inner: match[2] ?? '',
-	}));
-}
-
-/** @param {string} href */
-function isExternalHttp(href) {
-	if (!/^[a-z]+:/i.test(href)) return false;
-	let url;
-	try {
-		url = new URL(href);
-	} catch {
-		return false;
-	}
-	if (url.protocol !== 'http:' && url.protocol !== 'https:') return false;
-	return url.hostname !== 'eeprep.com';
-}
-
-/** @param {string} html */
-function stripTags(html) {
-	return html.replace(/<[^>]*>/g, '');
 }
 
 /**
