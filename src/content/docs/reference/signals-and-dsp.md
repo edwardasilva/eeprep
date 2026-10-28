@@ -15,23 +15,23 @@ keyTerms:
 
 ## Learn this first
 
-MIT 6.003 in fall 2011 is the undergraduate course to follow. Professor Dennis Freeman taught it. Lectures met twice a week, and recitations met twice a week. The textbook is Oppenheim and Willsky, Signals and Systems, 2nd edition, Prentice Hall, 1996. [^1]
+MIT 6.003 in fall 2011 is the undergraduate course to follow. Professor Dennis Freeman taught it. Lectures met twice a week, and recitations met twice a week. The textbook is Oppenheim and Willsky, Signals and Systems, 2nd edition, Prentice Hall, 1996, on the [fall 2011 syllabus](https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/pages/syllabus/).
 
-The course covers continuous-time and discrete-time signals. It covers Fourier representations, the Laplace transform, the z-transform, and sampling. It also covers linear time-invariant systems, convolution, and frequency response. [^1]
+The course covers continuous-time and discrete-time signals. It covers Fourier representations, the Laplace transform, the z-transform, and sampling. It also covers linear time-invariant systems, convolution, and frequency response, on that [fall 2011 syllabus](https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/pages/syllabus/).
 
-Do not open a DFT chapter on day one. In that term the z-transform is lecture 5. Convolution is lecture 8. Fourier representations start at lecture 14. Sampling is lecture 21. [^2]
+Do not open a DFT chapter on day one. In that term the z-transform is lecture 5. Convolution is lecture 8. Fourier representations start at lecture 14. Sampling is lecture 21, on the [fall 2011 handouts](https://web.mit.edu/6.003/F11/www/handouts.html).
 
-The reading list puts each topic on a textbook section. Convolution is sections 2.0 through 2.6. The z-transform is sections 10.1 through 10.10. Sampling is sections 7.0 through 7.6. [^3]
+The reading list puts each topic on a textbook section. Convolution is sections 2.0 through 2.6. The z-transform is sections 10.1 through 10.10. Sampling is sections 7.0 through 7.6, on the [6.003 reading list](https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/pages/readings/).
 
-Use Steven W. Smith's free book for the discrete work you can code. Read chapter 3 for sampling. Read chapter 6 for convolution. Read chapter 8 for the discrete Fourier transform. Read chapter 16 for a filter kernel you can type in. The book is The Scientist and Engineer's Guide to Digital Signal Processing, at dspguide.com. [^4] [^5] [^6] [^7]
+Use Steven W. Smith's free book for the discrete work you can code. Read chapter 3 for sampling in [Smith's sampling chapter](http://www.dspguide.com/CH3.PDF). Read chapter 6 for convolution in [Smith's convolution chapter](https://dspguide.com/CH6.PDF). Read chapter 8 for the discrete Fourier transform in [Smith's chapter 8](https://dspguide.com/CH8.PDF). Read chapter 16 for a filter kernel you can type in, from [Smith's filter chapter](https://www.dspguide.com/CH16.PDF). The book is The Scientist and Engineer's Guide to Digital Signal Processing, at dspguide.com.
 
-Learn those topics before the graduate course. That course is MIT 6.341, Discrete-Time Signal Processing, fall 2005, taught by Alan V. Oppenheim. It assumes fluency with linear time-invariant systems, discrete-time signals, sampling, Fourier transforms, and the bilateral z-transform. The syllabus names 6.011 as the prerequisite. [^8]
+Learn those topics before the graduate course. That course is MIT 6.341, Discrete-Time Signal Processing, fall 2005, taught by Alan V. Oppenheim. It assumes fluency with linear time-invariant systems, discrete-time signals, sampling, Fourier transforms, and the bilateral z-transform. The syllabus names 6.011 as the prerequisite, on the [6.341 fall 2005 syllabus](https://ocw.mit.edu/courses/6-341-discrete-time-signal-processing-fall-2005/pages/syllabus/).
 
-Lecture 2 is phase and group delay. The discrete Fourier transform is lecture 15. [^8]
+Lecture 2 is phase and group delay. The discrete Fourier transform is lecture 15, on the [6.341 fall 2005 syllabus](https://ocw.mit.edu/courses/6-341-discrete-time-signal-processing-fall-2005/pages/syllabus/).
 
 ## Convolution
 
-A linear time-invariant system has one complete description. That description is the impulse response, the output when the input is a unit impulse. Freeman's lecture 8 builds the output as weighted, shifted copies of that response. The operation is convolution. [^9]
+A linear time-invariant system has one complete description. That description is the impulse response, the output when the input is a unit impulse. Freeman's lecture 8 builds the output as weighted, shifted copies of that response. The operation is convolution, in [Freeman's convolution lecture](https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/resources/lecture-8-convolution/).
 
 For a discrete-time input $x[n]$ and impulse response $h[n]$,
 
@@ -47,17 +47,15 @@ y(t) = \int_{-\infty}^{\infty} x(\tau)\, h(t-\tau)\, d\tau
 \tag{1.2}
 $$
 
-[^9]
+Smith says the same thing in words, in [Smith's convolution chapter](https://dspguide.com/CH6.PDF). The input convolved with the impulse response equals the output. In an equation the star means convolution. In Python the star means multiplication.
 
-Smith says the same thing in words. The input convolved with the impulse response equals the output. In an equation the star means convolution. In Python the star means multiplication. [^5]
-
-Lyons states the discrete case the same way. Know the unit impulse response, and the output for any input is the convolution of that input with the impulse response. [^10]
+Lyons states the discrete case the same way. Know the unit impulse response, and the output for any input is the convolution of that input with the impulse response, in [Lyons's DSP book](https://ptgmedia.pearsoncmg.com/images/9780137027415/samplepages/0137027419.pdf).
 
 Here is a sum you can finish by hand. Let $x[0] = 1$, $x[1] = 2$, $x[2] = 3$, and let $h[0] = 1$, $h[1] = -1$. Every other sample is 0.
 
 $y[0] = 1$. $y[1] = -1 + 2 = 1$. $y[2] = -2 + 3 = 1$. $y[3] = -3$.
 
-The four numbers are $1, 1, 1, -3$. SciPy calls this the full convolution. Lengths $N$ and $M$ produce length $N + M - 1$. The direct method is the sum in the definition. [^11]
+The four numbers are $1, 1, 1, -3$. SciPy calls this the full convolution. Lengths $N$ and $M$ produce length $N + M - 1$. The direct method is the sum in the definition, in the [SciPy convolve manual](https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.convolve.html).
 
 A causal filter and a causal input use a shorter limit. Julius O. Smith writes
 
@@ -65,57 +63,57 @@ $$
 y(n) = \sum_{i=0}^{n} h(i)\, x(n-i)
 $$
 
-for $n \ge 0$. He reads $h(i)$ as the weight on the copy of the input from $i$ samples ago. Parentheses in his book are brackets in equation (1.1). Convolution is commutative, so the two orders match. [^12]
+for $n \ge 0$. He reads $h(i)$ as the weight on the copy of the input from $i$ samples ago. Parentheses in his book are brackets in equation (1.1). Convolution is commutative, so the two orders match, on [Smith's convolution page](https://ccrma.stanford.edu/~jos/filters/Convolution_Representation.html).
 
 ## Sampling and aliasing
 
-Shannon published the sampling statement in 1949. If a function contains no frequencies higher than $W$ cycles per second, the samples determine it. The samples are spaced $1/(2W)$ seconds apart. He calls that fact common knowledge in the communication art, and he credits earlier mathematicians, including Whittaker. [^13]
+Shannon published the sampling statement in 1949, in [Shannon's 1949 paper](https://faculty.washington.edu/jar7/EEclasses/EE506/Notes/shannon.pdf). If a function contains no frequencies higher than $W$ cycles per second, the samples determine it. The samples are spaced $1/(2W)$ seconds apart. He calls that fact common knowledge in the communication art, and he credits earlier mathematicians, including Whittaker.
 
-Smith states the sampling theorem this way. A continuous signal is sampled properly only when it has no frequency above half the sampling rate. At 2000 samples per second, the analog signal must stay below 1000 cycles per second. A higher frequency folds into the range from 0 to 1000 and adds to whatever was already there. [^4]
+Smith states the sampling theorem this way. A continuous signal is sampled properly only when it has no frequency above half the sampling rate. At 2000 samples per second, the analog signal must stay below 1000 cycles per second. A higher frequency folds into the range from 0 to 1000 and adds to whatever was already there, in [Smith's sampling chapter](http://www.dspguide.com/CH3.PDF).
 
-His concrete alias is a sine at 0.95 of the sampling rate. The samples look like a sine at 0.05 of the sampling rate. Nothing in the record tells you which sine you had. He names that aliasing. [^4]
+His concrete alias is a sine at 0.95 of the sampling rate. The samples look like a sine at 0.05 of the sampling rate. Nothing in the record tells you which sine you had. He names that aliasing in [Smith's sampling chapter](http://www.dspguide.com/CH3.PDF).
 
-Allen Downey gives a numeric alias. A 5500 Hz cosine, sampled at 10000 frames per second, is indistinguishable from 4500 Hz. Half of 10000 is 5000. He calls 5000 Hz the folding frequency, and also the Nyquist frequency. [^14]
+Allen Downey gives a numeric alias in [Downey's Think DSP](https://greenteapress.com/thinkdsp/thinkdsp.pdf) and on the [Think DSP site](https://allendowney.github.io/ThinkDSP2/). A 5500 Hz cosine, sampled at 10000 frames per second, is indistinguishable from 4500 Hz. Half of 10000 is 5000. He calls 5000 Hz the folding frequency, and also the Nyquist frequency.
 
-Smith says the names Nyquist frequency and Nyquist rate are not standardized. Smith takes a signal whose highest frequency is 3 kHz and a sampling rate of 8 kHz. Twice 3 kHz is 6 kHz. Half of 8 kHz is 4 kHz. Authors pick different ones of those numbers and call it the Nyquist frequency. In his book, both Nyquist frequency and Nyquist rate mean half the sampling rate. [^4]
+Smith says the names Nyquist frequency and Nyquist rate are not standardized. Smith takes a signal whose highest frequency is 3 kHz and a sampling rate of 8 kHz. Twice 3 kHz is 6 kHz. Half of 8 kHz is 4 kHz. Authors pick different ones of those numbers and call it the Nyquist frequency. In his book, both Nyquist frequency and Nyquist rate mean half the sampling rate, in [Smith's sampling chapter](http://www.dspguide.com/CH3.PDF).
 
-Lyons calls periodic sampling the most frequently misunderstood process in digital signal processing. His chapter 2 explains that ambiguity, and he calls it aliasing. [^10]
+Lyons calls periodic sampling the most frequently misunderstood process in digital signal processing. His chapter 2 explains that ambiguity, and he calls it aliasing, in [Lyons's DSP book](https://ptgmedia.pearsoncmg.com/images/9780137027415/samplepages/0137027419.pdf).
 
-Put a low-pass filter in front of the converter, before any sample exists. Smith calls that filter the antialias filter. It removes frequencies above half the sampling rate. A second low-pass after the converter is the reconstruction filter. [^4]
+Put a low-pass filter in front of the converter, before any sample exists. Smith calls that filter the antialias filter. It removes frequencies above half the sampling rate. A second low-pass after the converter is the reconstruction filter, in [Smith's sampling chapter](http://www.dspguide.com/CH3.PDF).
 
-The series RC low-pass is one capacitor and one resistor. Smith shows why a gentle cutoff spends bandwidth on the slope. Take a 12-bit converter at 10000 samples per second. He wants every frequency above 5 kHz reduced by a factor of 100. An 8-pole Chebyshev then has its cutoff set to 3.7 kHz. The band from 3.7 kHz to 5 kHz is spent on the roll-off. [^4]
+The series RC low-pass is one capacitor and one resistor. Smith shows why a gentle cutoff spends bandwidth on the slope. Take a 12-bit converter at 10000 samples per second. He wants every frequency above 5 kHz reduced by a factor of 100. An 8-pole Chebyshev then has its cutoff set to 3.7 kHz. The band from 3.7 kHz to 5 kHz is spent on the roll-off, in [Smith's sampling chapter](http://www.dspguide.com/CH3.PDF).
 
-Keep sampling and quantization apart. Sampling drops what happens between the sample times. Quantization rounds each held voltage. Smith bounds that rounding by half of one least significant bit. He models it as noise with standard deviation about 0.29 of that step. An 8-bit converter then adds rms noise of about 1/900 of full scale. [^4]
+Keep sampling and quantization apart. Sampling drops what happens between the sample times. Quantization rounds each held voltage. Smith bounds that rounding by half of one least significant bit. He models it as noise with standard deviation about 0.29 of that step. An 8-bit converter then adds rms noise of about 1/900 of full scale, in [Smith's sampling chapter](http://www.dspguide.com/CH3.PDF).
 
 ## Check the forward sum
 
-NumPy's forward transform, for $n$ samples $a_m$, is
+NumPy's forward transform, for $n$ samples $a_m$, is given in the [NumPy FFT manual](https://numpy.org/doc/stable/reference/routines.fft.html) as
 
 $$
 A_k = \sum_{m=0}^{n-1} a_m \exp\left(-2\pi i \frac{m k}{n}\right)
 \tag{1.3}
 $$
 
-for $k = 0, \ldots, n-1$. The inverse puts $1/n$ on the sum and flips the sign in the exponent,
+for $k = 0, \ldots, n-1$. The inverse puts $1/n$ on the sum and flips the sign in the exponent, in the [NumPy FFT manual](https://numpy.org/doc/stable/reference/routines.fft.html),
 
 $$
 a_m = \frac{1}{n} \sum_{k=0}^{n-1} A_k \exp\left(2\pi i \frac{m k}{n}\right)
 \tag{1.4}
 $$
 
-NumPy writes the imaginary unit as $i$. Engineering texts, and the rest of this page, write $j$. [^15]
+NumPy writes the imaginary unit as $i$. Engineering texts, and the rest of this page, write $j$.
 
-There is more than one DFT. The sign in the exponent can flip, and the factor $1/n$ can sit on either sum. NumPy's default, called backward, leaves the forward sum alone and scales the inverse by $1/n$. [^15]
+There is more than one DFT. The sign in the exponent can flip, and the factor $1/n$ can sit on either sum. NumPy's default, called backward, leaves the forward sum alone and scales the inverse by $1/n$, in the [NumPy FFT manual](https://numpy.org/doc/stable/reference/routines.fft.html).
 
-Julius O. Smith writes that same pair. The forward sum measures how much of each complex sinusoid is in the signal, and at what phase. The inverse rebuilds the signal as the sum of those pieces, each divided by $N$. [^16]
+Julius O. Smith writes that same pair on [Smith's DFT page](https://ccrma.stanford.edu/~jos/dft/Discrete_Fourier_Transform_DFT.html). The forward sum measures how much of each complex sinusoid is in the signal, and at what phase, on the [DFT definition page](https://ccrma.stanford.edu/~jos/dft/DFT_Definition.html). The inverse rebuilds the signal as the sum of those pieces, each divided by $N$.
 
-Bin 0 is the sum of the samples. For a real input it is real. For even $n$, bin $n/2$ is the Nyquist bin, and it is real for a real input. `np.fft.fftfreq(n, d)` returns the frequency of each bin for sample spacing $d$. [^15]
+Bin 0 is the sum of the samples. For a real input it is real. For even $n$, bin $n/2$ is the Nyquist bin, and it is real for a real input. `np.fft.fftfreq(n, d)` returns the frequency of each bin for sample spacing $d$, in the [NumPy FFT manual](https://numpy.org/doc/stable/reference/routines.fft.html).
 
 Check $N = 4$ and $x = [1, 0, -1, 0]$. Those samples are $\cos(2\pi n / 4)$. Equation (1.3) gives the bins $0, 2, 0, 2$. Bin 1 is the one to expand. Samples $n = 1$ and $n = 3$ are 0, so they add nothing. The $n = 0$ term is $1$. The $n = 2$ term is $(-1)$ times $e^{-j\pi}$, and $e^{-j\pi} = -1$, so that term is $1$. The two terms add to $2$.
 
-Smith's chapter 8 is a different arrangement of the same idea. He teaches the real DFT first. $N$ time points become two arrays, cosine amplitudes and sine amplitudes, each of length $N/2 + 1$. He says the claim that a DFT turns $N$ time points into $N$ frequency points is about the complex DFT. He saves that form for chapter 31. NumPy computes the complex form. [^6]
+[Smith's chapter 8](https://dspguide.com/CH8.PDF) is a different arrangement of the same idea. He teaches the real DFT first. $N$ time points become two arrays, cosine amplitudes and sine amplitudes, each of length $N/2 + 1$. He says the claim that a DFT turns $N$ time points into $N$ frequency points is about the complex DFT. He saves that form for chapter 31. NumPy computes the complex form.
 
-If a hand sum and a library call disagree, compare the sign and the $1/n$ before you edit the algebra. [^15]
+If a hand sum and a library call disagree, compare the sign and the $1/n$ before you edit the algebra, using the [NumPy FFT manual](https://numpy.org/doc/stable/reference/routines.fft.html).
 
 ## The z-transform
 
@@ -126,42 +124,40 @@ X(z) = \sum_{n=-\infty}^{\infty} x(n)\, z^{-n}
 \tag{1.5}
 $$
 
-$z$ is complex. When the signal is zero for negative time, the lower limit is 0. That unilateral sum is the form he says is most common. [^17]
+$z$ is complex. When the signal is zero for negative time, the lower limit is 0. That unilateral sum is the form he says is most common, on [Smith's z-transform page](https://ccrma.stanford.edu/~jos/filters/Z_Transform.html).
 
-The transfer function is $H(z) = Y(z) / X(z)$. It is the z-transform of the impulse response. For causal signals, convolution in time is a product of z-transforms. [^18] [^19]
+The transfer function is $H(z) = Y(z) / X(z)$. It is the z-transform of the impulse response, on [Smith's transfer page](https://ccrma.stanford.edu/~jos/filters/Transfer_Function_Analysis.html). For causal signals, convolution in time is a product of z-transforms, on [Smith's convolution theorem](https://ccrma.stanford.edu/~jos/filters/Convolution_Theorem.html).
 
-The frequency response is that function on the unit circle. Set $z = e^{j\omega T}$, with $T$ the sample period. The result is the discrete-time Fourier transform of the impulse response. Add an integer multiple of $2\pi/T$ to $\omega$ and the value repeats. That step walks whole turns around the unit circle. [^20]
+The frequency response is that function on the unit circle. Set $z = e^{j\omega T}$, with $T$ the sample period. The result is the discrete-time Fourier transform of the impulse response. Add an integer multiple of $2\pi/T$ to $\omega$ and the value repeats. That step walks whole turns around the unit circle, on [Smith's frequency page](https://ccrma.stanford.edu/~jos/filters/Frequency_Response_I.html).
 
-Stability is a statement about the impulse response. Julius O. Smith defines a stable filter as one whose impulse response decays to 0 as time goes to infinity. For an irreducible transfer function, every pole must lie inside the unit circle. He calls an isolated pole on the unit circle marginally stable. The impulse response from that pole neither decays nor grows. A pole outside the circle grows like $R^n$ with $R > 1$. [^21]
+Stability is a statement about the impulse response. Julius O. Smith defines a stable filter as one whose impulse response decays to 0 as time goes to infinity. For an irreducible transfer function, every pole must lie inside the unit circle. He calls an isolated pole on the unit circle marginally stable. The impulse response from that pole neither decays nor grows. A pole outside the circle grows like $R^n$ with $R > 1$, on [Smith's stability page](https://ccrma.stanford.edu/~jos/filters/Stability.html).
 
 ## A filter you can finish
 
-The ideal low-pass passes every frequency below the cutoff with gain 1, and it blocks the rest. The impulse response of that shape is a sinc that never reaches 0. Smith truncates the sinc. He then multiplies by a smooth window, because a hard cut changes the frequency response. Convolution with the finite kernel is the filter. The filter is stable. The step response has ripple and overshoot. [^7]
+The ideal low-pass passes every frequency below the cutoff with gain 1, and it blocks the rest. The impulse response of that shape is a sinc that never reaches 0. Smith truncates the sinc. He then multiplies by a smooth window, because a hard cut changes the frequency response. Convolution with the finite kernel is the filter. The filter is stable. The step response has ripple and overshoot, in [Smith's filter chapter](https://www.dspguide.com/CH16.PDF).
 
-A recursive filter feeds earlier outputs back into the sum. SciPy's `lfilter` implements this difference equation,
+A recursive filter feeds earlier outputs back into the sum. SciPy's `lfilter` implements this difference equation in the [SciPy lfilter manual](https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.lfilter.html),
 
 $$
 a[0]\, y[n] = \sum_{k=0}^{M} b[k]\, x[n-k] - \sum_{k=1}^{N} a[k]\, y[n-k]
 \tag{1.6}
 $$
 
-[^22]
+`scipy.signal.butter(N, Wn)` designs a Butterworth filter. At $W_n$ the gain is $1/\sqrt{2}$ times the passband gain. The page calls that the $-3$ dB point. For a digital filter, if you omit `fs`, $W_n$ runs from 0 to 1, and 1 is the Nyquist frequency. The passband of a Butterworth filter is maximally flat, in the [SciPy butter manual](https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.butter.html).
 
-`scipy.signal.butter(N, Wn)` designs a Butterworth filter. At $W_n$ the gain is $1/\sqrt{2}$ times the passband gain. The page calls that the $-3$ dB point. For a digital filter, if you omit `fs`, $W_n$ runs from 0 to 1, and 1 is the Nyquist frequency. The passband of a Butterworth filter is maximally flat. [^23]
+Do not use a high-order narrowband design in numerator and denominator form. SciPy says that conversion from roots to polynomial coefficients is numerically sensitive for order 4 and up, in the [SciPy butter manual](https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.butter.html). The same note says that form can come out unstable or wrong. Ask for `output='sos'`. Then check the curve with `freqz`, which computes $H(e^{j\omega}) = B(e^{j\omega}) / A(e^{j\omega})$, in the [SciPy freqz manual](https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.freqz.html).
 
-Do not use a high-order narrowband design in numerator and denominator form. SciPy says that conversion from roots to polynomial coefficients is numerically sensitive for order 4 and up. The same note says that form can come out unstable or wrong. Ask for `output='sos'`. Then check the curve with `freqz`, which computes $H(e^{j\omega}) = B(e^{j\omega}) / A(e^{j\omega})$. [^23] [^24]
-
-The course describes these designs as recursive (IIR) and non-recursive (FIR). IIR design is lecture 8. FIR design is lecture 9. Filter structures are lecture 7. [^25] [^8]
+The course describes these designs as recursive (IIR) and non-recursive (FIR) on the [6.341 course page](https://ocw.mit.edu/courses/6-341-discrete-time-signal-processing-fall-2005/). IIR design is lecture 8. FIR design is lecture 9. Filter structures are lecture 7, on the [6.341 fall 2005 syllabus](https://ocw.mit.edu/courses/6-341-discrete-time-signal-processing-fall-2005/pages/syllabus/).
 
 ## How to practice
 
-Work the problems on paper before you open a solution. The fall 2011 6.003 site posted homework sets 1 through 14, and it posted a solution for each one. [^2]
+Work the problems on paper before you open a solution. The fall 2011 6.003 site posted homework sets 1 through 14, and it posted a solution for each one, on the [fall 2011 handouts](https://web.mit.edu/6.003/F11/www/handouts.html).
 
-When homework is graded, problem sets are 15 percent of the preliminary grade. When it is not graded, they are 0. Oppenheim says working the problems has a major effect on how well you understand the material. The staff writes exams on the assumption that you worked every assigned problem. One problem on each exam is usually based on a homework problem. You may solve a problem with one or two classmates. The write-up has to be yours. [^8]
+When homework is graded, problem sets are 15 percent of the preliminary grade. When it is not graded, they are 0. Oppenheim says working the problems has a major effect on how well you understand the material. The staff writes exams on the assumption that you worked every assigned problem. One problem on each exam is usually based on a homework problem. You may solve a problem with one or two classmates. The write-up has to be yours, on the [6.341 fall 2005 syllabus](https://ocw.mit.edu/courses/6-341-discrete-time-signal-processing-fall-2005/pages/syllabus/).
 
-He also wants the ideas explored in MATLAB. The course has two MATLAB projects. You need the project write-up to pass, on either homework option. [^8]
+He also wants the ideas explored in MATLAB, on the [6.341 fall 2005 syllabus](https://ocw.mit.edu/courses/6-341-discrete-time-signal-processing-fall-2005/pages/syllabus/). The course has two MATLAB projects. You need the project write-up to pass, on either homework option.
 
-If you already write Python, use Allen Downey's Think DSP for the same ideas. His premise is that programming is a way to learn the subject, and that the usual course starts at phasors. By the end of his chapter 1 you can pull the harmonics out of a sound and build a new one. The book is free. The general study habit sits on [[How to study]]. [^14]
+If you already write Python, use Allen Downey's [Think DSP book](https://greenteapress.com/thinkdsp/thinkdsp.pdf) and the [Think DSP site](https://allendowney.github.io/ThinkDSP2/) for the same ideas. His premise is that programming is a way to learn the subject, and that the usual course starts at phasors. By the end of his chapter 1 you can pull the harmonics out of a sound and build a new one. The book is free. The general study habit sits on [[How to study]].
 
 Check the two hand results in one file. `method='direct'` forces the sum from the definition.
 
@@ -177,81 +173,29 @@ x4 = np.array([1.0, 0.0, -1.0, 0.0])
 print(np.fft.fft(x4))
 ```
 
-The first print is `1, 1, 1, -3`. The second is the bins `0, 2, 0, 2`. [^11] [^15]
+The first print is `1, 1, 1, -3`, from the [SciPy convolve manual](https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.convolve.html). The second is the bins `0, 2, 0, 2`, from the [NumPy FFT manual](https://numpy.org/doc/stable/reference/routines.fft.html).
 
 ## Where a chat tool helps
 
-Frieder and coauthors tested two ChatGPT releases, 9 January 2023 and 30 January 2023, and they tested GPT-4. The problems were written by working mathematicians. The 9 January model scored 3.20 out of 5 on average, with standard deviation 1.23. It was weak on proofs and on complicated symbolic calculations. It was stronger when the task was to state a fact or to fill a gap. The abstract says ChatGPT is most successful when the task is to look up a fact. It says GPT-4 can be used on undergraduate mathematics and still fails at graduate difficulty. [^26]
+Frieder and coauthors tested two ChatGPT releases, 9 January 2023 and 30 January 2023, and they tested GPT-4, in a [ChatGPT math paper](https://arxiv.org/html/2301.13867v2). The problems were written by working mathematicians. The 9 January model scored 3.20 out of 5 on average, with standard deviation 1.23. It was weak on proofs and on complicated symbolic calculations. It was stronger when the task was to state a fact or to fill a gap. The abstract says ChatGPT is most successful when the task is to look up a fact. It says GPT-4 can be used on undergraduate mathematics and still fails at graduate difficulty.
 
 That paper does not score a model from 2026. Treat a newer chat window as untested by this result.
 
-Use the tool to draft a SciPy call or to name a chapter. Then recompute the sum, and run the call. Compare the exponent and the $1/n$ with equations (1.3) and (1.4) before you trust a generated transform. [^15]
+Use the tool to draft a SciPy call or to name a chapter. Then recompute the sum, and run the call. Compare the exponent and the $1/n$ with equations (1.3) and (1.4) before you trust a generated transform, using the [NumPy FFT manual](https://numpy.org/doc/stable/reference/routines.fft.html).
 
-Do not paste a high-order `butter` result into a project and move on. The library's own warning is that the `b, a` form can be unstable. Plot `freqz`, or use second-order sections. [^23]
+Do not paste a high-order `butter` result into a project and move on. The library's own warning is that the `b, a` form can be unstable, in the [SciPy butter manual](https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.butter.html). Plot `freqz`, or use second-order sections.
 
-Keep the 6.341 write-up rule for a generated solution. You may talk the problem through. The lines you hand in still have to be yours. [^8]
+Keep the 6.341 write-up rule for a generated solution, from the [6.341 fall 2005 syllabus](https://ocw.mit.edu/courses/6-341-discrete-time-signal-processing-fall-2005/pages/syllabus/). You may talk the problem through. The lines you hand in still have to be yours.
 
 ## Books and courses
 
 Use these in the order above. Each one is a primary source for a piece of this page.
 
-1. MIT OpenCourseWare 6.003, Signals and Systems, fall 2011, for the lecture order and the 14 homework sets. [^1] [^2]
-2. Oppenheim and Willsky, Signals and Systems, 2nd edition, the textbook that course assigns. [^3]
-3. Steven W. Smith, The Scientist and Engineer's Guide to Digital Signal Processing, free at dspguide.com. [^4]
-4. Julius O. Smith III, Mathematics of the DFT and Introduction to Digital Filters, free at CCRMA. [^16] [^17]
-5. Allen B. Downey, Think DSP, free, for the Python path and the 5500 Hz alias. [^14]
-6. Richard G. Lyons, Understanding Digital Signal Processing, 3rd edition, Pearson, 2011, for a long treatment of periodic sampling and aliasing. [^10]
-7. MIT OpenCourseWare 6.341, fall 2005, after the background list in its syllabus, for filter design and the MATLAB projects. [^8]
-8. The NumPy FFT manual and the SciPy `signal` pages for `convolve`, `lfilter`, `butter`, and `freqz`. [^15] [^11]
-
-[^1]: Massachusetts Institute of Technology. Syllabus, 6.003 Signals and Systems, Fall 2011. MIT OpenCourseWare, 2011. <https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/pages/syllabus/> Accessed 2026-10-25.
-
-[^2]: Massachusetts Institute of Technology. 6.003 homepage, Fall 2011, handouts. MIT, 2011. <https://web.mit.edu/6.003/F11/www/handouts.html> Accessed 2026-10-25.
-
-[^3]: Massachusetts Institute of Technology. Readings, 6.003 Signals and Systems, Fall 2011. MIT OpenCourseWare, 2011. <https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/pages/readings/> Accessed 2026-10-25.
-
-[^4]: Steven W. Smith. The Scientist and Engineer's Guide to Digital Signal Processing, Chapter 3, ADC and DAC. 1997. <http://www.dspguide.com/CH3.PDF> Accessed 2026-10-25.
-
-[^5]: Steven W. Smith. The Scientist and Engineer's Guide to Digital Signal Processing, Chapter 6, Convolution. 1997. <https://dspguide.com/CH6.PDF> Accessed 2026-10-25.
-
-[^6]: Steven W. Smith. The Scientist and Engineer's Guide to Digital Signal Processing, Chapter 8, The Discrete Fourier Transform. 1997. <https://dspguide.com/CH8.PDF> Accessed 2026-10-25.
-
-[^7]: Steven W. Smith. The Scientist and Engineer's Guide to Digital Signal Processing, Chapter 16, Windowed-Sinc Filters. 1997. <https://www.dspguide.com/CH16.PDF> Accessed 2026-10-25.
-
-[^8]: Alan V. Oppenheim. Syllabus, 6.341 Discrete-Time Signal Processing, Fall 2005. MIT OpenCourseWare, 2005. <https://ocw.mit.edu/courses/6-341-discrete-time-signal-processing-fall-2005/pages/syllabus/> Accessed 2026-10-25.
-
-[^9]: Dennis Freeman. Lecture 8: Convolution, 6.003 Signals and Systems, Fall 2011. MIT OpenCourseWare, 2011. <https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/resources/lecture-8-convolution/> Accessed 2026-10-25.
-
-[^10]: Richard G. Lyons. Understanding Digital Signal Processing. 3rd edition. Pearson, 2011. Sample pages, preface and chapter 1. <https://ptgmedia.pearsoncmg.com/images/9780137027415/samplepages/0137027419.pdf> Accessed 2026-10-25.
-
-[^11]: SciPy Developers. scipy.signal.convolve, SciPy v1.18.0 Manual. 2026. <https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.convolve.html> Accessed 2026-10-25.
-
-[^12]: Julius O. Smith. Introduction to Digital Filters, Convolution Representation. CCRMA, Stanford University. <https://ccrma.stanford.edu/~jos/filters/Convolution_Representation.html> Accessed 2026-10-25.
-
-[^13]: Claude E. Shannon. Communication in the Presence of Noise. Proceedings of the IRE, 1949. Reprint. DOI 10.1109/jrproc.1949.232969. <https://faculty.washington.edu/jar7/EEclasses/EE506/Notes/shannon.pdf> Accessed 2026-10-25.
-
-[^14]: Allen B. Downey. Think DSP: Digital Signal Processing in Python. Green Tea Press. <https://greenteapress.com/thinkdsp/thinkdsp.pdf> and <https://allendowney.github.io/ThinkDSP2/> Accessed 2026-10-25.
-
-[^15]: NumPy Developers. Discrete Fourier Transform, NumPy v2.5 Manual. 2026. <https://numpy.org/doc/stable/reference/routines.fft.html> Accessed 2026-10-25.
-
-[^16]: Julius O. Smith. Mathematics of the DFT, The Discrete Fourier Transform. CCRMA, Stanford University. <https://ccrma.stanford.edu/~jos/dft/Discrete_Fourier_Transform_DFT.html> and <https://ccrma.stanford.edu/~jos/dft/DFT_Definition.html> Accessed 2026-10-25.
-
-[^17]: Julius O. Smith. Introduction to Digital Filters, The Z Transform. CCRMA, Stanford University. <https://ccrma.stanford.edu/~jos/filters/Z_Transform.html> Accessed 2026-10-25.
-
-[^18]: Julius O. Smith. Introduction to Digital Filters, Transfer Function Analysis. CCRMA, Stanford University. <https://ccrma.stanford.edu/~jos/filters/Transfer_Function_Analysis.html> Accessed 2026-10-25.
-
-[^19]: Julius O. Smith. Introduction to Digital Filters, Convolution Theorem. CCRMA, Stanford University. <https://ccrma.stanford.edu/~jos/filters/Convolution_Theorem.html> Accessed 2026-10-25.
-
-[^20]: Julius O. Smith. Introduction to Digital Filters, Frequency Response. CCRMA, Stanford University. <https://ccrma.stanford.edu/~jos/filters/Frequency_Response_I.html> Accessed 2026-10-25.
-
-[^21]: Julius O. Smith. Introduction to Digital Filters, Stability Revisited. CCRMA, Stanford University. <https://ccrma.stanford.edu/~jos/filters/Stability.html> Accessed 2026-10-25.
-
-[^22]: SciPy Developers. scipy.signal.lfilter, SciPy v1.18.0 Manual. 2026. <https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.lfilter.html> Accessed 2026-10-25.
-
-[^23]: SciPy Developers. scipy.signal.butter, SciPy v1.18.0 Manual. 2026. <https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.butter.html> Accessed 2026-10-25.
-
-[^24]: SciPy Developers. scipy.signal.freqz, SciPy v1.18.0 Manual. 2026. <https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.freqz.html> Accessed 2026-10-25.
-
-[^25]: Alan V. Oppenheim. Discrete-Time Signal Processing, 6.341, Fall 2005. MIT OpenCourseWare, 2005. <https://ocw.mit.edu/courses/6-341-discrete-time-signal-processing-fall-2005/> Accessed 2026-10-25.
-
-[^26]: Simon Frieder, Luca Pinchetti, Alexis Chevalier, Ryan-Rhys Griffiths, Tommaso Salvatori, Thomas Lukasiewicz, Philipp Christian Petersen, and Julius Berner. Mathematical Capabilities of ChatGPT. 2023. arXiv:2301.13867v2. <https://arxiv.org/html/2301.13867v2> Accessed 2026-10-25.
+1. [MIT's 6.003 syllabus](https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/pages/syllabus/) and the [fall 2011 handouts](https://web.mit.edu/6.003/F11/www/handouts.html), for the lecture order and the 14 homework sets.
+2. Oppenheim and Willsky, Signals and Systems, 2nd edition, the textbook that course assigns on the [6.003 reading list](https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/pages/readings/).
+3. Steven W. Smith, The Scientist and Engineer's Guide to Digital Signal Processing, free at dspguide.com, including [Smith's sampling chapter](http://www.dspguide.com/CH3.PDF).
+4. Julius O. Smith III, Mathematics of the DFT and Introduction to Digital Filters, free at CCRMA, on [Smith's DFT page](https://ccrma.stanford.edu/~jos/dft/Discrete_Fourier_Transform_DFT.html), the [DFT definition page](https://ccrma.stanford.edu/~jos/dft/DFT_Definition.html), and [Smith's z-transform page](https://ccrma.stanford.edu/~jos/filters/Z_Transform.html).
+5. Allen B. Downey, Think DSP, free, for the Python path and the 5500 Hz alias, in [Downey's Think DSP](https://greenteapress.com/thinkdsp/thinkdsp.pdf) and on the [Think DSP site](https://allendowney.github.io/ThinkDSP2/).
+6. Richard G. Lyons, Understanding Digital Signal Processing, 3rd edition, Pearson, 2011, for a long treatment of periodic sampling and aliasing, in [Lyons's DSP book](https://ptgmedia.pearsoncmg.com/images/9780137027415/samplepages/0137027419.pdf).
+7. [MIT's 6.341 syllabus](https://ocw.mit.edu/courses/6-341-discrete-time-signal-processing-fall-2005/pages/syllabus/), after the background list in its syllabus, for filter design and the MATLAB projects.
+8. The [NumPy FFT manual](https://numpy.org/doc/stable/reference/routines.fft.html) and the SciPy `signal` pages for the [SciPy convolve manual](https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.convolve.html), `lfilter`, `butter`, and `freqz`.
