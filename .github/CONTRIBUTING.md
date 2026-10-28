@@ -55,7 +55,7 @@ Lane ownership is this table, not a `CODEOWNERS` file. The lane owner resolves c
 Pull requests into `main` and `epic/**` run four jobs:
 
 - the body contains `Part of #<issue>` (Dependabot and `no-epic` skip this)
-- `npm ci`, wikilink check, figure regeneration check, production build, and HTML link check
+- `npm ci`, wikilink check, citation check, figure regeneration check, production build, and HTML link check
 - Vale, using `.github/STYLE.md`, on `src/content/docs` (`vale --config .github/vale/.vale.ini src/content/docs`)
 - `npm run lint` (ESLint, markdownlint, and Prettier)
 
@@ -76,7 +76,7 @@ npm run format
 
 Open `src/content/docs` as an Obsidian vault. Wikilinks stay in `[[wiki]]` form (`useMarkdownLinks` is off). Same-page links use `[text](#heading)`, because `[[#heading]]` has an empty page name and the wikilink check fails the build. Do not commit `.obsidian/workspace.json`.
 
-Write in sentence case. Callout titles are sentence case. Use "Main idea", not "Key idea". The bibliography file is added on the citations epic.
+Write in sentence case. Callout titles are sentence case. Use "Main idea", not "Key idea". External source links in `src/content/docs` are listed in `src/content/references.bib`. `npm run check:citations` fails if a linked source is missing from that file, or if a bibliography entry is linked from no page.
 
 <!-- run-locally:start -->
 
@@ -121,6 +121,8 @@ Run the checks from the repo root:
 ```bash
 npm run test:wikilinks
 npm run check:wikilinks
+npm run test:citations
+npm run check:citations
 npm run check:figures
 npm run build
 npm run check:links
@@ -129,6 +131,6 @@ npm run lint
 vale --config .github/vale/.vale.ini src/content/docs
 ```
 
-`npm run check:links` needs a `dist/` folder, so run `npm run build` first. `npm run check:pr-body` reads `PR_BODY` from the environment. Vale is a separate program. CI installs Vale 3.25.1 and runs `vale --config .github/vale/.vale.ini src/content/docs`.
+`npm run check:citations` reads `src/content/docs` and `src/content/references.bib`. It does not need a build. `npm run check:links` needs a `dist/` folder, so run `npm run build` first. `npm run check:pr-body` reads `PR_BODY` from the environment. Vale is a separate program. CI installs Vale 3.25.1 and runs `vale --config .github/vale/.vale.ini src/content/docs`.
 
 <!-- run-locally:end -->
