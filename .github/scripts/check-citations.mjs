@@ -1,7 +1,8 @@
 // Fails when a page under src/content/docs links an external source URL that
 // references.bib does not list, or when a bibliography entry is linked from no page.
 // Also fails on a Pandoc [@key] cite, on Markdown link text that is a
-// citation key, a handle, or a bare URL, and on an @handle in page prose.
+// citation key, a handle, or a bare URL, on an @handle in page prose,
+// and on a content line made only of Markdown links.
 // Bibliography matching is on the url, not on link text.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -273,7 +274,8 @@ function trimDestination(raw) {
 }
 
 /**
- * Pandoc [@key] cites, and link text that is a key, a handle, or a bare URL.
+ * Pandoc [@key] cites, link text that is a key, a handle, or a bare URL,
+ * and a content line made only of Markdown links.
  * @param {string} file
  * @param {string} text
  */
@@ -291,7 +293,6 @@ function checkCitationStyle(file, text) {
 			}
 		}
 	}
-	const skipText = isLinkTextExempt(file);
 	/** @type {{ char: string, len: number } | null} */
 	let fence = null;
 	for (let index = start; index < lines.length; index++) {
@@ -312,12 +313,12 @@ function checkCitationStyle(file, text) {
 			continue;
 		}
 		const stripped = stripInlineCode(line);
+		reportLoneLinkLine(file, index + 1, stripped);
 		for (const match of stripped.matchAll(/\[@[^\]]+\]/g)) {
 			failures.push(
 				`${display(file)}:${index + 1}: Pandoc citation "${match[0]}" is not allowed`,
 			);
 		}
-		if (skipText) continue;
 		for (const match of stripped.matchAll(
 			/(^|[^!])\[([^\]]*)\]\(([^)\n]*)\)/g,
 		)) {
@@ -336,12 +337,25 @@ function checkCitationStyle(file, text) {
 }
 
 /**
- * TODO(#67): get-hired/first-internship.mdx still uses key-style link text.
- * The link-text check and the @handle prose check skip it until #67 rewrites that page.
+ * A citation belongs in a sentence. A line whose only content is Markdown
+ * links is the old key-per-line pattern.
  * @param {string} file
+ * @param {number} line
+ * @param {string} stripped
  */
-function isLinkTextExempt(file) {
-	return display(file).endsWith('get-hired/first-internship.mdx');
+function reportLoneLinkLine(file, line, stripped) {
+	if (!markdownLinkPattern().test(stripped)) return;
+	const rest = stripped
+		.replace(/(^|[^!])\[[^\]]*\]\([^)\n]*\)/g, '$1')
+		.replace(/(^|[^!])\[[^\]]*\]\[[^\]]*\]/g, '$1')
+		.replace(/<(https?:\/\/[^>\s]+)>/g, '');
+	if (/\S/.test(rest)) return;
+	failures.push(`${display(file)}:${line}: line is only Markdown links`);
+}
+
+/** @returns {RegExp} */
+function markdownLinkPattern() {
+	return /(?:^|[^!])\[[^\]]*\](?:\([^)\n]*\)|\[[^\]]*\])|<(https?:\/\/[^>\s]+)>/;
 }
 
 /**
