@@ -59,7 +59,9 @@ Pull requests into `main` and `epic/**` run four jobs:
 - Vale, using `.github/STYLE.md`, on `src/content/docs` (`vale --config .github/vale/.vale.ini src/content/docs`)
 - `npm run lint` (ESLint, markdownlint, and Prettier)
 
-The deploy workflow is manual. Edward runs `.github/workflows/deploy.yml` when he decides to publish. Do not run that workflow, change DNS, or turn on GitHub Pages.
+## Deploy
+
+Merges to `main` build the site and dry-run the deployment using Wrangler. Publishing to Cloudflare Workers happens only when the `DEPLOY_ENABLED` repository variable is `true`. Deployments use the `production` environment secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`. The custom domain is added at launch.
 
 ## Local commands
 
