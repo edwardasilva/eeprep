@@ -67,4 +67,78 @@ assert.doesNotMatch(
 	/example\.com\/orphan/,
 );
 
+const badText = check('bad-link-text');
+assert.equal(badText.status, 1);
+assert.match(
+	badText.stderr,
+	/link text "reddit-2026-bad-key" starts with a citation key/,
+);
+assert.match(badText.stderr, /link text "x-short" starts with a citation key/);
+assert.match(badText.stderr, /link text "note @handle" contains "@"/);
+assert.match(
+	badText.stderr,
+	/link text "https:\/\/example\.com\/bare" is a bare URL/,
+);
+assert.match(
+	badText.stderr,
+	/link text "www\.example\.com\/plain" is a bare URL/,
+);
+assert.match(
+	badText.stderr,
+	/link text "https:\/\/example\.com\/auto" is a bare URL/,
+);
+assert.match(
+	badText.stderr,
+	/link text "abcdefghijklmnopqrstu" is a single token over 20 characters/,
+);
+assert.doesNotMatch(badText.stderr, /not linked from any page/);
+assert.doesNotMatch(badText.stderr, /is not in /);
+
+const pandoc = check('pandoc-cite');
+assert.equal(pandoc.status, 1);
+assert.match(pandoc.stderr, /Pandoc citation "\[@study-key\]" is not allowed/);
+assert.match(
+	pandoc.stderr,
+	/Pandoc citation "\[@key1; @key2\]" is not allowed/,
+);
+assert.doesNotMatch(pandoc.stderr, /not linked from any page/);
+assert.doesNotMatch(pandoc.stderr, /link text /);
+
+const exempt = check('exempt-keys');
+assert.equal(exempt.status, 0, `${exempt.stdout}\n${exempt.stderr}`);
+assert.equal(exempt.stderr, '');
+assert.match(
+	exempt.stdout,
+	/Citation URLs match 2 bibliography entries across 1 pages/,
+);
+
+const exemptPandoc = check('exempt-pandoc');
+assert.equal(exemptPandoc.status, 1);
+assert.match(
+	exemptPandoc.stderr,
+	/Pandoc citation "\[@still-raw\]" is not allowed/,
+);
+assert.doesNotMatch(exemptPandoc.stderr, /link text /);
+
+const handle = check('handle-prose');
+assert.equal(handle.status, 1);
+assert.match(handle.stderr, /prose contains a handle "@ada_writer"/);
+assert.doesNotMatch(handle.stderr, /not linked from any page/);
+
+const handleOk = check('handle-ok');
+assert.equal(handleOk.status, 0, `${handleOk.stdout}\n${handleOk.stderr}`);
+assert.equal(handleOk.stderr, '');
+assert.match(
+	handleOk.stdout,
+	/Citation URLs match 1 bibliography entries across 1 pages/,
+);
+
+const exemptHandle = check('exempt-handle');
+assert.equal(
+	exemptHandle.status,
+	0,
+	`${exemptHandle.stdout}\n${exemptHandle.stderr}`,
+);
+assert.equal(exemptHandle.stderr, '');
+
 console.log('Citation checks pass.');

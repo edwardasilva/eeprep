@@ -76,7 +76,7 @@ npm run format
 
 Open `src/content/docs` as an Obsidian vault. Wikilinks stay in `[[wiki]]` form (`useMarkdownLinks` is off). Same-page links use `[text](#heading)`, because `[[#heading]]` has an empty page name and the wikilink check fails the build. Do not commit `.obsidian/workspace.json`.
 
-Write in sentence case. Callout titles are sentence case. Use "Main idea", not "Key idea". External source links in `src/content/docs` are listed in `src/content/references.bib`. `npm run check:citations` fails if a linked source is missing from that file, or if a bibliography entry is linked from no page.
+Write in sentence case. Callout titles are sentence case. Use "Main idea", not "Key idea". External source links in `src/content/docs` are listed in `src/content/references.bib`. A citation is an ordinary Markdown link inside the sentence, with plain words as the link text. `npm run check:citations` fails if a linked source is missing from that file, or if a bibliography entry is linked from no page. It also fails on a Pandoc cite such as `[@key]`, and on link text that starts with `reddit-` or `x-`, contains `@`, is a bare URL, or is one token longer than 20 characters. It fails when page prose contains an `@handle` outside code or a URL. The link-text check and that handle check skip `get-hired/first-internship.mdx` until #67 rewrites that page.
 
 <!-- run-locally:start -->
 

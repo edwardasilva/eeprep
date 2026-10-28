@@ -1,6 +1,8 @@
 // Fails when a page under src/content/docs links an external source URL that
 // references.bib does not list, or when a bibliography entry is linked from no page.
-// Match is on the url, not on link text or [@key] citation keys.
+// Also fails on a Pandoc [@key] cite, on Markdown link text that is a
+// citation key, a handle, or a bare URL, and on an @handle in page prose.
+// Bibliography matching is on the url, not on link text.
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -73,7 +75,8 @@ if (!fs.existsSync(contentRoot)) {
 	listMarkdown(contentRoot, pages);
 	pages.sort();
 	for (const file of pages) {
-		for (const link of findSourceLinks(fs.readFileSync(file, 'utf8'))) {
+		const text = fs.readFileSync(file, 'utf8');
+		for (const link of findSourceLinks(text)) {
 			if (!isSourceUrl(link.url)) continue;
 			const canonical = canonicalUrl(link.url);
 			if (!canonical) {
@@ -90,6 +93,7 @@ if (!fs.existsSync(contentRoot)) {
 			}
 			cited.add(canonical);
 		}
+		checkCitationStyle(file, text);
 	}
 }
 
@@ -266,6 +270,114 @@ function trimDestination(raw) {
 		.trim()
 		.replace(/^<|>$/g, '')
 		.replace(/[.,;]+$/g, '');
+}
+
+/**
+ * Pandoc [@key] cites, and link text that is a key, a handle, or a bare URL.
+ * @param {string} file
+ * @param {string} text
+ */
+function checkCitationStyle(file, text) {
+	const masked = text.replace(/<!--[\s\S]*?-->/g, (block) =>
+		block.replace(/[^\n]/g, ' '),
+	);
+	const lines = masked.split('\n');
+	let start = 0;
+	if (lines[0]?.trim() === '---') {
+		for (let i = 1; i < lines.length; i++) {
+			if (lines[i]?.trim() === '---') {
+				start = i + 1;
+				break;
+			}
+		}
+	}
+	const skipText = isLinkTextExempt(file);
+	/** @type {{ char: string, len: number } | null} */
+	let fence = null;
+	for (let index = start; index < lines.length; index++) {
+		const line = lines[index] ?? '';
+		const fenceMatch = /^( {0,3})(`{3,}|~{3,})/.exec(line);
+		if (fence) {
+			if (
+				fenceMatch &&
+				fenceMatch[2][0] === fence.char &&
+				fenceMatch[2].length >= fence.len
+			) {
+				fence = null;
+			}
+			continue;
+		}
+		if (fenceMatch) {
+			fence = { char: fenceMatch[2][0], len: fenceMatch[2].length };
+			continue;
+		}
+		const stripped = stripInlineCode(line);
+		for (const match of stripped.matchAll(/\[@[^\]]+\]/g)) {
+			failures.push(
+				`${display(file)}:${index + 1}: Pandoc citation "${match[0]}" is not allowed`,
+			);
+		}
+		if (skipText) continue;
+		for (const match of stripped.matchAll(
+			/(^|[^!])\[([^\]]*)\]\(([^)\n]*)\)/g,
+		)) {
+			reportLinkText(file, index + 1, match[2] ?? '');
+		}
+		for (const match of stripped.matchAll(
+			/(^|[^!])\[([^\]]*)\]\[([^\]]*)\]/g,
+		)) {
+			reportLinkText(file, index + 1, match[2] ?? '');
+		}
+		for (const match of stripped.matchAll(/<(https?:\/\/[^>\s]+)>/g)) {
+			reportLinkText(file, index + 1, match[1] ?? '');
+		}
+		reportHandles(file, index + 1, stripped);
+	}
+}
+
+/**
+ * TODO(#67): get-hired/first-internship.mdx still uses key-style link text.
+ * The link-text check and the @handle prose check skip it until #67 rewrites that page.
+ * @param {string} file
+ */
+function isLinkTextExempt(file) {
+	return display(file).endsWith('get-hired/first-internship.mdx');
+}
+
+/**
+ * An @handle in prose is a username. URLs and code are not prose.
+ * Inline code is already blanked. Call this with a fence line skipped.
+ * @param {string} file
+ * @param {number} line
+ * @param {string} stripped
+ */
+function reportHandles(file, line, stripped) {
+	const visible = stripped.replace(/https?:\/\/[^\s)]+/g, (url) =>
+		' '.repeat(url.length),
+	);
+	for (const match of visible.matchAll(/(^|[^\w])@([A-Za-z0-9_]+)/g)) {
+		failures.push(
+			`${display(file)}:${line}: prose contains a handle "@${match[2]}"`,
+		);
+	}
+}
+
+/** @param {string} file @param {number} line @param {string} raw */
+function reportLinkText(file, line, raw) {
+	const label = raw.trim();
+	if (!label) return;
+	let problem = '';
+	if (/^https?:\/\//i.test(label) || /^www\./i.test(label)) {
+		problem = `link text "${label}" is a bare URL`;
+	} else if (/^(?:reddit-|x-)/.test(label)) {
+		problem = `link text "${label}" starts with a citation key`;
+	} else if (label.includes('@')) {
+		problem = `link text "${label}" contains "@"`;
+	} else if (!/\s/.test(label) && label.length > 20) {
+		problem = `link text "${label}" is a single token over 20 characters`;
+	}
+	if (!problem) return;
+	failures.push(`${display(file)}:${line}: ${problem}`);
 }
 
 /** @param {string} dir @param {string[]} out */

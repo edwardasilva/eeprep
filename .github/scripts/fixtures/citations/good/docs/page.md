@@ -2,11 +2,11 @@
 title: Good
 ---
 
-A claim [reddit-2026-not-a-key](https://example.com/source).
+A claim [a posted note](https://example.com/source).
 
 Plain words point at [the other note](https://Example.com/other).
 
-An autolink counts too: <https://example.com/slash/>.
+A slash note counts too: [the slash note](https://example.com/slash/).
 
 The site itself is navigation: [EE Prep](https://eeprep.com/guide).
 
@@ -24,4 +24,10 @@ See [the defined source][kept].
 
 A footnote source is linked here.[^1]
 
-[^1]: A footnote source. <https://example.com/footnote>
+[^1]: A footnote source. [the footnote note](https://example.com/footnote)
+
+A twenty character token is fine: [12345678901234567890](https://example.com/source).
+
+A reddit word is fine: [reddit thread](https://example.com/other).
+
+An x word is fine: [x post](https://example.com/slash/).
