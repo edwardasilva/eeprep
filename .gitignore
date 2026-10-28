@@ -34,7 +34,3 @@ src/content/docs/.obsidian/
 *.fls
 *.out
 *.synctex.gz
-
-# Python bytecode from the diagram style scripts.
-__pycache__/
-*.pyc

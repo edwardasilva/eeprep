@@ -55,7 +55,7 @@ Lane ownership is this table, not a `CODEOWNERS` file. The lane owner resolves c
 Pull requests into `main` and `epic/**` run four jobs:
 
 - the body contains `Part of #<issue>` (Dependabot and `no-epic` skip this)
-- `npm ci`, wikilink check, citation check, figure regeneration check, production build, and HTML link check
+- `npm ci`, wikilink check, citation check, production build, and HTML link check
 - Vale, using `.github/STYLE.md`, on `src/content/docs` (`vale --config .github/vale/.vale.ini src/content/docs`)
 - `npm run lint` (ESLint, markdownlint, and Prettier)
 
@@ -64,8 +64,6 @@ The deploy workflow is manual. Edward runs `.github/workflows/deploy.yml` when h
 ## Local commands
 
 Clone, install, and serve steps are in the Run it locally section.
-
-After you edit a `.json5` figure, run `npm run render:figures` and commit the SVG next to it.
 
 `npm run lint` checks ESLint, markdownlint, and Prettier. `npm run format` writes Prettier formatting and applies ESLint fixes.
 
@@ -123,7 +121,6 @@ npm run test:wikilinks
 npm run check:wikilinks
 npm run test:citations
 npm run check:citations
-npm run check:figures
 npm run build
 npm run check:links
 npm run check:pr-body
