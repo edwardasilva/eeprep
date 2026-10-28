@@ -2,8 +2,8 @@
   "name": "eeprep-light",
   "type": "light",
   "colors": {
-    "editor.background": "#f6f5f1",
-    "editor.foreground": "#2b2d33"
+    "editor.background": "#f3f4f6",
+    "editor.foreground": "#232a39"
   },
   "tokenColors": [
     {
@@ -44,14 +44,14 @@
     {
       "scope": ["comment", "punctuation.definition.comment"],
       "settings": {
-        "foreground": "#757369",
+        "foreground": "#5f6878",
         "fontStyle": "italic"
       }
     },
     {
       "scope": ["keyword.operator", "punctuation"],
       "settings": {
-        "foreground": "#6b6e75"
+        "foreground": "#5a6272"
       }
     },
     {
@@ -61,7 +61,7 @@
         "constant.character.format.placeholder"
       ],
       "settings": {
-        "foreground": "#2b2d33"
+        "foreground": "#232a39"
       }
     }
   ]

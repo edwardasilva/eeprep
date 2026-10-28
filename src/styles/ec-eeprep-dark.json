@@ -2,8 +2,8 @@
   "name": "eeprep-dark",
   "type": "dark",
   "colors": {
-    "editor.background": "#1a1916",
-    "editor.foreground": "#d6d1c8"
+    "editor.background": "#101828",
+    "editor.foreground": "#d0d4db"
   },
   "tokenColors": [
     {
@@ -44,14 +44,14 @@
     {
       "scope": ["comment", "punctuation.definition.comment"],
       "settings": {
-        "foreground": "#8a857c",
+        "foreground": "#8a93a3",
         "fontStyle": "italic"
       }
     },
     {
       "scope": ["keyword.operator", "punctuation"],
       "settings": {
-        "foreground": "#a39e95"
+        "foreground": "#a3abb9"
       }
     },
     {
@@ -61,7 +61,7 @@
         "constant.character.format.placeholder"
       ],
       "settings": {
-        "foreground": "#d6d1c8"
+        "foreground": "#d0d4db"
       }
     }
   ]

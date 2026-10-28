@@ -18,6 +18,7 @@
     "check:links": "node .github/scripts/check-links.mjs",
     "check:dev": "node .github/scripts/check-dev.mjs",
     "check:deploy": "wrangler deploy --dry-run",
+    "brand": "node .github/scripts/render-brand.mjs",
     "check:pr-body": "node .github/scripts/check-pr-body.mjs",
     "lint": "eslint . && markdownlint-cli2 && prettier --check .",
     "format": "prettier --write . && eslint . --fix",
@@ -41,6 +42,7 @@
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
+    "@resvg/resvg-js": "2.6.2",
     "eslint": "10.13.0",
     "eslint-plugin-astro": "3.2.1",
     "globals": "17.13.0",

@@ -73,15 +73,17 @@
 
 /* ---------- 3. Colour tokens: LIGHT (primary design) ---------- */
 :root[data-theme='light'] {
-	--eep-paper: #fdfcfa; /* page bg */
+	--eep-paper: #fbfbfc; /* page bg */
 	--eep-surface: #ffffff; /* figures, inputs */
-	--eep-sunken: #f6f5f1; /* code blocks */
-	--eep-rule: #e7e5e0; /* hairlines */
-	--eep-rule-2: #c9c6bf; /* breadcrumb separators, stronger rules */
-	--eep-ink: #17181c; /* headings, diagram strokes */
-	--eep-text: #2b2d33; /* body copy */
-	--eep-ink-2: #4a4d55; /* secondary text, lede */
-	--eep-mute: #6f727a; /* meta, eq numbers, captions-secondary (4.7:1) */
+	--eep-sunken: #f3f4f6; /* code blocks */
+	--eep-rule: #e2e4e8; /* hairlines */
+	--eep-rule-2: #c4c8cf; /* breadcrumb separators, stronger rules */
+	--eep-ink: #16233a; /* headings, diagram strokes */
+	--eep-text: #232a39; /* body copy */
+	--eep-ink-2: #424d63; /* secondary text, lede */
+	--eep-mute: #5e636c; /* meta, eq numbers, captions-secondary (5.8:1) */
+	--eep-silver: #838c9a; /* lines, icons, chart mute series: never text (3.3:1) */
+	--eep-wash: #e7ecf3; /* steel wash: optional secondary fill, never text or lines */
 	--eep-accent: #a3201d; /* the ONE accent: crimson */
 	--eep-accent-hover: #7d1714;
 	--eep-accent-soft: #f8ecea; /* tip bg */
@@ -89,7 +91,7 @@
 	/* callout semantics (desaturated, textbook-appropriate) */
 	--eep-warn: #8f5400;
 	--eep-warn-soft: #fbf3e4;
-	--eep-def: #17181c;
+	--eep-def: #16233a;
 	--eep-ex: #1d5f8a;
 	--eep-ex-soft: #eef4f8;
 	--eep-check: #3f6b22;
@@ -97,42 +99,44 @@
 	/* diagram palette (inline SVG reads these) */
 	--eep-dg-ink: var(--eep-ink);
 	--eep-dg-accent: var(--eep-accent);
-	--eep-dg-mute: #8a8d94;
+	--eep-dg-mute: var(--eep-silver);
 	--eep-dg-fill: var(--eep-surface);
 	--eep-dg-s2: #1d5f8a;
 	--eep-dg-s3: #4f7a28;
-	--eep-dg-grid: #ecebe6;
+	--eep-dg-grid: #e9ecf0;
 }
 
-/* ---------- 4. Colour tokens: DARK ("reading lamp": warm charcoal, ivory ink) ---------- */
+/* ---------- 4. Colour tokens: DARK ("night navy": navy-black paper, cool silver ink) ---------- */
 :root {
-	--eep-paper: #151412;
-	--eep-surface: #1c1b18;
-	--eep-sunken: #1a1916;
-	--eep-rule: #2e2c28;
-	--eep-rule-2: #46433d;
-	--eep-ink: #efebe4;
-	--eep-text: #d6d1c8;
-	--eep-ink-2: #b3ada3;
-	--eep-mute: #8c867c;
-	--eep-accent: #e06a5f; /* crimson lifted to 5.6:1 on paper */
+	--eep-paper: #0d1524;
+	--eep-surface: #131c2e;
+	--eep-sunken: #101828;
+	--eep-rule: #232b3a;
+	--eep-rule-2: #3b4352;
+	--eep-ink: #eceef2;
+	--eep-text: #d0d4db;
+	--eep-ink-2: #a6afbf;
+	--eep-mute: #8f95a0;
+	--eep-silver: #76808f;
+	--eep-wash: #17243a;
+	--eep-accent: #e06a5f; /* crimson lifted to 5.6:1 on navy paper */
 	--eep-accent-hover: #f08b81;
-	--eep-accent-soft: #2a1c1a;
-	--eep-on-accent: #151412;
+	--eep-accent-soft: #2a1a24;
+	--eep-on-accent: #0d1524;
 	--eep-warn: #e0a54a;
-	--eep-warn-soft: #2a2215;
-	--eep-def: #efebe4;
+	--eep-warn-soft: #2a2318;
+	--eep-def: #eceef2;
 	--eep-ex: #7fb3d9;
-	--eep-ex-soft: #18212a;
+	--eep-ex-soft: #14243a;
 	--eep-check: #9cc77a;
-	--eep-check-soft: #1b2418;
+	--eep-check-soft: #16241f;
 	--eep-dg-ink: var(--eep-ink);
 	--eep-dg-accent: var(--eep-accent);
-	--eep-dg-mute: #8c867c;
+	--eep-dg-mute: var(--eep-silver);
 	--eep-dg-fill: var(--eep-surface);
 	--eep-dg-s2: #8cc0e6;
 	--eep-dg-s3: #a9cf86;
-	--eep-dg-grid: #2a2825;
+	--eep-dg-grid: #1c2537;
 }
 
 /* ---------- 5. Map onto Starlight --sl-* (both modes; values resolve per mode) ---------- */
