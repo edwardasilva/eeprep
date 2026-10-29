@@ -6,4 +6,8 @@
 	"workers_dev": false,
 	"preview_urls": false,
 	"observability": { "enabled": true },
+	"routes": [
+		{ "pattern": "eeprep.com", "custom_domain": true },
+		{ "pattern": "www.eeprep.com", "custom_domain": true },
+	],
 }
