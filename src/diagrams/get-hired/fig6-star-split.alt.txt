@@ -1,0 +1,1 @@
+A bar split into four parts. Situation takes 20% of the answer, task 10%, action 60%, and result 10%. Action is the largest part and asks you to say what you did, using "I". A note says the split is a guide, not a stopwatch.

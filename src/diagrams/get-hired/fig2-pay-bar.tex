@@ -1,0 +1,28 @@
+% Figure 2. What electrical engineers earn. Labels: LABELS.md, Figure 2.
+% The bar is drawn to scale: left end $76,550, right end $120,630, marker $87,853.
+\def\eeprepfigure{1}
+\providecommand{\eepstyledir}{../style}% repo: ../style
+\input{\eepstyledir/circuitikz-preamble.tex}
+\input{colors.tex}
+\begin{document}
+\begin{tikzpicture}[x=1pt,y=-1pt]
+  \def\barw{900}
+  \pgfmathsetmacro\mk{(87.853-76.550)/(120.630-76.550)*\barw}% thousands, to stay inside TeX dimensions
+  \node[eeptitle] at (0,30) {What electrical engineers earn};
+  % The bar: every electrical engineer, lowest 10% line to median.
+  \draw[fill=eepwash] (0,116) rectangle (\barw,148);
+  % End labels.
+  \node[eephead, anchor=north west] at (0,170) {Lowest 10\% earned less than \$76,550};
+  \node[eephead, anchor=north east] at (\barw,170) {Median: \$120,630};
+  % Axis, with a tick at each value on the figure.
+  \draw[eepsilver, line width=1pt, eeparrow] (0,204) -- (\barw+40,204);
+  \foreach \x in {0,\mk,\barw} \draw[eepsilver, line width=1pt] (\x,198) -- (\x,210);
+  \node[eepnote, anchor=north east] at (\barw+40,214) {Yearly pay, US dollars};
+  % The marker: new bachelor's grads only.
+  \draw[eepaccent, line width=2.2pt] (\mk,104) -- (\mk,154);
+  \fill[eepaccent] (\mk-6,94) -- (\mk+6,94) -- (\mk,104) -- cycle;
+  \node[eephead, text=eepaccent, anchor=south] at (\mk,86) {New-grad average: \$87,853};
+  \node[eepbody, anchor=north west] at (0,250) {The bar is every electrical engineer. The marker is new bachelor's grads only.};
+  \node[eepsrc, text width=940pt] at (0,286) {Sources: BLS, May 2025 wages (SOC 17-2071). NACE Summer 2026 Salary Survey.};
+\end{tikzpicture}
+\end{document}

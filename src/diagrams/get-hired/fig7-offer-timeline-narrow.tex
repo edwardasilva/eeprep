@@ -1,0 +1,32 @@
+% Figure 7, narrow screens. From offer to answer. Labels: LABELS.md, Figure 7.
+% Same text and crimson focus as fig7-offer-timeline.tex, stacked for a phone. Width matches fig1 narrow.
+\def\eeprepfigure{1}
+\providecommand{\eepstyledir}{../style}% repo: ../style
+\input{\eepstyledir/circuitikz-preamble.tex}
+\input{colors.tex}
+% #1 name, #2 previous node, #3 text. The dot sits on the trace at x = 40.
+\newcommand{\offerstep}[3]{%
+  \node[eepbody, text=eepink, anchor=north west, text width=290pt, align=left] (#1) at ($(#2.south west)+(0,22)$) {#3};
+  \eepdot{($(#1.north west)+(-24,8)$)}}
+\begin{document}
+\begin{tikzpicture}[x=1pt,y=-1pt]
+  \node[eeptitle] at (0,30) {From offer to answer};
+  \node[eephead, text=eepaccent, anchor=west] at (6,66) {Common deadline: 1 to 2 weeks};
+  \coordinate (s0) at (64,74);
+  \offerstep{s1}{s0}{Offer arrives}
+  \offerstep{s2}{s1}{Thank them. Agree on a reply date.}
+  \offerstep{s3}{s2}{Read the offer. Ask questions.}
+  \offerstep{s4}{s3}{Research pay. Pick one request.}
+  \offerstep{s5}{s4}{One call to ask. Get the terms in writing.}
+  \offerstep{s6}{s5}{Decide. Accept only if you mean it.}
+  \node[eepnote, anchor=north west, text width=290pt, align=left] (ext) at ($(s6.south west)+(0,26)$) {Return offers after an internship\\ may allow longer};
+  % The trace, behind the step dots.
+  \draw[eeparrow] ($(s1.north west)+(-24,-12)$) -- ($(s6.south west)+(-24,16)$);
+  % Bracket from step 1 to step 6, read from the label above it, like a timing spec.
+  \draw[eepaccent, line width=1.6pt] (14,78) -- ($(s6.north west)+(-50,8)$) -- ($(s6.north west)+(-36,8)$);
+  \draw[eepaccent, line width=1.6pt] ($(s1.north west)+(-50,8)$) -- ($(s1.north west)+(-36,8)$);
+  % Dashed extension for return offers.
+  \draw[eepsilver, line width=1.3pt, eepdash, eeparrow] ($(s6.north west)+(-50,8)$) -- ($(ext.south west)+(-50,4)$);
+  \node[eepsrc, text width=354pt] at ($(ext.south west)+(-64,24)$) {Sources: NACE advisory opinion on offer deadlines, MIT Career Advising and Professional Development, Negotiate job offers.};
+\end{tikzpicture}
+\end{document}
