@@ -211,6 +211,10 @@ export default defineConfig({
 					items: [
 						{ label: 'Get hired', slug: 'get-hired' },
 						{ label: 'Resume', slug: 'get-hired/resume' },
+						{
+							label: 'Resume workshop',
+							slug: 'get-hired/resume-workshop',
+						},
 						{ label: 'The job market', slug: 'get-hired/the-job-market' },
 						{
 							label: 'Your first internship',
@@ -230,6 +234,7 @@ export default defineConfig({
 					items: [
 						{ label: 'Reference', slug: 'reference' },
 						{ label: 'Signals and DSP', slug: 'reference/signals-and-dsp' },
+						{ label: 'Job search links', slug: 'reference/job-links' },
 					],
 				},
 			],
