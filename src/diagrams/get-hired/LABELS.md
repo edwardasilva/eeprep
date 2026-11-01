@@ -11,7 +11,7 @@ Plan: [eeprep Get hired: content map and plan of attack](https://cursor.com/canv
 1. Use the labels exactly as written. Case, numbers, and punctuation matter.
 2. Print the source line on every figure that has a number. Put it under the figure, in the caption font.
 3. Use the alt text as written for every version: light, dark, and narrow.
-4. Jane Doe is made up. No real names, schools, or employers go on a figure.
+4. Alex Doe is made up. No real names, schools, or employers go on a figure.
 5. Credit Edward's advice only as "eeprep's author, a working embedded software engineer".
 6. No figure compares EE with software or ranks one path over another.
 7. Figures 1 and 8 touch visa and clearance topics. They only say who to ask. They must not say who qualifies for anything.
