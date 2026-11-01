@@ -1,12 +1,12 @@
 # Resume fields spec
 
-This is the field list for the resume fill-in form that Jules will build. The workshop handouts on `get-hired/resume-workshop.mdx` use the same labels, so a student can move from paper to the form without renaming anything. Each rule below comes from the approved resume page (`get-hired/resume.mdx`, merged in PR #79) or from a source that page cites.
+This is the field list for a planned resume fill-in form. The workshop handouts on `get-hired/resume-workshop.mdx` use the same labels, so a student can move from paper to the form without renaming anything. Each rule below comes from the resume page (`get-hired/resume.mdx`) or from a source that page cites.
 
 Alex Doe is a made-up student. Alex's values are the examples, and they match Figure 3 on the resume page. Brackets such as `[X]` stay brackets in the example data.
 
 ## How the form behaves
 
-1. The form runs in the browser only. It sends nothing to a server and stores nothing outside the student's own browser. That keeps the site free of data collection, as the content brief asks.
+1. The form runs in the browser only. It sends nothing to a server and stores nothing outside the student's own browser. That keeps the site free of data collection.
 2. The output is one page in the layout of Alex's finished page: centered header, then left-aligned sections with dates at the right margin.
 3. The form makes two outputs: a LaTeX file built on the r/EngineeringResumes wiki template's preamble, and plain text in the order of Alex's page.
 4. Rules come in two levels. An error blocks the output, because the page says "never" or "do not". A warning shows next to the field and lets the student continue.
@@ -40,7 +40,7 @@ Rules:
 - Strip a leading `+1` from a US or Canadian phone number. Source: the wiki, Contact Information.
 - Second centered line: location, then work status, then "Willing to relocate" if yes, then clearance. Omit the line when all four are blank. Source: resume page "Header" and Alex's page.
 - Work status is free text with a hint: "Only if true. Never claim you need no sponsorship when you do." Source: [one manager on the lie that ends the process](https://www.reddit.com/r/EngineeringResumes/comments/1hw10ms/12_yoe_some_long_direct_advice_in_tech_from_a/).
-- Note for the team: the wiki calls phone, LinkedIn, and a non-local location unnecessary. eeprep's author lists phone and LinkedIn. The form follows the resume page, so all three stay optional and shown.
+- The wiki calls phone, LinkedIn, and a non-local location unnecessary. eeprep's author lists phone and LinkedIn. The form follows the resume page, so all three stay optional and shown.
 
 ### Education
 
@@ -161,7 +161,7 @@ Rules:
   3. Experience, Projects, Education, Skills. eeprep's author's own order as a working engineer.
   4. Education, Experience, Projects, Skills. Wiki student default with work experience.
 - Empty sections are not printed.
-- The form has no objective or summary field. The page says to cut it, and the summary question is still open with Edward.
+- The form has no objective or summary field. The resume page says to cut it.
 
 ### Dates
 
@@ -178,8 +178,8 @@ Rules:
 Fixed by the form. Students cannot change these:
 
 - 1 page and 1 column, black text, no icons, photo, or tables. Error if the output runs past one page. Source: the wiki and resume page "Layout".
-- Text at 10.5 pt or larger. Source: the wiki.
-- Margins at the template's own value of 0.5 in. That meets the wiki's 0.4 in minimum and MIT's and Mines' half inch, so the form does not take a side in the open margin question.
+- Text at 10 to 11 pt. Start at 11 pt and go no lower than 10 pt. Source: resume page "Layout". The wiki asks for 10.5 pt or larger.
+- Margins at 0.4 to 0.75 in. Start at 0.5 in and go no lower than 0.4 in. Source: resume page "Layout" and the wiki's 0.4 in minimum.
 - One `\vspace` value between every pair of sections. Source: eeprep's author.
 - Section titles in bold with a full-width rule. Entry titles and the coursework and activities labels are bold. Nothing else is bold. Source: resume page, under Alex's page.
 - PDF metadata: `\hypersetup{pdftitle={<Name> Resume}, pdfauthor={<Name>}}`. Source: eeprep's author.
