@@ -5,16 +5,16 @@ pageType: guide
 ---
 
 > [!tip] Main idea
-> Teach one page in one sitting. Show Jane's finished page, rewrite one weak bullet together, then have every student rewrite their own and trade with a partner. Each student leaves with one change to make this week.
+> Teach one page in one sitting. Show Alex's finished page, rewrite one weak bullet together, then have every student rewrite their own and trade with a partner. Each student leaves with one change to make this week.
 
-This page is a script for running the [[Resume]] page as a live session for sophomores through seniors. It does not repeat the advice. It tells you what to show, what to say, and what students do, block by block. Advice from eeprep's author, a working embedded software engineer who reviews friends' resumes, is marked as his. Jane Doe is a made-up student. Every bracket such as [X] is a number the student measures, and every bracket such as [University] is a word they fill in.
+This page is a script for running the [[Resume]] page as a live session for sophomores through seniors. It does not repeat the advice. It tells you what to show, what to say, and what students do, block by block. Advice from eeprep's author, a working embedded software engineer who reviews friends' resumes, is marked as his. Alex Doe is a made-up student. Every bracket such as [X] is a number the student measures, and every bracket such as [University] is a word they fill in.
 
 The five figures on the resume page are your slides. Open the page on the projector and scroll to each one:
 
 1. Figure 1, how a resume gets read, under [[Resume#How a resume gets read]].
 2. Figure 4, layout do's and don'ts, under [[Resume#Layout]].
 3. Figure 2, one bullet before and after, under [[Resume#Bullets]].
-4. Figure 3, Jane's finished page, under [[Resume#Jane's finished page]].
+4. Figure 3, Alex's finished page, under [[Resume#Alex's finished page]].
 5. Figure 5, the two-pass checklist, under [[Resume#Checklist]].
 
 ## Before the session
@@ -70,7 +70,7 @@ Say:
 
 - One page, one column, no photo, no icons. These are [the wiki rules](https://www.reddit.com/r/EngineeringResumes/wiki/index/) that carry the most weight.
 - eeprep's author centers the header and left-aligns everything under it.
-- Fill the page, but keep the margins and line spacing from [[Resume#Layout]]. Two words alone on a line are wasted space, in eeprep's author's view.
+- Fill the page, but keep the margins and line spacing from [[Resume#Layout]]. Two words alone on a line are wasted space, in eeprep's author's view. If a bullet spills a word or two onto a second line, cut it to one line or add a detail that fills both.
 
 Students do: open their copy of the template. Replace the sample name and contact line with their own. Delete any section they will not use today. If they write in pdfLaTeX, check the preamble. [The template file](https://github.com/r-engineeringresumes/resume-templates/blob/main/r_EngineeringResumes_Template.tex) already loads hyperref and has the `\input{glyphtounicode}` and `\pdfgentounicode=1` lines. Add the `\hypersetup` line from [[Resume#Layout]].
 
@@ -88,7 +88,7 @@ Say:
 
 Then run the drill in three rounds:
 
-1. You rewrite (5 minutes). Read Jane's "before" bullet aloud. Fill in the XYZ handout on the screen as the room calls out each part. Then show Jane's "after" bullet.
+1. You rewrite (5 minutes). Read Alex's "before" bullet aloud. Fill in the XYZ handout on the screen as the room calls out each part. Then show Alex's "after" bullet.
 2. The room rewrites (8 minutes). Students fix 2 bullets from the bullet worksheet alone, then compare with their partner. Read the sample answers aloud.
 3. Students rewrite their own (12 minutes). Each student picks their weakest bullet and fills in the XYZ handout for it. Partners read the new bullet back and ask, "How did you measure that?"
 
@@ -124,7 +124,7 @@ Time: 10 minutes, or 7 in the short version.
 
 Say:
 
-- The full example is Jane's page. Your first step is smaller. Change one bullet this week.
+- The full example is Alex's page. Your first step is smaller. Change one bullet this week.
 - Before you send the resume anywhere, [MIT's career office](https://capd.mit.edu/resources/resumes/) says your best proofreader is a career advisor. Book one at your school.
 
 Students do: fill in the "this week" card from the handouts, and read it to their partner.
@@ -198,11 +198,11 @@ Result, with a number you measured:                        ____________
 How you checked it (optional):                             ____________
 
 Put it together:
-[Verb] [what you built or changed] in [tool or method], [result] [how you checked it]
+[Verb] [what you built or changed] in [tool or method] and [result] [how you checked it]
 
-Jane's version (made-up student):
-Designed a [X] W synchronous buck converter in KiCad for a CubeSat power board,
-measuring [X]% efficiency with an electronic load against an LTspice model
+Alex's version (made-up student):
+Designed a [X] W synchronous buck converter in KiCad for a CubeSat power board and
+measured [X]% efficiency on an electronic load, within [X]% of the LTspice model
 
 Check: Does it fill one line or most of two? Can you explain every word in an interview?
 ```
@@ -229,28 +229,28 @@ Sample answers for the facilitator. Read them after students try, and accept any
 SAMPLE ANSWERS
 
 1. A duty, not a result.
-   Measured the frequency response of a [X]-stage active filter on an oscilloscope,
-   matching the hand-calculated cutoff within [X]%
+   Measured a [X]-stage active filter on a scope and matched the hand-calculated
+   cutoff within [X]%
 
 2. "Helped" hides your part.
-   Laid out a [X]-layer avionics board in KiCad for a student rocket, routing
-   [X] sensor channels to an STM32 flight computer
+   Laid out a [X]-layer avionics board in KiCad that routes [X] sensors to an
+   STM32 flight computer
 
 3. Says "project" and gives no result.
-   Built a UART receiver in Verilog on a Basys 3 FPGA, verified at [X] baud rates
-   with a self-checking testbench
+   Verified a Verilog UART receiver at [X] baud rates on a Basys 3 FPGA with a
+   self-checking testbench
 
 4. A parts list, not how the parts work together.
-   Programmed an ESP32 to read a BME280 sensor over I2C every [X] s, running
-   [X] days on a [X] mAh battery
+   Built an ESP32 weather station that reads a BME280 over I2C and runs [X] days
+   on [X] mAh
 
 5. A skill claim with no bullet behind it.
-   Modeled a boost converter in MATLAB, sizing the inductor for [X]% current ripple,
-   and checked the model against a hand calculation
+   Sized a boost inductor for [X]% current ripple in MATLAB and matched it to a
+   hand calculation
 
 6. A project that missed its spec still counts. Give the number you reached.
-   Wrote PWM motor-control firmware in C on an STM32 for a senior design rover,
-   reaching [X] of a [X] RPM target
+   Wrote PWM motor firmware in C on an STM32 for a senior design rover that
+   reached [X] of [X] RPM
 ```
 
 ### Peer-review sheet

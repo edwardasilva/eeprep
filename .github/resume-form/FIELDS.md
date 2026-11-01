@@ -2,15 +2,15 @@
 
 This is the field list for the resume fill-in form that Jules will build. The workshop handouts on `get-hired/resume-workshop.mdx` use the same labels, so a student can move from paper to the form without renaming anything. Each rule below comes from the approved resume page (`get-hired/resume.mdx`, merged in PR #79) or from a source that page cites.
 
-Jane Doe is a made-up student. Her values are the examples, and they match Figure 3 on the resume page. Brackets such as `[X]` stay brackets in the example data.
+Alex Doe is a made-up student. Alex's values are the examples, and they match Figure 3 on the resume page. Brackets such as `[X]` stay brackets in the example data.
 
 ## How the form behaves
 
 1. The form runs in the browser only. It sends nothing to a server and stores nothing outside the student's own browser. That keeps the site free of data collection, as the content brief asks.
-2. The output is one page in the layout of Jane's finished page: centered header, then left-aligned sections with dates at the right margin.
-3. The form makes two outputs: a LaTeX file built on the r/EngineeringResumes wiki template's preamble, and plain text in the order of Jane's page.
+2. The output is one page in the layout of Alex's finished page: centered header, then left-aligned sections with dates at the right margin.
+3. The form makes two outputs: a LaTeX file built on the r/EngineeringResumes wiki template's preamble, and plain text in the order of Alex's page.
 4. Rules come in two levels. An error blocks the output, because the page says "never" or "do not". A warning shows next to the field and lets the student continue.
-5. The prefill button loads Jane's data and labels it "Made-up example".
+5. The prefill button loads Alex's data and labels it "Made-up example".
 
 ## Field reference
 
@@ -18,17 +18,17 @@ The "Label" column is the exact text on the handouts, up to any colon or parenth
 
 ### Header
 
-| Label               | Key                 | Type   | Required | Jane's example          |
-| ------------------- | ------------------- | ------ | -------- | ----------------------- |
-| Name                | `header.name`       | text   | yes      | Jane Doe                |
-| Phone               | `header.phone`      | text   | no       | [phone]                 |
-| Email               | `header.email`      | text   | yes      | jane@[school].edu       |
-| LinkedIn            | `header.linkedin`   | text   | no       | linkedin.com/in/janedoe |
-| GitHub              | `header.github`     | text   | no       | github.com/janedoe      |
-| Location            | `header.location`   | text   | no       | City, ST                |
-| Work status         | `header.workStatus` | text   | no       | US Citizen              |
-| Willing to relocate | `header.relocate`   | yes/no | no       | yes                     |
-| Clearance           | `header.clearance`  | text   | no       | (blank)                 |
+| Label               | Key                 | Type   | Required | Alex's example                   |
+| ------------------- | ------------------- | ------ | -------- | -------------------------------- |
+| Name                | `header.name`       | text   | yes      | Alex Doe                         |
+| Phone               | `header.phone`      | text   | no       | [phone]                          |
+| Email               | `header.email`      | text   | yes      | alex.doe@[school].edu            |
+| LinkedIn            | `header.linkedin`   | text   | no       | linkedin.com/in/alex-doe-example |
+| GitHub              | `header.github`     | text   | no       | github.com/alex-doe-example      |
+| Location            | `header.location`   | text   | no       | City, ST                         |
+| Work status         | `header.workStatus` | text   | no       | (blank)                          |
+| Willing to relocate | `header.relocate`   | yes/no | no       | yes                              |
+| Clearance           | `header.clearance`  | text   | no       | (blank)                          |
 
 Rules:
 
@@ -38,7 +38,7 @@ Rules:
 - Strip a leading `https://`, `http://`, or `www.` from LinkedIn and GitHub, and show the link as plain text. Source: resume page "Header".
 - Warning on any link: "Click this link before you send." Source: [a hiring manager who sees dead links](https://www.reddit.com/r/EngineeringResumes/comments/1hw10ms/12_yoe_some_long_direct_advice_in_tech_from_a/).
 - Strip a leading `+1` from a US or Canadian phone number. Source: the wiki, Contact Information.
-- Second centered line: location, then work status, then "Willing to relocate" if yes, then clearance. Omit the line when all four are blank. Source: resume page "Header" and Jane's page.
+- Second centered line: location, then work status, then "Willing to relocate" if yes, then clearance. Omit the line when all four are blank. Source: resume page "Header" and Alex's page.
 - Work status is free text with a hint: "Only if true. Never claim you need no sponsorship when you do." Source: [one manager on the lie that ends the process](https://www.reddit.com/r/EngineeringResumes/comments/1hw10ms/12_yoe_some_long_direct_advice_in_tech_from_a/).
 - Note for the team: the wiki calls phone, LinkedIn, and a non-local location unnecessary. eeprep's author lists phone and LinkedIn. The form follows the resume page, so all three stay optional and shown.
 
@@ -46,14 +46,14 @@ Rules:
 
 `education` is a list of 1 to 2 entries. A second entry is for a master's degree, which keeps the bachelor's line. Source: [a hiring manager's advice](https://www.reddit.com/r/EngineeringResumes/comments/1si2l4m/resume_advice_from_a_hiring_manager/).
 
-| Label               | Key                      | Type             | Required | Jane's example                                                 |
-| ------------------- | ------------------------ | ---------------- | -------- | -------------------------------------------------------------- |
-| Degree              | `education[].degree`     | text             | yes      | B.S. Electrical Engineering                                    |
-| GPA                 | `education[].gpa`        | text             | no       | [X.XX]/4.00                                                    |
-| School              | `education[].school`     | text             | yes      | [University]                                                   |
-| Graduation date     | `education[].gradDate`   | date (see Dates) | yes      | Expected Spring 2027                                           |
-| Relevant coursework | `education[].coursework` | list of text     | no       | Power Electronics, Embedded Systems, Digital Design with FPGAs |
-| Activities          | `education[].activities` | list of text     | no       | CubeSat team, IEEE student branch                              |
+| Label               | Key                      | Type             | Required | Alex's example                                                                    |
+| ------------------- | ------------------------ | ---------------- | -------- | --------------------------------------------------------------------------------- |
+| Degree              | `education[].degree`     | text             | yes      | B.S. Electrical Engineering                                                       |
+| GPA                 | `education[].gpa`        | text             | no       | [X.XX]/4.00                                                                       |
+| School              | `education[].school`     | text             | yes      | [University]                                                                      |
+| Graduation date     | `education[].gradDate`   | date (see Dates) | yes      | Expected Spring 2027                                                              |
+| Relevant coursework | `education[].coursework` | list of text     | no       | Embedded Systems, Introduction to High Power Electronics, Advanced Digital Design |
+| Activities          | `education[].activities` | list of text     | no       | CubeSat team, IEEE student branch                                                 |
 
 Rules:
 
@@ -69,7 +69,7 @@ Rules:
 
 `projects` is a list of 0 to 4 entries. Order is the student's choice. Best first.
 
-| Label                   | Key                    | Type                 | Required   | Jane's example      |
+| Label                   | Key                    | Type                 | Required   | Alex's example      |
 | ----------------------- | ---------------------- | -------------------- | ---------- | ------------------- |
 | Project title           | `projects[].title`     | text                 | yes        | CubeSat Power Board |
 | Tools                   | `projects[].tools`     | list of text         | yes        | KiCad, LTspice      |
@@ -87,7 +87,7 @@ Rules:
 
 `experience` is a list of 0 to 4 entries.
 
-| Label            | Key                        | Type              | Required            | Jane's example  |
+| Label            | Key                        | Type              | Required            | Alex's example  |
 | ---------------- | -------------------------- | ----------------- | ------------------- | --------------- |
 | Job title        | `experience[].title`       | text              | yes                 | Sales Associate |
 | Company          | `experience[].company`     | text              | yes                 | [Retail store]  |
@@ -107,18 +107,18 @@ Rules:
 
 Each bullet has a final `text` and optional helper parts. The parts fill the XYZ handout, and the form joins them into a first draft of `text`. The student can then edit `text` freely, and every check runs on `text`.
 
-| Label                              | Key             | Type           | Jane's example                                                                                                                                             |
-| ---------------------------------- | --------------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Verb                               | `bullet.verb`   | text           | Designed                                                                                                                                                   |
-| What you built or changed          | `bullet.what`   | text           | a [X] W synchronous buck converter                                                                                                                         |
-| Tool or method                     | `bullet.tool`   | text           | KiCad                                                                                                                                                      |
-| Result, with a number you measured | `bullet.result` | text           | measuring [X]% efficiency                                                                                                                                  |
-| How you checked it                 | `bullet.check`  | text, optional | with an electronic load against an LTspice model                                                                                                           |
-| Bullet text                        | `bullet.text`   | text           | Designed a [X] W synchronous buck converter in KiCad for a CubeSat power board, measuring [X]% efficiency with an electronic load against an LTspice model |
+| Label                              | Key             | Type           | Alex's example                                                                                                                                                      |
+| ---------------------------------- | --------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Verb                               | `bullet.verb`   | text           | Designed                                                                                                                                                            |
+| What you built or changed          | `bullet.what`   | text           | a [X] W synchronous buck converter                                                                                                                                  |
+| Tool or method                     | `bullet.tool`   | text           | KiCad                                                                                                                                                               |
+| Result, with a number you measured | `bullet.result` | text           | measured [X]% efficiency                                                                                                                                            |
+| How you checked it                 | `bullet.check`  | text, optional | on an electronic load, within [X]% of the LTspice model                                                                                                             |
+| Bullet text                        | `bullet.text`   | text           | Designed a [X] W synchronous buck converter in KiCad for a CubeSat power board and measured [X]% efficiency on an electronic load, within [X]% of the LTspice model |
 
-Jane's second bullet, written as free text: "Cut output ripple from [X] mV to [X] mV on an oscilloscope by shrinking the switching loop on the second board revision, checked against a hand calculation".
+Alex's second bullet, written as free text: "Shrank the switching loop on the second board revision and cut output ripple from [X] mV to [X] mV on an oscilloscope, within [X]% of a hand calculation".
 
-Draft join: `{verb} {what} in {tool}, {result} {check}`. Drop "in {tool}" when the tool is blank, and drop "{check}" when it is blank. Do not add a period at the end, to match Jane's bullets.
+Draft join: `{verb} {what} in {tool} and {result} {check}`. Drop "in {tool}" when the tool is blank, and drop "{check}" when it is blank. Do not add a period at the end, to match Alex's bullets.
 
 Rules:
 
@@ -130,7 +130,7 @@ Rules:
 
 ### Skills
 
-| Label          | Key                     | Type         | Jane's example                |
+| Label          | Key                     | Type         | Alex's example                |
 | -------------- | ----------------------- | ------------ | ----------------------------- |
 | Software       | `skills.software`       | list of text | KiCad, LTspice                |
 | Hardware/Lab   | `skills.hardwareLab`    | list of text | oscilloscope, electronic load |
@@ -146,7 +146,7 @@ Rules:
 
 ### Page settings
 
-| Label         | Key            | Type                  | Jane's example                           |
+| Label         | Key            | Type                  | Alex's example                           |
 | ------------- | -------------- | --------------------- | ---------------------------------------- |
 | Target role   | `targetRole`   | text, not printed     | summer 2027 embedded firmware internship |
 | Date style    | `dateStyle`    | `semester` or `month` | semester                                 |
@@ -156,7 +156,7 @@ Rules:
 
 - Target role is never printed. It drives the hints, such as "matches the posting" on coursework.
 - Section order allows these 4 presets, plus drag to reorder:
-  1. Education, Projects, Experience, Skills. Wiki default with no technical job. Jane uses it.
+  1. Education, Projects, Experience, Skills. Wiki default with no technical job. Alex uses it.
   2. Projects, Experience, Education, Skills. eeprep's author, when projects are strongest.
   3. Experience, Projects, Education, Skills. eeprep's author's own order as a working engineer.
   4. Education, Experience, Projects, Skills. Wiki student default with work experience.
@@ -170,7 +170,7 @@ Rules:
 - Full 4-digit years only. Error on '25 or 9/2025. Source: the wiki, Dates.
 - Ranges use an en dash with a space on each side: `Fall 2025 – Spring 2026`. In LaTeX, write `--`. Source: the wiki, Dates.
 - An ongoing item ends in "Present". Error on Current, Now, or Ongoing. Source: the wiki, Dates.
-- Graduation date may start with "Expected". Source: Jane's page.
+- Graduation date may start with "Expected". Source: Alex's page.
 - All dates sit at the right margin. Source: the wiki and Figure 4.
 
 ## Layout output
@@ -181,7 +181,7 @@ Fixed by the form. Students cannot change these:
 - Text at 10.5 pt or larger. Source: the wiki.
 - Margins at the template's own value of 0.5 in. That meets the wiki's 0.4 in minimum and MIT's and Mines' half inch, so the form does not take a side in the open margin question.
 - One `\vspace` value between every pair of sections. Source: eeprep's author.
-- Section titles in bold with a full-width rule. Entry titles and the coursework and activities labels are bold. Nothing else is bold. Source: resume page, under Jane's page.
+- Section titles in bold with a full-width rule. Entry titles and the coursework and activities labels are bold. Nothing else is bold. Source: resume page, under Alex's page.
 - PDF metadata: `\hypersetup{pdftitle={<Name> Resume}, pdfauthor={<Name>}}`. Source: eeprep's author.
 
 ### Template license
