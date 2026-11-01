@@ -4,16 +4,16 @@ description: How to study circuits, signals, and analog design, and how to check
 pageType: study
 ---
 
-Jane Doe is the example student on this page. Her school is [University]. Her GPA is [X.XX]/4.00. A number that belongs to her stays in brackets, like [X] hours. Her week has no hour count here.
+Alex Doe is the example student on this page, at [University] with a GPA of [X.XX]/4.00. A number that belongs to Alex stays in brackets, like [X] hours. This page gives no hour count for Alex's week.
 
 > [!tip] Main idea
 > Write how the circuit works, in your own words, as an [analog design post](https://x.com/siliconcodesign/status/2080669341016805488) says. Then check the drawing. A plan can look finished and still leave a porch light with no wire, as an [EE and AI thread](https://www.reddit.com/r/ElectricalEngineering/comments/1sujlpy/will_ai_slowly_replace_some_electrical/) describes.
 
 ## Circuits
 
-One person says EE students and hobbyists get stuck on real wires versus ideal wires, in a [wires and nets post](https://x.com/lukeweston/status/2080532775539798421). EDA software stores a netlist. EDA means electronic design automation. A netlist is a list of abstract nets. The translation of an abstract net into a real conductor makes the difference. He says the netlist concept may be unhelpful for seeing that translation.
+One person says EE students and hobbyists get stuck on real wires versus ideal wires, in a [wires and nets post](https://x.com/lukeweston/status/2080532775539798421). EDA software stores a netlist. EDA means electronic design automation. A netlist is a list of abstract nets. The translation of an abstract net into a real conductor makes the difference. The poster says the netlist concept may be unhelpful for seeing that translation.
 
-Jane draws the schematic first. That drawing is the ideal wire. Her next question is where the net becomes copper. He gave no trace width, so her width stays blank.
+Alex draws the schematic first. That drawing is the ideal wire. The next question is where the net becomes copper. The poster gave no trace width, so Alex's width stays blank.
 
 ## Signals and systems
 
@@ -40,13 +40,13 @@ They give four study steps in that [analog design post](https://x.com/siliconcod
 
 They say a reasoning model can shorten the learning curve, because it can show what it is doing, in that [analog design post](https://x.com/siliconcodesign/status/2080669341016805488). You still write step 2 in your own words.
 
-Jane writes step 2 on paper, in her own words.
+Alex writes step 2 on paper, in their own words.
 
 ## When a model writes the work
 
 An incoming student posted a house wiring plan from ChatGPT and asked if AI would replace electrical engineers, on an [EE and AI thread](https://www.reddit.com/r/ElectricalEngineering/comments/1sujlpy/will_ai_slowly_replace_some_electrical/). One commenter answered on that thread. Looks good and is good are different. On the drawing, the range outlet went to the fridge. One light switch went to another switch. The porch light was not connected at all. They say you will use AI, whatever your career is. They say it will not replace engineers for a very long time. It will not replace them in your career.
 
-One person says programs still train the junior rung, in a [junior rung post](https://x.com/hilmybox/status/2067277355111092413). That rung is CAD, PCB layout, test scripts, and basic analysis. He says AI automates that rung first.
+One person says programs still train the junior rung, in a [junior rung post](https://x.com/hilmybox/status/2067277355111092413). That rung is CAD, PCB layout, test scripts, and basic analysis. The poster says AI automates that rung first.
 
 One student lists one model beside each course they are learning, and says that mix enabled their 4.0, in a [study mix post](https://x.com/T4roRoot/status/2045351462541156386). FPGA programming uses Gemini. Power systems uses Claude and Gemini. Analog design uses Claude Projects and ChatGPT. They call embedded a gamble. The prompt list is in the replies under that post.
 
@@ -88,13 +88,13 @@ They give four moves for a student budget in that [student budget post](https://
 
 An entry-level portfolio does not need a satellite, they say, in that [student budget post](https://x.com/princess_yfe/status/2052407178993029236). It needs evidence that you can break a problem down, build a fix, and explain the work.
 
-One engineer has 35 years or more in EE and RF, and teaches in a university EE and computer engineering program, in a [KiCad teaching post](https://x.com/BackwoodsEnginr/status/2061281029155918079). He starts students on KiCad. That includes co-op and intern students at work. He has used Cadence, OrCad, Allegro, Mentor, Altium, Eagle, and older tools. His students later ask why the next package is less intuitive than KiCad.
+One engineer has 35 years or more in EE and RF, and teaches in a university EE and computer engineering program, in a [KiCad teaching post](https://x.com/BackwoodsEnginr/status/2061281029155918079). They start students on KiCad. That includes co-op and intern students at work. They have used Cadence, OrCad, Allegro, Mentor, Altium, Eagle, and older tools. Their students later ask why the next package is less intuitive than KiCad.
 
 One person says an engineering student can request an Altium student license and practice the tool before the job search, in an [Altium license post](https://x.com/blind_via/status/2061016080370573758).
 
-One commenter on a [KiCad learning thread](https://www.reddit.com/r/ElectricalEngineering/comments/1rw9i3j/kicad_online_learning/) says KiCad is the right tool when it is the one you can get. Use it to learn schematics and how a PCB is laid out. A PCB is a board you design. If you can get a student copy of Altium, he recommends that, and he calls Altium the industry tool. Either way, design a board, have it built, assemble it, and show it working. He says you are unlikely to be marked down for a KiCad board instead of an Altium board. Demonstrated Altium use gets more attention.
+One commenter on a [KiCad learning thread](https://www.reddit.com/r/ElectricalEngineering/comments/1rw9i3j/kicad_online_learning/) says KiCad is the right tool when it is the one you can get. Use it to learn schematics and how a PCB is laid out. A PCB is a board you design. If you can get a student copy of Altium, the commenter recommends that and calls Altium the industry tool. Either way, design a board, have it built, assemble it, and show it working. The commenter says you are unlikely to be marked down for a KiCad board instead of an Altium board. Demonstrated Altium use gets more attention.
 
-One person says a plain Arduino or Pi project will not carry you, in a [project depth post](https://x.com/joelteply/status/1995534628065780018). Dig into the EE. He wants a degree in electrical or computer engineering for that work.
+One person says a plain Arduino or Pi project will not carry you, in a [project depth post](https://x.com/joelteply/status/1995534628065780018). Dig into the EE. The poster wants a degree in electrical or computer engineering for that work.
 
 An EE student is not building hardware, because the parts cost too much, in a [parts cost post](https://x.com/CodeWithOnari/status/2006474598318252292).
 
@@ -122,7 +122,7 @@ A student writing from another country asked professors, teaching assistants, an
 
 A commenter who hires interns wants a GPA on an intern application, on that [GPA advice thread](https://www.reddit.com/r/ElectricalEngineering/comments/1oyd4a7/how_much_does_gpa_matter_when_applying_for/). It shows that you are serious about school. It also shows they are less likely to have to teach you every concept for your year. They have had interns who could not do basic concepts, and that summer was a waste. A low GPA is likely filtered online at a large company, before a person sees the resume. Apply where a person can hear the rest of the file.
 
-Jane compares her [X.XX] with any minimum the posting prints. If she is under it, she talks to a person, as that [GPA advice thread](https://www.reddit.com/r/ElectricalEngineering/comments/1oyd4a7/how_much_does_gpa_matter_when_applying_for/) says.
+Alex compares their [X.XX] with any minimum the posting prints. If Alex is under it, Alex talks to a person, as that [GPA advice thread](https://www.reddit.com/r/ElectricalEngineering/comments/1oyd4a7/how_much_does_gpa_matter_when_applying_for/) says.
 
 Where the resume prints that number is on [[Resume]].
 
@@ -141,5 +141,5 @@ Run this list on the current course. Each line is one instruction from a source 
 9. Ask the lab technician for a scope that sits unused outside class, as that [student budget post](https://x.com/princess_yfe/status/2052407178993029236) says.
 10. Write the goal, the failure, and the fix, as that [student budget post](https://x.com/princess_yfe/status/2052407178993029236) says.
 11. Start board layout in KiCad, as a [KiCad teaching post](https://x.com/BackwoodsEnginr/status/2061281029155918079) says.
-12. If a posting lists a GPA minimum and Jane's [X.XX] is under it, talk to a person, as a [GPA advice thread](https://www.reddit.com/r/ElectricalEngineering/comments/1oyd4a7/how_much_does_gpa_matter_when_applying_for/) says.
+12. If a posting lists a GPA minimum and Alex's [X.XX] is under it, talk to a person, as a [GPA advice thread](https://www.reddit.com/r/ElectricalEngineering/comments/1oyd4a7/how_much_does_gpa_matter_when_applying_for/) says.
 13. If the term is too full, drop an extra and do the homework with classmates, as that [GPA advice thread](https://www.reddit.com/r/ElectricalEngineering/comments/1oyd4a7/how_much_does_gpa_matter_when_applying_for/) says.

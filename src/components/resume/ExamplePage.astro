@@ -1,9 +1,9 @@
 ---
-// Jane's page is real text. The five callouts are a list. Pins repeat those numbers for sighted readers.
+// Alex's page is real text. The five callouts are a list. Pins repeat those numbers for sighted readers.
 const notes = [
 	{
 		title: 'Centered header.',
-		body: 'One contact line with plain-text links, plus work status and relocation.',
+		body: 'One contact line with plain-text links, plus location and relocation.',
 	},
 	{
 		title: 'Dates at the right margin.',
@@ -15,7 +15,7 @@ const notes = [
 	},
 	{
 		title: 'Projects above Experience.',
-		body: 'Jane has no engineering job yet, so her strongest section goes first. Each bullet states the action, the tool, and a number.',
+		body: 'Alex has no engineering job yet, so the strongest section goes first. Each bullet states the action, the tool, and a number.',
 	},
 	{
 		title: 'Every skill has a bullet behind it.',
@@ -24,35 +24,35 @@ const notes = [
 ];
 ---
 
-<figure class="eep-fig wide eep-jane" id="fig-3">
-	<p class="eep-kicker">Figure 3 · Jane's finished page</p>
+<figure class="eep-fig wide eep-example" id="fig-3">
+	<p class="eep-kicker">Figure 3 · Alex's finished page</p>
 	<p class="eep-figtitle">One page, one column, dates on the right</p>
-	<p class="eep-jane-flag">
+	<p class="eep-example-flag">
 		<span class="eep-tag">Made-up example</span>
 		<span>
-			Jane Doe is not a real student. Every [X] is a number you measure
+			Alex Doe is not a real student. Every [X] is a number you measure
 			yourself.
 		</span>
 	</p>
-	<div class="eep-jane-wrap">
-		<div class="eep-jane-sheet">
-			<header class="eep-jane-head eep-jane-mark">
+	<div class="eep-example-wrap">
+		<div class="eep-example-sheet">
+			<header class="eep-example-head eep-example-mark">
 				<span class="eep-pin" aria-hidden="true">
 					1
 				</span>
-				<p class="eep-jane-name">Jane Doe</p>
+				<p class="eep-example-name">Alex Doe</p>
 				<p>
-					[phone] | jane@[school].edu | linkedin.com/in/janedoe |
-					github.com/janedoe
+					[phone] | alex.doe@[school].edu | linkedin.com/in/alex-doe-example |
+					github.com/alex-doe-example
 				</p>
-				<p>City, ST | US Citizen | Willing to relocate</p>
+				<p>City, ST | Willing to relocate</p>
 			</header>
-			<p class="eep-jane-sec">Education</p>
-			<div class="eep-jane-row">
+			<p class="eep-example-sec">Education</p>
+			<div class="eep-example-row">
 				<p>
 					<strong>B.S. Electrical Engineering</strong>, GPA [X.XX]/4.00
 				</p>
-				<p class="eep-jane-date eep-jane-mark">
+				<p class="eep-example-date eep-example-mark">
 					<span class="eep-pin eep-pin-right" aria-hidden="true">
 						2
 					</span>
@@ -60,49 +60,49 @@ const notes = [
 				</p>
 			</div>
 			<p>[University]</p>
-			<p class="eep-jane-mark">
+			<p class="eep-example-mark">
 				<span class="eep-pin" aria-hidden="true">
 					3
 				</span>
-				<strong>Relevant coursework:</strong> Power Electronics, Embedded
-				Systems, Digital Design with FPGAs
+				<strong>Relevant coursework:</strong> Embedded Systems, Introduction to
+				High Power Electronics, Advanced Digital Design
 			</p>
 			<p>
 				<strong>Activities:</strong> CubeSat team, IEEE student branch
 			</p>
-			<div class="eep-jane-mark">
+			<div class="eep-example-mark">
 				<span class="eep-pin" aria-hidden="true">
 					4
 				</span>
-				<p class="eep-jane-sec">Projects</p>
-				<div class="eep-jane-row">
+				<p class="eep-example-sec">Projects</p>
+				<div class="eep-example-row">
 					<p>
 						<strong>CubeSat Power Board (KiCad, LTspice)</strong>
 					</p>
-					<p class="eep-jane-date">Fall 2025 – Spring 2026</p>
+					<p class="eep-example-date">Fall 2025 – Spring 2026</p>
 				</div>
 				<ul>
 					<li>
 						Designed a [X] W synchronous buck converter in KiCad for a CubeSat
-						power board, measuring [X]% efficiency with an electronic load
-						against an LTspice model
+						power board and measured [X]% efficiency on an electronic load,
+						within [X]% of the LTspice model
 					</li>
 					<li>
-						Cut output ripple from [X] mV to [X] mV on an oscilloscope by
-						shrinking the switching loop on the second board revision, checked
-						against a hand calculation
+						Shrank the switching loop on the second board revision and cut
+						output ripple from [X] mV to [X] mV on an oscilloscope, within [X]%
+						of a hand calculation
 					</li>
 				</ul>
 			</div>
-			<p class="eep-jane-sec">Experience</p>
-			<div class="eep-jane-row">
+			<p class="eep-example-sec">Experience</p>
+			<div class="eep-example-row">
 				<p>
 					<strong>Sales Associate, [Retail store]</strong>
 				</p>
-				<p class="eep-jane-date">Summer 2023 – Summer 2024</p>
+				<p class="eep-example-date">Summer 2023 – Summer 2024</p>
 			</div>
-			<p class="eep-jane-sec">Skills</p>
-			<div class="eep-jane-mark">
+			<p class="eep-example-sec">Skills</p>
+			<div class="eep-example-mark">
 				<span class="eep-pin" aria-hidden="true">
 					5
 				</span>
@@ -114,7 +114,7 @@ const notes = [
 				</p>
 			</div>
 		</div>
-		<ol class="eep-jane-notes">
+		<ol class="eep-example-notes">
 			{notes.map((note) => (
 				<li>
 					<span>
@@ -124,7 +124,7 @@ const notes = [
 			))}
 		</ol>
 	</div>
-	<p class="eep-jane-aside">
+	<p class="eep-example-aside">
 		Bold only on section titles, entry titles, and the two labels. Dashed
 		outlines are callouts and don't appear on the real page.
 	</p>
@@ -138,7 +138,7 @@ const notes = [
 </figure>
 
 <style>
-	.eep-jane-flag {
+	.eep-example-flag {
 		margin: 0 0 1rem;
 		color: var(--eep-ink-2);
 		font-size: 0.875rem;
@@ -155,13 +155,13 @@ const notes = [
 		text-transform: uppercase;
 		vertical-align: 0.05em;
 	}
-	.eep-jane-wrap {
+	.eep-example-wrap {
 		display: grid;
 		grid-template-columns: minmax(0, 1.35fr) minmax(14rem, 0.9fr);
 		gap: 1.5rem;
 		align-items: start;
 	}
-	.eep-jane-sheet {
+	.eep-example-sheet {
 		position: relative;
 		padding: 1.35rem 1.6rem 1.1rem 1.7rem;
 		background: var(--eep-paper);
@@ -169,42 +169,42 @@ const notes = [
 		color: var(--eep-ink);
 		font: 0.72rem/1.45 var(--eep-font-sans);
 	}
-	.eep-jane-sheet p {
+	.eep-example-sheet p {
 		margin: 0;
 		max-width: none;
 	}
-	.eep-jane-head {
+	.eep-example-head {
 		text-align: center;
 	}
-	.eep-jane-name {
+	.eep-example-name {
 		font-size: 1rem;
 		font-weight: 700;
 	}
-	:global(.sl-markdown-content) p.eep-jane-sec {
+	:global(.sl-markdown-content) p.eep-example-sec {
 		margin: 0.7rem 0 0.2rem;
 		padding-bottom: 0.05rem;
 		border-bottom: 1px solid var(--eep-ink);
 		font: 700 0.72rem/1.3 var(--eep-font-sans);
 		color: var(--eep-ink);
 	}
-	:global(.sl-markdown-content) .eep-jane-mark > p.eep-jane-sec {
+	:global(.sl-markdown-content) .eep-example-mark > p.eep-example-sec {
 		margin-top: 0.15rem;
 	}
-	.eep-jane-row {
+	.eep-example-row {
 		display: flex;
 		justify-content: space-between;
 		gap: 0.75rem;
 	}
-	.eep-jane-sheet ul {
+	.eep-example-sheet ul {
 		margin: 0.15rem 0 0;
 		padding-left: 1.1rem;
 	}
-	.eep-jane-mark {
+	.eep-example-mark {
 		position: relative;
 		outline: 1.5px dashed var(--eep-accent);
 		outline-offset: 2px;
 	}
-	.eep-jane-date {
+	.eep-example-date {
 		flex: none;
 		white-space: nowrap;
 	}
@@ -225,13 +225,13 @@ const notes = [
 		left: auto;
 		right: -1.45rem;
 	}
-	.eep-jane-notes {
+	.eep-example-notes {
 		margin: 0;
 		padding: 0;
 		list-style: none;
-		counter-reset: jane;
+		counter-reset: example;
 	}
-	.eep-jane-notes li {
+	.eep-example-notes li {
 		display: flex;
 		gap: 0.6rem;
 		align-items: flex-start;
@@ -241,12 +241,12 @@ const notes = [
 		line-height: 1.45;
 		max-width: none;
 	}
-	.eep-jane-notes li > span {
+	.eep-example-notes li > span {
 		min-width: 0;
 	}
-	.eep-jane-notes li::before {
-		counter-increment: jane;
-		content: counter(jane);
+	.eep-example-notes li::before {
+		counter-increment: example;
+		content: counter(example);
 		flex: none;
 		width: 1.35rem;
 		height: 1.35rem;
@@ -256,17 +256,17 @@ const notes = [
 		font: 700 0.75rem/1.35rem var(--eep-font-sans);
 		text-align: center;
 	}
-	.eep-jane-notes strong {
+	.eep-example-notes strong {
 		font-weight: 700;
 	}
-	.eep-jane-aside {
+	.eep-example-aside {
 		margin: 0.9rem 0 0;
 		color: var(--eep-mute);
 		font-size: 0.8125rem;
 		max-width: none;
 	}
 	@media (max-width: 50rem) {
-		.eep-jane-wrap {
+		.eep-example-wrap {
 			grid-template-columns: 1fr;
 		}
 	}
