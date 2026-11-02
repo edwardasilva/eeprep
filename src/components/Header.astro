@@ -11,8 +11,15 @@ const shouldRenderSearch =
 
 const links = [
 	{ href: '/advice/resume/', label: 'Advice', section: '/advice/' },
-	{ href: '/reference/', label: 'Reference', section: '/reference/' },
+	{ href: '/help-links/', label: 'Help links', section: '/help-links/' },
 	{ href: '/roadmap/', label: 'Roadmap', section: '/roadmap/' },
+];
+
+const suggestions = [
+	{ href: '/advice/resume/', label: 'Resume' },
+	{ href: '/advice/first-internship/', label: 'Your first internship' },
+	{ href: '/help-links/', label: 'Help links' },
+	{ href: '/roadmap/', label: 'Roadmap' },
 ];
 
 const pathname = Astro.url.pathname;
@@ -41,6 +48,39 @@ function isCurrent(section: string): boolean {
 		<ThemeSelect />
 	</div>
 </div>
+
+<template id="eep-suggest-template">
+	<nav class="eep-suggest" aria-label="Suggested pages">
+		<p>Suggested pages</p>
+		<ul>
+			{suggestions.map((s) => (
+				<li>
+					<a href={s.href}>{s.label}</a>
+				</li>
+			))}
+		</ul>
+	</nav>
+</template>
+
+<script>
+	// Show suggested pages in the search dialog while the query is empty.
+	const dialog = document.querySelector('site-search dialog');
+	const template = document.querySelector<HTMLTemplateElement>(
+		'#eep-suggest-template',
+	);
+	const container = dialog?.querySelector('.search-container');
+	if (dialog && template && container) {
+		const node = template.content.firstElementChild!.cloneNode(true);
+		container.append(node);
+		const box = node as HTMLElement;
+		const update = () => {
+			const input = dialog.querySelector('input');
+			box.hidden = Boolean(input?.value.trim());
+		};
+		dialog.addEventListener('input', update);
+		new MutationObserver(update).observe(dialog, { attributes: true });
+	}
+</script>
 
 <style>
 	@layer starlight.core {

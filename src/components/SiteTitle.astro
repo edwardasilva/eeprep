@@ -1,0 +1,47 @@
+---
+// The mark as an image and the name as live text, so the name uses the
+// site's heading font instead of outlined glyphs.
+const { siteTitleHref } = Astro.locals.starlightRoute;
+---
+
+<a href={siteTitleHref} class="site-title sl-flex" aria-label="eeprep home">
+	<img
+		class="light:sl-hidden print:hidden"
+		src="/brand/eeprep-mark-dark-outlined.svg"
+		alt=""
+		width="64"
+		height="64"
+	/>
+	<img
+		class="dark:sl-hidden print:block"
+		src="/brand/eeprep-mark-outlined.svg"
+		alt=""
+		width="64"
+		height="64"
+	/>
+	<span class="eep-wordmark" translate="no">
+		eeprep
+	</span>
+</a>
+
+<style>
+	@layer starlight.core {
+		.site-title {
+			align-items: center;
+			gap: 0.375rem;
+			color: var(--eep-ink);
+			text-decoration: none;
+			white-space: nowrap;
+			min-width: 0;
+		}
+		img {
+			height: calc(var(--sl-nav-height) - 2 * var(--sl-nav-pad-y));
+			width: auto;
+		}
+	}
+	.eep-wordmark {
+		font: 600 1.5rem/1 var(--eep-font-serif);
+		font-variation-settings: 'opsz' 72;
+		letter-spacing: -0.01em;
+	}
+</style>

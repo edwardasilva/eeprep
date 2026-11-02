@@ -6,11 +6,11 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 	frontmatter={{
 		title: 'eeprep',
 		description:
-			'Free, plain advice for electrical engineering students on writing a one-page resume, finding a first internship and running a job search, plus a reference list.',
+			"Electrical engineer's guide to job searching: a one-page resume, a first internship and help links for the search.",
 		head: [
 			{
 				tag: 'title',
-				content: 'eeprep | Resumes and job hunting for EE students',
+				content: "Electrical engineer's guide to job searching | eeprep",
 			},
 		],
 		template: 'splash',
@@ -19,15 +19,12 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 	hasSidebar={false}
 >
 	<section class="eep-hero">
-		<h1>
-			Plain advice on resumes and job hunting for electrical engineering
-			students.
-		</h1>
+		<h1>Electrical engineer's guide to job searching</h1>
 	</section>
 	<ul class="eep-cards">
 		<li>
-			<a href="/reference/">
-				<strong>Reference</strong>
+			<a href="/help-links/">
+				<strong>Help links</strong>
 				<span>
 					Links to job boards, salary data and other outside resources for your
 					job hunt.
@@ -45,7 +42,7 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 		</li>
 	</ul>
 	<p>
-		Before you apply anywhere, try to get a referral first.
+		Before you apply anywhere, try to get a referral first.{' '}
 		<a href="/advice/first-internship/#get-a-referral-first">
 			Here is how to ask
 		</a>

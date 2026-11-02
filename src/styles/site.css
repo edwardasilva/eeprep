@@ -3,7 +3,7 @@
 
 .eep-nav {
 	display: flex;
-	gap: 1.25rem;
+	gap: 1.75rem;
 	align-items: center;
 	min-width: 0;
 }
@@ -47,6 +47,55 @@
 }
 :root[data-theme='light'] .eep-theme .icon-sun {
 	display: block;
+}
+
+/* Desktop top bar: a taller band and wider gaps between items. */
+@media (min-width: 50rem) {
+	:root,
+	:root[data-theme='light'] {
+		--sl-nav-height: 4rem;
+		--sl-nav-gap: 1.5rem;
+	}
+	.header .site-title img {
+		height: 2.25rem;
+	}
+}
+
+/* Suggested pages in the search dialog, shown only while the query is empty. */
+.eep-suggest {
+	margin-top: 1rem;
+}
+.eep-suggest[hidden] {
+	display: none;
+}
+.eep-suggest p {
+	margin: 0 0 0.5rem;
+	font: 600 0.75rem/1 var(--eep-font-sans);
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--eep-ink-2);
+}
+.eep-suggest ul {
+	display: grid;
+	gap: 0.25rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.eep-suggest a {
+	display: flex;
+	align-items: center;
+	min-height: 2.75rem;
+	padding-inline: 0.75rem;
+	border: var(--eep-border);
+	border-radius: var(--eep-radius);
+	color: var(--eep-ink);
+	text-decoration: none;
+}
+@media (hover: hover) {
+	.eep-suggest a:hover {
+		color: var(--eep-accent);
+	}
 }
 
 /* Callout titles stay sentence case. theme.css uppercases them. */
@@ -160,16 +209,18 @@ button[data-open-modal] kbd {
 	:root,
 	:root[data-theme='light'] {
 		--eep-tap: 2.75rem;
-		--sl-nav-pad-y: 0.5rem;
-		--sl-nav-height: calc(2 * var(--sl-nav-pad-y) + 2 * var(--eep-tap));
+		--sl-nav-pad-y: 0.625rem;
+		--sl-nav-height: calc(
+			2 * var(--sl-nav-pad-y) + 2 * var(--eep-tap) + 0.25rem
+		);
 		--sl-menu-button-size: var(--eep-tap);
 	}
 	.header {
 		display: grid;
 		grid-template-columns: minmax(0, 1fr) auto auto;
 		grid-template-rows: var(--eep-tap) var(--eep-tap);
-		column-gap: 0.5rem;
-		row-gap: 0;
+		column-gap: 0.75rem;
+		row-gap: 0.25rem;
 		align-items: center;
 	}
 	.site-title {
@@ -181,7 +232,7 @@ button[data-open-modal] kbd {
 	.eep-nav {
 		grid-column: 1 / -1;
 		grid-row: 2;
-		gap: 0.5rem;
+		gap: 1rem;
 		overflow-x: auto;
 		scrollbar-width: none;
 	}
