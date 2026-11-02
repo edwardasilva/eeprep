@@ -213,35 +213,63 @@ button[data-open-modal] kbd {
 	aspect-ratio: 1;
 }
 
+/* Phone header: two fixed rows inside Starlight's header, so nothing spills
+   onto the page or the "On this page" bar below it.
+   Row 1: logo, search, theme toggle (and Starlight's menu button, which is
+   fixed in the same band). Row 2: the section nav. Every control is a 44px
+   tap target. --sl-nav-height covers both rows, and Starlight offsets the
+   page and the sticky table-of-contents bar by it. */
 @media (max-width: 50rem) {
 	:root,
 	:root[data-theme='light'] {
-		--sl-nav-height: 6.25rem;
-		/* Match the theme toggle. Starlight's header padding uses this size. */
-		--sl-menu-button-size: 2.25rem;
+		--eep-tap: 2.75rem;
+		--sl-nav-pad-y: 0.5rem;
+		--sl-nav-height: calc(2 * var(--sl-nav-pad-y) + 2 * var(--eep-tap));
+		--sl-menu-button-size: var(--eep-tap);
 	}
 	.header {
-		flex-wrap: wrap;
-		row-gap: 0.5rem;
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) auto auto;
+		grid-template-rows: var(--eep-tap) var(--eep-tap);
+		column-gap: 0.5rem;
+		row-gap: 0;
+		align-items: center;
 	}
-	/* Starlight sizes the logo from the nav height, which covers two rows here.
-	   Size it to the 2.5rem search row so the theme toggle fits beside it. */
+	.site-title {
+		min-height: var(--eep-tap);
+	}
 	.site-title img {
-		height: 2.5rem;
+		height: 2rem;
 	}
 	.eep-nav {
-		order: 3;
-		width: 100%;
+		grid-column: 1 / -1;
+		grid-row: 2;
+		gap: 0.5rem;
 		overflow-x: auto;
-		padding-bottom: 0.15rem;
+		scrollbar-width: none;
+	}
+	.eep-nav a {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: var(--eep-tap);
+		min-height: var(--eep-tap);
+		padding-inline: 0.25rem;
+	}
+	.eep-nav a[aria-current='page'] {
+		box-shadow: inset 0 -2px 0 var(--eep-accent);
+	}
+	.eep-theme,
+	.header button[data-open-modal] {
+		width: var(--eep-tap);
+		height: var(--eep-tap);
+		min-width: var(--eep-tap);
 	}
 
-	/* Starlight centers the menu button in the full header height. On a phone
-	   that height covers two rows, so the button sits between them. The search
-	   control is the tallest item in the logo row (2.5rem). Center this button
-	   in that same band, and paint it like .eep-theme. */
+	/* Starlight centers the menu button in the full header height, between
+	   the two rows. Put it in the first row and paint it like .eep-theme. */
 	.sl-menu-button {
-		top: calc(var(--sl-nav-pad-y) + (2.5rem - var(--sl-menu-button-size)) / 2);
+		top: var(--sl-nav-pad-y);
 		align-items: center;
 		justify-content: center;
 		padding: 0;
@@ -256,10 +284,24 @@ button[data-open-modal] kbd {
 		outline-offset: 2px;
 	}
 
-	/* The phone header and this button both need a 40px tap target. */
 	.eep-btn {
-		min-height: 2.5rem;
+		min-height: var(--eep-tap);
 	}
+	.eep-hero {
+		padding-top: 1.5rem;
+	}
+	.eep-hero h1 {
+		font-size: clamp(2.125rem, 7vw + 0.75rem, 2.75rem);
+		line-height: 1.08;
+	}
+	.eep-lede {
+		font-size: clamp(1.0625rem, 1.5vw + 0.75rem, 1.25rem);
+	}
+}
+
+/* Keep the end of the page above Safari's bottom bar (viewport-fit=cover). */
+body {
+	padding-bottom: env(safe-area-inset-bottom);
 }
 
 /* Light and dark copies of one figure. Starlight's page is dark unless
@@ -333,4 +375,9 @@ textarea {
 }
 html {
 	-webkit-tap-highlight-color: transparent;
+}
+
+/* The splash page has no title, which leaves an empty bordered band at the top. */
+.content-panel:has(> .sl-container:empty) {
+	display: none;
 }
