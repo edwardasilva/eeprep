@@ -1,0 +1,314 @@
+/* Site chrome that sits on top of the textbook theme.
+   Unlayered, so these beat Starlight's @layer rules. */
+
+.eep-nav {
+	display: flex;
+	gap: 1.25rem;
+	align-items: center;
+	min-width: 0;
+}
+.eep-nav a {
+	font: 500 0.875rem/1 var(--eep-font-sans);
+	color: var(--eep-ink-2);
+	text-decoration: none;
+	white-space: nowrap;
+}
+.eep-nav a[aria-current='page'] {
+	color: var(--eep-ink);
+	box-shadow: inset 0 -1.5px 0 var(--eep-accent);
+}
+@media (hover: hover) {
+	.eep-nav a:hover {
+		color: var(--eep-accent);
+	}
+}
+
+.eep-theme {
+	display: grid;
+	place-items: center;
+	width: 2.25rem;
+	height: 2.25rem;
+	padding: 0;
+	border: var(--eep-border);
+	border-radius: var(--eep-radius);
+	background: transparent;
+	color: var(--eep-ink);
+	cursor: pointer;
+}
+.eep-theme svg {
+	width: 1.05rem;
+	height: 1.05rem;
+}
+.eep-theme .icon-sun {
+	display: none;
+}
+:root[data-theme='light'] .eep-theme .icon-moon {
+	display: none;
+}
+:root[data-theme='light'] .eep-theme .icon-sun {
+	display: block;
+}
+
+/* Callout titles stay sentence case. theme.css uppercases them. */
+.callout-title,
+.starlight-aside__title {
+	text-transform: none;
+	letter-spacing: 0.01em;
+	font-size: 0.8125rem;
+}
+
+.eep-hero {
+	padding: 2.5rem 0 1rem;
+	max-width: 46rem;
+}
+.eep-hero h1 {
+	font-family: var(--eep-font-serif);
+	font-weight: 500;
+	font-size: clamp(2.25rem, 4vw, 3.25rem);
+	line-height: 1.08;
+	letter-spacing: var(--eep-track-h1);
+	color: var(--eep-ink);
+	font-variation-settings: 'opsz' 72;
+	margin: 0.75rem 0 1rem;
+}
+/* Starlight sets the shortcut in the UI font. The theme's code font is mono. */
+button[data-open-modal] kbd {
+	font-family: var(--eep-font-mono);
+}
+.eep-cards {
+	list-style: none;
+	padding: 0;
+	margin: 2.5rem 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+	gap: 1rem;
+}
+/* Starlight adds 0.25rem above every list item after the first. In this row
+   that drops cards 2 and 3 by 4px and shortens them by the same amount. */
+.eep-cards > li {
+	margin-top: 0;
+}
+.eep-cards a {
+	display: grid;
+	gap: 0.4rem;
+	height: 100%;
+	padding: 1.1rem 1.15rem 1.2rem;
+	border: var(--eep-border);
+	border-radius: var(--eep-radius-lg);
+	background: var(--eep-surface);
+	color: inherit;
+	text-decoration: none;
+}
+@media (hover: hover) {
+	.eep-cards a:hover {
+		border-color: var(--eep-accent);
+	}
+}
+.eep-cards strong {
+	font: 550 1.35rem/1.2 var(--eep-font-serif);
+	color: var(--eep-ink);
+}
+.eep-generator {
+	max-width: var(--eep-measure);
+	color: var(--eep-ink-2);
+}
+.eep-cards span:last-child {
+	color: var(--eep-ink-2);
+	font-size: 0.9375rem;
+}
+.wikilink-missing {
+	color: var(--eep-accent);
+}
+
+/* "Linked from" sits under "On this page" and matches its inset and type. */
+.eep-backlinks {
+	padding: 1rem var(--sl-sidebar-pad-x);
+}
+.eep-backlinks h2 {
+	color: var(--sl-color-white);
+	font-size: var(--sl-text-h5);
+	font-weight: 600;
+	line-height: var(--sl-line-height-headings);
+	margin-bottom: 0.5rem;
+}
+.eep-backlinks ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.eep-backlinks a {
+	display: block;
+	padding-block: 0.25rem;
+	font-size: var(--sl-text-xs);
+	color: var(--sl-color-gray-2);
+	text-decoration: none;
+	overflow-wrap: anywhere;
+}
+@media (hover: hover) {
+	.eep-backlinks a:hover {
+		color: var(--sl-color-white);
+	}
+}
+
+/* Phone header: two fixed rows inside Starlight's header, so nothing spills
+   onto the page or the "On this page" bar below it.
+   Row 1: logo, search, theme toggle (and Starlight's menu button, which is
+   fixed in the same band). Row 2: the section nav. Every control is a 44px
+   tap target. --sl-nav-height covers both rows, and Starlight offsets the
+   page and the sticky table-of-contents bar by it. */
+@media (max-width: 50rem) {
+	:root,
+	:root[data-theme='light'] {
+		--eep-tap: 2.75rem;
+		--sl-nav-pad-y: 0.5rem;
+		--sl-nav-height: calc(2 * var(--sl-nav-pad-y) + 2 * var(--eep-tap));
+		--sl-menu-button-size: var(--eep-tap);
+	}
+	.header {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) auto auto;
+		grid-template-rows: var(--eep-tap) var(--eep-tap);
+		column-gap: 0.5rem;
+		row-gap: 0;
+		align-items: center;
+	}
+	.site-title {
+		min-height: var(--eep-tap);
+	}
+	.site-title img {
+		height: 2rem;
+	}
+	.eep-nav {
+		grid-column: 1 / -1;
+		grid-row: 2;
+		gap: 0.5rem;
+		overflow-x: auto;
+		scrollbar-width: none;
+	}
+	.eep-nav a {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: var(--eep-tap);
+		min-height: var(--eep-tap);
+		padding-inline: 0.25rem;
+	}
+	.eep-nav a[aria-current='page'] {
+		box-shadow: inset 0 -2px 0 var(--eep-accent);
+	}
+	.eep-theme,
+	.header button[data-open-modal] {
+		width: var(--eep-tap);
+		height: var(--eep-tap);
+		min-width: var(--eep-tap);
+	}
+
+	/* Starlight centers the menu button in the full header height, between
+	   the two rows. Put it in the first row and paint it like .eep-theme. */
+	.sl-menu-button {
+		top: var(--sl-nav-pad-y);
+		align-items: center;
+		justify-content: center;
+		padding: 0;
+		border: var(--eep-border);
+		border-radius: var(--eep-radius);
+		background: transparent;
+		color: var(--eep-ink);
+		box-shadow: none;
+	}
+	.sl-menu-button:focus-visible {
+		outline: 2px solid var(--eep-accent);
+		outline-offset: 2px;
+	}
+
+	.eep-hero {
+		padding-top: 1.5rem;
+	}
+	.eep-hero h1 {
+		font-size: clamp(1.875rem, 5vw + 0.75rem, 2.25rem);
+		line-height: 1.12;
+	}
+}
+
+/* Keep the end of the page above Safari's bottom bar (viewport-fit=cover). */
+body {
+	padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Light and dark copies of one figure. Starlight's page is dark unless
+   data-theme is light, including when the attribute is "dark". A figure can
+   also carry a narrow copy for phones: mark the copies .eep-fig-wide and
+   .eep-fig-narrow. Exactly one image shows for each theme and width. */
+.eep-theme-fig > .eep-theme-fig-dark {
+	display: none;
+}
+:root:not([data-theme='light']) .eep-theme-fig > .eep-theme-fig-light {
+	display: none;
+}
+:root:not([data-theme='light']) .eep-theme-fig > .eep-theme-fig-dark {
+	display: block;
+}
+@media (max-width: 50rem) {
+	.eep-theme-fig > .eep-fig-wide {
+		display: none !important;
+	}
+}
+@media (min-width: 50.0625rem) {
+	.eep-theme-fig > .eep-fig-narrow {
+		display: none !important;
+	}
+}
+
+.sl-markdown-content .eep-kicker {
+	margin: 0 0 0.35rem;
+	max-width: none;
+	font: 600 0.75rem/1 var(--eep-font-sans);
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--eep-accent);
+}
+.sl-markdown-content .eep-figtitle {
+	margin: 0 0 0.6rem;
+	max-width: none;
+	font: 600 1.625rem/1.2 var(--eep-font-serif);
+	color: var(--eep-ink);
+}
+
+/* One gutter between the left sidebar, the content and the right sidebar. */
+:root,
+:root[data-theme='light'] {
+	--eep-gutter: 1rem;
+	/* With viewport-fit=cover, a phone in landscape keeps text clear of the notch. */
+	--eep-safe-x: max(env(safe-area-inset-left), env(safe-area-inset-right));
+	--sl-content-pad-x: max(var(--eep-gutter), var(--eep-safe-x));
+	--sl-sidebar-pad-x: var(--eep-gutter);
+	--sl-nav-pad-x: max(var(--eep-gutter), var(--eep-safe-x));
+}
+@media (min-width: 50rem) {
+	:root,
+	:root[data-theme='light'] {
+		--eep-gutter: 1.5rem;
+	}
+}
+/* Starlight pushes the column against the right sidebar (margin auto 0),
+   which leaves all the spare room on the left. Center it instead. */
+@media (min-width: 72rem) {
+	:root[data-has-sidebar][data-has-toc] .main-pane {
+		--sl-content-margin-inline: auto;
+	}
+}
+
+/* Phones: 16px inputs stop iOS from zooming on focus, and no grey tap flash. */
+input,
+select,
+textarea {
+	font-size: max(1rem, 16px);
+}
+html {
+	-webkit-tap-highlight-color: transparent;
+}
+
+/* The splash page has no title, which leaves an empty bordered band at the top. */
+.content-panel:has(> .sl-container:empty) {
+	display: none;
+}

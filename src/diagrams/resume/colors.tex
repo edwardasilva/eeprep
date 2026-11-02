@@ -1,0 +1,39 @@
+% Colours and text helpers for the resume figures.
+% Input after src/diagrams/style/circuitikz-preamble.tex.
+% Define \eepdark before this file for the dark sentinels.
+% Ink, accent, fill, and the 1.31pt line weight come from the house preamble.
+% Light secondary text uses the approved mockup gray. Dark uses the theme mute.
+% The static Newsreader cut names its bold face, which fontspec does not infer.
+\setmainfont{Newsreader}[
+  BoldFont={Newsreader Bold},
+  ItalicFont={Newsreader Italic},
+  BoldItalicFont={Newsreader Bold Italic},
+]
+\ifdefined\eepdark
+  \definecolor{eepink}{HTML}{ECEEF2}
+  \definecolor{eepaccent}{HTML}{E06A5F}
+  \definecolor{eepmute}{HTML}{8F95A0}
+  \definecolor{eepfill}{HTML}{131C2E}
+  \definecolor{eeprule}{HTML}{3B4352}
+  \definecolor{eepsoft}{HTML}{1C2537}
+  \definecolor{eepdont}{HTML}{8F95A0}
+\else
+  \definecolor{eepmute}{HTML}{5E636C}
+  \definecolor{eeprule}{HTML}{D3D7DE}
+  \definecolor{eepsoft}{HTML}{ECEEF2}
+  \definecolor{eepdont}{HTML}{838C9A}
+\fi
+
+% The picture uses a normal y-up axis. Pass y as in the mockup (y down).
+% Each figure sets \eepH to a value past the lowest mockup y.
+% #1 x  #2 baseline y (down)  #3 colour  #4 font commands  #5 text
+\newcommand{\up}[5]{%
+  \node[anchor=base west, inner sep=0pt, outer sep=0pt, text=#3] at (#1,{\eepH-(#2)}) {#4#5};%
+}
+% Drawn marks. Inter has no check or ballot x, and the house serif does not either.
+\newcommand{\tick}[1]{\tikz[baseline=-0.12ex]{\draw[#1,line width=1.35pt,line cap=round,line join=round] (0,0.16em)--(0.18em,0)--(0.52em,0.5em);}\hspace{0.4em}}
+\newcommand{\cross}[1]{\tikz[baseline=-0.15ex]{\draw[#1,line width=1.15pt,line cap=round] (0,0)--(0.42em,0.42em) (0,0.42em)--(0.42em,0);}\hspace{0.4em}}
+% A y-down rectangle: #1 x1 #2 y-top #3 x2 #4 y-bottom
+\newcommand{\boxdn}[4]{%
+  \draw (#1,{\eepH-(#4)}) rectangle (#3,{\eepH-(#2)});%
+}
