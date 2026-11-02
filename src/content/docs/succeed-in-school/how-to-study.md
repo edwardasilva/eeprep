@@ -1,7 +1,10 @@
 ---
 title: How to study
-description: How to study circuits, signals, and analog design, and how to check work a model wrote.
+description: "How EE students study circuits, signals, and analog design, build bench skills on a small budget, and check circuit work that an AI model drafted for them."
 pageType: study
+head:
+  - tag: title
+    content: "How to study EE: circuits, signals, analog | EE Prep"
 ---
 
 Alex Doe is the example student on this page, at [University] with a GPA of [X.XX]/4.00. A number that belongs to Alex stays in brackets, like [X] hours. This page gives no hour count for Alex's week.
