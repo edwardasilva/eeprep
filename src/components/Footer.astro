@@ -1,0 +1,27 @@
+---
+import Default from '@astrojs/starlight/components/Footer.astro';
+---
+
+<Default />
+<p class="eep-license">
+	Content and figures are licensed under
+	<a href="https://creativecommons.org/licenses/by/4.0/" rel="license">
+		CC BY 4.0
+	</a>
+	. Code is licensed under the
+	<a href="https://github.com/edwardasilva/eeprep/blob/main/LICENSE">
+		MIT License
+	</a>
+	.
+</p>
+
+<style>
+	.eep-license {
+		margin-top: 1.5rem;
+		font: 400 0.8125rem/1.5 var(--eep-font-sans);
+		color: var(--eep-mute);
+	}
+	.eep-license a {
+		color: inherit;
+	}
+</style>

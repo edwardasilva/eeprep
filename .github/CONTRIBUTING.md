@@ -44,11 +44,11 @@ Do not push straight to `main` or to someone else's epic branch.
 
 Lane ownership is this table, not a `CODEOWNERS` file. The lane owner resolves conflicts in that lane.
 
-| Lane        | Paths                                                    | Owner        |
-| ----------- | -------------------------------------------------------- | ------------ |
-| Design      | `src/styles/`, figure styles under `src/diagrams/style/` | Creative Bot |
-| Content     | `src/content/`                                           | Strategy Bot |
-| Engineering | config, CI, and the build                                | Engineer Bot |
+| Lane        | Paths                                                    | Owner                |
+| ----------- | -------------------------------------------------------- | -------------------- |
+| Design      | `src/styles/`, figure styles under `src/diagrams/style/` | Design reviewer      |
+| Content     | `src/content/`                                           | Content reviewer     |
+| Engineering | config, CI, and the build                                | Engineering reviewer |
 
 ## Checks
 
