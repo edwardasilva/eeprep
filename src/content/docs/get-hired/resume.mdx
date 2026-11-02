@@ -191,14 +191,14 @@ eeprep's author reviews a resume in two passes. The first pass fixes content, an
 
 ## Build your resume
 
-If you'd rather not format a resume by hand, use [resume-generator](https://github.com/edwardasilva/resume-generator), a free, open-source tool that follows the layout on this page. You write your content in one file, and the tool turns it into a one-page PDF.
+If you do not want to format a resume by hand, use [resume-generator](https://github.com/edwardasilva/resume-generator), a free, open-source tool that follows the layout on this page. You write your content in one file, and the tool turns it into a one-page PDF.
 
-1. Download the zip from the [v0.1.0 release](https://github.com/edwardasilva/resume-generator/releases/tag/v0.1.0) and unzip it.
-2. Open `resume.json` and replace the sample student's details with yours. The README explains what goes in each field. You can add links to your header and to any entry, such as a project's repo, and they stay clickable in the PDF.
+1. Download `resume-generator-v0.1.0.zip` from the [v0.1.0 release](https://github.com/edwardasilva/resume-generator/releases/tag/v0.1.0) and unzip it.
+2. Open `resume.json`. It holds a sample resume for Alex Doe, the same made-up student as above, so replace Alex's details with your own. The README explains what goes in each field. You can add links to your header and to any entry, such as a project's repo, and they stay clickable in the PDF.
 3. In a terminal, run `./run` from that folder. It writes `resume.pdf`.
 
-If LaTeX isn't installed on your computer, `./run` tells you what it will install and asks yes or no before it installs anything. It then fits your resume onto one page. It starts with 11 pt text and 0.5 in margins, and tightens down to 10 pt and 0.4 in if it needs to. If your resume still doesn't fit, it stops and tells you about how many lines to cut, so you decide what goes.
+The tool comes with its own open-licensed fonts, so you do not install any fonts, and the PDF looks the same on any system. It runs on Linux, on macOS, and on Windows through WSL (Windows Subsystem for Linux).
 
-The zip bundles its fonts, so it works on any TeX install.
+If Python 3 or LaTeX is missing, `./run` tells you what it will install and asks yes or no before it installs anything. It then fits your resume onto one page. It starts with 11 pt text and 0.5 in margins, and tightens down to 10 pt and 0.4 in if it needs to. If your resume still does not fit, it stops and tells you about how many lines to cut, so you decide what goes.
 
-The tool handles the layout, but it can't write your bullets for you. Use the sections above for that, and check the PDF yourself before you send it. If a bullet spills a word or two onto a second line, cut it to one line or add a detail that fills both, then run `./run` again.
+The tool handles the layout, but it cannot write your bullets. Use the sections above for that, and check the PDF yourself before you send it. If a bullet spills a word or two onto a second line, cut it to one line or add a detail that fills both. Then run `./run` again.
