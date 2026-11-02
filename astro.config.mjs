@@ -8,6 +8,7 @@ import rehypeKatex from 'rehype-katex';
 import rehypeCallouts from 'rehype-callouts';
 import starlightSiteGraph from 'starlight-site-graph';
 import rehypeEqIds from './src/plugins/rehype-eq-ids.mjs';
+import remarkWikilinkLabels from './src/plugins/remark-wikilink-labels.mjs';
 import {
 	loadWikiIndex,
 	normalizeWikiName,
@@ -16,6 +17,15 @@ import {
 } from './src/lib/wiki-index.mjs';
 
 const wiki = loadWikiIndex();
+
+// Pages that were removed, sent to the closest page that is left.
+const redirects = {
+	'/get-hired/': '/get-hired/resume/',
+	'/get-hired/the-job-market/': '/reference/job-links/',
+	'/succeed-in-school/': '/',
+	'/succeed-in-school/how-to-study/': '/',
+	'/reference/signals-and-dsp/': '/reference/',
+};
 const lightCodeTheme = JSON.parse(
 	readFileSync(
 		new URL('./src/styles/ec-eeprep-light.json', import.meta.url),
@@ -31,6 +41,7 @@ const darkCodeTheme = JSON.parse(
 
 export default defineConfig({
 	site: 'https://eeprep.com',
+	redirects,
 	trailingSlash: 'always',
 	vite: {
 		plugins: [
@@ -85,6 +96,7 @@ export default defineConfig({
 						newClassName: 'wikilink-missing',
 					},
 				],
+				[remarkWikilinkLabels, { wiki }],
 				remarkMath,
 			],
 			rehypePlugins: [
@@ -245,16 +257,9 @@ export default defineConfig({
 					],
 				},
 				{
-					label: 'Succeed in school',
-					items: [
-						{ label: 'How to study', slug: 'succeed-in-school/how-to-study' },
-					],
-				},
-				{
 					label: 'Reference',
 					items: [
 						{ label: 'Reference', slug: 'reference' },
-						{ label: 'Signals and DSP', slug: 'reference/signals-and-dsp' },
 						{ label: 'Job search links', slug: 'reference/job-links' },
 					],
 				},
@@ -267,6 +272,7 @@ export default defineConfig({
 					sitemapConfig: {
 						pageInclusionRules: [
 							...wiki.pages.filter((p) => p.draft).map((p) => `!**/${p.file}`),
+							...Object.keys(redirects).map((from) => `!**${from}index.html`),
 							'**/*',
 						],
 					},

@@ -52,6 +52,7 @@ jobs:
       - run: npm run build
       - run: npm run check:deploy
       - run: npm run check:links
+      - run: npm run check:link-text
 
   mobile:
     name: Mobile audit
