@@ -4,13 +4,13 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 
 <StarlightPage
 	frontmatter={{
-		title: 'EE Prep',
+		title: 'eeprep',
 		description:
-			'A free guide for electrical engineering students: write a resume, land a first internship, and look up job and visa links.',
+			'Free, plain advice for electrical engineering students on writing a one-page resume, finding a first internship and running a job search, plus a reference list.',
 		head: [
 			{
 				tag: 'title',
-				content: 'EE Prep: resumes and internships for EE students',
+				content: 'eeprep | Resumes and job hunting for EE students',
 			},
 		],
 		template: 'splash',
@@ -19,45 +19,39 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 	hasSidebar={false}
 >
 	<section class="eep-hero">
-		<p class="eep-eyebrow">For EE students</p>
-		<h1>Get advice. Keep a reference.</h1>
-		<p class="eep-lede">
-			A textbook for electrical engineering students who want a job and a place
-			to look things up.
-		</p>
-		<p class="eep-actions">
-			<a class="eep-btn" href="/advice/resume/">
-				Start with the advice
-			</a>
-		</p>
+		<h1>
+			Plain advice on resumes and job hunting for electrical engineering
+			students.
+		</h1>
 	</section>
 	<ul class="eep-cards">
 		<li>
-			<a href="/advice/resume/">
-				<span class="eep-eyebrow">01</span>
-				<strong>Advice</strong>
+			<a href="/reference/">
+				<strong>Reference</strong>
 				<span>
-					The resume, the applications, and the market you are walking into.
+					Links to job boards, salary data and other outside resources for your
+					job hunt.
 				</span>
 			</a>
 		</li>
 		<li>
-			<a href="/reference/">
-				<span class="eep-eyebrow">02</span>
-				<strong>Reference</strong>
+			<a href="/advice/resume/">
+				<strong>Advice</strong>
 				<span>
-					Official and community links for pay data, openings, and student
-					visas.
+					How to write a one-page resume and land your first internship, step by
+					step.
 				</span>
 			</a>
 		</li>
 	</ul>
-	<section class="eep-start">
-		<h2>Start here</h2>
-		<ol>
-			<li>
-				<a href="/advice/resume/">Resume</a>
-			</li>
-		</ol>
-	</section>
+	<p>
+		<a href="/roadmap/">Roadmap</a>
+	</p>
+	<p class="eep-generator">
+		Want a resume without formatting it by hand?{' '}
+		<a href="https://github.com/edwardasilva/resume-generator">
+			resume-generator
+		</a>{' '}
+		is a free, open-source tool that turns one file into a one-page PDF.
+	</p>
 </StarlightPage>

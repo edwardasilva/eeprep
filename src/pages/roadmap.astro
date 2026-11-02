@@ -1,0 +1,48 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+---
+
+<StarlightPage
+	frontmatter={{
+		title: 'Roadmap',
+		description:
+			'The big updates planned for eeprep: a resume builder, study guides, job board help, a LinkedIn guide, better graphics and pages on interviews and offers.',
+		head: [{ tag: 'title', content: 'Roadmap | eeprep' }],
+		tableOfContents: false,
+	}}
+>
+	<p>
+		These are the big updates planned for eeprep. It's a plan, not a promise,
+		and it may change.
+	</p>
+	<ul>
+		<li>
+			<strong>Resume builder.</strong> Fill in a form on the site and get a
+			one-page resume, with no setup.
+		</li>
+		<li>
+			<strong>Study guides.</strong> Short guides to the core courses in an
+			electrical engineering degree.
+		</li>
+		<li>
+			<strong>Job board help.</strong> Which job boards are worth your time and
+			how to search them well.
+		</li>
+		<li>
+			<strong>LinkedIn guide.</strong> How to set up a profile that recruiters
+			find and read.
+		</li>
+		<li>
+			<strong>Better graphics.</strong> Clearer figures and diagrams across the
+			site.
+		</li>
+		<li>
+			<strong>The author's take.</strong> Notes from eeprep's author, a working
+			embedded software engineer, on what worked for them.
+		</li>
+		<li>
+			<strong>Interviews.</strong> How engineering interviews run and how to
+			prepare for them.
+		</li>
+	</ul>
+</StarlightPage>

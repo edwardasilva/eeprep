@@ -250,18 +250,6 @@ h1#_top {
 		text-decoration-color: currentColor;
 	}
 }
-.eep-eyebrow {
-	font: 500 var(--eep-text-eyebrow)/1 var(--eep-font-mono);
-	letter-spacing: var(--eep-track-eyebrow);
-	text-transform: uppercase;
-	color: var(--eep-accent);
-}
-.eep-lede {
-	font: 400 var(--eep-text-lede)/1.5 var(--eep-font-serif);
-	color: var(--eep-ink-2);
-	max-width: 36em;
-	font-variation-settings: 'opsz' 24;
-}
 .sl-markdown-content code:not(pre code) {
 	border-radius: var(--eep-radius-sm);
 	padding: 0.1em 0.35em;
@@ -421,13 +409,7 @@ figure.eep-fig figcaption .eep-fignum {
 	border-radius: var(--eep-radius);
 }
 
-/* ---------- 11. Margin column (key terms) ---------- */
-.eep-margin {
-	font-size: var(--eep-text-caption);
-	color: var(--eep-ink-2);
-}
-
-/* ---------- 12. Sidebar / chapter TOC ---------- */
+/* ---------- 11. Sidebar / chapter TOC ---------- */
 .sidebar-content a[aria-current='page'] {
 	background: transparent;
 	color: var(--eep-ink);

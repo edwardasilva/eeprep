@@ -64,45 +64,16 @@
 .eep-hero h1 {
 	font-family: var(--eep-font-serif);
 	font-weight: 500;
-	font-size: clamp(2.75rem, 6vw, var(--eep-text-display));
-	line-height: 1.02;
+	font-size: clamp(2.25rem, 4vw, 3.25rem);
+	line-height: 1.08;
 	letter-spacing: var(--eep-track-h1);
 	color: var(--eep-ink);
 	font-variation-settings: 'opsz' 72;
 	margin: 0.75rem 0 1rem;
 }
-.eep-actions {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.75rem;
-	margin-top: 1.5rem;
-}
-.eep-btn {
-	display: inline-flex;
-	align-items: center;
-	box-sizing: border-box;
-	background: var(--eep-accent);
-	color: var(--eep-on-accent);
-	text-decoration: none;
-	border-radius: var(--eep-radius);
-	padding: 0.7rem 1rem;
-	font: 550 0.9375rem/1 var(--eep-font-sans);
-}
 /* Starlight sets the shortcut in the UI font. The theme's code font is mono. */
 button[data-open-modal] kbd {
 	font-family: var(--eep-font-mono);
-}
-/* theme.css `.sl-markdown-content a` beats `.eep-btn` and paints ink on crimson. */
-.sl-markdown-content a.eep-btn {
-	background: var(--eep-accent);
-	color: var(--eep-on-accent);
-	text-decoration: none;
-}
-@media (hover: hover) {
-	.sl-markdown-content a.eep-btn:hover {
-		background: var(--eep-accent-hover);
-		color: var(--eep-on-accent);
-	}
 }
 .eep-cards {
 	list-style: none;
@@ -137,25 +108,13 @@ button[data-open-modal] kbd {
 	font: 550 1.35rem/1.2 var(--eep-font-serif);
 	color: var(--eep-ink);
 }
+.eep-generator {
+	max-width: var(--eep-measure);
+	color: var(--eep-ink-2);
+}
 .eep-cards span:last-child {
 	color: var(--eep-ink-2);
 	font-size: 0.9375rem;
-}
-.eep-start {
-	max-width: var(--eep-measure);
-}
-.eep-start h2 {
-	font-family: var(--eep-font-serif);
-	font-weight: 500;
-	font-size: var(--eep-text-h3);
-	color: var(--eep-ink);
-}
-.eep-margin h2 {
-	font: 600 0.6875rem/1 var(--eep-font-sans);
-	letter-spacing: 0.14em;
-	text-transform: uppercase;
-	color: var(--eep-mute);
-	margin: 0 0 var(--eep-space-4);
 }
 .wikilink-missing {
 	color: var(--eep-accent);
@@ -262,18 +221,12 @@ button[data-open-modal] kbd {
 		outline-offset: 2px;
 	}
 
-	.eep-btn {
-		min-height: var(--eep-tap);
-	}
 	.eep-hero {
 		padding-top: 1.5rem;
 	}
 	.eep-hero h1 {
-		font-size: clamp(2.125rem, 7vw + 0.75rem, 2.75rem);
-		line-height: 1.08;
-	}
-	.eep-lede {
-		font-size: clamp(1.0625rem, 1.5vw + 0.75rem, 1.25rem);
+		font-size: clamp(1.875rem, 5vw + 0.75rem, 2.25rem);
+		line-height: 1.12;
 	}
 }
 
