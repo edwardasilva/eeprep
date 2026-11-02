@@ -33,7 +33,7 @@ One person calls analog design one of the hardest EE specialties, and says it is
 
 They give four study steps in that [analog design post](https://x.com/siliconcodesign/status/2080669341016805488).
 
-1. Pick one foundational book or course and finish it. They name Razavi for analog design, and Andrew Ng when the subject is AI.
+1. Pick one foundational book or course and finish it. They name [Razavi](https://www.seas.ucla.edu/brweb/) for analog design, and Andrew Ng when the subject is AI.
 2. After each chapter, write a bottom-up summary in your own words. Describe how one circuit works, step by step.
 3. When the book is done, map the topologies for each block. Record the pros and cons of each.
 4. Build harder blocks on top of simpler ones. Their example is a folded cascode OTA, in that [analog design post](https://x.com/siliconcodesign/status/2080669341016805488). An OTA is an operational transconductance amplifier.
@@ -73,7 +73,7 @@ One commenter names four bench skills on a [KiCad learning thread](https://www.r
 - Learn what a spectrum analyzer shows, when you can use one, and why.
 - Do not start a fire. Practice soldering.
 
-The same commenter also says to learn LTspice, on that [KiCad learning thread](https://www.reddit.com/r/ElectricalEngineering/comments/1rw9i3j/kicad_online_learning/). Lay out the circuit in it. Analyze it there. Check that the simulation works in theory before you build.
+The same commenter also says to learn [LTspice](https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html), on that [KiCad learning thread](https://www.reddit.com/r/ElectricalEngineering/comments/1rw9i3j/kicad_online_learning/). Lay out the circuit in it. Analyze it there. Check that the simulation works in theory before you build.
 
 ## Builds you can show
 
@@ -81,16 +81,16 @@ One person says the line "you need the right tools before you can start" is a li
 
 They give four moves for a student budget in that [student budget post](https://x.com/princess_yfe/status/2052407178993029236).
 
-1. Start in a simulator. Wokwi is free. It runs Arduino, ESP32, and STM32 in the browser. Their examples are a temperature monitor, an LED matrix, and UART between two virtual microcontrollers. UART is a serial link between chips. A simulation is not real hardware. It still builds understanding you can show.
+1. Start in a simulator. [Wokwi](https://wokwi.com/) is free. It runs Arduino, ESP32, and STM32 in the browser. Their examples are a temperature monitor, an LED matrix, and UART between two virtual microcontrollers. UART is a serial link between chips. A simulation is not real hardware. It still builds understanding you can show.
 2. Use gear the department already owns. Oscilloscopes, dev kits, and parts sit unused outside class. Ask the lecturer. Ask the lab technician.
 3. Write the project down. Record the goal, what you built, what went wrong, what you learned, and how you fixed it. Put that on GitHub. A documented small project beats an undocumented complex one.
 4. Split the cost with other students. Five people can share one dev kit.
 
 An entry-level portfolio does not need a satellite, they say, in that [student budget post](https://x.com/princess_yfe/status/2052407178993029236). It needs evidence that you can break a problem down, build a fix, and explain the work.
 
-One engineer has 35 years or more in EE and RF, and teaches in a university EE and computer engineering program, in a [KiCad teaching post](https://x.com/BackwoodsEnginr/status/2061281029155918079). They start students on KiCad. That includes co-op and intern students at work. They have used Cadence, OrCad, Allegro, Mentor, Altium, Eagle, and older tools. Their students later ask why the next package is less intuitive than KiCad.
+One engineer has 35 years or more in EE and RF, and teaches in a university EE and computer engineering program, in a [KiCad teaching post](https://x.com/BackwoodsEnginr/status/2061281029155918079). They start students on [KiCad](https://www.kicad.org/). That includes co-op and intern students at work. They have used Cadence, OrCad, Allegro, Mentor, Altium, Eagle, and older tools. Their students later ask why the next package is less intuitive than KiCad.
 
-One person says an engineering student can request an Altium student license and practice the tool before the job search, in an [Altium license post](https://x.com/blind_via/status/2061016080370573758).
+One person says an engineering student can request an [Altium student license](https://www.altium.com/education/students) and practice the tool before the job search, in an [Altium license post](https://x.com/blind_via/status/2061016080370573758).
 
 One commenter on a [KiCad learning thread](https://www.reddit.com/r/ElectricalEngineering/comments/1rw9i3j/kicad_online_learning/) says KiCad is the right tool when it is the one you can get. Use it to learn schematics and how a PCB is laid out. A PCB is a board you design. If you can get a student copy of Altium, the commenter recommends that and calls Altium the industry tool. Either way, design a board, have it built, assemble it, and show it working. The commenter says you are unlikely to be marked down for a KiCad board instead of an Altium board. Demonstrated Altium use gets more attention.
 
@@ -108,7 +108,7 @@ Another commenter says bring working demos to interviews, on that [freshman skil
 
 One commenter on a [GPA advice thread](https://www.reddit.com/r/ElectricalEngineering/comments/1oyd4a7/how_much_does_gpa_matter_when_applying_for/) says you need friends in the program who help you do homework and study. If a low GPA comes from not studying, the work starts next term. If you are overextended, drop extras.
 
-Another commenter on the [freshman skills thread](https://www.reddit.com/r/EngineeringStudents/comments/1si0rp5/as_a_freshman_ee_student_what_skills_should_i/) says buy an Arduino kit and play with it. They would not fill the summer with intense math or physics study. If you study during the summer anyway, they name 3Blue1Brown and Walter Lewin.
+Another commenter on the [freshman skills thread](https://www.reddit.com/r/EngineeringStudents/comments/1si0rp5/as_a_freshman_ee_student_what_skills_should_i/) says buy an Arduino kit and play with it. They would not fill the summer with intense math or physics study. If you study during the summer anyway, they name [3Blue1Brown](https://www.3blue1brown.com/) and Walter Lewin.
 
 Another commenter says a little C or Python, plus an Arduino, is enough, on that [freshman skills thread](https://www.reddit.com/r/EngineeringStudents/comments/1si0rp5/as_a_freshman_ee_student_what_skills_should_i/). The courses teach the rest. Enjoy that summer. The next four summers or so will not be as free.
 
