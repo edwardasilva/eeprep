@@ -11,17 +11,17 @@
   \up{0}{100}{eepmute}{\sffamily\bfseries\fontsize{12}{14}\selectfont\addfontfeature{LetterSpace=10}}{\cross{eepmute}BEFORE}
   \draw[rounded corners=4pt, draw=eeprule, fill=eepfill] (0,{\eepH-168}) rectangle (980,{\eepH-112});
   \up{18}{148}{eepmute}{\sffamily\fontsize{16.5}{22}\selectfont}{Worked on a buck converter for a CubeSat using LTspice and KiCad.}
-  \up{0}{196}{eepmute}{\sffamily\fontsize{13.5}{18}\selectfont}{"Worked on" hides what Jane did. There's no spec, no check, and no result.}
+  \up{0}{196}{eepmute}{\sffamily\fontsize{13.5}{18}\selectfont}{"Worked on" hides what Alex did. There's no spec, no check, and no result.}
 
   \up{0}{240}{eepaccent}{\sffamily\bfseries\fontsize{12}{14}\selectfont\addfontfeature{LetterSpace=10}}{\tick{eepaccent}AFTER}
   \draw[rounded corners=4pt, draw=eepaccent, fill=eepfill] (0,{\eepH-400}) rectangle (980,{\eepH-252});
 
   \node[anchor=base west, inner sep=0pt, outer sep=0pt] (xa) at (18,{\eepH-320}) {\sffamily\fontsize{16.5}{22}\selectfont Designed a [X] W synchronous buck converter\mbox{\space}};
   \node[anchor=base west, inner sep=0pt, outer sep=0pt] (yb) at (xa.base east) {\sffamily\fontsize{16.5}{22}\selectfont in KiCad};
-  \node[anchor=base west, inner sep=0pt, outer sep=0pt] (mid) at (yb.base east) {\sffamily\fontsize{16.5}{22}\selectfont \space for a CubeSat power board,\mbox{\space}};
-  \node[anchor=base west, inner sep=0pt, outer sep=0pt] (zc) at (mid.base east) {\sffamily\fontsize{16.5}{22}\selectfont measuring [X]\% efficiency};
-  \node[anchor=base west, inner sep=0pt, outer sep=0pt] (tail) at (zc.base east) {\sffamily\fontsize{16.5}{22}\selectfont \space with an};
-  \node[anchor=base west, inner sep=0pt, outer sep=0pt] (line2) at (18,{\eepH-360}) {\sffamily\fontsize{16.5}{22}\selectfont electronic load against an LTspice model};
+  \node[anchor=base west, inner sep=0pt, outer sep=0pt] (mid) at (yb.base east) {\sffamily\fontsize{16.5}{22}\selectfont \space for a CubeSat power board and\mbox{\space}};
+  \node[anchor=base west, inner sep=0pt, outer sep=0pt] (zc) at (mid.base east) {\sffamily\fontsize{16.5}{22}\selectfont measured [X]\% efficiency};
+  \node[anchor=base west, inner sep=0pt, outer sep=0pt] (tail) at (zc.base east) {\sffamily\fontsize{16.5}{22}\selectfont \space on an};
+  \node[anchor=base west, inner sep=0pt, outer sep=0pt] (line2) at (18,{\eepH-360}) {\sffamily\fontsize{16.5}{22}\selectfont electronic load, within [X]\% of the LTspice model};
 
   \draw[eepaccent, line width=1.5pt] (xa.south west) -- (xa.south east);
   \draw[eepaccent, line width=1.5pt] (yb.south west) -- (yb.south east);
