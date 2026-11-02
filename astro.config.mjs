@@ -24,10 +24,13 @@ const redirects = {
 	'/get-hired/resume/': '/advice/resume/',
 	'/get-hired/resume-workshop/': '/advice/resume-workshop/',
 	'/get-hired/first-internship/': '/advice/first-internship/',
-	'/get-hired/the-job-market/': '/reference/job-links/',
+	'/get-hired/the-job-market/': '/help-links/',
 	'/succeed-in-school/': '/',
 	'/succeed-in-school/how-to-study/': '/',
-	'/reference/signals-and-dsp/': '/reference/',
+	'/advice/': '/advice/resume/',
+	'/reference/': '/help-links/',
+	'/reference/job-links/': '/help-links/',
+	'/reference/signals-and-dsp/': '/help-links/',
 };
 const lightCodeTheme = JSON.parse(
 	readFileSync(
@@ -124,11 +127,6 @@ export default defineConfig({
 			description: 'A prep guide for electrical engineering students.',
 			credits: false,
 			favicon: '/favicon.svg',
-			logo: {
-				light: './public/brand/eeprep-lockup-outlined.svg',
-				dark: './public/brand/eeprep-lockup-dark-outlined.svg',
-				replacesTitle: true,
-			},
 			customCss: [
 				'./src/styles/fonts.css',
 				'./src/styles/theme.css',
@@ -219,6 +217,7 @@ export default defineConfig({
 				ThemeSelect: './src/components/ThemeSelect.astro',
 				PageTitle: './src/components/PageTitle.astro',
 				PageSidebar: './src/components/PageSidebar.astro',
+				SiteTitle: './src/components/SiteTitle.astro',
 			},
 			// First dark theme, then first light theme. Starlight maps those to the site theme.
 			expressiveCode: {
@@ -263,13 +262,8 @@ export default defineConfig({
 						},
 					],
 				},
-				{
-					label: 'Reference',
-					items: [
-						{ label: 'Reference', slug: 'reference' },
-						{ label: 'Job search links', slug: 'reference/job-links' },
-					],
-				},
+				{ label: 'Help links', slug: 'help-links' },
+				{ label: 'Roadmap', slug: 'roadmap' },
 			],
 		}),
 	],

@@ -1,10 +1,10 @@
 ---
-title: Job search links
+title: Help links
 description: "Where EE students find pay data, resume help, openings, clearance jobs, forums, and student visa rules, with what each site is good for and where it misleads."
 pageType: resources
 head:
   - tag: title
-    content: "Job search links for EE students | EE Prep"
+    content: "Help links for EE job searching | EE Prep"
 ---
 
 Each entry says what the site is good for and where it can mislead you. eeprep is not paid by any of these sites, and no link here is an affiliate link. For how to use them in an application, start with [[Resume]] and [[Your first internship]].

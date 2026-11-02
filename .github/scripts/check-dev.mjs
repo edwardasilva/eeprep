@@ -15,7 +15,7 @@ const pages = [
 	'/',
 	'/advice/resume/',
 	'/advice/first-internship/',
-	'/reference/',
+	'/help-links/',
 	'/roadmap/',
 ];
 const errorMarkers = ['ReferenceError', 'An error occurred'];
