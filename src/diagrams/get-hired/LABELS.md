@@ -1,10 +1,8 @@
 # Get hired figures: label sheet
 
-Written by Content Bot on Thursday, October 29, 2026, for Creative Bot and Engineer Bot.
+Written October 29, 2026.
 
-Every word and number on these eight figures comes from this sheet. If a figure needs a word that is not here, ask Content Bot first. Do not add numbers, dates, or names.
-
-Plan: [eeprep Get hired: content map and plan of attack](https://cursor.com/canvas/store-69243c08-7fd9-47c2-b29a-b5b1b1759b21/c9f07e1e-e556-4d1a-8221-8b816c0029de). Status: draft. Nothing here is committed, posted, or approved for the site.
+Every word and number on these eight figures comes from this sheet. If a figure needs a word that is not here, add it to this sheet first, with its source. Do not add numbers, dates, or names.
 
 ## Rules for drawing
 
@@ -39,9 +37,9 @@ All sources below were opened on October 29, 2026, unless a line says otherwise.
 | NSF-REU | NSF, Research Experiences for Undergraduates (page updated October 7, 2026) | https://www.nsf.gov/funding/opportunities/reu-research-experiences-undergraduates |
 | GH-README | GitHub Docs, About the repository README file | https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes |
 | EEP-INTERN | eeprep main, `src/content/docs/get-hired/first-internship.mdx` (last reviewed October 25, 2026) | https://github.com/edwardasilva/eeprep/blob/main/src/content/docs/get-hired/first-internship.mdx |
-| EEP-PLAN | The Get hired plan canvas, "Patterns from eeprep's author's resume" (approved by Edward on October 29, 2026) | https://cursor.com/canvas/store-69243c08-7fd9-47c2-b29a-b5b1b1759b21/c9f07e1e-e556-4d1a-8221-8b816c0029de |
+| EEP-PLAN | Advice from eeprep's author, a working embedded software engineer, drawn from the author's own resume | none |
 
-EEP-INTERN cites Reddit threads for some points. Reddit blocked both of my tools today, so I did not reopen those threads. Labels that rest only on EEP-INTERN say so.
+EEP-INTERN cites Reddit threads for some points. Those threads were not reopened for this sheet. Labels that rest only on EEP-INTERN say so.
 
 ---
 
@@ -132,7 +130,7 @@ Draw one page outline, like a README, with six stacked blocks in this order.
 | 2 | Why I built it | GH-README ("Why the project is useful") |
 | 3 | Parts and tools | EEP-PLAN (eeprep's author: name the tools you used for each project) |
 | 4 | How I tested it | EEP-INTERN (be able to say how the circuit works and why). EEP-PLAN |
-| 5 | What broke and how I fixed it | EEP-INTERN ("Write down the problems ... and the fixes", from a Reddit thread I could not reopen today) |
+| 5 | What broke and how I fixed it | EEP-INTERN ("Write down the problems ... and the fixes", from a Reddit thread not reopened for this sheet) |
 | 6 | Proof: photos, scope captures, a short video | EEP-PLAN (eeprep's author: keep proof such as photos, scope captures or a short video) |
 
 Side note, pointing at the whole page: Short bullets go on the resume. The full story goes here.
@@ -166,7 +164,7 @@ Draw four rings around a center dot. The inside is warm and the outside is cold.
 | Ring 4 | People you have not met | MIT-INFO (LinkedIn and professional associations as places to find people) |
 | Arrow, inner end | Warm: start here | MIT-INFO |
 | Arrow, outer end | Cold | none |
-| Referral arrow (crimson), from Rings 1 to 3 to a box outside the rings | Ask for a referral before you apply | eeprep's author (Edward, Oct 29, 2026) |
+| Referral arrow (crimson), from Rings 1 to 3 to a box outside the rings | Ask for a referral before you apply | eeprep's author |
 | Note at the bottom | Start with 20 to 30 minutes of advice. Once they know your work, ask for a referral. | MIT-INFO ("Request a 20-30 minute meeting", "the purpose of informational interviewing is not to ask for a job or internship") |
 
 Source line printed on the figure: Sources: MIT Career Advising, eeprep's author.
@@ -183,7 +181,7 @@ Page: Finding and applying (`get-hired/applications.mdx`). Suggested folder: `sr
 
 Title: Apply, check, then change one thing
 
-Decided Oct 29, 2026: Edward confirmed the 20-application rule is his own. The figure uses 20, credited to eeprep's author.
+The 20-application rule is eeprep's author's own. The figure uses 20, credited to eeprep's author.
 
 ### Labels
 
@@ -191,18 +189,16 @@ Draw a loop with one decision diamond.
 
 | Part | Exact text | Source |
 | --- | --- | --- |
-| Box 0 (first, emphasized) | Ask for a referral before you apply | eeprep's author (Edward, Oct 29, 2026) |
+| Box 0 (first, emphasized) | Ask for a referral before you apply | eeprep's author |
 | Box 1 | Apply on the company site | EEP-INTERN (fair card: "Ask how to apply on the company website"), MIT-FAIR ("apply to positions promptly") |
 | Box 2 | Log each application | EEP-PLAN (application log), MIT-INFO ("Keep a document with a record") |
-| Diamond | 20 sent. Any interviews? | eeprep's author (Edward confirmed Oct 29, 2026); EEP-INTERN |
+| Diamond | 20 sent. Any interviews? | eeprep's author; EEP-INTERN |
 | Yes branch (label the arrow "Yes") | Keep going. Prepare your stories. | MIT-STAR |
 | No branch (label the arrow "No"), option A | Fix the resume | EEP-INTERN ("change the resume or the channel") |
 | No branch, option B | Change the channel: career fair, professor, alumni | EEP-INTERN ("talk to a person", fair, professor, alumni) |
 | Loop arrow back to Box 1 | Change one thing, look for referrals, then send the next 20 | eeprep's author; EEP-INTERN |
 
 Source line printed on the figure: Advice from eeprep's author, a working embedded software engineer, and from student reports on Reddit.
-
-Note: the 20-application rule is eeprep's author's own (confirmed Oct 29, 2026). The live internship page states it without credit. Add "eeprep's author, a working embedded software engineer" as the credit there in the next content PR.
 
 Caption: Ask for a referral first, then apply. After 20 applications with no interviews, change the resume or the channel before you send the next 20.
 
@@ -289,7 +285,7 @@ Draw one start box with three branches. Each branch ends in the office that answ
 | Branch A answer | Your school's DSO | SITS-WORK ("the first step is always to talk with your designated school official (DSO)") |
 | Branch A note | Get authorization before you start. | SITS-TRAIN ("You must have proper authorization before beginning any practical training") |
 | Branch B question | The posting says "U.S. person" or ITAR | EEP-INTERN (Varda posting line) |
-| Branch B answer | The employer's recruiter | Routing from the content brief and EEP-INTERN. The rule itself: ECFR |
+| Branch B answer | The employer's recruiter | Routing: EEP-INTERN. The rule itself: ECFR |
 | Branch B note | The term is defined in 22 CFR 120.62. | ECFR |
 | Branch C question | The posting needs a security clearance | DCSA |
 | Branch C answer | The employer's security officer (FSO), after a written offer | DCSA ("The company Facility Security Officer (FSO) should be the first contact", "Individuals cannot apply for a personnel security clearance application on their own", processing starts after a written commitment the candidate accepts in writing) |
@@ -304,13 +300,12 @@ Alt text: A flow chart that starts with "What is your question?" and splits thre
 
 ---
 
-## Changes from the plan
+## Changes from the first draft
 
-| Figure | What the plan said | What this sheet says | Why |
+| Figure | What the first draft said | What this sheet says | Why |
 | --- | --- | --- | --- |
-| 5 | "apply, count to 20, then fix resume or change channel" | "A batch sent. Any interviews?" with no number | No solid source for 20. The live internship page states the rule without credit. The Reddit thread it sits next to blocked my tools. Search turned up only resume-service blogs and one AI resume-builder founder quoted in Business Insider, which are not solid sources. Edward can approve 20 as his own rule. |
-| 2 | "NACE new-grad EE average" from the brief | $87,853, from the Summer 2026 Salary Survey | The Summer report has actual Class of 2025 salaries. The Winter report has employer projections. The NACE category is "Electrical, Electronics, and Communications Engineering", which is wider than BLS 17-2071. |
-| 2 | "BLS EE pay" | Electrical engineers only (SOC 17-2071): lowest 10% under $76,550, median $120,630, May 2025 | The task asked for 17-2071. The OOH also shows $125,040 for electrical and electronics engineers combined. That number is not used. |
+| 2 | "NACE new-grad EE average" | $87,853, from the Summer 2026 Salary Survey | The Summer report has actual Class of 2025 salaries. The Winter report has employer projections. The NACE category is "Electrical, Electronics, and Communications Engineering", which is wider than BLS 17-2071. |
+| 2 | "BLS EE pay" | Electrical engineers only (SOC 17-2071): lowest 10% under $76,550, median $120,630, May 2025 | The figure uses 17-2071. The OOH also shows $125,040 for electrical and electronics engineers combined. That number is not used. |
 | 1 | "Apply in the early posting window", "Year 2 summer" and other dated steps | Timing appears only in the recruiting band (Sep to Oct and Jan to Feb, "at many schools") | Two career centers back those months. No source backs an "early posting window" for EE specifically. |
 | 1 | "Ask early about a return offer" | "Ask about a return offer" | "Early" had no source. |
 | 1 | "OPT can be filed up to 90 days before the degree ends" | Kept, worded as "up to 90 days before you finish" | USCIS says this for post-completion OPT. |
@@ -320,9 +315,8 @@ Alt text: A flow chart that starts with "What is your question?" and splits thre
 
 ## Still unverified
 
-- Every Reddit and X claim that EEP-INTERN cites. Reddit returned 403 to both fetch tools today. Figures 3 and 5 lean on those claims only for wording, not numbers.
+- Every Reddit and X claim that EEP-INTERN cites. Those threads were not reopened for this sheet. Figures 3 and 5 lean on those claims only for wording, not numbers.
 - The specific BLS OEWS profile page for 17-2071. Two OEWS URLs returned index pages, so the numbers come from the OOH Pay tab, which draws on OEWS May 2025 data.
 - REU timing. The NSF page gives no student deadline, and each site sets its own. So figure 1 shows REU with no date.
-- Resolved: "20 applications" is Edward's own rule (Oct 29, 2026).
 
-Note, Oct 29: the source lines on Figs 1, 2 and 4 were shortened to fit one line. The full citations stay in the page's references and in the caption text on the page.
+The source lines on Figs 1, 2 and 4 were shortened to fit one line. The full citations stay in the page's references and in the caption text on the page.
