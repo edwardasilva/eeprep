@@ -10,24 +10,19 @@ const shouldRenderSearch =
 	config.components.Search !== '@astrojs/starlight/components/Search.astro';
 
 const links = [
-	{ href: '/get-hired/', label: 'Guide' },
-	{ href: '/succeed-in-school/', label: 'Study' },
-	{ href: '/get-hired/the-job-market/', label: 'Careers' },
-	{ href: '/reference/', label: 'Resources' },
+	{ href: '/get-hired/resume/', label: 'Guide', section: '/get-hired/' },
+	{
+		href: '/succeed-in-school/how-to-study/',
+		label: 'Study',
+		section: '/succeed-in-school/',
+	},
+	{ href: '/reference/', label: 'Resources', section: '/reference/' },
 ];
 
 const pathname = Astro.url.pathname;
 
-function isCurrent(href: string): boolean {
-	if (href === '/get-hired/the-job-market/')
-		return pathname.startsWith('/get-hired/the-job-market');
-	if (href === '/get-hired/') {
-		return (
-			pathname.startsWith('/get-hired/') &&
-			!pathname.startsWith('/get-hired/the-job-market')
-		);
-	}
-	return pathname.startsWith(href);
+function isCurrent(section: string): boolean {
+	return pathname.startsWith(section);
 }
 ---
 
@@ -39,7 +34,7 @@ function isCurrent(href: string): boolean {
 		{links.map((link) => (
 			<a
 				href={link.href}
-				aria-current={isCurrent(link.href) ? 'page' : undefined}
+				aria-current={isCurrent(link.section) ? 'page' : undefined}
 			>
 				{link.label}
 			</a>

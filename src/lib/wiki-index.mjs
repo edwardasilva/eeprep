@@ -4,7 +4,7 @@ import GithubSlugger, { slug as headingSlug } from 'github-slugger';
 
 const DEFAULT_ROOT = path.resolve('src/content/docs');
 
-/** @typedef {{ href: string, title: string, slug: string, file: string }} WikiPage */
+/** @typedef {{ href: string, title: string, slug: string, file: string, draft: boolean }} WikiPage */
 
 /**
  * Pages keyed by the names an Obsidian wikilink can use.
@@ -37,7 +37,8 @@ export function loadWikiIndex(
 			const stem = ent.name.replace(/\.mdx?$/, '');
 			const text = fs.readFileSync(full, 'utf8');
 			const title = frontmatterTitle(text, stem.replaceAll('-', ' '));
-			const page = { href, title, slug, file: rel };
+			const draft = frontmatterDraft(text);
+			const page = { href, title, slug, file: rel, draft };
 			pages.push(page);
 			const keys = [
 				title,
@@ -123,6 +124,18 @@ export function pageHeadingIds(text) {
 		ids.add(slugger.slug(plain));
 	}
 	return ids;
+}
+
+/**
+ * True when the front matter sets `draft: true`. Starlight leaves drafts out of
+ * production builds.
+ * @param {string} text
+ */
+function frontmatterDraft(text) {
+	if (!text.startsWith('---')) return false;
+	const end = text.indexOf('\n---', 3);
+	if (end < 0) return false;
+	return /^draft:\s*true\s*$/m.test(text.slice(0, end));
 }
 
 /** @param {string} text @param {string} fallback */

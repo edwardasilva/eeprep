@@ -240,8 +240,10 @@ h1#_top {
 	text-underline-offset: 3px;
 	text-decoration-thickness: 1px;
 }
-.sl-markdown-content a:hover {
-	color: var(--eep-accent);
+@media (hover: hover) {
+	.sl-markdown-content a:hover {
+		color: var(--eep-accent);
+	}
 }
 .eep-eyebrow {
 	font: 500 var(--eep-text-eyebrow)/1 var(--eep-font-mono);

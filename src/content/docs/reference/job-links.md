@@ -1,7 +1,10 @@
 ---
 title: Job search links
-description: Sites for EE pay data, resumes, openings, clearance jobs, forums, and student visa rules, with what each one is good for and where it can mislead you.
+description: "Where EE students find pay data, resume help, openings, clearance jobs, forums, and student visa rules, with what each site is good for and where it misleads."
 pageType: resources
+head:
+  - tag: title
+    content: "Job search links for EE students | EE Prep"
 ---
 
 > [!tip] Main idea
@@ -52,6 +55,6 @@ Advice in these forums comes from strangers. You cannot confirm who a commenter 
 eeprep gives no visa advice. These official pages state the rules. Your designated school official (DSO) recommends you for OPT and authorizes CPT, so talk to your DSO before you accept an offer.
 
 - [The USCIS page on OPT](https://www.uscis.gov/working-in-the-united-states/students-and-exchange-visitors/optional-practical-training-opt-for-f-1-students) covers optional practical training (OPT), which is temporary work tied to your major. It explains pre-completion and post-completion OPT and when to file. You may not start work until USCIS approves the application and you have the Employment Authorization Document (EAD).
-- That [USCIS page on OPT](https://www.uscis.gov/working-in-the-united-states/students-and-exchange-visitors/optional-practical-training-opt-for-f-1-students) also covers the 24-month STEM OPT extension. It needs an employer enrolled in E-Verify, so ask each employer about it. Your degree must be on the DHS STEM Designated Degree Program List.
+- That [USCIS page on OPT](https://www.uscis.gov/working-in-the-united-states/students-and-exchange-visitors/optional-practical-training-opt-for-f-1-students) also covers the 24-month STEM OPT extension. It needs an employer enrolled in [E-Verify](https://www.e-verify.gov/), so ask each employer about it. Your degree must be on [the DHS STEM Designated Degree Program List](https://studyinthestates.dhs.gov/stem-opt-hub/additional-resources/eligible-cip-codes-for-the-stem-opt-extension).
 - [Study in the States on practical training](https://studyinthestates.dhs.gov/students/training-opportunities-in-the-united-states) is the Department of Homeland Security's plain-language page on curricular practical training (CPT) and OPT. It says one year or more of full-time CPT makes you ineligible for post-completion OPT.
-- [The STEM OPT Hub](https://studyinthestates.dhs.gov/stem-opt-hub) on Study in the States collects the STEM OPT extension rules for students, school officials, and employers. It also covers Form I-983.
+- [The STEM OPT Hub](https://studyinthestates.dhs.gov/stem-opt-hub) on Study in the States collects the STEM OPT extension rules for students, school officials, and employers. It also covers [Form I-983](https://www.ice.gov/doclib/sevis/pdf/i983.pdf).
