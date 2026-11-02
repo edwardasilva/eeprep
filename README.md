@@ -20,4 +20,14 @@ Every claim links to the source behind it, so you can check it yourself. If a cl
 
 The site will live at [eeprep.com](https://eeprep.com). It isn't live yet.
 
+## Get the code
+
+The repo includes [resume-generator](https://github.com/edwardasilva/resume-generator) as a submodule. Clone both at once:
+
+```sh
+git clone --recurse-submodules https://github.com/edwardasilva/eeprep.git
+```
+
+The site builds without the submodule, so a plain clone also works.
+
 Want to help improve the guide? See [CONTRIBUTING](.github/CONTRIBUTING.md).
