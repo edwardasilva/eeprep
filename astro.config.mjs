@@ -8,7 +8,6 @@ import rehypeKatex from 'rehype-katex';
 import rehypeCallouts from 'rehype-callouts';
 import starlightSiteGraph from 'starlight-site-graph';
 import rehypeEqIds from './src/plugins/rehype-eq-ids.mjs';
-import rehypeUnlinkDrafts from './src/plugins/rehype-unlink-drafts.mjs';
 import {
 	loadWikiIndex,
 	normalizeWikiName,
@@ -91,10 +90,6 @@ export default defineConfig({
 			rehypePlugins: [
 				rehypeKatex,
 				rehypeEqIds,
-				[
-					rehypeUnlinkDrafts,
-					{ hrefs: wiki.pages.filter((p) => p.draft).map((p) => p.href) },
-				],
 				[
 					rehypeCallouts,
 					{
