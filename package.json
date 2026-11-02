@@ -1,0 +1,85 @@
+{
+  "name": "eeprep",
+  "private": true,
+  "type": "module",
+  "version": "0.0.0",
+  "engines": {
+    "node": ">=22.23.4 <23"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "diagrams": "node .github/scripts/render-tikz.mjs",
+    "check:wikilinks": "node .github/scripts/check-wikilinks.mjs",
+    "test:wikilinks": "node .github/scripts/test-wikilinks.mjs",
+    "check:citations": "node .github/scripts/check-citations.mjs",
+    "test:citations": "node .github/scripts/test-citations.mjs",
+    "check:links": "node .github/scripts/check-links.mjs",
+    "check:dev": "node .github/scripts/check-dev.mjs",
+    "check:deploy": "wrangler deploy --dry-run",
+    "brand": "node .github/scripts/render-brand.mjs",
+    "check:pr-body": "node .github/scripts/check-pr-body.mjs",
+    "lint": "eslint . && markdownlint-cli2 && prettier --check .",
+    "format": "prettier --write . && eslint . --fix",
+    "postinstall": "node .github/scripts/patch-site-graph.mjs"
+  },
+  "dependencies": {
+    "@astrojs/markdown-remark": "7.3.5",
+    "@astrojs/starlight": "0.42.7",
+    "@fontsource-variable/inter": "5.3.0",
+    "@fontsource-variable/jetbrains-mono": "5.3.0",
+    "@fontsource-variable/newsreader": "5.3.0",
+    "astro": "7.4.4",
+    "github-slugger": "2.0.0",
+    "katex": "0.19.0",
+    "picomatch": "4.0.7",
+    "rehype-callouts": "2.2.0",
+    "rehype-katex": "7.0.1",
+    "remark-math": "6.0.0",
+    "remark-wiki-link": "2.0.1",
+    "starlight-site-graph": "0.5.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@resvg/resvg-js": "2.6.2",
+    "eslint": "10.13.0",
+    "eslint-plugin-astro": "3.2.1",
+    "globals": "17.13.0",
+    "markdownlint-cli2": "0.24.0",
+    "prettier": "3.9.10",
+    "prettier-plugin-astro": "1.1.2",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.72.1",
+    "wrangler": "4.156.0"
+  },
+  "prettier": {
+    "useTabs": true,
+    "singleQuote": true,
+    "plugins": [
+      "prettier-plugin-astro"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "*.md",
+          "*.mdx"
+        ],
+        "options": {
+          "useTabs": false,
+          "embeddedLanguageFormatting": "off"
+        }
+      },
+      {
+        "files": [
+          "*.json",
+          "*.yml",
+          "*.yaml"
+        ],
+        "options": {
+          "useTabs": false
+        }
+      }
+    ]
+  }
+}

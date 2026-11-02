@@ -1,0 +1,190 @@
+---
+title: Resume
+description: How to write an electrical engineering resume that a busy screener can read in seconds, from the r/EngineeringResumes wiki, its top threads, recruiters on X, and eeprep's author.
+pageType: guide
+---
+
+import FlowFigure from '../../../components/resume/FlowFigure.astro';
+import LayoutFigure from '../../../components/resume/LayoutFigure.astro';
+import BulletFigure from '../../../components/resume/BulletFigure.astro';
+import ExamplePage from '../../../components/resume/ExamplePage.astro';
+import ChecklistFigure from '../../../components/resume/ChecklistFigure.astro';
+
+> [!tip] Main idea
+> One page, one column, a centered header, and left-aligned text below it. Every bullet says what you built, with what, and what number came out. Every skill you list shows up in a bullet you can defend.
+
+This page condenses the r/EngineeringResumes wiki, about 60 of its threads, and posts from recruiters on X. It leans toward EE, embedded, FPGA, and PCB work, and follows US and Canadian norms. Advice from eeprep's author, a working embedded software engineer who reviews friends' resumes, is marked as the author's. Alex Doe from [[Your first internship]] is the running example. Every bracket is a number you measure yourself.
+
+[The wiki](https://www.reddit.com/r/EngineeringResumes/wiki/index/) is the deeper resource, with templates and sample bullets. eeprep's author tells students to follow it like gospel and to start from [its LaTeX template](https://www.reddit.com/r/EngineeringResumes/wiki/templates/).
+
+## How a resume gets read
+
+A person reads it, and fast. [One engineering hiring manager](https://www.reddit.com/r/EngineeringResumes/comments/1hw10ms/12_yoe_some_long_direct_advice_in_tech_from_a/) reads about 350 resumes a week and finds maybe 20 good ones. Another hiring manager had 90 minutes to [pull a top 5 from a stack](https://www.reddit.com/r/EngineeringResumes/comments/1pkixp9/today_i_made_a_top_5_list/). A recruiter replied that companies, titles, and dates get read first.
+
+At many companies, the applicant tracking system (ATS, the software that stores applications) stores your resume rather than auto-rejecting it. Knockout questions on the form can cut you automatically, such as "Do you hold a Secret clearance?" [An engineering hiring manager on the subreddit](https://www.reddit.com/r/EngineeringResumes/comments/192hkg8/how_atss_actually_work_from_an_engineering_hiring/) explains this. A recruiter on X [listed 41 systems](https://x.com/ConnorLibutti/status/1750604328086151194), including Workday, Greenhouse, and Lever, that 43 or more recruiters said do not auto-reject. [A recruiting-systems specialist](https://x.com/masonwong/status/1439132659947491330) added that Greenhouse can knock applicants out on screening questions, but not on resume content.
+
+Three habits follow from how managers read:
+
+1. Apply early. [One manager reviews the first 150 applications](https://www.reddit.com/r/EngineeringResumes/comments/1el24sw/15_yoe_hiring_managers_perspective_after_recent/), sometimes up to 300, and likely never opens the rest. One recent posting drew 1,300.
+2. Apply with a clear goal. [One defense and aerospace manager](https://www.reddit.com/r/EngineeringResumes/comments/192hkg8/how_atss_actually_work_from_an_engineering_hiring/) can see every other job you applied to at that company. Five applications in design read as a plan. Thirty-nine scattered ones make it easy to reject you.
+3. Write for a reader who is not an engineer. [The wiki says](https://www.reddit.com/r/EngineeringResumes/wiki/index/) to spell out an uncommon abbreviation the first time, such as computer-aided design (CAD).
+
+<FlowFigure />
+
+## Layout
+
+[These wiki rules](https://www.reddit.com/r/EngineeringResumes/wiki/index/) carry the most weight:
+
+- Keep it to 1 page. The wiki allows a second page at about 10 years of experience.
+- Use a single-column layout with no icons, images, or graphics, so no photo or logos.
+- Use black text, margins of at least 0.4 in, and line spacing of at least 1.07.
+- Do not use justified text or indent sections by hand.
+- Right-align every date to the right margin.
+- Use bold sparingly, and never on keywords inside a bullet.
+
+eeprep's author adds two rules to that list. Keep text at 10 to 11 pt and margins at 0.4 to 0.75 in. The wiki asks for 10.5 pt or larger, and eeprep allows 10 pt so a full page still fits. Center the header, as on the author's own resume, and left-align everything below it.
+
+Recruiters on X back the single column. One tells job seekers to send [the boring single-column resume](https://x.com/TheJobfather__/status/2082954139298922755). [Another rejects tables, pictures, self-rated skills, and headshots](https://x.com/randomrecruiter/status/1688896357430358016). The second recruiter also [calls one page a myth](https://x.com/randomrecruiter/status/1846631030918189213), after placing more candidates with longer resumes. Yet the template post ties the extra page to seniority, "especially when you have over 10 years," which matches the wiki.
+
+Fill the page, but do not cram it. eeprep's author treats empty gaps and half-used lines as wasted space. A commenter told [an EE senior with no experience](https://www.reddit.com/r/EngineeringResumes/comments/q4d5op/electrical_engineering_senior_no_experience/) that the page had "so much empty space." The wiki and [a recruiter on X](https://x.com/TheJobfather__/status/1576932082403647489) set the other limit. Keep the margins and line spacing above, and never shrink white space to fit one more line.
+
+Keep the gap between every pair of sections the same. [The wiki asks for consistent white space](https://www.reddit.com/r/EngineeringResumes/wiki/index/) between sections and between entries. In LaTeX, eeprep's author uses one `\vspace` value everywhere and never adds a one-off gap.
+
+<LayoutFigure />
+
+If you write in LaTeX with pdfLaTeX, eeprep's author adds these lines to the preamble:
+
+```latex
+\input{glyphtounicode}
+\pdfgentounicode=1
+\hypersetup{pdftitle={Alex Doe Resume}, pdfauthor={Alex Doe}}
+```
+
+The first 2 lines map each font glyph to Unicode inside the PDF. Without that map, [the pdfTeX manual](https://texdoc.org/serve/pdftex-a.pdf/0) says search is likely to fail on ligatures such as "fi". The switch does nothing without `\input{glyphtounicode}`, and XeLaTeX and LuaLaTeX do not need it. `\hypersetup`, from [the hyperref package](https://latex.us/macros/latex/contrib/hyperref/doc/hyperref-doc.html), fills in the PDF's title and author fields. No source we found says an ATS reads them, so treat that line as tidiness.
+
+## Section order
+
+Lead with your strongest section. [The wiki's student default](https://www.reddit.com/r/EngineeringResumes/wiki/index/) puts Education first. With no technical job yet, it runs Education, Projects, Experience, Skills. After you graduate and work, it puts Experience first and Education last.
+
+eeprep's author goes further. When a student's projects are the strongest part, the author puts them first: Projects, Experience, Education, Skills. The author's own resume as a working engineer runs Experience, Projects, Education, Skills. [Commenters split the same way](https://www.reddit.com/r/EngineeringResumes/comments/pf7v54/saw_this_on_a_engineering_resume_website_the_one/). One says to lead with Education only when you have no experience, and another says new graduates lead with it to signal entry level. [A technical recruiter who gets 700 or more resumes](https://www.reddit.com/r/EngineeringResumes/comments/1pkixp9/today_i_made_a_top_5_list/) for some postings wants skills near the top. Put your best evidence where the reader starts.
+
+Cut the objective or summary. [The wiki keeps one only](https://www.reddit.com/r/EngineeringResumes/wiki/index/) for senior engineers, career changers, and people returning from a gap. eeprep's author says [a generic one takes space](https://www.reddit.com/r/EngineeringResumes/comments/1sltoyk/student_entering_senior_year_with_no_internship/) and rarely tells the recruiter what you want. If you keep one, make it one line that names the role, such as "Seeking a summer 2027 embedded firmware internship."
+
+## Header
+
+Center your name in large type with one contact line under it, and no rule line between them. Separate the items with a vertical bar. Use no icons and no labels such as "Phone:". Write links as plain text, such as linkedin.com/in/alex-doe-example, never as a logo. [The wiki calls a phone number and LinkedIn unnecessary](https://www.reddit.com/r/EngineeringResumes/wiki/index/), but eeprep's author lists both. Click every link before you send. [One hiring manager sees dead GitHub and LinkedIn links](https://www.reddit.com/r/EngineeringResumes/comments/1hw10ms/12_yoe_some_long_direct_advice_in_tech_from_a/) all the time.
+
+Put "US Citizen", if true, and "Willing to relocate" next to your location, on a second line if needed. [A reviewer gave an embedded student the same advice](https://www.reddit.com/r/EngineeringResumes/comments/1r36omd/student_applying_for_embedded_internships_can_you/) for the citizenship line. A clearance goes there too. [The wiki says a work-status line](https://www.reddit.com/r/EngineeringResumes/wiki/index/) removes doubt about sponsorship. It also warns that a city far from the job can count against you, and "Willing to relocate" answers that. [One commenter said US aerospace employers](https://www.reddit.com/r/EngineeringResumes/comments/1xa7k5e/student_submitted_150_internship_applications_and/) reject applicants who are not citizens, so read each posting's citizenship line. Never claim you need no sponsorship when you do. [One manager said the lie](https://www.reddit.com/r/EngineeringResumes/comments/1hw10ms/12_yoe_some_long_direct_advice_in_tech_from_a/), not your origin, ends the process.
+
+## Education
+
+eeprep's author puts the degree on the first line, with GPA on the same line to save room. The school goes under it, with the graduation date at the right margin. Then add one line each for "Relevant coursework:" and "Activities:" (clubs, honor societies, project teams), with the label in bold. [Drop high school](https://www.reddit.com/r/EngineeringResumes/wiki/index/). With a master's degree, [keep the bachelor's line too](https://www.reddit.com/r/EngineeringResumes/comments/1si2l4m/resume_advice_from_a_hiring_manager/).
+
+Coursework is where EE parts from the wiki, which lists courses only when they are very specialized. [An ECE interviewer called that bad advice](https://www.reddit.com/r/EngineeringResumes/comments/q4d5op/electrical_engineering_senior_no_experience/) for ECE, because your courses show whether you can pass the interview. [Interviewers told one EE graduate with 3 offers](https://www.reddit.com/r/EngineeringResumes/comments/1m65ime/0_yoe_got_3_ee_offers_without_an_internship_i/) to add coursework, and eeprep's author says recruiters like it. List upper-level electives that match the posting, such as Introduction to High Power Electronics or Advanced Digital Design.
+
+GPA advice splits. [The wiki says to list it above 3.75](https://www.reddit.com/r/EngineeringResumes/wiki/index/), and [one commenter warned](https://www.reddit.com/r/EngineeringResumes/comments/1xa7k5e/student_submitted_150_internship_applications_and/) that readers assume the worst when it is missing. Use the rule from [[Your first internship]]. List Alex's [X.XX] when the posting sets a minimum Alex meets, and leave it off otherwise. If you list it, [match the decimals](https://www.reddit.com/r/EngineeringResumes/comments/15i3d8v/my_boss_said_my_resume_could_use_a_lot_of_work/), as in 3.30/4.00, and hunt for stray periods.
+
+## Bullets
+
+Write results, not duties. eeprep's author rewrites every task bullet as a result, and a recruiter on X calls generic responsibilities [the most common resume mistake](https://x.com/randomrecruiter/status/1615808809133346824).
+
+Use one pattern: did X with Y to get Z. X is the action, Y is the tool or method, and Z is the result. [The wiki teaches it](https://www.reddit.com/r/EngineeringResumes/wiki/index/) as the XYZ, STAR, and CAR methods. [A reviewer's readability guide](https://www.reddit.com/r/EngineeringResumes/comments/1m6nzkm/8_yoe_readable_resumes_a_guide_to_allowing_anyone/) on the subreddit explains why it works. Screeners filter on X and Y, and hiring managers choose from the Zs. eeprep's author stresses numbers most of all, and [a recruiter on X says](https://x.com/randomrecruiter/status/1759685173044498630) they go a long way in today's job market. Put the number early.
+
+Here is Alex's buck converter, before and after:
+
+> Before: Worked on a buck converter for a CubeSat using LTspice and KiCad.
+>
+> After: Designed a [X] W synchronous buck converter in KiCad for a CubeSat power board and measured [X]% efficiency on an electronic load, within [X]% of the LTspice model
+
+<BulletFigure />
+
+The second bullet names the action, the tools, one spec that shows difficulty, and a check against the real board. [The wiki's EE sample bullets](https://www.reddit.com/r/EngineeringResumes/wiki/sample-bullet-points/) work the same way. One names a 5 uW LDO. Another names an oscillator that used 8x less power than the PLL designs it replaced.
+
+Rules for each bullet:
+
+- Start with a past-tense verb such as designed, built, or reduced. Skip helped, assisted, worked on, and utilized.
+- Fill one line, or most of a second one. eeprep's author calls 2 words alone on a second line wasted space. If a bullet spills a word or two onto a second line, cut it to one line or add a detail that fills both. [An embedded-focused sophomore](https://www.reddit.com/r/EngineeringResumes/comments/1sj2rgt/student_landed_nvidia_offer_sophomore_cs_major_at/) cut most bullets from 2 lines to 1 before an NVIDIA offer.
+- Say how the parts work together. [The wiki says a parts list](https://www.reddit.com/r/EngineeringResumes/wiki/index/), such as a Raspberry Pi and a stepper motor, tells the reader little.
+- Mention a hand calculation that checked a simulation. The wiki says engineers love hand checks of FEA and CFD runs. For EE, check SPICE output against your own math.
+- Ask what happened next. [A reviewer on one student's resume](https://www.reddit.com/r/EngineeringResumes/comments/1sltoyk/student_entering_senior_year_with_no_internship/) asked whether each design fixed the problem and what the analysis led to.
+- [Do not inflate](https://www.reddit.com/r/EngineeringResumes/comments/1si2l4m/resume_advice_from_a_hiring_manager/). [One manager said](https://www.reddit.com/r/EngineeringResumes/comments/192hkg8/how_atss_actually_work_from_an_engineering_hiring/) an intern who claims $2 million in yearly savings will be asked to justify it.
+
+Lead with the embedded action, and do not force a number. [One reviewer told an embedded student](https://www.reddit.com/r/EngineeringResumes/comments/1w1e5dp/student_100_embeddedhardware_intern_applications/) that "designed a PCB in KiCad" says more than trivia such as exact step-down voltages. The same reviewer said an artificial metric is often worse than a plain bullet. A spec belongs in the bullet when it shows difficulty, such as register-level setup of an SPI peripheral.
+
+## Projects
+
+Projects is often a student's strongest section, so eeprep's author gives it the most room. Call it Projects, and [leave the word "project" out of each title](https://www.reddit.com/r/EngineeringResumes/wiki/index/). Put the tools in parentheses after the project name, and the dates at the right margin, as `\textbf{CubeSat Power Board} (KiCad, LTspice) \hfill Fall 2025 -- Spring 2026`.
+
+Pick one date style and use it on every line. eeprep's author dates projects by semester. [The wiki prefers months](https://www.reddit.com/r/EngineeringResumes/wiki/index/) and says not to mix the two. Do not write Fall 2025 on one line and March 2026 on the next.
+
+Spend spare space on depth. eeprep's author adds bullets to the best projects and does not add weak ones. [An embedded graduate cut the project count](https://www.reddit.com/r/EngineeringResumes/comments/1v9440p/0_yoe_finally_landed_an_embedded_systems_engineer/) and wrote deeper bullets before landing an embedded role. Looking back, that graduate said the builds showed less of the low-level firmware some roles wanted. If you target firmware, give the firmware its own bullets.
+
+If you target FPGA work, give your testbenches their own bullets. [One EE graduate who landed an entry-level FPGA job](https://www.reddit.com/r/EngineeringResumes/comments/1crjxzf/0_yoe_new_grad_looking_for_fpga/) said those roles often lean toward verification. A commenter added that large companies expect UVM.
+
+Pick a problem first and build toward it, as [a commenter on a project-ideas question](https://www.reddit.com/r/EngineeringResumes/comments/1wxcvrq/student_how_do_you_find_good_project_ideas/) advised. The wiki says required class labs and tutorial builds stand out the least. Class work still beats an empty page. [Commenters told the EE senior with no experience](https://www.reddit.com/r/EngineeringResumes/comments/q4d5op/electrical_engineering_senior_no_experience/) to list labs and capstone work so far. The ECE interviewer in that thread asked about an ALU, an adder, a 5-stage pipeline, or a cache.
+
+Move real technical club work, such as a CubeSat team, out of Activities and into its own Projects entry with bullets. [Several commenters on one intern's resume](https://www.reddit.com/r/EngineeringResumes/comments/15i3d8v/my_boss_said_my_resume_could_use_a_lot_of_work/) wanted a rocket club kept apart from paid jobs, so Projects is a safer home than Experience.
+
+## Experience
+
+Call the section Experience, not Work History. Once you have stronger engineering content, drop unrelated jobs. Until then, give a non-engineering job one line. [A commenter in the top 5 thread](https://www.reddit.com/r/EngineeringResumes/comments/1pkixp9/today_i_made_a_top_5_list/) keeps every job on the page that way. Give each engineering role a bold job title and company with the dates at the right margin, then the location, then the bullets.
+
+## Skills
+
+Keep skills to a couple of lines, written as comma-separated lists with a bold label, such as:
+
+- Software: KiCad, LTspice, C, Python
+- Hardware/Lab: oscilloscope, electronic load, logic analyzer, soldering
+- Certifications: only ones you can prove, such as CSWP
+
+eeprep's author keeps every item relevant to the posting, orders each line from most to least important, and cuts soft skills such as communication. They drop a vague "Knowledge" line unless it is certifiable, and moves topics such as orbital mechanics to Relevant coursework. [The wiki rules out a two-column skills list](https://www.reddit.com/r/EngineeringResumes/wiki/index/) because it wastes space. eeprep's author adds that two columns make thin experience look like hiding. [A recruiter on X says a skills sidebar](https://x.com/randomrecruiter/status/1688896357430358016) hides which tool you used for which job.
+
+[Use the exact product names](https://www.reddit.com/r/EngineeringResumes/wiki/typo/), such as C, C++ (not C/C++) and Ansys HFSS (Ansys is the company). When a posting names a skill you have, use its word. [One reviewer writes CAD](https://www.reddit.com/r/EngineeringResumes/comments/1nwhs53/student_i_kept_getting_your_experience_looks/) when a posting says CAD, and 3D drawings when it says that. For EE, add a lab line. One commenter told [an EE student with a half-page resume](https://www.reddit.com/r/EngineeringResumes/comments/1bz7gud/student_rewrote_resume_using_the_wiki_template/) to list equipment such as an oscilloscope and a logic analyzer.
+
+Every skill needs a bullet behind it. [A recruiter on X quotes hiring managers](https://x.com/randomrecruiter/status/2007074490233053671) as saying, "If it's not in the work experience, it didn't happen." Repeating each project's tools in Skills helps, because eeprep's author says it shows where you used each one. [One manager reviewed more than 80 resumes in a day](https://www.reddit.com/r/EngineeringResumes/comments/1si2l4m/resume_advice_from_a_hiring_manager/) and rejected over half for missing the posting's required skills. Expect questions on every tool. The same recruiter says [hiring managers now go 3 to 5 layers deep](https://x.com/randomrecruiter/status/2081829972415578607) on whatever you list.
+
+## Questions students ask
+
+Do I apply if I miss some requirements? Yes, for tools and years. [The EE graduate with 3 offers](https://www.reddit.com/r/EngineeringResumes/comments/1m65ime/0_yoe_got_3_ee_offers_without_an_internship_i/) lacked 2 of the 4 required skills for the job they took. The degree is different. [A reply in the ATS thread](https://www.reddit.com/r/EngineeringResumes/comments/192hkg8/how_atss_actually_work_from_an_engineering_hiring/) called education a non-starter and experience negotiable.
+
+My senior design project did not work. Can I list it? Yes. [A Hardware FYI founder](https://www.reddit.com/r/EngineeringResumes/comments/1e3yimi/ama_hardware_engineers_founders_of_hardware_fyi/) said most projects miss their first spec, even in industry. Describe your part with verbs such as designed and tested, and give the numbers you did reach.
+
+Do I list interests? Only specific ones, says eeprep's author. If you cannot name specifics, delete the section. In two students' experience, specific hobbies paid off. [One embedded intern](https://www.reddit.com/r/EngineeringResumes/comments/1i6v8x8/student_success_story_landed_3_interviews_and_an/) said half the interview that led to the offer was about guitar. [Another student said an interviewer picked the resume](https://www.reddit.com/r/EngineeringResumes/comments/1q7vpap/student_100_applications_4_interviews_2_offers_my/) because it listed Overwatch.
+
+Do I need a cover letter? It depends on the employer. [The Hardware FYI founders](https://www.reddit.com/r/EngineeringResumes/comments/1bmtjgj/ama_hardware_engineers_founders_of_hardware_fyi/) said many big tech recruiters throw them out, while defense contractors and Midwest firms tend to read them. Write one when your resume is not an obvious fit. [One manager said the good ones](https://www.reddit.com/r/EngineeringResumes/comments/1el24sw/15_yoe_hiring_managers_perspective_after_recent/) were 2 short paragraphs on why you meet the posting.
+
+## Alex's finished page
+
+This is the layout eeprep's author recommends, filled in for Alex. Alex has no engineering job yet, so the page follows the wiki's order with Projects above Experience. The 3 header lines are centered. Everything below them is left-aligned, with dates at the right margin.
+
+<ExamplePage />
+
+Each section title is bold with a full-width rule under it. Entry titles and the coursework and activities labels are bold too. Nothing else is.
+
+## Checklist
+
+eeprep's author reviews a resume in two passes. The first pass fixes content, and the polish pass fixes the page.
+
+### First pass
+
+- The page is 1 column on 1 page in black text, with no icons, photo, or tables.
+- The header is centered, and everything below it is left-aligned.
+- Your strongest section comes first, and there is no generic objective.
+- The header has one contact line with plain-text links you clicked, plus work status and relocation.
+- Education shows the degree, GPA on the same line if you list it, and one line of relevant coursework.
+- Each bullet states the action, the tool, and a number, and you can explain every claim.
+- Projects get the most room, with depth on the best ones.
+- Unrelated jobs are cut or held to one line, and interests are specific or gone.
+- Skills fit on a couple of labeled lines, ordered by importance, with no soft skills.
+
+### Polish pass
+
+- Every gap between sections is the same size.
+- Each bullet fills one line or most of two.
+- Each project title line lists its tools and ends with right-aligned dates.
+- Every date uses one style, semesters or months.
+- Coursework and activities labels are bold, and nothing else in a bullet is.
+- Every tool in Skills appears in at least one bullet.
+- No typos, stray periods, or mismatched GPA decimals remain.
+
+<ChecklistFigure />

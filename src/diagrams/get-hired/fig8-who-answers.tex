@@ -1,0 +1,30 @@
+% Figure 8. Who answers this? Labels: LABELS.md, Figure 8.
+% Routes questions only. It must not say who qualifies for anything.
+\def\eeprepfigure{1}
+\providecommand{\eepstyledir}{../style}% repo: ../style
+\input{\eepstyledir/circuitikz-preamble.tex}
+\input{colors.tex}
+% #1 centre x, #2 question, #3 answer, #4 note
+\newcommand{\whobranch}[4]{%
+  \draw[eeparrow] (#1,146) -- (#1,168);
+  \node[draw=eepink, fill=eepfill, rounded corners=4pt, minimum height=64pt, text width=268pt, align=center,
+        eepbody, text=eepink, inner sep=0pt] at (#1,204) {#2};
+  \draw[eeparrow] (#1,236) -- (#1,262);
+  \node[draw=eepink, fill=eepwash, rounded corners=4pt, minimum height=64pt, text width=268pt, align=center,
+        eephead, inner sep=0pt] at (#1,298) {#3};
+  \node[eepnote, anchor=north, text width=268pt, align=center] at (#1,344) {#4};}
+\begin{document}
+\begin{tikzpicture}[x=1pt,y=-1pt]
+  \node[eeptitle] at (0,30) {Who answers this?};
+  \node[draw=eepaccent, line width=1.8pt, fill=eepfill, rounded corners=4pt, minimum width=260pt, minimum height=44pt,
+        eephead] at (480,96) {What is your question?};
+  \draw (480,118) -- (480,146);
+  \draw (160,146) -- (800,146);
+  \whobranch{160}{Can I work, and when? (F-1, CPT, OPT)}{Your school's DSO}{Get authorization before you start.}
+  \whobranch{480}{The posting says “U.S. person” or ITAR}{The employer's recruiter}{The term is defined in 22 CFR 120.62.}
+  \whobranch{800}{The posting needs a security clearance}{The employer's security officer (FSO), after a written offer}{You cannot apply for a clearance yourself.}
+  \draw[eeprule, line width=1pt] (10,388) -- (950,388);
+  \node[eephead, anchor=north west] at (10,402) {eeprep does not answer these. These offices do.};
+  \node[eepsrc, text width=940pt] at (10,436) {Sources: Study in the States (DHS), USCIS, 22 CFR 120.62 (eCFR), Defense Counterintelligence and Security Agency.};
+\end{tikzpicture}
+\end{document}

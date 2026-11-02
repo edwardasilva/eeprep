@@ -1,0 +1,61 @@
+% eeprep.com CircuiTikZ house style — "Clean modern textbook"   (UNTESTED here: no TeX on build box)
+% Build: lualatex fig.tex  &&  dvisvgm --pdf --font-format=woff2 --exact-bbox -o fig.svg fig.pdf
+%   (or: pdftocairo -svg fig.pdf fig.svg  — outlines text; use if fonts must be embedded)
+% Requires: TeX Live 2023+, circuitikz ≥ 1.6, fontspec, unicode-math, Newsreader + Inter + JetBrains Mono installed.
+\documentclass[border=4pt]{standalone}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\setmainfont{Newsreader}[ItalicFont={Newsreader Italic}]
+\setsansfont{Inter}
+\setmonofont{JetBrains Mono}
+\setmathfont{STIX Two Math}                       % complete math coverage
+\setmathfont{Newsreader Italic}[range=it/{latin,Latin}]  % variables match site serif italic
+\setmathfont{Newsreader}[range=up/{latin,Latin,num}]
+\usepackage{xcolor}
+% Sentinel colours — the site <Diagram> component maps these hex values to CSS vars (theme-spec §7.6)
+\definecolor{eepink}{HTML}{16233A}
+\definecolor{eepaccent}{HTML}{A3201D}
+\definecolor{eepmute}{HTML}{838C9A}
+\definecolor{eepfill}{HTML}{FFFFFF}
+\usepackage[american,siunitx,RPvoltages]{circuitikz}
+\usepackage{siunitx}
+\sisetup{detect-all, text-family-to-math=false}
+\ctikzset{
+  bipoles/thickness=1,            % same as wires
+  bipoles/length=1.1cm,
+  resistors/scale=0.8, capacitors/scale=0.75, sources/scale=0.85,
+  csources/scale=0.85, grounds/scale=0.9,
+  nodes width=0.06,               % node dot size
+  voltage/american label distance=0.6,
+  label/align=straight,
+  color=eepink,
+}
+\tikzset{
+  every picture/.style={line width=1.31pt, line cap=round, line join=round, color=eepink, font=\normalsize},
+  % 1.31pt ≈ 1.75px at 1:1. Draw at final size: one-loop schematic ≈ 10.5cm wide (≈ 400pt ≈ 560px)
+  val/.style={font=\ttfamily\footnotesize, text=eepaccent},   % "1 kΩ"
+  pm/.style={font=\sffamily, text=eepmute},                    % + / −
+  hl/.style={color=eepaccent},                                  % ONE highlighted element per figure
+  ann/.style={font=\sffamily\footnotesize, text=eepmute},
+}
+\newcommand{\val}[1]{\textcolor{eepaccent}{\ttfamily\footnotesize #1}}
+
+% Resume figures define \eeprepfigure and \input this file for the house
+% colours, fonts, and line weight, then draw their own picture.
+\ifdefined\eeprepfigure
+  \expandafter\endinput
+\fi
+
+% ---- example (delete when reusing) ----
+\begin{document}
+\begin{circuitikz}
+  \draw (0,0) to[sV, l_=$v_{\mathrm{in}}$, invert] (0,3)
+        to[short, i>^=$i$] (1.5,3)
+        to[R, l=$R$, a=\val{1 k$\Omega$}] (4,3) -- (5.5,3)
+        to[short, -o] (7,3);
+  \draw (5.5,3) node[circ]{} to[C, l_=$C$, a^=\val{100 nF}] (5.5,0) node[circ]{};
+  \draw (0,0) -- (7,0) node[ocirc]{};
+  \draw (2.2,0) node[circ]{} node[ground]{};
+  \draw (7,3) to[open, v^=$v_{\mathrm{out}}$] (7,0);
+\end{circuitikz}
+\end{document}

@@ -1,0 +1,19 @@
+extends: capitalization
+message: "'%s' should use sentence case."
+level: error
+scope: heading
+match: $sentence
+exceptions:
+  - EE
+  - CS
+  - DSP
+  - SPI
+  - RC
+  - KaTeX
+  - MOSI
+  - MISO
+  - SCLK
+  - SVG
+  - Obsidian
+  - WaveDrom
+  - XYZ

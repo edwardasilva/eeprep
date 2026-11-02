@@ -1,0 +1,16 @@
+# Build output
+dist
+.astro
+coverage
+
+# Dependencies
+node_modules
+
+# Lockfiles
+package-lock.json
+
+# Generated figures
+*.svg
+
+# Approved figure label sheet. Wording stays as written.
+src/diagrams/get-hired/LABELS.md

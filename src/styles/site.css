@@ -1,0 +1,278 @@
+/* Site chrome that sits on top of the textbook theme.
+   Unlayered, so these beat Starlight and starlight-site-graph @layer rules. */
+
+:root {
+	--slsg-node-color: var(--eep-ink);
+	--slsg-node-color-adjacent: var(--eep-ink-2);
+	--slsg-node-color-current: var(--eep-accent);
+	--slsg-node-color-visited: var(--eep-mute);
+	--slsg-node-color-unresolved: var(--eep-accent);
+	--slsg-link-color: var(--eep-rule-2);
+	--slsg-text-color: var(--eep-ink-2);
+	--slsg-text-color-accent: var(--eep-accent);
+	--slsg-color-accent: var(--eep-accent);
+	--slsg-graph-minimized-bg-color: var(--eep-paper);
+	--slsg-graph-maximized-bg-color: var(--eep-surface);
+	--slsg-graph-outline-color: var(--eep-rule);
+}
+
+.eep-nav {
+	display: flex;
+	gap: 1.25rem;
+	align-items: center;
+	min-width: 0;
+}
+.eep-nav a {
+	font: 500 0.875rem/1 var(--eep-font-sans);
+	color: var(--eep-ink-2);
+	text-decoration: none;
+	white-space: nowrap;
+}
+.eep-nav a[aria-current='page'] {
+	color: var(--eep-ink);
+	box-shadow: inset 0 -1.5px 0 var(--eep-accent);
+}
+.eep-nav a:hover {
+	color: var(--eep-accent);
+}
+
+.eep-theme {
+	display: grid;
+	place-items: center;
+	width: 2.25rem;
+	height: 2.25rem;
+	padding: 0;
+	border: var(--eep-border);
+	border-radius: var(--eep-radius);
+	background: transparent;
+	color: var(--eep-ink);
+	cursor: pointer;
+}
+.eep-theme svg {
+	width: 1.05rem;
+	height: 1.05rem;
+}
+.eep-theme .icon-sun {
+	display: none;
+}
+:root[data-theme='light'] .eep-theme .icon-moon {
+	display: none;
+}
+:root[data-theme='light'] .eep-theme .icon-sun {
+	display: block;
+}
+
+/* Callout titles stay sentence case. theme.css uppercases them. */
+.callout-title,
+.starlight-aside__title {
+	text-transform: none;
+	letter-spacing: 0.01em;
+	font-size: 0.8125rem;
+}
+
+.eep-hero {
+	padding: 2.5rem 0 1rem;
+	max-width: 46rem;
+}
+.eep-hero h1 {
+	font-family: var(--eep-font-serif);
+	font-weight: 500;
+	font-size: clamp(2.75rem, 6vw, var(--eep-text-display));
+	line-height: 1.02;
+	letter-spacing: var(--eep-track-h1);
+	color: var(--eep-ink);
+	font-variation-settings: 'opsz' 72;
+	margin: 0.75rem 0 1rem;
+}
+.eep-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	margin-top: 1.5rem;
+}
+.eep-btn {
+	display: inline-flex;
+	align-items: center;
+	box-sizing: border-box;
+	background: var(--eep-accent);
+	color: var(--eep-on-accent);
+	text-decoration: none;
+	border-radius: var(--eep-radius);
+	padding: 0.7rem 1rem;
+	font: 550 0.9375rem/1 var(--eep-font-sans);
+}
+/* Starlight sets the shortcut in the UI font. The theme's code font is mono. */
+button[data-open-modal] kbd {
+	font-family: var(--eep-font-mono);
+}
+/* theme.css `.sl-markdown-content a` beats `.eep-btn` and paints ink on crimson. */
+.sl-markdown-content a.eep-btn {
+	background: var(--eep-accent);
+	color: var(--eep-on-accent);
+	text-decoration: none;
+}
+.sl-markdown-content a.eep-btn:hover {
+	background: var(--eep-accent-hover);
+	color: var(--eep-on-accent);
+}
+.eep-cards {
+	list-style: none;
+	padding: 0;
+	margin: 2.5rem 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+	gap: 1rem;
+}
+/* Starlight adds 0.25rem above every list item after the first. In this row
+   that drops cards 2 and 3 by 4px and shortens them by the same amount. */
+.eep-cards > li {
+	margin-top: 0;
+}
+.eep-cards a {
+	display: grid;
+	gap: 0.4rem;
+	height: 100%;
+	padding: 1.1rem 1.15rem 1.2rem;
+	border: var(--eep-border);
+	border-radius: var(--eep-radius-lg);
+	background: var(--eep-surface);
+	color: inherit;
+	text-decoration: none;
+}
+.eep-cards a:hover {
+	border-color: var(--eep-accent);
+}
+.eep-cards strong {
+	font: 550 1.35rem/1.2 var(--eep-font-serif);
+	color: var(--eep-ink);
+}
+.eep-cards span:last-child {
+	color: var(--eep-ink-2);
+	font-size: 0.9375rem;
+}
+.eep-start {
+	max-width: var(--eep-measure);
+}
+.eep-start h2 {
+	font-family: var(--eep-font-serif);
+	font-weight: 500;
+	font-size: var(--eep-text-h3);
+	color: var(--eep-ink);
+}
+.eep-margin h2 {
+	font: 600 0.6875rem/1 var(--eep-font-sans);
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--eep-mute);
+	margin: 0 0 var(--eep-space-4);
+}
+/* Graph and backlink panels get 1rem of sidebar padding from the graph package.
+   Key terms is our panel, so it missed that inset and sat 16px further left.
+   Below 72rem the sidebar is a wrapping row, and this padding would push Key
+   terms onto its own line. The right column exists from 72rem up. */
+@media (min-width: 72rem) {
+	.right-sidebar-panel.eep-margin {
+		padding: 1rem var(--sl-sidebar-pad-x);
+	}
+}
+.eep-margin ul {
+	margin: 0;
+	padding-left: 1.1rem;
+}
+.wikilink-missing {
+	color: var(--eep-accent);
+}
+
+/* The graph box is 250px. The right column content is the sidebar width minus
+   its horizontal padding, 240px at 17rem. Fit the column and stay square.
+   Fullscreen puts .slsg-is-fullscreen on the container, so leave that alone. */
+.slsg-graph-panel graph-component.slsg-graph-component {
+	display: block;
+	width: min(100%, calc(var(--sl-sidebar-width) - 2 * var(--sl-sidebar-pad-x)));
+	max-width: 100%;
+	height: auto;
+	aspect-ratio: 1;
+}
+.slsg-graph-panel .slsg-graph-container:not(.slsg-is-fullscreen) {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	aspect-ratio: 1;
+}
+.slsg-graph-panel .slsg-graph-container:not(.slsg-is-fullscreen) canvas {
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	aspect-ratio: 1;
+}
+
+@media (max-width: 50rem) {
+	:root,
+	:root[data-theme='light'] {
+		--sl-nav-height: 6.25rem;
+		/* Match the theme toggle. Starlight's header padding uses this size. */
+		--sl-menu-button-size: 2.25rem;
+	}
+	.header {
+		flex-wrap: wrap;
+	}
+	.eep-nav {
+		order: 3;
+		width: 100%;
+		overflow-x: auto;
+		padding-bottom: 0.15rem;
+	}
+
+	/* Starlight centers the menu button in the full header height. On a phone
+	   that height covers two rows, so the button sits between them. The search
+	   control is the tallest item in the logo row (2.5rem). Center this button
+	   in that same band, and paint it like .eep-theme. */
+	.sl-menu-button {
+		top: calc(var(--sl-nav-pad-y) + (2.5rem - var(--sl-menu-button-size)) / 2);
+		align-items: center;
+		justify-content: center;
+		padding: 0;
+		border: var(--eep-border);
+		border-radius: var(--eep-radius);
+		background: transparent;
+		color: var(--eep-ink);
+		box-shadow: none;
+	}
+	.sl-menu-button:focus-visible {
+		outline: 2px solid var(--eep-accent);
+		outline-offset: 2px;
+	}
+
+	/* The phone header and this button both need a 40px tap target. */
+	.eep-btn {
+		min-height: 2.5rem;
+	}
+}
+
+/* Light and dark copies of one figure. Starlight's page is dark unless
+   data-theme is light, including when the attribute is "dark". */
+.eep-theme-fig > .eep-theme-fig-dark {
+	display: none;
+}
+:root:not([data-theme='light']) .eep-theme-fig > .eep-theme-fig-light {
+	display: none;
+}
+:root:not([data-theme='light']) .eep-theme-fig > .eep-theme-fig-dark {
+	display: block;
+}
+
+.sl-markdown-content .eep-kicker {
+	margin: 0 0 0.35rem;
+	max-width: none;
+	font: 600 0.75rem/1 var(--eep-font-sans);
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--eep-accent);
+}
+.sl-markdown-content .eep-figtitle {
+	margin: 0 0 0.6rem;
+	max-width: none;
+	font: 600 1.625rem/1.2 var(--eep-font-serif);
+	color: var(--eep-ink);
+}

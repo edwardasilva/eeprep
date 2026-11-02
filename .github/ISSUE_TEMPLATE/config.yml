@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Content ideas
+    url: https://github.com/edwardasilva/eeprep/discussions
+    about: Post a content idea in Discussions. Use an issue form for a fix, a question, or an epic.
