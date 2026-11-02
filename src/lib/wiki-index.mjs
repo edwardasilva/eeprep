@@ -167,9 +167,7 @@ function frontmatterTitle(text, fallback) {
 
 /**
  * Links and backlinks between guide pages, for the "Linked from" card.
- * starlight-site-graph builds its server-side backlinks from a Markdown scan that only
- * sees [text](url) links, so it misses every wikilink. Keys are slugs with a trailing
- * slash and no leading slash, like the plugin's.
+ * Keys are slugs with a trailing slash and no leading slash.
  * @param {{ pages: WikiPage[], contentRoot: string, byKey: Map<string, string> }} wiki
  * @returns {Record<string, PageNode>}
  */

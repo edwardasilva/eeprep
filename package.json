@@ -23,8 +23,7 @@
     "brand": "node .github/scripts/render-brand.mjs",
     "check:pr-body": "node .github/scripts/check-pr-body.mjs",
     "lint": "eslint . && markdownlint-cli2 && prettier --check .",
-    "format": "prettier --write . && eslint . --fix",
-    "postinstall": "node .github/scripts/patch-site-graph.mjs"
+    "format": "prettier --write . && eslint . --fix"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "7.3.5",
@@ -39,8 +38,7 @@
     "rehype-callouts": "2.2.0",
     "rehype-katex": "7.0.1",
     "remark-math": "6.0.0",
-    "remark-wiki-link": "2.0.1",
-    "starlight-site-graph": "0.5.0"
+    "remark-wiki-link": "2.0.1"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",

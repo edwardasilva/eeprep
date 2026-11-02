@@ -13,8 +13,8 @@ const requestTimeoutMs = 120_000;
 const shutdownTimeoutMs = 5_000;
 const pages = [
 	'/',
-	'/get-hired/resume/',
-	'/get-hired/first-internship/',
+	'/advice/resume/',
+	'/advice/first-internship/',
 	'/reference/',
 ];
 const errorMarkers = ['ReferenceError', 'An error occurred'];

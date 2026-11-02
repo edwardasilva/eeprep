@@ -1,6 +1,6 @@
 # Resume fields spec
 
-This is the field list for a planned resume fill-in form. The workshop handouts on `get-hired/resume-workshop.mdx` use the same labels, so a student can move from paper to the form without renaming anything. Each rule below comes from the resume page (`get-hired/resume.mdx`) or from a source that page cites.
+This is the field list for a planned resume fill-in form. The workshop handouts on `advice/resume-workshop.mdx` use the same labels, so a student can move from paper to the form without renaming anything. Each rule below comes from the resume page (`advice/resume.mdx`) or from a source that page cites.
 
 Alex Doe is a made-up student. Alex's values are the examples, and they match Figure 3 on the resume page. Brackets such as `[X]` stay brackets in the example data.
 

@@ -8,7 +8,7 @@ EE courses teach circuits and signals, but they rarely teach you how to turn cou
 
 ## What you'll find
 
-- **Get hired.** Resumes and landing your first internship.
+- **Advice.** Resumes and landing your first internship.
 - **Reference.** Official and community links for pay data, openings, and student visas.
 
 ## How sources are handled

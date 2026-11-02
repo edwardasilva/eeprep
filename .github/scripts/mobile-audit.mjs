@@ -194,7 +194,7 @@ function listPages(dir, prefix = '/') {
 	const routes = [];
 	for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
 		if (ent.isDirectory()) {
-			if (['_astro', 'pagefind', 'sitegraph'].includes(ent.name)) continue;
+			if (['_astro', 'pagefind'].includes(ent.name)) continue;
 			routes.push(
 				...listPages(path.join(dir, ent.name), `${prefix}${ent.name}/`),
 			);

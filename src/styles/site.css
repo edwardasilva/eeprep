@@ -1,20 +1,5 @@
 /* Site chrome that sits on top of the textbook theme.
-   Unlayered, so these beat Starlight and starlight-site-graph @layer rules. */
-
-:root {
-	--slsg-node-color: var(--eep-ink);
-	--slsg-node-color-adjacent: var(--eep-ink-2);
-	--slsg-node-color-current: var(--eep-accent);
-	--slsg-node-color-visited: var(--eep-mute);
-	--slsg-node-color-unresolved: var(--eep-accent);
-	--slsg-link-color: var(--eep-rule-2);
-	--slsg-text-color: var(--eep-ink-2);
-	--slsg-text-color-accent: var(--eep-accent);
-	--slsg-color-accent: var(--eep-accent);
-	--slsg-graph-minimized-bg-color: var(--eep-paper);
-	--slsg-graph-maximized-bg-color: var(--eep-surface);
-	--slsg-graph-outline-color: var(--eep-rule);
-}
+   Unlayered, so these beat Starlight's @layer rules. */
 
 .eep-nav {
 	display: flex;
@@ -172,45 +157,38 @@ button[data-open-modal] kbd {
 	color: var(--eep-mute);
 	margin: 0 0 var(--eep-space-4);
 }
-/* Graph and backlink panels get 1rem of sidebar padding from the graph package.
-   Key terms is our panel, so it missed that inset and sat 16px further left.
-   Below 72rem the sidebar is a wrapping row, and this padding would push Key
-   terms onto its own line. The right column exists from 72rem up. */
-@media (min-width: 72rem) {
-	.right-sidebar-panel.eep-margin {
-		padding: 1rem var(--sl-sidebar-pad-x);
-	}
-}
-.eep-margin ul {
-	margin: 0;
-	padding-left: 1.1rem;
-}
 .wikilink-missing {
 	color: var(--eep-accent);
 }
 
-/* The graph box is 250px. The right column content is the sidebar width minus
-   its horizontal padding, 240px at 17rem. Fit the column and stay square.
-   Fullscreen puts .slsg-is-fullscreen on the container, so leave that alone. */
-.slsg-graph-panel graph-component.slsg-graph-component {
-	display: block;
-	width: min(100%, calc(var(--sl-sidebar-width) - 2 * var(--sl-sidebar-pad-x)));
-	max-width: 100%;
-	height: auto;
-	aspect-ratio: 1;
+/* "Linked from" sits under "On this page" and matches its inset and type. */
+.eep-backlinks {
+	padding: 1rem var(--sl-sidebar-pad-x);
 }
-.slsg-graph-panel .slsg-graph-container:not(.slsg-is-fullscreen) {
-	width: 100%;
-	max-width: 100%;
-	height: auto;
-	aspect-ratio: 1;
+.eep-backlinks h2 {
+	color: var(--sl-color-white);
+	font-size: var(--sl-text-h5);
+	font-weight: 600;
+	line-height: var(--sl-line-height-headings);
+	margin-bottom: 0.5rem;
 }
-.slsg-graph-panel .slsg-graph-container:not(.slsg-is-fullscreen) canvas {
+.eep-backlinks ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.eep-backlinks a {
 	display: block;
-	width: 100%;
-	max-width: 100%;
-	height: auto;
-	aspect-ratio: 1;
+	padding-block: 0.25rem;
+	font-size: var(--sl-text-xs);
+	color: var(--sl-color-gray-2);
+	text-decoration: none;
+	overflow-wrap: anywhere;
+}
+@media (hover: hover) {
+	.eep-backlinks a:hover {
+		color: var(--sl-color-white);
+	}
 }
 
 /* Phone header: two fixed rows inside Starlight's header, so nothing spills

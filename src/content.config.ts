@@ -8,7 +8,6 @@ export const collections = {
 		schema: docsSchema({
 			extend: z.object({
 				pageType: z.enum(['guide', 'study', 'resources']).optional(),
-				keyTerms: z.array(z.string()).optional(),
 				placeholder: z.boolean().optional(),
 			}),
 		}),

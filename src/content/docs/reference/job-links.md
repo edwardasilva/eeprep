@@ -7,9 +7,6 @@ head:
     content: "Job search links for EE students | EE Prep"
 ---
 
-> [!tip] Main idea
-> Use official sites for rules and pay baselines. Use crowd sites for color, then check what they say against an official source.
-
 Each entry says what the site is good for and where it can mislead you. eeprep is not paid by any of these sites, and no link here is an affiliate link. For how to use them in an application, start with [[Resume]] and [[Your first internship]].
 
 ## Pay and offers

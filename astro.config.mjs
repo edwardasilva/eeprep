@@ -6,7 +6,6 @@ import wikiLinkPlugin from 'remark-wiki-link';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import rehypeCallouts from 'rehype-callouts';
-import starlightSiteGraph from 'starlight-site-graph';
 import rehypeEqIds from './src/plugins/rehype-eq-ids.mjs';
 import remarkWikilinkLabels from './src/plugins/remark-wikilink-labels.mjs';
 import {
@@ -18,9 +17,13 @@ import {
 
 const wiki = loadWikiIndex();
 
-// Pages that were removed, sent to the closest page that is left.
+// Old URLs: moved pages go to their new address, removed pages to the closest
+// page that is left.
 const redirects = {
-	'/get-hired/': '/get-hired/resume/',
+	'/get-hired/': '/advice/resume/',
+	'/get-hired/resume/': '/advice/resume/',
+	'/get-hired/resume-workshop/': '/advice/resume-workshop/',
+	'/get-hired/first-internship/': '/advice/first-internship/',
 	'/get-hired/the-job-market/': '/reference/job-links/',
 	'/succeed-in-school/': '/',
 	'/succeed-in-school/how-to-study/': '/',
@@ -243,16 +246,16 @@ export default defineConfig({
 			},
 			sidebar: [
 				{
-					label: 'Get hired',
+					label: 'Advice',
 					items: [
-						{ label: 'Resume', slug: 'get-hired/resume' },
+						{ label: 'Resume', slug: 'advice/resume' },
 						{
 							label: 'Resume workshop',
-							slug: 'get-hired/resume-workshop',
+							slug: 'advice/resume-workshop',
 						},
 						{
 							label: 'Your first internship',
-							slug: 'get-hired/first-internship',
+							slug: 'advice/first-internship',
 						},
 					],
 				},
@@ -263,23 +266,6 @@ export default defineConfig({
 						{ label: 'Job search links', slug: 'reference/job-links' },
 					],
 				},
-			],
-			plugins: [
-				starlightSiteGraph({
-					overridePageSidebar: false,
-					trackVisitedPages: 'disable',
-					// Drafts are not built, so keep them out of the graph too.
-					sitemapConfig: {
-						pageInclusionRules: [
-							...wiki.pages.filter((p) => p.draft).map((p) => `!**/${p.file}`),
-							...Object.keys(redirects).map((from) => `!**${from}index.html`),
-							'**/*',
-						],
-					},
-					graphConfig: {
-						labelFontSize: 11,
-					},
-				}),
 			],
 		}),
 	],
