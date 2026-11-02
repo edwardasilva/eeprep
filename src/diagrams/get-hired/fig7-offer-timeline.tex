@@ -1,0 +1,27 @@
+% Figure 7. From offer to answer. Labels: LABELS.md, Figure 7.
+\def\eeprepfigure{1}
+\providecommand{\eepstyledir}{../style}% repo: ../style
+\input{\eepstyledir/circuitikz-preamble.tex}
+\input{colors.tex}
+\newcommand{\offerstep}[2]{% #1 x, #2 text
+  \node[eepbody, text=eepink, anchor=north west, text width=158pt, align=left] at ({#1-4},76) {#2};
+  \eepdot{(#1,132)}}
+\begin{document}
+\begin{tikzpicture}[x=1pt,y=-1pt]
+  \node[eeptitle] at (0,30) {From offer to answer};
+  \draw[eeparrow] (0,132) -- (960,132);
+  \offerstep{14}{Offer arrives}
+  \offerstep{198}{Thank them. Agree on a reply date.}
+  \offerstep{382}{Read the offer. Ask questions.}
+  \offerstep{566}{Research pay. Pick one request.}
+  \offerstep{750}{One call to ask. Get the terms in writing.}
+  \offerstep{934}{Decide. Accept only if you mean it.}
+  % Bracket under the line, step 1 to step 6, like a timing spec.
+  \draw[eepaccent, line width=1.6pt] (14,158) -- (14,172) -- (934,172) -- (934,158);
+  \node[eephead, text=eepaccent, anchor=north] at (474,184) {Common deadline: 1 to 2 weeks};
+  % Dashed extension for return offers.
+  \draw[eepsilver, line width=1.3pt, eepdash, eeparrow] (934,172) -- (1110,172);
+  \node[eepnote, anchor=north east, text width=176pt, align=right] at (1110,184) {Return offers after an internship may allow longer};
+  \node[eepsrc, text width=1110pt] at (0,240) {Sources: NACE advisory opinion on offer deadlines, MIT Career Advising and Professional Development, Negotiate job offers.};
+\end{tikzpicture}
+\end{document}
