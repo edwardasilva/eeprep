@@ -1,1 +1,0 @@
-A page outline with six blocks, top to bottom: what it does, why I built it, parts and tools, how I tested it, what broke and how I fixed it, and proof such as photos, scope captures, and a short video. A side note says short bullets go on the resume and the full story goes in the write-up.
