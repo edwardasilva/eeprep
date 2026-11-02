@@ -1,16 +1,15 @@
 # EE Prep
 
-EE Prep helps electrical engineering students and new grads get ahead in the AI era: study smarter, build a resume that works, find real experience, and land a first internship.
+EE Prep helps electrical engineering students and new grads get ahead in the AI era: build a resume that works, find real experience, and land a first internship.
 
 ## Why it exists
 
-EE courses teach circuits and signals, but they rarely teach you how to study them well or how to turn coursework into a first job. EE Prep puts that advice in one place, written plainly, with sources you can check.
+EE courses teach circuits and signals, but they rarely teach you how to turn coursework into a first job. EE Prep puts that advice in one place, written plainly, with sources you can check.
 
 ## What you'll find
 
-- **Succeed in school.** How to study for EE courses and keep up when the material gets hard.
-- **Get hired.** Resumes, the job market, and landing your first internship.
-- **Reference.** Study pages for core topics, starting with signals and DSP.
+- **Get hired.** Resumes and landing your first internship.
+- **Reference.** Official and community links for pay data, openings, and student visas.
 
 ## How sources are handled
 
@@ -18,7 +17,7 @@ Every claim links to the source behind it, so you can check it yourself. If a cl
 
 ## Read it
 
-The site will live at [eeprep.com](https://eeprep.com). It isn't live yet.
+The site is live at [eeprep.com](https://eeprep.com).
 
 ## Get the code
 

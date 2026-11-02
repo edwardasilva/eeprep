@@ -13,14 +13,9 @@ const requestTimeoutMs = 120_000;
 const shutdownTimeoutMs = 5_000;
 const pages = [
 	'/',
-	'/get-hired/',
 	'/get-hired/resume/',
-	'/get-hired/the-job-market/',
 	'/get-hired/first-internship/',
-	'/succeed-in-school/',
-	'/succeed-in-school/how-to-study/',
 	'/reference/',
-	'/reference/signals-and-dsp/',
 ];
 const errorMarkers = ['ReferenceError', 'An error occurred'];
 

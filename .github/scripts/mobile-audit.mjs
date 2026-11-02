@@ -199,7 +199,9 @@ function listPages(dir, prefix = '/') {
 				...listPages(path.join(dir, ent.name), `${prefix}${ent.name}/`),
 			);
 		} else if (ent.name === 'index.html') {
-			routes.push(prefix);
+			const html = fs.readFileSync(path.join(dir, ent.name), 'utf8');
+			// Redirect stubs for removed pages have no layout to audit.
+			if (!/http-equiv="refresh"/i.test(html)) routes.push(prefix);
 		}
 	}
 	return routes.sort();
