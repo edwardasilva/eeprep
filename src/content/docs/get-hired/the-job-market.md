@@ -3,6 +3,7 @@ title: The job market
 description: Placeholder for the job-market page.
 pageType: guide
 placeholder: true
+draft: true
 ---
 
 > [!warning] Placeholder

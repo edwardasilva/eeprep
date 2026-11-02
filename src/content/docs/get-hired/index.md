@@ -3,6 +3,7 @@ title: Get hired
 description: Placeholder for the getting-hired guide.
 pageType: guide
 placeholder: true
+draft: true
 ---
 
 > [!warning] Placeholder
