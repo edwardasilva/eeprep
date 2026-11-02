@@ -125,6 +125,30 @@ export default defineConfig({
 				...(process.env.SITE_ENV === 'dev'
 					? [{ tag: 'meta', attrs: { name: 'robots', content: 'noindex' } }]
 					: []),
+				// Starlight replaces its own viewport tag with this one.
+				{
+					tag: 'meta',
+					attrs: {
+						name: 'viewport',
+						content: 'width=device-width, initial-scale=1, viewport-fit=cover',
+					},
+				},
+				{
+					tag: 'meta',
+					attrs: {
+						name: 'theme-color',
+						content: '#fbfbfc',
+						media: '(prefers-color-scheme: light)',
+					},
+				},
+				{
+					tag: 'meta',
+					attrs: {
+						name: 'theme-color',
+						content: '#0d1524',
+						media: '(prefers-color-scheme: dark)',
+					},
+				},
 				{
 					tag: 'link',
 					attrs: {
