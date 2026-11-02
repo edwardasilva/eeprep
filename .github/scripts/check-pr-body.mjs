@@ -21,12 +21,12 @@ const hasPartOf = body.split(/\r?\n/).some((line) => {
 
 if (!hasPartOf) {
 	console.error(
-		'PR body must include a line "Part of #<epic issue>", for example "Part of #2".',
+		'PR body must include a line "Part of #<issue>", for example "Part of #12".',
 	);
 	process.exit(1);
 }
 
-console.log('PR body names its epic issue.');
+console.log('PR body names its issue.');
 
 /** @param {string} raw */
 function readLabels(raw) {
