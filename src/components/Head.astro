@@ -2,9 +2,55 @@
 import Default from '@astrojs/starlight/components/Head.astro';
 import newsreaderUrl from '@fontsource-variable/newsreader/files/newsreader-latin-opsz-normal.woff2?url';
 import interUrl from '@fontsource-variable/inter/files/inter-latin-opsz-normal.woff2?url';
+
+const site = Astro.site ?? new URL('https://eeprep.com');
+// The share image is the stacked logo, which is taller than wide, so the
+// Twitter card uses the small "summary" layout.
+const shareImage = new URL('/brand/eeprep-lockup-stacked.png', site).href;
+const isHome = Astro.url.pathname === '/';
+
+// Starlight renders this list, so edit it here instead of adding duplicates.
+const route = Astro.locals.starlightRoute;
+route.head = route.head.filter(
+	(tag) => !(tag.tag === 'meta' && tag.attrs?.name === 'twitter:card'),
+);
+route.head.push(
+	{ tag: 'meta', attrs: { name: 'twitter:card', content: 'summary' } },
+	{ tag: 'meta', attrs: { name: 'twitter:image', content: shareImage } },
+	{ tag: 'meta', attrs: { property: 'og:image', content: shareImage } },
+	{ tag: 'meta', attrs: { property: 'og:image:width', content: '486' } },
+	{ tag: 'meta', attrs: { property: 'og:image:height', content: '612' } },
+	{ tag: 'meta', attrs: { property: 'og:image:alt', content: 'EE Prep logo' } },
+);
+const structuredData = isHome
+	? JSON.stringify({
+			'@context': 'https://schema.org',
+			'@graph': [
+				{
+					'@type': 'WebSite',
+					'@id': new URL('/#website', site).href,
+					url: site.href,
+					name: 'EE Prep',
+					description: route.entry.data.description,
+					inLanguage: 'en',
+					publisher: { '@id': new URL('/#organization', site).href },
+				},
+				{
+					'@type': 'Organization',
+					'@id': new URL('/#organization', site).href,
+					name: 'EE Prep',
+					url: site.href,
+					logo: shareImage,
+				},
+			],
+		})
+	: null;
 ---
 
 <Default />
+{structuredData && (
+	<script is:inline type="application/ld+json" set:html={structuredData} />
+)}
 <link
 	rel="preload"
 	href={newsreaderUrl}

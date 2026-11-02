@@ -5,7 +5,14 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 <StarlightPage
 	frontmatter={{
 		title: 'EE Prep',
-		description: 'A prep guide for electrical engineering students.',
+		description:
+			'A free guide for electrical engineering students: write a resume, land a first internship, study circuits and signals, and look up job and visa links.',
+		head: [
+			{
+				tag: 'title',
+				content: 'EE Prep: resumes, internships and study for EE students',
+			},
+		],
 		template: 'splash',
 		pagefind: false,
 	}}
@@ -19,14 +26,14 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 			through school, and a place to look things up.
 		</p>
 		<p class="eep-actions">
-			<a class="eep-btn" href="/get-hired/">
+			<a class="eep-btn" href="/get-hired/resume/">
 				Start with getting hired
 			</a>
 		</p>
 	</section>
 	<ul class="eep-cards">
 		<li>
-			<a href="/get-hired/">
+			<a href="/get-hired/resume/">
 				<span class="eep-eyebrow">01</span>
 				<strong>Get hired</strong>
 				<span>
@@ -35,7 +42,7 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 			</a>
 		</li>
 		<li>
-			<a href="/succeed-in-school/">
+			<a href="/succeed-in-school/how-to-study/">
 				<span class="eep-eyebrow">02</span>
 				<strong>Succeed in school</strong>
 				<span>
@@ -56,9 +63,6 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 		<ol>
 			<li>
 				<a href="/get-hired/resume/">Resume</a>
-			</li>
-			<li>
-				<a href="/get-hired/the-job-market/">The job market</a>
 			</li>
 			<li>
 				<a href="/succeed-in-school/how-to-study/">How to study</a>

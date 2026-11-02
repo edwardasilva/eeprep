@@ -233,13 +233,11 @@ export default defineConfig({
 				{
 					label: 'Get hired',
 					items: [
-						{ label: 'Get hired', slug: 'get-hired' },
 						{ label: 'Resume', slug: 'get-hired/resume' },
 						{
 							label: 'Resume workshop',
 							slug: 'get-hired/resume-workshop',
 						},
-						{ label: 'The job market', slug: 'get-hired/the-job-market' },
 						{
 							label: 'Your first internship',
 							slug: 'get-hired/first-internship',
@@ -249,7 +247,6 @@ export default defineConfig({
 				{
 					label: 'Succeed in school',
 					items: [
-						{ label: 'Succeed in school', slug: 'succeed-in-school' },
 						{ label: 'How to study', slug: 'succeed-in-school/how-to-study' },
 					],
 				},
@@ -266,6 +263,13 @@ export default defineConfig({
 				starlightSiteGraph({
 					overridePageSidebar: false,
 					trackVisitedPages: 'disable',
+					// Drafts are not built, so keep them out of the graph too.
+					sitemapConfig: {
+						pageInclusionRules: [
+							...wiki.pages.filter((p) => p.draft).map((p) => `!**/${p.file}`),
+							'**/*',
+						],
+					},
 					graphConfig: {
 						labelFontSize: 11,
 					},

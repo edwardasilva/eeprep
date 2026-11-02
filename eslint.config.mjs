@@ -5,7 +5,13 @@ import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
 	{
-		ignores: ['dist/**', '.astro/**', 'coverage/**', 'src/diagrams/**/*.svg'],
+		ignores: [
+			'dist/**',
+			'.astro/**',
+			'coverage/**',
+			'src/diagrams/**/*.svg',
+			'resume-generator/**',
+		],
 	},
 	js.configs.recommended,
 	tseslint.configs.recommended,
