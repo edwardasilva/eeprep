@@ -1,6 +1,6 @@
 ---
 title: Signals and DSP
-description: What to study in signals and DSP, in which order, and how to check the math.
+description: "What to study in signals and DSP, in order: convolution, sampling, the DFT, and the z-transform, with free MIT course pages, free books, and Python checks."
 pageType: study
 keyTerms:
   - convolution
@@ -8,6 +8,9 @@ keyTerms:
   - aliasing
   - DFT
   - z-transform
+head:
+  - tag: title
+    content: "Signals and DSP study plan | EE Prep"
 ---
 
 > [!tip] Main idea

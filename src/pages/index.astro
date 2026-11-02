@@ -5,7 +5,14 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 <StarlightPage
 	frontmatter={{
 		title: 'EE Prep',
-		description: 'A prep guide for electrical engineering students.',
+		description:
+			'A free guide for electrical engineering students: write a resume, land a first internship, study circuits and signals, and look up job and visa links.',
+		head: [
+			{
+				tag: 'title',
+				content: 'EE Prep: resumes, internships and study for EE students',
+			},
+		],
 		template: 'splash',
 		pagefind: false,
 	}}

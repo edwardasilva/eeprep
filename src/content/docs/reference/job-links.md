@@ -1,7 +1,10 @@
 ---
 title: Job search links
-description: Sites for EE pay data, resumes, openings, clearance jobs, forums, and student visa rules, with what each one is good for and where it can mislead you.
+description: "Where EE students find pay data, resume help, openings, clearance jobs, forums, and student visa rules, with what each site is good for and where it misleads."
 pageType: resources
+head:
+  - tag: title
+    content: "Job search links for EE students | EE Prep"
 ---
 
 > [!tip] Main idea
