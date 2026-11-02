@@ -121,6 +121,10 @@ export default defineConfig({
 				'katex/dist/katex.min.css',
 			],
 			head: [
+				// The dev site must never be indexed. Production builds leave SITE_ENV unset.
+				...(process.env.SITE_ENV === 'dev'
+					? [{ tag: 'meta', attrs: { name: 'robots', content: 'noindex' } }]
+					: []),
 				{
 					tag: 'link',
 					attrs: {
