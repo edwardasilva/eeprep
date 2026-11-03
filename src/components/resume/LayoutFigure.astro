@@ -195,21 +195,25 @@ const caption = externalLinks(`
 							set:html={f.svg}
 						/>
 						<p class="eep-layout-label">
-							<svg
-								class="eep-layout-mark"
-								viewBox="0 0 12 10"
-								aria-hidden="true"
-								focusable="false"
-							>
-								<path
-									d={
-										f.good
-											? 'M1.5 5.5L4.5 8.5L10.5 1.5'
-											: 'M2.5 1.5L9.5 8.5M9.5 1.5L2.5 8.5'
-									}
-								/>
-							</svg>
-							{f.label}
+							<span class="eep-layout-lead">
+								<svg
+									class="eep-layout-mark"
+									viewBox="0 0 12 10"
+									aria-hidden="true"
+									focusable="false"
+								>
+									<path
+										d={
+											f.good
+												? 'M1.5 5.5L4.5 8.5L10.5 1.5'
+												: 'M2.5 1.5L9.5 8.5M9.5 1.5L2.5 8.5'
+										}
+									/>
+								</svg>
+								{f.label.split(' · ')[0]}
+								<span class="eep-layout-sep"> · </span>
+							</span>
+							{f.label.split(' · ').slice(1).join(' · ')}
 						</p>
 					</div>
 				))}
@@ -267,13 +271,23 @@ const caption = externalLinks(`
 		font-size: 0.75rem;
 		font-weight: 600;
 		line-height: 1.35;
-		letter-spacing: 0.06em;
+		letter-spacing: 0.04em;
 		text-align: center;
+		text-wrap: balance;
+		overflow-wrap: normal;
 		text-transform: uppercase;
 		color: var(--eep-mute);
 	}
 	.good .eep-layout-label {
-		color: var(--eep-dg-accent);
+		color: var(--eep-ink);
+	}
+	/* Do or Don't gets its own line above the rule, so a label never wraps
+	   mid-phrase. */
+	.eep-layout-lead {
+		display: block;
+	}
+	.eep-layout-sep {
+		display: none;
 	}
 	.eep-layout-mark {
 		display: inline-block;
@@ -332,7 +346,7 @@ const caption = externalLinks(`
 	/* Wide: the note sits beside the two wireframes. */
 	@container (min-width: 32rem) {
 		.eep-layout-rule {
-			grid-template-columns: 7.5rem 7.5rem minmax(0, 1fr);
+			grid-template-columns: 8.75rem 8.75rem minmax(0, 1fr);
 			column-gap: 1.25rem;
 			align-items: start;
 		}
