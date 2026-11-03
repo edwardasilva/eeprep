@@ -66,17 +66,28 @@ const polish = [
 		</section>
 	</div>
 	<figcaption>
-		<span class="eep-fignum">Fig 5</span>
+		<span class="eep-fignum">Fig 5</span>{' '}
 		<span>eeprep's author reviews resumes in these two passes.</span>
 	</figcaption>
 </figure>
 
 <style>
+	.eep-checks {
+		container-type: inline-size;
+	}
 	.eep-checks-grid {
 		display: grid;
 		grid-template-columns: minmax(0, 1fr) 2.75rem minmax(0, 1fr);
 		gap: 0.5rem;
 		align-items: start;
+	}
+	/* Both passes start at the same height. */
+	:global(.sl-markdown-content) .eep-checks-grid > .eep-pass {
+		margin-top: 0;
+	}
+	/* Crimson stays on the arrow. */
+	.eep-pass .eep-kicker {
+		color: var(--eep-ink-2);
 	}
 	.eep-pass {
 		border: 1px solid var(--eep-ink);
@@ -120,7 +131,7 @@ const polish = [
 		margin-top: 4.5rem;
 		color: var(--eep-accent);
 	}
-	@media (max-width: 50rem) {
+	@container (max-width: 32rem) {
 		.eep-checks-grid {
 			grid-template-columns: 1fr;
 		}
