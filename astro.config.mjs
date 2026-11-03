@@ -260,6 +260,10 @@ export default defineConfig({
 							label: 'Your first internship',
 							slug: 'advice/first-internship',
 						},
+						{
+							label: 'Hardware experience',
+							slug: 'advice/hardware-experience',
+						},
 					],
 				},
 				{ label: 'Help links', slug: 'help-links' },
