@@ -343,6 +343,14 @@ const caption = externalLinks(`
 		stroke-width: 1.6;
 	}
 
+	/* Narrow: a little more room for the labels under each wireframe. */
+	@container (width < 32rem) {
+		.eep-layout-rule {
+			column-gap: 0.5rem;
+			padding-inline: 0.75rem;
+		}
+	}
+
 	/* Wide: the note sits beside the two wireframes. */
 	@container (min-width: 32rem) {
 		.eep-layout-rule {
