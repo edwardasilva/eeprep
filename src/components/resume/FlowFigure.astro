@@ -1,4 +1,5 @@
 ---
+import { externalLinks } from './caption';
 // Figure 1 as HTML and CSS, so the text reflows and stays readable at every
 // width. Four steps sit in a row on wide screens and stack on narrow ones.
 const steps = [
@@ -20,6 +21,21 @@ const steps = [
 	},
 ];
 const arrow = 'M2 10H34M27 4.5L35 10L27 15.5Z';
+const caption = externalLinks(`
+			At many companies, automatic cuts come from knockout questions on the
+			form, not your resume text. Exact steps vary by company. Sources: hiring
+			managers on r/EngineeringResumes
+			(<a href="https://www.reddit.com/r/EngineeringResumes/comments/192hkg8/how_atss_actually_work_from_an_engineering_hiring/">knockout questions</a>,
+			<a href="https://www.reddit.com/r/EngineeringResumes/comments/1el24sw/15_yoe_hiring_managers_perspective_after_recent/">the first 150 applications</a>,
+			<a href="https://www.reddit.com/r/EngineeringResumes/comments/1hw10ms/12_yoe_some_long_direct_advice_in_tech_from_a/">350 resumes a week</a>,
+			<a href="https://www.reddit.com/r/EngineeringResumes/comments/1pkixp9/today_i_made_a_top_5_list/">what gets read first</a>)
+			and recruiters on X
+			(<a href="https://x.com/ConnorLibutti/status/1750604328086151194">41 systems that do not auto-reject</a>,
+			<a href="https://x.com/masonwong/status/1439132659947491330">Greenhouse screening questions</a>).
+			Further reading:
+			<a href="https://support.greenhouse.io/hc/en-us/articles/360000653472-Auto-reject">Greenhouse auto-reject guide</a>,
+			<a href="https://www.theladders.com/career-advice/is-it-true-that-recruiters-reject-a-resume-in-six-seconds">Ladders eye-tracking study</a>.
+`);
 ---
 
 <figure class="eep-fig wide eep-flow-fig" id="fig-1">
@@ -69,11 +85,7 @@ const arrow = 'M2 10H34M27 4.5L35 10L27 15.5Z';
 	</div>
 	<figcaption>
 		<span class="eep-fignum">Fig 1</span>
-		<span>
-			At many companies, automatic cuts come from knockout questions on the
-			form, not your resume text. Exact steps vary by company. Sources:
-			r/EngineeringResumes hiring managers, recruiters on X.
-		</span>
+		<span set:html={caption} />
 	</figcaption>
 </figure>
 
@@ -183,7 +195,10 @@ const arrow = 'M2 10H34M27 4.5L35 10L27 15.5Z';
 		margin: 0 0 0 1.25rem;
 	}
 	.eep-flow-cut {
+		gap: 0.75rem;
 		margin-left: 0.4rem;
+		padding: 0.2rem 0 0.35rem;
+		text-wrap: balance;
 	}
 
 	/* Wide: four steps in a row, as in the printed figure. */
@@ -233,6 +248,7 @@ const arrow = 'M2 10H34M27 4.5L35 10L27 15.5Z';
 		.eep-flow-cut {
 			position: relative;
 			margin: 0;
+			padding: 0;
 			justify-content: center;
 		}
 		.eep-flow-cut span {

@@ -379,6 +379,16 @@ figure.eep-fig figcaption .eep-fignum {
 	white-space: nowrap;
 	text-transform: uppercase;
 }
+/* In a narrow figure, the figure number sits above the caption text. */
+figure.eep-fig {
+	container: eep-fig / inline-size;
+}
+@container eep-fig (max-width: 25rem) {
+	figure.eep-fig figcaption {
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+}
 
 /* ---------- 9. Equations (KaTeX) ---------- */
 .katex {
