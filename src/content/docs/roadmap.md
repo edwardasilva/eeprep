@@ -35,3 +35,7 @@ Notes from eeprep's author, a working embedded software engineer, on what worked
 ## Interviews
 
 How engineering interviews run and how to prepare for them.
+
+## Visa and security clearance guidance
+
+What international students and clearance applicants need to know, checked against official sources.
