@@ -1,0 +1,10 @@
+# Two citation clauses in one sentence, such as "in a thread about X and a
+# thread about Y". Split the sentence or cite once.
+extends: existence
+message: 'Two thread or post citations in one sentence. Cite once, or split it.'
+level: error
+ignorecase: true
+nonword: true
+scope: sentence
+tokens:
+  - '\b(?:thread|post|discussion)s? (?:about|on)\b.*\b(?:thread|post|discussion)s? (?:about|on)\b'

@@ -1,7 +1,10 @@
-# Checklist rule 18: keep explanation sentences to 25 words or fewer.
+# Checklist rule 18: keep sentences to 25 words or fewer.
+# Vale reads the rendered text, so link URLs and list markers are not counted,
+# and code is skipped by IgnoredScopes. Contractions, hyphenated words, and
+# numbers like 2,000 or 3.5 count as one word.
 extends: occurrence
-message: 'Keep sentences to 25 words or fewer. Split this one.'
+message: 'This sentence has more than 25 words. Split it.'
 level: warning
 scope: sentence
 max: 25
-token: '\b(\w+)\b'
+token: "[\\p{L}\\p{N}]+(?:['’.,-][\\p{L}\\p{N}]+)*"

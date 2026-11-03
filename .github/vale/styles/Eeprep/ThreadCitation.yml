@@ -1,0 +1,9 @@
+# A citation clause such as "in a thread about X" or "a post on X about Y".
+# Name the source and say what it showed instead.
+extends: existence
+message: "Rewrite the citation clause '%s'. Say who said it and link the claim."
+level: warning
+ignorecase: true
+nonword: true
+tokens:
+  - '\b(?:a|an|one|another|the) (?:Reddit |X )?(?:thread|post|discussion)s? (?:about|on (?:X|Reddit)(?: about)?)\b'
