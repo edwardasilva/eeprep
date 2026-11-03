@@ -7,6 +7,7 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import rehypeCallouts from 'rehype-callouts';
 import rehypeEqIds from './src/plugins/rehype-eq-ids.mjs';
+import rehypeExternalLinks from './src/plugins/rehype-external-links.mjs';
 import remarkWikilinkLabels from './src/plugins/remark-wikilink-labels.mjs';
 import {
 	loadWikiIndex,
@@ -108,6 +109,7 @@ export default defineConfig({
 			rehypePlugins: [
 				rehypeKatex,
 				rehypeEqIds,
+				rehypeExternalLinks,
 				[
 					rehypeCallouts,
 					{
@@ -213,6 +215,7 @@ export default defineConfig({
 			],
 			components: {
 				Head: './src/components/Head.astro',
+				Footer: './src/components/Footer.astro',
 				Header: './src/components/Header.astro',
 				ThemeSelect: './src/components/ThemeSelect.astro',
 				PageTitle: './src/components/PageTitle.astro',

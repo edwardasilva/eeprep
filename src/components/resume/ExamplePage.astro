@@ -1,27 +1,32 @@
 ---
+import { externalLinks } from './caption';
 // Alex's page is real text. The five callouts are a list. Pins repeat those numbers for sighted readers.
+// Callout bodies hold fixed links to the sample resumes, so they render as HTML.
 const notes = [
 	{
 		title: 'Centered header.',
-		body: 'One contact line with plain-text links, plus location and relocation.',
+		body: 'Name, then one contact line with plain-text links, then location and relocation. The <a href="https://career.gatech.edu/files/2026/06/JackieJacketResume.docx">Georgia Tech</a>, <a href="https://cdn.uconnectlabs.com/wp-content/uploads/sites/123/2025/05/UG-Resume-with-Projects-1.pdf">MIT</a>, and <a href="https://ecc.uic.edu/wp-content/uploads/sites/78/2026/06/Electrical-Engineering-Example-Resume-Updated-Summer-2026.docx.pdf">UIC</a> samples center the name over one contact line.',
 	},
 	{
 		title: 'Dates at the right margin.',
-		body: 'One style for every date.',
+		body: 'Eight of the nine samples put dates flush right. Alex uses semesters on every line.',
 	},
 	{
 		title: 'One line of coursework.',
-		body: 'Upper-level electives that match the posting.',
+		body: 'Three upper-level courses, named as the Mines catalog names them. The Georgia Tech, MIT, and UIC samples list coursework under the degree.',
 	},
 	{
 		title: 'Projects above Experience.',
-		body: 'Alex has no engineering job yet, so the strongest section goes first. Each bullet states the action, the tool, and a number.',
+		body: 'Alex has no engineering job yet, so projects go first. The <a href="https://cdn.careercentral.pitt.edu/wp-content/uploads/sites/117/2023/09/Electrical-Engineering-Resume-Sample.pdf">Pitt</a> and <a href="https://www.oit.edu/sites/default/files/2026/documents/Sample%20Resume%20-%20Electrical%20Engineering.pdf">Oregon Tech</a> EE samples do the same. Each bullet starts with a past-tense verb, names the tool, and includes a measured number.',
 	},
 	{
-		title: 'Every skill has a bullet behind it.',
-		body: 'KiCad, LTspice, the scope, and the load all appear in a project.',
+		title: 'Tools only, each one in a bullet.',
+		body: "Two labeled lines of tools, with no soft skills or skill levels. Each of Alex's eight tools appears in a bullet. That rule is stricter than any sample. The UIC sample comes closest.",
 	},
-];
+].map((note) => ({ ...note, body: externalLinks(note.body) }));
+const caption = externalLinks(
+	`Layout rules from the <a href="https://www.reddit.com/r/EngineeringResumes/wiki/index/">r/EngineeringResumes wiki</a>, plus the centered header eeprep's author uses, checked against the nine career center sample resumes listed under the figure.`,
+);
 ---
 
 <figure class="eep-fig wide eep-example" id="fig-3">
@@ -68,7 +73,7 @@ const notes = [
 				High Power Electronics, Advanced Digital Design
 			</p>
 			<p>
-				<strong>Activities:</strong> CubeSat team, IEEE student branch
+				<strong>Activities:</strong> IEEE student branch, Tau Beta Pi
 			</p>
 			<div class="eep-example-mark">
 				<span class="eep-pin" aria-hidden="true">
@@ -83,14 +88,28 @@ const notes = [
 				</div>
 				<ul>
 					<li>
-						Designed a [X] W synchronous buck converter in KiCad for a CubeSat
-						power board and measured [X]% efficiency on an electronic load,
-						within [X]% of the LTspice model
+						Designed a [X] W CubeSat buck converter in KiCad and LTspice,
+						measured at [X]% on an electronic load
 					</li>
 					<li>
-						Shrank the switching loop on the second board revision and cut
-						output ripple from [X] mV to [X] mV on an oscilloscope, within [X]%
-						of a hand calculation
+						Cut output ripple from [X] mV to [X] mV by shrinking the switching
+						loop, verified on an oscilloscope
+					</li>
+				</ul>
+				<div class="eep-example-row">
+					<p>
+						<strong>Bench Data Logger (STM32, C, Python)</strong>
+					</p>
+					<p class="eep-example-date">Spring 2025</p>
+				</div>
+				<ul>
+					<li>
+						Wrote STM32 firmware in C to sample a 4-channel SPI ADC at [X] kHz
+						and stream it to a Python logger
+					</li>
+					<li>
+						Moved UART writes to DMA after a logic analyzer showed dropped
+						samples, cutting losses to [X]%
 					</li>
 				</ul>
 			</div>
@@ -107,10 +126,11 @@ const notes = [
 					5
 				</span>
 				<p>
-					<strong>Software:</strong> KiCad, LTspice
+					<strong>Software:</strong> KiCad, LTspice, C, Python
 				</p>
 				<p>
-					<strong>Hardware/Lab:</strong> oscilloscope, electronic load
+					<strong>Hardware/Lab:</strong> STM32, oscilloscope, electronic load,
+					logic analyzer
 				</p>
 			</div>
 		</div>
@@ -118,26 +138,29 @@ const notes = [
 			{notes.map((note) => (
 				<li>
 					<span>
-						<strong>{note.title}</strong> {note.body}
+						<strong>{note.title}</strong> <Fragment set:html={note.body} />
 					</span>
 				</li>
 			))}
 		</ol>
 	</div>
 	<p class="eep-example-aside">
-		Bold only on section titles, entry titles, and the two labels. Dashed
-		outlines are callouts and don't appear on the real page.
+		Bold only on section titles, entry titles, and line labels. Dashed outlines
+		are callouts and don't appear on the real page.
 	</p>
 	<figcaption>
-		<span class="eep-fignum">Fig 3</span>
-		<span>
-			Layout rules from the r/EngineeringResumes wiki, plus the centered header
-			eeprep's author uses on their own resume.
-		</span>
+		<span class="eep-fignum">Fig 3</span> <span set:html={caption} />
 	</figcaption>
 </figure>
 
 <style>
+	/* The kicker can wrap on phones. */
+	.eep-example .eep-kicker {
+		line-height: 1.35;
+	}
+	.eep-example {
+		container-type: inline-size;
+	}
 	.eep-example-flag {
 		margin: 0 0 1rem;
 		color: var(--eep-ink-2);
@@ -147,10 +170,10 @@ const notes = [
 		display: inline-block;
 		margin-right: 0.5rem;
 		padding: 0.15rem 0.45rem;
-		border: 1px solid var(--eep-accent);
+		border: 1px solid var(--eep-ink-2);
 		border-radius: 3px;
-		color: var(--eep-accent);
-		font: 600 0.6875rem/1.2 var(--eep-font-sans);
+		color: var(--eep-ink-2);
+		font: 600 0.75rem/1.2 var(--eep-font-sans);
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
 		vertical-align: 0.05em;
@@ -167,7 +190,8 @@ const notes = [
 		background: var(--eep-paper);
 		border: 1px solid var(--eep-rule);
 		color: var(--eep-ink);
-		font: 0.72rem/1.45 var(--eep-font-sans);
+		font: 0.75rem/1.45 var(--eep-font-sans);
+		overflow-wrap: anywhere;
 	}
 	.eep-example-sheet p {
 		margin: 0;
@@ -184,7 +208,7 @@ const notes = [
 		margin: 0.7rem 0 0.2rem;
 		padding-bottom: 0.05rem;
 		border-bottom: 1px solid var(--eep-ink);
-		font: 700 0.72rem/1.3 var(--eep-font-sans);
+		font: 700 0.75rem/1.3 var(--eep-font-sans);
 		color: var(--eep-ink);
 	}
 	:global(.sl-markdown-content) .eep-example-mark > p.eep-example-sec {
@@ -193,11 +217,26 @@ const notes = [
 	.eep-example-row {
 		display: flex;
 		justify-content: space-between;
+		align-items: flex-start;
 		gap: 0.75rem;
+	}
+	/* The entry title wraps, so the date always keeps the right margin. */
+	.eep-example-row > p:first-child {
+		flex: 1 1 0;
+		min-width: 0;
 	}
 	.eep-example-sheet ul {
 		margin: 0.15rem 0 0;
 		padding-left: 1.1rem;
+	}
+	/* Room for the dashed callout outline, so it never crosses the lines
+	   above and below. */
+	.eep-example-sheet > p.eep-example-mark,
+	.eep-example-sheet > div.eep-example-mark {
+		margin-block: 0.25rem;
+	}
+	.eep-example-row:has(> .eep-example-mark) {
+		margin-bottom: 0.25rem;
 	}
 	.eep-example-mark {
 		position: relative;
@@ -265,9 +304,27 @@ const notes = [
 		font-size: 0.8125rem;
 		max-width: none;
 	}
-	@media (max-width: 50rem) {
+	@container (max-width: 36rem) {
 		.eep-example-wrap {
-			grid-template-columns: 1fr;
+			grid-template-columns: minmax(0, 1fr);
+		}
+	}
+	/* On phones the sheet borrows most of the figure's side padding, so the
+	   page keeps enough width to read like a resume. */
+	@container (max-width: 28rem) {
+		.eep-example-sheet {
+			margin-inline: -1.5rem;
+		}
+		/* A date that doesn't fit beside its title drops below it, still at
+		   the right margin. */
+		.eep-example-row {
+			flex-wrap: wrap;
+		}
+		.eep-example-row > p:first-child {
+			flex: 1 1 auto;
+		}
+		.eep-example-sheet .eep-example-date {
+			margin-left: auto;
 		}
 	}
 </style>

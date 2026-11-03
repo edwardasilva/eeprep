@@ -1,18 +1,32 @@
 // Loads every built page at phone widths in both themes against `astro preview`
 // and fails on horizontal scroll, overlapping header controls, small tap
-// targets, and figure problems. Run `npm run build` first.
+// targets, and figure problems. It also checks that the header and its
+// controls sit at the same pixels on every page, at phone and desktop widths,
+// and that text in figures renders at 12px or more. Before loading pages it
+// fails if any built page or stylesheet has an emoji or an icon-style symbol.
+// Run `npm run build` first.
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
 import net from 'node:net';
 import path from 'node:path';
 import { chromium } from 'playwright';
 
-/* global window, document, getComputedStyle */
+/* global window, document, getComputedStyle, NodeFilter */
 
 const widths = [375, 390];
+const desktopWidths = [1280, 1440];
 const themes = ['light', 'dark'];
 const minTap = 44;
 const minLabelPx = 11;
+const minFigurePx = 12;
+// Smallest source font size, in viewBox units, of each SVG figure. The SVGs
+// draw text as outlines, so the size can't be read from the file.
+const svgMinFont = {};
+// HTML figures still waiting for their own fix. Listed, like the SVG
+// figures, but they don't fail yet.
+const knownSmall = new Set([]);
+// Figures below the minimum that are listed but don't fail yet.
+const smallFigures = new Map();
 const dist = path.resolve('dist');
 
 if (!fs.existsSync(dist)) {
@@ -37,8 +51,9 @@ const preview = external
 			{ stdio: 'ignore' },
 		);
 const base = external ?? `http://localhost:${port}`;
-const problems = [];
+const problems = emojiProblems(dist);
 let browser;
+let desktop;
 
 try {
 	await waitForServer(base);
@@ -55,20 +70,43 @@ try {
 				localStorage.setItem('starlight-theme', t);
 			}, theme);
 			const page = await context.newPage();
+			const checkHeader = headerCheck(`@${width}px ${theme}`);
 			for (const route of pages) {
 				await page.goto(base + route, { waitUntil: 'load' });
 				const found = await page.evaluate(auditPage, { minTap, minLabelPx });
 				for (const message of found)
 					problems.push(`${route} @${width}px ${theme}: ${message}`);
+				checkHeader(route, await page.evaluate(headerBoxes));
+				await checkFigureText(route, `@${width}px ${theme}`, page);
 			}
 			await context.close();
 		}
 	}
+	// Desktop: show real scrollbars, so a page that scrolls and one that
+	// doesn't are compared the way a reader sees them.
+	desktop = await chromium.launch({ ignoreDefaultArgs: ['--hide-scrollbars'] });
+	for (const width of desktopWidths) {
+		const context = await desktop.newContext({
+			viewport: { width, height: 800 },
+			deviceScaleFactor: 1,
+		});
+		const page = await context.newPage();
+		const checkHeader = headerCheck(`@${width}px desktop`);
+		for (const route of pages) {
+			await page.goto(base + route, { waitUntil: 'load' });
+			checkHeader(route, await page.evaluate(headerBoxes));
+			await checkFigureText(route, `@${width}px desktop`, page);
+		}
+		await context.close();
+	}
 } finally {
 	await browser?.close();
+	await desktop?.close();
 	preview?.kill();
 }
 
+for (const [fig, px] of smallFigures)
+	console.log(`Note: the smallest text in ${fig} renders at about ${px}px.`);
 for (const problem of problems) console.error(problem);
 const checks = pages.length * widths.length * themes.length;
 if (problems.length) {
@@ -190,6 +228,139 @@ function auditPage({ minTap, minLabelPx }) {
 }
 
 /** @param {string} dir @param {string} [prefix] */
+// Records the header boxes of the first page and reports any page where one
+// of them is somewhere else.
+// Text in an HTML figure must render at minFigurePx or more. For SVG figures
+// the size is estimated as source size times rendered width over viewBox
+// width, and only listed for now.
+async function checkFigureText(route, label, page) {
+	const { html, svg } = await page.evaluate(figureText, svgMinFont);
+	const note = (fig, px) => {
+		const key = `${route}#${fig}`;
+		smallFigures.set(key, Math.min(px, smallFigures.get(key) ?? Infinity));
+	};
+	for (const { fig, px, text } of html) {
+		if (px >= minFigurePx) continue;
+		if (knownSmall.has(fig)) note(fig, px);
+		else
+			problems.push(
+				`${route} ${label}: ${fig} text "${text}" renders at ${px}px, under ${minFigurePx}px`,
+			);
+	}
+	for (const { fig, px } of svg) if (px < minFigurePx) note(fig, px);
+}
+
+// Runs in the page. Smallest rendered text in each figure.
+function figureText(sources) {
+	const round = (n) => Math.round(n * 10) / 10;
+	const html = [];
+	const svg = [];
+	for (const fig of document.querySelectorAll('figure')) {
+		const name = fig.id || 'figure';
+		const walker = document.createTreeWalker(fig, NodeFilter.SHOW_TEXT);
+		let min = null;
+		while (walker.nextNode()) {
+			const node = walker.currentNode;
+			const el = node.parentElement;
+			if (!node.textContent.trim() || !el || el.closest('svg')) continue;
+			if (!el.getClientRects().length) continue;
+			const px = parseFloat(getComputedStyle(el).fontSize);
+			if (!min || px < min.px)
+				min = { fig: name, px: round(px), text: node.textContent.trim() };
+		}
+		if (min) html.push(min);
+		for (const img of fig.querySelectorAll('img')) {
+			if (!img.getClientRects().length) continue;
+			const file = (img.getAttribute('src') ?? '').split('/').pop() ?? '';
+			const key = file
+				.replace(/(\.[\w-]{6,})?\.svg$/, '')
+				.replace(/-dark$/, '');
+			const source = sources[key];
+			const width = Number(img.getAttribute('width'));
+			if (!source || !width) continue;
+			const px = (source * img.getBoundingClientRect().width) / width;
+			svg.push({ fig: `${name} (${key}.svg)`, px: round(px) });
+		}
+	}
+	return { html, svg };
+}
+
+function headerCheck(label) {
+	let first = null;
+	return (route, boxes) => {
+		if (!first) {
+			first = { route, boxes };
+			return;
+		}
+		for (const [name, box] of Object.entries(boxes)) {
+			const want = first.boxes[name];
+			if (want !== box)
+				problems.push(
+					`${route} ${label}: header ${name} is at ${box}, but ${want} on ${first.route}`,
+				);
+		}
+	};
+}
+
+// Runs in the page. Position and size of the header and each control in it.
+function headerBoxes() {
+	const round = (n) => Math.round(n * 10) / 10;
+	const box = (el) => {
+		if (!el) return 'missing';
+		const r = el.getBoundingClientRect();
+		return [r.x, r.y, r.width, r.height].map(round).join(',');
+	};
+	const out = {
+		header: box(document.querySelector('header.header')),
+		title: box(document.querySelector('header .site-title')),
+		search: box(document.querySelector('header button[data-open-modal]')),
+		theme: box(document.querySelector('header .eep-theme')),
+	};
+	document
+		.querySelectorAll('header .eep-nav a')
+		.forEach((a, i) => (out[`nav ${i + 1}`] = box(a)));
+	return out;
+}
+
+// Emoji, dingbats such as check marks, arrows, stars and the emoji variation
+// selector. Some platforms draw these as color emoji, so icons are SVG instead.
+// CSS escapes such as \2197 count too.
+function emojiProblems(dir) {
+	const ranges = [
+		[0x2190, 0x21ff],
+		[0x231a, 0x231b],
+		[0x23e9, 0x23fa],
+		[0x2600, 0x27bf],
+		[0x2b00, 0x2bff],
+		[0xfe0f, 0xfe0f],
+		[0x1f000, 0x1faff],
+	];
+	const isEmoji = (cp) => ranges.some(([lo, hi]) => cp >= lo && cp <= hi);
+	const out = [];
+	const walk = (d) => {
+		for (const ent of fs.readdirSync(d, { withFileTypes: true })) {
+			const file = path.join(d, ent.name);
+			if (ent.isDirectory()) {
+				if (ent.name !== 'pagefind') walk(file);
+				continue;
+			}
+			if (!/\.(html|css)$/.test(ent.name)) continue;
+			const text = fs.readFileSync(file, 'utf8');
+			const escapes = [...text.matchAll(/\\([0-9a-f]{4,6})(?![0-9a-f])/gi)];
+			const cps = [
+				...[...text].map((c) => c.codePointAt(0)),
+				...escapes.map((m) => parseInt(m[1], 16)),
+			];
+			for (const cp of new Set(cps.filter(isEmoji))) {
+				const hex = cp.toString(16).toUpperCase().padStart(4, '0');
+				out.push(`${path.relative(dir, file)}: emoji or symbol U+${hex}`);
+			}
+		}
+	};
+	walk(dir);
+	return out;
+}
+
 function listPages(dir, prefix = '/') {
 	const routes = [];
 	for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {

@@ -215,9 +215,16 @@ button[data-open-modal] kbd {
 		);
 		--sl-menu-button-size: var(--eep-tap);
 	}
-	.header {
+	/* Starlight pads the header for its menu button only on pages with a
+	   sidebar, which moves the theme toggle and narrows the nav. Reserve the
+	   button's column on every page instead, so the header is the same
+	   everywhere. */
+	header.header {
+		padding-inline-end: var(--sl-nav-pad-x);
+	}
+	div.header {
 		display: grid;
-		grid-template-columns: minmax(0, 1fr) auto auto;
+		grid-template-columns: minmax(0, 1fr) auto auto var(--sl-menu-button-size);
 		grid-template-rows: var(--eep-tap) var(--eep-tap);
 		column-gap: 0.75rem;
 		row-gap: 0.25rem;
@@ -286,30 +293,6 @@ body {
 	padding-bottom: env(safe-area-inset-bottom);
 }
 
-/* Light and dark copies of one figure. Starlight's page is dark unless
-   data-theme is light, including when the attribute is "dark". A figure can
-   also carry a narrow copy for phones: mark the copies .eep-fig-wide and
-   .eep-fig-narrow. Exactly one image shows for each theme and width. */
-.eep-theme-fig > .eep-theme-fig-dark {
-	display: none;
-}
-:root:not([data-theme='light']) .eep-theme-fig > .eep-theme-fig-light {
-	display: none;
-}
-:root:not([data-theme='light']) .eep-theme-fig > .eep-theme-fig-dark {
-	display: block;
-}
-@media (max-width: 50rem) {
-	.eep-theme-fig > .eep-fig-wide {
-		display: none !important;
-	}
-}
-@media (min-width: 50.0625rem) {
-	.eep-theme-fig > .eep-fig-narrow {
-		display: none !important;
-	}
-}
-
 .sl-markdown-content .eep-kicker {
 	margin: 0 0 0.35rem;
 	max-width: none;
@@ -323,6 +306,10 @@ body {
 	max-width: none;
 	font: 600 1.625rem/1.2 var(--eep-font-serif);
 	color: var(--eep-ink);
+}
+.eep-figtitle,
+.eep-kicker {
+	text-wrap: balance;
 }
 
 /* One gutter between the left sidebar, the content and the right sidebar. */
@@ -359,7 +346,32 @@ html {
 	-webkit-tap-highlight-color: transparent;
 }
 
+/* Keep the header in the same place on every page. Short pages have no
+   vertical scrollbar and long pages do, so without a reserved gutter the
+   viewport, and the fixed header with it, changes width between pages. */
+html {
+	scrollbar-gutter: stable;
+}
+
 /* The splash page has no title, which leaves an empty bordered band at the top. */
 .content-panel:has(> .sl-container:empty) {
 	display: none;
+}
+
+/* Links to other sites open in a new tab. The arrow is decoration, and the
+   screen-reader hint inside the link says the same thing in words. It is an
+   SVG mask filled with the link color, not a text glyph, so no platform can
+   swap in an emoji. Body links and figure caption links share this rule. */
+a.external-link::after {
+	--eep-external-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 9L9 3M4.25 3H9V7.75'/%3E%3C/svg%3E");
+	content: '';
+	display: inline-block;
+	width: 0.75em;
+	height: 0.75em;
+	margin-inline-start: 0.15em;
+	vertical-align: baseline;
+	background-color: currentColor;
+	forced-color-adjust: none;
+	-webkit-mask: var(--eep-external-arrow) no-repeat center / contain;
+	mask: var(--eep-external-arrow) no-repeat center / contain;
 }

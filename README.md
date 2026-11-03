@@ -2,6 +2,8 @@
 
 EE Prep helps electrical engineering students and new grads get ahead in the AI era: build a resume that works, find real experience, and land a first internship.
 
+Status: active development. Content and code are updated regularly.
+
 ## Why it exists
 
 EE courses teach circuits and signals, but they rarely teach you how to turn coursework into a first job. EE Prep puts that advice in one place, written plainly, with sources you can check.
@@ -33,8 +35,16 @@ Want to help improve the guide? See [CONTRIBUTING](.github/CONTRIBUTING.md).
 
 ## License
 
-The underlying source code of this website is licensed under the [MIT License](LICENSE).
+The repo has two licenses, one for content and one for code.
 
-All personal content, including but not limited to the resume, project descriptions, and photographs, are copyrighted by Edward Silva and may not be reproduced or modified without explicit permission.
+Content is licensed under [CC BY 4.0](LICENSE-CONTENT). You may share and adapt it if you give credit and link the license. Content means:
 
-Copyright (c) 2026 Edward Silva. All rights reserved.
+- the guide pages and their sources in `src/content/`
+- the figure sources and drawings in `src/diagrams/` and `public/diagrams/`
+- the words and drawings shown by the figures in `src/components/resume/`
+
+Code is licensed under the [MIT License](LICENSE). Code means everything else, including the components, plugins, styles, scripts, worker, and config files. The resume-generator submodule has its own MIT license.
+
+The EE Prep name and logo files in `src/brand/` and `public/brand/` are not covered by either license.
+
+Everyone who takes part follows the [Code of Conduct](CODE_OF_CONDUCT.md).

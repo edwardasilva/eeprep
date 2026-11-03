@@ -7,7 +7,7 @@ head:
     content: "Resume workshop script for EE students | EE Prep"
 ---
 
-This page is a script for running the [[Resume]] page as a live session for sophomores through seniors. It does not repeat the advice. It tells you what to show, what to say, and what students do, block by block. Advice from eeprep's author, a working embedded software engineer who reviews friends' resumes, is marked as the author's. Alex Doe is a made-up student. Every bracket such as [X] is a number the student measures, and every bracket such as [University] is a word they fill in.
+This page is a script for running the [[Resume]] page as a live session for sophomores through seniors. It gives you, block by block, what to show, what to say, and what students do. The advice itself stays on the Resume page. Advice from eeprep's author, a working embedded software engineer who reviews friends' resumes, is marked as the author's. Alex Doe is a made-up student. A bracket such as [X] is a number the student measures. A bracket such as [University] is a word they fill in.
 
 The five figures on the resume page are your slides. Open the page on the projector and scroll to each one:
 
@@ -23,7 +23,7 @@ Ask each student to bring:
 
 - A resume draft, or a list of every project, lab, club build, and job they have done.
 - A laptop with a charger.
-- An [Overleaf](https://www.overleaf.com/) account, with [the wiki's LaTeX template](https://www.reddit.com/r/EngineeringResumes/wiki/templates/) copied into their own projects. eeprep's author tells students to start from this template. Students who will not use LaTeX can copy the Google Docs version from the same page instead.
+- An [Overleaf](https://www.overleaf.com/) account, with [the wiki's LaTeX template](https://www.reddit.com/r/EngineeringResumes/wiki/templates/) copied into their own projects. eeprep's author tells students to start from this template. Students who will not use LaTeX can copy the Google Docs version from the same page.
 - One real posting for a role they want next, saved as a PDF or a link.
 
 You bring:
@@ -46,7 +46,7 @@ Seat students in pairs before you start. Mix years when you can, so a senior wit
 | 5. Peer review in pairs          | 20 min            | 15 min            | Figure 5         |
 | 6. Wrap-up, one change this week | 10 min            | 7 min             | None             |
 
-In the 60-minute version, skip the template setup at the laptops. Students do it at home from the handout. Keep the bullet drill and the peer review whole, because that is where students change their own page.
+In the 60-minute version, students set up the template at home from the handout. Keep the bullet drill and the peer review whole. That is where students change their own page.
 
 ## Facilitator script
 
@@ -56,11 +56,11 @@ Time: 10 minutes, or 5 in the short version. Show Figure 1.
 
 Say:
 
-- A person reads your resume, and fast. [One engineering hiring manager](https://www.reddit.com/r/EngineeringResumes/comments/1hw10ms/12_yoe_some_long_direct_advice_in_tech_from_a/) reads about 350 a week and finds maybe 20 good ones.
-- At many companies, the applicant tracking system (ATS) stores your resume. [Knockout questions on the application form](https://www.reddit.com/r/EngineeringResumes/comments/192hkg8/how_atss_actually_work_from_an_engineering_hiring/) can cut you automatically, such as a clearance question.
+- A person reads your resume, and fast. [One engineering hiring manager reads about 350 a week](https://www.reddit.com/r/EngineeringResumes/comments/1hw10ms/12_yoe_some_long_direct_advice_in_tech_from_a/) and finds maybe 20 good ones.
+- At many companies, the applicant tracking system (ATS) stores your resume. [Knockout questions on the application form can cut you automatically](https://www.reddit.com/r/EngineeringResumes/comments/192hkg8/how_atss_actually_work_from_an_engineering_hiring/).
 - Apply early. [One manager reads about the first 150 applications](https://www.reddit.com/r/EngineeringResumes/comments/1el24sw/15_yoe_hiring_managers_perspective_after_recent/) and likely never opens the rest.
 
-Students do: write down the one role they want next, such as "summer 2027 embedded firmware internship". Every later choice on the page answers to that role.
+Students do: write down the one role they want next, such as "summer 2027 embedded firmware internship". Every later choice on the page must serve that role.
 
 ### Block 2, layout and template setup
 
@@ -68,13 +68,13 @@ Time: 15 minutes, or 8 in the short version. Show Figure 4.
 
 Say:
 
-- One page, one column, no photo, no icons. These are [the wiki rules](https://www.reddit.com/r/EngineeringResumes/wiki/index/) that carry the most weight.
+- One page, one column, no photo, no icons. These [wiki rules](https://www.reddit.com/r/EngineeringResumes/wiki/index/) carry the most weight.
 - eeprep's author centers the header and left-aligns everything under it.
-- Fill the page, but keep the margins and line spacing from [[Resume#Layout]]. Two words alone on a line are wasted space, in eeprep's author's view. If a bullet spills a word or two onto a second line, cut it to one line or add a detail that fills both.
+- Fill the page, but keep the margins and line spacing from [[Resume#Layout]]. eeprep's author treats two words alone on a line as wasted space. If a bullet spills a word or two onto a second line, cut it to one line or add a detail that fills both.
 
 Students do: open their copy of the template. Replace the sample name and contact line with their own. Delete any section they will not use today. If they write in pdfLaTeX, check the preamble. [The template file](https://github.com/r-engineeringresumes/resume-templates/blob/main/r_EngineeringResumes_Template.tex) already loads hyperref and has the `\input{glyphtounicode}` and `\pdfgentounicode=1` lines. Add the `\hypersetup` line from [[Resume#Layout]].
 
-Walk the room, and check that every date sits at the right margin.
+Walk the room and check that every date sits at the right margin.
 
 ### Block 3, bullet rewrite drill
 
@@ -82,9 +82,9 @@ Time: 25 minutes, or 20 in the short version. Show Figure 2.
 
 Say:
 
-- Use one pattern: did X with Y to get Z. [The wiki teaches it](https://www.reddit.com/r/EngineeringResumes/wiki/index/) under the XYZ, STAR, and CAR names.
-- [A reviewer's readability guide](https://www.reddit.com/r/EngineeringResumes/comments/1m6nzkm/8_yoe_readable_resumes_a_guide_to_allowing_anyone/) explains why. Screeners filter on X and Y, and hiring managers choose from the Zs.
-- eeprep's author stresses numbers most of all. Put the number early, and only use a number you measured.
+- Use one pattern: did X with Y to get Z. [The wiki teaches it as the XYZ, STAR, and CAR methods](https://www.reddit.com/r/EngineeringResumes/wiki/index/).
+- [A reviewer's readability guide explains why it works](https://www.reddit.com/r/EngineeringResumes/comments/1m6nzkm/8_yoe_readable_resumes_a_guide_to_allowing_anyone/). Screeners filter on X and Y, and hiring managers choose from the Zs.
+- eeprep's author cares most about numbers. Put the number early, and only use a number you measured.
 
 Then run the drill in three rounds:
 
@@ -102,7 +102,7 @@ Say:
 
 - Lead with your strongest section. [The wiki's student default](https://www.reddit.com/r/EngineeringResumes/wiki/index/) puts Education first. eeprep's author puts Projects first when the projects are the strongest part.
 - Cut the generic objective. Details are in [[Resume#Section order]].
-- The header is a name and one contact line, with plain-text links that you clicked before you sent the page. [One hiring manager sees dead links](https://www.reddit.com/r/EngineeringResumes/comments/1hw10ms/12_yoe_some_long_direct_advice_in_tech_from_a/) all the time.
+- The header is a name and one contact line, with plain-text links you clicked before sending. [One hiring manager sees dead links all the time](https://www.reddit.com/r/EngineeringResumes/comments/1hw10ms/12_yoe_some_long_direct_advice_in_tech_from_a/).
 
 Students do: put their sections in order for the role they wrote down in block 1. Then click every link in their header.
 
@@ -110,13 +110,13 @@ Students do: put their sections in order for the role they wrote down in block 1
 
 Time: 20 minutes, or 15 in the short version. Show Figure 5.
 
-Partners swap resumes and the peer-review sheet. The reviewer does the first pass for 8 minutes, then the polish pass for 4 minutes. Then the partners talk for 4 minutes per resume. In the short version, skip the polish pass in the room.
+Partners swap resumes and peer-review sheets. The reviewer spends 8 minutes on the first pass and 4 on the polish pass. Then partners talk for 4 minutes per resume. In the short version, skip the polish pass in the room.
 
 Say:
 
 - eeprep's author reviews in two passes. The first fixes what the page says, and the polish pass fixes how it looks.
 - Mark the problem. Do not rewrite your partner's bullet for them.
-- For each skill, ask your partner where they used it. If no bullet shows it, it goes. [A recruiter on X quotes hiring managers](https://x.com/randomrecruiter/status/2007074490233053671) as saying that what is not in the experience did not happen.
+- For each skill, ask your partner where they used it. If no bullet shows it, cut it. [A recruiter on X quotes hiring managers](https://x.com/randomrecruiter/status/2007074490233053671): what is not in the experience did not happen.
 
 ### Block 6, wrap-up
 
@@ -124,14 +124,14 @@ Time: 10 minutes, or 7 in the short version.
 
 Say:
 
-- The full example is Alex's page. Your first step is smaller. Change one bullet this week.
-- Before you send the resume anywhere, [MIT's career office](https://capd.mit.edu/resources/resumes/) says your best proofreader is a career advisor. Book one at your school.
+- Alex's page is the full example. Your first step is smaller: change one bullet this week.
+- [MIT's career office says your best proofreader is a career advisor](https://capd.mit.edu/resources/resumes/). Book one at your school before you send the resume anywhere.
 
 Students do: fill in the "this week" card from the handouts, and read it to their partner.
 
 ## Handouts
 
-Every handout uses the same field names, such as "Project title" and "Tools". Students can copy them from this page with the copy button on each block.
+Every handout uses the same field names, such as "Project title" and "Tools". Students can copy each block with its copy button.
 
 ### Resume fields sheet
 
@@ -147,9 +147,7 @@ Email:
 LinkedIn:            linkedin.com/in/[name]
 GitHub:              github.com/[name]
 Location:            [City, ST]
-Work status:         [for example US Citizen, only if true]
 Willing to relocate: [yes or no]
-Clearance:           [only if you hold one]
 
 Education
 Degree:              [B.S. Electrical Engineering]
@@ -201,8 +199,8 @@ Put it together:
 [Verb] [what you built or changed] in [tool or method] and [result] [how you checked it]
 
 Alex's version (made-up student):
-Designed a [X] W synchronous buck converter in KiCad for a CubeSat power board and
-measured [X]% efficiency on an electronic load, within [X]% of the LTspice model
+Designed a [X] W CubeSat buck converter in KiCad and LTspice,
+measured at [X]% on an electronic load
 
 Check: Does it fill one line or most of two? Can you explain every word in an interview?
 ```
@@ -263,7 +261,7 @@ FIRST PASS: what the page says (8 minutes)
 [ ] 1 column, 1 page, black text, no icons, photo, or tables
 [ ] Header centered, everything below it left-aligned
 [ ] Strongest section first for the target role, no generic objective
-[ ] One contact line, links work, plus work status and relocation
+[ ] One contact line, links work, plus relocation
 [ ] Education: degree, GPA on the same line if listed, one line of coursework
 [ ] Every bullet has a verb, a tool, and a measured number
 [ ] Projects get the most room, with depth on the best ones
@@ -284,7 +282,7 @@ One question I would ask in an interview: ___________________
 
 ### Project inventory for students with no experience
 
-Use this with any student who says they have nothing to list. [MIT's career office](https://capd.mit.edu/resources/resumes/) counts class projects, competitions, and personal projects as experience.
+Use this with any student who says they have nothing to list. [MIT's career office counts class projects, competitions, and personal projects as experience](https://capd.mit.edu/resources/resumes/).
 
 ```text
 PROJECT INVENTORY
@@ -319,39 +317,35 @@ The person who will read it after (partner, career advisor): __________
 
 ### First-year students with no projects
 
-Hand out the project inventory in block 3, and let them rewrite a class lab bullet. [The wiki's order for students with no work experience](https://www.reddit.com/r/EngineeringResumes/wiki/index/) runs Education, Projects, then extracurriculars, then Skills. [Commenters told an EE senior with no experience](https://www.reddit.com/r/EngineeringResumes/comments/q4d5op/electrical_engineering_senior_no_experience/) to list labs and capstone work so far. Pair each first-year student with someone who has a club build, and have them pick one build to start.
+Hand out the project inventory in block 3, and let them rewrite a class lab bullet. [The wiki's order for students with no work experience is Education, Projects, extracurriculars, then Skills](https://www.reddit.com/r/EngineeringResumes/wiki/index/). [Commenters told an EE senior with no experience to list labs and capstone work so far](https://www.reddit.com/r/EngineeringResumes/comments/q4d5op/electrical_engineering_senior_no_experience/). Pair each first-year student with someone who has a club build, and have them pick one build to start.
 
 ### Seniors with internships
 
-Their page is fuller, so their job is cutting. Lead with the strongest section, which for many seniors is now Experience. eeprep's author puts Experience first on their own resume. Unrelated jobs drop off once stronger engineering content is on the page, as [[Resume#Experience]] describes. [The Colorado School of Mines career center](https://careers.mines.edu/resumes-and-cover-letters/) suggests a core resume that holds everything, and a one-page resume tailored to each job. The resume fields sheet works as that core resume. Push seniors hard on claims. [One manager said](https://www.reddit.com/r/EngineeringResumes/comments/192hkg8/how_atss_actually_work_from_an_engineering_hiring/) an intern who claims $2 million in yearly savings will be asked to justify it.
-
-### International students
-
-This workshop covers the resume only. It gives no visa advice. The header rule from [[Resume#Header]] still applies, so never claim you need no sponsorship when you do. For what you may work and when, the first step is your school's designated school official (DSO), as [Study in the States](https://studyinthestates.dhs.gov/students/work/working-in-the-united-states) says. [USCIS explains optional practical training (OPT)](https://www.uscis.gov/working-in-the-united-states/students-and-exchange-visitors/optional-practical-training-opt-for-f-1-students), but take questions about your own case to the DSO.
+Seniors have fuller pages, so they spend the time cutting. Lead with the strongest section, which for many seniors is now Experience. eeprep's author puts Experience first on their own resume. Unrelated jobs drop off once stronger engineering content is on the page. [[Resume#Experience]] has the details. [The Colorado School of Mines career center](https://careers.mines.edu/resumes-and-cover-letters/) suggests a core resume that holds everything, and a one-page resume tailored to each job. The resume fields sheet works as that core resume. Push seniors hard on claims. [One manager said an intern who claims $2 million in yearly savings will be asked to justify it](https://www.reddit.com/r/EngineeringResumes/comments/192hkg8/how_atss_actually_work_from_an_engineering_hiring/).
 
 ### Students who do not use LaTeX
 
-[The wiki's templates page](https://www.reddit.com/r/EngineeringResumes/wiki/templates/) offers a Google Docs version as well as the LaTeX one. Students make their own copy from the File menu. The same page warns against downloading the Google Doc as a .docx file and editing it in Word, because that breaks the formatting. Every rule in this workshop works in either version. Skip the preamble step in block 2.
+[The wiki's templates page offers a Google Docs version as well as the LaTeX one](https://www.reddit.com/r/EngineeringResumes/wiki/templates/). Students make their own copy from the File menu. The same page warns against downloading the Google Doc as a .docx file and editing it in Word, because that breaks the formatting. Every rule in this workshop works in either version. Skip the preamble step in block 2.
 
 ## Common questions in the room
 
-These answers come from [[Resume#Questions students ask]], where each one is cited in full.
+These answers come from [[Resume#Questions students ask]], which cites each one in full.
 
-Do I apply if I miss some requirements? Yes, for tools and years. [The EE graduate with 3 offers](https://www.reddit.com/r/EngineeringResumes/comments/1m65ime/0_yoe_got_3_ee_offers_without_an_internship_i/) lacked 2 of the 4 required skills for the job they took. The degree is different. [A reply in the ATS thread](https://www.reddit.com/r/EngineeringResumes/comments/192hkg8/how_atss_actually_work_from_an_engineering_hiring/) called education a non-starter and experience negotiable.
+Do I apply if I miss some requirements? Yes, for tools and years. [The EE graduate with 3 offers lacked 2 of the 4 required skills](https://www.reddit.com/r/EngineeringResumes/comments/1m65ime/0_yoe_got_3_ee_offers_without_an_internship_i/) for the job they took. The degree is different. [A reply in the ATS thread called education a non-starter and experience negotiable](https://www.reddit.com/r/EngineeringResumes/comments/192hkg8/how_atss_actually_work_from_an_engineering_hiring/).
 
-My senior design project did not work. Can I list it? Yes. [A Hardware FYI founder](https://www.reddit.com/r/EngineeringResumes/comments/1e3yimi/ama_hardware_engineers_founders_of_hardware_fyi/) said most projects miss their first spec, even in industry. Give the numbers you did reach, as in worksheet bullet 6.
+My senior design project did not work. Can I list it? Yes. [A Hardware FYI founder said most projects miss their first spec, even in industry](https://www.reddit.com/r/EngineeringResumes/comments/1e3yimi/ama_hardware_engineers_founders_of_hardware_fyi/). Give the numbers you did reach, as in worksheet bullet 6.
 
-Do I list my GPA? The rule from [[Your first internship]] is to list it when the posting sets a minimum you meet. If you list it, [match the decimals](https://www.reddit.com/r/EngineeringResumes/comments/15i3d8v/my_boss_said_my_resume_could_use_a_lot_of_work/), as in 3.30/4.00. [[Resume#Education]] has the rest.
+Do I list my GPA? List it when the posting sets a minimum you meet. That rule comes from [[Your first internship]]. If you list it, [match the decimals](https://www.reddit.com/r/EngineeringResumes/comments/15i3d8v/my_boss_said_my_resume_could_use_a_lot_of_work/), as in 3.30/4.00. [[Resume#Education]] has the rest.
 
-Do I list interests? Only specific ones, says eeprep's author. [One embedded intern](https://www.reddit.com/r/EngineeringResumes/comments/1i6v8x8/student_success_story_landed_3_interviews_and_an/) said half of the interview that led to the offer was about guitar.
+Do I list interests? eeprep's author lists only specific ones. [One embedded intern said half of the interview that led to the offer was about guitar](https://www.reddit.com/r/EngineeringResumes/comments/1i6v8x8/student_success_story_landed_3_interviews_and_an/).
 
-Do I need a cover letter? It depends on the employer. [The Hardware FYI founders](https://www.reddit.com/r/EngineeringResumes/comments/1bmtjgj/ama_hardware_engineers_founders_of_hardware_fyi/) said many big tech recruiters throw them out, while defense contractors and Midwest firms tend to read them.
+Do I need a cover letter? It depends on the employer. [The Hardware FYI founders said many big tech recruiters throw them out](https://www.reddit.com/r/EngineeringResumes/comments/1bmtjgj/ama_hardware_engineers_founders_of_hardware_fyi/), while defense contractors and Midwest firms tend to read them.
 
 ## Where this workshop stops
 
 - The workshop follows US and Canadian norms, like the resume page. For anything else, ask your career center.
-- The posting wins. When a posting asks for a format, a cover letter, or a GPA, do what it asks. [MIT's career office](https://capd.mit.edu/resources/resumes/) says to use the position description to decide what goes on the page.
+- The posting wins. When a posting asks for a format, a cover letter, or a GPA, do what it asks. [MIT's career office says to use the position description to decide what goes on the page](https://capd.mit.edu/resources/resumes/).
 - A partner's review is a first check. A career advisor at your school is the next one.
-- Visa and work-authorization questions go to your DSO, not to the workshop.
+- eeprep doesn't give visa, immigration, or security clearance advice. For those questions, check official sources: [USCIS](https://www.uscis.gov/), your school's international student office, and the employer.
 
-When your worksheet is done, you can type it into [resume-generator](https://github.com/edwardasilva/resume-generator/releases/tag/v0.1.0) to get a one-page PDF. [Build your resume](/advice/resume/#build-your-resume) has the steps.
+When your worksheet is done, you can type it into [resume-generator](https://github.com/edwardasilva/resume-generator/releases/tag/v0.2.0) to get a one-page PDF. [Build your resume](/advice/resume/#build-your-resume) has the steps.
