@@ -71,8 +71,8 @@ const arrow = 'M2 10H34M27 4.5L35 10L27 15.5Z';
 		<span class="eep-fignum">Fig 1</span>
 		<span>
 			At many companies, automatic cuts come from knockout questions on the
-			form, not your resume text. Exact steps vary by company. Sources:
-			r/EngineeringResumes hiring managers, recruiters on X.
+			form, not your resume text. Exact steps vary by company. Sources: hiring
+			managers on r/EngineeringResumes and recruiters on X.
 		</span>
 	</figcaption>
 </figure>
@@ -183,7 +183,10 @@ const arrow = 'M2 10H34M27 4.5L35 10L27 15.5Z';
 		margin: 0 0 0 1.25rem;
 	}
 	.eep-flow-cut {
+		gap: 0.75rem;
 		margin-left: 0.4rem;
+		padding: 0.2rem 0 0.35rem;
+		text-wrap: balance;
 	}
 
 	/* Wide: four steps in a row, as in the printed figure. */
@@ -233,6 +236,7 @@ const arrow = 'M2 10H34M27 4.5L35 10L27 15.5Z';
 		.eep-flow-cut {
 			position: relative;
 			margin: 0;
+			padding: 0;
 			justify-content: center;
 		}
 		.eep-flow-cut span {
