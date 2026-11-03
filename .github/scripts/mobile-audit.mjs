@@ -24,7 +24,7 @@ const minFigurePx = 12;
 const svgMinFont = {};
 // HTML figures still waiting for their own fix. Listed, like the SVG
 // figures, but they don't fail yet.
-const knownSmall = new Set(['fig-3']);
+const knownSmall = new Set([]);
 // Figures below the minimum that are listed but don't fail yet.
 const smallFigures = new Map();
 const dist = path.resolve('dist');

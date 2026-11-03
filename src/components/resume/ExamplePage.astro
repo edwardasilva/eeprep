@@ -1,4 +1,5 @@
 ---
+import { externalLinks } from './caption';
 // Alex's page is real text. The five callouts are a list. Pins repeat those numbers for sighted readers.
 // Callout bodies hold fixed links to the sample resumes, so they render as HTML.
 const notes = [
@@ -22,7 +23,10 @@ const notes = [
 		title: 'Tools only, each one in a bullet.',
 		body: "Two labeled lines of tools, with no soft skills or skill levels. Each of Alex's eight tools appears in a bullet. That rule is stricter than any sample. The UIC sample comes closest.",
 	},
-];
+].map((note) => ({ ...note, body: externalLinks(note.body) }));
+const caption = externalLinks(
+	`Layout rules from the <a href="https://www.reddit.com/r/EngineeringResumes/wiki/index/">r/EngineeringResumes wiki</a>, plus the centered header eeprep's author uses, checked against the nine career center sample resumes listed under the figure.`,
+);
 ---
 
 <figure class="eep-fig wide eep-example" id="fig-3">
@@ -145,16 +149,18 @@ const notes = [
 		are callouts and don't appear on the real page.
 	</p>
 	<figcaption>
-		<span class="eep-fignum">Fig 3</span>
-		<span>
-			Layout rules from the r/EngineeringResumes wiki, plus the centered header
-			eeprep's author uses, checked against the nine career center sample
-			resumes listed under the figure.
-		</span>
+		<span class="eep-fignum">Fig 3</span> <span set:html={caption} />
 	</figcaption>
 </figure>
 
 <style>
+	/* The kicker can wrap on phones. */
+	.eep-example .eep-kicker {
+		line-height: 1.35;
+	}
+	.eep-example {
+		container-type: inline-size;
+	}
 	.eep-example-flag {
 		margin: 0 0 1rem;
 		color: var(--eep-ink-2);
@@ -164,10 +170,10 @@ const notes = [
 		display: inline-block;
 		margin-right: 0.5rem;
 		padding: 0.15rem 0.45rem;
-		border: 1px solid var(--eep-accent);
+		border: 1px solid var(--eep-ink-2);
 		border-radius: 3px;
-		color: var(--eep-accent);
-		font: 600 0.6875rem/1.2 var(--eep-font-sans);
+		color: var(--eep-ink-2);
+		font: 600 0.75rem/1.2 var(--eep-font-sans);
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
 		vertical-align: 0.05em;
@@ -184,7 +190,8 @@ const notes = [
 		background: var(--eep-paper);
 		border: 1px solid var(--eep-rule);
 		color: var(--eep-ink);
-		font: 0.72rem/1.45 var(--eep-font-sans);
+		font: 0.75rem/1.45 var(--eep-font-sans);
+		overflow-wrap: anywhere;
 	}
 	.eep-example-sheet p {
 		margin: 0;
@@ -201,7 +208,7 @@ const notes = [
 		margin: 0.7rem 0 0.2rem;
 		padding-bottom: 0.05rem;
 		border-bottom: 1px solid var(--eep-ink);
-		font: 700 0.72rem/1.3 var(--eep-font-sans);
+		font: 700 0.75rem/1.3 var(--eep-font-sans);
 		color: var(--eep-ink);
 	}
 	:global(.sl-markdown-content) .eep-example-mark > p.eep-example-sec {
@@ -210,11 +217,26 @@ const notes = [
 	.eep-example-row {
 		display: flex;
 		justify-content: space-between;
+		align-items: flex-start;
 		gap: 0.75rem;
+	}
+	/* The entry title wraps, so the date always keeps the right margin. */
+	.eep-example-row > p:first-child {
+		flex: 1 1 0;
+		min-width: 0;
 	}
 	.eep-example-sheet ul {
 		margin: 0.15rem 0 0;
 		padding-left: 1.1rem;
+	}
+	/* Room for the dashed callout outline, so it never crosses the lines
+	   above and below. */
+	.eep-example-sheet > p.eep-example-mark,
+	.eep-example-sheet > div.eep-example-mark {
+		margin-block: 0.25rem;
+	}
+	.eep-example-row:has(> .eep-example-mark) {
+		margin-bottom: 0.25rem;
 	}
 	.eep-example-mark {
 		position: relative;
@@ -282,9 +304,27 @@ const notes = [
 		font-size: 0.8125rem;
 		max-width: none;
 	}
-	@media (max-width: 50rem) {
+	@container (max-width: 36rem) {
 		.eep-example-wrap {
-			grid-template-columns: 1fr;
+			grid-template-columns: minmax(0, 1fr);
+		}
+	}
+	/* On phones the sheet borrows most of the figure's side padding, so the
+	   page keeps enough width to read like a resume. */
+	@container (max-width: 28rem) {
+		.eep-example-sheet {
+			margin-inline: -1.5rem;
+		}
+		/* A date that doesn't fit beside its title drops below it, still at
+		   the right margin. */
+		.eep-example-row {
+			flex-wrap: wrap;
+		}
+		.eep-example-row > p:first-child {
+			flex: 1 1 auto;
+		}
+		.eep-example-sheet .eep-example-date {
+			margin-left: auto;
 		}
 	}
 </style>
