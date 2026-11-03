@@ -293,30 +293,6 @@ body {
 	padding-bottom: env(safe-area-inset-bottom);
 }
 
-/* Light and dark copies of one figure. Starlight's page is dark unless
-   data-theme is light, including when the attribute is "dark". A figure can
-   also carry a narrow copy for phones: mark the copies .eep-fig-wide and
-   .eep-fig-narrow. Exactly one image shows for each theme and width. */
-.eep-theme-fig > .eep-theme-fig-dark {
-	display: none;
-}
-:root:not([data-theme='light']) .eep-theme-fig > .eep-theme-fig-light {
-	display: none;
-}
-:root:not([data-theme='light']) .eep-theme-fig > .eep-theme-fig-dark {
-	display: block;
-}
-@media (max-width: 50rem) {
-	.eep-theme-fig > .eep-fig-wide {
-		display: none !important;
-	}
-}
-@media (min-width: 50.0625rem) {
-	.eep-theme-fig > .eep-fig-narrow {
-		display: none !important;
-	}
-}
-
 .sl-markdown-content .eep-kicker {
 	margin: 0 0 0.35rem;
 	max-width: none;

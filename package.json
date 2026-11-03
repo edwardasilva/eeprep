@@ -10,7 +10,6 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "diagrams": "node .github/scripts/render-tikz.mjs",
     "check:wikilinks": "node .github/scripts/check-wikilinks.mjs",
     "test:wikilinks": "node .github/scripts/test-wikilinks.mjs",
     "check:citations": "node .github/scripts/check-citations.mjs",
