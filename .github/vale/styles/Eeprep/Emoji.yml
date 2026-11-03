@@ -1,0 +1,7 @@
+# Checklist rule 27: no emoji in prose, headings, or list items.
+extends: existence
+message: 'Remove the emoji.'
+level: error
+nonword: true
+tokens:
+  - '[\x{1F300}-\x{1FAFF}\x{2600}-\x{27BF}\x{1F1E6}-\x{1F1FF}]'

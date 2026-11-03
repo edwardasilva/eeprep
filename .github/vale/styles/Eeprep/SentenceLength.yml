@@ -1,0 +1,7 @@
+# Checklist rule 18: keep explanation sentences to 25 words or fewer.
+extends: occurrence
+message: 'Keep sentences to 25 words or fewer. Split this one.'
+level: warning
+scope: sentence
+max: 25
+token: '\b(\w+)\b'
