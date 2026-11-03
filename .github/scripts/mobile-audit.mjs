@@ -23,7 +23,6 @@ const minFigurePx = 12;
 // draw text as outlines, so the size can't be read from the file.
 const svgMinFont = {
 	bullet: 11.5,
-	dodont: 10.5,
 };
 // HTML figures still waiting for their own fix. Listed, like the SVG
 // figures, but they don't fail yet.
