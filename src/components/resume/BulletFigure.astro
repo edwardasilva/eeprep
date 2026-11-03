@@ -154,8 +154,10 @@ const caption = externalLinks(`
 			padding-bottom: 0.6rem;
 			line-height: 2.5;
 		}
+		/* A marked phrase stays on one line, so its tag sits above all of it. */
 		.eep-bullet-mark {
 			position: relative;
+			white-space: nowrap;
 		}
 		.eep-bullet-tag {
 			position: absolute;
