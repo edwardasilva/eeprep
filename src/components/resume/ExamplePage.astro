@@ -1,25 +1,26 @@
 ---
 // Alex's page is real text. The five callouts are a list. Pins repeat those numbers for sighted readers.
+// Callout bodies hold fixed links to the sample resumes, so they render as HTML.
 const notes = [
 	{
 		title: 'Centered header.',
-		body: 'One contact line with plain-text links, plus location and relocation.',
+		body: 'Name, then one contact line with plain-text links, then location and relocation. The <a href="https://career.gatech.edu/files/2026/06/JackieJacketResume.docx">Georgia Tech</a>, <a href="https://cdn.uconnectlabs.com/wp-content/uploads/sites/123/2025/05/UG-Resume-with-Projects-1.pdf">MIT</a>, and <a href="https://ecc.uic.edu/wp-content/uploads/sites/78/2026/06/Electrical-Engineering-Example-Resume-Updated-Summer-2026.docx.pdf">UIC</a> samples center the name over one contact line.',
 	},
 	{
 		title: 'Dates at the right margin.',
-		body: 'One style for every date.',
+		body: 'Eight of the nine samples put dates flush right. Alex uses semesters on every line.',
 	},
 	{
 		title: 'One line of coursework.',
-		body: 'Upper-level electives that match the posting.',
+		body: 'Three upper-level courses, named as the Mines catalog names them. The Georgia Tech, MIT, and UIC samples list coursework under the degree.',
 	},
 	{
 		title: 'Projects above Experience.',
-		body: 'Alex has no engineering job yet, so the strongest section goes first. Each bullet states the action, the tool, and a number.',
+		body: 'Alex has no engineering job yet, so projects go first. The <a href="https://cdn.careercentral.pitt.edu/wp-content/uploads/sites/117/2023/09/Electrical-Engineering-Resume-Sample.pdf">Pitt</a> and <a href="https://www.oit.edu/sites/default/files/2026/documents/Sample%20Resume%20-%20Electrical%20Engineering.pdf">Oregon Tech</a> EE samples do the same. Each bullet starts with a past-tense verb, names the tool, and includes a measured number.',
 	},
 	{
-		title: 'Every skill has a bullet behind it.',
-		body: 'KiCad, LTspice, the scope, and the load all appear in a project.',
+		title: 'Tools only, each one in a bullet.',
+		body: "Two labeled lines of tools, with no soft skills or skill levels. Each of Alex's eight tools appears in a bullet. That rule is stricter than any sample; the UIC sample comes closest.",
 	},
 ];
 ---
@@ -68,7 +69,7 @@ const notes = [
 				High Power Electronics, Advanced Digital Design
 			</p>
 			<p>
-				<strong>Activities:</strong> CubeSat team, IEEE student branch
+				<strong>Activities:</strong> IEEE student branch, Tau Beta Pi
 			</p>
 			<div class="eep-example-mark">
 				<span class="eep-pin" aria-hidden="true">
@@ -93,6 +94,24 @@ const notes = [
 						of a hand calculation
 					</li>
 				</ul>
+				<div class="eep-example-row">
+					<p>
+						<strong>Bench Data Logger (STM32, C, Python)</strong>
+					</p>
+					<p class="eep-example-date">Spring 2025</p>
+				</div>
+				<ul>
+					<li>
+						Wrote STM32 firmware in C that reads a 4-channel SPI ADC at [X] kHz
+						and streams the samples over UART to a Python script that logs each
+						run to CSV
+					</li>
+					<li>
+						Traced dropped samples to a blocking UART write with a logic
+						analyzer, moved transfers to DMA, and cut lost samples from [X]% to
+						[X]%
+					</li>
+				</ul>
 			</div>
 			<p class="eep-example-sec">Experience</p>
 			<div class="eep-example-row">
@@ -107,10 +126,11 @@ const notes = [
 					5
 				</span>
 				<p>
-					<strong>Software:</strong> KiCad, LTspice
+					<strong>Software:</strong> KiCad, LTspice, C, Python
 				</p>
 				<p>
-					<strong>Hardware/Lab:</strong> oscilloscope, electronic load
+					<strong>Hardware/Lab:</strong> STM32, oscilloscope, electronic load,
+					logic analyzer
 				</p>
 			</div>
 		</div>
@@ -118,21 +138,22 @@ const notes = [
 			{notes.map((note) => (
 				<li>
 					<span>
-						<strong>{note.title}</strong> {note.body}
+						<strong>{note.title}</strong> <Fragment set:html={note.body} />
 					</span>
 				</li>
 			))}
 		</ol>
 	</div>
 	<p class="eep-example-aside">
-		Bold only on section titles, entry titles, and the two labels. Dashed
-		outlines are callouts and don't appear on the real page.
+		Bold only on section titles, entry titles, and line labels. Dashed outlines
+		are callouts and don't appear on the real page.
 	</p>
 	<figcaption>
 		<span class="eep-fignum">Fig 3</span>
 		<span>
 			Layout rules from the r/EngineeringResumes wiki, plus the centered header
-			eeprep's author uses on their own resume.
+			eeprep's author uses, checked against the nine career center sample
+			resumes listed under the figure.
 		</span>
 	</figcaption>
 </figure>
