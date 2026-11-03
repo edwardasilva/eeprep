@@ -1,4 +1,5 @@
 ---
+import { externalLinks } from './caption';
 // Figure 4 as HTML and CSS, so the text reflows and stays readable at every
 // width. Each rule gets a row: a do wireframe, a don't wireframe and a note.
 // The wireframes are schematic drawings with no text, so they stay small
@@ -163,6 +164,19 @@ const rules: { title: string; note: string; frames: [Frame, Frame] }[] = [
 		],
 	},
 ];
+const caption = externalLinks(`
+			Rules from the
+			<a href="https://www.reddit.com/r/EngineeringResumes/wiki/index/">r/EngineeringResumes wiki</a>,
+			recruiters on X
+			(<a href="https://x.com/TheJobfather__/status/2082954139298922755">single column</a>,
+			<a href="https://x.com/randomrecruiter/status/1688896357430358016">no tables or photos</a>),
+			<a href="https://www.reddit.com/r/EngineeringResumes/comments/1pkixp9/today_i_made_a_top_5_list/">a recruiter on r/EngineeringResumes</a>,
+			and eeprep's author. Further reading:
+			<a href="https://career.engin.umich.edu/resumes-cvs-cover-letters/">Michigan Engineering on ATS formatting</a>,
+			<a href="https://capd.mit.edu/resources/make-your-resume-ats-friendly/">MIT CAPD on ATS-friendly resumes</a>,
+			<a href="https://www.theladders.com/career-advice/is-it-true-that-recruiters-reject-a-resume-in-six-seconds">Ladders eye-tracking study</a>.
+			Wireframes are schematic, not to scale.
+`);
 ---
 
 <figure class="eep-fig wide eep-layout-fig" id="fig-4">
@@ -205,10 +219,7 @@ const rules: { title: string; note: string; frames: [Frame, Frame] }[] = [
 	</div>
 	<figcaption>
 		<span class="eep-fignum">Fig 4</span>
-		<span>
-			Rules from the r/EngineeringResumes wiki, recruiters on X, and eeprep's
-			author. Wireframes are schematic, not to scale.
-		</span>
+		<span set:html={caption} />
 	</figcaption>
 </figure>
 
