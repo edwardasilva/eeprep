@@ -158,6 +158,9 @@ const caption = externalLinks(
 	.eep-example .eep-kicker {
 		line-height: 1.35;
 	}
+	.eep-example {
+		container-type: inline-size;
+	}
 	.eep-example-flag {
 		margin: 0 0 1rem;
 		color: var(--eep-ink-2);
@@ -167,9 +170,9 @@ const caption = externalLinks(
 		display: inline-block;
 		margin-right: 0.5rem;
 		padding: 0.15rem 0.45rem;
-		border: 1px solid var(--eep-accent);
+		border: 1px solid var(--eep-ink-2);
 		border-radius: 3px;
-		color: var(--eep-accent);
+		color: var(--eep-ink-2);
 		font: 600 0.75rem/1.2 var(--eep-font-sans);
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
@@ -225,6 +228,15 @@ const caption = externalLinks(
 	.eep-example-sheet ul {
 		margin: 0.15rem 0 0;
 		padding-left: 1.1rem;
+	}
+	/* Room for the dashed callout outline, so it never crosses the lines
+	   above and below. */
+	.eep-example-sheet > p.eep-example-mark,
+	.eep-example-sheet > div.eep-example-mark {
+		margin-block: 0.25rem;
+	}
+	.eep-example-row:has(> .eep-example-mark) {
+		margin-bottom: 0.25rem;
 	}
 	.eep-example-mark {
 		position: relative;
@@ -292,14 +304,14 @@ const caption = externalLinks(
 		font-size: 0.8125rem;
 		max-width: none;
 	}
-	@media (max-width: 50rem) {
+	@container (max-width: 36rem) {
 		.eep-example-wrap {
 			grid-template-columns: minmax(0, 1fr);
 		}
 	}
 	/* On phones the sheet borrows most of the figure's side padding, so the
 	   page keeps enough width to read like a resume. */
-	@media (max-width: 30rem) {
+	@container (max-width: 28rem) {
 		.eep-example-sheet {
 			margin-inline: -1.5rem;
 		}
