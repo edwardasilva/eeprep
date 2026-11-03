@@ -92,8 +92,15 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Create the release with generated notes
+      - name: Create the release with generated notes, or keep an existing one
         env:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ github.ref_name }}
-        run: gh release create "$TAG" --repo "$GITHUB_REPOSITORY" --title "$TAG" --generate-notes --verify-tag
+        # A release published by hand before this job runs already exists. This
+        # workflow uploads no assets, so there is nothing to update in that case.
+        run: |
+          if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "Release $TAG already exists. No assets to upload, so it is left as it is."
+          else
+            gh release create "$TAG" --repo "$GITHUB_REPOSITORY" --title "$TAG" --generate-notes --verify-tag
+          fi
