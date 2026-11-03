@@ -10,7 +10,7 @@ These are the big updates planned for eeprep. The plan may change.
 
 ## Resume builder
 
-Fill in a form on the site and get a one-page resume, with no setup.
+Fill in a form on the site and get a one-page resume. No setup needed.
 
 ## Study guides
 
@@ -18,7 +18,7 @@ Short guides to the core courses in an electrical engineering degree.
 
 ## Job board help
 
-Which job boards are worth your time and how to search them well.
+Which job boards to use and how to search them.
 
 ## LinkedIn guide
 
