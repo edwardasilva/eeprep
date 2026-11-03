@@ -6,7 +6,7 @@ head:
     content: "Roadmap | eeprep"
 ---
 
-These are the big updates planned for eeprep. It's a plan, not a promise, and it may change.
+These are the big updates planned for eeprep. The plan may change.
 
 ## Resume builder
 
