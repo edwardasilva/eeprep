@@ -1,23 +1,59 @@
 ---
-import ThemeSvg from './ThemeSvg.astro';
-import light from '../../diagrams/resume/bullet.svg?url';
-import dark from '../../diagrams/resume/bullet-dark.svg?url';
-import path from 'node:path';
-
-const dir = path.resolve('src/diagrams/resume');
-
-const alt =
-	"Did X with Y to get Z. Before: Worked on a buck converter for a CubeSat using LTspice and KiCad. Worked on hides what Alex did. There's no spec, no check, and no result. After: Designed a [X] W synchronous buck converter in KiCad for a CubeSat power board and measured [X]% efficiency on an electronic load, within [X]% of the LTspice model. X is the action and one spec, Y is the tool, and Z is the measured result. Screeners filter on X and Y. Hiring managers choose from the Zs. Every [X] is a number you measure yourself.";
+// Figure 2 as HTML and CSS, so the text reflows and stays readable at every
+// width. On wide figures each tag sits above the words it marks. On narrow
+// ones the tags sit inline, just before those words.
+const after = [
+	{
+		tag: 'X · action + one spec',
+		text: 'Designed a [X] W synchronous buck converter',
+	},
+	' ',
+	{ tag: 'Y · tool', text: 'in KiCad' },
+	' for a CubeSat power board and ',
+	{ tag: 'Z · measured result', text: 'measured [X]% efficiency' },
+	' on an electronic load, within [X]% of the LTspice model',
+];
 ---
 
-<figure class="eep-fig wide eep-theme-fig" id="fig-2">
-	<ThemeSvg
-		light={light}
-		dark={dark}
-		lightFile={path.join(dir, 'bullet.svg')}
-		darkFile={path.join(dir, 'bullet-dark.svg')}
-		alt={alt}
-	/>
+<figure class="eep-fig wide eep-bullet-fig" id="fig-2">
+	<p class="eep-kicker">Figure 2 · One bullet, before and after</p>
+	<p class="eep-figtitle">Did X with Y to get Z</p>
+	<div class="eep-bullet not-content">
+		<p class="eep-bullet-label">
+			<svg viewBox="0 0 10 10" aria-hidden="true" focusable="false">
+				<path d="M1.5 1.5L8.5 8.5M8.5 1.5L1.5 8.5"></path>
+			</svg>
+			Before
+		</p>
+		<p class="eep-bullet-box">
+			Worked on a buck converter for a CubeSat using LTspice and KiCad.
+		</p>
+		<p class="eep-bullet-note">
+			"Worked on" hides what Alex did. There's no spec, no check, and no result.
+		</p>
+		<p class="eep-bullet-label eep-bullet-after">
+			<svg viewBox="0 0 12 10" aria-hidden="true" focusable="false">
+				<path d="M1.5 5.5L4.5 8.5L10.5 1.5"></path>
+			</svg>
+			After
+		</p>
+		<p class="eep-bullet-box eep-bullet-good">
+			{after.map((part) =>
+				typeof part === 'string' ? (
+					part
+				) : (
+					<span class="eep-bullet-mark">
+						<span class="eep-bullet-tag">{part.tag}</span>
+						{part.text}
+					</span>
+				),
+			)}
+		</p>
+		<p class="eep-bullet-note">
+			Screeners filter on X and Y. Hiring managers choose from the Zs. Every [X]
+			is a number you measure yourself.
+		</p>
+	</div>
 	<figcaption>
 		<span class="eep-fignum">Fig 2</span>
 		<span>
@@ -26,3 +62,103 @@ const alt =
 		</span>
 	</figcaption>
 </figure>
+
+<style>
+	/* The kicker can wrap on phones. */
+	.eep-bullet-fig .eep-kicker {
+		line-height: 1.35;
+	}
+	.eep-bullet {
+		container-type: inline-size;
+		margin-top: 1.25rem;
+		font-family: var(--eep-font-sans);
+	}
+	.eep-bullet p {
+		margin: 0;
+		max-width: none;
+	}
+	.eep-bullet .eep-bullet-label {
+		display: flex;
+		gap: 0.4rem;
+		align-items: center;
+		margin-bottom: 0.5rem;
+		font-size: 0.75rem;
+		font-weight: 600;
+		line-height: 1;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--eep-mute);
+	}
+	.eep-bullet .eep-bullet-after {
+		margin-top: 1.5rem;
+		color: var(--eep-dg-accent);
+	}
+	.eep-bullet-label svg {
+		width: 0.7rem;
+		height: 0.7rem;
+		fill: none;
+		stroke: currentColor;
+		stroke-width: 1.6;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+	}
+	.eep-bullet-box {
+		padding: 0.8rem 1rem;
+		border: 1px solid var(--eep-rule-2);
+		border-radius: 4px;
+		background: var(--eep-dg-fill);
+		font-size: 1rem;
+		line-height: 1.55;
+		color: var(--eep-mute);
+	}
+	.eep-bullet-good {
+		border-color: var(--eep-dg-accent);
+		color: var(--eep-ink);
+	}
+	.eep-bullet .eep-bullet-note {
+		margin-top: 0.6rem;
+		font-size: 0.875rem;
+		line-height: 1.5;
+		color: var(--eep-mute);
+	}
+	.eep-bullet-mark {
+		text-decoration: underline 1.5px var(--eep-dg-accent);
+		text-underline-offset: 0.3em;
+		text-decoration-skip-ink: none;
+	}
+	.eep-bullet-tag {
+		display: inline-block;
+		margin-right: 0.35rem;
+		padding: 0.1rem 0.3rem;
+		border-radius: 3px;
+		background: var(--eep-accent-soft);
+		font-size: 0.75rem;
+		font-weight: 600;
+		line-height: 1.3;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: var(--eep-dg-accent);
+	}
+
+	/* Wide: tags float above the words they mark, as in the printed figure. */
+	@container (min-width: 36rem) {
+		.eep-bullet-good {
+			padding-top: 1.75rem;
+			line-height: 2.75;
+		}
+		.eep-bullet-mark {
+			position: relative;
+		}
+		.eep-bullet-tag {
+			position: absolute;
+			left: 0;
+			bottom: 1.75em;
+			margin: 0;
+			padding: 0;
+			background: none;
+			white-space: nowrap;
+			line-height: 1;
+		}
+	}
+</style>

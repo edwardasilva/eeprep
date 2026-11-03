@@ -22,7 +22,6 @@ const minFigurePx = 12;
 // draw text as outlines, so the size can't be read from the file. The
 // path-map sizes are measured from the drawing.
 const svgMinFont = {
-	bullet: 11.5,
 	dodont: 10.5,
 	'path-map': 10,
 	'path-map-mobile': 10,
