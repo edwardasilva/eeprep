@@ -18,17 +18,15 @@ The "Label" column is the exact text on the handouts, up to any colon or parenth
 
 ### Header
 
-| Label               | Key                 | Type   | Required | Alex's example                   |
-| ------------------- | ------------------- | ------ | -------- | -------------------------------- |
-| Name                | `header.name`       | text   | yes      | Alex Doe                         |
-| Phone               | `header.phone`      | text   | no       | [phone]                          |
-| Email               | `header.email`      | text   | yes      | alex.doe@[school].edu            |
-| LinkedIn            | `header.linkedin`   | text   | no       | linkedin.com/in/alex-doe-example |
-| GitHub              | `header.github`     | text   | no       | github.com/alex-doe-example      |
-| Location            | `header.location`   | text   | no       | City, ST                         |
-| Work status         | `header.workStatus` | text   | no       | (blank)                          |
-| Willing to relocate | `header.relocate`   | yes/no | no       | yes                              |
-| Clearance           | `header.clearance`  | text   | no       | (blank)                          |
+| Label               | Key               | Type   | Required | Alex's example                   |
+| ------------------- | ----------------- | ------ | -------- | -------------------------------- |
+| Name                | `header.name`     | text   | yes      | Alex Doe                         |
+| Phone               | `header.phone`    | text   | no       | [phone]                          |
+| Email               | `header.email`    | text   | yes      | alex.doe@[school].edu            |
+| LinkedIn            | `header.linkedin` | text   | no       | linkedin.com/in/alex-doe-example |
+| GitHub              | `header.github`   | text   | no       | github.com/alex-doe-example      |
+| Location            | `header.location` | text   | no       | City, ST                         |
+| Willing to relocate | `header.relocate` | yes/no | no       | yes                              |
 
 Rules:
 
@@ -38,8 +36,7 @@ Rules:
 - Strip a leading `https://`, `http://`, or `www.` from LinkedIn and GitHub, and show the link as plain text. Source: resume page "Header".
 - Warning on any link: "Click this link before you send." Source: [a hiring manager who sees dead links](https://www.reddit.com/r/EngineeringResumes/comments/1hw10ms/12_yoe_some_long_direct_advice_in_tech_from_a/).
 - Strip a leading `+1` from a US or Canadian phone number. Source: the wiki, Contact Information.
-- Second centered line: location, then work status, then "Willing to relocate" if yes, then clearance. Omit the line when all four are blank. Source: resume page "Header" and Alex's page.
-- Work status is free text with a hint: "Only if true. Never claim you need no sponsorship when you do." Source: [one manager on the lie that ends the process](https://www.reddit.com/r/EngineeringResumes/comments/1hw10ms/12_yoe_some_long_direct_advice_in_tech_from_a/).
+- Second centered line: location, then "Willing to relocate" if yes. Omit the line when both are blank. Source: resume page "Header" and Alex's page.
 - The wiki calls phone, LinkedIn, and a non-local location unnecessary. eeprep's author lists phone and LinkedIn. The form follows the resume page, so all three stay optional and shown.
 
 ### Education
@@ -79,7 +76,7 @@ Rules:
 
 Rules:
 
-- Title line: title in bold, then the tools in parentheses, then the date range at the right margin. LaTeX: `\textbf{CubeSat Power Board} (KiCad, LTspice) \hfill Fall 2025 -- Spring 2026`. Source: eeprep's author, resume page "Projects".
+- Title line: the title with the tools in parentheses, all in bold, then the date range at the right margin. LaTeX: `\textbf{CubeSat Power Board (KiCad, LTspice)} \hfill Fall 2025 -- Spring 2026`. Source: eeprep's author, resume page "Projects".
 - Error if the title contains the word "project", in any case. Source: [the wiki](https://www.reddit.com/r/EngineeringResumes/wiki/index/), Projects.
 - 1 to 4 bullets per project. Warning when a weaker project has more bullets than the first project. Source: eeprep's author adds bullets to the best projects and does not add weak ones.
 
