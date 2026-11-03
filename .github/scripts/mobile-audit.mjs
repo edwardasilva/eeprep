@@ -19,13 +19,10 @@ const minTap = 44;
 const minLabelPx = 11;
 const minFigurePx = 12;
 // Smallest source font size, in viewBox units, of each SVG figure. The SVGs
-// draw text as outlines, so the size can't be read from the file. The
-// path-map sizes are measured from the drawing.
+// draw text as outlines, so the size can't be read from the file.
 const svgMinFont = {
 	bullet: 11.5,
 	dodont: 10.5,
-	'path-map': 10,
-	'path-map-mobile': 10,
 };
 // HTML figures still waiting for their own fix. Listed, like the SVG
 // figures, but they don't fail yet.
