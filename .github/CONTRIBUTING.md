@@ -48,8 +48,6 @@ Deploys use the `production` environment secrets `CLOUDFLARE_API_TOKEN` and `CLO
 
 Clone, install, and serve steps are in the Run it locally section.
 
-After you edit a resume TikZ figure under `src/diagrams/resume/`, run `npm run diagrams` and commit the SVG next to the `.tex` file. The script needs LuaLaTeX, dvisvgm, and the Newsreader, Inter, and JetBrains Mono fonts. Each figure inputs `src/diagrams/style/circuitikz-preamble.tex` for the house colours and line weight. The site build and CI do not run TeX.
-
 `npm run lint` checks ESLint, markdownlint, and Prettier. `npm run format` writes Prettier formatting and applies ESLint fixes.
 
 ```bash
