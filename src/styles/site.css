@@ -379,13 +379,19 @@ html {
 }
 
 /* Links to other sites open in a new tab. The arrow is decoration, and the
-   screen-reader hint inside the link says the same thing in words. */
-.sl-markdown-content a.external-link::after {
-	content: '\2197';
-	content: '\2197' / '';
+   screen-reader hint inside the link says the same thing in words. It is an
+   SVG mask filled with the link color, not a text glyph, so no platform can
+   swap in an emoji. Body links and figure caption links share this rule. */
+a.external-link::after {
+	--eep-external-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 9L9 3M4.25 3H9V7.75'/%3E%3C/svg%3E");
+	content: '';
 	display: inline-block;
+	width: 0.75em;
+	height: 0.75em;
 	margin-inline-start: 0.15em;
-	font-size: 0.8em;
-	line-height: 1;
-	text-decoration: none;
+	vertical-align: baseline;
+	background-color: currentColor;
+	forced-color-adjust: none;
+	-webkit-mask: var(--eep-external-arrow) no-repeat center / contain;
+	mask: var(--eep-external-arrow) no-repeat center / contain;
 }

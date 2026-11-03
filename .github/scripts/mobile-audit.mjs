@@ -2,7 +2,8 @@
 // and fails on horizontal scroll, overlapping header controls, small tap
 // targets, and figure problems. It also checks that the header and its
 // controls sit at the same pixels on every page, at phone and desktop widths,
-// and that text in figures renders at 12px or more.
+// and that text in figures renders at 12px or more. Before loading pages it
+// fails if any built page or stylesheet has an emoji or an icon-style symbol.
 // Run `npm run build` first.
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
@@ -53,7 +54,7 @@ const preview = external
 			{ stdio: 'ignore' },
 		);
 const base = external ?? `http://localhost:${port}`;
-const problems = [];
+const problems = emojiProblems(dist);
 let browser;
 let desktop;
 
@@ -321,6 +322,45 @@ function headerBoxes() {
 	document
 		.querySelectorAll('header .eep-nav a')
 		.forEach((a, i) => (out[`nav ${i + 1}`] = box(a)));
+	return out;
+}
+
+// Emoji, dingbats such as check marks, arrows, stars and the emoji variation
+// selector. Some platforms draw these as color emoji, so icons are SVG instead.
+// CSS escapes such as \2197 count too.
+function emojiProblems(dir) {
+	const ranges = [
+		[0x2190, 0x21ff],
+		[0x231a, 0x231b],
+		[0x23e9, 0x23fa],
+		[0x2600, 0x27bf],
+		[0x2b00, 0x2bff],
+		[0xfe0f, 0xfe0f],
+		[0x1f000, 0x1faff],
+	];
+	const isEmoji = (cp) => ranges.some(([lo, hi]) => cp >= lo && cp <= hi);
+	const out = [];
+	const walk = (d) => {
+		for (const ent of fs.readdirSync(d, { withFileTypes: true })) {
+			const file = path.join(d, ent.name);
+			if (ent.isDirectory()) {
+				if (ent.name !== 'pagefind') walk(file);
+				continue;
+			}
+			if (!/\.(html|css)$/.test(ent.name)) continue;
+			const text = fs.readFileSync(file, 'utf8');
+			const escapes = [...text.matchAll(/\\([0-9a-f]{4,6})(?![0-9a-f])/gi)];
+			const cps = [
+				...[...text].map((c) => c.codePointAt(0)),
+				...escapes.map((m) => parseInt(m[1], 16)),
+			];
+			for (const cp of new Set(cps.filter(isEmoji))) {
+				const hex = cp.toString(16).toUpperCase().padStart(4, '0');
+				out.push(`${path.relative(dir, file)}: emoji or symbol U+${hex}`);
+			}
+		}
+	};
+	walk(dir);
 	return out;
 }
 
