@@ -1,0 +1,9 @@
+# Security headers for every page and file on eeprep.com.
+# Cloudflare applies this file to static asset responses. The dev site runs
+# worker/dev.mjs first, so these rules may not reach it.
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Content-Security-Policy: frame-ancestors 'none'; base-uri 'self'; object-src 'none'; form-action 'self'
