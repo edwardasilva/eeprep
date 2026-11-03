@@ -7,29 +7,28 @@ head:
     content: "Help links for EE job searching | EE Prep"
 ---
 
-These links cover pay data, job openings, resume feedback, and forums. eeprep takes no affiliate fees from the sites listed. For how to use them in an application, see [[Resume]] and [[Your first internship]].
+These links cover pay data, job openings, resume feedback, and forums. eeprep takes no affiliate fees from any of them. For how to use them in an application, see [[Resume]] and [[Your first internship]].
 
 eeprep doesn't give visa, immigration, or security clearance advice. For those questions, check official sources: [USCIS](https://www.uscis.gov/), your school's international student office, and the employer.
 
 ## Pay and offers
 
-- The [Bureau of Labor Statistics page on electrical and electronics engineers](https://www.bls.gov/ooh/architecture-and-engineering/electrical-and-electronics-engineers.htm) gives the federal numbers: median pay, the bottom and top 10 percent, pay by industry, and projected job growth. These figures include workers at every career stage, so do not expect the median in an entry-level offer.
-- On [Levels.fyi](https://www.levels.fyi/), engineers share pay by company, level, and location. Use it to compare an offer with what others at the same company and level reported. Most of the data is self-reported, and many entries are software roles. Read the numbers as ranges, and trust them less for small firms with only a few submissions.
-- [NACE's compensation page](https://www.naceweb.org/job-market/compensation/) has free yearly reports on starting salaries for new graduates and hourly pay for interns. NACE groups its data by broad discipline, so engineering includes mechanical and civil as well as electrical. The free summaries are enough, so skip the paid member reports.
+- The [Bureau of Labor Statistics page on electrical and electronics engineers](https://www.bls.gov/ooh/architecture-and-engineering/electrical-and-electronics-engineers.htm) has the federal numbers. It lists median pay, the bottom and top 10 percent, pay by industry, and projected job growth. The figures cover every career stage, so do not expect the median in an entry-level offer.
+- [Levels.fyi](https://www.levels.fyi/) shows pay by company, level, and location. Use it to compare an offer with what others at the same company and level reported. Most of the data is self-reported, and many entries are software roles. Treat the numbers as ranges, and trust them less for small firms with few submissions.
+- [NACE's compensation page](https://www.naceweb.org/job-market/compensation/) has free yearly reports on new-graduate starting salaries and intern hourly pay. NACE groups data by broad discipline, so its engineering numbers include mechanical and civil as well as electrical. The free summaries are enough. Skip the paid member reports.
 
 ## Resumes
 
-- The [[Resume]] guide is based on [the r/EngineeringResumes wiki](https://www.reddit.com/r/EngineeringResumes/wiki/index/). The wiki covers formatting, section order, bullets, and templates, and it follows US and Canadian hiring norms.
-- Post your draft for feedback on [the r/EngineeringResumes forum](https://www.reddit.com/r/EngineeringResumes/) after you read the wiki. The reviewers are strangers, so give more weight to the ones who work in the industry. Remove your real name, phone number, address, and email from the PDF before you upload it.
+- [The r/EngineeringResumes wiki](https://www.reddit.com/r/EngineeringResumes/wiki/index/) covers formatting, section order, bullets, and templates, using US and Canadian hiring norms. The [[Resume]] guide is based on it.
+- Read the wiki, then post your draft to [the r/EngineeringResumes forum](https://www.reddit.com/r/EngineeringResumes/) for feedback. The reviewers are strangers, so give more weight to the ones who work in the industry. Remove your name, phone number, address, and email from the PDF first.
 
 ## Finding openings
 
-- Look up [electrical engineering on O\*NET](https://www.onetonline.org/link/summary/17-2071.00) to find the job titles employers use. Postings often say test engineer, design engineer, or controls engineer. O\*NET also lists writing software to control systems, so embedded and firmware roles are good targets for an electrical engineer.
-- Search [LinkedIn Jobs](https://www.linkedin.com/jobs/) by job title and metro area. A free account is enough to search. A posting can stay up after the role is filled, so find the same job on the employer's careers site before you apply.
-- [Handshake](https://joinhandshake.com/students/) has campus listings for college students. Many university career offices use it, so ask whether yours does. A recruiter message on Handshake is an automated invitation to apply, not an interview offer.
-- For federal government jobs, use [USAJOBS](https://www.usajobs.gov/). The job overview on each posting says who can apply. If you are not in one of those hiring groups, the agency rejects your application, says the [USAJOBS hiring paths guide](https://usajobshelp.opm.gov/hc/en-us/articles/53059807800979-What-are-hiring-paths-and-how-can-they-help-you).
-- The federal government hires students and recent graduates through two programs. Use the [Pathways internship program](https://opm.usajobs.gov/hiringpath/students/) for paid student roles, or the [Pathways recent graduates program](https://opm.usajobs.gov/hiringpath/recentgraduates/) if you graduated within the last two years. Agencies can convert either one into a permanent job, but they do not have to.
-- Read [OPM's Pathways regulations](https://www.opm.gov/policy-data-oversight/hiring-information/students-recent-graduates/) before you count on a conversion.
+- Look up [electrical engineering on O\*NET](https://www.onetonline.org/link/summary/17-2071.00) to find the job titles employers use. Postings often say test engineer, design engineer, or controls engineer. O\*NET also lists writing software to control systems, so embedded and firmware roles are good targets for an EE.
+- Search [LinkedIn Jobs](https://www.linkedin.com/jobs/) by title and metro area. A free account is enough. A posting can stay up after the role is filled, so find the same job on the employer's careers site before you apply.
+- [Handshake](https://joinhandshake.com/students/) has campus listings for college students. Many university career offices use it, so ask whether yours does. A recruiter message there is an automated invitation to apply, not an interview offer.
+- [USAJOBS](https://www.usajobs.gov/) lists federal government jobs. The job overview on each posting says who can apply. [If you are not in one of those hiring groups, the agency rejects your application](https://usajobshelp.opm.gov/hc/en-us/articles/53059807800979-What-are-hiring-paths-and-how-can-they-help-you).
+- The federal government hires students and recent graduates through two programs. The [Pathways internship program](https://opm.usajobs.gov/hiringpath/students/) offers paid student roles. The [Pathways recent graduates program](https://opm.usajobs.gov/hiringpath/recentgraduates/) is for people who graduated within the last two years. Agencies can convert either one into a permanent job, but they do not have to. Read [OPM's Pathways regulations](https://www.opm.gov/policy-data-oversight/hiring-information/students-recent-graduates/) before you count on a conversion.
 - The [IEEE Job Site](https://jobs.ieee.org/) lists hardware and electronics jobs. Many front-page listings are senior or academic roles, so search for entry-level titles. Skip the resume reviews and coaching the site sells.
 - Confirm every opening on the employer's own careers page. Keep a short list of companies you want, and check their careers pages every week.
 
@@ -37,6 +36,6 @@ eeprep doesn't give visa, immigration, or security clearance advice. For those q
 
 You cannot check who an anonymous commenter is or what they know. Judge advice by the reasons given, and check any fact or rule against an official source.
 
-- Ask technical and work questions in [the r/ElectricalEngineering subreddit](https://www.reddit.com/r/ElectricalEngineering/). Members talk about coursework, circuit design, and day-to-day work. Moderators remove low-effort posts, so read the rules before you post.
-- For school advice across all engineering majors, try [the r/EngineeringStudents subreddit](https://www.reddit.com/r/EngineeringStudents/). Read its wiki and recurring megathreads first, because moderators send common questions there.
-- Ask about computer architecture, digital logic, and firmware in [the r/ECE community](https://www.reddit.com/r/ECE/). It is for technical discussion and does not allow low-effort homework requests or broad career questions.
+- Ask technical and work questions in [the r/ElectricalEngineering subreddit](https://www.reddit.com/r/ElectricalEngineering/). Members discuss coursework, circuit design, and day-to-day work. Moderators remove low-effort posts, so read the rules before you post.
+- [The r/ECE community](https://www.reddit.com/r/ECE/) is for technical questions on computer architecture, digital logic, and firmware. It does not allow low-effort homework requests or broad career questions.
+- [The r/EngineeringStudents subreddit](https://www.reddit.com/r/EngineeringStudents/) covers school advice across all engineering majors. Read its wiki and recurring megathreads first, because moderators send common questions there.
