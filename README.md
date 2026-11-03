@@ -30,3 +30,11 @@ git clone --recurse-submodules https://github.com/edwardasilva/eeprep.git
 The site builds without the submodule, so a plain clone also works.
 
 Want to help improve the guide? See [CONTRIBUTING](.github/CONTRIBUTING.md).
+
+## License
+
+The underlying source code of this website is licensed under the [MIT License](LICENSE).
+
+All personal content, including but not limited to the resume, project descriptions, and photographs, are copyrighted by Edward Silva and may not be reproduced or modified without explicit permission.
+
+Copyright (c) 2026 Edward Silva. All rights reserved.

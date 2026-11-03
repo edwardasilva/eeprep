@@ -1,67 +1,48 @@
 # Contributing
 
-Work on EE Prep is grouped into epics. An epic is one GitHub issue plus a long-lived branch named `epic/<name>`, cut from `main`.
+Thanks for helping with EE Prep. This page covers how a change gets from an idea to the live site.
 
-Small changes use branches named `feat/<name>/<change>` (the epic name stays in the branch) and open pull requests into that epic branch. About ten of those can land in one epic. When the epic is done, one pull request from `epic/<name>` into `main` goes to Edward. Only Edward merges to `main`. Delete the branch after it merges.
+## Start with an issue
 
-Keep at most three epics open.
+Every change starts as a GitHub issue. Open one with an issue form, or comment on an existing issue to say you are working on it. Status lives on the project board, not in a comment thread.
 
-## Claim before you start
+## Branches and pull requests
 
-Every piece of work is a GitHub issue. Assign it, label it, and mark it in progress before you open a branch or hand it to an agent. A claimed issue is off limits to everyone else.
+Cut a short branch from `main` and open a pull request back into `main`. Keep each pull request small: one page or one fix, about 50 to 300 changed lines.
 
-Document the claim on the epic issue. Do not change repository settings.
-
-Status lives on the GitHub Project board, not in a comment thread.
-
-## Pull requests
-
-Every pull request body says which epic it belongs to, on its own line:
+The pull request body names its issue on its own line:
 
 ```
-Part of #2
+Part of #12
 ```
 
-Use the epic's issue number. CI fails a pull request into `main` or `epic/**` when that line is missing.
+CI fails a pull request when that line is missing. Dependabot is exempt, and so is a pull request labeled `no-epic`. Do not add that label to feature work.
 
-Dependabot is exempt, and so is a pull request labeled `no-epic`. That label is the exemption. Do not add it to feature work.
+Show proof in the pull request: the build output, or before-and-after screenshots at desktop width and at 390 px for anything visual.
 
-Issue templates and the pull request templates live under `.github/`. Do not paste copies of them into this file.
-
-## Branches
-
-| Branch                 | What lands there                         |
-| ---------------------- | ---------------------------------------- |
-| `main`                 | Finished epics, merged by Edward         |
-| `epic/<name>`          | The long-lived epic branch               |
-| `feat/<name>/<change>` | One small change, reviewed into the epic |
-
-Git stores a branch as a file under `refs/heads/`. While `epic/site-foundation` exists, Git cannot also create `epic/site-foundation/skeleton`, because that path would have to be both a file and a directory. Put the epic name in a `feat/<name>/<change>` branch, and open the pull request into `epic/<name>`.
-
-Do not push straight to `main` or to someone else's epic branch.
-
-## Lanes
-
-Lane ownership is this table, not a `CODEOWNERS` file. The lane owner resolves conflicts in that lane.
-
-| Lane        | Paths                                                    | Owner        |
-| ----------- | -------------------------------------------------------- | ------------ |
-| Design      | `src/styles/`, figure styles under `src/diagrams/style/` | Creative Bot |
-| Content     | `src/content/`                                           | Strategy Bot |
-| Engineering | config, CI, and the build                                | Engineer Bot |
+Every merge is a squash merge, and the branch is deleted when it merges. Do not push straight to `main`.
 
 ## Checks
 
-Pull requests into `main` and `epic/**` run four jobs:
+Pull requests into `main` run these jobs:
 
 - the body contains `Part of #<issue>` (Dependabot and `no-epic` skip this)
 - `npm ci`, wikilink check, citation check, production build, and HTML link check
 - Vale, using `.github/STYLE.md`, on `src/content/docs` (`vale --config .github/vale/.vale.ini src/content/docs`)
 - `npm run lint` (ESLint, markdownlint, and Prettier)
 
-## Deploy
+## Releases and deploys
 
-Merges to `main` build the site and dry-run the deployment using Wrangler. Publishing to Cloudflare Workers happens only when the `DEPLOY_ENABLED` repository variable is `true`. Deployments use the `production` environment secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`. The custom domain is added at launch.
+The site has two targets on Cloudflare Workers:
+
+| Trigger                        | Target                                  |
+| ------------------------------ | --------------------------------------- |
+| A merge to `main`              | The dev site, which search engines skip |
+| A version tag such as `v0.2.0` | eeprep.com                              |
+
+A release is one commit with its own version tag. The work merged since the last release is squashed into that commit, and the tag publishes it and creates a GitHub release with generated notes.
+
+Deploys use the `production` environment secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`.
 
 ## Local commands
 
