@@ -8,8 +8,8 @@ const after = [
 		tag: 'X · action + one spec',
 		text: 'Designed a [X] W synchronous buck converter',
 	},
-	' ',
-	{ tag: 'Y · tool', text: 'in KiCad' },
+	' in ',
+	{ tag: 'Y · tool', text: 'KiCad' },
 	' for a CubeSat power board and ',
 	{ tag: 'Z · measured result', text: 'measured [X]% efficiency' },
 	' on an electronic load, within [X]% of the LTspice model',
@@ -97,7 +97,7 @@ const caption = externalLinks(`
 	}
 	.eep-bullet .eep-bullet-after {
 		margin-top: 1.5rem;
-		color: var(--eep-dg-accent);
+		color: var(--eep-ink);
 	}
 	.eep-bullet-label svg {
 		width: 0.7rem;
@@ -118,7 +118,7 @@ const caption = externalLinks(`
 		color: var(--eep-mute);
 	}
 	.eep-bullet-good {
-		border-color: var(--eep-dg-accent);
+		border-color: var(--eep-ink);
 		color: var(--eep-ink);
 	}
 	.eep-bullet .eep-bullet-note {
@@ -151,7 +151,8 @@ const caption = externalLinks(`
 	@container (min-width: 36rem) {
 		.eep-bullet-good {
 			padding-top: 1.75rem;
-			line-height: 2.75;
+			padding-bottom: 0.6rem;
+			line-height: 2.5;
 		}
 		.eep-bullet-mark {
 			position: relative;
