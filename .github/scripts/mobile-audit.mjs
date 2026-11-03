@@ -1,6 +1,8 @@
 // Loads every built page at phone widths in both themes against `astro preview`
 // and fails on horizontal scroll, overlapping header controls, small tap
-// targets, and figure problems. Run `npm run build` first.
+// targets, and figure problems. It also checks that the header and its
+// controls sit at the same pixels on every page, at phone and desktop widths.
+// Run `npm run build` first.
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
 import net from 'node:net';
@@ -10,6 +12,7 @@ import { chromium } from 'playwright';
 /* global window, document, getComputedStyle */
 
 const widths = [375, 390];
+const desktopWidths = [1280, 1440];
 const themes = ['light', 'dark'];
 const minTap = 44;
 const minLabelPx = 11;
@@ -39,6 +42,7 @@ const preview = external
 const base = external ?? `http://localhost:${port}`;
 const problems = [];
 let browser;
+let desktop;
 
 try {
 	await waitForServer(base);
@@ -55,17 +59,36 @@ try {
 				localStorage.setItem('starlight-theme', t);
 			}, theme);
 			const page = await context.newPage();
+			const checkHeader = headerCheck(`@${width}px ${theme}`);
 			for (const route of pages) {
 				await page.goto(base + route, { waitUntil: 'load' });
 				const found = await page.evaluate(auditPage, { minTap, minLabelPx });
 				for (const message of found)
 					problems.push(`${route} @${width}px ${theme}: ${message}`);
+				checkHeader(route, await page.evaluate(headerBoxes));
 			}
 			await context.close();
 		}
 	}
+	// Desktop: show real scrollbars, so a page that scrolls and one that
+	// doesn't are compared the way a reader sees them.
+	desktop = await chromium.launch({ ignoreDefaultArgs: ['--hide-scrollbars'] });
+	for (const width of desktopWidths) {
+		const context = await desktop.newContext({
+			viewport: { width, height: 800 },
+			deviceScaleFactor: 1,
+		});
+		const page = await context.newPage();
+		const checkHeader = headerCheck(`@${width}px desktop`);
+		for (const route of pages) {
+			await page.goto(base + route, { waitUntil: 'load' });
+			checkHeader(route, await page.evaluate(headerBoxes));
+		}
+		await context.close();
+	}
 } finally {
 	await browser?.close();
+	await desktop?.close();
 	preview?.kill();
 }
 
@@ -190,6 +213,45 @@ function auditPage({ minTap, minLabelPx }) {
 }
 
 /** @param {string} dir @param {string} [prefix] */
+// Records the header boxes of the first page and reports any page where one
+// of them is somewhere else.
+function headerCheck(label) {
+	let first = null;
+	return (route, boxes) => {
+		if (!first) {
+			first = { route, boxes };
+			return;
+		}
+		for (const [name, box] of Object.entries(boxes)) {
+			const want = first.boxes[name];
+			if (want !== box)
+				problems.push(
+					`${route} ${label}: header ${name} is at ${box}, but ${want} on ${first.route}`,
+				);
+		}
+	};
+}
+
+// Runs in the page. Position and size of the header and each control in it.
+function headerBoxes() {
+	const round = (n) => Math.round(n * 10) / 10;
+	const box = (el) => {
+		if (!el) return 'missing';
+		const r = el.getBoundingClientRect();
+		return [r.x, r.y, r.width, r.height].map(round).join(',');
+	};
+	const out = {
+		header: box(document.querySelector('header.header')),
+		title: box(document.querySelector('header .site-title')),
+		search: box(document.querySelector('header button[data-open-modal]')),
+		theme: box(document.querySelector('header .eep-theme')),
+	};
+	document
+		.querySelectorAll('header .eep-nav a')
+		.forEach((a, i) => (out[`nav ${i + 1}`] = box(a)));
+	return out;
+}
+
 function listPages(dir, prefix = '/') {
 	const routes = [];
 	for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
