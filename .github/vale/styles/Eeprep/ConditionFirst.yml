@@ -1,8 +1,0 @@
-# Checklist rule 21: put the condition first in instructions.
-extends: existence
-message: "Put the condition first: 'If X, do Y.'"
-level: error
-ignorecase: false
-nonword: true
-tokens:
-  - ', if [^.!?]+\.'
