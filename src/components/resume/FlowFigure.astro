@@ -1,23 +1,72 @@
 ---
-import ThemeSvg from './ThemeSvg.astro';
-import light from '../../diagrams/resume/flow.svg?url';
-import dark from '../../diagrams/resume/flow-dark.svg?url';
-import path from 'node:path';
-
-const dir = path.resolve('src/diagrams/resume');
-
-const alt =
-	'Software stores it. People read it. Step 1, you apply: apply early, one manager reads about the first 150. Step 2, the ATS stores it: at many companies, it stores your resume rather than auto-rejecting it. Step 3, a recruiter skims it: companies, titles, and dates get read first. Step 4, a manager reads it, fast, often against hundreds of other resumes. A dashed branch shows where automatic cuts happen, at knockout questions. Form answers can cut you automatically.';
+// Figure 1 as HTML and CSS, so the text reflows and stays readable at every
+// width. Four steps sit in a row on wide screens and stack on narrow ones.
+const steps = [
+	{
+		title: 'You apply',
+		body: 'Apply early. One manager reads about the first 150.',
+	},
+	{
+		title: 'The ATS stores it',
+		body: 'At many companies, it stores your resume rather than auto-rejecting it.',
+	},
+	{
+		title: 'A recruiter skims it',
+		body: 'Companies, titles, and dates get read first.',
+	},
+	{
+		title: 'A manager reads it',
+		body: 'Fast, often against hundreds of other resumes.',
+	},
+];
+const arrow = 'M2 10H34M27 4.5L35 10L27 15.5Z';
 ---
 
-<figure class="eep-fig wide eep-theme-fig" id="fig-1">
-	<ThemeSvg
-		light={light}
-		dark={dark}
-		lightFile={path.join(dir, 'flow.svg')}
-		darkFile={path.join(dir, 'flow-dark.svg')}
-		alt={alt}
-	/>
+<figure class="eep-fig wide eep-flow-fig" id="fig-1">
+	<p class="eep-kicker">Figure 1 · How a resume gets read</p>
+	<p class="eep-figtitle">Software stores it. People read it.</p>
+	<div class="eep-flow-wrap">
+		<div class="eep-flow not-content">
+			{steps.map((step, i) => (
+				<>
+					{i > 0 && (
+						<svg
+							class:list={['eep-flow-arrow', `eep-flow-a${i}`]}
+							viewBox="0 0 36 20"
+							aria-hidden="true"
+							focusable="false"
+						>
+							<path d={arrow} />
+						</svg>
+					)}
+					<div class:list={['eep-flow-step', `eep-flow-s${i + 1}`]}>
+						<p class="eep-flow-num">Step {i + 1}</p>
+						<div class="eep-flow-card">
+							<p class="eep-flow-title">{step.title}</p>
+							<p class="eep-flow-body">{step.body}</p>
+						</div>
+					</div>
+					{i === 1 && (
+						<div class="eep-flow-branch">
+							<p class="eep-flow-cut">
+								<svg viewBox="0 0 20 36" aria-hidden="true" focusable="false">
+									<path class="eep-flow-dash" d="M10 1V28" />
+									<path d="M4.5 27L10 35L15.5 27Z" />
+								</svg>
+								<span>automatic cuts happen here</span>
+							</p>
+							<div class="eep-flow-card eep-flow-knock">
+								<p class="eep-flow-title">Knockout questions</p>
+								<p class="eep-flow-body">
+									Form answers can cut you automatically.
+								</p>
+							</div>
+						</div>
+					)}
+				</>
+			))}
+		</div>
+	</div>
 	<figcaption>
 		<span class="eep-fignum">Fig 1</span>
 		<span>
@@ -27,3 +76,172 @@ const alt =
 		</span>
 	</figcaption>
 </figure>
+
+<style>
+	.eep-flow-wrap {
+		container-type: inline-size;
+		margin-top: 1.25rem;
+	}
+	.eep-flow {
+		display: grid;
+		grid-template-columns: 1fr;
+		font-family: var(--eep-font-sans);
+	}
+	.eep-flow p {
+		margin: 0;
+		max-width: none;
+	}
+	.eep-flow .eep-flow-body {
+		margin-top: 0.3rem;
+	}
+	.eep-flow .eep-flow-num {
+		margin-bottom: 0.45rem;
+	}
+	/* The kicker can wrap on phones. */
+	.eep-flow-fig .eep-kicker {
+		line-height: 1.35;
+	}
+	.eep-flow-num {
+		font-size: 0.75rem;
+		line-height: 1;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--eep-mute);
+	}
+	.eep-flow-s4 .eep-flow-num {
+		color: var(--eep-dg-accent);
+	}
+	.eep-flow-card {
+		box-sizing: border-box;
+		padding: 0.7rem 0.75rem 0.8rem;
+		border: 1px solid var(--eep-dg-ink);
+		border-radius: 4px;
+		background: var(--eep-dg-fill);
+	}
+	.eep-flow-s4 .eep-flow-card {
+		border: 1.5px solid var(--eep-dg-accent);
+	}
+	.eep-flow-step {
+		display: flex;
+		flex-direction: column;
+	}
+	.eep-flow-step .eep-flow-card {
+		flex: 1;
+	}
+	.eep-flow-title {
+		font-size: 0.9375rem;
+		font-weight: 600;
+		line-height: 1.3;
+		color: var(--eep-ink);
+	}
+	.eep-flow-body {
+		font-size: 0.8125rem;
+		line-height: 1.45;
+		color: var(--eep-mute);
+	}
+	.eep-flow-knock {
+		border-style: dashed;
+	}
+	.eep-flow-knock .eep-flow-title {
+		font-size: 0.875rem;
+	}
+	.eep-flow svg {
+		display: block;
+		fill: var(--eep-dg-ink);
+		stroke: var(--eep-dg-ink);
+		stroke-width: 1.3;
+	}
+	.eep-flow svg path:first-child {
+		fill: none;
+	}
+	.eep-flow-dash {
+		stroke-dasharray: 3 3;
+	}
+	.eep-flow-cut {
+		display: flex;
+		gap: 0.4rem;
+		align-items: center;
+		font-size: 0.75rem;
+		line-height: 1.3;
+		color: var(--eep-mute);
+	}
+	.eep-flow-cut svg {
+		flex: none;
+		width: 1.1rem;
+		height: 2rem;
+	}
+
+	/* Narrow: one column, arrows point down, and the knockout branch hangs
+	   off step 2 with a dashed line. */
+	.eep-flow-arrow {
+		width: 1.75rem;
+		height: 1rem;
+		margin: 0.45rem auto;
+		transform: rotate(90deg);
+	}
+	.eep-flow-branch {
+		margin: 0 0 0 1.25rem;
+	}
+	.eep-flow-cut {
+		margin-left: 0.4rem;
+	}
+
+	/* Wide: four steps in a row, as in the printed figure. */
+	@container (min-width: 34rem) {
+		.eep-flow {
+			grid-template-columns:
+				minmax(0, 1fr) 1.75rem minmax(0, 1fr) 1.75rem
+				minmax(0, 1fr) 1.75rem minmax(0, 1fr);
+			grid-template-rows: auto auto auto;
+		}
+		.eep-flow-step {
+			grid-row: 1;
+		}
+		.eep-flow-s1 {
+			grid-column: 1;
+		}
+		.eep-flow-s2 {
+			grid-column: 3;
+		}
+		.eep-flow-s3 {
+			grid-column: 5;
+		}
+		.eep-flow-s4 {
+			grid-column: 7;
+		}
+		.eep-flow-arrow {
+			grid-row: 1;
+			align-self: center;
+			width: 100%;
+			margin: 1.2rem 0 0;
+			transform: none;
+		}
+		.eep-flow-a1 {
+			grid-column: 2;
+		}
+		.eep-flow-a2 {
+			grid-column: 4;
+		}
+		.eep-flow-a3 {
+			grid-column: 6;
+		}
+		.eep-flow-branch {
+			grid-row: 2;
+			grid-column: 3;
+			margin: 0;
+		}
+		.eep-flow-cut {
+			position: relative;
+			margin: 0;
+			justify-content: center;
+		}
+		.eep-flow-cut span {
+			position: absolute;
+			left: calc(50% + 0.9rem);
+			white-space: nowrap;
+		}
+		.eep-flow-cut svg {
+			height: 2.25rem;
+		}
+	}
+</style>
