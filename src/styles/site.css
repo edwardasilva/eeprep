@@ -363,3 +363,15 @@ html {
 .content-panel:has(> .sl-container:empty) {
 	display: none;
 }
+
+/* Links to other sites open in a new tab. The arrow is decoration, and the
+   screen-reader hint inside the link says the same thing in words. */
+.sl-markdown-content a.external-link::after {
+	content: '\2197';
+	content: '\2197' / '';
+	display: inline-block;
+	margin-inline-start: 0.15em;
+	font-size: 0.8em;
+	line-height: 1;
+	text-decoration: none;
+}
