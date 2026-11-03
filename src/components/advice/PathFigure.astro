@@ -38,7 +38,7 @@ const steps = [
 ];
 // Each route drops onto one shared line that runs left into the first node.
 const merge = [11.8, 37.3, 62.7, 88.2].map(
-	(x) => `M${x} 0V8Q${x} 12 ${x - 1.5} 12H2.9Q1.4 12 1.4 16V24`,
+	(x) => `M${x} 0V8Q${x} 12 ${x - 1.5} 12H2.5Q1.0 12 1.0 16V24`,
 );
 const back = 'M13 4H6.5a4 4 0 0 0 0 8H14M4 4l2.5-2.5M4 4l2.5 2.5';
 const caption = externalLinks(
@@ -47,6 +47,7 @@ const caption = externalLinks(
 ---
 
 <figure class="eep-fig wide eep-paths-fig" id="fig-4-1">
+	<p class="eep-kicker">Figure 4.1 · Paths to a first internship</p>
 	<div class="eep-paths not-content">
 		<div class="eep-paths-start">
 			<p class="eep-paths-head">No experience yet</p>
@@ -137,13 +138,17 @@ const caption = externalLinks(
 		</div>
 	</div>
 	<figcaption>
-		<span class="eep-fignum">Fig 4.1</span>
-		<span set:html={caption} />
+		<span class="eep-fignum">Fig 4.1</span> <span set:html={caption} />
 	</figcaption>
 </figure>
 
 <style>
+	/* The kicker can wrap on phones. */
+	.eep-paths-fig .eep-kicker {
+		line-height: 1.35;
+	}
 	.eep-paths {
+		margin-top: 1rem;
 		--line: 1.5px;
 		--node: 0.8rem;
 		container-type: inline-size;
@@ -273,7 +278,7 @@ const caption = externalLinks(
 		left: 0;
 	}
 	.eep-paths-offer::before {
-		top: 0.05rem;
+		top: 0.3rem;
 		left: -0.125rem;
 	}
 	.eep-paths-routes,
@@ -298,9 +303,11 @@ const caption = externalLinks(
 		.eep-paths::before {
 			display: none;
 		}
-		.eep-paths-start,
-		.eep-paths-pick {
+		.eep-paths-start {
 			padding-left: 1.5rem;
+		}
+		.eep-paths-pick {
+			padding-left: 0;
 		}
 		.eep-paths-routes {
 			grid-template-columns: repeat(4, minmax(0, 1fr));
