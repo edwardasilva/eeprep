@@ -6,7 +6,7 @@ import os from 'node:os';
 import path from 'node:path';
 
 const root = path.resolve('src/diagrams/resume');
-const figures = ['dodont'];
+const figures = [];
 
 for (const tool of ['lualatex', 'dvisvgm']) {
 	if (spawnSync(tool, ['--version'], { encoding: 'utf8' }).status !== 0) {
