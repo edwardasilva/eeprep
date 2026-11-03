@@ -215,6 +215,7 @@ export default defineConfig({
 			],
 			components: {
 				Head: './src/components/Head.astro',
+				Footer: './src/components/Footer.astro',
 				Header: './src/components/Header.astro',
 				ThemeSelect: './src/components/ThemeSelect.astro',
 				PageTitle: './src/components/PageTitle.astro',
