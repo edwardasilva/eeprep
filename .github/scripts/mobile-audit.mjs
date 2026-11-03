@@ -1,7 +1,8 @@
 // Loads every built page at phone widths in both themes against `astro preview`
 // and fails on horizontal scroll, overlapping header controls, small tap
 // targets, and figure problems. It also checks that the header and its
-// controls sit at the same pixels on every page, at phone and desktop widths.
+// controls sit at the same pixels on every page, at phone and desktop widths,
+// and that text in figures renders at 12px or more.
 // Run `npm run build` first.
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
@@ -9,13 +10,28 @@ import net from 'node:net';
 import path from 'node:path';
 import { chromium } from 'playwright';
 
-/* global window, document, getComputedStyle */
+/* global window, document, getComputedStyle, NodeFilter */
 
 const widths = [375, 390];
 const desktopWidths = [1280, 1440];
 const themes = ['light', 'dark'];
 const minTap = 44;
 const minLabelPx = 11;
+const minFigurePx = 12;
+// Smallest source font size, in viewBox units, of each SVG figure. The SVGs
+// draw text as outlines, so the size can't be read from the file. The
+// path-map sizes are measured from the drawing.
+const svgMinFont = {
+	bullet: 11.5,
+	dodont: 10.5,
+	'path-map': 10,
+	'path-map-mobile': 10,
+};
+// HTML figures still waiting for their own fix. Listed, like the SVG
+// figures, but they don't fail yet.
+const knownSmall = new Set(['fig-3']);
+// Figures below the minimum that are listed but don't fail yet.
+const smallFigures = new Map();
 const dist = path.resolve('dist');
 
 if (!fs.existsSync(dist)) {
@@ -66,6 +82,7 @@ try {
 				for (const message of found)
 					problems.push(`${route} @${width}px ${theme}: ${message}`);
 				checkHeader(route, await page.evaluate(headerBoxes));
+				await checkFigureText(route, `@${width}px ${theme}`, page);
 			}
 			await context.close();
 		}
@@ -83,6 +100,7 @@ try {
 		for (const route of pages) {
 			await page.goto(base + route, { waitUntil: 'load' });
 			checkHeader(route, await page.evaluate(headerBoxes));
+			await checkFigureText(route, `@${width}px desktop`, page);
 		}
 		await context.close();
 	}
@@ -92,6 +110,8 @@ try {
 	preview?.kill();
 }
 
+for (const [fig, px] of smallFigures)
+	console.log(`Note: the smallest text in ${fig} renders at about ${px}px.`);
 for (const problem of problems) console.error(problem);
 const checks = pages.length * widths.length * themes.length;
 if (problems.length) {
@@ -215,6 +235,61 @@ function auditPage({ minTap, minLabelPx }) {
 /** @param {string} dir @param {string} [prefix] */
 // Records the header boxes of the first page and reports any page where one
 // of them is somewhere else.
+// Text in an HTML figure must render at minFigurePx or more. For SVG figures
+// the size is estimated as source size times rendered width over viewBox
+// width, and only listed for now.
+async function checkFigureText(route, label, page) {
+	const { html, svg } = await page.evaluate(figureText, svgMinFont);
+	const note = (fig, px) => {
+		const key = `${route}#${fig}`;
+		smallFigures.set(key, Math.min(px, smallFigures.get(key) ?? Infinity));
+	};
+	for (const { fig, px, text } of html) {
+		if (px >= minFigurePx) continue;
+		if (knownSmall.has(fig)) note(fig, px);
+		else
+			problems.push(
+				`${route} ${label}: ${fig} text "${text}" renders at ${px}px, under ${minFigurePx}px`,
+			);
+	}
+	for (const { fig, px } of svg) if (px < minFigurePx) note(fig, px);
+}
+
+// Runs in the page. Smallest rendered text in each figure.
+function figureText(sources) {
+	const round = (n) => Math.round(n * 10) / 10;
+	const html = [];
+	const svg = [];
+	for (const fig of document.querySelectorAll('figure')) {
+		const name = fig.id || 'figure';
+		const walker = document.createTreeWalker(fig, NodeFilter.SHOW_TEXT);
+		let min = null;
+		while (walker.nextNode()) {
+			const node = walker.currentNode;
+			const el = node.parentElement;
+			if (!node.textContent.trim() || !el || el.closest('svg')) continue;
+			if (!el.getClientRects().length) continue;
+			const px = parseFloat(getComputedStyle(el).fontSize);
+			if (!min || px < min.px)
+				min = { fig: name, px: round(px), text: node.textContent.trim() };
+		}
+		if (min) html.push(min);
+		for (const img of fig.querySelectorAll('img')) {
+			if (!img.getClientRects().length) continue;
+			const file = (img.getAttribute('src') ?? '').split('/').pop() ?? '';
+			const key = file
+				.replace(/(\.[\w-]{6,})?\.svg$/, '')
+				.replace(/-dark$/, '');
+			const source = sources[key];
+			const width = Number(img.getAttribute('width'));
+			if (!source || !width) continue;
+			const px = (source * img.getBoundingClientRect().width) / width;
+			svg.push({ fig: `${name} (${key}.svg)`, px: round(px) });
+		}
+	}
+	return { html, svg };
+}
+
 function headerCheck(label) {
 	let first = null;
 	return (route, boxes) => {
