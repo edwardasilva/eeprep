@@ -20,7 +20,7 @@ const notes = [
 	},
 	{
 		title: 'Tools only, each one in a bullet.',
-		body: "Two labeled lines of tools, with no soft skills or skill levels. Each of Alex's eight tools appears in a bullet. That rule is stricter than any sample; the UIC sample comes closest.",
+		body: "Two labeled lines of tools, with no soft skills or skill levels. Each of Alex's eight tools appears in a bullet. That rule is stricter than any sample. The UIC sample comes closest.",
 	},
 ];
 ---
@@ -84,14 +84,12 @@ const notes = [
 				</div>
 				<ul>
 					<li>
-						Designed a [X] W synchronous buck converter in KiCad for a CubeSat
-						power board and measured [X]% efficiency on an electronic load,
-						within [X]% of the LTspice model
+						Designed a [X] W CubeSat buck converter in KiCad and LTspice,
+						measured at [X]% on an electronic load
 					</li>
 					<li>
-						Shrank the switching loop on the second board revision and cut
-						output ripple from [X] mV to [X] mV on an oscilloscope, within [X]%
-						of a hand calculation
+						Cut output ripple from [X] mV to [X] mV by shrinking the switching
+						loop, verified on an oscilloscope
 					</li>
 				</ul>
 				<div class="eep-example-row">
@@ -102,14 +100,12 @@ const notes = [
 				</div>
 				<ul>
 					<li>
-						Wrote STM32 firmware in C that reads a 4-channel SPI ADC at [X] kHz
-						and streams the samples over UART to a Python script that logs each
-						run to CSV
+						Wrote STM32 firmware in C to sample a 4-channel SPI ADC at [X] kHz
+						and stream it to a Python logger
 					</li>
 					<li>
-						Traced dropped samples to a blocking UART write with a logic
-						analyzer, moved transfers to DMA, and cut lost samples from [X]% to
-						[X]%
+						Moved UART writes to DMA after a logic analyzer showed dropped
+						samples, cutting losses to [X]%
 					</li>
 				</ul>
 			</div>
