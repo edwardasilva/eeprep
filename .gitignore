@@ -19,6 +19,7 @@ coverage/
 # Editors. Shared VS Code settings can still be committed.
 .idea/
 .vscode/*
+.gemini/*
 !.vscode/settings.json
 !.vscode/extensions.json
 !.vscode/launch.json
