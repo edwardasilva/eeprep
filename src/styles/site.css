@@ -215,9 +215,16 @@ button[data-open-modal] kbd {
 		);
 		--sl-menu-button-size: var(--eep-tap);
 	}
-	.header {
+	/* Starlight pads the header for its menu button only on pages with a
+	   sidebar, which moves the theme toggle and narrows the nav. Reserve the
+	   button's column on every page instead, so the header is the same
+	   everywhere. */
+	header.header {
+		padding-inline-end: var(--sl-nav-pad-x);
+	}
+	div.header {
 		display: grid;
-		grid-template-columns: minmax(0, 1fr) auto auto;
+		grid-template-columns: minmax(0, 1fr) auto auto var(--sl-menu-button-size);
 		grid-template-rows: var(--eep-tap) var(--eep-tap);
 		column-gap: 0.75rem;
 		row-gap: 0.25rem;
@@ -357,6 +364,13 @@ textarea {
 }
 html {
 	-webkit-tap-highlight-color: transparent;
+}
+
+/* Keep the header in the same place on every page. Short pages have no
+   vertical scrollbar and long pages do, so without a reserved gutter the
+   viewport, and the fixed header with it, changes width between pages. */
+html {
+	scrollbar-gutter: stable;
 }
 
 /* The splash page has no title, which leaves an empty bordered band at the top. */
