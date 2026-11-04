@@ -16,7 +16,10 @@ const caption = externalLinks(
 ---
 
 <figure class="eep-fig wide eep-offers-fig" id="fig-5-2">
-	<p class="eep-kicker">Figure 5.2 · Return offers for 2024-25 interns</p>
+	<p class="eep-kicker">
+		Figure 5.2 · Return offers for <span class="eep-nobreak">2024-25</span>{' '}
+		interns
+	</p>
 	<p class="sr-only">{alt}</p>
 	<div class="eep-offers not-content" aria-hidden="true">
 		{bars.map((b) => (
@@ -36,6 +39,10 @@ const caption = externalLinks(
 </figure>
 
 <style>
+	/* Keeps "2024-25" on one line, so the kicker never breaks at the hyphen. */
+	.eep-offers-fig .eep-nobreak {
+		white-space: nowrap;
+	}
 	.eep-offers-fig .eep-kicker {
 		line-height: 1.35;
 	}

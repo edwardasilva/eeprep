@@ -46,7 +46,10 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 ---
 
 <figure class="eep-fig wide eep-recruit-fig" id="fig-5-1">
-	<p class="eep-kicker">Figure 5.1 · New-grad recruiting in senior year</p>
+	<p class="eep-kicker">
+		Figure 5.1 · <span class="eep-nobreak">New-grad</span> recruiting in senior
+		year
+	</p>
 	<p class="sr-only">{alt}</p>
 	<div class="eep-recruit not-content" aria-hidden="true">
 		<ol>
@@ -87,6 +90,10 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 <style>
 	.eep-recruit-fig .eep-kicker {
 		line-height: 1.35;
+	}
+	/* Keeps "New-grad" on one line, so the kicker never breaks at the hyphen. */
+	.eep-recruit-fig .eep-nobreak {
+		white-space: nowrap;
 	}
 	.eep-recruit {
 		margin-top: 1rem;
@@ -267,35 +274,23 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 		.eep-recruit-band:not(.eep-recruit-peak) .eep-recruit-text {
 			padding: 0.5rem 0 0.55rem;
 		}
-		/* Under bands 1 and 2, a tick runs from the band down into its
-		   marker. It is cut off at the bottom of the column, and the marker's
-		   own fill hides it inside the box. */
 		.eep-recruit-band:not(.eep-recruit-peak) .eep-recruit-text {
 			align-self: start;
 		}
-		.eep-recruit-hasmark {
-			clip-path: inset(-1rem -2rem 0 -2rem);
-		}
-		.eep-recruit-hasmark .eep-recruit-text {
-			position: relative;
-		}
-		.eep-recruit-hasmark .eep-recruit-text::after {
-			content: '';
-			position: absolute;
-			top: 100%;
-			left: calc(var(--node) / 2 - var(--line) / 2);
-			height: 40rem;
-			border-left: var(--line) solid var(--eep-dg-ink);
-		}
-		.eep-recruit-peak .eep-recruit-text::after {
-			left: calc(var(--node) / 2 - var(--line) / 2 - 1px);
-		}
+		/* Both markers sit in the band's last row, so the dashed boxes share
+		   a top. Each hangs from the same short tick at the same offset, so
+		   the two ticks match whatever the band text above them does. */
 		.eep-recruit .eep-recruit-mark {
-			z-index: 1;
+			align-self: start;
 			background: var(--eep-dg-fill);
 		}
 		.eep-recruit-mark::before {
-			display: none;
+			top: calc(-0.75rem - var(--line));
+			left: 1rem;
+			width: 0;
+			height: 0.75rem;
+			border-top: 0;
+			border-left: var(--line) solid var(--eep-dg-ink);
 		}
 		.eep-recruit-nomark {
 			display: block;
