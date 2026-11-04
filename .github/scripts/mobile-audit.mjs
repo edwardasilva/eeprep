@@ -77,6 +77,11 @@ try {
 				for (const message of found)
 					problems.push(`${route} @${width}px ${theme}: ${message}`);
 				checkHeader(route, await page.evaluate(headerBoxes));
+				// Every page, splash pages included, needs the menu button on phones.
+				if (!(await page.locator('button.sl-menu-button').first().isVisible()))
+					problems.push(
+						`${route} @${width}px ${theme}: no visible menu button`,
+					);
 				await checkFigureText(route, `@${width}px ${theme}`, page);
 			}
 			await context.close();
