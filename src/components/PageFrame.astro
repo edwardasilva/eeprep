@@ -1,7 +1,8 @@
 ---
 // Splash pages (the home page) have no sidebar, so Starlight drops the phone
 // menu button with it. Below 50rem, give those pages the same button and menu;
-// from 50rem up they stay sidebar-free, as before.
+// from 50rem up they stay sidebar-free, as before. The menu sits in the
+// header, before the page content, like the doc-page toggle.
 import Default from '@astrojs/starlight/components/PageFrame.astro';
 import MobileMenuToggle from 'virtual:starlight/components/MobileMenuToggle';
 import Sidebar from 'virtual:starlight/components/Sidebar';
@@ -10,23 +11,51 @@ const { hasSidebar } = Astro.locals.starlightRoute;
 ---
 
 <Default>
-	<slot name="header" slot="header" />
+	<Fragment slot="header">
+		<slot name="header" />
+		{!hasSidebar && (
+			<nav
+				class="eep-splash-menu md:sl-hidden print:hidden"
+				aria-label={Astro.locals.t('sidebarNav.accessibleLabel')}
+			>
+				<MobileMenuToggle />
+				<sl-sidebar-pane
+					popover="auto"
+					id="starlight__sidebar"
+					class="eep-splash-pane"
+				>
+					<div class="eep-splash-content sidebar-content">
+						<Sidebar />
+					</div>
+				</sl-sidebar-pane>
+			</nav>
+		)}
+	</Fragment>
 	<slot name="sidebar" slot="sidebar" />
 	<slot />
 </Default>
-{!hasSidebar && (
-	<nav
-		class="eep-splash-menu md:sl-hidden print:hidden"
-		aria-label={Astro.locals.t('sidebarNav.accessibleLabel')}
-	>
-		<MobileMenuToggle />
-		<div popover="auto" id="starlight__sidebar" class="eep-splash-pane">
-			<div class="eep-splash-content sidebar-content">
-				<Sidebar />
-			</div>
-		</div>
-	</nav>
-)}
+
+<script>
+	// Starlight only defines its sidebar pane on pages with a sidebar. Give the
+	// splash menu the same focus trap: while it is open, the page content and
+	// skip link are inert, so focus stays in the header and menu.
+	if (!customElements.get('sl-sidebar-pane')) {
+		customElements.define(
+			'sl-sidebar-pane',
+			class extends HTMLElement {
+				constructor() {
+					super();
+					this.addEventListener('toggle', (event) => {
+						const open = (event as ToggleEvent).newState === 'open';
+						document
+							.querySelectorAll<HTMLElement>('.main-frame, .sl-skip-link')
+							.forEach((el) => el.toggleAttribute('inert', open));
+					});
+				}
+			},
+		);
+	}
+</script>
 
 <style>
 	.eep-splash-pane {
