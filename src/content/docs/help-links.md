@@ -7,7 +7,7 @@ head:
     content: "Help links for EE job searching | EE Prep"
 ---
 
-These links cover pay data, job openings, resume feedback, and forums. eeprep takes no affiliate fees from any of them. For how to use them in an application, see [[Resume]] and [[Your first internship]].
+These links cover pay data, job openings, resume feedback, and forums. eeprep takes no affiliate fees from any of them. For how to use them in an application, see [[Resume]] and [[Getting hired]].
 
 eeprep doesn't give visa, immigration, or security clearance advice. For those questions, check official sources: [USCIS](https://www.uscis.gov/), your school's international student office, and the employer.
 

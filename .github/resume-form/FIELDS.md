@@ -56,7 +56,7 @@ Rules:
 
 - Line 1: degree, then ", GPA " and the GPA on the same line, then the graduation date at the right margin. Line 2: school. Source: eeprep's author, resume page "Education".
 - GPA format is `N.NN/4.00`. Error if the two numbers have different decimal places, such as 3.3/4.00. Source: [an intern's resume review](https://www.reddit.com/r/EngineeringResumes/comments/15i3d8v/my_boss_said_my_resume_could_use_a_lot_of_work/).
-- GPA hint: "List it when the posting sets a minimum you meet." Source: eeprep's rule from "Your first internship", repeated on the resume page.
+- GPA hint: "List it when the posting sets a minimum you meet." Source: eeprep's rule from "Getting hired", repeated on the resume page.
 - Coursework and activities each print as one line, with the label "Relevant coursework:" or "Activities:" in bold. Both lines are omitted when blank. Source: eeprep's author.
 - Coursework hint: "Upper-level electives that match the posting." Source: [an ECE interviewer](https://www.reddit.com/r/EngineeringResumes/comments/q4d5op/electrical_engineering_senior_no_experience/).
 - Warning if an activity looks like a technical build team. The hint says to move real build work into Projects with bullets. Source: resume page "Projects".
