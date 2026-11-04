@@ -34,18 +34,17 @@ const rows = [
 		],
 	},
 ];
-const alt =
-	'A comparison of hardware and software projects. Hardware needs instruments, parts, breadboards, and a computer, and can start free with the lab scope, KiCad, and Wokwi. Software needs a computer and an internet connection, and can start free with cocotb, Verilator, and EDA Playground. Reviewers check a measured bench number, a photo, and a write-up for hardware, and a repository with a README, tests, and a measured result for software.';
 const caption = externalLinks(
 	`Both kinds of project need a result you measured and can defend. Sources: <a href="https://x.com/karanbhilatiya/status/2078038754368065816">the cost of hardware versus software</a>, <a href="https://wokwi.com/">Wokwi</a>, <a href="https://www.kicad.org/">KiCad</a>, <a href="https://www.cocotb.org/">cocotb</a>, <a href="https://www.veripool.org/verilator/">Verilator</a>, <a href="https://www.edaplayground.com/">EDA Playground</a>, and <a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes">GitHub on READMEs</a>.`,
 );
 ---
 
 <figure class="eep-fig wide eep-hwsw-fig" id="fig-7-1">
-	<p class="eep-kicker">Figure 7.1 · Hardware and software projects</p>
-	<p class="sr-only">{alt}</p>
+	<p class="eep-kicker" id="fig-7-1-title">
+		Figure 7.1 · Hardware and software projects
+	</p>
 	<div class="eep-hwsw not-content">
-		<table role="table">
+		<table role="table" aria-labelledby="fig-7-1-title">
 			<thead role="rowgroup">
 				<tr role="row">
 					<td role="cell"></td>
