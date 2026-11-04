@@ -56,6 +56,8 @@ jobs:
       - run: npm run test:worker
       - run: npm run check:links
       - run: npm run check:link-text
+      - run: npm run test:link-index
+      - run: npm run check:link-index
 
   mobile:
     name: Mobile audit

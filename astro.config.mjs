@@ -132,6 +132,7 @@ export default defineConfig({
 			title: 'EE Prep',
 			description: 'A prep guide for electrical engineering students.',
 			credits: false,
+			routeMiddleware: './src/route-data.ts',
 			favicon: '/favicon.svg',
 			customCss: [
 				'./src/styles/fonts.css',
@@ -282,7 +283,13 @@ export default defineConfig({
 						},
 					],
 				},
-				{ label: 'Help links', slug: 'help-links' },
+				{
+					label: 'Help links',
+					items: [
+						{ label: 'Help links', slug: 'help-links' },
+						{ label: 'All links', slug: 'help-links/all-links' },
+					],
+				},
 				{ label: 'Roadmap', slug: 'roadmap' },
 			],
 		}),
