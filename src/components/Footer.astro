@@ -1,11 +1,13 @@
 ---
 import Default from '@astrojs/starlight/components/Footer.astro';
 
+import { externalLinks } from './resume/caption';
+
 // Plain-text license notice under every page. The links get the same
 // external-link markup as links in the guide text.
-const link = (name: string, href: string) =>
-	`<a href="${href}" class="external-link" target="_blank" rel="noopener noreferrer">${name}<span class="sr-only"> (opens in a new tab)</span></a>`;
-const notice = `Content licensed ${link('CC BY 4.0', 'https://creativecommons.org/licenses/by/4.0/')}. Code licensed ${link('MIT', 'https://opensource.org/license/mit')}.`;
+const notice = externalLinks(
+	`Content licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Code licensed <a href="https://opensource.org/license/mit">MIT</a>.`,
+);
 ---
 
 <Default />
