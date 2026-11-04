@@ -267,6 +267,10 @@ export default defineConfig({
 							label: 'Hardware experience',
 							slug: 'advice/hardware-experience',
 						},
+						{
+							label: 'How to interview',
+							slug: 'advice/how-to-interview',
+						},
 					],
 				},
 				{ label: 'Help links', slug: 'help-links' },

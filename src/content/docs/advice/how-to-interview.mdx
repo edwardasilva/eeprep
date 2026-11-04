@@ -1,0 +1,224 @@
+---
+title: How to interview
+description: "How to prepare for electrical and embedded engineering interviews: project questions, fundamentals, whiteboard coding, behavioral stories, the on-site day, and what to do after."
+pageType: guide
+head:
+  - tag: title
+    content: "How to prepare for EE and embedded interviews | EE Prep"
+---
+
+Expect a long, tiring process, and know everything you put on your resume in full detail. Interviewers keep asking until they find the edge of what you know. Prepare in this order: your projects, then fundamentals, then coding, then behavioral stories. Get a referral before you apply if you can.
+
+This page follows one real hiring process, told by eeprep's author, a working embedded software engineer. Career center guides, hiring research, and posts from engineers fill in the rest. The author's full story is under Author anecdotes. Alex Doe from [[Resume]] is the running example. Every bracket is a detail you fill in.
+
+## What the process looks like now
+
+The process runs long. The author went through 6 rounds plus a 3-hour take-home test. The in-person day alone had 5 sessions of at least 1 hour each and ran 6 to 7 hours. [Michigan Engineering's career center says some employers hire after one interview and others run multiple rounds](https://career.engin.umich.edu/interviews/). Plan for the long version.
+
+The author's process ran in this order. Yours may drop some steps or add others.
+
+1. A recruiter phone screen.
+2. A phone screen with the team.
+3. A take-home test.
+4. A call with the hiring manager about your projects.
+5. An in-person day: a talk on your work, a system design session, project questions, a coding problem, and the hiring manager.
+6. Two calls with senior leaders.
+
+Each round goes deeper than the resume. [A recruiter on X says hiring managers now go 3 to 5 layers deep](https://x.com/randomrecruiter/status/2081829972415578607) on whatever you say: "How did you do that. Why that way. What broke. What would you do differently." The same post says candidates who padded their resumes with AI got caught in later rounds. One embedded new graduate [found that interviewers rarely asked the same project questions twice](https://www.reddit.com/r/EngineeringResumes/comments/1v9440p/0_yoe_finally_landed_an_embedded_systems_engineer/). Another early-career engineer [said they kept getting "hammered with harder questions until they can stump me"](https://www.reddit.com/r/ElectricalEngineering/comments/1da96fe/frustrated_with_interview_practices/). Expect to reach your limit. That is part of the format.
+
+Entry-level roles run long too. [One EE was surprised that a trainee position came with a 70-minute technical interview](https://www.reddit.com/r/ElectricalEngineering/comments/15y0mnc/why_is_it_so_necessary_to_get_through_hard/). The engineer roles they applied to next ran the same way.
+
+Many employers score you against a fixed set of questions. [The US Office of Personnel Management defines a structured interview](https://www.opm.gov/frequently-asked-questions/assessment-policy-faq/structured-interviews/how-do-structured-interviews-differ-from-other-types-of-job-interviews/) as one where every candidate gets the same questions in the same order. Every answer is scored on the same scale. [A 2022 review of hiring research ranked structured interviews first among the selection methods it compared](https://pubmed.ncbi.nlm.nih.gov/34968080/). For you, that means the same topics come up for every candidate, so you can prepare for them.
+
+## Get a referral first
+
+A referral gets you into the process sooner. In [Ashby's hiring data, 40% of referred candidates went from application to interview](https://www.ashbyhq.com/talent-trends-report/reports/referrals). [[Your first internship#Get a referral first]] lists who to ask and what to send.
+
+The author had no referral and applied cold. They say a referral would have made the process far easier. Later, the friends they referred went straight to the top of the pile.
+
+If you cannot get one, apply the day the posting opens. [Greenhouse says most recruiters review applications in the order they arrive](https://my.greenhouse.com/blogs/what-really-happens-after-you-apply-for-a-job). The author built a job-posting scraper to catch new postings on day one. Their advice is to be scrappy, especially at big companies. You do not need a scraper. Check the career pages of your top companies every day.
+
+## How to prepare
+
+Start with your own projects, because that is where the follow-ups go deepest. [One embedded intern wrote that the resume is just the step in the door](https://www.reddit.com/r/EngineeringResumes/comments/1i6v8x8/student_success_story_landed_3_interviews_and_an/). The rest happens when you talk about your work.
+
+### Your projects, line by line
+
+Every line on your resume is fair game, and the questions go several layers down. The author spent a full hour at a whiteboard on one senior design board.
+
+For each project, write out answers to these before the interview:
+
+- What does it do, in two sentences?
+- What part did you own?
+- Why did you pick each major part, tool, or method?
+- What broke, and how did you find it?
+- What did you measure, and with what instrument?
+- What would you change on the next revision?
+
+The last questions come from [Michigan Engineering's guide to interview talks](https://career.engin.umich.edu/phd-industry-job-search/). It lists the follow-ups interviewers ask most. They ask why you chose an approach and what alternatives you considered. They also ask how you handled problems and what you would do differently.
+
+Take Alex's CubeSat buck converter. Expect "Why a buck converter and not an LDO?" [Hardware FYI lists that exact trade-off among common analog questions](https://www.hardwareinterviews.fyi/t/top-electrical-engineering-interview-questions/807). Alex also needs to say why [X] W, how the [X]% efficiency was measured, and what loads were tested. If Alex cannot explain a number, it comes off the resume.
+
+### Fundamentals from the ground up
+
+The author's system design session asked how to build a computer from the ground up. The answer went down to interrupts, how the CPU executes code, and pipelining. [MIT's free Computation Structures course](https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/) covers that path, from CMOS gates to a pipelined processor, devices, and interrupts.
+
+Review the topics your resume and the posting touch first:
+
+- Embedded C. Know what `volatile` does and when you need it. [Nigel Jones of Barr Group names three cases](https://barrgroup.com/embedded-systems/how-to/c-volatile-keyword): memory-mapped peripheral registers, globals changed by an interrupt service routine, and globals shared between tasks.
+- Interrupts and memory. Know what happens from the interrupt to the return, and where each variable lives. [The MIT course has units on procedures and stacks, the memory hierarchy, and devices and interrupts](https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/).
+- Protocols and parts. [Hardware FYI lists I2C, SPI, and UART](https://www.hardwareinterviews.fyi/t/top-electrical-engineering-interview-questions/807), and when to pick a microcontroller, an FPGA, or an ASIC.
+- Analog and power. The same list includes MOSFETs versus BJTs, a buck converter versus an LDO, and deriving the gain of an inverting op-amp.
+- Digital logic and signals. It also lists a parallel-in, serial-out shift register, the Nyquist rate, and FIR versus IIR filters.
+
+Hardware interviews mix these. [One student's Microsoft hardware internship loop had 3 interviews](https://www.reddit.com/r/ECE/comments/1gmt5fg/microsoft_hardware_engineering_intern_interview/), each half behavioral and half technical. The technical half covered analog filters, timing analysis, signal integrity, and their projects.
+
+### Coding problems out loud
+
+The author's in-person day included a LeetCode-style problem on a whiteboard. That is the question type the author says to be ready for. No debugging questions came up. [Hardware FYI says many hardware roles at big tech companies expect you to code](https://www.hardwareinterviews.fyi/t/top-electrical-engineering-interview-questions/807), with problems such as merging two sorted linked lists.
+
+Practice the format as well as the problems. [Illinois Engineering Career Services says many students struggle with whiteboard coding](https://ecs.grainger.illinois.edu/student-resources/interviewing/fundamentals) if they have not practiced that specific format. Solve problems on paper or a whiteboard with no editor, and talk the whole time.
+
+Practice with someone watching. In a [2020 study by NC State and Microsoft researchers, having an interviewer watch cut performance by more than half](https://par.nsf.gov/servlets/purl/10196170). The study had 48 computer science students solve the same kind of problem in private or in front of an interviewer. You cannot remove the audience on the day, so get used to one beforehand.
+
+At the board, follow [Michigan Engineering's technical interview advice](https://career.engin.umich.edu/interviews/). Think out loud, watch for the clues the interviewer gives you, and ask when you are stuck. [Georgia Tech's career center says to clarify before solving](https://career.gatech.edu/graduate-job/interviewing/), and that many technical interviews give credit for a sound approach. Restate the problem and ask for what you need before you start.
+
+### Behavioral stories
+
+Behavioral questions ask about something you did. "Tell me about a time you failed" is the classic. Answer with STAR: situation, task, action, result. [MIT's career office suggests spending about 60% of the answer on the action](https://capd.mit.edu/resources/the-star-method-for-behavioral-interviews/), with "I" statements about your own part.
+
+[Michigan Engineering tells students to prepare 5 to 10 success stories](https://career.engin.umich.edu/interviews/). The same page says employers often find student answers not specific enough. An EE story needs a part number, a measurement, or a date. Here is Alex's, with the brackets left to fill in:
+
+> Situation: [N] weeks before integration, the CubeSat power board ran hot at [X] A.
+>
+> Task: I owned the power board.
+>
+> Action: I measured the switch node on the scope and found [cause]. I changed [part or layout] and retested on an electronic load.
+>
+> Result: Efficiency went from [X]% to [Y]%, and the board passed integration on [date].
+
+Say your stories out loud before the day. [The Colorado School of Mines career center tells students to write their answers down, then practice saying them out loud](https://careers.mines.edu/interview-preparation/). Expect fit questions too. The author's manager and leadership calls asked about expected daily hours and work-life balance.
+
+### The project talk
+
+Some loops ask you to present your own work. The author gave a one-hour talk on their internship work to six engineers who interrupted often to push for detail. Most of those engineers became the author's teammates.
+
+[Michigan Engineering describes interview talks of 30 to 60 minutes](https://career.engin.umich.edu/phd-industry-job-search/), with probing questions to test whether you understand the details. Its advice is written for PhD candidates, and it fits any talk. Cover the problem, your approach, the trade-offs, and the outcome. Rehearse in front of friends, and ask them to interrupt you.
+
+### Take-home tests
+
+The author's take-home ran about 3 hours with no AI tools allowed. The problem was open-ended with no perfect answer. It was judged on what the author chose to optimize.
+
+Follow the rules exactly, including the AI rule. Decide early what you will optimize, such as speed, memory, or readability, and write that choice down with your reasons. [Georgia Tech's career center says your reasoning matters as much as the final answer](https://career.gatech.edu/graduate-job/interviewing/), so explain the trade-offs you made.
+
+### Mock interviews
+
+[Illinois Engineering Career Services calls a mock interview the best way to prepare](https://ecs.grainger.illinois.edu/student-resources/interviewing/mock). [Michigan Engineering offers them](https://career.engin.umich.edu/interviews/), and [the Colorado School of Mines runs peer-to-peer mock interview sessions](https://careers.mines.edu/career-professional-development-workshops/). Book one at your school's career center before your first real loop.
+
+## On the day
+
+Every part of the visit counts. The author's in-person day opened with a site tour and included a lunch, and both were part of the evaluation. On the tour, engineers pointed at equipment and asked how the author thought it worked. Give your best guess and your reasoning. [Illinois Engineering Career Services says to be at your best during the entire experience](https://ecs.grainger.illinois.edu/student-resources/interviewing/tips), because anyone could have a say in hiring.
+
+The sessions may run back to back, mostly at a whiteboard. Explain your thinking out loud in every one. The author says the same skill matters on the job, where you explain your reasoning and defend your work.
+
+If you do not know, say so. The author's rule is to be confident, not arrogant, and never to bluff. Interviewers can tell. [MIT's career office warns that bending the truth can come across as disingenuous](https://capd.mit.edu/resources/the-star-method-for-behavioral-interviews/). It may also contradict your resume or what a referral said about you. Say what you do know, then reason toward the rest.
+
+Bring questions for each interviewer. An in-person day with 5 sessions needs more than one good question. [MIT's career office has a list of sample questions](https://capd.mit.edu/resources/questions-to-ask-interviewer/). These three work for an EE role:
+
+- What kinds of assignments might I expect the first six months on the job?
+- What skills do you see as most important to be successful in this position?
+- Is there anything we discussed today that would give you concern about my candidacy?
+
+[Georgia Tech's career center says to skip questions the company website already answers](https://career.gatech.edu/graduate-job/interviewing/).
+
+## After each round
+
+Expect the recruiter to ask how it went. The author's recruiter called after every round to ask how it went and whether the author expected to move on. The author answered with confidence and listed what went well and what went poorly. Have that answer ready before the call.
+
+Write notes the same day. [Michigan Engineering suggests noting the questions you struggled with](https://career.engin.umich.edu/interviews/), so you can study them before the next round. [The embedded new graduate above wrote notes after every interview](https://www.reddit.com/r/EngineeringResumes/comments/1v9440p/0_yoe_finally_landed_an_embedded_systems_engineer/).
+
+Send a thank-you email within 24 hours. [Illinois Engineering Career Services gives that window](https://ecs.grainger.illinois.edu/student-resources/interviewing/fundamentals). [Michigan Engineering gives the same window and says to restate your interest and add skills you did not get to mention](https://career.engin.umich.edu/interviews/). Keep it short.
+
+## Author anecdotes
+
+These are from eeprep's author, a working embedded software engineer. They cover one full hiring process at a large aerospace hardware company, which ended in an offer.
+
+### The process is long, so know everything in detail
+
+The hiring process today is long, tiring, and hard. That is the author's main lesson. You need to know everything you talk about in as much detail as possible. The author called this one "rather long and very difficult." The numbers back that up:
+
+- 6 rounds, plus a 3-hour take-home test with no AI tools allowed.
+- An in-person day of 5 sessions, each at least 1 hour, for 6 to 7 hours.
+- A one-hour talk on internship work to six engineers who interrupted often.
+- A full hour of questions on one senior design board.
+- A system design session that went down to interrupts, CPU execution, and pipelining.
+
+### No referral, so apply on day one
+
+The author could not get a referral and applied cold. A job-posting scraper the author built flagged the opening, and the application went in the day it posted. The author's advice is to be scrappy, especially at big companies. Later, the author referred several friends to the same company, and their resumes went straight to the top of the pile. A referral would have made the author's own process far easier.
+
+### The recruiter moved the file
+
+The recruiter first matched the author's EE degree to an electronics hardware role. A manager reviewed it and moved the author to software engineering. An EE degree can land on more than one team. Be ready to talk about both the hardware and the software in your projects.
+
+### The talk and the board
+
+The in-person day opened with the one-hour talk. The six engineers kept asking for more detail and pushed back on choices. Most of them are now the author's teammates. Two whiteboard sessions followed with no break. The first asked how to build a computer from the ground up. The second spent an hour on the author's senior design project, a bare-metal board. The author's summary of that hour was that you have to know your material thoroughly. After lunch came the LeetCode-style coding problem, then the hiring manager.
+
+### Everything was an interview
+
+The tour and the lunch were informal, and both counted. After every round, the recruiter called to ask how it went. The author describes the last senior leader call as a final test of confidence. The author's advice for all of it: be confident, not arrogant, and never bluff.
+
+## Further reading
+
+Start with these guides: [MIT's STAR worksheet](https://capd.mit.edu/resources/the-star-method-for-behavioral-interviews/), [Michigan Engineering's interview guide](https://career.engin.umich.edu/interviews/), [Georgia Tech's undergraduate interviewing guide](https://career.gatech.edu/undergrad-job-search/interviewing/), [Illinois Engineering Career Services interview basics](https://ecs.grainger.illinois.edu/student-resources/interviewing/fundamentals), and [Nigel Jones on the volatile keyword](https://barrgroup.com/embedded-systems/how-to/c-volatile-keyword).
+
+## Prep sheet
+
+Copy this, fill in the brackets, and finish it before the first phone screen.
+
+```text
+INTERVIEW PREP SHEET
+Company and role: [Company], [Job title], job ID [12345]
+How I applied: referral from [Name] / applied cold on [date], day [N] of the posting
+Format from the recruiter: [N] rounds, take-home [yes/no], in-person day [N] hours
+
+PROJECTS (one block per project on the resume)
+Project: [Name]
+What it does, in two sentences:
+My part:
+Each major part or tool, and why I picked it:
+What broke, and how I found it:
+What I measured, and with what instrument:
+What I would change on the next revision:
+
+FUNDAMENTALS (check off after you can explain it at a whiteboard)
+[ ] What happens from an interrupt to the return
+[ ] volatile: registers, ISR flags, shared globals
+[ ] Stack, heap, and where each variable lives
+[ ] How a CPU fetches and executes, and what pipelining does
+[ ] I2C, SPI, UART
+[ ] Op-amp gain, RC filters, buck versus LDO
+[ ] Anything else the posting names: [topic]
+
+CODING
+Problems solved out loud at a whiteboard this week: [N]
+Practiced with someone watching: [Name], [date]
+
+STORIES (STAR, 5 to 10)
+1. A failure:
+2. A conflict on a team:
+3. A hard bug:
+4. A deadline:
+5. Something I learned on my own:
+
+QUESTIONS I WILL ASK (at least one per interviewer)
+1.
+2.
+3.
+
+AFTER EACH ROUND
+How it went, for the recruiter call (went well / went poorly):
+Questions I struggled with, to study tonight:
+Thank-you emails sent within 24 hours to:
+```

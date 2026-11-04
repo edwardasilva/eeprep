@@ -1,6 +1,6 @@
 ---
 title: Roadmap
-description: "The big updates planned for eeprep: a resume builder, study guides, job board help, a LinkedIn guide, better graphics and pages on interviews."
+description: "The big updates planned for eeprep: a resume builder, study guides, job board help, a LinkedIn guide, better graphics and the author's take."
 head:
   - tag: title
     content: "Roadmap | eeprep"
@@ -31,10 +31,6 @@ Clearer figures and diagrams across the site.
 ## The author's take
 
 Notes from eeprep's author, a working embedded software engineer, on what worked for them.
-
-## Interviews
-
-How engineering interviews run and how to prepare for them.
 
 ## Visa and security clearance guidance
 
