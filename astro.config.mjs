@@ -28,7 +28,6 @@ const redirects = {
 	'/get-hired/the-job-market/': '/help-links/',
 	'/succeed-in-school/': '/',
 	'/succeed-in-school/how-to-study/': '/',
-	'/advice/': '/advice/resume/',
 	'/advice/resume-workshop/': '/advice/resume/workshop/',
 	'/advice/first-internship/': '/advice/getting-hired/first-internship/',
 	'/advice/hardware-experience/': '/advice/projects/hardware/',
@@ -260,6 +259,7 @@ export default defineConfig({
 				{
 					label: 'Advice',
 					items: [
+						{ label: 'Advice', slug: 'advice' },
 						{
 							label: 'Resume',
 							items: [
