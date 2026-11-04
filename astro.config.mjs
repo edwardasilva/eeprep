@@ -32,6 +32,7 @@ const redirects = {
 	'/advice/resume-workshop/': '/advice/resume/workshop/',
 	'/advice/first-internship/': '/advice/getting-hired/',
 	'/advice/hardware-experience/': '/advice/projects/',
+	'/advice/how-to-interview/': '/advice/getting-hired/how-to-interview/',
 	'/reference/': '/help-links/',
 	'/reference/job-links/': '/help-links/',
 	'/reference/signals-and-dsp/': '/help-links/',
@@ -266,15 +267,17 @@ export default defineConfig({
 						},
 						{
 							label: 'Getting hired',
-							items: [{ label: 'Getting hired', slug: 'advice/getting-hired' }],
+							items: [
+								{ label: 'Getting hired', slug: 'advice/getting-hired' },
+								{
+									label: 'How to interview',
+									slug: 'advice/getting-hired/how-to-interview',
+								},
+							],
 						},
 						{
 							label: 'Projects',
 							items: [{ label: 'Projects', slug: 'advice/projects' }],
-						},
-						{
-							label: 'How to interview',
-							slug: 'advice/how-to-interview',
 						},
 					],
 				},
