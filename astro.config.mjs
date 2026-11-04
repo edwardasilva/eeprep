@@ -23,12 +23,13 @@ const wiki = loadWikiIndex();
 const redirects = {
 	'/get-hired/': '/advice/resume/',
 	'/get-hired/resume/': '/advice/resume/',
-	'/get-hired/resume-workshop/': '/advice/resume-workshop/',
+	'/get-hired/resume-workshop/': '/advice/resume/workshop/',
 	'/get-hired/first-internship/': '/advice/first-internship/',
 	'/get-hired/the-job-market/': '/help-links/',
 	'/succeed-in-school/': '/',
 	'/succeed-in-school/how-to-study/': '/',
 	'/advice/': '/advice/resume/',
+	'/advice/resume-workshop/': '/advice/resume/workshop/',
 	'/reference/': '/help-links/',
 	'/reference/job-links/': '/help-links/',
 	'/reference/signals-and-dsp/': '/help-links/',
@@ -254,10 +255,12 @@ export default defineConfig({
 				{
 					label: 'Advice',
 					items: [
-						{ label: 'Resume', slug: 'advice/resume' },
 						{
-							label: 'Resume workshop',
-							slug: 'advice/resume-workshop',
+							label: 'Resume',
+							items: [
+								{ label: 'Resume', slug: 'advice/resume' },
+								{ label: 'Workshop', slug: 'advice/resume/workshop' },
+							],
 						},
 						{
 							label: 'Your first internship',
