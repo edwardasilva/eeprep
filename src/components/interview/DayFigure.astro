@@ -1,5 +1,5 @@
 ---
-// Figure 5.2 as HTML and CSS. One schedule down a line on the left. Dashed
+// Figure 5.4 as HTML and CSS. One schedule down a line on the left. Dashed
 // blocks are the informal parts of the day, which still counted.
 const blocks = [
 	{ title: 'Site tour', tag: 'Still evaluated' },
@@ -18,8 +18,8 @@ const alt =
 	'Schedule of a 6 to 7 hour in-person interview day: a site tour, a one-hour talk to six engineers, system design and project deep-dive sessions at a whiteboard, lunch, a whiteboard coding problem, and a hiring manager session. The tour and lunch are marked as still evaluated.';
 ---
 
-<figure class="eep-fig wide eep-day-fig" id="fig-5-2">
-	<p class="eep-kicker">Figure 5.2 · The in-person day</p>
+<figure class="eep-fig wide eep-day-fig" id="fig-5-4">
+	<p class="eep-kicker">Figure 5.4 · The in-person day</p>
 	<p class="sr-only">{alt}</p>
 	<div class="eep-day not-content" aria-hidden="true">
 		<ol>
@@ -39,10 +39,10 @@ const alt =
 				</li>
 			))}
 		</ol>
-		<p class="eep-day-total">5 sessions, 6 to 7 hours.</p>
+		<p class="eep-day-total">5 sessions, 6 to 7 hours</p>
 	</div>
 	<figcaption>
-		<span class="eep-fignum">Fig 5.2</span>{' '}
+		<span class="eep-fignum">Fig 5.4</span>{' '}
 		<span>
 			The author's in-person day. Every session ran at least an hour, and the
 			informal parts counted too. From eeprep's author.
@@ -74,15 +74,6 @@ const alt =
 		padding: 0;
 		list-style: none;
 	}
-	/* The time line down the left side. */
-	.eep-day ol::before {
-		content: '';
-		position: absolute;
-		top: 1rem;
-		bottom: 1rem;
-		left: calc(var(--node) / 2 - var(--line) / 2);
-		border-left: var(--line) solid var(--eep-dg-ink);
-	}
 	.eep-day li {
 		margin: 0;
 		max-width: none;
@@ -91,7 +82,8 @@ const alt =
 		position: relative;
 		margin-left: 1.6rem;
 		padding: 0.55rem 0.75rem 0.6rem;
-		border: 1px solid var(--eep-dg-mute);
+		--b: 1px;
+		border: var(--b) solid var(--eep-dg-mute);
 		border-radius: 4px;
 		background: var(--eep-dg-fill);
 	}
@@ -100,7 +92,7 @@ const alt =
 		position: absolute;
 		z-index: 1;
 		top: 0.75rem;
-		left: calc(-1.6rem - 1px);
+		left: calc(-1.6rem - var(--b));
 		box-sizing: border-box;
 		width: var(--node);
 		height: var(--node);
@@ -108,19 +100,26 @@ const alt =
 		border-radius: 50%;
 		background: var(--eep-dg-fill);
 	}
+	/* The time line: one segment from each dot to the next, so it ends at
+	   the last dot. */
+	.eep-day .eep-day-block:not(:last-child)::after {
+		content: '';
+		position: absolute;
+		top: calc(0.75rem + var(--node) / 2);
+		left: calc(-1.6rem - var(--b) + var(--node) / 2 - var(--line) / 2);
+		height: calc(100% + 2 * var(--b) + 0.6rem);
+		border-left: var(--line) solid var(--eep-dg-ink);
+	}
 	.eep-day .eep-day-informal {
-		border: var(--line) dashed var(--eep-dg-ink);
+		--b: var(--line);
+		border-style: dashed;
+		border-color: var(--eep-dg-ink);
 		background: transparent;
 	}
-	.eep-day-informal::before {
-		left: calc(-1.6rem - var(--line));
-	}
-	/* Crimson marks the hour the page dwells on. */
+	/* Crimson marks the hour the page dwells on. An inset shadow keeps the
+	   border, and so the label, in line with the other blocks. */
 	.eep-day .eep-day-focus {
-		border-left: 4px solid var(--eep-dg-accent);
-	}
-	.eep-day-focus::before {
-		left: calc(-1.6rem - 4px);
+		box-shadow: inset 3px 0 0 var(--eep-dg-accent);
 	}
 	.eep-day .eep-day-title {
 		font-size: 0.9375rem;
