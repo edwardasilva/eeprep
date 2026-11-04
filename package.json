@@ -16,6 +16,8 @@
     "test:citations": "node .github/scripts/test-citations.mjs",
     "check:links": "node .github/scripts/check-links.mjs",
     "check:link-text": "node .github/scripts/check-link-text.mjs",
+    "check:link-index": "node .github/scripts/check-link-index.mjs",
+    "test:link-index": "node .github/scripts/test-link-index.mjs",
     "check:dev": "node .github/scripts/check-dev.mjs",
     "check:mobile": "node .github/scripts/mobile-audit.mjs",
     "check:deploy": "wrangler deploy --dry-run --env=\"\"",
