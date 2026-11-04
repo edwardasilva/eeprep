@@ -24,6 +24,7 @@
     "check:deploy:dev": "wrangler deploy --dry-run --env dev",
     "check:robots": "node .github/scripts/check-robots.mjs",
     "test:worker": "node --test worker/*.test.mjs",
+    "test:sidebar": "node .github/scripts/test-sidebar.mjs",
     "brand": "node .github/scripts/render-brand.mjs",
     "check:pr-body": "node .github/scripts/check-pr-body.mjs",
     "lint": "eslint . && markdownlint-cli2 && prettier --check .",
