@@ -2,7 +2,7 @@
 
 This is the field list for a planned resume fill-in form. The workshop handouts on `advice/resume/workshop.mdx` use the same labels, so a student can move from paper to the form without renaming anything. Each rule below comes from the resume page (`advice/resume.mdx`) or from a source that page cites.
 
-Alex Doe is a made-up student. Alex's values are the examples, and they match Figure 3 on the resume page. Brackets such as `[X]` stay brackets in the example data.
+Alex Doe is a made-up student. Alex's values are the examples, and they match Figure 1.4 on the resume page. Brackets such as `[X]` stay brackets in the example data.
 
 ## How the form behaves
 
@@ -168,7 +168,7 @@ Rules:
 - Ranges use an en dash with a space on each side: `Fall 2025 – Spring 2026`. In LaTeX, write `--`. Source: the wiki, Dates.
 - An ongoing item ends in "Present". Error on Current, Now, or Ongoing. Source: the wiki, Dates.
 - Graduation date may start with "Expected". Source: Alex's page.
-- All dates sit at the right margin. Source: the wiki and Figure 4.
+- All dates sit at the right margin. Source: the wiki and Figure 1.2.
 
 ## Layout output
 

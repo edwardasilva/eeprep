@@ -1,0 +1,197 @@
+---
+import { externalLinks } from '../resume/caption';
+// Figure 7.1 as a real table: row labels on the left, Hardware and Software
+// as columns. On narrow figures each row stacks, and the column name shows
+// above each cell so the pairs still read.
+const cols = ['Hardware', 'Software'];
+const rows = [
+	{
+		label: 'What you need',
+		cells: [
+			'Instruments, parts, breadboards, and a computer for embedded work',
+			'A computer and an internet connection',
+		],
+	},
+	{
+		label: 'Free ways to start',
+		cells: [
+			'The lab scope, KiCad, and Wokwi',
+			'cocotb, Verilator, and EDA Playground',
+		],
+	},
+	{
+		label: 'What a reviewer checks',
+		cells: [
+			'A measured number from the bench, a photo, and a write-up',
+			'A repository with a README, tests, and a measured result',
+		],
+	},
+	{
+		label: "Alex's example",
+		cells: [
+			'Synchronous buck converter: peak efficiency from [W]% to [X]%',
+			'Python and PyVISA scope capture: test time from [X] to [Y] minutes',
+		],
+	},
+];
+const alt =
+	'A comparison of hardware and software projects. Hardware needs instruments, parts, breadboards, and a computer, and can start free with the lab scope, KiCad, and Wokwi. Software needs a computer and an internet connection, and can start free with cocotb, Verilator, and EDA Playground. Reviewers check a measured bench number, a photo, and a write-up for hardware, and a repository with a README, tests, and a measured result for software.';
+const caption = externalLinks(
+	`Both kinds of project need a result you measured and can defend. Sources: <a href="https://x.com/karanbhilatiya/status/2078038754368065816">the cost of hardware versus software</a>, <a href="https://wokwi.com/">Wokwi</a>, <a href="https://www.kicad.org/">KiCad</a>, <a href="https://www.cocotb.org/">cocotb</a>, <a href="https://www.veripool.org/verilator/">Verilator</a>, <a href="https://www.edaplayground.com/">EDA Playground</a>, and <a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes">GitHub on READMEs</a>.`,
+);
+---
+
+<figure class="eep-fig wide eep-hwsw-fig" id="fig-7-1">
+	<p class="eep-kicker">Figure 7.1 · Hardware and software projects</p>
+	<p class="sr-only">{alt}</p>
+	<div class="eep-hwsw not-content">
+		<table role="table">
+			<thead role="rowgroup">
+				<tr role="row">
+					<td role="cell"></td>
+					{cols.map((c) => (
+						<th scope="col" role="columnheader">
+							{c}
+						</th>
+					))}
+				</tr>
+			</thead>
+			<tbody role="rowgroup">
+				{rows.map((r) => (
+					<tr role="row">
+						<th scope="row" role="rowheader">
+							{r.label}
+						</th>
+						{r.cells.map((cell, i) => (
+							<td role="cell">
+								<span class="eep-hwsw-col" aria-hidden="true">
+									{cols[i]}
+								</span>
+								{cell}
+							</td>
+						))}
+					</tr>
+				))}
+			</tbody>
+		</table>
+	</div>
+	<figcaption>
+		<span class="eep-fignum">Fig 7.1</span> <span set:html={caption} />
+	</figcaption>
+</figure>
+
+<style>
+	.eep-hwsw-fig .eep-kicker {
+		line-height: 1.35;
+	}
+	.eep-hwsw {
+		margin-top: 1rem;
+		container-type: inline-size;
+		font-family: var(--eep-font-sans);
+		color: var(--eep-ink);
+	}
+	.eep-hwsw table {
+		width: 100%;
+		margin: 0;
+		border-collapse: collapse;
+	}
+	.eep-hwsw :is(th, td) {
+		padding: 0.6rem 0.75rem 0.65rem;
+		border: 0;
+		text-align: left;
+		vertical-align: top;
+		overflow-wrap: anywhere;
+	}
+	.eep-hwsw thead th {
+		font-size: 0.9375rem;
+		font-weight: 600;
+		line-height: 1.3;
+		color: var(--eep-ink);
+	}
+	.eep-hwsw tbody th {
+		font: 400 0.75rem/1.45 var(--eep-font-mono);
+		color: var(--eep-ink-2);
+	}
+	.eep-hwsw tbody td {
+		font-size: 0.8125rem;
+		line-height: 1.45;
+		color: var(--eep-ink);
+	}
+	.eep-hwsw-col {
+		display: block;
+		margin-bottom: 0.15rem;
+		font-size: 0.8125rem;
+		font-weight: 600;
+		line-height: 1.45;
+		color: var(--eep-ink);
+	}
+
+	/* Narrow: each row stacks, the label first, then each cell under its
+	   column name. The header row stays for screen readers only. */
+	.eep-hwsw :is(table, tbody, tr, th, td) {
+		display: block;
+	}
+	.eep-hwsw thead {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip-path: inset(50%);
+		white-space: nowrap;
+	}
+	.eep-hwsw tbody tr {
+		padding: 0.75rem 0;
+		border-top: 1px solid var(--eep-dg-mute);
+	}
+	.eep-hwsw tbody :is(th, td) {
+		padding: 0;
+	}
+	.eep-hwsw tbody td {
+		margin-top: 0.5rem;
+	}
+
+	/* Wide: a real grid of three columns. */
+	@container (min-width: 34rem) {
+		.eep-hwsw table {
+			display: table;
+			table-layout: fixed;
+		}
+		.eep-hwsw thead {
+			position: static;
+			display: table-header-group;
+			width: auto;
+			height: auto;
+			overflow: visible;
+			clip-path: none;
+			white-space: normal;
+		}
+		.eep-hwsw tbody {
+			display: table-row-group;
+		}
+		.eep-hwsw tr,
+		.eep-hwsw tbody tr {
+			display: table-row;
+			padding: 0;
+		}
+		.eep-hwsw :is(th, td),
+		.eep-hwsw tbody :is(th, td) {
+			display: table-cell;
+			margin: 0;
+			padding: 0.6rem 0.75rem 0.65rem;
+		}
+		.eep-hwsw :is(thead, tbody) :first-child:is(th, td) {
+			width: 24%;
+			padding-left: 0;
+		}
+		.eep-hwsw tbody tr {
+			border-top: 1px solid var(--eep-dg-mute);
+		}
+		/* One rule between the two columns. */
+		.eep-hwsw tr > :last-child {
+			border-left: 1px solid var(--eep-dg-mute);
+		}
+		.eep-hwsw-col {
+			display: none;
+		}
+	}
+</style>

@@ -1,6 +1,6 @@
 ---
 import { externalLinks } from '../resume/caption';
-// Figure 5.2 as HTML and CSS. One resume line, then four follow-up
+// Figure 6.2 as HTML and CSS. One resume line, then four follow-up
 // questions, each one step deeper, down to the edge of what you know.
 const questions = [
 	'How did you do that?',
@@ -15,8 +15,8 @@ const caption = externalLinks(
 );
 ---
 
-<figure class="eep-fig wide eep-layers-fig" id="fig-5-2">
-	<p class="eep-kicker">Figure 5.2 · Questions go layers deep</p>
+<figure class="eep-fig wide eep-layers-fig" id="fig-6-2">
+	<p class="eep-kicker">Figure 6.2 · Questions go layers deep</p>
 	<p class="sr-only">{alt}</p>
 	<div class="eep-layers not-content" aria-hidden="true">
 		<div class="eep-layers-sheet">
@@ -34,7 +34,7 @@ const caption = externalLinks(
 		<p class="eep-layers-edge">The edge of what you know</p>
 	</div>
 	<figcaption>
-		<span class="eep-fignum">Fig 5.2</span> <span set:html={caption} />
+		<span class="eep-fignum">Fig 6.2</span> <span set:html={caption} />
 	</figcaption>
 </figure>
 
@@ -55,7 +55,7 @@ const caption = externalLinks(
 		margin: 0;
 		max-width: none;
 	}
-	/* The resume line, drawn like the sheet in Fig 3 on the Resume page. */
+	/* The resume line, drawn like the sheet in Fig 1.4 on the Resume page. */
 	.eep-layers-sheet {
 		position: relative;
 		padding: 0.75rem 1rem 0.8rem;

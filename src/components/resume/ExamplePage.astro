@@ -29,8 +29,8 @@ const caption = externalLinks(
 );
 ---
 
-<figure class="eep-fig wide eep-example" id="fig-3">
-	<p class="eep-kicker">Figure 3 · Alex's finished page</p>
+<figure class="eep-fig wide eep-example" id="fig-1-4">
+	<p class="eep-kicker">Figure 1.4 · Alex's finished page</p>
 	<p class="eep-figtitle">One page, one column, dates on the right</p>
 	<p class="eep-example-flag">
 		<span class="eep-tag">Made-up example</span>
@@ -149,7 +149,7 @@ const caption = externalLinks(
 		are callouts and don't appear on the real page.
 	</p>
 	<figcaption>
-		<span class="eep-fignum">Fig 3</span> <span set:html={caption} />
+		<span class="eep-fignum">Fig 1.4</span> <span set:html={caption} />
 	</figcaption>
 </figure>
 
@@ -309,11 +309,11 @@ const caption = externalLinks(
 			grid-template-columns: minmax(0, 1fr);
 		}
 	}
-	/* On phones the sheet borrows most of the figure's side padding, so the
-	   page keeps enough width to read like a resume. */
+	/* On phones the sheet borrows all but 0.75rem of the figure's side
+	   padding, so the page keeps enough width to read like a resume. */
 	@container (max-width: 28rem) {
 		.eep-example-sheet {
-			margin-inline: -1.5rem;
+			margin-inline: calc(0.75rem - var(--eep-fig-pad, 2.25rem));
 		}
 		/* A date that doesn't fit beside its title drops below it, still at
 		   the right margin. */
@@ -325,6 +325,15 @@ const caption = externalLinks(
 		}
 		.eep-example-sheet .eep-example-date {
 			margin-left: auto;
+		}
+	}
+	/* On a screen under 316px, which on a phone means zoomed in, a long
+	   date may wrap. */
+	@media (max-width: 19.75rem) {
+		.eep-example-sheet .eep-example-date {
+			flex: 0 1 auto;
+			max-width: 100%;
+			white-space: normal;
 		}
 	}
 </style>

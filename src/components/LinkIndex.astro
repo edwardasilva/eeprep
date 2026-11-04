@@ -1,0 +1,189 @@
+---
+import { getCollection } from 'astro:content';
+import { externalLinks } from './resume/caption';
+import { linkGroups } from '../lib/link-index';
+
+// The home page is src/pages/index.astro, not a docs entry.
+const titles = new Map([
+	[
+		'index',
+		{ href: '/', title: "Electrical engineer's guide to job searching" },
+	],
+]);
+for (const doc of await getCollection('docs')) {
+	titles.set(doc.id, { href: `/${doc.id}/`, title: doc.data.title });
+}
+const pageFor = (slug: string) => {
+	const page = titles.get(slug);
+	if (!page)
+		throw new Error(`src/data/link-index.json: unknown page "${slug}"`);
+	return page;
+};
+
+const escape = (value: string) =>
+	value
+		.replace(/&/g, '&amp;')
+		.replace(/</g, '&lt;')
+		.replace(/>/g, '&gt;')
+		.replace(/"/g, '&quot;');
+
+const groups = linkGroups.map((group) => ({
+	id: group.id,
+	name: group.name,
+	rows: group.entries.map((entry) => ({
+		link: externalLinks(
+			`<a href="${escape(entry.url)}">${escape(entry.title)}</a>`,
+		),
+		summary: entry.summary,
+		pages: entry.pages.map(pageFor),
+	})),
+}));
+---
+
+<div class="eep-links not-content">
+	{groups.map((group) => (
+		<section class="eep-links-group" aria-labelledby={group.id}>
+			<h2 id={group.id}>{group.name}</h2>
+			<table aria-labelledby={group.id}>
+				<thead>
+					<tr>
+						<th scope="col">Link</th>
+						<th scope="col">What it is</th>
+						<th scope="col">Used on</th>
+					</tr>
+				</thead>
+				<tbody>
+					{group.rows.map((row) => (
+						<tr>
+							<th scope="row" class="eep-links-name">
+								<span set:html={row.link} />
+							</th>
+							<td>
+								<span class="eep-links-label" aria-hidden="true">
+									What it is
+								</span>
+								{row.summary}
+							</td>
+							<td>
+								<span class="eep-links-label" aria-hidden="true">
+									Used on
+								</span>
+								<ul>
+									{row.pages.map((page) => (
+										<li>
+											<a href={page.href}>{page.title}</a>
+										</li>
+									))}
+								</ul>
+							</td>
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</section>
+	))}
+</div>
+
+<style>
+	.eep-links {
+		container-type: inline-size;
+		margin-top: 2rem;
+		font-family: var(--eep-font-sans);
+		color: var(--eep-ink);
+	}
+	.eep-links-group + .eep-links-group {
+		margin-top: 2.5rem;
+	}
+	.eep-links h2 {
+		margin: 0 0 0.75rem;
+		font: 600 var(--eep-text-h3, 1.25rem) / var(--eep-lh-heading, 1.25)
+			var(--eep-font-serif);
+		color: var(--eep-ink);
+	}
+	.eep-links table {
+		width: 100%;
+		border-collapse: collapse;
+		table-layout: fixed;
+		font-size: 0.875rem;
+		line-height: 1.5;
+	}
+	.eep-links th,
+	.eep-links td {
+		padding: 0.625rem 0.75rem 0.625rem 0;
+		border-bottom: 1px solid var(--eep-rule);
+		text-align: start;
+		vertical-align: top;
+		overflow-wrap: anywhere;
+	}
+	.eep-links thead th {
+		padding-block: 0 0.5rem;
+		border-bottom-color: var(--eep-border-strong, var(--eep-rule));
+		font: 500 0.75rem/1.4 var(--eep-font-mono);
+		color: var(--eep-ink-2);
+	}
+	.eep-links thead th:nth-child(1) {
+		width: 32%;
+	}
+	.eep-links thead th:nth-child(3) {
+		width: 26%;
+	}
+	.eep-links tbody th {
+		font-weight: 600;
+	}
+	.eep-links td {
+		color: var(--eep-ink-2);
+	}
+	.eep-links ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.eep-links li + li {
+		margin-top: 0.25rem;
+	}
+	.eep-links-label {
+		display: none;
+	}
+
+	/* Narrow columns: each row becomes a block, with each cell's header shown
+	   above it. The column headers stay in the markup for screen readers. */
+	@container (max-width: 36rem) {
+		.eep-links table,
+		.eep-links tbody,
+		.eep-links tr,
+		.eep-links th,
+		.eep-links td {
+			display: block;
+			width: auto;
+		}
+		.eep-links thead {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+			clip-path: inset(50%);
+			white-space: nowrap;
+		}
+		.eep-links tbody tr {
+			padding: 0.75rem 0;
+			border-bottom: 1px solid var(--eep-rule);
+		}
+		.eep-links tbody tr:first-child {
+			border-top: 1px solid var(--eep-border-strong, var(--eep-rule));
+		}
+		.eep-links th,
+		.eep-links td {
+			padding: 0;
+			border: 0;
+		}
+		.eep-links td {
+			margin-top: 0.5rem;
+		}
+		.eep-links-label {
+			display: block;
+			margin-bottom: 0.125rem;
+			font: 500 0.75rem/1.4 var(--eep-font-mono);
+			color: var(--eep-ink-2);
+		}
+	}
+</style>
