@@ -48,6 +48,7 @@ jobs:
       - run: npm run test:citations
       - run: npm run check:citations
       - run: npm run check:dev
+      - run: npm run test:sidebar
       - run: npm run build
       - run: npm run check:deploy
       - run: npm run check:deploy:dev
@@ -55,6 +56,8 @@ jobs:
       - run: npm run test:worker
       - run: npm run check:links
       - run: npm run check:link-text
+      - run: npm run test:link-index
+      - run: npm run check:link-index
 
   mobile:
     name: Mobile audit

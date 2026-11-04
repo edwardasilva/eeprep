@@ -23,12 +23,15 @@ const wiki = loadWikiIndex();
 const redirects = {
 	'/get-hired/': '/advice/resume/',
 	'/get-hired/resume/': '/advice/resume/',
-	'/get-hired/resume-workshop/': '/advice/resume-workshop/',
-	'/get-hired/first-internship/': '/advice/first-internship/',
+	'/get-hired/resume-workshop/': '/advice/resume/workshop/',
+	'/get-hired/first-internship/': '/advice/getting-hired/first-internship/',
 	'/get-hired/the-job-market/': '/help-links/',
 	'/succeed-in-school/': '/',
 	'/succeed-in-school/how-to-study/': '/',
-	'/advice/': '/advice/resume/',
+	'/advice/resume-workshop/': '/advice/resume/workshop/',
+	'/advice/first-internship/': '/advice/getting-hired/first-internship/',
+	'/advice/hardware-experience/': '/advice/projects/hardware/',
+	'/advice/how-to-interview/': '/advice/getting-hired/how-to-interview/',
 	'/reference/': '/help-links/',
 	'/reference/job-links/': '/help-links/',
 	'/reference/signals-and-dsp/': '/help-links/',
@@ -128,6 +131,7 @@ export default defineConfig({
 			title: 'EE Prep',
 			description: 'A prep guide for electrical engineering students.',
 			credits: false,
+			routeMiddleware: './src/route-data.ts',
 			favicon: '/favicon.svg',
 			customCss: [
 				'./src/styles/fonts.css',
@@ -219,7 +223,9 @@ export default defineConfig({
 				Header: './src/components/Header.astro',
 				ThemeSelect: './src/components/ThemeSelect.astro',
 				PageTitle: './src/components/PageTitle.astro',
+				PageFrame: './src/components/PageFrame.astro',
 				PageSidebar: './src/components/PageSidebar.astro',
+				Sidebar: './src/components/Sidebar.astro',
 				SiteTitle: './src/components/SiteTitle.astro',
 			},
 			// First dark theme, then first light theme. Starlight maps those to the site theme.
@@ -254,22 +260,49 @@ export default defineConfig({
 				{
 					label: 'Advice',
 					items: [
-						{ label: 'Resume', slug: 'advice/resume' },
+						{ label: 'Advice', slug: 'advice' },
 						{
-							label: 'Resume workshop',
-							slug: 'advice/resume-workshop',
+							label: 'Resume',
+							items: [
+								{ label: 'Resume', slug: 'advice/resume' },
+								{ label: 'Workshop', slug: 'advice/resume/workshop' },
+							],
 						},
 						{
-							label: 'Your first internship',
-							slug: 'advice/first-internship',
+							label: 'Getting hired',
+							items: [
+								{ label: 'Getting hired', slug: 'advice/getting-hired' },
+								{
+									label: 'First internship',
+									slug: 'advice/getting-hired/first-internship',
+								},
+								{
+									label: 'First full-time role',
+									slug: 'advice/getting-hired/first-full-time-role',
+								},
+								{
+									label: 'How to interview',
+									slug: 'advice/getting-hired/how-to-interview',
+								},
+							],
 						},
 						{
-							label: 'Hardware experience',
-							slug: 'advice/hardware-experience',
+							label: 'Projects',
+							items: [
+								{ label: 'Projects', slug: 'advice/projects' },
+								{ label: 'Hardware', slug: 'advice/projects/hardware' },
+								{ label: 'Software', slug: 'advice/projects/software' },
+							],
 						},
 					],
 				},
-				{ label: 'Help links', slug: 'help-links' },
+				{
+					label: 'Help links',
+					items: [
+						{ label: 'Help links', slug: 'help-links' },
+						{ label: 'All links', slug: 'help-links/all-links' },
+					],
+				},
 				{ label: 'Roadmap', slug: 'roadmap' },
 			],
 		}),

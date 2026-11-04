@@ -1,6 +1,6 @@
 # EE Prep
 
-EE Prep helps electrical engineering students and new grads get ahead in the AI era: build a resume that works, find real experience, and land a first internship.
+EE Prep helps electrical engineering students and new grads get ahead in the AI era: build a resume that works, find real experience, and land a first internship or full-time role.
 
 Status: active development. Content and code are updated regularly.
 
@@ -10,7 +10,7 @@ EE courses teach circuits and signals, but they rarely teach you how to turn cou
 
 ## What you'll find
 
-- **Advice.** Resumes and landing your first internship.
+- **Advice.** Resumes, getting hired for an internship or a first full-time role, interviews, and projects.
 - **Reference.** Official and community links for pay data, openings, and student visas.
 
 ## How sources are handled

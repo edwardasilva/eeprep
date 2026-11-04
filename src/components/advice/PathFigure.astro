@@ -292,6 +292,25 @@ const caption = externalLinks(
 	.eep-paths-loop {
 		margin-left: 1.6rem;
 	}
+	/* Zoomed in on a phone: items sit closer to the line, the fallback
+	   boxes put their icon above the text, and the two headings shrink, so
+	   the text keeps room to wrap at word breaks. */
+	@media (max-width: 19.75rem) {
+		.eep-paths-start,
+		.eep-paths-pick,
+		.eep-paths-item {
+			padding-left: 1.15rem;
+		}
+		.eep-paths-loop {
+			flex-direction: column;
+			gap: 0.3rem;
+			margin-left: 1.15rem;
+			padding: 0.5rem 0.5rem 0.55rem;
+		}
+		.eep-paths .eep-paths-head {
+			font-size: 1.125rem;
+		}
+	}
 	/* The last box ends the left line, so it sits on a white gap. */
 	.eep-paths-fall {
 		position: relative;

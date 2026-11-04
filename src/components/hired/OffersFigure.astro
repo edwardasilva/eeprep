@@ -1,0 +1,118 @@
+---
+import { externalLinks } from '../resume/caption';
+// Figure 5.2 as HTML and CSS. Two bars on one 0 to 100% scale. The grey
+// track is the whole 100%, so no axis is needed. On wide figures each value
+// sits just past the end of its bar. On narrow ones there is no room past
+// 88.3%, so both values move inside the bar ends.
+const bars = [
+	{ label: 'Interns offered a full-time job', value: 71.8, focus: true },
+	{ label: 'Interns with an offer who accepted', value: 88.3 },
+];
+const alt =
+	'Two bars. 71.8% of 2024-25 interns were offered a full-time job. 88.3% of the interns with an offer accepted it.';
+const caption = externalLinks(
+	`Most interns get a return offer, and most accept it. Source: <a href="https://www.naceweb.org/talent-acquisition/internships/intern-conversion-rate-hits-highest-mark-in-five-years">NACE's 2026 internship survey of 284 employers</a>.`,
+);
+---
+
+<figure class="eep-fig wide eep-offers-fig" id="fig-5-2">
+	<p class="eep-kicker">
+		Figure 5.2 · Return offers for <span class="eep-nobreak">2024-25</span>{' '}
+		interns
+	</p>
+	<p class="sr-only">{alt}</p>
+	<div class="eep-offers not-content" aria-hidden="true">
+		{bars.map((b) => (
+			<div class:list={['eep-offer', { 'eep-offer-focus': b.focus }]}>
+				<p class="eep-offer-label">{b.label}</p>
+				<div class="eep-offer-track">
+					<span class="eep-offer-fill" style={`width: ${b.value}%`}>
+						<span class="eep-offer-value">{b.value}%</span>
+					</span>
+				</div>
+			</div>
+		))}
+	</div>
+	<figcaption>
+		<span class="eep-fignum">Fig 5.2</span> <span set:html={caption} />
+	</figcaption>
+</figure>
+
+<style>
+	/* Keeps "2024-25" on one line, so the kicker never breaks at the hyphen. */
+	.eep-offers-fig .eep-nobreak {
+		white-space: nowrap;
+	}
+	.eep-offers-fig .eep-kicker {
+		line-height: 1.35;
+	}
+	.eep-offers {
+		display: grid;
+		gap: 1rem;
+		margin-top: 1rem;
+		container-type: inline-size;
+		font-family: var(--eep-font-sans);
+		color: var(--eep-ink);
+	}
+	.eep-offers p {
+		margin: 0;
+		max-width: none;
+		overflow-wrap: anywhere;
+	}
+	.eep-offers .eep-offer-label {
+		font-size: 0.9375rem;
+		line-height: 1.3;
+		text-wrap: balance;
+	}
+	/* The track is the full 0 to 100% scale. */
+	.eep-offer-track {
+		position: relative;
+		box-sizing: border-box;
+		height: 1.25rem;
+		margin-top: 0.35rem;
+		border: 1px solid var(--eep-dg-mute);
+		border-radius: 2px;
+		background: color-mix(in srgb, var(--eep-dg-ink) 8%, var(--eep-dg-fill));
+	}
+	.eep-offer-fill {
+		position: absolute;
+		inset: 0 auto 0 0;
+		background: var(--eep-dg-ink);
+	}
+	.eep-offer-focus .eep-offer-fill {
+		background: var(--eep-dg-accent);
+	}
+	/* Narrow: the value sits inside the bar end, in the page color. */
+	.eep-offer-value {
+		position: absolute;
+		top: 0;
+		right: 6px;
+		font-size: 0.9375rem;
+		font-weight: 600;
+		line-height: calc(1.25rem - 2px);
+		font-variant-numeric: tabular-nums;
+		white-space: nowrap;
+		color: var(--eep-paper);
+	}
+	/* Very narrow, as at high zoom: no room inside the bar either, so the
+	   value drops below the bar's start. */
+	@container (max-width: 10rem) {
+		.eep-offer-track {
+			margin-bottom: 1.4rem;
+		}
+		.eep-offer-value {
+			top: calc(100% + 1px);
+			right: auto;
+			left: 0;
+			color: var(--eep-ink);
+		}
+	}
+	/* Wide: the value sits just past the bar end, in ink on the track. */
+	@container (min-width: 32rem) {
+		.eep-offer-value {
+			right: auto;
+			left: calc(100% + 8px);
+			color: var(--eep-ink);
+		}
+	}
+</style>
