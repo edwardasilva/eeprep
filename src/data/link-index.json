@@ -498,7 +498,7 @@
     "pages": ["advice/projects/hardware"]
   },
   {
-    "url": "https://www.ansys.com/products/electronics/ansys-hfss",
+    "url": "https://ansys.synopsys.com/products/electronics/ansys-hfss",
     "title": "Ansys HFSS",
     "category": "Tools and project resources",
     "summary": "Product page for Ansys HFSS, a 3D electromagnetic simulator for RF and antenna design.",
@@ -526,7 +526,7 @@
     "pages": ["advice/projects/software", "advice/projects"]
   },
   {
-    "url": "https://www.eplan.com/",
+    "url": "https://www.eplan.com/us-en/",
     "title": "EPLAN",
     "category": "Tools and project resources",
     "summary": "Electrical design software for control panels and industrial wiring schematics.",
@@ -589,7 +589,7 @@
     "pages": ["advice/projects/software"]
   },
   {
-    "url": "https://www.siemens.com/tia-portal",
+    "url": "https://www.siemens.com/en-us/products/tia-portal/",
     "title": "Siemens TIA Portal",
     "category": "Tools and project resources",
     "summary": "Siemens software for programming and configuring PLCs and industrial automation systems.",
@@ -1058,8 +1058,8 @@
     "pages": ["advice/getting-hired"]
   },
   {
-    "url": "https://x.com/karanbhilhatiya/status/2078038754368065816",
-    "title": "X: @karanbhilhatiya on hardware's opportunity cost",
+    "url": "https://x.com/karanbhilatiya/status/2078038754368065816",
+    "title": "X: @karanbhilatiya on hardware's opportunity cost",
     "category": "Job search stories from students",
     "summary": "A post arguing hardware is harder to learn and costs more time than software.",
     "pages": ["advice/projects", "advice/projects/hardware"]
