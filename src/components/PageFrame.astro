@@ -51,6 +51,18 @@ const { hasSidebar } = Astro.locals.starlightRoute;
 							.querySelectorAll<HTMLElement>('.main-frame, .sl-skip-link')
 							.forEach((el) => el.toggleAttribute('inert', open));
 					});
+					// From 50rem up the menu is hidden, so close it if it was open
+					// (for example after rotating a phone) and free the page again.
+					const wide = matchMedia('(min-width: 50rem)');
+					const reset = () => {
+						if (!wide.matches) return;
+						if (this.matches(':popover-open')) this.hidePopover();
+						document
+							.querySelectorAll<HTMLElement>('.main-frame, .sl-skip-link')
+							.forEach((el) => el.removeAttribute('inert'));
+					};
+					reset();
+					wide.addEventListener('change', reset);
 				}
 			},
 		);
