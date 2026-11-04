@@ -271,6 +271,10 @@ export default defineConfig({
 							label: 'How to interview',
 							slug: 'advice/how-to-interview',
 						},
+						{
+							label: "Author's story",
+							slug: 'advice/authors-story',
+						},
 					],
 				},
 				{ label: 'Help links', slug: 'help-links' },

@@ -30,7 +30,7 @@ Clearer figures and diagrams across the site.
 
 ## The author's take
 
-Notes from eeprep's author, a working embedded software engineer, on what worked for them.
+Notes from eeprep's author, a working embedded software engineer, on what worked for them. The first draft is [[Author's story]].
 
 ## Visa and security clearance guidance
 
