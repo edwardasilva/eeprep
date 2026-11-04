@@ -1,0 +1,121 @@
+---
+import { externalLinks } from '../resume/caption';
+// Figure 5.3 as HTML and CSS. One resume line, then four follow-up
+// questions, each one step deeper, down to the edge of what you know.
+const questions = [
+	'How did you do that?',
+	'Why that way?',
+	'What broke?',
+	'What would you do differently?',
+];
+const alt =
+	'One resume bullet about a buck converter, followed by four deeper questions: how did you do that, why that way, what broke, and what would you do differently.';
+const caption = externalLinks(
+	`Interviewers ask about one line, then go 3 to 5 layers deep on each answer. Prepare every line on your resume this far. Source: <a href="https://x.com/randomrecruiter/status/2081829972415578607">a recruiter's post on X</a>.`,
+);
+---
+
+<figure class="eep-fig wide eep-layers-fig" id="fig-5-3">
+	<p class="eep-kicker">Figure 5.3 · Questions go layers deep</p>
+	<p class="sr-only">{alt}</p>
+	<div class="eep-layers not-content" aria-hidden="true">
+		<div class="eep-layers-sheet">
+			<ul>
+				<li>Designed a [X] W CubeSat buck converter in KiCad and LTspice</li>
+			</ul>
+		</div>
+		<ol class="eep-layers-cards">
+			{questions.map((q, i) => (
+				<li class="eep-layers-card" style={`--depth: ${i + 1}`}>
+					<p>{q}</p>
+				</li>
+			))}
+		</ol>
+		<p class="eep-layers-edge">The edge of what you know</p>
+	</div>
+	<figcaption>
+		<span class="eep-fignum">Fig 5.3</span> <span set:html={caption} />
+	</figcaption>
+</figure>
+
+<style>
+	.eep-layers-fig .eep-kicker {
+		line-height: 1.35;
+	}
+	.eep-layers {
+		margin-top: 1rem;
+		--line: 1.5px;
+		--step: 0.75rem;
+		--gap: 0.75rem;
+		container-type: inline-size;
+		font-family: var(--eep-font-sans);
+		color: var(--eep-ink);
+	}
+	.eep-layers p {
+		margin: 0;
+		max-width: none;
+	}
+	/* The resume line, drawn like the sheet in Fig 3 on the Resume page. */
+	.eep-layers-sheet {
+		position: relative;
+		padding: 0.75rem 1rem 0.8rem;
+		background: var(--eep-paper);
+		border: 1px solid var(--eep-rule);
+		font: 0.8125rem/1.45 var(--eep-font-sans);
+		overflow-wrap: anywhere;
+	}
+	.eep-layers-sheet ul {
+		margin: 0;
+		padding-left: 1.1rem;
+	}
+	.eep-layers-sheet li {
+		margin: 0;
+		max-width: none;
+	}
+	.eep-layers-cards {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.eep-layers-card {
+		position: relative;
+		margin: var(--gap) 0 0 calc(var(--step) * var(--depth));
+		max-width: none;
+		padding: 0.55rem 0.75rem 0.6rem;
+		border: 1px solid var(--eep-dg-mute);
+		border-radius: 4px;
+		background: var(--eep-dg-fill);
+	}
+	.eep-layers .eep-layers-card p {
+		font-size: 0.9375rem;
+		font-weight: 600;
+		line-height: 1.3;
+		text-wrap: balance;
+	}
+	/* An L from the box above into this card. */
+	.eep-layers-card::before {
+		content: '';
+		position: absolute;
+		top: calc(-1 * var(--gap) - 1px);
+		left: calc(var(--step) / -2 - 1px);
+		width: calc(var(--step) / 2);
+		height: calc(var(--gap) + 1.05rem);
+		box-sizing: border-box;
+		border-left: var(--line) solid var(--eep-dg-ink);
+		border-bottom: var(--line) solid var(--eep-dg-ink);
+		border-bottom-left-radius: 3px;
+	}
+	/* The single crimson mark: where the questions run out. */
+	.eep-layers .eep-layers-edge {
+		margin-top: 1.1rem;
+		padding-bottom: 0.35rem;
+		border-bottom: var(--line) dashed var(--eep-dg-accent);
+		font: 0.75rem/1.4 var(--eep-font-mono);
+		color: var(--eep-dg-accent);
+	}
+	@container (min-width: 32rem) {
+		.eep-layers {
+			--step: 1.5rem;
+		}
+	}
+</style>
