@@ -48,6 +48,7 @@ jobs:
       - run: npm run test:citations
       - run: npm run check:citations
       - run: npm run check:dev
+      - run: npm run test:sidebar
       - run: npm run build
       - run: npm run check:deploy
       - run: npm run check:deploy:dev
