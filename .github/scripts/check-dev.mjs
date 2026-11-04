@@ -14,7 +14,7 @@ const shutdownTimeoutMs = 5_000;
 const pages = [
 	'/',
 	'/advice/resume/',
-	'/advice/first-internship/',
+	'/advice/getting-hired/',
 	'/help-links/',
 	'/roadmap/',
 ];
