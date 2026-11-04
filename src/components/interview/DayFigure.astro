@@ -58,6 +58,7 @@ const alt =
 		margin-top: 1rem;
 		--line: 1.5px;
 		--node: 0.8rem;
+		--rail: 1.6rem;
 		container-type: inline-size;
 		font-family: var(--eep-font-sans);
 		color: var(--eep-ink);
@@ -80,8 +81,8 @@ const alt =
 	}
 	.eep-day .eep-day-block {
 		position: relative;
-		margin-left: 1.6rem;
-		padding: 0.55rem 0.75rem 0.6rem;
+		margin-left: var(--rail);
+		padding: 0.55rem var(--pad-x, 0.75rem) 0.6rem;
 		--b: 1px;
 		border: var(--b) solid var(--eep-dg-mute);
 		border-radius: 4px;
@@ -92,7 +93,7 @@ const alt =
 		position: absolute;
 		z-index: 1;
 		top: 0.75rem;
-		left: calc(-1.6rem - var(--b));
+		left: calc(-1 * var(--rail) - var(--b));
 		box-sizing: border-box;
 		width: var(--node);
 		height: var(--node);
@@ -106,7 +107,7 @@ const alt =
 		content: '';
 		position: absolute;
 		top: calc(0.75rem + var(--node) / 2);
-		left: calc(-1.6rem - var(--b) + var(--node) / 2 - var(--line) / 2);
+		left: calc(-1 * var(--rail) - var(--b) + var(--node) / 2 - var(--line) / 2);
 		height: calc(100% + 2 * var(--b) + 0.6rem);
 		border-left: var(--line) solid var(--eep-dg-ink);
 	}
@@ -145,6 +146,18 @@ const alt =
 		font-size: 0.8125rem;
 		font-weight: 600;
 		line-height: 1.45;
+	}
+
+	/* Zoomed in on a phone, the blocks sit closer to the line and keep more
+	   room for their text. */
+	@media (max-width: 19.75rem) {
+		.eep-day {
+			--rail: 1.1rem;
+			--pad-x: 0.4rem;
+		}
+		.eep-day .eep-day-title {
+			font-size: 0.875rem;
+		}
 	}
 
 	/* Wide: label on the left, length on the right of the same row. */
