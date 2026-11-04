@@ -128,6 +128,7 @@ export default defineConfig({
 			title: 'EE Prep',
 			description: 'A prep guide for electrical engineering students.',
 			credits: false,
+			routeMiddleware: './src/route-data.ts',
 			favicon: '/favicon.svg',
 			customCss: [
 				'./src/styles/fonts.css',
