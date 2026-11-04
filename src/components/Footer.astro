@@ -1,13 +1,16 @@
 ---
 import Default from '@astrojs/starlight/components/Footer.astro';
+import Backlinks from './Backlinks.astro';
 
 // Plain-text license notice under every page. The links get the same
 // external-link markup as links in the guide text.
 const link = (name: string, href: string) =>
 	`<a href="${href}" class="external-link" target="_blank" rel="noopener noreferrer">${name}<span class="sr-only"> (opens in a new tab)</span></a>`;
+const splash = Astro.locals.starlightRoute.entry.data.template === 'splash';
 const notice = `Content licensed ${link('CC BY 4.0', 'https://creativecommons.org/licenses/by/4.0/')}. Code licensed ${link('MIT', 'https://opensource.org/license/mit')}.`;
 ---
 
+{splash ? null : <Backlinks class="eep-backlinks-end lg:sl-hidden" />}
 <Default />
 <p class="eep-license" set:html={notice} />
 

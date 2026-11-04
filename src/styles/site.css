@@ -193,6 +193,12 @@ button[data-open-modal] kbd {
 	text-decoration: none;
 	overflow-wrap: anywhere;
 }
+/* Below 72rem the list follows the content instead, set off by a rule. */
+.eep-backlinks-end {
+	margin-top: 2rem;
+	border-top: 1px solid var(--sl-color-hairline);
+	padding-inline: 0;
+}
 @media (hover: hover) {
 	.eep-backlinks a:hover {
 		color: var(--sl-color-white);
