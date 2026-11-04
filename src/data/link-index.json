@@ -53,7 +53,11 @@
     "title": "Greenhouse: What really happens after you apply",
     "category": "Resume guides",
     "summary": "Greenhouse explains the steps an application goes through after you submit it.",
-    "pages": ["advice/resume", "advice/getting-hired/how-to-interview"]
+    "pages": [
+      "advice/resume",
+      "advice/getting-hired/how-to-interview",
+      "advice/getting-hired"
+    ]
   },
   {
     "url": "https://latex.us/macros/latex/contrib/hyperref/doc/hyperref-doc.html",
@@ -102,7 +106,7 @@
     "title": "MIT CAPD: Make your resume ATS-friendly",
     "category": "Resume guides",
     "summary": "MIT's career office on formatting a resume so applicant tracking systems read it correctly.",
-    "pages": ["advice/resume", "advice/getting-hired"]
+    "pages": ["advice/resume", "advice/getting-hired/first-internship"]
   },
   {
     "url": "https://capd.mit.edu/resources/resumes/",
@@ -400,7 +404,7 @@
     "title": "r/EngineeringResumes: Sophomore lands NVIDIA offer",
     "category": "Resume feedback from reviewers and recruiters",
     "summary": "An embedded-focused sophomore shares the resume behind an NVIDIA offer.",
-    "pages": ["advice/resume"]
+    "pages": ["advice/resume", "advice/projects", "advice/projects/software"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/1pkixp9/today_i_made_a_top_5_list/",
@@ -491,7 +495,7 @@
     "title": "Altium for students",
     "category": "Tools and project resources",
     "summary": "Altium's program for free student licenses of its PCB design software.",
-    "pages": ["advice/projects"]
+    "pages": ["advice/projects/hardware"]
   },
   {
     "url": "https://www.ansys.com/products/electronics/ansys-hfss",
@@ -512,14 +516,14 @@
     "title": "Formula SAE",
     "category": "Tools and project resources",
     "summary": "SAE International's student competition for designing and building a race car.",
-    "pages": ["advice/getting-hired"]
+    "pages": ["advice/getting-hired/first-internship"]
   },
   {
     "url": "https://www.kicad.org/",
     "title": "KiCad EDA",
     "category": "Tools and project resources",
     "summary": "Free, open-source schematic capture and PCB layout software.",
-    "pages": ["advice/projects"]
+    "pages": ["advice/projects/hardware"]
   },
   {
     "url": "https://www.siemens.com/tia-portal",
@@ -540,21 +544,25 @@
     "title": "Wokwi",
     "category": "Tools and project resources",
     "summary": "Browser-based simulator for Arduino, ESP32 and other microcontroller projects.",
-    "pages": ["advice/projects"]
+    "pages": ["advice/projects/hardware"]
   },
   {
     "url": "https://www.ashbyhq.com/talent-trends-report/reports/referrals",
     "title": "Ashby: Are referred candidates more likely to get hired?",
     "category": "Job search and referrals",
     "summary": "Ashby data on hire rates for referred and non-referred job applicants.",
-    "pages": ["advice/getting-hired", "advice/getting-hired/how-to-interview"]
+    "pages": [
+      "advice/getting-hired",
+      "advice/getting-hired/how-to-interview",
+      "advice/getting-hired/first-internship"
+    ]
   },
   {
     "url": "https://www.bluecanyontech.com/",
     "title": "Blue Canyon Technologies",
     "category": "Job search and referrals",
     "summary": "Company site for a small-satellite and spacecraft component maker.",
-    "pages": ["advice/projects"]
+    "pages": ["advice/projects/hardware"]
   },
   {
     "url": "https://career.gatech.edu/undergrad-job-search/networking-outreach/",
@@ -624,14 +632,14 @@
     "title": "SimplifyJobs: Summer2027-Internships",
     "category": "Job search and referrals",
     "summary": "GitHub list of summer 2027 internship postings, updated as companies open roles.",
-    "pages": ["advice/getting-hired"]
+    "pages": ["advice/getting-hired/first-internship"]
   },
   {
     "url": "https://coop.apsc.ubc.ca/undergraduate/current-students/undergraduate-students-terms-and-conditions",
     "title": "UBC Engineering co-op: Terms and conditions",
     "category": "Job search and referrals",
     "summary": "Rules for undergraduate students in UBC's engineering co-op program.",
-    "pages": ["advice/getting-hired"]
+    "pages": ["advice/getting-hired/first-internship"]
   },
   {
     "url": "https://www.usajobs.gov/",
@@ -652,7 +660,7 @@
     "title": "USAJOBS: Pathways for recent graduates",
     "category": "Job search and referrals",
     "summary": "Federal Pathways program for people who recently finished a degree.",
-    "pages": ["help-links"]
+    "pages": ["help-links", "advice/getting-hired/first-full-time-role"]
   },
   {
     "url": "https://opm.usajobs.gov/hiringpath/students/",
@@ -673,42 +681,48 @@
     "title": "r/ECE: Getting referrals for hardware internships",
     "category": "Job search stories from students",
     "summary": "Thread on how students get referrals and interviews for hardware internships.",
-    "pages": ["advice/getting-hired"]
+    "pages": ["advice/getting-hired", "advice/getting-hired/first-internship"]
   },
   {
     "url": "https://www.reddit.com/r/ECE/comments/1vscm44/how_bad_is_it_to_graduate_with_zero_internships/",
     "title": "r/ECE: Graduating with zero internships",
     "category": "Job search stories from students",
     "summary": "A graduate with projects but no internships reports about 500 applications and 2 interviews.",
-    "pages": ["advice/getting-hired"]
+    "pages": ["advice/getting-hired", "advice/getting-hired/first-internship"]
   },
   {
     "url": "https://www.reddit.com/r/ECE/comments/1q4oypq/how_to_get_internships_in_college_without_much/",
     "title": "r/ECE: Internships without much experience",
     "category": "Job search stories from students",
     "summary": "Thread on how students with little experience get internships right now.",
-    "pages": ["advice/getting-hired", "advice/projects"]
+    "pages": [
+      "advice/getting-hired/first-internship",
+      "advice/projects/hardware"
+    ]
   },
   {
     "url": "https://www.reddit.com/r/ECE/comments/1vt6jvy/19f_need_to_get_my_resume_politely_roasted_for/",
     "title": "r/ECE: Resume review for summer 2027 internships",
     "category": "Job search stories from students",
     "summary": "A student asks for resume feedback, and reviewers comment on common kit projects.",
-    "pages": ["advice/projects"]
+    "pages": ["advice/projects", "advice/projects/hardware"]
   },
   {
     "url": "https://www.reddit.com/r/ElectricalEngineering/comments/1ub50g2/where_do_i_apply_now_with_constant_rejection_and/",
     "title": "r/ElectricalEngineering: Constant rejection after graduating",
     "category": "Job search stories from students",
     "summary": "An EE graduate with no job asks where to apply after constant rejections.",
-    "pages": ["advice/getting-hired", "advice/projects"]
+    "pages": [
+      "advice/getting-hired/first-internship",
+      "advice/projects/hardware"
+    ]
   },
   {
     "url": "https://www.reddit.com/r/ElectricalEngineering/comments/1s21ek8/how_bad_is_it_to_graduate_with_no_internships/",
     "title": "r/ElectricalEngineering: Graduating with no internships",
     "category": "Job search stories from students",
     "summary": "Thread on graduating without internships or projects and how to recover.",
-    "pages": ["advice/getting-hired"]
+    "pages": ["advice/getting-hired/first-internship"]
   },
   {
     "url": "https://www.reddit.com/r/ElectricalEngineering/comments/1oyd4a7/how_much_does_gpa_matter_when_applying_for/",
@@ -722,70 +736,79 @@
     "title": "r/ElectricalEngineering: How to not waste my undergrad",
     "category": "Job search stories from students",
     "summary": "A second-year student with no network or experience asks what to do next.",
-    "pages": ["advice/getting-hired", "advice/projects"]
+    "pages": [
+      "advice/getting-hired/first-internship",
+      "advice/projects/hardware"
+    ]
   },
   {
     "url": "https://www.reddit.com/r/ElectricalEngineering/comments/1v36dj4/best_ways_to_get_an_internship_as_2nd_year_ee/",
     "title": "r/ElectricalEngineering: Internship as a second-year EE",
     "category": "Job search stories from students",
     "summary": "Thread with advice for second-year EE students looking for an internship.",
-    "pages": ["advice/getting-hired"]
+    "pages": ["advice/getting-hired", "advice/getting-hired/first-internship"]
   },
   {
     "url": "https://www.reddit.com/r/ElectricalEngineering/comments/1wjc383/how_to_get_into_internships_without_actually/",
     "title": "r/ElectricalEngineering: Internships before engineering classes",
     "category": "Job search stories from students",
     "summary": "A community college student explains how they landed two EE internships early.",
-    "pages": ["advice/getting-hired"]
+    "pages": ["advice/getting-hired/first-internship"]
   },
   {
     "url": "https://www.reddit.com/r/ElectricalEngineering/comments/1vvqcgw/lack_of_2027_new_grad_jobs/",
     "title": "r/ElectricalEngineering: Lack of 2027 new grad jobs",
     "category": "Job search stories from students",
     "summary": "A student sees many summer 2027 internship posts but few new grad roles.",
-    "pages": ["advice/getting-hired"]
+    "pages": [
+      "advice/getting-hired/first-full-time-role",
+      "advice/getting-hired/first-internship"
+    ]
   },
   {
     "url": "https://www.reddit.com/r/ElectricalEngineering/comments/1wj9mw3/how_easy_it_is_to_find_a_job_for_a_new_grad_if_my/",
     "title": "r/ElectricalEngineering: New grad job with low expectations",
     "category": "Job search stories from students",
     "summary": "A new graduate asks how hard a job search is with modest expectations.",
-    "pages": ["advice/getting-hired"]
+    "pages": [
+      "advice/getting-hired/first-full-time-role",
+      "advice/getting-hired/first-internship"
+    ]
   },
   {
     "url": "https://www.reddit.com/r/ElectricalEngineering/comments/1qsr99n/am_i_cooked_if_i_dont_have_an_internship_summer/",
     "title": "r/ElectricalEngineering: No internship as a junior",
     "category": "Job search stories from students",
     "summary": "Thread on what a junior can do without a summer internship.",
-    "pages": ["advice/getting-hired"]
+    "pages": ["advice/getting-hired/first-internship"]
   },
   {
     "url": "https://www.reddit.com/r/ElectricalEngineering/comments/1ndmj2u/could_anyone_recommend_a_project_for_ee_majors/",
     "title": "r/ElectricalEngineering: Resume projects for EE majors",
     "category": "Job search stories from students",
     "summary": "Thread with project ideas that EE students can put on a resume.",
-    "pages": ["advice/getting-hired", "advice/projects"]
+    "pages": ["advice/projects", "advice/getting-hired/first-internship"]
   },
   {
     "url": "https://www.reddit.com/r/ElectricalEngineering/comments/1u0q7n5/undergraduate_research/",
     "title": "r/ElectricalEngineering: Undergraduate research",
     "category": "Job search stories from students",
     "summary": "Thread on how EE students find and use undergraduate research positions.",
-    "pages": ["advice/projects"]
+    "pages": ["advice/projects/hardware"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringStudents/comments/1qbbfra/internship_or_research/",
     "title": "r/EngineeringStudents: Internship or research?",
     "category": "Job search stories from students",
     "summary": "Thread weighing an internship against an undergraduate research position.",
-    "pages": ["advice/projects"]
+    "pages": ["advice/projects/hardware"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringStudents/comments/1v5lag3/no_internship_am_i_cooked/",
     "title": "r/EngineeringStudents: No internship",
     "category": "Job search stories from students",
     "summary": "Thread where students discuss what having no internship means for a job search.",
-    "pages": ["advice/getting-hired"]
+    "pages": ["advice/getting-hired/first-internship"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringStudents/comments/1odiu6l/personal_projects_that_got_you_hired_for/",
@@ -799,7 +822,7 @@
     "title": "r/EngineeringStudents: Sophomore with no internship",
     "category": "Job search stories from students",
     "summary": "A sophomore asks whether missing one summer internship hurts their job chances.",
-    "pages": ["advice/getting-hired"]
+    "pages": ["advice/getting-hired/first-internship"]
   },
   {
     "url": "https://x.com/3184_farm_ridge/status/1986623534236406115",
@@ -813,42 +836,42 @@
     "title": "X: @ApplyBoltApp on an Astranis internship",
     "category": "Job search stories from students",
     "summary": "A post announcing that Astranis is hiring a summer hardware intern.",
-    "pages": ["advice/projects"]
+    "pages": ["advice/projects/hardware"]
   },
   {
     "url": "https://x.com/BackwoodsEnginr/status/2061281029155918079",
     "title": "X: @BackwoodsEnginr on KiCad",
     "category": "Job search stories from students",
     "summary": "An EE and RF engineer with over 35 years of experience recommends KiCad.",
-    "pages": ["advice/projects"]
+    "pages": ["advice/projects/hardware"]
   },
   {
     "url": "https://x.com/blind_via/status/2061016080370573758",
     "title": "X: @blind_via on Altium student licenses",
     "category": "Job search stories from students",
     "summary": "A post telling engineering students they can request a free Altium license.",
-    "pages": ["advice/projects"]
+    "pages": ["advice/projects/hardware"]
   },
   {
     "url": "https://x.com/CodeWithOnari/status/2006474598318252292",
     "title": "X: @CodeWithOnari on hardware costs",
     "category": "Job search stories from students",
     "summary": "An EE student says the cost of parts keeps them from building hardware.",
-    "pages": ["advice/projects"]
+    "pages": ["advice/projects/hardware"]
   },
   {
     "url": "https://x.com/ElectronJacob/status/2098924357359677471",
     "title": "X: @ElectronJacob on silicon carbide inverters",
     "category": "Job search stories from students",
     "summary": "A post on silicon carbide modules replacing silicon in inverters because they switch faster.",
-    "pages": ["advice/projects"]
+    "pages": ["advice/projects/hardware"]
   },
   {
     "url": "https://x.com/Faceofboe5/status/2050228727410311464",
     "title": "X: @Faceofboe5 on 10-year entry-level ads",
     "category": "Job search stories from students",
     "summary": "A post on entry-level EE ads that ask for 10 or more years of experience.",
-    "pages": ["advice/projects"]
+    "pages": ["advice/projects/hardware"]
   },
   {
     "url": "https://x.com/gm16108/status/1989798011690783186",
@@ -876,28 +899,34 @@
     "title": "X: @karanbhilhatiya on hardware's opportunity cost",
     "category": "Job search stories from students",
     "summary": "A post arguing hardware is harder to learn and costs more time than software.",
-    "pages": ["advice/projects"]
+    "pages": ["advice/projects", "advice/projects/hardware"]
   },
   {
     "url": "https://x.com/OnosSpeaks/status/2001938854585270650",
     "title": "X: @OnosSpeaks on bench skills",
     "category": "Job search stories from students",
     "summary": "A post urging EE students to learn to use an oscilloscope and other bench tools.",
-    "pages": ["advice/getting-hired", "advice/projects"]
+    "pages": [
+      "advice/getting-hired/first-internship",
+      "advice/projects/hardware"
+    ]
   },
   {
     "url": "https://x.com/princess_yfe/status/2052407178993029236",
     "title": "X: @princess_yfe on hardware on a budget",
     "category": "Job search stories from students",
     "summary": "Tips for starting hardware work on a student budget with free tools and lab gear.",
-    "pages": ["advice/getting-hired", "advice/projects"]
+    "pages": [
+      "advice/getting-hired/first-internship",
+      "advice/projects/hardware"
+    ]
   },
   {
     "url": "https://x.com/PythonHub/status/2093477553554006095",
     "title": "X: @PythonHub on the Summer2027-Internships list",
     "category": "Job search stories from students",
     "summary": "A post that points to the SimplifyJobs list of summer 2027 internship postings.",
-    "pages": ["advice/getting-hired"]
+    "pages": ["advice/getting-hired/first-internship"]
   },
   {
     "url": "https://x.com/RubenGonVera/status/2092305849330852031",
@@ -911,42 +940,48 @@
     "title": "X: @SogeKingu2000 on starting as a lab technician",
     "category": "Job search stories from students",
     "summary": "An engineer describes starting as a lab technician, then moving into data center work.",
-    "pages": ["advice/getting-hired", "advice/projects"]
+    "pages": [
+      "advice/getting-hired/first-internship",
+      "advice/projects/hardware"
+    ]
   },
   {
     "url": "https://x.com/sTYLz2021/status/2078043532250493266",
     "title": "X: @sTYLz2021 on a first space industry job",
     "category": "Job search stories from students",
     "summary": "A senior working fast food asks how to land a first entry-level space job.",
-    "pages": ["advice/getting-hired"]
+    "pages": ["advice/getting-hired/first-internship"]
   },
   {
     "url": "https://x.com/tech_withrobin/status/2094768485448536101",
     "title": "X: @tech_withrobin on 1,285 engineering postings",
     "category": "Job search stories from students",
     "summary": "A digest summarizing 1,285 engineering job postings read in a single day.",
-    "pages": ["advice/projects"]
+    "pages": ["advice/projects/hardware"]
   },
   {
     "url": "https://x.com/techwithvivian/status/1991690947277840422",
     "title": "X: @techwithvivian on hardware interview resources",
     "category": "Job search stories from students",
     "summary": "An engineer notes how little public interview prep exists for hardware roles.",
-    "pages": ["advice/getting-hired"]
+    "pages": ["advice/getting-hired/first-internship"]
   },
   {
     "url": "https://x.com/techwithvivian/status/2004807338101026964",
     "title": "X: @techwithvivian on hardware recruiting guides",
     "category": "Job search stories from students",
     "summary": "An engineer notes that hardware recruiting guides are scarce compared with software.",
-    "pages": ["advice/getting-hired"]
+    "pages": ["advice/getting-hired/first-internship"]
   },
   {
     "url": "https://x.com/thezachpendley/status/2001891601753497665",
     "title": "X: @thezachpendley on entry-level requirements",
     "category": "Job search stories from students",
     "summary": "An engineer describes \"entry-level\" postings that ask for years of experience.",
-    "pages": ["advice/projects"]
+    "pages": [
+      "advice/getting-hired/first-full-time-role",
+      "advice/projects/hardware"
+    ]
   },
   {
     "url": "https://x.com/TyskiDziku/status/2063929723323834812",
@@ -1107,21 +1142,25 @@
     "title": "BLS: Electrical and electronics engineers",
     "category": "Pay and career data",
     "summary": "Federal data on pay, job outlook and duties for electrical and electronics engineers.",
-    "pages": ["help-links"]
+    "pages": [
+      "help-links",
+      "advice/getting-hired/first-full-time-role",
+      "advice/projects"
+    ]
   },
   {
     "url": "https://www.levels.fyi/",
     "title": "Levels.fyi",
     "category": "Pay and career data",
     "summary": "Self-reported salary and total compensation data by company and level.",
-    "pages": ["help-links"]
+    "pages": ["help-links", "advice/getting-hired/first-full-time-role"]
   },
   {
     "url": "https://www.naceweb.org/job-market/compensation/",
     "title": "NACE: Compensation",
     "category": "Pay and career data",
     "summary": "NACE data and reports on starting salaries for new college graduates.",
-    "pages": ["help-links"]
+    "pages": ["help-links", "advice/getting-hired/first-full-time-role"]
   },
   {
     "url": "https://www.onetonline.org/link/summary/17-2071.00",

@@ -1,0 +1,74 @@
+---
+title: Software
+description: "Software projects for EE students: embedded firmware, test automation and lab scripts, FPGA and HDL testbenches, and how to show the work on a resume and GitHub."
+pageType: guide
+head:
+  - tag: title
+    content: "Software projects for EE students: firmware, test scripts, and HDL | EE Prep"
+---
+
+Write software that touches hardware. For an EE student, that means firmware on a microcontroller, Python that runs a lab instrument, or a testbench for an FPGA design. Put each project on GitHub with a README, and give each resume line a measured number. Most of this work needs only a computer and a dev board.
+
+Alex Doe from [[Resume]] and [[First internship]] is the running example. Every bracket is a number you measure yourself. [[Projects]] covers how to pick a project and present it.
+
+## Why EE students write software
+
+EE employers hire for software. [Texas Instruments lists software engineer among its new-grad engineering roles](https://careers.ti.com/en/sites/CX/pages/students-new-grads), with work in embedded programming. [A TI posting for a new-grad software engineer](https://career.clemson.edu/jobs/texas-instruments-ti-career-accelerator-program-software-engineer/) accepts a degree in EE or ECE. It prefers C, C++, and assembly.
+
+[One recruiter in aerospace and defense wrote that embedded software engineers are the hardest and most expensive candidates to find in that industry](https://www.reddit.com/r/EngineeringResumes/comments/1sj2rgt/student_landed_nvidia_offer_sophomore_cs_major_at/).
+
+An EE degree can also move you between teams. eeprep's author, a working embedded software engineer, was matched to a hardware role by a recruiter and moved to software by a manager. [[How to interview#The recruiter moved the file]] tells that part.
+
+## Embedded firmware
+
+Firmware is the code that runs on a microcontroller. Start bare metal, with no operating system: set up a timer, read an ADC, and handle an interrupt. Alex's converter firmware tunes dead time on an STM32 timer. It samples input current at [X] kHz and cuts the rail within [Y] µs of a fault. The full line is under [[Hardware#Hardware builds that count]].
+
+Add a real-time operating system once bare metal works. [FreeRTOS is a free kernel for microcontrollers, under the MIT license](https://www.freertos.org/).
+
+Follow a coding standard. [Barr Group offers its Embedded C Coding Standard as a free download](https://barrgroup.com/free-downloads). It sets rules for data types, functions, macros, and variables to keep bugs out of firmware.
+
+No board yet? [[Hardware#Starting on a student budget]] lists a free browser simulator for Arduino, ESP32, and STM32. Interviewers ask about `volatile` and interrupts, and [[How to interview#Fundamentals from the ground up]] lists what to know.
+
+## Test automation and lab scripts
+
+Lab scripts turn bench work into software. Alex has two:
+
+- Found [X] battery protection faults before launch review with a Python script that runs [Y] overnight charge cycles and flags any cell that drifts over [Z] mV from the pack average
+- Cut test time per device from [X] to [Y] minutes with Python and PyVISA scope capture
+
+[PyVISA controls measurement instruments from Python](https://pyvisa.readthedocs.io/en/latest/), over GPIB, RS232, USB, or Ethernet. Point it at a lab scope, capture a waveform, and compute the number you would have read by hand. Then put the limits in [pytest](https://docs.pytest.org/en/stable/) tests, so a part out of spec fails the run.
+
+Employers hire for this work. [TI describes its product, test, and validation engineers as developing test software and hardware](https://careers.ti.com/en/sites/CX/pages/students-new-grads). Its applications engineers write software and build demos.
+
+## FPGA and HDL
+
+HDL (hardware description language) describes a circuit in code, so an FPGA build is both hardware and software. Alex's FPGA equalizer is under [[Hardware#Hardware builds that count]]. Show how you verified the design as well as the design itself.
+
+- [cocotb lets you write testbenches for VHDL and SystemVerilog designs in Python](https://www.cocotb.org/).
+- [Verilator is a free, open-source Verilog and SystemVerilog simulator](https://www.veripool.org/verilator/) that also runs lint checks.
+- [EDA Playground runs HDL code in the browser](https://www.edaplayground.com/) on free simulators.
+
+## Show it on GitHub
+
+Put each project in its own repository with a README. [GitHub says a README tells people why the project is useful, what they can do with it, and how to use it](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes). For an EE project, the README covers:
+
+- What it does, in two sentences.
+- A photo of the board or a scope capture.
+- The measured result, and the instrument you measured it with.
+- How to build it and flash it.
+- What broke, and how you fixed it.
+
+[Pin up to six repositories to your GitHub profile](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/pinning-items-to-your-profile), so your best work shows first. [A profile README](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme) can introduce you and link each project.
+
+## Put it on the resume
+
+Write a software line the way you write a hardware line: the action, the tool, and a measured result. [[Resume]] covers the format. Alex's battery monitor line follows it: "Tracked [X] Li-ion cells within [Y] mV each on an ESP32 that streams to a Python dashboard."
+
+Expect questions on every line. [A student who landed an NVIDIA internship said the interview questions were about how they built each project and what they did](https://www.reddit.com/r/EngineeringResumes/comments/1sj2rgt/student_landed_nvidia_offer_sophomore_cs_major_at/).
+
+## Checklist
+
+- Write one firmware project on bare metal before you add an RTOS.
+- Automate one lab measurement with [PyVISA](https://pyvisa.readthedocs.io/en/latest/), and record the time it saves.
+- Give each repository a [README](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes) with a photo, a measured result, and build steps.
+- [Pin your best repositories](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/pinning-items-to-your-profile) to your profile.

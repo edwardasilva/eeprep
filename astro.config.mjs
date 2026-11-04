@@ -271,6 +271,14 @@ export default defineConfig({
 							items: [
 								{ label: 'Getting hired', slug: 'advice/getting-hired' },
 								{
+									label: 'First internship',
+									slug: 'advice/getting-hired/first-internship',
+								},
+								{
+									label: 'First full-time role',
+									slug: 'advice/getting-hired/first-full-time-role',
+								},
+								{
 									label: 'How to interview',
 									slug: 'advice/getting-hired/how-to-interview',
 								},
@@ -278,7 +286,11 @@ export default defineConfig({
 						},
 						{
 							label: 'Projects',
-							items: [{ label: 'Projects', slug: 'advice/projects' }],
+							items: [
+								{ label: 'Projects', slug: 'advice/projects' },
+								{ label: 'Hardware', slug: 'advice/projects/hardware' },
+								{ label: 'Software', slug: 'advice/projects/software' },
+							],
 						},
 					],
 				},

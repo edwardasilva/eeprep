@@ -7,6 +7,9 @@ exceptions:
   - EE
   - CS
   - DSP
+  - FPGA
+  - HDL
+  - GitHub
   - SPI
   - RC
   - KaTeX
