@@ -367,8 +367,24 @@ html {
 /* Links to other sites open in a new tab. The arrow is decoration, and the
    screen-reader hint inside the link says the same thing in words. It is an
    SVG mask filled with the link color, not a text glyph, so no platform can
-   swap in an emoji. Body links and figure caption links share this rule. */
-a.external-link::after {
+   swap in an emoji. Body links and figure caption links share this rule.
+   The arrow follows the link's last word, which sits in its own span that
+   doesn't wrap, so the arrow never starts a line by itself. The link, and a
+   wrapper around it and any period or comma right after it, don't wrap
+   either, so the punctuation stays with the arrow. The link text sits in a
+   span that wraps as usual, so a long link still wraps at its spaces. This
+   nesting is the one that keeps all three together in Chrome, Firefox and
+   Safari. The markup comes from the rehype-external-links plugin and the
+   externalLinks caption helper. */
+a.external-link,
+a.external-link .eep-ext-last,
+.eep-ext {
+	white-space: nowrap;
+}
+a.external-link > .eep-ext-text {
+	white-space: normal;
+}
+a.external-link .eep-ext-last::after {
 	--eep-external-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 9L9 3M4.25 3H9V7.75'/%3E%3C/svg%3E");
 	content: '';
 	display: inline-block;
