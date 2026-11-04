@@ -224,6 +224,7 @@ export default defineConfig({
 				Header: './src/components/Header.astro',
 				ThemeSelect: './src/components/ThemeSelect.astro',
 				PageTitle: './src/components/PageTitle.astro',
+				PageFrame: './src/components/PageFrame.astro',
 				PageSidebar: './src/components/PageSidebar.astro',
 				Sidebar: './src/components/Sidebar.astro',
 				SiteTitle: './src/components/SiteTitle.astro',
