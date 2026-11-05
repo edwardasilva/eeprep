@@ -300,10 +300,8 @@ body {
 .sl-markdown-content .eep-kicker {
 	margin: 0 0 0.35rem;
 	max-width: none;
-	font: 600 0.75rem/1 var(--eep-font-sans);
-	letter-spacing: 0.12em;
-	text-transform: uppercase;
-	color: var(--eep-accent);
+	font: 600 var(--eep-text-eyebrow)/1 var(--eep-font-serif);
+	color: var(--eep-mute);
 }
 .sl-markdown-content .eep-figtitle {
 	margin: 0 0 0.6rem;

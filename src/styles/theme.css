@@ -34,7 +34,7 @@
 	--eep-text-body: 1.0625rem; /* 17 */
 	--eep-text-sm: 0.875rem; /* 14  sidebar, UI */
 	--eep-text-caption: 0.84375rem; /* 13.5 figure captions, margin column */
-	--eep-text-eyebrow: 0.75rem; /* 12  mono uppercase labels */
+	--eep-text-eyebrow: 0.75rem; /* 12  kickers and figure numbers, sentence case */
 	--eep-text-code: 0.875rem; /* 14 */
 	--eep-text-eq: 1.12em; /* KaTeX relative to body */
 	--eep-lh-body: 1.7;
@@ -380,11 +380,9 @@ figure.eep-fig figcaption {
 	color: var(--eep-ink-2);
 }
 figure.eep-fig figcaption .eep-fignum {
-	font: 500 0.75rem/1.9 var(--eep-font-mono);
-	letter-spacing: 0.06em;
-	color: var(--eep-accent);
+	font: 600 var(--eep-text-eyebrow)/1.9 var(--eep-font-serif);
+	color: var(--eep-mute);
 	white-space: nowrap;
-	text-transform: uppercase;
 }
 /* In a narrow figure, the figure number sits above the caption text. */
 figure.eep-fig {
