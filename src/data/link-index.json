@@ -879,7 +879,7 @@
     "title": "USCIS",
     "category": "Job search and referrals",
     "summary": "US Citizenship and Immigration Services, the federal agency for immigration and work authorization.",
-    "pages": ["advice/resume/workshop", "help-links", "roadmap"]
+    "pages": ["advice", "roadmap"]
   },
   {
     "url": "https://ocs.yale.edu/industry-hiring-timelines/",
@@ -1465,5 +1465,12 @@
     "category": "Communities",
     "summary": "Subreddit where engineering students in every discipline discuss classes, internships and jobs.",
     "pages": ["help-links"]
+  },
+  {
+    "url": "https://github.com/edwardasilva/eeprep/blob/main/.github/CONTRIBUTING.md",
+    "title": "Contributing",
+    "category": "Site",
+    "summary": "How a change to eeprep gets from an idea to the live site.",
+    "pages": ["advice"]
   }
 ]
