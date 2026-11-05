@@ -248,14 +248,20 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 			left: -0.125rem;
 			margin-bottom: calc(0.5rem - 0.25rem);
 		}
-		/* The line and its arrowhead run to the next node. */
+		/* The line and its arrowhead run to the next node. The line hangs off
+		   the date. A ::after on the band would be another subgrid item, and
+		   that item draws a rule along the bottom of the text row, across
+		   the Peak 2 card. */
 		.eep-recruit-band:not(:last-child)::after {
-			display: block;
+			content: none;
+		}
+		.eep-recruit-band:not(:last-child) .eep-recruit-date::after {
+			content: '';
+			position: absolute;
 			top: calc(1.05rem + 0.35rem + var(--node) / 2 - var(--line) / 2);
 			left: var(--node);
 			right: -0.4rem;
 			height: var(--line);
-			border-left: 0;
 			background: var(--eep-dg-ink);
 		}
 		.eep-recruit-band:not(:last-child) .eep-recruit-arrow {
