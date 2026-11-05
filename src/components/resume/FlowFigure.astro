@@ -1,6 +1,6 @@
 ---
 import { externalLinks } from './caption';
-// Figure 1.1 as HTML and CSS, so the text reflows and stays readable at every
+// Figure 4.1 as HTML and CSS, so the text reflows and stays readable at every
 // width. Four steps sit in a row on wide screens and stack on narrow ones.
 const steps = [
 	{
@@ -38,7 +38,7 @@ const caption = externalLinks(`
 `);
 ---
 
-<figure class="eep-fig wide eep-flow-fig" id="fig-1-1">
+<figure class="eep-fig wide eep-flow-fig" id="fig-4-1">
 	<p class="eep-kicker">How a resume gets read</p>
 	<p class="eep-figtitle">Software stores it. People read it.</p>
 	<div class="eep-flow-wrap">
@@ -84,7 +84,7 @@ const caption = externalLinks(`
 		</div>
 	</div>
 	<figcaption>
-		<span class="eep-fignum">Fig 1.1</span>
+		<span class="eep-fignum">Fig 4.1</span>
 		<span set:html={caption} />
 	</figcaption>
 </figure>
