@@ -326,7 +326,7 @@ export default defineConfig({
 					label: 'Help links',
 					items: [
 						{ label: 'Help links', slug: 'help-links' },
-						{ label: 'All links', slug: 'help-links/all-links' },
+						{ label: 'Sources', slug: 'help-links/all-links' },
 					],
 				},
 				{ label: 'Roadmap', slug: 'roadmap' },

@@ -1,4 +1,4 @@
-// Fails when src/data/link-index.json, the table on the All links page, and
+// Fails when src/data/link-index.json, the table on the Sources page, and
 // the outside links on the built site disagree. Run `npm run build` first.
 //
 // URLs are compared after normalizing: the scheme and host are lowercased, a
