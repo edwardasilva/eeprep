@@ -9,6 +9,8 @@ head:
 
 These guides cover how to build projects worth talking about, what to write on a resume, how to find and land a role, and how to keep learning after school. Read them in order. Projects give a resume something to show, and the resume starts every application.
 
+The advice on these pages is one engineer's opinion. To suggest a change, see [Contributing](https://github.com/edwardasilva/eeprep/blob/main/.github/CONTRIBUTING.md). eeprep doesn't give visa, immigration, or security clearance advice. Check [USCIS](https://www.uscis.gov/), your school's international student office, and the employer.
+
 ## Projects
 
 - [[Projects]] explains how to pick one build you can defend and present it.

@@ -9,8 +9,6 @@ head:
 
 These links cover pay data, job openings, resume feedback, and forums. eeprep takes no affiliate fees from any of them. For how to use them in an application, see [[Resume]] and [[Getting hired]].
 
-eeprep doesn't give visa, immigration, or security clearance advice. For those questions, check official sources: [USCIS](https://www.uscis.gov/), your school's international student office, and the employer.
-
 ## Pay and offers
 
 - The [Bureau of Labor Statistics page on electrical and electronics engineers](https://www.bls.gov/ooh/architecture-and-engineering/electrical-and-electronics-engineers.htm) has the federal numbers. It lists median pay, the bottom and top 10 percent, pay by industry, and projected job growth. The figures cover every career stage, so do not expect the median in an entry-level offer.

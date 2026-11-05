@@ -1,7 +1,7 @@
 import { defineRouteMiddleware } from '@astrojs/starlight/route-data';
 import { linkGroups, linkIndexPage } from './lib/link-index';
 
-// The All links page draws its category headings in a component, and
+// The Sources page draws its category headings in a component, and
 // Starlight only builds "On this page" from Markdown headings. Add one entry
 // per category, with the same ids the component gives its headings.
 export const onRequest = defineRouteMiddleware((context) => {
