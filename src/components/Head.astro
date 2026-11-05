@@ -21,6 +21,8 @@ route.head.push(
 	{ tag: 'meta', attrs: { property: 'og:image:height', content: '612' } },
 	{ tag: 'meta', attrs: { property: 'og:image:alt', content: 'EE Prep logo' } },
 );
+// The JSON goes inside a <script> tag, so "<" is escaped and no text in it
+// can close the tag early.
 const structuredData = isHome
 	? JSON.stringify({
 			'@context': 'https://schema.org',
@@ -42,7 +44,7 @@ const structuredData = isHome
 					logo: shareImage,
 				},
 			],
-		})
+		}).replace(/</g, '\\u003c')
 	: null;
 ---
 

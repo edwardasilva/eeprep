@@ -1,5 +1,12 @@
 ---
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { externalLinks } from '../components/resume/caption';
+
+// Like links in the guide text, the GitHub link opens in a new tab with the
+// external-link arrow.
+const generatorLink = externalLinks(
+	'<a href="https://github.com/edwardasilva/resume-generator">resume-generator</a>',
+);
 ---
 
 <StarlightPage
@@ -50,9 +57,7 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 	</p>
 	<p class="eep-generator">
 		Want a resume without formatting it by hand?{' '}
-		<a href="https://github.com/edwardasilva/resume-generator">
-			resume-generator
-		</a>{' '}
-		is a free, open-source tool that turns one file into a one-page PDF.
+		<Fragment set:html={generatorLink} /> is a free, open-source tool that turns
+		one file into a one-page PDF.
 	</p>
 </StarlightPage>

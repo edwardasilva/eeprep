@@ -52,7 +52,11 @@
 
 	function applyTheme(theme: 'light' | 'dark'): void {
 		document.documentElement.dataset.theme = theme;
-		localStorage.setItem(storageKey, theme);
+		try {
+			localStorage.setItem(storageKey, theme);
+		} catch {
+			// Storage can be blocked or full. The theme still switches for this page.
+		}
 		for (const button of themeButtons())
 			button.setAttribute('aria-label', labelFor(theme));
 	}

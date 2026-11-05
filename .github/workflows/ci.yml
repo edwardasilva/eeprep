@@ -50,6 +50,14 @@ jobs:
       - run: npm run build
       - run: npm run check:deploy
       - run: npm run check:deploy:dev
+      - name: Deploy pins the same Wrangler as package.json
+        run: |
+          set -euo pipefail
+          want="$(node -p "require('./package.json').devDependencies.wrangler")"
+          if ! grep -Eq "^ +wranglerVersion: ${want//./\\.}$" .github/workflows/deploy.yml; then
+            echo "deploy.yml wranglerVersion must be $want, the wrangler version in package.json." >&2
+            exit 1
+          fi
       - run: npm run check:robots
       - run: npm run test:worker
       - run: npm run check:links
