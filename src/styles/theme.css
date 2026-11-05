@@ -288,8 +288,12 @@ h1#_top {
 	align-items: center;
 	margin-bottom: var(--eep-space-2);
 }
-:is(.callout-icon, .starlight-aside__icon, .callout-title svg) {
+:is(.callout-title-icon, .starlight-aside__icon) {
 	display: none;
+}
+/* Obsidian-style parts sit flush, spaced like Starlight asides. */
+.sl-markdown-content :is(.callout-title-text, .callout-content) {
+	margin-top: 0;
 }
 .callout-content > p:first-child > strong:only-child {
 	display: block;
