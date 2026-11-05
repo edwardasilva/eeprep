@@ -8,6 +8,7 @@ import rehypeKatex from 'rehype-katex';
 import rehypeCallouts from 'rehype-callouts';
 import rehypeEqIds from './src/plugins/rehype-eq-ids.mjs';
 import rehypeExternalLinks from './src/plugins/rehype-external-links.mjs';
+import rehypeTableLabels from './src/plugins/rehype-table-labels.mjs';
 import remarkWikilinkLabels from './src/plugins/remark-wikilink-labels.mjs';
 import {
 	loadWikiIndex,
@@ -113,6 +114,10 @@ export default defineConfig({
 				rehypeKatex,
 				rehypeEqIds,
 				rehypeExternalLinks,
+				[
+					rehypeTableLabels,
+					{ files: ['src/content/docs/roadmap.md'], className: 'eep-roadmap' },
+				],
 				[
 					rehypeCallouts,
 					{
@@ -232,27 +237,47 @@ export default defineConfig({
 			expressiveCode: {
 				themes: [darkCodeTheme, lightCodeTheme],
 				useStarlightDarkModeSwitch: true,
+				// Keep exact palette colors; no automatic contrast shifts.
+				minSyntaxHighlightingColorContrast: 0,
+				// Shell snippets get the plain code frame, not a fake terminal window.
+				defaultProps: { frame: 'code' },
 				styleOverrides: {
-					borderRadius: '4px',
-					borderColor: 'var(--eep-rule)',
+					// Expressive Code adds the border width, so the outer radius matches figures.
+					borderRadius: 'calc(var(--eep-radius) - 1px)',
+					borderColor: 'var(--eep-silver)',
 					borderWidth: '1px',
+					codeBackground: 'var(--eep-sunken)',
+					codeForeground: 'var(--eep-ink)',
 					codeFontFamily: 'var(--eep-font-mono)',
 					codeFontSize: '0.875rem',
 					codeLineHeight: '1.75',
 					codePaddingBlock: '1.125rem',
 					codePaddingInline: '1.375rem',
-					uiFontFamily: 'var(--eep-font-mono)',
-					uiFontSize: '0.71875rem',
+					uiFontFamily: 'var(--eep-font-serif)',
+					uiFontSize: '0.8125rem',
+					uiFontWeight: '400',
 					frames: {
 						shadowColor: 'transparent',
-						editorTabBarBackground: 'var(--eep-sunken)',
-						editorActiveTabBackground: 'var(--eep-sunken)',
-						editorActiveTabIndicatorTopColor: 'transparent',
-						editorActiveTabIndicatorBottomColor: 'var(--eep-accent)',
-						editorTabBarBorderBottomColor: 'var(--eep-rule)',
-						terminalTitlebarBackground: 'var(--eep-sunken)',
-						terminalBackground: 'var(--eep-sunken)',
 						frameBoxShadowCssValue: 'none',
+						editorBackground: 'var(--eep-sunken)',
+						editorTabBarBackground: 'var(--eep-sunken)',
+						editorTabBarBorderColor: 'transparent',
+						editorTabBarBorderBottomColor: 'var(--eep-silver)',
+						editorActiveTabBackground: 'var(--eep-sunken)',
+						editorActiveTabForeground: 'var(--eep-ink-2)',
+						editorActiveTabBorderColor: 'transparent',
+						editorActiveTabIndicatorTopColor: 'transparent',
+						editorActiveTabIndicatorBottomColor: 'transparent',
+						terminalBackground: 'var(--eep-sunken)',
+						terminalTitlebarBackground: 'var(--eep-sunken)',
+						terminalTitlebarForeground: 'var(--eep-ink-2)',
+						terminalTitlebarBorderBottomColor: 'var(--eep-silver)',
+						terminalTitlebarDotsOpacity: '0',
+						inlineButtonBackground: 'transparent',
+						inlineButtonBorder: 'transparent',
+						inlineButtonForeground: 'var(--eep-ink-2)',
+						tooltipSuccessBackground: 'var(--eep-ink)',
+						tooltipSuccessForeground: 'var(--eep-paper)',
 					},
 				},
 			},
@@ -261,6 +286,14 @@ export default defineConfig({
 					label: 'Advice',
 					items: [
 						{ label: 'Advice', slug: 'advice' },
+						{
+							label: 'Projects',
+							items: [
+								{ label: 'Projects', slug: 'advice/projects' },
+								{ label: 'Hardware', slug: 'advice/projects/hardware' },
+								{ label: 'Software', slug: 'advice/projects/software' },
+							],
+						},
 						{
 							label: 'Resume',
 							items: [
@@ -286,14 +319,7 @@ export default defineConfig({
 								},
 							],
 						},
-						{
-							label: 'Projects',
-							items: [
-								{ label: 'Projects', slug: 'advice/projects' },
-								{ label: 'Hardware', slug: 'advice/projects/hardware' },
-								{ label: 'Software', slug: 'advice/projects/software' },
-							],
-						},
+						{ label: 'Forever learning', slug: 'advice/forever-learning' },
 					],
 				},
 				{

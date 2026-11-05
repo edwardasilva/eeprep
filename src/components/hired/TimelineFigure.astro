@@ -1,6 +1,6 @@
 ---
 import { externalLinks } from '../resume/caption';
-// Figure 5.1 as HTML and CSS. Five bands across senior year. On wide figures
+// Figure 8.1 as HTML and CSS. Five bands across senior year. On wide figures
 // they run left to right in one row, with the two deadline markers in a row
 // underneath. On narrow ones they hang off one line down the left side, each
 // marker under its band. The peaks sit on a tinted box. April has no band, so
@@ -45,10 +45,9 @@ const caption = externalLinks(
 const arrow = 'M1 1.5L9 5L1 8.5Z';
 ---
 
-<figure class="eep-fig wide eep-recruit-fig" id="fig-5-1">
+<figure class="eep-fig wide eep-recruit-fig" id="fig-8-1">
 	<p class="eep-kicker">
-		Figure 5.1 · <span class="eep-nobreak">New-grad</span> recruiting in senior
-		year
+		<span class="eep-nobreak">New-grad</span> recruiting in senior year
 	</p>
 	<p class="sr-only">{alt}</p>
 	<div class="eep-recruit not-content" aria-hidden="true">
@@ -83,7 +82,7 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 		</ol>
 	</div>
 	<figcaption>
-		<span class="eep-fignum">Fig 5.1</span> <span set:html={caption} />
+		<span class="eep-fignum">Fig 8.1</span> <span set:html={caption} />
 	</figcaption>
 </figure>
 
@@ -124,7 +123,7 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 		max-width: none;
 	}
 	.eep-recruit .eep-recruit-date {
-		font: 0.75rem/1.4 var(--eep-font-mono);
+		font: 0.75rem/1.4 var(--eep-font-serif);
 		color: var(--eep-ink-2);
 	}
 	.eep-recruit .eep-recruit-title {

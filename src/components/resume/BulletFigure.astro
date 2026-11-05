@@ -1,6 +1,6 @@
 ---
 import { externalLinks } from './caption';
-// Figure 1.3 as HTML and CSS, so the text reflows and stays readable at every
+// Figure 4.3 as HTML and CSS, so the text reflows and stays readable at every
 // width. On wide figures each tag sits above the words it marks. On narrow
 // ones the tags sit inline, just before those words.
 const after = [
@@ -24,8 +24,8 @@ const caption = externalLinks(`
 `);
 ---
 
-<figure class="eep-fig wide eep-bullet-fig" id="fig-1-3">
-	<p class="eep-kicker">Figure 1.3 · One bullet, before and after</p>
+<figure class="eep-fig wide eep-bullet-fig" id="fig-4-3">
+	<p class="eep-kicker">One bullet, before and after</p>
 	<p class="eep-figtitle">Did X with Y to get Z</p>
 	<div class="eep-bullet not-content">
 		<p class="eep-bullet-label">
@@ -64,7 +64,7 @@ const caption = externalLinks(`
 		</p>
 	</div>
 	<figcaption>
-		<span class="eep-fignum">Fig 1.3</span>
+		<span class="eep-fignum">Fig 4.3</span>
 		<span set:html={caption} />
 	</figcaption>
 </figure>
@@ -91,8 +91,6 @@ const caption = externalLinks(`
 		font-size: 0.75rem;
 		font-weight: 600;
 		line-height: 1;
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
 		color: var(--eep-mute);
 	}
 	.eep-bullet .eep-bullet-after {
@@ -141,8 +139,6 @@ const caption = externalLinks(`
 		font-size: 0.75rem;
 		font-weight: 600;
 		line-height: 1.3;
-		letter-spacing: 0.06em;
-		text-transform: uppercase;
 		text-decoration: none;
 		color: var(--eep-dg-accent);
 	}
