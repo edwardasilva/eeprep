@@ -98,12 +98,6 @@
 	}
 }
 
-/* Callout titles are sentence case, as written. */
-.callout-title,
-.starlight-aside__title {
-	font-size: 0.8125rem;
-}
-
 .eep-hero {
 	padding: 2.5rem 0 1rem;
 	max-width: 46rem;
