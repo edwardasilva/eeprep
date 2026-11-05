@@ -40,7 +40,7 @@ The site has two targets on Cloudflare Workers:
 | A merge to `main`              | The dev site, which search engines skip |
 | A version tag such as `v0.2.0` | eeprep.com                              |
 
-A release is one commit with its own version tag. The work merged since the last release is squashed into that commit, and the tag publishes it and creates a GitHub release with generated notes.
+A release is one commit with its own version tag. The work merged since the last release is squashed into that commit. The tag publishes it and creates a GitHub release with generated notes.
 
 Deploys use the `production` environment secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`.
 
@@ -57,7 +57,7 @@ npm run format
 
 Open `src/content/docs` as an Obsidian vault. Wikilinks stay in `[[wiki]]` form (`useMarkdownLinks` is off). Same-page links use `[text](#heading)`, because `[[#heading]]` has an empty page name and the wikilink check fails the build. Do not commit `.obsidian/workspace.json`.
 
-Write in sentence case. Callout titles are sentence case. Use "Main idea", not "Key idea". External source links in `src/content/docs` are listed in `src/content/references.bib`. A citation is an ordinary Markdown link inside the sentence, with plain words as the link text. `npm run check:citations` fails if a linked source is missing from that file, or if a bibliography entry is linked from no page. It also fails on a Pandoc cite such as `[@key]`, and on link text that starts with `reddit-` or `x-`, contains `@`, is a bare URL, or is one token longer than 20 characters. It fails when page prose contains an `@handle` outside code or a URL. It fails when a content line is made only of Markdown links.
+Write in sentence case. Callout titles are sentence case. Use "Main idea", not "Key idea". External source links in `src/content/docs` are listed in `src/content/references.bib`. A citation is an ordinary Markdown link inside the sentence, with plain words as the link text. `npm run check:citations` fails if a linked source is missing from that file, or if a bibliography entry is linked from no page. It also fails on a Pandoc cite such as `[@key]`. It fails on link text that starts with `reddit-` or `x-`, contains `@`, is a bare URL, or is one token longer than 20 characters. It fails when page prose contains an `@handle` outside code or a URL. It fails when a content line is made only of Markdown links.
 
 <!-- run-locally:start -->
 
