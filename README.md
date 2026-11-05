@@ -1,6 +1,6 @@
 # EE Prep
 
-EE Prep helps electrical engineering students and new grads get ahead in the AI era: build a resume that works, find real experience, and land a first internship or full-time role.
+EE Prep helps electrical engineering students and new grads get ahead in the AI era. It shows how to build a resume that works, find real experience, and land a first internship or full-time role.
 
 Status: active development. Content and code are updated regularly.
 
@@ -31,7 +31,7 @@ git clone --recurse-submodules https://github.com/edwardasilva/eeprep.git
 
 The site builds without the submodule, so a plain clone also works.
 
-Want to help improve the guide? See [CONTRIBUTING](.github/CONTRIBUTING.md).
+To help with the guide, see [CONTRIBUTING](.github/CONTRIBUTING.md).
 
 ## License
 
