@@ -1,37 +1,18 @@
 ---
 title: Roadmap
-description: "The big updates planned for eeprep: a resume builder, study guides, job board help, a LinkedIn guide, better graphics and the author's take."
+description: "The big updates planned for eeprep: a resume builder, study guides, a LinkedIn guide, better graphics, the author's take, and visa and clearance guidance."
 head:
   - tag: title
     content: "Roadmap | eeprep"
 ---
 
-These are the big updates planned for eeprep. The plan may change.
+These are the big updates planned for eeprep. The plan may change. Each row lists links to use until the update ships.
 
-## Resume builder
-
-Fill in a form on the site and get a one-page resume. No setup needed.
-
-## Study guides
-
-Short guides to the core courses in an electrical engineering degree.
-
-## Job board help
-
-Which job boards to use and how to search them.
-
-## LinkedIn guide
-
-How to set up a profile that recruiters find and read.
-
-## Better graphics
-
-Clearer figures and diagrams across the site.
-
-## The author's take
-
-Notes from eeprep's author, a working embedded software engineer, on what worked for them.
-
-## Visa and security clearance guidance
-
-What international students and clearance applicants need to know, checked against official sources.
+| What's coming                                                                                                                                            | Use in the meantime                                                                                                                                                                                                                                                                                                                 |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Resume builder.** Fill in a form on the site and get a one-page resume with no setup.                                                                  | [[Resume#Build your resume]]<br />[r/EngineeringResumes templates](https://www.reddit.com/r/EngineeringResumes/wiki/templates/)                                                                                                                                                                                                     |
+| **Study guides.** Short guides cover the core courses in an electrical engineering degree.                                                               | [MIT 6.002 Circuits and Electronics](https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/)<br />[MIT 6.003 Signals and Systems](https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/)<br />[MIT 6.004 Computation Structures](https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/) |
+| **LinkedIn guide.** It shows how to set up a profile that recruiters find and read.                                                                      | [MIT's LinkedIn profile guide](https://capd.mit.edu/resources/linkedin/)                                                                                                                                                                                                                                                            |
+| **Better graphics.** Clearer figures and diagrams will appear across the site.                                                                           | [[Resume]]<br />[[How to interview]]                                                                                                                                                                                                                                                                                                |
+| **The author's take.** eeprep's author, a working embedded software engineer, will share what worked for them.                                           | [[How to interview#Author anecdotes]]                                                                                                                                                                                                                                                                                               |
+| **Visa and security clearance guidance.** It covers what international students and clearance applicants need to know, checked against official sources. | [USCIS](https://www.uscis.gov/)<br />[MIT International Students Office](https://iso.mit.edu/)                                                                                                                                                                                                                                      |

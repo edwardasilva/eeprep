@@ -218,7 +218,7 @@
     "title": "r/EngineeringResumes wiki: Recommended templates",
     "category": "Sample resumes and templates",
     "summary": "The subreddit's recommended resume templates in LaTeX, Word and Google Docs.",
-    "pages": ["advice/resume", "advice/resume/workshop"]
+    "pages": ["advice/resume", "advice/resume/workshop", "roadmap"]
   },
   {
     "url": "https://github.com/edwardasilva/resume-generator",
@@ -575,6 +575,20 @@
     "pages": ["advice/projects/hardware", "advice/projects"]
   },
   {
+    "url": "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/",
+    "title": "MIT OCW: 6.002 Circuits and Electronics",
+    "category": "Tools and project resources",
+    "summary": "MIT's free first circuits course for EE and EECS students.",
+    "pages": ["roadmap"]
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/",
+    "title": "MIT OCW: 6.003 Signals and Systems",
+    "category": "Tools and project resources",
+    "summary": "MIT's free signals and systems course, from Fourier transforms to sampling.",
+    "pages": ["roadmap"]
+  },
+  {
     "url": "https://docs.pytest.org/en/stable/",
     "title": "pytest documentation",
     "category": "Tools and project resources",
@@ -705,6 +719,13 @@
     "pages": ["advice/getting-hired/first-full-time-role"]
   },
   {
+    "url": "https://capd.mit.edu/resources/linkedin/",
+    "title": "MIT CAPD: Build your LinkedIn profile",
+    "category": "Job search and referrals",
+    "summary": "MIT career office guide to setting up a LinkedIn profile.",
+    "pages": ["roadmap"]
+  },
+  {
     "url": "https://capd.mit.edu/resources/choosing-between-job-offers/",
     "title": "MIT CAPD: Choosing between job offers",
     "category": "Job search and referrals",
@@ -717,6 +738,13 @@
     "category": "Job search and referrals",
     "summary": "MIT's steps for responding to and negotiating a job offer, and which terms usually move.",
     "pages": ["advice/getting-hired/first-full-time-role"]
+  },
+  {
+    "url": "https://iso.mit.edu/",
+    "title": "MIT International Students Office",
+    "category": "Job search and referrals",
+    "summary": "Example of a university international office that advises students on immigration rules.",
+    "pages": ["roadmap"]
   },
   {
     "url": "https://ecs.osu.edu/employers/recruiting-guidelines-policies/hiring-students",
@@ -830,7 +858,7 @@
     "title": "USCIS",
     "category": "Job search and referrals",
     "summary": "US Citizenship and Immigration Services, the federal agency for immigration and work authorization.",
-    "pages": ["advice/resume/workshop", "help-links"]
+    "pages": ["advice/resume/workshop", "help-links", "roadmap"]
   },
   {
     "url": "https://ocs.yale.edu/industry-hiring-timelines/",
@@ -1263,7 +1291,7 @@
     "title": "MIT OCW: 6.004 Computation Structures",
     "category": "Interview prep",
     "summary": "Free MIT course on building a computer from transistors and logic up to a processor.",
-    "pages": ["advice/getting-hired/how-to-interview"]
+    "pages": ["advice/getting-hired/how-to-interview", "roadmap"]
   },
   {
     "url": "https://www.opm.gov/frequently-asked-questions/assessment-policy-faq/structured-interviews/how-do-structured-interviews-differ-from-other-types-of-job-interviews/",
