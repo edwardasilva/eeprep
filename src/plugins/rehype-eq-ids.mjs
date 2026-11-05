@@ -1,5 +1,6 @@
 /**
  * Give each display equation an id from its KaTeX \tag, so "0.1" becomes eq-0-1.
+ * KaTeX 0.19 puts the tag in a .katex-tag span. Older versions used .tag.
  */
 export default function rehypeEqIds() {
 	return (tree) => {
@@ -21,7 +22,11 @@ function walk(node) {
 
 /** @param {any} node */
 function findTagText(node) {
-	if (node?.type === 'element' && hasClass(node, 'tag')) return textOf(node);
+	if (
+		node?.type === 'element' &&
+		(hasClass(node, 'katex-tag') || hasClass(node, 'tag'))
+	)
+		return textOf(node);
 	for (const child of node?.children ?? []) {
 		const found = findTagText(child);
 		if (found) return found;
