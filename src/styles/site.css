@@ -9,7 +9,7 @@
 }
 .eep-nav a {
 	font: 500 0.875rem/1 var(--eep-font-sans);
-	color: var(--eep-ink-2);
+	color: var(--eep-ink);
 	text-decoration: none;
 	white-space: nowrap;
 }
@@ -98,11 +98,9 @@
 	}
 }
 
-/* Callout titles stay sentence case. theme.css uppercases them. */
+/* Callout titles are sentence case, as written. */
 .callout-title,
 .starlight-aside__title {
-	text-transform: none;
-	letter-spacing: 0.01em;
 	font-size: 0.8125rem;
 }
 
@@ -166,7 +164,7 @@ button[data-open-modal] kbd {
 	font-size: 0.9375rem;
 }
 .wikilink-missing {
-	color: var(--eep-accent);
+	color: var(--eep-ink-2);
 }
 
 /* "Linked from" sits under "On this page" and matches its inset and type. */
@@ -396,4 +394,10 @@ a.external-link .eep-ext-last::after {
 	forced-color-adjust: none;
 	-webkit-mask: var(--eep-external-arrow) no-repeat center / contain;
 	mask: var(--eep-external-arrow) no-repeat center / contain;
+}
+
+/* The skip link shows on keyboard focus; it uses the ink role too. */
+.sl-skip-link {
+	color: var(--eep-ink);
+	background: var(--eep-paper);
 }

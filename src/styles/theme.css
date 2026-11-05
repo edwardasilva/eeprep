@@ -79,9 +79,11 @@
 	--eep-rule: #e2e4e8; /* hairlines */
 	--eep-rule-2: #c4c8cf; /* breadcrumb separators, stronger rules */
 	--eep-ink: #16233a; /* headings, diagram strokes */
-	--eep-text: #232a39; /* body copy */
+	/* Three text roles: ink, ink-2 (secondary) and accent (current item and
+	   figures only). Silver is never text. Older names alias onto them. */
+	--eep-text: var(--eep-ink);
 	--eep-ink-2: #424d63; /* secondary text, lede */
-	--eep-mute: #5e636c; /* meta, eq numbers, captions-secondary (5.8:1) */
+	--eep-mute: var(--eep-ink-2);
 	--eep-silver: #838c9a; /* lines, icons, chart mute series: never text (3.3:1) */
 	--eep-wash: #e7ecf3; /* steel wash: optional secondary fill, never text or lines */
 	--eep-accent: #a3201d; /* the ONE accent: crimson */
@@ -114,9 +116,9 @@
 	--eep-rule: #232b3a;
 	--eep-rule-2: #3b4352;
 	--eep-ink: #eceef2;
-	--eep-text: #d0d4db;
+	--eep-text: var(--eep-ink);
 	--eep-ink-2: #a6afbf;
-	--eep-mute: #8f95a0;
+	--eep-mute: var(--eep-ink-2);
 	--eep-silver: #76808f;
 	--eep-wash: #17243a;
 	--eep-accent: #e06a5f; /* crimson lifted to 5.6:1 on navy paper */
@@ -149,7 +151,7 @@
 	--sl-color-bg-sidebar: var(--eep-paper);
 	--sl-color-bg-inline-code: var(--eep-sunken);
 	--sl-color-bg-accent: var(--eep-accent);
-	--sl-color-text: var(--eep-text);
+	--sl-color-text: var(--eep-ink);
 	--sl-color-text-accent: var(--eep-accent);
 	--sl-color-text-invert: var(--eep-on-accent);
 	--sl-color-white: var(
@@ -157,9 +159,9 @@
 	); /* Starlight uses "white" for strongest text */
 	--sl-color-black: var(--eep-paper);
 	--sl-color-gray-1: var(--eep-ink);
-	--sl-color-gray-2: var(--eep-text);
+	--sl-color-gray-2: var(--eep-ink);
 	--sl-color-gray-3: var(--eep-ink-2);
-	--sl-color-gray-4: var(--eep-mute);
+	--sl-color-gray-4: var(--eep-ink-2);
 	--sl-color-gray-5: var(--eep-rule-2);
 	--sl-color-gray-6: var(--eep-rule);
 	--sl-color-gray-7: var(--eep-sunken);
@@ -237,11 +239,12 @@ h1#_top {
 .sl-markdown-content a {
 	color: var(--eep-ink);
 	text-decoration-line: underline;
-	text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+	text-decoration-color: var(--eep-silver);
 	text-underline-offset: 0.15em;
 	text-decoration-thickness: 1px;
 }
 .sl-markdown-content a:focus-visible {
+	color: var(--eep-accent);
 	text-decoration-color: currentColor;
 }
 @media (hover: hover) {
@@ -274,9 +277,7 @@ h1#_top {
 .callout-title,
 .starlight-aside__title {
 	font: 650 var(--eep-text-eyebrow)/1.2 var(--eep-font-sans);
-	letter-spacing: 0.14em;
-	text-transform: uppercase;
-	color: var(--c);
+	color: var(--eep-ink-2);
 	display: flex;
 	gap: var(--eep-space-3);
 	align-items: center;
@@ -332,7 +333,7 @@ h1#_top {
 }
 .callout[data-callout='example'] .callout-content ol > li::marker {
 	font-family: var(--eep-font-mono);
-	color: var(--eep-ex);
+	color: var(--eep-ink);
 }
 .callout[data-callout='question'],
 .callout[data-callout='check'] {
@@ -439,12 +440,27 @@ figure.eep-fig {
 /* ---------- 11. Sidebar / chapter TOC ---------- */
 .sidebar-content a[aria-current='page'] {
 	background: transparent;
-	color: var(--eep-ink);
+	color: var(--eep-accent);
 	font-weight: 550;
 	box-shadow: inset var(--eep-toc-bar) 0 0 var(--eep-accent);
 	border-radius: 0;
 }
 .sidebar-content a {
 	font-size: var(--eep-text-sm);
+	color: var(--eep-ink);
+}
+/* Inactive TOC entries are secondary; the current one is the accent. */
+starlight-toc a {
 	color: var(--eep-ink-2);
+}
+starlight-toc a[aria-current='true'] {
+	color: var(--eep-accent);
+}
+@media (hover: hover) {
+	:is(.sidebar-content, starlight-toc) a:hover {
+		color: var(--eep-accent);
+	}
+}
+:is(.sidebar-content, starlight-toc) a:focus-visible {
+	color: var(--eep-accent);
 }
