@@ -241,7 +241,7 @@ export default defineConfig({
 					codeLineHeight: '1.75',
 					codePaddingBlock: '1.125rem',
 					codePaddingInline: '1.375rem',
-					uiFontFamily: 'var(--eep-font-mono)',
+					uiFontFamily: 'var(--eep-font-sans)',
 					uiFontSize: '0.71875rem',
 					frames: {
 						shadowColor: 'transparent',
