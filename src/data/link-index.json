@@ -575,6 +575,27 @@
     "pages": ["advice/projects/hardware", "advice/projects"]
   },
   {
+    "url": "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/",
+    "title": "MIT OCW: 6.002 Circuits and Electronics",
+    "category": "Tools and project resources",
+    "summary": "MIT's free first circuits course for EE and EECS students.",
+    "pages": ["advice/forever-learning"]
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/",
+    "title": "MIT OCW: 6.003 Signals and Systems",
+    "category": "Tools and project resources",
+    "summary": "MIT's free signals and systems course, from Fourier transforms to sampling.",
+    "pages": ["advice/forever-learning"]
+  },
+  {
+    "url": "https://ocw.mit.edu/about/",
+    "title": "MIT OpenCourseWare: About",
+    "category": "Tools and project resources",
+    "summary": "MIT's free course materials from more than 2,500 courses.",
+    "pages": ["advice/forever-learning"]
+  },
+  {
     "url": "https://docs.pytest.org/en/stable/",
     "title": "pytest documentation",
     "category": "Tools and project resources",
@@ -601,6 +622,20 @@
     "category": "Tools and project resources",
     "summary": "Exam details for the CSWP certification in SOLIDWORKS part and assembly modeling.",
     "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://www.ti.com/lit/an/slva477c/slva477c.pdf",
+    "title": "TI: Basic calculation of a buck converter's power stage",
+    "category": "Tools and project resources",
+    "summary": "TI application note with the formulas for sizing a buck converter's power stage.",
+    "pages": ["advice/forever-learning"]
+  },
+  {
+    "url": "https://www.ti.com/lit/er/slaz314/slaz314.pdf",
+    "title": "TI: MSP430F5529 errata sheet",
+    "category": "Tools and project resources",
+    "summary": "Example errata sheet listing where a microcontroller differs from its datasheet.",
+    "pages": ["advice/forever-learning"]
   },
   {
     "url": "https://www.veripool.org/verilator/",
@@ -1263,7 +1298,10 @@
     "title": "MIT OCW: 6.004 Computation Structures",
     "category": "Interview prep",
     "summary": "Free MIT course on building a computer from transistors and logic up to a processor.",
-    "pages": ["advice/getting-hired/how-to-interview"]
+    "pages": [
+      "advice/getting-hired/how-to-interview",
+      "advice/forever-learning"
+    ]
   },
   {
     "url": "https://www.opm.gov/frequently-asked-questions/assessment-policy-faq/structured-interviews/how-do-structured-interviews-differ-from-other-types-of-job-interviews/",
@@ -1312,6 +1350,13 @@
     ]
   },
   {
+    "url": "https://www.irs.gov/publications/p15b",
+    "title": "IRS Publication 15-B: Fringe benefits",
+    "category": "Pay and career data",
+    "summary": "IRS rules on employer education help, tax-free up to $5,250 a year.",
+    "pages": ["advice/forever-learning"]
+  },
+  {
     "url": "https://www.levels.fyi/",
     "title": "Levels.fyi",
     "category": "Pay and career data",
@@ -1340,11 +1385,39 @@
     "pages": ["advice/getting-hired/first-full-time-role", "advice/projects"]
   },
   {
+    "url": "https://ncees.org/exams/fe-exam/",
+    "title": "NCEES: FE exam",
+    "category": "Pay and career data",
+    "summary": "NCEES page on the Fundamentals of Engineering exam, its format, and its fee.",
+    "pages": ["advice/forever-learning"]
+  },
+  {
+    "url": "https://ncees.org/licensure/",
+    "title": "NCEES: Licensure",
+    "category": "Pay and career data",
+    "summary": "NCEES on the usual path to a PE license: degree, experience, and two exams.",
+    "pages": ["advice/forever-learning"]
+  },
+  {
+    "url": "https://ncees.org/exams/pe-exam/electrical-and-computer/",
+    "title": "NCEES: PE Electrical and Computer exam",
+    "category": "Pay and career data",
+    "summary": "NCEES page on the three PE Electrical and Computer exams.",
+    "pages": ["advice/forever-learning"]
+  },
+  {
     "url": "https://www.onetonline.org/link/summary/17-2071.00",
     "title": "O*NET: Electrical engineers",
     "category": "Pay and career data",
     "summary": "Occupation profile listing tasks, skills, tools and pay for electrical engineers.",
     "pages": ["help-links"]
+  },
+  {
+    "url": "https://students.ieee.org/",
+    "title": "IEEE Students",
+    "category": "Communities",
+    "summary": "IEEE's student site, with membership benefits, student branches, and contests.",
+    "pages": ["advice/forever-learning"]
   },
   {
     "url": "https://www.reddit.com/r/ECE/",

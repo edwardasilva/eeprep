@@ -26,3 +26,7 @@ These guides cover what to write on a resume, how to find and land a role, and h
 - [[Projects]] explains how to pick one build you can defend and present it.
 - [[Hardware]] covers bench skills, hardware builds, design teams, and technician roles.
 - [[Software]] covers embedded firmware, test automation, FPGA and HDL work, and how to show it on GitHub.
+
+## Forever learning
+
+- [[Forever learning]] covers datasheets and errata, free courses, IEEE, the FE exam and PE license, and employer tuition help.
