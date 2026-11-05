@@ -4,6 +4,10 @@ on:
   pull_request:
     branches:
       - main
+    # edited and labeled re-run the PR body check after the "Part of #" line
+    # or the no-epic label is fixed, without a new push. The concurrency group
+    # below cancels the run they replace.
+    types: [opened, synchronize, reopened, edited, labeled, unlabeled]
 
 permissions:
   contents: read
