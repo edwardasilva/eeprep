@@ -262,6 +262,14 @@ export default defineConfig({
 					items: [
 						{ label: 'Advice', slug: 'advice' },
 						{
+							label: 'Projects',
+							items: [
+								{ label: 'Projects', slug: 'advice/projects' },
+								{ label: 'Hardware', slug: 'advice/projects/hardware' },
+								{ label: 'Software', slug: 'advice/projects/software' },
+							],
+						},
+						{
 							label: 'Resume',
 							items: [
 								{ label: 'Resume', slug: 'advice/resume' },
@@ -286,14 +294,7 @@ export default defineConfig({
 								},
 							],
 						},
-						{
-							label: 'Projects',
-							items: [
-								{ label: 'Projects', slug: 'advice/projects' },
-								{ label: 'Hardware', slug: 'advice/projects/hardware' },
-								{ label: 'Software', slug: 'advice/projects/software' },
-							],
-						},
+						{ label: 'Forever learning', slug: 'advice/forever-learning' },
 					],
 				},
 				{
