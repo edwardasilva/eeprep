@@ -6,6 +6,8 @@ const body = process.env.PR_BODY ?? '';
 if (
 	actor === 'dependabot[bot]' ||
 	sender === 'dependabot[bot]' ||
+	actor === 'cursor[bot]' ||
+	sender === 'cursor[bot]' ||
 	labels.includes('no-epic')
 ) {
 	console.log('PR body check skipped for an exempt change.');
