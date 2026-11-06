@@ -1,0 +1,57 @@
+---
+// Every page on the site as one nested list, built from the sidebar so the
+// two can't drift apart. A parent-page group (see src/lib/sidebar-parents.mjs)
+// is its parent link with the sub-pages listed under it, as on the Advice
+// landing. The home page isn't in the sidebar, so it leads the list.
+import type { StarlightRouteData } from '@astrojs/starlight/route-data';
+import { splitParentGroup } from '../lib/sidebar-parents.mjs';
+
+type Entry = StarlightRouteData['sidebar'][number];
+
+interface Props {
+	entries?: Entry[];
+}
+
+const nested = Astro.props.entries !== undefined;
+const entries = Astro.props.entries ?? Astro.locals.starlightRoute.sidebar;
+---
+
+<ul class:list={{ 'eep-sitemap': !nested }}>
+	{!nested && (
+		<li>
+			<a href="/">Home</a>
+		</li>
+	)}
+	{entries.map((entry) => {
+		if (entry.type === 'link') {
+			return (
+				<li>
+					<a
+						href={entry.href}
+						aria-current={entry.isCurrent ? 'page' : undefined}
+					>
+						{entry.label}
+					</a>
+				</li>
+			);
+		}
+		const split = splitParentGroup(entry);
+		return (
+			<li>
+				{split ? (
+					<a
+						href={split.parent.href}
+						aria-current={split.parent.isCurrent ? 'page' : undefined}
+					>
+						{split.parent.label}
+					</a>
+				) : (
+					entry.label
+				)}
+				{(split ? split.children : entry.entries).length > 0 && (
+					<Astro.self entries={split ? split.children : entry.entries} />
+				)}
+			</li>
+		);
+	})}
+</ul>
