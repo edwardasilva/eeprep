@@ -207,6 +207,6 @@ If you do not want to format a resume by hand, use [resume-generator](https://gi
 
 The tool comes with its own open-licensed fonts, so you install no fonts and the PDF looks the same on any system. It runs on Linux, on macOS, and on Windows through WSL (Windows Subsystem for Linux).
 
-If Python 3 or LaTeX is missing, `./run` tells you what it will install and asks yes or no before it installs anything. It then fits your resume onto one page. It starts with 11 pt text and 0.5 in margins, and tightens to 10 pt and 0.4 in if it needs to. If your resume still does not fit, it stops and says about how many lines to cut, so you decide what goes.
+If Python 3 or LaTeX is missing, `./run` tells you what it will install and asks yes or no before it installs anything. It then fits your resume onto one page. It starts with 11 pt text and 0.5 in margins, and tightens to 10 pt and 0.4 in if it needs to. If the page has room left, it spaces the lines and sections out evenly until the page is full. It never shrinks the spacing below the layout rules above. If your resume still does not fit, it stops and says about how many lines to cut, so you decide what goes. It also names a bullet with a short second line, and says when the page still has empty lines at the bottom.
 
 The tool does the layout. You still write the bullets, using the sections above. Check the PDF before you send it. If a bullet spills a word or two onto a second line, cut it to one line or add a detail that fills both. Then run `./run` again.

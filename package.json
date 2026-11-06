@@ -58,6 +58,11 @@
     "typescript-eslint": "8.72.1",
     "wrangler": "4.156.0"
   },
+  "overrides": {
+    "katex": "$katex",
+    "minimatch": "^11.0.1",
+    "re2js": "~2.8.7"
+  },
   "prettier": {
     "useTabs": true,
     "singleQuote": true,

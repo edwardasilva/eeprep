@@ -81,7 +81,8 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          wranglerVersion: 4.154.0
+          # Keep in step with wrangler in package.json, which the CI dry run uses.
+          wranglerVersion: 4.156.0
           command: deploy --env="${{ needs.build.outputs.wrangler-env }}"
 
   release:

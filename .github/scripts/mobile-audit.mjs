@@ -47,6 +47,10 @@ const preview = external
 				'preview',
 				'--port',
 				String(port),
+				// Stay in the foreground, so preview.kill() stops the server. Astro
+				// otherwise moves the server to the background when an AI coding
+				// agent runs it, and that server outlives this script.
+				'--ignore-lock',
 			],
 			{ stdio: 'ignore' },
 		);
