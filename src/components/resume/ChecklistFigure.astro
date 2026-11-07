@@ -21,8 +21,8 @@ const polish = [
 ];
 ---
 
-<figure class="eep-fig wide eep-checks" id="fig-1-5">
-	<p class="eep-kicker">Figure 1.5 · Two-pass checklist</p>
+<figure class="eep-fig wide eep-checks" id="fig-4-5">
+	<p class="eep-kicker">Two-pass checklist</p>
 	<p class="eep-figtitle">Fix the content, then fix the page</p>
 	<div class="eep-checks-grid">
 		<section class="eep-pass">
@@ -66,7 +66,7 @@ const polish = [
 		</section>
 	</div>
 	<figcaption>
-		<span class="eep-fignum">Fig 1.5</span>{' '}
+		<span class="eep-fignum">Fig 4.5</span>{' '}
 		<span>eeprep's author reviews resumes in these two passes.</span>
 	</figcaption>
 </figure>
@@ -85,14 +85,14 @@ const polish = [
 	:global(.sl-markdown-content) .eep-checks-grid > .eep-pass {
 		margin-top: 0;
 	}
-	/* Crimson stays on the arrow. */
 	.eep-pass .eep-kicker {
 		color: var(--eep-ink-2);
 	}
 	.eep-pass {
-		border: 1px solid var(--eep-ink);
+		border: 1px solid var(--eep-dg-mute);
 		border-radius: 4px;
 		padding: 0.9rem 1rem 0.7rem;
+		background: color-mix(in srgb, var(--eep-dg-ink) 6%, var(--eep-dg-fill));
 	}
 	:global(.sl-markdown-content) p.eep-pass-title {
 		margin: 0;
@@ -129,7 +129,7 @@ const polish = [
 		width: 2.4rem;
 		height: 1.1rem;
 		margin-top: 4.5rem;
-		color: var(--eep-accent);
+		color: var(--eep-ink);
 	}
 	@container (max-width: 32rem) {
 		.eep-checks-grid {

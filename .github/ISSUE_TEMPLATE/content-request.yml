@@ -8,7 +8,6 @@ body:
     attributes:
       value: |
         Use this form when you want the site to answer a question a student asked.
-        For a general content idea, post in Discussions instead.
   - type: textarea
     id: question
     attributes:

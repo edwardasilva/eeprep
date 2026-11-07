@@ -1,10 +1,10 @@
 ---
 import { externalLinks } from '../resume/caption';
-// Figure 5.1 as HTML and CSS. Five bands across senior year. On wide figures
+// Figure 9.1 as HTML and CSS. Five bands across senior year. On wide figures
 // they run left to right in one row, with the two deadline markers in a row
 // underneath. On narrow ones they hang off one line down the left side, each
-// marker under its band. The peaks sit on a tinted box. April has no band, so
-// the line runs straight from March to May.
+// marker under its band. April has no band, so the line runs straight from
+// March to May.
 const bands = [
 	{
 		date: 'Jul to Aug',
@@ -16,8 +16,6 @@ const bands = [
 		date: 'Sep to Nov',
 		title: 'Peak 1',
 		body: 'Most full-time applications open in September and October. New-grad programs fill first.',
-		peak: true,
-		focus: true,
 		mark: 'Fall offer deadline at some schools: Nov 1 or 3 weeks, whichever is later',
 	},
 	{
@@ -29,7 +27,6 @@ const bands = [
 		date: 'Jan to Mar',
 		title: 'Peak 2',
 		body: 'A second wave opens after budgets reset.',
-		peak: true,
 	},
 	{
 		date: 'May to Aug',
@@ -45,10 +42,9 @@ const caption = externalLinks(
 const arrow = 'M1 1.5L9 5L1 8.5Z';
 ---
 
-<figure class="eep-fig wide eep-recruit-fig" id="fig-5-1">
+<figure class="eep-fig wide eep-recruit-fig" id="fig-9-1">
 	<p class="eep-kicker">
-		Figure 5.1 · <span class="eep-nobreak">New-grad</span> recruiting in senior
-		year
+		<span class="eep-nobreak">New-grad</span> recruiting in senior year
 	</p>
 	<p class="sr-only">{alt}</p>
 	<div class="eep-recruit not-content" aria-hidden="true">
@@ -58,8 +54,6 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 					class:list={[
 						'eep-recruit-band',
 						{
-							'eep-recruit-peak': b.peak,
-							'eep-recruit-focus': b.focus,
 							'eep-recruit-hasmark': b.mark,
 						},
 					]}
@@ -83,7 +77,7 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 		</ol>
 	</div>
 	<figcaption>
-		<span class="eep-fignum">Fig 5.1</span> <span set:html={caption} />
+		<span class="eep-fignum">Fig 9.1</span> <span set:html={caption} />
 	</figcaption>
 </figure>
 
@@ -124,7 +118,7 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 		max-width: none;
 	}
 	.eep-recruit .eep-recruit-date {
-		font: 0.75rem/1.4 var(--eep-font-mono);
+		font: 0.75rem/1.4 var(--eep-font-serif);
 		color: var(--eep-ink-2);
 	}
 	.eep-recruit .eep-recruit-title {
@@ -139,17 +133,12 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 		line-height: 1.45;
 		color: var(--eep-ink-2);
 	}
-	/* The peaks: a light tint with a silver edge, so they read as peaks
-	   without a second color. */
-	.eep-recruit-peak .eep-recruit-text {
+	/* Every band is the same card. */
+	.eep-recruit-band .eep-recruit-text {
 		padding: 0.5rem 0.6rem 0.55rem;
 		border: 1px solid var(--eep-dg-mute);
 		border-radius: 4px;
 		background: var(--tint);
-	}
-	/* Crimson marks the first peak only, where most applications open. */
-	.eep-recruit-focus .eep-recruit-text {
-		box-shadow: inset 3px 0 0 var(--eep-dg-accent);
 	}
 	/* Deadline markers: dashed boxes tied to the timeline by a short tick. */
 	.eep-recruit .eep-recruit-mark {
@@ -163,8 +152,7 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 		color: var(--eep-ink-2);
 	}
 
-	/* Nodes: an open ring for each band, and a crimson target on the first
-	   peak like the in-person day on How to interview. */
+	/* Nodes: an open ring for each band. */
 	.eep-recruit-node {
 		position: absolute;
 		z-index: 1;
@@ -176,18 +164,6 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 		border: var(--line) solid var(--eep-dg-ink);
 		border-radius: 50%;
 		background: var(--eep-dg-fill);
-	}
-	.eep-recruit-focus .eep-recruit-node {
-		top: -0.025rem;
-		left: -0.125rem;
-		width: 1.05rem;
-		height: 1.05rem;
-		border: 2px solid var(--eep-dg-accent);
-		background: radial-gradient(
-			circle,
-			var(--eep-dg-accent) 0 0.2rem,
-			var(--eep-dg-fill) 0.22rem
-		);
 	}
 	.eep-recruit-arrow {
 		display: none;
@@ -244,19 +220,20 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 			left: 0;
 			margin: 0.35rem 0 0.5rem;
 		}
-		.eep-recruit-focus .eep-recruit-node {
-			top: -0.125rem;
-			left: -0.125rem;
-			margin-bottom: calc(0.5rem - 0.25rem);
-		}
-		/* The line and its arrowhead run to the next node. */
+		/* The line and its arrowhead run to the next node. The line hangs off
+		   the date. A ::after on the band would be another subgrid item, and
+		   that item draws a rule along the bottom of the text row, across
+		   the Peak 2 card. */
 		.eep-recruit-band:not(:last-child)::after {
-			display: block;
+			content: none;
+		}
+		.eep-recruit-band:not(:last-child) .eep-recruit-date::after {
+			content: '';
+			position: absolute;
 			top: calc(1.05rem + 0.35rem + var(--node) / 2 - var(--line) / 2);
 			left: var(--node);
 			right: -0.4rem;
 			height: var(--line);
-			border-left: 0;
 			background: var(--eep-dg-ink);
 		}
 		.eep-recruit-band:not(:last-child) .eep-recruit-arrow {
@@ -271,24 +248,15 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 		.eep-recruit .eep-recruit-text {
 			margin-top: 0;
 		}
-		.eep-recruit-band:not(.eep-recruit-peak) .eep-recruit-text {
-			align-self: start;
-			padding: 0.5rem 0 0.55rem;
-		}
 		/* Both markers sit in the band's last row, so the dashed boxes share
-		   a top. Each hangs from the same short tick at the same offset, so
-		   the two ticks match whatever the band text above them does. */
+		   a top. Their column ties them to the band, so they need no tick. A
+		   band with no card leaves a tick nothing to touch. */
 		.eep-recruit .eep-recruit-mark {
 			align-self: start;
 			background: var(--eep-dg-fill);
 		}
 		.eep-recruit-mark::before {
-			top: calc(-0.75rem - var(--line));
-			left: 1rem;
-			width: 0;
-			height: 0.75rem;
-			border-top: 0;
-			border-left: var(--line) solid var(--eep-dg-ink);
+			content: none;
 		}
 		.eep-recruit-nomark {
 			display: block;

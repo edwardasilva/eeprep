@@ -1,7 +1,6 @@
 ---
 import Default from '@astrojs/starlight/components/Head.astro';
-import newsreaderUrl from '@fontsource-variable/newsreader/files/newsreader-latin-opsz-normal.woff2?url';
-import interUrl from '@fontsource-variable/inter/files/inter-latin-opsz-normal.woff2?url';
+import serifUrl from '@fontsource-variable/source-serif-4/files/source-serif-4-latin-opsz-normal.woff2?url';
 
 const site = Astro.site ?? new URL('https://eeprep.com');
 // The share image is the stacked logo, which is taller than wide, so the
@@ -22,6 +21,8 @@ route.head.push(
 	{ tag: 'meta', attrs: { property: 'og:image:height', content: '612' } },
 	{ tag: 'meta', attrs: { property: 'og:image:alt', content: 'EE Prep logo' } },
 );
+// The JSON goes inside a <script> tag, so "<" is escaped and no text in it
+// can close the tag early.
 const structuredData = isHome
 	? JSON.stringify({
 			'@context': 'https://schema.org',
@@ -43,7 +44,7 @@ const structuredData = isHome
 					logo: shareImage,
 				},
 			],
-		})
+		}).replace(/</g, '\\u003c')
 	: null;
 ---
 
@@ -51,11 +52,4 @@ const structuredData = isHome
 {structuredData && (
 	<script is:inline type="application/ld+json" set:html={structuredData} />
 )}
-<link
-	rel="preload"
-	href={newsreaderUrl}
-	as="font"
-	type="font/woff2"
-	crossorigin
-/>
-<link rel="preload" href={interUrl} as="font" type="font/woff2" crossorigin />
+<link rel="preload" href={serifUrl} as="font" type="font/woff2" crossorigin />

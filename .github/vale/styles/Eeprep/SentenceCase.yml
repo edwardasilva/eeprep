@@ -5,6 +5,8 @@ scope: heading
 match: $sentence
 exceptions:
   - EE
+  - FE
+  - PE
   - CS
   - DSP
   - FPGA

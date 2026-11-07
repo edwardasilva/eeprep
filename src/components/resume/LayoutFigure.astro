@@ -1,6 +1,6 @@
 ---
 import { externalLinks } from './caption';
-// Figure 1.2 as HTML and CSS, so the text reflows and stays readable at every
+// Figure 4.2 as HTML and CSS, so the text reflows and stays readable at every
 // width. Each rule gets a row: a do wireframe, a don't wireframe and a note.
 // The wireframes are schematic drawings with no text, so they stay small
 // inline SVGs hidden from screen readers.
@@ -179,8 +179,8 @@ const caption = externalLinks(`
 `);
 ---
 
-<figure class="eep-fig wide eep-layout-fig" id="fig-1-2">
-	<p class="eep-kicker">Figure 1.2 · Layout do's and don'ts</p>
+<figure class="eep-fig wide eep-layout-fig" id="fig-4-2">
+	<p class="eep-kicker">Layout do's and don'ts</p>
 	<p class="eep-figtitle">Boring layouts read faster</p>
 	<div class="eep-layout not-content">
 		{rules.map((rule) => (
@@ -222,7 +222,7 @@ const caption = externalLinks(`
 		))}
 	</div>
 	<figcaption>
-		<span class="eep-fignum">Fig 1.2</span>
+		<span class="eep-fignum">Fig 4.2</span>
 		<span set:html={caption} />
 	</figcaption>
 </figure>
@@ -271,11 +271,9 @@ const caption = externalLinks(`
 		font-size: 0.75rem;
 		font-weight: 600;
 		line-height: 1.35;
-		letter-spacing: 0.04em;
 		text-align: center;
 		text-wrap: balance;
 		overflow-wrap: normal;
-		text-transform: uppercase;
 		color: var(--eep-mute);
 	}
 	.good .eep-layout-label {
@@ -330,11 +328,11 @@ const caption = externalLinks(`
 		stroke: none;
 	}
 	.eep-layout-frame :global(.wf-accent) {
-		stroke: var(--eep-dg-accent);
+		stroke: var(--eep-dg-ink);
 		stroke-width: 1.6;
 	}
 	.eep-layout-frame :global(.wf-guide) {
-		stroke: var(--eep-dg-accent);
+		stroke: var(--eep-dg-ink);
 		stroke-dasharray: 2 3;
 		stroke-linecap: butt;
 	}

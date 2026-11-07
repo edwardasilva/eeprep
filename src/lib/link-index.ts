@@ -2,7 +2,7 @@ import { z } from 'astro/zod';
 import GithubSlugger from 'github-slugger';
 import data from '../data/link-index.json';
 
-// src/data/link-index.json is the All links table. Its order is the display
+// src/data/link-index.json is the Sources table. Its order is the display
 // order, and each category's table starts where its first entry appears. The
 // build fails if an entry is missing a field or has an empty one.
 // .github/scripts/check-link-index.mjs keeps it in sync with the built site.

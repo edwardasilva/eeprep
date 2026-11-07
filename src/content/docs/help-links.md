@@ -7,9 +7,7 @@ head:
     content: "Help links for EE job searching | EE Prep"
 ---
 
-These links cover pay data, job openings, resume feedback, and forums. eeprep takes no affiliate fees from any of them. For how to use them in an application, see [[Resume]] and [[Getting hired]].
-
-eeprep doesn't give visa, immigration, or security clearance advice. For those questions, check official sources: [USCIS](https://www.uscis.gov/), your school's international student office, and the employer.
+eeprep takes no affiliate fees from any of these links. For how to use them in an application, see [[Resume]] and [[Getting hired]].
 
 ## Pay and offers
 
@@ -25,12 +23,12 @@ eeprep doesn't give visa, immigration, or security clearance advice. For those q
 ## Finding openings
 
 - Look up [electrical engineering on O\*NET](https://www.onetonline.org/link/summary/17-2071.00) to find the job titles employers use. Postings often say test engineer, design engineer, or controls engineer. O\*NET also lists writing software to control systems, so embedded and firmware roles are good targets for an EE.
-- Search [LinkedIn Jobs](https://www.linkedin.com/jobs/) by title and metro area. A free account is enough. A posting can stay up after the role is filled, so find the same job on the employer's careers site before you apply.
+- Search [LinkedIn Jobs](https://www.linkedin.com/jobs/) by title and metro area. A free account is enough. A posting there can stay up after the role is filled.
 - [Handshake](https://joinhandshake.com/students/) has campus listings for college students. Many university career offices use it, so ask whether yours does. A recruiter message there is an automated invitation to apply, not an interview offer.
 - [USAJOBS](https://www.usajobs.gov/) lists federal government jobs. The job overview on each posting says who can apply. [If you are not in one of those hiring groups, the agency rejects your application](https://usajobshelp.opm.gov/hc/en-us/articles/53059807800979-What-are-hiring-paths-and-how-can-they-help-you).
 - The federal government hires students and recent graduates through two programs. The [Pathways internship program](https://opm.usajobs.gov/hiringpath/students/) offers paid student roles. The [Pathways recent graduates program](https://opm.usajobs.gov/hiringpath/recentgraduates/) is for people who graduated within the last two years. Agencies can convert either one into a permanent job, but they do not have to. Read [OPM's Pathways regulations](https://www.opm.gov/policy-data-oversight/hiring-information/students-recent-graduates/) before you count on a conversion.
 - The [IEEE Job Site](https://jobs.ieee.org/) lists hardware and electronics jobs. Many front-page listings are senior or academic roles, so search for entry-level titles. Skip the resume reviews and coaching the site sells.
-- Confirm every opening on the employer's own careers page. Keep a short list of companies you want, and check their careers pages every week.
+- Confirm every opening on the employer's own careers page.
 
 ## Communities
 

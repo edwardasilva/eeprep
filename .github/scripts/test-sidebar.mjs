@@ -22,14 +22,14 @@ const group = (label, entries) => ({
 
 const helpLinks = group('Help links', [
 	link('Help links'),
-	link('All links', true),
+	link('Sources', true),
 ]);
 const split = splitParentGroup(helpLinks);
 assert.ok(split);
 assert.equal(split.parent.label, 'Help links');
 assert.deepEqual(
 	split.children.map((e) => e.label),
-	['All links'],
+	['Sources'],
 );
 assert.equal(hasCurrent(helpLinks), true);
 

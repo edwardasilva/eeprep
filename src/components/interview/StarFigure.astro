@@ -1,6 +1,6 @@
 ---
 import { externalLinks } from '../resume/caption';
-// Figure 6.3 as HTML and CSS. One bar in STAR order. Action takes about 60%.
+// Figure 7.3 as HTML and CSS. One bar in STAR order. Action takes about 60%.
 // The source gives no split for the other three, so they are drawn equal.
 const parts = [
 	{ key: 's', label: 'Situation' },
@@ -15,8 +15,8 @@ const caption = externalLinks(
 );
 ---
 
-<figure class="eep-fig wide eep-star-fig" id="fig-6-3">
-	<p class="eep-kicker">Figure 6.3 · Where a STAR answer spends its time</p>
+<figure class="eep-fig wide eep-star-fig" id="fig-7-3">
+	<p class="eep-kicker">Where a STAR answer spends its time</p>
 	<p class="sr-only">{alt}</p>
 	<div class="eep-star not-content" aria-hidden="true">
 		<div class="eep-star-bar">
@@ -34,7 +34,7 @@ const caption = externalLinks(
 		</ul>
 	</div>
 	<figcaption>
-		<span class="eep-fignum">Fig 6.3</span> <span set:html={caption} />
+		<span class="eep-fignum">Fig 7.3</span> <span set:html={caption} />
 	</figcaption>
 </figure>
 
@@ -72,8 +72,8 @@ const caption = externalLinks(
 	}
 	.eep-star-seg.eep-star-a,
 	.eep-star-a .eep-star-swatch {
-		border-color: var(--eep-dg-accent);
-		background: var(--eep-dg-accent);
+		border-color: var(--eep-dg-ink);
+		background: var(--eep-dg-ink);
 	}
 	.eep-star-labels {
 		margin: 0.5rem 0 0;

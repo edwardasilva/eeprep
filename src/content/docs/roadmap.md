@@ -1,37 +1,22 @@
 ---
 title: Roadmap
-description: "The big updates planned for eeprep: a resume builder, study guides, job board help, a LinkedIn guide, better graphics and the author's take."
+description: "The big updates planned for eeprep: a resume builder, resume examples, a portfolio and LinkedIn guide, more project and job-search pages, study guides, and more."
 head:
   - tag: title
     content: "Roadmap | eeprep"
 ---
 
-These are the big updates planned for eeprep. The plan may change.
+These are the big updates planned for eeprep. The plan may change. Each row lists links to use until the update ships.
 
-## Resume builder
-
-Fill in a form on the site and get a one-page resume. No setup needed.
-
-## Study guides
-
-Short guides to the core courses in an electrical engineering degree.
-
-## Job board help
-
-Which job boards to use and how to search them.
-
-## LinkedIn guide
-
-How to set up a profile that recruiters find and read.
-
-## Better graphics
-
-Clearer figures and diagrams across the site.
-
-## The author's take
-
-Notes from eeprep's author, a working embedded software engineer, on what worked for them. The first draft is [[Author's story]].
-
-## Visa and security clearance guidance
-
-What international students and clearance applicants need to know, checked against official sources.
+| What's coming                                                                                                                                        | Use in the meantime                                                                                                                                                                                                                                                                                                                 |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Resume builder. Fill in a form on the site and get a one-page resume with no setup.                                                                  | [[Resume#Build your resume]]<br />[r/EngineeringResumes templates](https://www.reddit.com/r/EngineeringResumes/wiki/templates/)                                                                                                                                                                                                     |
+| Resume examples. Finished resumes for different years and fields, each built from the same rules.                                                    | [[Resume#Alex's finished page]]                                                                                                                                                                                                                                                                                                     |
+| Portfolio and LinkedIn guide. How to build a free portfolio site and a LinkedIn profile that recruiters find and read.                               | [MIT's LinkedIn profile guide](https://capd.mit.edu/resources/linkedin/)<br />[[Projects]]                                                                                                                                                                                                                                          |
+| Full system project. A guide to one project that covers hardware, firmware and software together.                                                    | [[Projects]]                                                                                                                                                                                                                                                                                                                        |
+| More on getting hired. Pages on networking, applying, interviews, the job market and offers.                                                         | [[Getting hired]]<br />[[How to interview]]<br />[Georgia Tech's networking guide](https://career.gatech.edu/undergrad-job-search/networking-outreach/)<br />[Levels.fyi](https://www.levels.fyi/)                                                                                                                                  |
+| Graduate study and professional societies. When a master's or PhD pays off, and how to get value from IEEE and other societies.                      | [[Forever learning]]<br />[IEEE membership](https://www.ieee.org/membership/join)                                                                                                                                                                                                                                                   |
+| Study guides. Short guides cover the core courses in an electrical engineering degree.                                                               | [MIT 6.002 Circuits and Electronics](https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/)<br />[MIT 6.003 Signals and Systems](https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/)<br />[MIT 6.004 Computation Structures](https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/) |
+| More help links. Advice on using AI, a list of repositories and resources, and a sortable list of companies that hire EE students.                   | [[Help links]]<br />[Simplify's internship list](https://github.com/SimplifyJobs/Summer2027-Internships)                                                                                                                                                                                                                            |
+| Better graphics. Clearer figures and diagrams will appear across the site.                                                                           | [[Resume]]<br />[[How to interview]]                                                                                                                                                                                                                                                                                                |
+| Visa and security clearance guidance. It covers what international students and clearance applicants need to know, checked against official sources. | [USCIS](https://www.uscis.gov/)<br />[MIT International Students Office](https://iso.mit.edu/)                                                                                                                                                                                                                                      |

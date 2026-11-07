@@ -1,35 +1,29 @@
 ---
-// Figure 6.4 as HTML and CSS. One schedule down a line on the left. Dashed
+// Figure 7.4 as HTML and CSS. One schedule down a line on the left. Dashed
 // blocks are the informal parts of the day, which still counted.
 const blocks = [
 	{ title: 'Site tour', tag: 'Still evaluated' },
 	{ title: 'Talk on internship work', body: '1 hour, six engineers' },
 	{ title: 'System design, whiteboard', body: '1 hour or more' },
 	{
-		title: 'Project deep dive, whiteboard',
+		title: 'Project questions, whiteboard',
 		body: '1 hour or more',
-		focus: true,
 	},
 	{ title: 'Lunch', tag: 'Still evaluated' },
 	{ title: 'Coding problem, whiteboard', body: '1 hour or more' },
 	{ title: 'Hiring manager', body: '1 hour or more' },
 ];
 const alt =
-	'Schedule of a 6 to 7 hour in-person interview day: a site tour, a one-hour talk to six engineers, system design and project deep-dive sessions at a whiteboard, lunch, a whiteboard coding problem, and a hiring manager session. The tour and lunch are marked as still evaluated.';
+	'Schedule of a 6 to 7 hour in-person interview day: a site tour, a one-hour talk to six engineers, system design and project question sessions at a whiteboard, lunch, a whiteboard coding problem, and a hiring manager session. The tour and lunch are marked as still evaluated.';
 ---
 
-<figure class="eep-fig wide eep-day-fig" id="fig-6-4">
-	<p class="eep-kicker">Figure 6.4 · The in-person day</p>
+<figure class="eep-fig wide eep-day-fig" id="fig-7-4">
+	<p class="eep-kicker">The in-person day</p>
 	<p class="sr-only">{alt}</p>
 	<div class="eep-day not-content" aria-hidden="true">
 		<ol>
 			{blocks.map((b) => (
-				<li
-					class:list={[
-						'eep-day-block',
-						{ 'eep-day-informal': b.tag, 'eep-day-focus': b.focus },
-					]}
-				>
+				<li class:list={['eep-day-block', { 'eep-day-informal': b.tag }]}>
 					<p class="eep-day-title">{b.title}</p>
 					{b.tag ? (
 						<p class="eep-day-tag">{b.tag}</p>
@@ -42,7 +36,7 @@ const alt =
 		<p class="eep-day-total">5 sessions, 6 to 7 hours</p>
 	</div>
 	<figcaption>
-		<span class="eep-fignum">Fig 6.4</span>{' '}
+		<span class="eep-fignum">Fig 7.4</span>{' '}
 		<span>
 			The author's in-person day. Every session ran at least an hour, and the
 			informal parts counted too. From eeprep's author.
@@ -86,7 +80,7 @@ const alt =
 		--b: 1px;
 		border: var(--b) solid var(--eep-dg-mute);
 		border-radius: 4px;
-		background: var(--eep-dg-fill);
+		background: color-mix(in srgb, var(--eep-dg-ink) 6%, var(--eep-dg-fill));
 	}
 	.eep-day-block::before {
 		content: '';
@@ -117,11 +111,6 @@ const alt =
 		border-color: var(--eep-dg-ink);
 		background: transparent;
 	}
-	/* Crimson marks the hour the page dwells on. An inset shadow keeps the
-	   border, and so the label, in line with the other blocks. */
-	.eep-day .eep-day-focus {
-		box-shadow: inset 3px 0 0 var(--eep-dg-accent);
-	}
 	.eep-day .eep-day-title {
 		font-size: 0.9375rem;
 		font-weight: 600;
@@ -136,7 +125,7 @@ const alt =
 	}
 	.eep-day .eep-day-tag {
 		margin-top: 0.2rem;
-		font: 0.75rem/1.4 var(--eep-font-mono);
+		font: 0.75rem/1.4 var(--eep-font-serif);
 		color: var(--eep-ink-2);
 	}
 	.eep-day .eep-day-total {

@@ -1,6 +1,7 @@
 ---
 // Starlight's sidebar, with parent-page groups (see src/lib/sidebar-parents.mjs).
-import MobileMenuFooter from 'virtual:starlight/components/MobileMenuFooter';
+// No mobile menu footer: its only control was a second theme toggle, and the
+// header already has one at every width.
 import SidebarPersister from '@astrojs/starlight/components/SidebarPersister.astro';
 import SidebarTree from './sidebar/SidebarTree.astro';
 
@@ -10,7 +11,3 @@ const { sidebar } = Astro.locals.starlightRoute;
 <SidebarPersister>
 	<SidebarTree sublist={sidebar} />
 </SidebarPersister>
-
-<div class="md:sl-hidden">
-	<MobileMenuFooter />
-</div>

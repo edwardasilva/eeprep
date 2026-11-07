@@ -12,20 +12,21 @@ import LayoutFigure from '../../../components/resume/LayoutFigure.astro';
 import BulletFigure from '../../../components/resume/BulletFigure.astro';
 import ExamplePage from '../../../components/resume/ExamplePage.astro';
 import ChecklistFigure from '../../../components/resume/ChecklistFigure.astro';
+import RunFigure from '../../../components/resume/RunFigure.astro';
 
 Keep your resume to one page. Lead with projects or work experience, and put a measured number in every bullet you can. A screener's first scan takes seconds and covers company names, titles, and dates.
 
-This page condenses the [r/EngineeringResumes wiki](https://www.reddit.com/r/EngineeringResumes/wiki/index/), about 60 of its threads, and posts from recruiters on X. It leans toward EE, embedded, FPGA, and PCB work, and follows US and Canadian norms. Advice from eeprep's author, a working embedded software engineer who reviews friends' resumes, is marked as the author's. [[Author's story]] tells how the author got there. Alex Doe from [[First internship]] is the running example. Every bracket is a number you measure yourself.
+This page condenses the [r/EngineeringResumes wiki](https://www.reddit.com/r/EngineeringResumes/wiki/index/), about 60 of its threads, and posts from recruiters on X. It leans toward EE, embedded, FPGA, and PCB work, and follows US and Canadian norms. Advice from eeprep's author, a working embedded software engineer who reviews friends' resumes, is marked as the author's. Every bracket is a number you measure yourself.
 
-[The wiki](https://www.reddit.com/r/EngineeringResumes/wiki/index/) goes deeper, with templates and sample bullets. eeprep's author tells students to follow it like gospel and to start from [its LaTeX template](https://www.reddit.com/r/EngineeringResumes/wiki/templates/). [Michigan Engineering](https://career.engin.umich.edu/resumes-cvs-cover-letters/) and [MIT CAPD](https://capd.mit.edu/resources/make-your-resume-ats-friendly/) warn that LaTeX output can confuse an ATS, so save your PDF as plain text and check that nothing is missing or out of order.
+[The wiki](https://www.reddit.com/r/EngineeringResumes/wiki/index/) goes deeper, with templates and sample bullets. eeprep's author tells students to follow it like gospel and to start from [its LaTeX template](https://www.reddit.com/r/EngineeringResumes/wiki/templates/). [Michigan Engineering](https://career.engin.umich.edu/resumes-cvs-cover-letters/) and [MIT CAPD](https://capd.mit.edu/resources/make-your-resume-ats-friendly/) warn that LaTeX output can confuse an ATS. Save your PDF as plain text and check that nothing is missing or out of order.
 
-Before you apply, try to get a referral from someone at the company. eeprep's author tells every student this, and [[Author's story]] explains why. A resume does the most when a person has a reason to read it. [How to get a referral](/advice/getting-hired/#get-a-referral-first) lists who to ask and what to send.
+Before you apply, try to get a referral from someone at the company. eeprep's author tells every student this. [How to get a referral](/advice/getting-hired/#get-a-referral-first) lists who to ask and what to send.
 
 ## How a resume gets read
 
 A person reads your resume, and fast. [One engineering hiring manager reads about 350 resumes a week](https://www.reddit.com/r/EngineeringResumes/comments/1hw10ms/12_yoe_some_long_direct_advice_in_tech_from_a/) and finds maybe 20 good ones. [Another had 90 minutes to pull a top 5 from a stack](https://www.reddit.com/r/EngineeringResumes/comments/1pkixp9/today_i_made_a_top_5_list/). [A recruiter replied](https://www.reddit.com/r/EngineeringResumes/comments/1pkixp9/today_i_made_a_top_5_list/) that companies, titles, and dates get read first. [A 2018 eye-tracking study by Ladders](https://www.theladders.com/career-advice/is-it-true-that-recruiters-reject-a-resume-in-six-seconds) found the same order. Further reading: [Michigan Engineering's 20-second scan](https://career.engin.umich.edu/resumes-cvs-cover-letters/), [Ladders' 7.4-second average](https://www.prnewswire.com/news-releases/ladders-updates-popular-recruiter-eye-tracking-study-with-new-key-insights-on-how-job-seekers-can-improve-their-resumes-300744217.html).
 
-At many companies, the applicant tracking system (ATS, the software that stores applications) stores your resume rather than auto-rejecting it. Some systems also [score applicants against the posting](https://capd.mit.edu/resources/make-your-resume-ats-friendly/). [Knockout questions on the form can cut you automatically](https://www.reddit.com/r/EngineeringResumes/comments/192hkg8/how_atss_actually_work_from_an_engineering_hiring/). [A recruiter on X listed 41 systems](https://x.com/ConnorLibutti/status/1750604328086151194), including Workday, Greenhouse, and Lever, that 43 or more recruiters said do not auto-reject. [A university career center says the same](https://bizcareers.colostate.edu/resources/what-is-an-applicant-tracking-system-ats/): the ATS is not an automatic gatekeeper, though knockout questions can still cut you. A recruiting-systems specialist added that [Greenhouse can knock applicants out on screening questions, but not on resume content](https://x.com/masonwong/status/1439132659947491330). Further reading: [Greenhouse's auto-reject guide](https://support.greenhouse.io/hc/en-us/articles/360000653472-Auto-reject), [Greenhouse on what happens after you apply](https://my.greenhouse.com/blogs/what-really-happens-after-you-apply-for-a-job).
+At many companies, the applicant tracking system (ATS, the software that stores applications) stores your resume and does not auto-reject it. Some systems also [score applicants against the posting](https://capd.mit.edu/resources/make-your-resume-ats-friendly/). [Knockout questions on the form can cut you automatically](https://www.reddit.com/r/EngineeringResumes/comments/192hkg8/how_atss_actually_work_from_an_engineering_hiring/). [A recruiter on X listed 41 systems](https://x.com/ConnorLibutti/status/1750604328086151194), including Workday, Greenhouse, and Lever, that 43 or more recruiters said do not auto-reject. [A university career center says the same](https://bizcareers.colostate.edu/resources/what-is-an-applicant-tracking-system-ats/). A recruiting-systems specialist added that [Greenhouse can knock applicants out on screening questions, but not on resume content](https://x.com/masonwong/status/1439132659947491330). Further reading: [Greenhouse's auto-reject guide](https://support.greenhouse.io/hc/en-us/articles/360000653472-Auto-reject), [Greenhouse on what happens after you apply](https://my.greenhouse.com/blogs/what-really-happens-after-you-apply-for-a-job).
 
 Three habits follow from how managers read:
 
@@ -68,9 +69,16 @@ The first 2 lines map each font glyph to Unicode inside the PDF. Without that ma
 
 ## Section order
 
-Lead with your strongest section. [The wiki's student default](https://www.reddit.com/r/EngineeringResumes/wiki/index/) puts Education first. With no technical job yet, it runs Education, Projects, Experience, Skills. After you graduate and work, it puts Experience first and Education last.
+Lead with your strongest section. The order depends on what you have:
 
-eeprep's author goes further. When a student's projects are the strongest part, the author puts them first: Projects, Experience, Education, Skills. The author's own resume as a working engineer runs Experience, Projects, Education, Skills. [Commenters split the same way](https://www.reddit.com/r/EngineeringResumes/comments/pf7v54/saw_this_on_a_engineering_resume_website_the_one/). One says to lead with Education only when you have no experience. Another says new graduates lead with it to signal entry level. [A technical recruiter who gets 700 or more resumes for some postings](https://www.reddit.com/r/EngineeringResumes/comments/1pkixp9/today_i_made_a_top_5_list/) wants skills near the top.
+| Who                                           | Order                                   | From                                                                                  |
+| --------------------------------------------- | --------------------------------------- | ------------------------------------------------------------------------------------- |
+| Student with no technical job yet             | Education, Projects, Experience, Skills | [The wiki's student default](https://www.reddit.com/r/EngineeringResumes/wiki/index/) |
+| Student whose projects are the strongest part | Projects, Experience, Education, Skills | eeprep's author                                                                       |
+| Graduate at work                              | Experience first, Education last        | [The wiki](https://www.reddit.com/r/EngineeringResumes/wiki/index/)                   |
+| Working engineer                              | Experience, Projects, Education, Skills | The author's own resume                                                               |
+
+[Commenters split the same way](https://www.reddit.com/r/EngineeringResumes/comments/pf7v54/saw_this_on_a_engineering_resume_website_the_one/). One says to lead with Education only when you have no experience. Another says new graduates lead with it to signal entry level. [A technical recruiter who gets 700 or more resumes for some postings](https://www.reddit.com/r/EngineeringResumes/comments/1pkixp9/today_i_made_a_top_5_list/) wants skills near the top.
 
 Cut the objective or summary. [The wiki keeps one only for senior engineers, career changers, and people returning from a gap](https://www.reddit.com/r/EngineeringResumes/wiki/index/). eeprep's author says [a generic one takes space](https://www.reddit.com/r/EngineeringResumes/comments/1sltoyk/student_entering_senior_year_with_no_internship/) and rarely tells the recruiter what you want. If you keep one, make it one line that names the role, such as "Seeking a summer 2027 embedded firmware internship."
 
@@ -92,13 +100,9 @@ GPA advice splits: [the wiki says to list it above 3.75](https://www.reddit.com/
 
 Write results, not duties. eeprep's author rewrites every task bullet as a result. A recruiter on X calls generic responsibilities [the most common resume mistake](https://x.com/randomrecruiter/status/1615808809133346824).
 
-Use one pattern: did X with Y to get Z. X is the action, Y is the tool or method, and Z is the result. [The wiki teaches it as the XYZ, STAR, and CAR methods](https://www.reddit.com/r/EngineeringResumes/wiki/index/). [A reviewer's readability guide on the subreddit](https://www.reddit.com/r/EngineeringResumes/comments/1m6nzkm/8_yoe_readable_resumes_a_guide_to_allowing_anyone/) explains why it works: screeners filter on X and Y, and hiring managers choose from the Zs. eeprep's author cares most about numbers, and [a recruiter on X says they go a long way in today's job market](https://x.com/randomrecruiter/status/1759685173044498630). Put the number early.
+Use one pattern: did X with Y to get Z. X is the action, Y is the tool or method, and Z is the result. [The wiki teaches it as the XYZ, STAR, and CAR methods](https://www.reddit.com/r/EngineeringResumes/wiki/index/). [A reviewer's readability guide on the subreddit](https://www.reddit.com/r/EngineeringResumes/comments/1m6nzkm/8_yoe_readable_resumes_a_guide_to_allowing_anyone/) explains why it works. Screeners filter on X and Y, and hiring managers choose from the Zs. eeprep's author cares most about numbers, and [a recruiter on X says they go a long way in today's job market](https://x.com/randomrecruiter/status/1759685173044498630). Put the number early.
 
 Here is Alex's buck converter, before and after:
-
-> Before: Worked on a buck converter for a CubeSat using LTspice and KiCad.
->
-> After: Designed a [X] W CubeSat buck converter in KiCad and LTspice, measured at [X]% on an electronic load
 
 <BulletFigure />
 
@@ -121,7 +125,7 @@ Further reading: [Michigan Engineering impact statements](https://career.engin.u
 
 Projects is often a student's strongest section, so eeprep's author gives it the most room. Call it Projects, and [leave the word "project" out of each title](https://www.reddit.com/r/EngineeringResumes/wiki/index/). Put the tools in parentheses after the project name and the dates at the right margin, as `\textbf{CubeSat Power Board} (KiCad, LTspice) \hfill Fall 2025 -- Spring 2026`.
 
-Pick one date style and use it on every line. eeprep's author dates projects by semester. [The wiki prefers months](https://www.reddit.com/r/EngineeringResumes/wiki/index/) and says not to mix the two. [Michigan Engineering asks for month and year too](https://career.engin.umich.edu/resumes-cvs-cover-letters/). Do not write Fall 2025 on one line and March 2026 on the next.
+Pick one date style and use it on every line. eeprep's author dates projects by semester. [The wiki prefers months](https://www.reddit.com/r/EngineeringResumes/wiki/index/) and says not to mix the two. [Michigan Engineering asks for month and year too](https://career.engin.umich.edu/resumes-cvs-cover-letters/).
 
 Use spare space for depth. eeprep's author adds bullets to the best projects and does not add weak ones. [An embedded graduate cut the project count and wrote deeper bullets](https://www.reddit.com/r/EngineeringResumes/comments/1v9440p/0_yoe_finally_landed_an_embedded_systems_engineer/) before landing an embedded role. Looking back, they said the builds showed less of the low-level firmware some roles wanted. If you target firmware, give the firmware its own bullets.
 
@@ -161,7 +165,7 @@ Do I need a cover letter? It depends on the employer. [The Hardware FYI founders
 
 ## Alex's finished page
 
-This is the layout eeprep's author recommends, filled in for Alex. Alex has no engineering job yet, so the page follows the wiki's order, with Projects above Experience. The 3 header lines are centered. Everything below them is left-aligned, with dates at the right margin.
+This is the layout eeprep's author recommends, filled in for Alex. Alex has no engineering job yet, so the page follows the wiki's order, with Projects above Experience.
 
 <ExamplePage />
 
@@ -173,40 +177,18 @@ Further reading: the [r/EngineeringResumes wiki](https://www.reddit.com/r/Engine
 
 eeprep's author reviews a resume in two passes. The first pass fixes content, and the polish pass fixes the page.
 
-### First pass
-
-- The page is 1 column on 1 page in black text, with no icons, photo, or tables.
-- The header is centered, and everything below it is left-aligned.
-- Your strongest section comes first, and there is no generic objective.
-- The header has one contact line with plain-text links you clicked, plus relocation.
-- Education shows the degree, GPA on the same line if you list it, and one line of relevant coursework.
-- Each bullet states the action, the tool, and a number, and you can explain every claim.
-- Projects get the most room, with depth on the best ones.
-- Unrelated jobs are cut or held to one line, and interests are specific or gone.
-- Skills fit on a couple of labeled lines, ordered by importance, with no soft skills.
-
-### Polish pass
-
-- Every gap between sections is the same size.
-- Each bullet fills one line or most of two.
-- Each project title line lists its tools and ends with right-aligned dates.
-- Every date uses one style, semesters or months.
-- Coursework and activities labels are bold, and nothing else in a bullet is.
-- Every tool in Skills appears in at least one bullet.
-- No typos, stray periods, or mismatched GPA decimals remain.
-
 <ChecklistFigure />
 
 ## Build your resume
 
 If you do not want to format a resume by hand, use [resume-generator](https://github.com/edwardasilva/resume-generator). It is a free, open-source tool that follows the layout on this page. You write your content in one file, and the tool turns it into a one-page PDF.
 
-1. Download `resume-generator-v0.2.0.zip` from the [v0.2.0 release](https://github.com/edwardasilva/resume-generator/releases/tag/v0.2.0) and unzip it.
+1. Download `resume-generator-v0.2.3.zip` from the [v0.2.3 release](https://github.com/edwardasilva/resume-generator/releases/tag/v0.2.3) and unzip it.
 2. Open `resume.json`. It holds a sample resume for Alex Doe, the same made-up student as above. Replace Alex's details with your own. The README explains each field. You can add links to your header and to any entry, such as a project's repo, and they stay clickable in the PDF.
 3. In a terminal, run `./run` from that folder. It writes `resume.pdf`.
 
 The tool comes with its own open-licensed fonts, so you install no fonts and the PDF looks the same on any system. It runs on Linux, on macOS, and on Windows through WSL (Windows Subsystem for Linux).
 
-If Python 3 or LaTeX is missing, `./run` tells you what it will install and asks yes or no before it installs anything. It then fits your resume onto one page. It starts with 11 pt text and 0.5 in margins, and tightens to 10 pt and 0.4 in if it needs to. If your resume still does not fit, it stops and says about how many lines to cut, so you decide what goes.
+<RunFigure />
 
-The tool does the layout. You still write the bullets, using the sections above. Check the PDF before you send it. If a bullet spills a word or two onto a second line, cut it to one line or add a detail that fills both, then run `./run` again.
+The tool does the layout. You still write the bullets, using the sections above. Check the PDF before you send it. If a bullet spills a word or two onto a second line, fix it as [Bullets](#bullets) says. Then run `./run` again.

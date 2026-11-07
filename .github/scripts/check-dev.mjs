@@ -27,9 +27,21 @@ if (!fs.existsSync(astroBin)) {
 }
 
 const port = await freePort();
+// --ignore-lock keeps the server in the foreground and out of .astro/dev.json.
+// Without it, Astro moves `astro dev` to the background when an AI coding
+// agent runs it, the child exits at once, and this check fails. It also lets
+// the check run while another dev server holds the lock.
 const child = spawn(
 	process.execPath,
-	[astroBin, 'dev', '--port', String(port), '--host', '127.0.0.1'],
+	[
+		astroBin,
+		'dev',
+		'--port',
+		String(port),
+		'--host',
+		'127.0.0.1',
+		'--ignore-lock',
+	],
 	{
 		detached: true,
 		stdio: ['ignore', 'pipe', 'pipe'],
@@ -178,21 +190,6 @@ async function stop() {
 			// The process group is already gone.
 		}
 		await waitForExit(shutdownTimeoutMs);
-	}
-	removeOwnLock();
-}
-
-// Astro records the dev server in .astro/dev.json and only deletes that file
-// from its own shutdown path. A signal ends the process first, so the next
-// `astro dev` would see a dead pid until it cleaned the stale lock.
-function removeOwnLock() {
-	if (child.exitCode === null && child.signalCode === null) return;
-	const lockPath = path.resolve('.astro/dev.json');
-	try {
-		const data = JSON.parse(fs.readFileSync(lockPath, 'utf8'));
-		if (data.pid === child.pid) fs.unlinkSync(lockPath);
-	} catch {
-		// No lock, or it belongs to another server.
 	}
 }
 

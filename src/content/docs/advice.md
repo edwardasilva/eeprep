@@ -1,32 +1,24 @@
 ---
 title: Advice
-description: "Guides for EE students on resumes, getting hired for internships and full-time roles, interviews, and projects that get interviews."
+description: "Guides for EE students on projects that get interviews, resumes, getting hired for internships and full-time roles, interviews, and learning after school."
 pageType: resources
 head:
   - tag: title
     content: "Advice for EE students | EE Prep"
 ---
 
-These guides cover what to write on a resume, how to find and land a role, and how to build projects worth talking about. Start with the resume, since every application depends on it.
+Read these guides in order. Projects give a resume something to show, and the resume starts every application.
 
-## Resume
-
-- [[Resume]] covers a one-page layout, section order, and bullets with measured results.
-- [[Workshop]] is a timed resume workshop for a class or student group, with a script and handouts.
-
-## Getting hired
-
-- [[Getting hired]] covers referrals, the 20-application rule, career fairs, and where to look.
-- [[First internship]] shows how to land a first internship with no experience.
-- [[First full-time role]] covers senior-year recruiting, return offers, and new-grad programs.
-- [[How to interview]] covers project questions, fundamentals, coding, behavioral stories, and the on-site day.
-
-## Projects
+The advice on these pages is one engineer's opinion. To suggest a change, see [Contributing](https://github.com/edwardasilva/eeprep/blob/main/.github/CONTRIBUTING.md). eeprep doesn't give visa, immigration, or security clearance advice. Check [USCIS](https://www.uscis.gov/), your school's international student office, and the employer.
 
 - [[Projects]] explains how to pick one build you can defend and present it.
-- [[Hardware]] covers bench skills, hardware builds, design teams, and technician roles.
-- [[Software]] covers embedded firmware, test automation, FPGA and HDL work, and how to show it on GitHub.
-
-## The author
-
-- [[Author's story]] tells how the author got their first EE job.
+  - [[Software]] covers embedded firmware, test automation, FPGA and HDL work, and how to show it on GitHub.
+  - [[Hardware]] covers bench skills, hardware builds, design teams, and technician roles.
+- [[Resume]] covers a one-page layout, section order, and bullets with measured results.
+  - [[Workshop]] is a timed resume workshop for a class or student group, with a script and handouts.
+- [[Getting hired]] covers referrals, the 20-application rule, career fairs, and where to look.
+  - [[Author's story]] tells how the author got their first EE job.
+  - [[How to interview]] covers project questions, fundamentals, coding, behavioral stories, and the on-site day.
+  - [[First internship]] shows how to land a first internship with no experience.
+  - [[First full-time role]] covers senior-year recruiting, return offers, and new-grad programs.
+- [[Forever learning]] covers datasheets and errata, free courses, IEEE, the FE exam and PE license, and employer tuition help.
