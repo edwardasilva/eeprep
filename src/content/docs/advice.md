@@ -7,7 +7,7 @@ head:
     content: "Advice for EE students | EE Prep"
 ---
 
-These guides cover how to build projects worth talking about, what to write on a resume, how to find and land a role, and how to keep learning after school. Read them in order. Projects give a resume something to show, and the resume starts every application.
+Read these guides in order. Projects give a resume something to show, and the resume starts every application.
 
 The advice on these pages is one engineer's opinion, not a set of rules. If you know a better way, use it. To suggest a change, see [[Contributing]]. eeprep doesn't give visa, immigration, or security clearance advice. Check [USCIS](https://www.uscis.gov/), your school's international student office, and the employer.
 

@@ -7,11 +7,11 @@ head:
     content: "How EE students and new engineers keep learning | EE Prep"
 ---
 
+import LicenseFigure from '../../../components/advice/LicenseFigure.astro';
+
 Read the datasheet, the app note, and the errata for every part you use. Fill gaps with free university courses, and join your IEEE student branch. Take the FE exam near graduation if you might want a PE license. Once you work, ask whether your employer pays for classes. Keep building, and write down what you learn.
 
 ## Read the part's documents
-
-The datasheet is where you start, but it is not the only document for a part. Vendors also publish application notes and errata.
 
 An application note shows how to use a part in a circuit. Alex's buck converter is a good match for [TI's app note on buck converter power stage math](https://www.ti.com/lit/an/slva477c/slva477c.pdf). It gives the formulas for a buck converter with an integrated switch in continuous conduction mode. Work those formulas by hand before you trust a simulation.
 
@@ -35,15 +35,13 @@ IEEE offers [student membership](https://www.ieee.org/membership/join) and suppo
 
 A professional engineer (PE) license lets you sign and seal engineering drawings. [NCEES says only a licensed engineer can prepare, sign, seal, and submit them](https://ncees.org/licensure/).
 
-[NCEES lists the usual path](https://ncees.org/licensure/) in three steps:
+[NCEES lists the usual path](https://ncees.org/licensure/). Fig 10.1 shows it in the order you do it.
 
-1. A bachelor's degree from an ABET-accredited engineering program.
-2. About four years of work experience, as most states require.
-3. Passing the Fundamentals of Engineering (FE) exam and then the PE exam.
+<LicenseFigure />
 
-Take the FE early. [NCEES designs the FE exam](https://ncees.org/exams/fe-exam/) for recent graduates and for students close to finishing an ABET-accredited degree. It is a computer-based exam of 110 questions, offered year-round at Pearson test centers, with a \$225 fee.
+Take the Fundamentals of Engineering (FE) exam early. [NCEES designs the FE exam](https://ncees.org/exams/fe-exam/) for recent graduates and for students close to finishing an ABET-accredited degree. It is a computer-based exam of 110 questions, offered year-round at Pearson test centers, with a \$225 fee.
 
-The PE comes after the work experience. [The PE Electrical and Computer exam](https://ncees.org/exams/pe-exam/electrical-and-computer/) comes in three versions: Computer Engineering, Electrical and Electronics, and Power. Your state board sets the final rules, so check its requirements before you register.
+[The PE Electrical and Computer exam](https://ncees.org/exams/pe-exam/electrical-and-computer/) comes in three versions: Computer Engineering, Electrical and Electronics, and Power. Your state board sets the final rules, so check its requirements before you register.
 
 ## Employer tuition help
 
@@ -51,17 +49,6 @@ Ask about tuition help before you accept an offer, and again once you start. [IR
 
 ## Keep building and keep notes
 
-A project keeps teaching after the class ends. Build one that pushes on what you learned least in school.
+Build a project that pushes on what you learned least in school.
 
 Keep a notebook for every build. Write down the part number, the measurement, the instrument, and what broke. Alex writes the date and the board revision on every page, so each number traces back to a test. Those notes become your resume lines and your interview answers. [[How to interview#Your projects, line by line]] lists the questions they answer.
-
-## Checklist
-
-- Download the datasheet, app notes, and errata for each part on your next board.
-- Work one problem set from [6.002](https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/) or [6.003](https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/).
-- Go to one [IEEE student branch](https://www.ieee.org/membership/join) meeting this term.
-- If you might want a PE, take the [FE exam](https://ncees.org/exams/fe-exam/) before you graduate.
-- Ask your employer about [tuition help](https://www.irs.gov/publications/p15b).
-- Keep a dated notebook for every build.
-
-Further reading: [NCEES on licensure](https://ncees.org/licensure/), [MIT OpenCourseWare](https://ocw.mit.edu/about/).

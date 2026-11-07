@@ -1,11 +1,11 @@
 ---
 import { externalLinks } from '../resume/caption';
-// Figure 8.2 as HTML and CSS. Two bars on one 0 to 100% scale. The grey
+// Figure 9.2 as HTML and CSS. Two bars on one 0 to 100% scale. The grey
 // track is the whole 100%, so no axis is needed. On wide figures each value
 // sits just past the end of its bar. On narrow ones there is no room past
 // 88.3%, so both values move inside the bar ends.
 const bars = [
-	{ label: 'Interns offered a full-time job', value: 71.8, focus: true },
+	{ label: 'Interns offered a full-time job', value: 71.8 },
 	{ label: 'Interns with an offer who accepted', value: 88.3 },
 ];
 const alt =
@@ -15,14 +15,14 @@ const caption = externalLinks(
 );
 ---
 
-<figure class="eep-fig wide eep-offers-fig" id="fig-8-2">
+<figure class="eep-fig wide eep-offers-fig" id="fig-9-2">
 	<p class="eep-kicker">
 		Return offers for <span class="eep-nobreak">2024-25</span> interns
 	</p>
 	<p class="sr-only">{alt}</p>
 	<div class="eep-offers not-content" aria-hidden="true">
 		{bars.map((b) => (
-			<div class:list={['eep-offer', { 'eep-offer-focus': b.focus }]}>
+			<div class="eep-offer">
 				<p class="eep-offer-label">{b.label}</p>
 				<div class="eep-offer-track">
 					<span class="eep-offer-fill" style={`width: ${b.value}%`}>
@@ -33,7 +33,7 @@ const caption = externalLinks(
 		))}
 	</div>
 	<figcaption>
-		<span class="eep-fignum">Fig 8.2</span> <span set:html={caption} />
+		<span class="eep-fignum">Fig 9.2</span> <span set:html={caption} />
 	</figcaption>
 </figure>
 
@@ -77,9 +77,6 @@ const caption = externalLinks(
 		position: absolute;
 		inset: 0 auto 0 0;
 		background: var(--eep-dg-ink);
-	}
-	.eep-offer-focus .eep-offer-fill {
-		background: var(--eep-dg-accent);
 	}
 	/* Narrow: the value sits inside the bar end, in the page color. */
 	.eep-offer-value {

@@ -71,8 +71,6 @@
 .eep-suggest p {
 	margin: 0 0 0.5rem;
 	font: 600 0.75rem/1 var(--eep-font-sans);
-	letter-spacing: 0.08em;
-	text-transform: uppercase;
 	color: var(--eep-ink-2);
 }
 .eep-suggest ul {
