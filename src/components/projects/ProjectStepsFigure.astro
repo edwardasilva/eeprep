@@ -1,13 +1,11 @@
 ---
 import { externalLinks } from '../resume/caption';
 // Figure 1.2 as HTML and CSS. One column of four steps in the order the page
-// opens with. Every step restates a line from the page. Crimson marks the
-// first step only, because the rest of the page depends on it.
+// opens with. Every step restates a line from the page.
 const steps = [
 	{
 		title: 'Pick one build you can defend',
 		body: 'Say why you picked the parts, why the board is laid out that way, and how the circuit works.',
-		focus: true,
 	},
 	{
 		title: 'Aim it at what the company makes',
@@ -35,7 +33,7 @@ const caption = externalLinks(
 	<div class="eep-pstep not-content" aria-hidden="true">
 		<ol>
 			{steps.map((s, i) => (
-				<li class:list={['eep-pstep-step', { 'eep-pstep-focus': s.focus }]}>
+				<li class="eep-pstep-step">
 					<span class="eep-pstep-num">{i + 1}</span>
 					<div>
 						<p class="eep-pstep-title">{s.title}</p>
@@ -100,9 +98,5 @@ const caption = externalLinks(
 		font-size: 0.8125rem;
 		line-height: 1.45;
 		color: var(--eep-ink-2);
-	}
-	.eep-pstep-focus {
-		border-color: var(--eep-dg-accent);
-		box-shadow: inset 3px 0 0 var(--eep-dg-accent);
 	}
 </style>

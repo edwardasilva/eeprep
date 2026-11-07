@@ -20,7 +20,6 @@ const blocks = [
 		long: 25,
 		short: 20,
 		show: 'Figure 4.3',
-		whole: true,
 	},
 	{
 		title: '4. Section order and header',
@@ -33,7 +32,6 @@ const blocks = [
 		long: 20,
 		short: 15,
 		show: 'Figure 4.5',
-		whole: true,
 	},
 	{
 		title: '6. Wrap-up, one change this week',
@@ -56,7 +54,7 @@ const alt = blocks
 	<p class="sr-only">{alt}</p>
 	<ol class="eep-agenda not-content" aria-hidden="true">
 		{blocks.map((b) => (
-			<li class:list={{ 'eep-agenda-whole': b.whole }}>
+			<li>
 				<p class="eep-agenda-title">{b.title}</p>
 				<p class="eep-agenda-show">Figure on screen: {b.show}</p>
 				{[
@@ -79,8 +77,6 @@ const alt = blocks
 	</ol>
 	<figcaption>
 		<span class="eep-fignum">Fig 5.1</span> Minutes per block in each session.
-		The red edge marks the bullet drill and the peer review, the two blocks to
-		keep whole in the 60-minute version.
 	</figcaption>
 </figure>
 
@@ -100,6 +96,7 @@ const alt = blocks
 		padding: 0.5rem 0.65rem 0.6rem;
 		border: 1px solid var(--eep-dg-mute);
 		border-radius: 4px;
+		background: color-mix(in srgb, var(--eep-dg-ink) 6%, var(--eep-dg-fill));
 	}
 	.eep-agenda p {
 		margin: 0;
@@ -116,10 +113,6 @@ const alt = blocks
 		font-size: 0.75rem;
 		line-height: 1.4;
 		color: var(--eep-ink-2);
-	}
-	/* The accent edge marks the two blocks to keep whole. */
-	.eep-agenda .eep-agenda-whole {
-		box-shadow: inset 3px 0 0 var(--eep-dg-accent);
 	}
 	.eep-agenda-row {
 		display: grid;

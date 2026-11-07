@@ -85,14 +85,14 @@ const polish = [
 	:global(.sl-markdown-content) .eep-checks-grid > .eep-pass {
 		margin-top: 0;
 	}
-	/* Crimson stays on the arrow. */
 	.eep-pass .eep-kicker {
 		color: var(--eep-ink-2);
 	}
 	.eep-pass {
-		border: 1px solid var(--eep-ink);
+		border: 1px solid var(--eep-dg-mute);
 		border-radius: 4px;
 		padding: 0.9rem 1rem 0.7rem;
+		background: color-mix(in srgb, var(--eep-dg-ink) 6%, var(--eep-dg-fill));
 	}
 	:global(.sl-markdown-content) p.eep-pass-title {
 		margin: 0;
@@ -129,7 +129,7 @@ const polish = [
 		width: 2.4rem;
 		height: 1.1rem;
 		margin-top: 4.5rem;
-		color: var(--eep-accent);
+		color: var(--eep-ink);
 	}
 	@container (max-width: 32rem) {
 		.eep-checks-grid {

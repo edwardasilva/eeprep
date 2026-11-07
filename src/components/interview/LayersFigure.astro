@@ -84,7 +84,7 @@ const caption = externalLinks(
 		padding: 0.55rem 0.75rem 0.6rem;
 		border: 1px solid var(--eep-dg-mute);
 		border-radius: 4px;
-		background: var(--eep-dg-fill);
+		background: color-mix(in srgb, var(--eep-dg-ink) 6%, var(--eep-dg-fill));
 	}
 	.eep-layers .eep-layers-card p {
 		font-size: 0.9375rem;
@@ -105,13 +105,13 @@ const caption = externalLinks(
 		border-bottom: var(--line) solid var(--eep-dg-ink);
 		border-bottom-left-radius: 3px;
 	}
-	/* The single crimson mark: where the questions run out. */
+	/* The dashed rule marks where the questions run out. */
 	.eep-layers .eep-layers-edge {
 		margin-top: 1.1rem;
 		padding-bottom: 0.35rem;
-		border-bottom: var(--line) dashed var(--eep-dg-accent);
+		border-bottom: var(--line) dashed var(--eep-dg-ink);
 		font: 0.75rem/1.4 var(--eep-font-serif);
-		color: var(--eep-dg-accent);
+		color: var(--eep-ink-2);
 	}
 	@container (min-width: 32rem) {
 		.eep-layers {

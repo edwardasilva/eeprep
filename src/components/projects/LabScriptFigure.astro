@@ -19,7 +19,6 @@ const steps = [
 	{
 		title: 'Out of spec',
 		body: 'A part out of spec fails the run.',
-		focus: true,
 	},
 ];
 const alt =
@@ -35,11 +34,11 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 	<p class="sr-only">{alt}</p>
 	<div class="eep-lab not-content" aria-hidden="true">
 		<ol>
-			{steps.map((s) => (
-				<li class:list={['eep-lab-step', { 'eep-lab-focus': s.focus }]}>
+			{steps.map((s, i) => (
+				<li class="eep-lab-step">
 					<p class="eep-lab-title">{s.title}</p>
 					<p class="eep-lab-body">{s.body}</p>
-					{!s.focus && (
+					{i < steps.length - 1 && (
 						<svg class="eep-lab-arrow" viewBox="0 0 10 10" focusable="false">
 							<path d={arrow} />
 						</svg>
@@ -93,11 +92,6 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 		font-size: 0.8125rem;
 		line-height: 1.45;
 		color: var(--eep-ink-2);
-	}
-	/* Crimson marks the outcome only. */
-	.eep-lab .eep-lab-focus {
-		border-color: var(--eep-dg-accent);
-		box-shadow: inset 3px 0 0 var(--eep-dg-accent);
 	}
 	/* Narrow: the arrow sits in the gap under each step and points down. */
 	.eep-lab-arrow {

@@ -2,7 +2,7 @@
 import { externalLinks } from '../resume/caption';
 // Figure 9.3 as HTML and CSS. Six steps from a written offer to an accepted
 // one. On wide figures they sit in three columns. On narrow ones they stack.
-// Crimson marks the last step only. Every line restates the section it sits in.
+// Every line restates the section it sits in.
 const steps = [
 	{
 		title: 'Get it in writing',
@@ -27,7 +27,6 @@ const steps = [
 	{
 		title: 'Accept, then stop interviewing',
 		body: 'Backing out of an accepted offer is a renege.',
-		focus: true,
 	},
 ];
 const alt =
@@ -43,7 +42,7 @@ const caption = externalLinks(
 	<div class="eep-steps not-content" aria-hidden="true">
 		<ol>
 			{steps.map((s, i) => (
-				<li class:list={{ 'eep-steps-focus': s.focus }}>
+				<li>
 					<span class="eep-steps-num">{i + 1}</span>
 					<p class="eep-steps-title">{s.title}</p>
 					<p class="eep-steps-body">{s.body}</p>
@@ -109,9 +108,5 @@ const caption = externalLinks(
 		font-size: 0.8125rem;
 		line-height: 1.45;
 		color: var(--eep-ink-2);
-	}
-	.eep-steps li.eep-steps-focus {
-		border-color: var(--eep-dg-accent);
-		box-shadow: inset 3px 0 0 var(--eep-dg-accent);
 	}
 </style>

@@ -1,8 +1,9 @@
 ---
-// Figure 8.2 as HTML and CSS. Alex's lines in date order, down one line on the
-// left. Wide figures put the date beside the title. Narrow ones stack them.
+// Figure 8.2 as HTML and CSS. Alex's lines in date order, with a dot for each
+// one on a line down the left. Wide figures put the date beside the title.
+// Narrow ones stack them.
 // The dashed box is the retail line, which comes off the resume once a build
-// replaces it. Crimson marks the graduation line only.
+// replaces it.
 const rows = [
 	{
 		date: 'Summer 2023 – Summer 2024',
@@ -26,7 +27,6 @@ const rows = [
 	{
 		date: 'Expected Spring 2027',
 		title: 'B.S. Electrical Engineering',
-		focus: true,
 	},
 ];
 ---
@@ -38,7 +38,6 @@ const rows = [
 			<li
 				class:list={{
 					'eep-alex-dashed': r.dashed,
-					'eep-alex-focus': r.focus,
 				}}
 			>
 				<p class="eep-alex-date">{r.date}</p>
@@ -58,8 +57,10 @@ const rows = [
 		display: grid;
 		gap: 0.5rem;
 		margin: 1rem 0 0;
-		padding: 0 0 0 1rem;
-		border-left: 1.5px solid var(--eep-dg-ink);
+		padding: 0;
+		--line: 1.5px;
+		--node: 0.8rem;
+		--rail: 1.6rem;
 		list-style: none;
 		container-type: inline-size;
 		font-family: var(--eep-font-sans);
@@ -69,13 +70,36 @@ const rows = [
 		display: grid;
 		grid-template-columns: 11.5rem 1fr;
 		gap: 0.75rem;
+		position: relative;
 		align-items: baseline;
-		margin: 0;
+		margin: 0 0 0 var(--rail);
 		max-width: none;
 		padding: 0.5rem 0.65rem;
 		border: 1px solid var(--eep-dg-mute);
 		border-radius: 4px;
 		background: color-mix(in srgb, var(--eep-dg-ink) 6%, var(--eep-dg-fill));
+	}
+	.eep-alex li::before {
+		content: '';
+		position: absolute;
+		z-index: 1;
+		top: 0.65rem;
+		left: calc(-1 * var(--rail) - 1px);
+		box-sizing: border-box;
+		width: var(--node);
+		height: var(--node);
+		border: var(--line) solid var(--eep-dg-ink);
+		border-radius: 50%;
+		background: var(--eep-dg-fill);
+	}
+	/* One segment from each dot to the next, so the line ends at the last dot. */
+	.eep-alex li:not(:last-child)::after {
+		content: '';
+		position: absolute;
+		top: calc(0.65rem + var(--node) / 2);
+		left: calc(-1 * var(--rail) - 1px + var(--node) / 2 - var(--line) / 2);
+		height: calc(100% + 2px + 0.5rem);
+		border-left: var(--line) solid var(--eep-dg-ink);
 	}
 	.eep-alex p {
 		margin: 0;
@@ -94,9 +118,6 @@ const rows = [
 	.eep-alex li.eep-alex-dashed {
 		border-style: dashed;
 		background: none;
-	}
-	.eep-alex li.eep-alex-focus {
-		box-shadow: inset 3px 0 0 var(--eep-dg-accent);
 	}
 	@container (max-width: 28rem) {
 		.eep-alex li {

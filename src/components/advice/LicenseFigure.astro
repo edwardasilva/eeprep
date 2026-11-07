@@ -1,8 +1,7 @@
 ---
 import { externalLinks } from '../resume/caption';
 // Figure 10.1 as HTML and CSS. Four numbered steps toward a PE license. On wide
-// figures they run left to right in one row. On narrow ones they stack. Crimson
-// marks the FE exam only, because the page says to take it early.
+// figures they run left to right in one row. On narrow ones they stack.
 const steps = [
 	{
 		title: "Bachelor's degree",
@@ -11,7 +10,6 @@ const steps = [
 	{
 		title: 'FE exam',
 		body: 'Take it early, close to finishing your degree or as a recent graduate.',
-		focus: true,
 	},
 	{
 		title: 'Work experience',
@@ -35,7 +33,7 @@ const caption = externalLinks(
 	<div class="eep-license not-content" aria-hidden="true">
 		<ol>
 			{steps.map((s, i) => (
-				<li class:list={{ 'eep-license-focus': s.focus }}>
+				<li>
 					<span class="eep-license-num">{i + 1}</span>
 					<div>
 						<p class="eep-license-title">{s.title}</p>
@@ -102,16 +100,13 @@ const caption = externalLinks(
 		line-height: 1.45;
 		color: var(--eep-ink-2);
 	}
-	.eep-license-focus {
-		border-color: var(--eep-dg-accent);
-		box-shadow: inset 3px 0 0 var(--eep-dg-accent);
-	}
 	@container (min-width: 36rem) {
 		.eep-license ol {
 			grid-template-columns: repeat(4, 1fr);
 		}
 		.eep-license li {
 			grid-template-columns: 1fr;
+			grid-template-rows: auto 1fr;
 			gap: 0.5rem;
 		}
 	}

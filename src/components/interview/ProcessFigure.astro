@@ -8,7 +8,7 @@ const steps = [
 	{ title: 'Round 2', body: 'Phone screen' },
 	{ title: 'Take-home', body: '3 hours, no AI tools' },
 	{ title: 'Round 3', body: 'Manager call, 30 minutes' },
-	{ title: 'Round 4', body: 'In-person day, 6 to 7 hours', focus: true },
+	{ title: 'Round 4', body: 'In-person day, 6 to 7 hours' },
 	{ title: 'Round 5', body: 'Senior leader call, 30 minutes' },
 	{ title: 'Round 6', body: 'Senior leader call, 30 minutes' },
 	{ title: 'Offer' },
@@ -28,7 +28,7 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 					class:list={[
 						'eep-proc-step',
 						`eep-proc-s${i + 1}`,
-						{ 'eep-proc-focus': s.focus, 'eep-proc-end': !s.body },
+						{ 'eep-proc-end': !s.body },
 					]}
 				>
 					<p class="eep-proc-title">{s.title}</p>
@@ -98,8 +98,7 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 		color: var(--eep-ink-2);
 	}
 
-	/* Nodes: an open ring for each step, a crimson target on the in-person
-	   day and a filled dot at the offer. */
+	/* Nodes: an open ring for each step and a filled dot at the offer. */
 	.eep-proc-step {
 		position: relative;
 		padding-left: 1.6rem;
@@ -116,18 +115,6 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 		border: var(--line) solid var(--eep-dg-ink);
 		border-radius: 50%;
 		background: var(--eep-dg-fill);
-	}
-	.eep-proc-focus::before {
-		top: 0.075rem;
-		left: -0.125rem;
-		width: 1.05rem;
-		height: 1.05rem;
-		border: 2px solid var(--eep-dg-accent);
-		background: radial-gradient(
-			circle,
-			var(--eep-dg-accent) 0 0.2rem,
-			var(--eep-dg-fill) 0.22rem
-		);
 	}
 	.eep-proc-end::before {
 		background: var(--eep-dg-ink);
@@ -163,10 +150,6 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 		.eep-proc-step::before {
 			top: 0;
 			left: 0;
-		}
-		.eep-proc-focus::before {
-			top: -0.125rem;
-			left: -0.125rem;
 		}
 		.eep-proc-s6,
 		.eep-proc-s7,

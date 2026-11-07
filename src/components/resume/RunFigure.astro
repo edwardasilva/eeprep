@@ -19,7 +19,6 @@ const outcomes = [
 	{
 		title: 'Your resume still does not fit',
 		body: 'It stops and says about how many lines to cut, so you decide what goes.',
-		focus: true,
 	},
 ];
 const notes = {
@@ -40,16 +39,16 @@ const notes = {
 			<p class="eep-run-title">{fit.title}</p>
 			<p class="eep-run-body">{fit.body}</p>
 		</div>
-		<span class="eep-run-line" aria-hidden="true"></span>
+		<span class="eep-run-line eep-run-fork" aria-hidden="true"></span>
 		<div class="eep-run-split">
 			{outcomes.map((o) => (
-				<div class:list={['eep-run-box', { 'eep-run-focus': o.focus }]}>
+				<div class="eep-run-box">
 					<p class="eep-run-title">{o.title}</p>
 					<p class="eep-run-body">{o.body}</p>
 				</div>
 			))}
 		</div>
-		<span class="eep-run-line" aria-hidden="true"></span>
+		<span class="eep-run-line eep-run-merge" aria-hidden="true"></span>
 		<div class="eep-run-box">
 			<p class="eep-run-title">{notes.title}</p>
 			<p class="eep-run-body">{notes.body}</p>
@@ -108,13 +107,44 @@ const notes = {
 	.eep-run-split > .eep-run-box {
 		margin: 0;
 	}
-	/* Crimson marks the one outcome that needs you to act. */
-	.eep-run-focus {
-		box-shadow: inset 3px 0 0 var(--eep-dg-accent);
-	}
 	@container (min-width: 30rem) {
 		.eep-run-split {
 			grid-template-columns: 1fr 1fr;
+		}
+		/* Side by side, a center line would end in the gap between the boxes.
+		   The fork and the merge reach the center of each box. The width is
+		   the distance between those centers, plus the line itself. */
+		.eep-run-fork,
+		.eep-run-merge {
+			position: relative;
+			box-sizing: border-box;
+			width: calc(50% + 0.375rem + 1.5px);
+			height: 0.375rem;
+			border: 1.5px solid var(--eep-dg-ink);
+			background: none;
+		}
+		.eep-run-fork {
+			margin: 0.375rem auto 0;
+			border-bottom: 0;
+		}
+		.eep-run-merge {
+			margin: 0 auto 0.375rem;
+			border-top: 0;
+		}
+		.eep-run-fork::before,
+		.eep-run-merge::before {
+			content: '';
+			position: absolute;
+			left: calc(50% - 0.75px);
+			width: 1.5px;
+			height: 0.375rem;
+			background: var(--eep-dg-ink);
+		}
+		.eep-run-fork::before {
+			top: calc(-0.375rem - 1.5px);
+		}
+		.eep-run-merge::before {
+			bottom: calc(-0.375rem - 1.5px);
 		}
 	}
 </style>

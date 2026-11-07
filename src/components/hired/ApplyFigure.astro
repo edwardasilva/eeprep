@@ -15,7 +15,6 @@ const steps = [
 	{
 		title: 'Zero interviews from 20?',
 		body: 'Change the resume or the channel before you send 20 more. Talk to a professor or meet recruiters at a career fair.',
-		focus: true,
 	},
 ];
 const alt =
@@ -31,7 +30,7 @@ const caption = externalLinks(
 	<div class="eep-apply not-content" aria-hidden="true">
 		<ol>
 			{steps.map((s, i) => (
-				<li class:list={['eep-apply-step', { 'eep-apply-focus': s.focus }]}>
+				<li class="eep-apply-step">
 					<span class="eep-apply-num">{i + 1}</span>
 					<div>
 						<p class="eep-apply-title">{s.title}</p>
@@ -97,11 +96,6 @@ const caption = externalLinks(
 		font-size: 0.8125rem;
 		line-height: 1.45;
 		color: var(--eep-ink-2);
-	}
-	/* Crimson marks the decision step only. */
-	.eep-apply-focus {
-		border-color: var(--eep-dg-accent);
-		box-shadow: inset 3px 0 0 var(--eep-dg-accent);
 	}
 	.eep-apply .eep-apply-loop {
 		margin-top: 0.6rem;

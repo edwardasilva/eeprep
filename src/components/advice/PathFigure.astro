@@ -191,8 +191,8 @@ const caption = externalLinks(
 		color: var(--eep-mute);
 	}
 
-	/* Nodes: an open ring on the line, a filled dot at the start, and a
-	   target at the offer. */
+	/* Nodes: an open ring on the line, and a filled dot at the start and at
+	   the offer. */
 	.eep-paths-item,
 	.eep-paths-start {
 		position: relative;
@@ -209,18 +209,9 @@ const caption = externalLinks(
 		border-radius: 50%;
 		background: var(--eep-dg-fill);
 	}
-	.eep-paths-start::before {
-		background: var(--eep-dg-ink);
-	}
+	.eep-paths-start::before,
 	.eep-paths-offer::before {
-		width: 1.05rem;
-		height: 1.05rem;
-		border: 2px solid var(--eep-dg-accent);
-		background: radial-gradient(
-			circle,
-			var(--eep-dg-accent) 0 0.2rem,
-			var(--eep-dg-fill) 0.22rem
-		);
+		background: var(--eep-dg-ink);
 	}
 
 	/* Fallback boxes. */
@@ -278,8 +269,7 @@ const caption = externalLinks(
 		left: 0;
 	}
 	.eep-paths-offer::before {
-		top: 0.3rem;
-		left: -0.125rem;
+		top: 0.45rem;
 	}
 	.eep-paths-routes,
 	.eep-paths-main {
@@ -311,15 +301,41 @@ const caption = externalLinks(
 			font-size: 1.125rem;
 		}
 	}
-	/* The last box ends the left line, so it sits on a white gap. */
+	/* The left line ends at the offer. The line runs behind the last box, so
+	   one cover runs from the offer's dot to the box, and a second runs down
+	   the side of the box. */
 	.eep-paths-fall {
 		position: relative;
 		background: var(--eep-dg-fill);
 	}
+	.eep-paths-offer::after,
+	.eep-paths-fall::before {
+		content: '';
+		position: absolute;
+		width: var(--node);
+		background: var(--eep-dg-fill);
+	}
+	.eep-paths-offer::after {
+		top: calc(0.45rem + var(--node));
+		bottom: -1rem;
+		left: 0;
+	}
+	.eep-paths-fall::before {
+		top: calc(-1 * var(--line));
+		bottom: 0;
+		left: calc(-1.6rem - var(--line));
+	}
+	@media (max-width: 19.75rem) {
+		.eep-paths-fall::before {
+			left: calc(-1.15rem - var(--line));
+		}
+	}
 
 	/* Wide: routes in a row that merge into a left-to-right main path. */
 	@container (min-width: 34rem) {
-		.eep-paths::before {
+		.eep-paths::before,
+		.eep-paths-offer::after,
+		.eep-paths-fall::before {
 			display: none;
 		}
 		.eep-paths-start {

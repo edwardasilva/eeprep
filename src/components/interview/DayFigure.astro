@@ -8,7 +8,6 @@ const blocks = [
 	{
 		title: 'Project deep dive, whiteboard',
 		body: '1 hour or more',
-		focus: true,
 	},
 	{ title: 'Lunch', tag: 'Still evaluated' },
 	{ title: 'Coding problem, whiteboard', body: '1 hour or more' },
@@ -24,12 +23,7 @@ const alt =
 	<div class="eep-day not-content" aria-hidden="true">
 		<ol>
 			{blocks.map((b) => (
-				<li
-					class:list={[
-						'eep-day-block',
-						{ 'eep-day-informal': b.tag, 'eep-day-focus': b.focus },
-					]}
-				>
+				<li class:list={['eep-day-block', { 'eep-day-informal': b.tag }]}>
 					<p class="eep-day-title">{b.title}</p>
 					{b.tag ? (
 						<p class="eep-day-tag">{b.tag}</p>
@@ -86,7 +80,7 @@ const alt =
 		--b: 1px;
 		border: var(--b) solid var(--eep-dg-mute);
 		border-radius: 4px;
-		background: var(--eep-dg-fill);
+		background: color-mix(in srgb, var(--eep-dg-ink) 6%, var(--eep-dg-fill));
 	}
 	.eep-day-block::before {
 		content: '';
@@ -116,11 +110,6 @@ const alt =
 		border-style: dashed;
 		border-color: var(--eep-dg-ink);
 		background: transparent;
-	}
-	/* Crimson marks the hour the page dwells on. An inset shadow keeps the
-	   border, and so the label, in line with the other blocks. */
-	.eep-day .eep-day-focus {
-		box-shadow: inset 3px 0 0 var(--eep-dg-accent);
 	}
 	.eep-day .eep-day-title {
 		font-size: 0.9375rem;
