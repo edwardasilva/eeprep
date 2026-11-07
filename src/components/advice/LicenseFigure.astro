@@ -1,0 +1,118 @@
+---
+import { externalLinks } from '../resume/caption';
+// Figure 10.1 as HTML and CSS. Four numbered steps toward a PE license. On wide
+// figures they run left to right in one row. On narrow ones they stack. Crimson
+// marks the FE exam only, because the page says to take it early.
+const steps = [
+	{
+		title: "Bachelor's degree",
+		body: 'From an ABET-accredited engineering program.',
+	},
+	{
+		title: 'FE exam',
+		body: 'Take it early, close to finishing your degree or as a recent graduate.',
+		focus: true,
+	},
+	{
+		title: 'Work experience',
+		body: 'About four years, as most states require.',
+	},
+	{
+		title: 'PE exam',
+		body: 'A PE license lets you sign and seal engineering drawings.',
+	},
+];
+const alt =
+	"Four steps in order. One, a bachelor's degree from an ABET-accredited engineering program. Two, the FE exam, taken early, close to finishing the degree or as a recent graduate. Three, about four years of work experience, as most states require. Four, the PE exam. A PE license lets you sign and seal engineering drawings.";
+const caption = externalLinks(
+	`The usual path to a PE license. Your state board sets the final rules. Sources: <a href="https://ncees.org/licensure/">NCEES on licensure</a> and <a href="https://ncees.org/exams/fe-exam/">NCEES on the FE exam</a>.`,
+);
+---
+
+<figure class="eep-fig wide eep-license-fig" id="fig-10-1">
+	<p class="eep-kicker">The usual path to a PE license</p>
+	<p class="sr-only">{alt}</p>
+	<div class="eep-license not-content" aria-hidden="true">
+		<ol>
+			{steps.map((s, i) => (
+				<li class:list={{ 'eep-license-focus': s.focus }}>
+					<span class="eep-license-num">{i + 1}</span>
+					<div>
+						<p class="eep-license-title">{s.title}</p>
+						<p class="eep-license-body">{s.body}</p>
+					</div>
+				</li>
+			))}
+		</ol>
+	</div>
+	<figcaption>
+		<span class="eep-fignum">Fig 10.1</span> <span set:html={caption} />
+	</figcaption>
+</figure>
+
+<style>
+	.eep-license {
+		margin-top: 1rem;
+		container-type: inline-size;
+		font-family: var(--eep-font-sans);
+		color: var(--eep-ink);
+		--tint: color-mix(in srgb, var(--eep-dg-ink) 6%, var(--eep-dg-fill));
+	}
+	.eep-license p {
+		margin: 0;
+		max-width: none;
+		overflow-wrap: anywhere;
+	}
+	.eep-license ol {
+		display: grid;
+		gap: 0.75rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.eep-license li {
+		display: grid;
+		grid-template-columns: 1.75rem 1fr;
+		gap: 0.75rem;
+		align-items: start;
+		margin: 0;
+		max-width: none;
+		padding: 0.6rem 0.75rem;
+		border: 1px solid var(--eep-dg-mute);
+		border-radius: 4px;
+		background: var(--tint);
+	}
+	.eep-license-num {
+		display: grid;
+		place-items: center;
+		width: 1.75rem;
+		height: 1.75rem;
+		border: 1.5px solid var(--eep-dg-ink);
+		border-radius: 50%;
+		font: 600 0.8125rem/1 var(--eep-font-sans);
+	}
+	.eep-license .eep-license-title {
+		font-size: 0.9375rem;
+		font-weight: 600;
+		line-height: 1.3;
+	}
+	.eep-license .eep-license-body {
+		margin-top: 0.2rem;
+		font-size: 0.8125rem;
+		line-height: 1.45;
+		color: var(--eep-ink-2);
+	}
+	.eep-license-focus {
+		border-color: var(--eep-dg-accent);
+		box-shadow: inset 3px 0 0 var(--eep-dg-accent);
+	}
+	@container (min-width: 36rem) {
+		.eep-license ol {
+			grid-template-columns: repeat(4, 1fr);
+		}
+		.eep-license li {
+			grid-template-columns: 1fr;
+			gap: 0.5rem;
+		}
+	}
+</style>
