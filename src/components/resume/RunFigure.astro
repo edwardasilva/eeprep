@@ -1,0 +1,120 @@
+---
+// Figure 4.6 as HTML and CSS, so the text reflows at every width. One column
+// of steps, with the two outcomes of the page fit side by side on wide figures
+// and stacked on narrow ones. Every line restates the page's own description
+// of resume-generator.
+const missing = {
+	title: 'Python 3 or LaTeX missing?',
+	body: 'It tells you what it will install and asks yes or no before it installs anything.',
+};
+const fit = {
+	title: 'It fits your resume onto one page',
+	body: 'It starts with 11 pt text and 0.5 in margins, and tightens to 10 pt and 0.4 in if it needs to. It never shrinks the spacing below the layout rules above.',
+};
+const outcomes = [
+	{
+		title: 'The page has room left',
+		body: 'It spaces the lines and sections out evenly until the page is full.',
+	},
+	{
+		title: 'Your resume still does not fit',
+		body: 'It stops and says about how many lines to cut, so you decide what goes.',
+		focus: true,
+	},
+];
+const notes = {
+	title: 'It also flags wasted space',
+	body: 'It names a bullet with a short second line, and says when the page still has empty lines at the bottom.',
+};
+---
+
+<figure class="eep-fig wide eep-run-fig" id="fig-4-6">
+	<p class="eep-kicker">What ./run does</p>
+	<div class="eep-run not-content">
+		<div class="eep-run-box">
+			<p class="eep-run-title">{missing.title}</p>
+			<p class="eep-run-body">{missing.body}</p>
+		</div>
+		<span class="eep-run-line" aria-hidden="true"></span>
+		<div class="eep-run-box">
+			<p class="eep-run-title">{fit.title}</p>
+			<p class="eep-run-body">{fit.body}</p>
+		</div>
+		<span class="eep-run-line" aria-hidden="true"></span>
+		<div class="eep-run-split">
+			{outcomes.map((o) => (
+				<div class:list={['eep-run-box', { 'eep-run-focus': o.focus }]}>
+					<p class="eep-run-title">{o.title}</p>
+					<p class="eep-run-body">{o.body}</p>
+				</div>
+			))}
+		</div>
+		<span class="eep-run-line" aria-hidden="true"></span>
+		<div class="eep-run-box">
+			<p class="eep-run-title">{notes.title}</p>
+			<p class="eep-run-body">{notes.body}</p>
+		</div>
+	</div>
+	<figcaption>
+		<span class="eep-fignum">Fig 4.6</span>
+		<span>How resume-generator gets your resume onto one page.</span>
+	</figcaption>
+</figure>
+
+<style>
+	.eep-run {
+		margin-top: 1rem;
+		container-type: inline-size;
+		font-family: var(--eep-font-sans);
+		color: var(--eep-ink);
+		--tint: color-mix(in srgb, var(--eep-dg-ink) 6%, var(--eep-dg-fill));
+	}
+	.eep-run p {
+		margin: 0;
+		max-width: none;
+		overflow-wrap: anywhere;
+	}
+	.eep-run-box {
+		margin: 0;
+		padding: 0.6rem 0.75rem;
+		border: 1px solid var(--eep-dg-mute);
+		border-radius: 4px;
+		background: var(--tint);
+	}
+	.eep-run .eep-run-title {
+		font-size: 0.9375rem;
+		font-weight: 600;
+		line-height: 1.3;
+	}
+	.eep-run .eep-run-body {
+		margin-top: 0.2rem;
+		font-size: 0.8125rem;
+		line-height: 1.45;
+		color: var(--eep-ink-2);
+	}
+	/* A short line joins each step to the next. */
+	.eep-run-line {
+		display: block;
+		width: 1.5px;
+		height: 0.75rem;
+		margin: 0 auto;
+		background: var(--eep-dg-ink);
+	}
+	.eep-run-split {
+		display: grid;
+		gap: 0.75rem;
+		margin: 0;
+	}
+	.eep-run-split > .eep-run-box {
+		margin: 0;
+	}
+	/* Crimson marks the one outcome that needs you to act. */
+	.eep-run-focus {
+		box-shadow: inset 3px 0 0 var(--eep-dg-accent);
+	}
+	@container (min-width: 30rem) {
+		.eep-run-split {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+</style>
