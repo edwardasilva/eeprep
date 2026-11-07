@@ -7,6 +7,8 @@ head:
     content: "Software projects for EE students: firmware, test scripts, and HDL | EE Prep"
 ---
 
+import LabScriptFigure from '../../../../components/projects/LabScriptFigure.astro';
+
 Write software that touches hardware. For an EE student, that means firmware on a microcontroller, Python that runs a lab instrument, or a testbench for an FPGA design. Put each project on GitHub with a README, and give each resume line a measured number. Most of this work needs only a computer and a dev board.
 
 ## Why EE students write software
@@ -34,9 +36,11 @@ Lab scripts turn bench work into software. Alex has two:
 - Found [X] battery protection faults before launch review with a Python script that runs [Y] overnight charge cycles and flags any cell that drifts over [Z] mV from the pack average
 - Cut test time per device from [X] to [Y] minutes with Python and PyVISA scope capture
 
-[PyVISA controls measurement instruments from Python](https://pyvisa.readthedocs.io/en/latest/), over GPIB, RS232, USB, or Ethernet. Point it at a lab scope, capture a waveform, and compute the number you would have read by hand. Then put the limits in [pytest](https://docs.pytest.org/en/stable/) tests, so a part out of spec fails the run.
+[PyVISA controls measurement instruments from Python](https://pyvisa.readthedocs.io/en/latest/), over GPIB, RS232, USB, or Ethernet. Put the limits in [pytest](https://docs.pytest.org/en/stable/) tests, so a part out of spec fails the run.
 
-Employers hire for this work. [TI describes its product, test, and validation engineers as developing test software and hardware](https://careers.ti.com/en/sites/CX/pages/students-new-grads). Its applications engineers write software and build demos.
+<LabScriptFigure />
+
+[TI describes its product, test, and validation engineers as developing test software and hardware](https://careers.ti.com/en/sites/CX/pages/students-new-grads). Its applications engineers write software and build demos.
 
 ## FPGA and HDL
 
@@ -63,10 +67,3 @@ Put each project in its own repository with a README. [GitHub says a README tell
 Write a software line the way you write a hardware line: the action, the tool, and a measured result. Alex's battery monitor line follows it: "Tracked [X] Li-ion cells within [Y] mV each on an ESP32 that streams to a Python dashboard."
 
 Expect questions on every line. [A student who landed an NVIDIA internship said the interview questions were about how they built each project and what they did](https://www.reddit.com/r/EngineeringResumes/comments/1sj2rgt/student_landed_nvidia_offer_sophomore_cs_major_at/).
-
-## Checklist
-
-- Write one firmware project on bare metal before you add an RTOS.
-- Automate one lab measurement with [PyVISA](https://pyvisa.readthedocs.io/en/latest/), and record the time it saves.
-- Give each repository a [README](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes) with a photo, a measured result, and build steps.
-- [Pin your best repositories](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/pinning-items-to-your-profile) to your profile.
