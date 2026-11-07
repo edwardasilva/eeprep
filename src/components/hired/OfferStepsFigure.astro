@@ -1,0 +1,117 @@
+---
+import { externalLinks } from '../resume/caption';
+// Figure 8.3 as HTML and CSS. Six steps from a written offer to an accepted
+// one. On wide figures they sit in three columns. On narrow ones they stack.
+// Crimson marks the last step only. Every line restates the section it sits in.
+const steps = [
+	{
+		title: 'Get it in writing',
+		body: 'Thank the employer, ask for time to think, and agree on a response date.',
+	},
+	{
+		title: 'Know your deadline',
+		body: 'Your school may set different dates, so ask its career office.',
+	},
+	{
+		title: 'Compare the pay',
+		body: 'Levels.fyi, NACE starting-salary surveys, and the BLS median.',
+	},
+	{
+		title: 'Know what can move',
+		body: 'Salary, signing bonus, start date, and the offer deadline are usually negotiable. Health insurance and retirement plans are usually fixed.',
+	},
+	{
+		title: 'Compare on more than pay',
+		body: 'Rate how much each factor matters from 1 to 10, then score each offer on the same factors.',
+	},
+	{
+		title: 'Accept, then stop interviewing',
+		body: 'Backing out of an accepted offer is a renege.',
+		focus: true,
+	},
+];
+const alt =
+	'Six steps from an offer to an acceptance. One, get it in writing. Two, know your deadline. Three, compare the pay. Four, know what can move. Five, compare on more than pay. Six, accept, then stop interviewing.';
+const caption = externalLinks(
+	`The steps in this section, from a written offer to an accepted one. Sources: <a href="https://capd.mit.edu/channels/negotiate-job-offers/">MIT on negotiating offers</a>, <a href="https://ecs.osu.edu/employers/recruiting-guidelines-policies/hiring-students">Ohio State offer deadlines</a>, <a href="https://capd.mit.edu/resources/choosing-between-job-offers/">MIT's offer worksheet</a>, and <a href="https://career.engin.umich.edu/students/job-search-policies/">Michigan Engineering's job search policies</a>.`,
+);
+---
+
+<figure class="eep-fig wide eep-steps-fig" id="fig-8-3">
+	<p class="eep-kicker">From offer to acceptance</p>
+	<p class="sr-only">{alt}</p>
+	<div class="eep-steps not-content" aria-hidden="true">
+		<ol>
+			{steps.map((s, i) => (
+				<li class:list={{ 'eep-steps-focus': s.focus }}>
+					<span class="eep-steps-num">{i + 1}</span>
+					<p class="eep-steps-title">{s.title}</p>
+					<p class="eep-steps-body">{s.body}</p>
+				</li>
+			))}
+		</ol>
+	</div>
+	<figcaption>
+		<span class="eep-fignum">Fig 8.3</span> <span set:html={caption} />
+	</figcaption>
+</figure>
+
+<style>
+	.eep-steps {
+		margin-top: 1rem;
+		container-type: inline-size;
+		font-family: var(--eep-font-sans);
+		color: var(--eep-ink);
+		--tint: color-mix(in srgb, var(--eep-dg-ink) 6%, var(--eep-dg-fill));
+	}
+	.eep-steps p {
+		margin: 0;
+		max-width: none;
+		overflow-wrap: anywhere;
+	}
+	.eep-steps ol {
+		display: grid;
+		gap: 0.75rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	@container (min-width: 32rem) {
+		.eep-steps ol {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+	.eep-steps li {
+		margin: 0;
+		max-width: none;
+		padding: 0.6rem 0.75rem 0.7rem;
+		border: 1px solid var(--eep-dg-mute);
+		border-radius: 4px;
+		background: var(--tint);
+	}
+	.eep-steps-num {
+		display: grid;
+		place-items: center;
+		width: 1.75rem;
+		height: 1.75rem;
+		margin-bottom: 0.45rem;
+		border: 1.5px solid var(--eep-dg-ink);
+		border-radius: 50%;
+		font: 600 0.8125rem/1 var(--eep-font-sans);
+	}
+	.eep-steps .eep-steps-title {
+		font-size: 0.9375rem;
+		font-weight: 600;
+		line-height: 1.3;
+	}
+	.eep-steps .eep-steps-body {
+		margin-top: 0.2rem;
+		font-size: 0.8125rem;
+		line-height: 1.45;
+		color: var(--eep-ink-2);
+	}
+	.eep-steps li.eep-steps-focus {
+		border-color: var(--eep-dg-accent);
+		box-shadow: inset 3px 0 0 var(--eep-dg-accent);
+	}
+</style>
