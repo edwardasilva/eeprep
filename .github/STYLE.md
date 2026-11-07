@@ -8,6 +8,12 @@ Write plain English that a smart reader outside the field understands on one rea
 
 - Wikipedia: Artificial intelligence content detection: [https://en.wikipedia.org/wiki/Artificial_intelligence_content_detection](https://en.wikipedia.org/wiki/Artificial_intelligence_content_detection)
 
+Sections 3, 6, and 7 also adapt the parts that fit eeprep from two projects:
+
+- unslop by Clayton Kim, on formulaic writing: [https://github.com/theclaymethod/unslop](https://github.com/theclaymethod/unslop)
+
+- unslop by Damir Sokolovsky, on AI-looking interfaces, licensed CC BY 4.0: [https://github.com/heydamir/unslop](https://github.com/heydamir/unslop)
+
 The goal is good writing, not beating a detector. Detectors are unreliable and flag human text, especially from non-native speakers. Text that is specific, accurate, and useful is what reads as human.
 
 ## 1. Say something real
@@ -54,6 +60,8 @@ Cut these on sight. One may be a coincidence, but several together read as AI:
 
 > additionally (as an opener), align with, boast, bolster, crucial, deep dive, delve, emphasize, enduring, enhance, foster, garner, highlight (verb), interplay, intricate, key (adjective), landscape (abstract), leverage, meticulous, multifaceted, pivotal, quietly, robust, seamless, showcase, tapestry, testament, underscore, valuable, vibrant, comprehensive, powerful, simply, "in order to", "it is worth noting", "in today's fast-paced world".
 
+Also cut phrases that clear the throat or demand attention: "here's the thing", "it turns out", "the truth is", "let's dive in", "let's unpack", "this matters because", "make no mistake", "let that sink in", "game changer", "lean into", "double down", and "moving forward".
+
 Also cut "not just X, but Y", "not X, but Y", "Y rather than X" used for drama, and decorative groups of three. Use a list of three only when there really are three things.
 
 ## 4. Formatting
@@ -95,3 +103,21 @@ Also cut "not just X, but Y", "not X, but Y", "Y rather than X" used for drama, 
 5. Check that every citation and link is real and supports the claim it is attached to.
 
 6. Read the text aloud. If a real person would not say a line that way, rewrite it.
+
+7. Treat a scan as a list of candidates. Check each hit in context, and keep every fact, number, and link. A quote or a literal use can stay. A clean scan does not prove the text is good.
+
+## 7. Interface and figures
+
+1. Keep the page quiet. Use no gradients on surfaces or text, no glows, and no colored shadows.
+
+2. Write labels in sentence case with normal letter spacing. Use no italics for emphasis and no exclamation marks.
+
+3. Draw figures in ink, the mute border, and the 6% tint. Do not use crimson in a figure. Crimson stays on site chrome, such as the nav underline.
+
+4. Give every box in a figure the same treatment. Do not highlight one box, step, or bar. If one item matters most, say so in the page text.
+
+5. Use a dashed box only for a fallback or an aside that the figure or page explains.
+
+6. End every line on something. A connector touches a box or a dot at both ends. Check wide and narrow widths, because a line that connects at one width can float at another.
+
+7. Keep bracket placeholders such as [X]. On this site they mean a number the student measures, so they are not fake data.
