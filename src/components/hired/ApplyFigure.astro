@@ -1,8 +1,8 @@
 ---
 import { externalLinks } from '../resume/caption';
-// Figure 6.1 as HTML and CSS. One column of four steps. Each step has a
-// short action and a short test. The last step loops back to the first, so
-// the figure reads as a cycle you repeat after every batch of applications.
+// Figure 6.1 as HTML and CSS. One column of three steps. The last step loops
+// back to the first, so the figure reads as a cycle you repeat after every
+// batch of applications. Every step restates a rule from the page.
 const steps = [
 	{
 		title: 'Ask for a referral',
@@ -13,17 +13,13 @@ const steps = [
 		body: 'Send the application soon after the posting goes up.',
 	},
 	{
-		title: 'Count to 20',
-		body: 'Track every application and every interview call.',
-	},
-	{
 		title: 'Zero interviews from 20?',
 		body: 'Change the resume or the channel before you send 20 more. Talk to a professor or meet recruiters at a career fair.',
 		focus: true,
 	},
 ];
 const alt =
-	'Four steps, repeated after each batch. One, ask for a referral. Two, apply within two weeks of the posting. Three, count to 20 applications. Four, if 20 applications bring zero interviews, change the resume or the channel before sending 20 more, then return to step one.';
+	'Three steps, repeated after each batch. One, ask for a referral. Two, apply within two weeks of the posting. Three, if 20 applications bring zero interviews, change the resume or the channel before sending 20 more, then return to step one.';
 const caption = externalLinks(
 	`Apply in batches of 20 and check the result after each batch. Sources: <a href="https://www.ashbyhq.com/talent-trends-report/reports/referrals">Ashby's referral report</a>, <a href="https://careerdevelopment.princeton.edu/internships-jobs/recruiting-timelines">Princeton's recruiting timelines</a>, and <a href="https://www.reddit.com/r/ElectricalEngineering/comments/1v36dj4/best_ways_to_get_an_internship_as_2nd_year_ee/">a thread on talking to professors</a>.`,
 );
