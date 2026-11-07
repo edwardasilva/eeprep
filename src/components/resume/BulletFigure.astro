@@ -108,15 +108,14 @@ const caption = externalLinks(`
 	}
 	.eep-bullet-box {
 		padding: 0.8rem 1rem;
-		border: 1px solid var(--eep-rule-2);
+		border: 1px solid var(--eep-dg-mute);
 		border-radius: 4px;
-		background: var(--eep-dg-fill);
+		background: color-mix(in srgb, var(--eep-dg-ink) 6%, var(--eep-dg-fill));
 		font-size: 1rem;
 		line-height: 1.55;
 		color: var(--eep-mute);
 	}
 	.eep-bullet-good {
-		border-color: var(--eep-ink);
 		color: var(--eep-ink);
 	}
 	.eep-bullet .eep-bullet-note {
@@ -126,7 +125,7 @@ const caption = externalLinks(`
 		color: var(--eep-mute);
 	}
 	.eep-bullet-mark {
-		text-decoration: underline 1.5px var(--eep-dg-accent);
+		text-decoration: underline 1.5px var(--eep-dg-ink);
 		text-underline-offset: 0.3em;
 		text-decoration-skip-ink: none;
 	}
@@ -135,12 +134,11 @@ const caption = externalLinks(`
 		margin-right: 0.35rem;
 		padding: 0.1rem 0.3rem;
 		border-radius: 3px;
-		background: var(--eep-accent-soft);
 		font-size: 0.75rem;
 		font-weight: 600;
 		line-height: 1.3;
 		text-decoration: none;
-		color: var(--eep-dg-accent);
+		color: var(--eep-ink);
 	}
 
 	/* Wide: tags float above the words they mark, as in the printed figure. */

@@ -58,16 +58,8 @@ const groups = linkGroups.map((group) => ({
 							<th scope="row" class="eep-links-name">
 								<span set:html={row.link} />
 							</th>
-							<td>
-								<span class="eep-links-label" aria-hidden="true">
-									What it is
-								</span>
-								{row.summary}
-							</td>
-							<td>
-								<span class="eep-links-label" aria-hidden="true">
-									Used on
-								</span>
+							<td data-label="What it is">{row.summary}</td>
+							<td data-label="Used on">
 								<ul>
 									{row.pages.map((page) => (
 										<li>
@@ -118,7 +110,7 @@ const groups = linkGroups.map((group) => ({
 	.eep-links thead th {
 		padding-block: 0 0.5rem;
 		border-bottom-color: var(--eep-border-strong, var(--eep-rule));
-		font: 500 0.75rem/1.4 var(--eep-font-mono);
+		font: 500 0.75rem/1.4 var(--eep-font-sans);
 		color: var(--eep-ink-2);
 	}
 	.eep-links thead th:nth-child(1) {
@@ -141,10 +133,6 @@ const groups = linkGroups.map((group) => ({
 	.eep-links li + li {
 		margin-top: 0.25rem;
 	}
-	.eep-links-label {
-		display: none;
-	}
-
 	/* Narrow columns: each row becomes a block, with each cell's header shown
 	   above it. The column headers stay in the markup for screen readers. */
 	@container (max-width: 36rem) {
@@ -179,10 +167,15 @@ const groups = linkGroups.map((group) => ({
 		.eep-links td {
 			margin-top: 0.5rem;
 		}
-		.eep-links-label {
+		/* The column name comes from CSS, not the markup, so reader views
+		   and copy-paste don't run it into the cell text. The empty alt text
+		   keeps screen readers from reading it on top of the column header. */
+		.eep-links td::before {
+			content: attr(data-label);
+			content: attr(data-label) / '';
 			display: block;
 			margin-bottom: 0.125rem;
-			font: 500 0.75rem/1.4 var(--eep-font-mono);
+			font: 500 0.75rem/1.4 var(--eep-font-sans);
 			color: var(--eep-ink-2);
 		}
 	}

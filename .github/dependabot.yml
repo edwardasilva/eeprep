@@ -24,3 +24,10 @@ updates:
       github-actions:
         patterns:
           - '*'
+  - package-ecosystem: gitsubmodule
+    directory: /
+    schedule:
+      interval: daily
+    target-branch: main
+    labels:
+      - dependencies

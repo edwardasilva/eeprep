@@ -118,18 +118,12 @@ const caption = externalLinks(`
 		line-height: 1;
 		color: var(--eep-mute);
 	}
-	.eep-flow-s4 .eep-flow-num {
-		color: var(--eep-dg-accent);
-	}
 	.eep-flow-card {
 		box-sizing: border-box;
 		padding: 0.7rem 0.75rem 0.8rem;
-		border: 1px solid var(--eep-dg-ink);
+		border: 1px solid var(--eep-dg-mute);
 		border-radius: 4px;
-		background: var(--eep-dg-fill);
-	}
-	.eep-flow-s4 .eep-flow-card {
-		border: 1.5px solid var(--eep-dg-accent);
+		background: color-mix(in srgb, var(--eep-dg-ink) 6%, var(--eep-dg-fill));
 	}
 	.eep-flow-step {
 		display: flex;

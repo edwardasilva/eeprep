@@ -13,6 +13,11 @@ const links = [
 	{ href: '/advice/', label: 'Advice', section: '/advice/' },
 	{ href: '/help-links/', label: 'Help links', section: '/help-links/' },
 	{ href: '/roadmap/', label: 'Roadmap', section: '/roadmap/' },
+	{
+		href: '/help-links/sitemap/',
+		label: 'Sitemap',
+		section: '/help-links/sitemap/',
+	},
 ];
 
 const suggestions = [
@@ -24,9 +29,12 @@ const suggestions = [
 
 const pathname = Astro.url.pathname;
 
-function isCurrent(section: string): boolean {
-	return pathname.startsWith(section);
-}
+// Sitemap sits inside Help links, so only the longest matching section is
+// marked current.
+const currentSection = links
+	.map((link) => link.section)
+	.filter((section) => pathname.startsWith(section))
+	.sort((a, b) => b.length - a.length)[0];
 ---
 
 <div class="header">
@@ -37,7 +45,7 @@ function isCurrent(section: string): boolean {
 		{links.map((link) => (
 			<a
 				href={link.href}
-				aria-current={isCurrent(link.section) ? 'page' : undefined}
+				aria-current={link.section === currentSection ? 'page' : undefined}
 			>
 				{link.label}
 			</a>
