@@ -1,6 +1,6 @@
 # EE Prep
 
-EE Prep helps electrical engineering students and new grads get ahead in the AI era. It shows how to build a resume that works, find real experience, and land a first internship or full-time role.
+EE Prep is a free guide for electrical engineering students and new grads. It shows how to build a resume that works, find real experience, and land a first internship or full-time role.
 
 Status: active development. Content and code are updated regularly.
 
