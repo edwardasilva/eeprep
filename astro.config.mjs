@@ -33,7 +33,7 @@ const redirects = {
 	'/advice/first-internship/': '/advice/getting-hired/first-internship/',
 	'/advice/hardware-experience/': '/advice/projects/hardware/',
 	'/advice/how-to-interview/': '/advice/getting-hired/how-to-interview/',
-	'/advice/getting-hired/authors-story/': '/advice/authors-story/',
+	'/advice/getting-hired/authors-story/': '/advice/about/',
 	'/reference/': '/help-links/',
 	'/reference/job-links/': '/help-links/',
 	'/reference/signals-and-dsp/': '/help-links/',
@@ -287,7 +287,7 @@ export default defineConfig({
 					label: 'Advice',
 					items: [
 						{ label: 'Advice', slug: 'advice' },
-						{ label: "Author's story", slug: 'advice/authors-story' },
+						{ label: 'About', slug: 'advice/about' },
 						{
 							label: 'Projects',
 							items: [

@@ -11,7 +11,7 @@ Read these guides in order. Projects give a resume something to show, and the re
 
 The advice on these pages is one engineer's opinion, not a set of rules. If you know a better way, use it. To suggest a change, see [[Contributing]]. eeprep doesn't give visa, immigration, or security clearance advice. Check [USCIS](https://www.uscis.gov/), your school's international student office, and the employer.
 
-- [[Author's story]] tells how I got my first full-time engineering job.
+- [[About]] tells how I got my first full-time engineering job.
 - [[Projects]] explains how to pick one build you can defend and present it.
   - [[Software]] covers embedded firmware, test automation, FPGA and HDL work, and how to show it on GitHub.
   - [[Hardware]] covers bench skills, hardware builds, design teams, and technician roles.
