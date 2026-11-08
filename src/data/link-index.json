@@ -1488,10 +1488,10 @@
     "pages": ["help-links/contributing"]
   },
   {
-    "url": "https://edwardasilva.com/",
-    "title": "edwardasilva.com",
+    "url": "https://dev.edwardasilva.pages.dev/",
+    "title": "The author's site",
     "category": "Site",
-    "summary": "The author's site, with the projects and roles from the Author's story in full.",
+    "summary": "The projects and roles from the Author's story, in full.",
     "pages": ["advice/getting-hired/authors-story"]
   }
 ]
