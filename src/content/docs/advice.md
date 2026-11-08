@@ -17,7 +17,7 @@ The advice on these pages is one engineer's opinion, not a set of rules. If you 
 - [[Resume]] covers a one-page layout, section order, and bullets with measured results.
   - [[Workshop]] is a timed resume workshop for a class or student group, with a script and handouts.
 - [[Getting hired]] covers referrals, the 20-application rule, career fairs, and where to look.
-  - [[Author's story]] tells how the author got their first EE job.
+  - [[Author's story]] tells how I got my first EE job.
   - [[How to interview]] covers project questions, fundamentals, coding, behavioral stories, and the on-site day.
   - [[First internship]] shows how to land a first internship with no experience.
   - [[First full-time role]] covers senior-year recruiting, return offers, and new-grad programs.
