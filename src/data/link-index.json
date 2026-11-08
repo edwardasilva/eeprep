@@ -225,7 +225,7 @@
     "title": "resume-generator on GitHub",
     "category": "Sample resumes and templates",
     "summary": "eeprep's open-source tool that builds a one-page resume PDF from a data file.",
-    "pages": ["index", "advice/resume"]
+    "pages": ["index", "advice/resume", "help-links/contributing"]
   },
   {
     "url": "https://github.com/edwardasilva/resume-generator/releases/tag/v0.2.3",
@@ -1471,6 +1471,20 @@
     "title": "Contributing",
     "category": "Site",
     "summary": "How a change to eeprep gets from an idea to the live site.",
-    "pages": ["advice"]
+    "pages": ["help-links/contributing"]
+  },
+  {
+    "url": "https://github.com/edwardasilva/eeprep/issues/new/choose",
+    "title": "eeprep issue forms",
+    "category": "Site",
+    "summary": "Forms to ask for a page, report a site bug, or report a technical error.",
+    "pages": ["help-links/contributing"]
+  },
+  {
+    "url": "https://github.com/edwardasilva/eeprep/blob/main/.github/SECURITY.md",
+    "title": "eeprep security policy",
+    "category": "Site",
+    "summary": "How to report a security problem in private.",
+    "pages": ["help-links/contributing"]
   }
 ]
