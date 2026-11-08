@@ -306,6 +306,10 @@ export default defineConfig({
 							items: [
 								{ label: 'Getting hired', slug: 'advice/getting-hired' },
 								{
+									label: "Author's story",
+									slug: 'advice/getting-hired/authors-story',
+								},
+								{
 									label: 'How to interview',
 									slug: 'advice/getting-hired/how-to-interview',
 								},
