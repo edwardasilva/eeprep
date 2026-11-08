@@ -24,7 +24,7 @@ Every merge is a squash merge, and the branch is deleted when it merges. Do not 
 
 ## Checks
 
-Pull requests into `main` run these jobs:
+Pull requests into `main` run these checks. A failed check does not stop the others, so one run lists every problem:
 
 - the body contains `Part of #<issue>` (Dependabot and `no-epic` skip this)
 - `npm ci`, wikilink check, citation check, production build, and HTML link check
