@@ -7,7 +7,7 @@ head:
     content: "The author's story: from EE student to embedded engineer | EE Prep"
 ---
 
-I'm an electrical engineer, and I write embedded software for a large aerospace hardware company. Several rules on the other pages come from the path below. [My site](https://dev.edwardasilva.pages.dev/) has the projects and roles from this page in full.
+I'm an electrical engineer, and I write embedded software for a large aerospace hardware company. Several rules on the other pages come from the path below.
 
 This page is a draft. Replace every [INSERT ...] marker before publishing.
 
@@ -25,13 +25,19 @@ From January to June 2025 I did an electrical design co-op at an engineering fir
 
 That summer I interned at a defense contractor on real-time signal processing code in C++. I got a 1.6x speedup out of a legacy signal chain with AVX-512 vectorization, and I built the team a logging framework. [INSERT why that internship pointed you at embedded software and signal processing].
 
-An unfinished project helped me get that internship. I restarted a solar tracker in August 2024 and never finished it, but I showed the company my progress. [[Projects]] covers how to pick and present a project.
+An unfinished project helped me get that internship. I built a solar tracker in July 2022 that followed the light every 2 minutes, and crudely. In August 2024 I restarted it to make the tracking smooth. The restart reached a working sensor prototype, but the motors and housing never got built. It still showed I could build things on my own, and I showed the company my progress. [[Projects]] covers how to pick and present a project.
 
 I found the co-op and the internship through [INSERT how you found them, and whether a referral, career fair, or professor helped].
 
 ## The job hunt
 
-Senior year ran on controls and signal processing. My resume had a 50 Hz gantry crane controller, EKF and UKF state estimation, and a real-time pitch tracker in MATLAB. My capstone was a bicycle damper, and I owned its electromagnet design. I sent [INSERT rough number of applications and time period], and found postings through [INSERT where you found postings].
+Senior year ran on controls and signal processing. My resume had a 50 Hz gantry crane controller, EKF and UKF state estimation, and a real-time pitch tracker in MATLAB. My capstone was a bicycle damper, and I owned its electromagnet design.
+
+The courses kept coming back. I modeled the damper's electromagnet with the Biot-Savart law from electromagnetics, and its flux path used the magnetic circuits from electric machinery. The internship came back too. On a maze robot, our first I2C packets sent each value as an 8-byte double, and the Arduino only had room for a 4-byte float. I only knew how to debug that because the internship's SIMD work taught me a lot about registers and floating-point conversions.
+
+On the state estimation project, I tuned the filters for the simulation and simple inputs. If I did it again, I'd add more randomness to those inputs and tune against it.
+
+I sent [INSERT rough number of applications and time period], and found postings through [INSERT where you found postings].
 
 I applied cold to my current employer. I couldn't get a referral, so no one inside the company vouched for my application. A web scraper I wrote told me whenever a company I followed opened a new role. It flagged the opening, and I applied the day it posted. My advice is to be scrappy, especially at big companies. [[Getting hired#Get a referral first]] covers the referral side.
 
@@ -69,6 +75,7 @@ I started eeprep because people need help with their resumes. I built a system t
 - If you can't get one, apply the day the posting opens.
 - If 20 applications bring zero interviews, change the resume or the channel.
 - Show a project that isn't finished if the progress is real.
+- Tie each class to something you built, so you can say where you used it.
 - Know every line of your resume in full detail, because interviewers will ask.
 - Practice LeetCode-style problems out loud at a whiteboard.
 - Be confident, and never bluff.

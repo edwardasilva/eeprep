@@ -1486,12 +1486,5 @@
     "category": "Site",
     "summary": "How to report a security problem in private.",
     "pages": ["help-links/contributing"]
-  },
-  {
-    "url": "https://dev.edwardasilva.pages.dev/",
-    "title": "The author's site",
-    "category": "Site",
-    "summary": "The projects and roles from the Author's story, in full.",
-    "pages": ["advice/getting-hired/authors-story"]
   }
 ]
