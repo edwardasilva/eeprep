@@ -40,8 +40,7 @@ The repo has two licenses, one for content and one for code.
 Content is licensed under [CC BY 4.0](LICENSE-CONTENT). You may share and adapt it if you give credit and link the license. Content means:
 
 - the guide pages and their sources in `src/content/`
-- the figure sources and drawings in `src/diagrams/` and `public/diagrams/`
-- the words and drawings shown by the figures in `src/components/resume/`
+- the words and drawings shown by the figures in `src/components/advice/` and `src/components/resume/`
 
 Code is licensed under the [MIT License](LICENSE). Code means everything else, including the components, plugins, styles, scripts, worker, and config files. The resume-generator submodule has its own MIT license.
 
