@@ -219,7 +219,7 @@
     "category": "Sample resumes and templates",
     "summary": "The subreddit's recommended resume templates in LaTeX, Word and Google Docs.",
     "pages": [
-      "advice/getting-hired/authors-story",
+      "advice/about",
       "advice/resume",
       "advice/resume/workshop",
       "roadmap"
@@ -976,7 +976,7 @@
     "url": "https://www.reddit.com/r/ElectricalEngineering/comments/1vvqcgw/lack_of_2027_new_grad_jobs/",
     "title": "r/ElectricalEngineering: Lack of 2027 new grad jobs",
     "category": "Job search stories from students",
-    "summary": "A student sees many summer 2027 internship posts but few new grad roles.",
+    "summary": "A student sees many summer 2027 internship posts but few new-grad roles.",
     "pages": [
       "advice/getting-hired/first-full-time-role",
       "advice/getting-hired/first-internship"

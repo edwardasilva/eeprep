@@ -406,7 +406,7 @@ a.external-link .eep-ext-last::after {
 	background: var(--eep-paper);
 }
 
-/* Roadmap: a plain table like Figure 7.1. Rules between rows only, no
+/* Roadmap: a plain table. Rules between rows only, no
    stripes or card. Narrow screens stack each row, with the column name
    (from data-label) above each cell. */
 .sl-markdown-content table.eep-roadmap {
