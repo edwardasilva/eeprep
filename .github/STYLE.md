@@ -121,3 +121,31 @@ Also cut "not just X, but Y", "not X, but Y", "Y rather than X" used for drama, 
 6. End every line on something. A connector touches a box or a dot at both ends. Check wide and narrow widths, because a line that connects at one width can float at another.
 
 7. Keep bracket placeholders such as [X]. On this site they mean a number the student measures, so they are not fake data.
+
+## 8. Sound like a person
+
+Following sections 1 to 4 too literally makes a second kind of tell: copy that is clipped, staged, and pleased with itself. It reads like a slogan, not like a person. These rules come from four sources:
+
+- Paul Graham, Write Like You Talk: [https://paulgraham.com/talk.html](https://paulgraham.com/talk.html)
+
+- Morkes and Nielsen's 1997 study, where the objective rewrite of a promotional page scored 27% higher in measured usability: [https://www.nngroup.com/papers/webwriting/rewriting.html](https://www.nngroup.com/papers/webwriting/rewriting.html)
+
+- The Microsoft Writing Style Guide on contractions: [https://learn.microsoft.com/en-us/style-guide/word-choice/use-contractions](https://learn.microsoft.com/en-us/style-guide/word-choice/use-contractions)
+
+- The Google developer documentation style guide on voice and tone: [https://developers.google.com/style/tone](https://developers.google.com/style/tone)
+
+1. Write it the way you would explain it to a classmate, then read it aloud. If you would not say a line that way, rewrite it.
+
+2. Join facts that belong together. A run of short declaratives ("Two controllers. One crane. The fast one gives margin back.") reads as ad copy. Use "and", "but", "so", or "because" when the ideas connect.
+
+3. Do not stage a reveal. Cut the setup line that exists only to make the next line land ("My LinkedIn has the job titles. These pages have the equations."). Say the plain thing once.
+
+4. Do not write taglines or teasers. "One JSON file in, one page of PDF out" and "watch where each one loses the pitch" sell. Describe what the thing does, and let the reader decide it is good.
+
+5. Do not argue with the reader or wink at them. Cut asides such as "It doesn't matter." or "but they were good." If something cannot be shown, say so and stop.
+
+6. Name what a section holds in its heading. "Part 1: slow on purpose" and "Where the classes showed up" are cute. "Part 1: the slow controller" and "Courses behind the projects" are clear.
+
+7. In personal prose, use the contractions a person would say: it's, don't, I'd. Keep them out of steps and procedures, per section 5.
+
+8. A rule in this guide never beats a sentence that reads well. If a fix makes a line stiffer, keep the original and note why.
