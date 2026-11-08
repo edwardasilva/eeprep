@@ -150,6 +150,6 @@ Following sections 1 to 4 too literally makes a second kind of tell: copy that i
 
 8. A rule in this guide never beats a sentence that reads well. If a fix makes a line stiffer, keep the original and note why.
 
-9. Write about the subject, not the page. "This site has the long versions of my projects" and "My job history is on LinkedIn" describe the page, and the nav and footer already say both. Start with the fact: "I write embedded software for Starlink at SpaceX."
+9. Write about the subject, not the page. "This site has the long versions of my projects" and "My job history is on LinkedIn" describe the page, and the nav and footer already say both. Start with the fact: "I write embedded software for Starlink at SpaceX." A line about the page stays only when it tells the reader something the page cannot show, such as where its advice comes from.
 
 10. Give a summary one job. A card blurb or a page description says what the thing is in one sentence, plus one number or result if it has one. The page itself holds the rest.
