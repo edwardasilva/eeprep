@@ -2,16 +2,13 @@
 # That failure would turn every pull request red.
 # The analyze job skips while the repository is private. The check stays neutral.
 # After the repository becomes public at launch, the job runs on its own.
+#
+# It runs weekly and by hand, not on every pull request or push. While the
+# repository is private, a pull request run only added a skipped check.
 
 name: CodeQL
 
 'on':
-  pull_request:
-    branches:
-      - main
-  push:
-    branches:
-      - main
   schedule:
     - cron: '31 6 * * 1'
   workflow_dispatch:
@@ -24,6 +21,7 @@ jobs:
     if: ${{ !github.event.repository.private }}
     name: Analyze (${{ matrix.language }})
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     permissions:
       # Uploads the scan results.
       security-events: write

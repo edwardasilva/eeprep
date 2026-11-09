@@ -22,6 +22,17 @@ Show proof in the pull request: the build output, or before-and-after screenshot
 
 Every merge is a squash merge, and the branch is deleted when it merges. Do not push straight to `main`.
 
+## Working with Claude
+
+Claude Code can take an issue to a pull request. `.github/workflows/claude.yml` runs it, and only the repo owner can start it.
+
+1. File the issue and add it to the project board.
+2. Add the `claude` label to the issue, or comment `@claude` on it with instructions. Claude works on a `claude/` branch and opens a pull request whose body has `Part of #N` and `Closes #N`.
+3. Review the pull request. Comment `@claude` on it, or in a review or a line comment, with a change or a question. Claude pushes the fix to the same branch or answers in a comment. Repeat until the pull request is ready.
+4. Squash-merge it. Claude never merges, pushes to `main`, tags, or cuts a release.
+
+A merge does not cut a release. A release happens only when the owner asks, and it follows the rule in [Releases and deploys](#releases-and-deploys).
+
 ## Checks
 
 Pull requests into `main` run these checks. A failed check does not stop the others, so one run lists every problem:
@@ -30,6 +41,8 @@ Pull requests into `main` run these checks. A failed check does not stop the oth
 - `npm ci`, wikilink check, citation check, figure rules, production build, and HTML link check
 - Vale, using `.github/STYLE.md`, on `src/content/docs` (`vale --config .github/vale/.vale.ini src/content/docs`)
 - `npm run lint` (ESLint, markdownlint, and Prettier)
+
+The `protect-main` ruleset requires two checks by name: `Checks` (ci.yml) and `PR body` (pr-body.yml). A pull request that changes only repo docs, such as `README.md`, `CLAUDE.md`, or `.github/ISSUE_TEMPLATE`, skips the tests and the build, but `Checks` still runs Vale and lint and still reports. CI is kept small to save runner time. The Playwright mobile audit runs from `audit.yml` on release tags and by hand (`gh workflow run audit.yml --ref main`), not on pull requests. CodeQL runs weekly, and the Source links check runs monthly. Dependabot opens grouped updates monthly.
 
 ## Releases and deploys
 
@@ -128,7 +141,7 @@ npm run lint
 vale --config .github/vale/.vale.ini src/content/docs
 ```
 
-`npm run check:figures` reads the figure components under `src/components` and fails on the figure rules in `.github/STYLE.md` section 7: a crimson token, a gradient, a glow, italics, or a drawing hidden from screen readers with no spoken text. `npm run check:external-links` fetches every source URL in `references.bib`. It runs weekly from the Source links workflow, not on pull requests, because outside sites go down on their own schedule.
+`npm run check:figures` reads the figure components under `src/components` and fails on the figure rules in `.github/STYLE.md` section 7: a crimson token, a gradient, a glow, italics, or a drawing hidden from screen readers with no spoken text. `npm run check:external-links` fetches every source URL in `references.bib`. It runs monthly from the Source links workflow, not on pull requests, because outside sites go down on their own schedule.
 
 `npm run check:citations` reads `src/content/docs` and `src/content/references.bib`. It does not need a build. `npm run check:links` needs a `dist/` folder, so run `npm run build` first. `npm run check:pr-body` reads `PR_BODY` from the environment. Vale is a separate program. CI installs Vale 3.25.1 and runs `vale --config .github/vale/.vale.ini src/content/docs`.
 
