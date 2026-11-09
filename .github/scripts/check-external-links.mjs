@@ -37,6 +37,7 @@ const urls = [
 	),
 ];
 const skipped = [];
+const refused = [];
 const failed = [];
 
 const queue = urls.filter((url) => {
@@ -54,6 +55,12 @@ await Promise.all(
 		for (let url = queue.shift(); url; url = queue.shift()) {
 			const status = await fetchStatus(url);
 			if (status >= 200 && status < 400) continue;
+			// A 403 is a bot wall, not a dead page. Several university career
+			// sites and newsrooms answer every script that way.
+			if (status === 403) {
+				refused.push(url);
+				continue;
+			}
 			failed.push({ url, status });
 			console.error(`${status || 'no response'} ${url}`);
 		}
@@ -61,12 +68,19 @@ await Promise.all(
 );
 
 const summary = [
-	`Checked ${checked} of ${urls.length} source URLs. ${failed.length} failed, ${skipped.length} skipped.`,
+	`Checked ${checked} of ${urls.length} source URLs. ${failed.length} failed, ${refused.length} refused a script, ${skipped.length} skipped.`,
 	'',
 	...(failed.length
 		? [
 				'Failed:',
 				...failed.map((f) => `- ${f.status || 'no response'} ${f.url}`),
+				'',
+			]
+		: []),
+	...(refused.length
+		? [
+				'Refused with 403 (a bot wall, check by hand if the page matters):',
+				...refused.map((u) => `- ${u}`),
 				'',
 			]
 		: []),
