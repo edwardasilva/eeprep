@@ -7,18 +7,18 @@ head:
     content: "Advice for EE students | EE Prep"
 ---
 
-Read these guides in order. Projects give a resume something to show, and the resume starts every application. If you want the whole guide in five minutes, start with the [[Simple|Simple page]].
+Read these guides in order. Projects give a resume something to show, and the resume starts every application. If you want the whole guide in five minutes, start with the [[Quick setup|Quick setup page]]. The [[Author's story|Author's story page]] is how I got from school to a first embedded software job, and the rest of the pages come out of it.
 
 The advice on these pages is one engineer's opinion, not a set of rules. If you know a better way, use it. To suggest a change, see the [[Contributing|Contributing page]]. eeprep doesn't give visa, immigration, or security clearance advice. Check [USCIS](https://www.uscis.gov/), your school's international student office, and the employer.
 
 - The [[Projects|Projects page]] explains how to pick one build you can defend and present it.
   - The [[Software|Software page]] covers embedded firmware, test automation, FPGA and HDL work, and how to show it on GitHub.
   - The [[Hardware|Hardware page]] covers bench skills, hardware builds, design teams, and technician roles.
+  - The [[Portfolio|Portfolio page]] covers a project site that shows the work behind the bullets, and a LinkedIn profile that recruiters find.
 - The [[Resume|Resume page]] covers a one-page layout, section order, and bullets with measured results.
-  - The [[Simple|Simple page]] is the whole guide on one page, in seven steps.
+  - The [[Quick setup|Quick setup page]] is the whole guide on one page, in seven steps.
   - The [[Walkthrough|Walkthrough page]] takes one student's resume from a first draft to a finished PDF, with four more finished pages.
   - The [[Cleanup|Cleanup page]] is the audit to run on the PDF before you send it.
-  - The [[Portfolio|Portfolio page]] covers a free project site and a LinkedIn profile that recruiters find.
   - The [[Workshop|Workshop page]] is a timed resume workshop for a class or student group, with a script and handouts.
 - The [[Getting hired|Getting hired page]] covers referrals, the 20-application rule, career fairs, and where to look.
   - The [[Networking|Networking page]] covers who to ask, the 20-minute informational interview, and the referral request.
@@ -30,4 +30,4 @@ The advice on these pages is one engineer's opinion, not a set of rules. If you 
   - The [[Graduate study|Graduate study page]] covers when a master's or PhD pays off for an EE, and how students pay for one.
   - The [[Professional societies|Professional societies page]] covers what IEEE, the honor societies, and SWE, NSBE, and SHPE cost and give you.
 
-The [[About|About page]] tells how I got my first full-time engineering job. Under the [[Help|Help page]], the [[Job boards|Job boards page]] says where each board misleads, the [[Repositories and resources|Repositories and resources page]] lists the repos and lists this site leans on, and the [[AI use|AI use page]] covers where an AI tool helps in the search and where it costs you.
+The [[Author's story|Author's story page]] tells how I got my first full-time engineering job. Under the [[Help|Help page]], the [[Job boards|Job boards page]] says where each board misleads, the [[Resources|Resources page]] lists the repos and lists this site leans on, and the [[AI use|AI use page]] covers where an AI tool helps in the search and where it costs you.
