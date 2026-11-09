@@ -1,0 +1,503 @@
+/* Site chrome that sits on top of the textbook theme.
+   Unlayered, so these beat Starlight's @layer rules. */
+
+.eep-nav {
+	display: flex;
+	gap: 1.75rem;
+	align-items: center;
+	min-width: 0;
+}
+.eep-nav a {
+	font: 500 0.875rem/1 var(--eep-font-sans);
+	color: var(--eep-ink);
+	text-decoration: none;
+	white-space: nowrap;
+}
+.eep-nav a[aria-current='page'] {
+	color: var(--eep-ink);
+	box-shadow: inset 0 -1.5px 0 var(--eep-accent);
+}
+@media (hover: hover) {
+	.eep-nav a:hover {
+		color: var(--eep-accent);
+	}
+}
+
+.eep-theme {
+	display: grid;
+	place-items: center;
+	width: 2.25rem;
+	height: 2.25rem;
+	padding: 0;
+	border: var(--eep-border);
+	border-radius: var(--eep-radius);
+	background: transparent;
+	color: var(--eep-ink);
+	cursor: pointer;
+}
+.eep-theme svg {
+	width: 1.05rem;
+	height: 1.05rem;
+}
+.eep-theme .icon-sun {
+	display: none;
+}
+:root[data-theme='light'] .eep-theme .icon-moon {
+	display: none;
+}
+:root[data-theme='light'] .eep-theme .icon-sun {
+	display: block;
+}
+
+/* Desktop top bar: a taller band and wider gaps between items. */
+@media (min-width: 50rem) {
+	:root,
+	:root[data-theme='light'] {
+		--sl-nav-height: 4rem;
+		--sl-nav-gap: 1.5rem;
+	}
+	.header .site-title img {
+		height: 2.25rem;
+	}
+}
+
+/* Suggested pages in the search dialog, shown only while the query is empty. */
+.eep-suggest {
+	margin-top: 1rem;
+}
+.eep-suggest[hidden] {
+	display: none;
+}
+.eep-suggest p {
+	margin: 0 0 0.5rem;
+	font: 600 0.75rem/1 var(--eep-font-sans);
+	color: var(--eep-ink-2);
+}
+.eep-suggest ul {
+	display: grid;
+	gap: 0.25rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.eep-suggest a {
+	display: flex;
+	align-items: center;
+	min-height: 2.75rem;
+	padding-inline: 0.75rem;
+	border: var(--eep-border);
+	border-radius: var(--eep-radius);
+	color: var(--eep-ink);
+	text-decoration: none;
+}
+@media (hover: hover) {
+	.eep-suggest a:hover {
+		color: var(--eep-accent);
+	}
+}
+
+.eep-hero {
+	padding: 2.5rem 0 1rem;
+	max-width: 46rem;
+}
+.eep-hero h1 {
+	font-family: var(--eep-font-serif);
+	font-weight: 500;
+	font-size: clamp(2.25rem, 4vw, 3.25rem);
+	line-height: 1.08;
+	letter-spacing: var(--eep-track-h1);
+	color: var(--eep-ink);
+	font-variation-settings: 'opsz' 72;
+	margin: 0.75rem 0 1rem;
+}
+/* Starlight sets the shortcut in the UI font. The theme's code font is mono. */
+button[data-open-modal] kbd {
+	font-family: var(--eep-font-mono);
+}
+.eep-cards {
+	list-style: none;
+	padding: 0;
+	margin: 2.5rem 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+	gap: 1rem;
+}
+/* Starlight adds 0.25rem above every list item after the first. In this row
+   that drops cards 2 and 3 by 4px and shortens them by the same amount. */
+.eep-cards > li {
+	margin-top: 0;
+}
+.eep-cards a {
+	display: grid;
+	gap: 0.4rem;
+	height: 100%;
+	padding: 1.1rem 1.15rem 1.2rem;
+	border: var(--eep-border);
+	border-radius: var(--eep-radius-lg);
+	background: var(--eep-surface);
+	color: inherit;
+	text-decoration: none;
+}
+@media (hover: hover) {
+	.eep-cards a:hover {
+		border-color: var(--eep-accent);
+	}
+}
+.eep-cards strong {
+	font: 550 1.35rem/1.2 var(--eep-font-serif);
+	color: var(--eep-ink);
+}
+.eep-generator {
+	max-width: var(--eep-measure);
+	color: var(--eep-ink-2);
+}
+.eep-cards span:last-child {
+	color: var(--eep-ink-2);
+	font-size: 0.9375rem;
+}
+.wikilink-missing {
+	color: var(--eep-ink-2);
+}
+
+/* "Linked from" sits under "On this page" and matches its inset and type. */
+.eep-backlinks {
+	padding: 1rem var(--sl-sidebar-pad-x);
+}
+.eep-backlinks h2 {
+	color: var(--sl-color-white);
+	font-size: var(--sl-text-h5);
+	font-weight: 600;
+	line-height: var(--sl-line-height-headings);
+	margin-bottom: 0.5rem;
+}
+.eep-backlinks ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.eep-backlinks a {
+	display: block;
+	padding-block: 0.25rem;
+	font-size: var(--sl-text-xs);
+	color: var(--sl-color-gray-2);
+	text-decoration: none;
+	overflow-wrap: anywhere;
+}
+/* Below 72rem the list follows the content instead, set off by a rule. */
+.eep-backlinks-end {
+	margin-top: 2rem;
+	border-top: 1px solid var(--sl-color-hairline);
+	padding-inline: 0;
+}
+@media (hover: hover) {
+	.eep-backlinks a:hover {
+		color: var(--sl-color-white);
+	}
+}
+
+/* Phone header: two fixed rows inside Starlight's header, so nothing spills
+   onto the page or the "On this page" bar below it.
+   Row 1: logo, search, theme toggle (and Starlight's menu button, which is
+   fixed in the same band). Row 2: the section nav. Every control is a 44px
+   tap target. --sl-nav-height covers both rows, and Starlight offsets the
+   page and the sticky table-of-contents bar by it. */
+@media (max-width: 50rem) {
+	:root,
+	:root[data-theme='light'] {
+		--eep-tap: 2.75rem;
+		--sl-nav-pad-y: 0.625rem;
+		--sl-nav-height: calc(
+			2 * var(--sl-nav-pad-y) + 2 * var(--eep-tap) + 0.25rem
+		);
+		--sl-menu-button-size: var(--eep-tap);
+	}
+	/* Starlight pads the header for its menu button only on pages with a
+	   sidebar, which moves the theme toggle and narrows the nav. Reserve the
+	   button's column on every page instead, so the header is the same
+	   everywhere. */
+	header.header {
+		padding-inline-end: var(--sl-nav-pad-x);
+	}
+	div.header {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) auto auto var(--sl-menu-button-size);
+		grid-template-rows: var(--eep-tap) var(--eep-tap);
+		column-gap: 0.75rem;
+		row-gap: 0.25rem;
+		align-items: center;
+	}
+	.site-title {
+		min-height: var(--eep-tap);
+	}
+	.site-title img {
+		height: 2rem;
+	}
+	.eep-nav {
+		grid-column: 1 / -1;
+		grid-row: 2;
+		gap: 1rem;
+		overflow-x: auto;
+		scrollbar-width: none;
+	}
+	.eep-nav a {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: var(--eep-tap);
+		min-height: var(--eep-tap);
+		padding-inline: 0.25rem;
+	}
+	.eep-nav a[aria-current='page'] {
+		box-shadow: inset 0 -2px 0 var(--eep-accent);
+	}
+	.eep-theme,
+	.header button[data-open-modal] {
+		width: var(--eep-tap);
+		height: var(--eep-tap);
+		min-width: var(--eep-tap);
+	}
+
+	/* Starlight centers the menu button in the full header height, between
+	   the two rows. Put it in the first row and paint it like .eep-theme. */
+	.sl-menu-button {
+		top: var(--sl-nav-pad-y);
+		align-items: center;
+		justify-content: center;
+		padding: 0;
+		border: var(--eep-border);
+		border-radius: var(--eep-radius);
+		background: transparent;
+		color: var(--eep-ink);
+		box-shadow: none;
+	}
+	.sl-menu-button:focus-visible {
+		outline: 2px solid var(--eep-accent);
+		outline-offset: 2px;
+	}
+
+	.eep-hero {
+		padding-top: 1.5rem;
+	}
+	.eep-hero h1 {
+		font-size: clamp(1.875rem, 5vw + 0.75rem, 2.25rem);
+		line-height: 1.12;
+	}
+}
+
+/* Keep the end of the page above Safari's bottom bar (viewport-fit=cover). */
+body {
+	padding-bottom: env(safe-area-inset-bottom);
+}
+
+.sl-markdown-content .eep-kicker {
+	margin: 0 0 0.35rem;
+	max-width: none;
+	font: 600 var(--eep-text-eyebrow)/1 var(--eep-font-serif);
+	color: var(--eep-mute);
+}
+.sl-markdown-content .eep-figtitle {
+	margin: 0 0 0.6rem;
+	max-width: none;
+	font: 600 1.625rem/1.2 var(--eep-font-serif);
+	color: var(--eep-ink);
+}
+.eep-figtitle,
+.eep-kicker {
+	text-wrap: balance;
+}
+
+/* One gutter between the left sidebar, the content and the right sidebar. */
+:root,
+:root[data-theme='light'] {
+	--eep-gutter: 1rem;
+	/* With viewport-fit=cover, a phone in landscape keeps text clear of the notch. */
+	--eep-safe-x: max(env(safe-area-inset-left), env(safe-area-inset-right));
+	--sl-content-pad-x: max(var(--eep-gutter), var(--eep-safe-x));
+	--sl-sidebar-pad-x: var(--eep-gutter);
+	--sl-nav-pad-x: max(var(--eep-gutter), var(--eep-safe-x));
+}
+@media (min-width: 50rem) {
+	:root,
+	:root[data-theme='light'] {
+		--eep-gutter: 1.5rem;
+	}
+}
+/* Starlight pushes the column against the right sidebar (margin auto 0),
+   which leaves all the spare room on the left. Center it instead. */
+@media (min-width: 72rem) {
+	:root[data-has-sidebar][data-has-toc] .main-pane {
+		--sl-content-margin-inline: auto;
+	}
+
+	/* A page with no table of contents puts its column where a page with one does, so the text
+	   starts at the same place on every page. The end padding is the width Starlight gives the
+	   table of contents, and the rule under the title still runs to the edge of the window. */
+	:root[data-has-sidebar]:not([data-has-toc]) .content-panel {
+		padding-inline-end: calc(
+			var(--sl-content-pad-x) +
+				max(
+					var(--sl-sidebar-width),
+					var(--sl-sidebar-width) +
+						(100% - var(--sl-content-width) - var(--sl-sidebar-width)) / 2
+				)
+		);
+	}
+}
+
+/* Phones: 16px inputs stop iOS from zooming on focus, and no grey tap flash. */
+input,
+select,
+textarea {
+	font-size: max(1rem, 16px);
+}
+html {
+	-webkit-tap-highlight-color: transparent;
+}
+
+/* Keep the header in the same place on every page. Short pages have no
+   vertical scrollbar and long pages do, so without a reserved gutter the
+   viewport, and the fixed header with it, changes width between pages. */
+html {
+	scrollbar-gutter: stable;
+}
+
+/* The splash page has no title, which leaves an empty bordered band at the top. */
+.content-panel:has(> .sl-container:empty) {
+	display: none;
+}
+
+/* Links to other sites open in a new tab. The arrow is decoration, and the
+   screen-reader hint inside the link says the same thing in words. It is an
+   SVG mask filled with the link color, not a text glyph, so no platform can
+   swap in an emoji. Body links and figure caption links share this rule.
+   The arrow follows the link's last word, which sits in its own span that
+   doesn't wrap, so the arrow never starts a line by itself. The link, and a
+   wrapper around it and any period or comma right after it, don't wrap
+   either, so the punctuation stays with the arrow. The link text sits in a
+   span that wraps as usual, so a long link still wraps at its spaces. This
+   nesting is the one that keeps all three together in Chrome, Firefox and
+   Safari. The markup comes from the rehype-external-links plugin and the
+   externalLinks caption helper. */
+a.external-link,
+a.external-link .eep-ext-last,
+.eep-ext {
+	white-space: nowrap;
+}
+a.external-link > .eep-ext-text {
+	white-space: normal;
+}
+a.external-link .eep-ext-last::after {
+	--eep-external-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 9L9 3M4.25 3H9V7.75'/%3E%3C/svg%3E");
+	content: '';
+	display: inline-block;
+	width: 0.75em;
+	height: 0.75em;
+	margin-inline-start: 0.15em;
+	vertical-align: baseline;
+	background-color: currentColor;
+	forced-color-adjust: none;
+	-webkit-mask: var(--eep-external-arrow) no-repeat center / contain;
+	mask: var(--eep-external-arrow) no-repeat center / contain;
+}
+
+/* The skip link shows on keyboard focus; it uses the ink role too. */
+.sl-skip-link {
+	color: var(--eep-ink);
+	background: var(--eep-paper);
+}
+
+/* Roadmap: a plain table. Rules between rows only, no
+   stripes or card. Narrow screens stack each row, with the column name
+   (from data-label) above each cell. */
+.sl-markdown-content table.eep-roadmap {
+	display: block;
+	width: 100%;
+	margin-top: 1rem;
+	border: 0;
+	border-collapse: collapse;
+	color: var(--eep-ink);
+	font-size: 0.9375rem;
+	line-height: 1.5;
+}
+.sl-markdown-content .eep-roadmap :is(thead, tbody, tr, th, td) {
+	display: block;
+	border: 0;
+	background: none;
+}
+.sl-markdown-content .eep-roadmap thead {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+.sl-markdown-content .eep-roadmap tbody tr {
+	padding: 0.75rem 0;
+	border-top: 1px solid var(--eep-silver);
+}
+.sl-markdown-content .eep-roadmap td {
+	padding: 0;
+	text-align: left;
+	vertical-align: top;
+	overflow-wrap: anywhere;
+}
+.sl-markdown-content .eep-roadmap td + td {
+	margin-top: 0.5rem;
+}
+.sl-markdown-content .eep-roadmap td[data-label]::before {
+	content: attr(data-label);
+	display: block;
+	margin-bottom: 0.15rem;
+	font-size: 0.8125rem;
+	line-height: 1.45;
+	color: var(--eep-ink-2);
+}
+
+@media (min-width: 34rem) {
+	.sl-markdown-content table.eep-roadmap {
+		display: table;
+		table-layout: fixed;
+	}
+	.sl-markdown-content .eep-roadmap thead {
+		position: static;
+		display: table-header-group;
+		width: auto;
+		height: auto;
+		overflow: visible;
+		clip-path: none;
+		white-space: normal;
+	}
+	.sl-markdown-content .eep-roadmap tbody {
+		display: table-row-group;
+	}
+	.sl-markdown-content .eep-roadmap tr,
+	.sl-markdown-content .eep-roadmap tbody tr {
+		display: table-row;
+		padding: 0;
+	}
+	.sl-markdown-content .eep-roadmap :is(th, td),
+	.sl-markdown-content .eep-roadmap td + td {
+		display: table-cell;
+		margin: 0;
+		padding: 0.6rem 0.75rem 0.65rem;
+		text-align: left;
+		vertical-align: top;
+	}
+	.sl-markdown-content .eep-roadmap :is(th, td):first-child {
+		width: 40%;
+		padding-left: 0;
+	}
+	.sl-markdown-content .eep-roadmap thead th {
+		font-size: 0.8125rem;
+		font-weight: 400;
+		line-height: 1.3;
+		color: var(--eep-ink-2);
+	}
+	.sl-markdown-content .eep-roadmap tbody tr {
+		border-top: 1px solid var(--eep-silver);
+	}
+	.sl-markdown-content .eep-roadmap td[data-label]::before {
+		content: none;
+	}
+}

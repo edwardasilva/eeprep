@@ -1,0 +1,69 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { externalLinks } from '../components/resume/caption';
+
+// Like links in the guide text, the GitHub link opens in a new tab with the
+// external-link arrow.
+const generatorLink = externalLinks(
+	'<a href="https://github.com/edwardasilva/resume-generator">resume-generator</a>',
+);
+---
+
+<StarlightPage
+	frontmatter={{
+		title: 'eeprep',
+		description:
+			"Electrical engineer's guide to job searching: a one-page resume, getting hired for an internship or a first full-time role, and help with the search.",
+		head: [
+			{
+				tag: 'title',
+				content: "Electrical engineer's guide to job searching | EE Prep",
+			},
+		],
+		template: 'splash',
+		pagefind: false,
+	}}
+	hasSidebar={false}
+>
+	<section class="eep-hero">
+		<h1>Electrical engineer's guide to job searching</h1>
+	</section>
+	<ul class="eep-cards">
+		<li>
+			<a href="/help/">
+				<strong>Help</strong>
+				<span>
+					Links to job boards, pay data and other sites for your job search.
+				</span>
+			</a>
+		</li>
+		<li>
+			<a href="/advice/">
+				<strong>Advice</strong>
+				<span>
+					How to write a one-page resume, get hired, and pick projects that
+					count.
+				</span>
+			</a>
+		</li>
+	</ul>
+	<p>
+		New here?{' '}
+		<a href="/advice/resume/quick-setup/">The whole guide on one page</a> takes
+		five minutes.
+	</p>
+	<p>
+		Ask for a referral before you apply, whenever you can.{' '}
+		<a href="/advice/getting-hired/#get-a-referral-first">
+			Getting hired says how to ask
+		</a>
+		.
+	</p>
+	<p>
+		The <a href="/roadmap/">roadmap</a> lists what is coming next.
+	</p>
+	<p class="eep-generator">
+		<Fragment set:html={generatorLink} /> is a free, open-source tool that turns
+		one file into a one-page PDF, so you don't have to format a resume by hand.
+	</p>
+</StarlightPage>

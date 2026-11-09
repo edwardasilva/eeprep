@@ -1,0 +1,451 @@
+/* ==========================================================================
+   eeprep.com — "Clean modern textbook" theme layer for Astro Starlight
+   Load via starlight({ customCss: ['./src/styles/theme.css'] }).
+   Unlayered CSS beats Starlight's @layer starlight.* rules, so no !important.
+   Starlight convention: :root = DARK, :root[data-theme='light'] = LIGHT.
+   ========================================================================== */
+
+/* ---------- 1. Fonts (self-hosted via Fontsource, imported in astro config/head)
+   npm i @fontsource-variable/newsreader @fontsource-variable/inter @fontsource-variable/jetbrains-mono
+   import '@fontsource-variable/newsreader/opsz.css';          // roman, wght+opsz
+   import '@fontsource-variable/newsreader/opsz-italic.css';   // italic, wght+opsz
+   import '@fontsource-variable/inter/opsz.css';
+   import '@fontsource-variable/jetbrains-mono';
+   All three: SIL Open Font License 1.1. */
+
+/* ---------- 2. Raw tokens (mode-independent) ---------- */
+:root {
+	--eep-font-serif:
+		'Source Serif 4 Variable', 'Source Serif 4', Georgia, 'Times New Roman',
+		serif;
+	--eep-font-sans: var(--eep-font-serif);
+	/* The one exception to the single family: code blocks. */
+	--eep-font-mono:
+		'Source Code Pro Variable', 'Source Code Pro', ui-monospace, SFMono-Regular,
+		Menlo, monospace;
+
+	/* Type scale (rem @ 16px root) */
+	--eep-text-display: 4rem; /* 64  landing hero */
+	--eep-text-h1: 3.5rem; /* 56  chapter title (2.5rem < 50em) */
+	--eep-text-h2: 2.125rem; /* 34  section */
+	--eep-text-h3: 1.5rem; /* 24  subsection */
+	--eep-text-h4: 1.1875rem; /* 19 */
+	--eep-text-lede: 1.4375rem; /* 23  serif standfirst */
+	--eep-text-body: 1.0625rem; /* 17 */
+	--eep-text-sm: 0.875rem; /* 14  sidebar, UI */
+	--eep-text-caption: 0.84375rem; /* 13.5 figure captions, margin column */
+	--eep-text-eyebrow: 0.75rem; /* 12  kickers and figure numbers, sentence case */
+	--eep-text-code: 0.875rem; /* 14 */
+	--eep-text-eq: 1.12em; /* KaTeX relative to body */
+	--eep-lh-body: 1.7;
+	--eep-lh-heading: 1.08;
+	--eep-track-eyebrow: 0.12em;
+	--eep-track-h1: -0.025em;
+
+	/* Spacing (4px base) */
+	--eep-space-1: 0.25rem;
+	--eep-space-2: 0.5rem;
+	--eep-space-3: 0.75rem;
+	--eep-space-4: 1rem;
+	--eep-space-5: 1.5rem;
+	--eep-space-6: 2rem;
+	--eep-space-7: 2.5rem;
+	--eep-space-8: 3rem;
+	--eep-space-9: 4rem;
+	--eep-space-10: 6rem;
+
+	/* Measure & layout */
+	--eep-measure: 40em; /* ≈ 68ch prose max */
+	--eep-col-nav: 14.375rem; /* 230px left chapter TOC */
+	--eep-col-margin: 11.875rem; /* 190px right key-terms column */
+	--eep-col-gap: 4rem; /* 64px */
+	--eep-page-max: 75rem; /* 1200px */
+
+	/* Radii & borders */
+	--eep-radius-sm: 2px; /* inline code, kbd */
+	--eep-radius: 4px; /* figures, code blocks, callouts (right side) */
+	--eep-radius-lg: 8px; /* search, inputs, cards on landing */
+	--eep-border: 1px solid var(--eep-rule);
+	--eep-border-strong: 1px solid var(--eep-ink); /* definition callout top rule */
+	--eep-callout-bar: 3px;
+	--eep-toc-bar: 1.5px;
+}
+
+/* ---------- 3. Colour tokens: LIGHT (primary design) ---------- */
+:root[data-theme='light'] {
+	--eep-paper: #fbfbfc; /* page bg */
+	--eep-surface: #ffffff; /* figures, inputs */
+	--eep-sunken: #f3f4f6; /* code blocks */
+	--eep-rule: #e2e4e8; /* hairlines */
+	--eep-rule-2: #c4c8cf; /* breadcrumb separators, stronger rules */
+	--eep-ink: #16233a; /* headings, diagram strokes */
+	/* Three text roles: ink, ink-2 (secondary) and accent (current item and
+	   figures only). Silver is never text. Older names alias onto them. */
+	--eep-text: var(--eep-ink);
+	--eep-ink-2: #424d63; /* secondary text, lede */
+	--eep-mute: var(--eep-ink-2);
+	--eep-silver: #838c9a; /* lines, icons, chart mute series: never text (3.3:1) */
+	--eep-wash: #e7ecf3; /* steel wash: optional secondary fill, never text or lines */
+	--eep-accent: #a3201d; /* the ONE accent: crimson */
+	--eep-accent-hover: #7d1714;
+	--eep-accent-soft: #f8ecea; /* tip bg */
+	--eep-on-accent: #ffffff;
+	/* callout semantics (desaturated, textbook-appropriate) */
+	--eep-def: #16233a;
+	--eep-ex: #1d5f8a;
+	--eep-ex-soft: #eef4f8;
+	--eep-check: #3f6b22;
+	--eep-check-soft: #eff4ea;
+	/* diagram palette (inline SVG reads these) */
+	--eep-dg-ink: var(--eep-ink);
+	--eep-dg-accent: var(--eep-accent);
+	--eep-dg-mute: var(--eep-silver);
+	--eep-dg-fill: var(--eep-surface);
+	/* The 6% tint behind a figure box, from STYLE.md section 7. */
+	--eep-dg-tint: color-mix(in srgb, var(--eep-dg-ink) 6%, var(--eep-dg-fill));
+	--eep-dg-s2: #1d5f8a;
+	--eep-dg-s3: #4f7a28;
+	--eep-dg-grid: #e9ecf0;
+}
+
+/* ---------- 4. Colour tokens: DARK ("night navy": navy-black paper, cool silver ink) ---------- */
+:root {
+	--eep-paper: #0d1524;
+	--eep-surface: #131c2e;
+	--eep-sunken: #101828;
+	--eep-rule: #232b3a;
+	--eep-rule-2: #3b4352;
+	--eep-ink: #eceef2;
+	--eep-text: var(--eep-ink);
+	--eep-ink-2: #a6afbf;
+	--eep-mute: var(--eep-ink-2);
+	--eep-silver: #76808f;
+	--eep-wash: #17243a;
+	--eep-accent: #e06a5f; /* crimson lifted to 5.6:1 on navy paper */
+	--eep-accent-hover: #f08b81;
+	--eep-accent-soft: #2a1a24;
+	--eep-on-accent: #0d1524;
+	--eep-def: #eceef2;
+	--eep-ex: #7fb3d9;
+	--eep-ex-soft: #14243a;
+	--eep-check: #9cc77a;
+	--eep-check-soft: #16241f;
+	--eep-dg-ink: var(--eep-ink);
+	--eep-dg-accent: var(--eep-accent);
+	--eep-dg-mute: var(--eep-silver);
+	--eep-dg-fill: var(--eep-surface);
+	/* The 6% tint behind a figure box, from STYLE.md section 7. */
+	--eep-dg-tint: color-mix(in srgb, var(--eep-dg-ink) 6%, var(--eep-dg-fill));
+	--eep-dg-s2: #8cc0e6;
+	--eep-dg-s3: #a9cf86;
+	--eep-dg-grid: #1c2537;
+}
+
+/* ---------- 5. Map onto Starlight --sl-* (both modes; values resolve per mode) ---------- */
+:root,
+:root[data-theme='light'] {
+	--sl-font: var(--eep-font-sans);
+	--sl-font-mono: var(--eep-font-mono);
+	--sl-color-bg: var(--eep-paper);
+	--sl-color-bg-nav: var(--eep-paper);
+	--sl-color-bg-sidebar: var(--eep-paper);
+	--sl-color-bg-inline-code: var(--eep-sunken);
+	--sl-color-bg-accent: var(--eep-accent);
+	--sl-color-text: var(--eep-ink);
+	--sl-color-text-accent: var(--eep-accent);
+	--sl-color-text-invert: var(--eep-on-accent);
+	--sl-color-white: var(
+		--eep-ink
+	); /* Starlight uses "white" for strongest text */
+	--sl-color-black: var(--eep-paper);
+	--sl-color-gray-1: var(--eep-ink);
+	--sl-color-gray-2: var(--eep-ink);
+	--sl-color-gray-3: var(--eep-ink-2);
+	--sl-color-gray-4: var(--eep-ink-2);
+	--sl-color-gray-5: var(--eep-rule-2);
+	--sl-color-gray-6: var(--eep-rule);
+	--sl-color-gray-7: var(--eep-sunken);
+	--sl-color-accent-low: var(--eep-accent-soft);
+	--sl-color-accent: var(--eep-accent);
+	--sl-color-accent-high: var(--eep-accent-hover);
+	--sl-color-hairline: var(--eep-rule);
+	--sl-color-hairline-light: var(--eep-rule);
+	--sl-color-hairline-shade: var(--eep-rule);
+	--sl-color-orange: var(--eep-accent);
+	--sl-color-orange-low: var(--eep-sunken);
+	--sl-color-orange-high: var(--eep-accent);
+	--sl-color-blue: var(--eep-ex);
+	--sl-color-blue-low: var(--eep-ex-soft);
+	--sl-color-blue-high: var(--eep-ex);
+	--sl-color-green: var(--eep-check);
+	--sl-color-green-low: var(--eep-check-soft);
+	--sl-color-green-high: var(--eep-check);
+	--sl-color-purple: var(--eep-accent);
+	--sl-color-purple-low: var(--eep-accent-soft);
+	--sl-color-purple-high: var(--eep-accent);
+	--sl-color-red: var(--eep-accent);
+	--sl-color-red-low: var(--eep-accent-soft);
+	--sl-color-red-high: var(--eep-accent);
+	--sl-shadow-sm: none;
+	--sl-shadow-md: 0 1px 0 var(--eep-rule);
+	--sl-shadow-lg: 0 8px 24px rgb(0 0 0 / 0.08);
+	--sl-text-body: var(--eep-text-body);
+	--sl-text-code: var(--eep-text-code);
+	--sl-line-height: var(--eep-lh-body);
+	--sl-line-height-headings: var(--eep-lh-heading);
+	--sl-content-width: 44rem; /* 40em prose + pad */
+	--sl-sidebar-width: 17rem;
+	--sl-nav-height: 4.5rem;
+}
+
+:root:not([data-has-sidebar]),
+:root[data-theme='light']:not([data-has-sidebar]) {
+	--sl-content-width: 67.5rem;
+}
+
+/* ---------- 6. Base typography ---------- */
+body {
+	background: var(--eep-paper);
+	-webkit-font-smoothing: antialiased;
+	font-feature-settings: 'cv11', 'ss01';
+}
+.sl-markdown-content :is(h1, h2, h3, h4),
+h1#_top {
+	font-family: var(--eep-font-serif);
+	font-weight: 500;
+	color: var(--eep-ink);
+	font-variation-settings: 'opsz' 72;
+	letter-spacing: -0.015em;
+}
+h1#_top {
+	font-size: clamp(2.5rem, 5vw, var(--eep-text-h1));
+	letter-spacing: var(--eep-track-h1);
+	line-height: 1.02;
+}
+.sl-markdown-content h2 {
+	font-size: var(--eep-text-h2);
+	margin-top: var(--eep-space-8);
+}
+.sl-markdown-content h3 {
+	font-size: var(--eep-text-h3);
+}
+.sl-markdown-content h4 {
+	font-size: var(--eep-text-h4);
+	font-weight: 600;
+}
+.sl-markdown-content :is(p, li) {
+	max-width: var(--eep-measure);
+}
+.sl-markdown-content a {
+	color: var(--eep-ink);
+	text-decoration-line: underline;
+	text-decoration-color: var(--eep-silver);
+	text-underline-offset: 0.15em;
+	text-decoration-thickness: 1px;
+}
+.sl-markdown-content a:focus-visible {
+	color: var(--eep-accent);
+	text-decoration-color: currentColor;
+}
+@media (hover: hover) {
+	.sl-markdown-content a:hover {
+		color: var(--eep-accent);
+		text-decoration-color: currentColor;
+	}
+}
+.sl-markdown-content code:not(pre code) {
+	border-radius: var(--eep-radius-sm);
+	padding: 0.1em 0.35em;
+	font-size: 0.88em;
+}
+
+/* ---------- 7. Callouts (Obsidian syntax via rehype-callouts / remark-obsidian-callout:
+   <div class="callout" data-callout="tip"><div class="callout-title">…</div><div class="callout-content">…</div></div>)
+   Also styles Starlight asides (.starlight-aside--tip|caution|note|danger). ---------- */
+.callout,
+.starlight-aside {
+	--c: var(--eep-silver);
+	background: var(--eep-sunken);
+	border: 0;
+	border-radius: var(--eep-radius-sm);
+	box-shadow: inset 2px 0 0 var(--c);
+	padding: var(--eep-space-5) var(--eep-space-6);
+	margin: var(--eep-space-7) 0;
+	max-width: calc(var(--eep-measure) + 4rem);
+	color: var(--eep-ink);
+}
+/* Warnings mark the bar only. */
+.callout:is(
+	[data-callout='warning'],
+	[data-callout='caution'],
+	[data-callout='danger']
+),
+.starlight-aside:is(.starlight-aside--caution, .starlight-aside--danger) {
+	--c: var(--eep-accent);
+}
+.callout-title,
+.starlight-aside__title {
+	font: 600 0.8125rem/1.2 var(--eep-font-sans);
+	color: var(--eep-ink-2);
+	display: flex;
+	gap: var(--eep-space-3);
+	align-items: center;
+	margin-bottom: var(--eep-space-2);
+}
+:is(.callout-title-icon, .starlight-aside__icon) {
+	display: none;
+}
+/* Obsidian-style parts sit flush, spaced like Starlight asides. */
+.sl-markdown-content :is(.callout-title-text, .callout-content) {
+	margin-top: 0;
+}
+.callout-content > p:first-child > strong:only-child {
+	display: block;
+	font: 550 1.25rem/1.3 var(--eep-font-serif);
+	color: var(--eep-ink);
+}
+.callout-content,
+.starlight-aside__content {
+	font-size: 0.96875rem;
+	color: var(--eep-ink);
+}
+.callout[data-callout='definition'] .callout-content strong:first-child {
+	font-family: var(--eep-font-serif);
+	font-style: italic;
+	font-weight: 500;
+	font-size: 1.15em;
+	color: var(--eep-ink);
+}
+.callout[data-callout='example'] .callout-content {
+	counter-reset: step;
+}
+.callout[data-callout='example'] .callout-content ol > li::marker {
+	font-family: var(--eep-font-mono);
+	color: var(--eep-ink);
+}
+.callout[data-callout='question'] details > summary,
+.callout.is-collapsible .callout-title {
+	cursor: pointer;
+}
+
+/* ---------- 8. Figures ---------- */
+figure.eep-fig {
+	margin: var(--eep-space-7) 0 var(--eep-space-2);
+	/* The padding shrinks only on screens narrower than 316px, which on a
+	   phone means 200% zoom or more. From a 320px screen up at 100% zoom it
+	   stays at the full 2.25rem. It follows the screen width, not the
+	   figure's, so parts inside a figure can read the same value. */
+	--eep-fig-pad: clamp(0.75rem, 100vw - 17.5rem, 2.25rem);
+	padding: var(--eep-fig-pad) var(--eep-fig-pad)
+		clamp(0.75rem, 100vw - 18.5rem, 1.375rem);
+	background: var(--eep-surface);
+	border: var(--eep-border);
+	border-radius: var(--eep-radius);
+}
+figure.eep-fig > :is(svg, img) {
+	display: block;
+	width: 100%;
+	max-width: 560px;
+	height: auto;
+	margin: 0 auto;
+}
+figure.eep-fig.wide > :is(svg, img) {
+	max-width: none;
+}
+figure.eep-fig figcaption {
+	display: flex;
+	gap: var(--eep-space-3);
+	margin-top: 1.125rem;
+	padding-top: 0.875rem;
+	border-top: var(--eep-border);
+	font-size: var(--eep-text-caption);
+	line-height: 1.55;
+	color: var(--eep-ink-2);
+}
+figure.eep-fig figcaption .eep-fignum {
+	font: 600 var(--eep-text-eyebrow)/1.9 var(--eep-font-serif);
+	color: var(--eep-mute);
+	white-space: nowrap;
+}
+/* In a narrow figure, the figure number sits above the caption text. */
+figure.eep-fig {
+	container: eep-fig / inline-size;
+}
+@container eep-fig (max-width: 25rem) {
+	figure.eep-fig figcaption {
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+}
+/* Below a 316px screen, which on a phone means about 120% zoom or more,
+   the figure padding shrinks, and a long word or a fixed-width part could
+   push a figure wider than the screen. There any word may break and no part
+   keeps a minimum width. From a 320px screen up at 100% zoom this never
+   applies, so figures look the same as before. */
+@media (max-width: 19.75rem) {
+	figure.eep-fig * {
+		min-width: 0;
+		overflow-wrap: anywhere;
+	}
+}
+
+/* ---------- 9. Equations (KaTeX) ---------- */
+.katex {
+	font-size: var(--eep-text-eq);
+	color: var(--eep-ink);
+}
+.katex-display {
+	margin: var(--eep-space-6) 0;
+	overflow-x: auto;
+	overflow-y: hidden;
+	padding: var(--eep-space-2) 0;
+}
+.katex-display > .katex {
+	font-size: 1.45em;
+} /* ≈ 27px display */
+.katex-display .tag {
+	font-family: var(--eep-font-serif);
+	color: var(--eep-mute);
+	font-size: 0.66em;
+}
+.katex .mord.text,
+.katex .text {
+	font-family: var(--eep-font-sans);
+}
+
+/* ---------- 10. Code (Expressive Code styleOverrides cover the frame; these are fallbacks) ---------- */
+.expressive-code .frame {
+	border-radius: var(--eep-radius);
+}
+
+/* ---------- 11. Sidebar / chapter TOC ---------- */
+.sidebar-content a[aria-current='page'] {
+	background: transparent;
+	color: var(--eep-accent);
+	font-weight: 550;
+	box-shadow: inset var(--eep-toc-bar) 0 0 var(--eep-accent);
+	border-radius: 0;
+}
+.sidebar-content a {
+	color: var(--eep-ink);
+}
+/* Sub-page links are small. Starlight's .large marks a top-level link, and its
+   layered rule keeps those at the group-label size. */
+.sidebar-content a:not(.large) {
+	font-size: var(--eep-text-sm);
+}
+/* Inactive TOC entries are secondary; the current one is the accent. */
+starlight-toc a {
+	color: var(--eep-ink-2);
+}
+starlight-toc a[aria-current='true'] {
+	color: var(--eep-accent);
+}
+@media (hover: hover) {
+	:is(.sidebar-content, starlight-toc) a:hover {
+		color: var(--eep-accent);
+	}
+}
+:is(.sidebar-content, starlight-toc) a:focus-visible {
+	color: var(--eep-accent);
+}

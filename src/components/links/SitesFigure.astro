@@ -1,0 +1,123 @@
+---
+// Figure 16.1 as HTML and CSS. The question a student has on the left, and
+// the sites on this page that answer it on the right. Every box gets the same
+// treatment, and the page text says what each site is good for.
+const rows = [
+	{ question: 'What does the job pay?', sites: ['BLS', 'Levels.fyi', 'NACE'] },
+	{
+		question: 'Is my resume right?',
+		sites: ['The r/EngineeringResumes wiki', 'The r/EngineeringResumes forum'],
+	},
+	{
+		question: 'Where are the openings?',
+		sites: [
+			'Company career pages',
+			'LinkedIn Jobs',
+			'Handshake',
+			'USAJOBS and Pathways',
+		],
+	},
+	{
+		question: 'Who can I ask?',
+		sites: ['r/ElectricalEngineering', 'r/ECE', 'r/EngineeringStudents'],
+	},
+];
+const alt =
+	'Four questions, each with the sites that answer it. What does the job pay: BLS, Levels.fyi, and NACE. Is my resume right: the r/EngineeringResumes wiki and forum. Where are the openings: company career pages, LinkedIn Jobs, Handshake, and USAJOBS and Pathways. Who can I ask: r/ElectricalEngineering, r/ECE, and r/EngineeringStudents.';
+---
+
+<figure class="eep-fig wide eep-sites-fig" id="fig-16-1">
+	<p class="eep-kicker">Which site answers which question</p>
+	<p class="sr-only">{alt}</p>
+	<div class="eep-sites not-content" aria-hidden="true">
+		{rows.map((row) => (
+			<div class="eep-sites-row">
+				<p class="eep-sites-q">{row.question}</p>
+				<span class="eep-sites-line" />
+				<ul>
+					{row.sites.map((site) => (
+						<li>{site}</li>
+					))}
+				</ul>
+			</div>
+		))}
+	</div>
+	<figcaption>
+		<span class="eep-fignum">Fig 16.1</span>{' '}
+		<span>
+			Start with the question, then the site. The sections below say what each
+			one is good for and where it misleads.
+		</span>
+	</figcaption>
+</figure>
+
+<style>
+	.eep-sites-fig .eep-kicker {
+		line-height: 1.35;
+	}
+	.eep-sites {
+		margin-top: 1rem;
+		display: grid;
+		gap: 0.75rem;
+		container-type: inline-size;
+		font-family: var(--eep-font-sans);
+		color: var(--eep-ink);
+		--line: 1.5px;
+	}
+	.eep-sites p {
+		margin: 0;
+		max-width: none;
+		overflow-wrap: anywhere;
+	}
+	.eep-sites-row {
+		display: grid;
+		gap: 0.5rem;
+	}
+	.eep-sites .eep-sites-q {
+		padding: 0.5rem 0.65rem;
+		border: 1px solid var(--eep-dg-ink);
+		border-radius: 4px;
+		font-size: 0.875rem;
+		font-weight: 600;
+		line-height: 1.3;
+		background: var(--eep-dg-fill);
+	}
+	.eep-sites ul {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.eep-sites li {
+		margin: 0;
+		max-width: none;
+		padding: 0.35rem 0.6rem;
+		border: 1px solid var(--eep-dg-mute);
+		border-radius: 4px;
+		background: var(--eep-dg-tint);
+		font-size: 0.8125rem;
+		line-height: 1.35;
+	}
+	/* Narrow: a short line drops from the question to its sites. */
+	.eep-sites-line {
+		display: block;
+		width: var(--line);
+		height: 0.5rem;
+		margin-left: 1.25rem;
+		background: var(--eep-dg-ink);
+	}
+	/* Wide: question on the left, a line across, sites on the right. */
+	@container (min-width: 34rem) {
+		.eep-sites-row {
+			grid-template-columns: minmax(0, 11rem) 1.5rem minmax(0, 1fr);
+			align-items: center;
+		}
+		.eep-sites-line {
+			width: 100%;
+			height: var(--line);
+			margin: 0;
+		}
+	}
+</style>
