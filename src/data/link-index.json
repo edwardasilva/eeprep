@@ -241,6 +241,7 @@
     "category": "Sample resumes and templates",
     "summary": "The subreddit's recommended resume templates in LaTeX, Word and Google Docs.",
     "pages": [
+      "advice/authors-story",
       "advice/resume",
       "advice/resume/workshop",
       "help/resources",
@@ -807,7 +808,7 @@
   },
   {
     "url": "https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/",
-    "title": "Cornell ECE 4760: Final project archive since 2004",
+    "title": "Cornell ECE 4760: Final project archive",
     "category": "Tools and project resources",
     "summary": "The Cornell microcontroller course project sites whose section order the Portfolio page follows.",
     "pages": ["advice/projects/portfolio"]
