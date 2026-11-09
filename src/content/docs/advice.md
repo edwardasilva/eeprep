@@ -22,6 +22,7 @@ The advice on these pages is one engineer's opinion, not a set of rules. If you 
   - [[Workshop]] is a timed resume workshop for a class or student group, with a script and handouts.
 - [[Getting hired]] covers referrals, the 20-application rule, career fairs, and where to look.
   - [[Networking]] covers who to ask, the 20-minute informational interview, and the referral request.
+  - [[Job market]] covers what the entry-level market looks like now and what to do differently because of it.
   - [[How to interview]] covers project questions, fundamentals, coding, behavioral stories, and the on-site day.
   - [[First internship]] shows how to land a first internship with no experience.
   - [[First full-time role]] covers senior-year recruiting, return offers, and new-grad programs.

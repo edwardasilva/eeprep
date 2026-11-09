@@ -824,6 +824,7 @@
       "advice/getting-hired",
       "advice/getting-hired/first-internship",
       "advice/getting-hired/how-to-interview",
+      "advice/getting-hired/job-market",
       "advice/getting-hired/networking",
       "advice/resume/simple"
     ]
@@ -1254,6 +1255,13 @@
     "pages": ["help/job-boards"]
   },
   {
+    "url": "https://www.greenhouse.com/newsroom/greenhouse-launches-dream-job-to-fix-job-hunting-and-boost-candidates-chances-of-getting-hired",
+    "title": "Greenhouse: Applications per job up 102%",
+    "category": "Job search and referrals",
+    "summary": "Greenhouse's June 2025 release with its applications-per-job figure.",
+    "pages": ["advice/getting-hired/job-market"]
+  },
+  {
     "url": "https://www.reddit.com/r/ECE/comments/1mojjy7/how_do_you_actually_get_referralsinterviews_for/",
     "title": "r/ECE: Getting referrals for hardware internships",
     "category": "Job search stories from students",
@@ -1339,7 +1347,8 @@
     "summary": "A student sees many summer 2027 internship posts but few new-grad roles.",
     "pages": [
       "advice/getting-hired/first-full-time-role",
-      "advice/getting-hired/first-internship"
+      "advice/getting-hired/first-internship",
+      "advice/getting-hired/job-market"
     ]
   },
   {
@@ -1350,6 +1359,7 @@
     "pages": [
       "advice/getting-hired/first-full-time-role",
       "advice/getting-hired/first-internship",
+      "advice/getting-hired/job-market",
       "help/job-boards"
     ]
   },
@@ -1775,6 +1785,7 @@
     "summary": "Federal data on pay, job outlook and duties for electrical and electronics engineers.",
     "pages": [
       "advice/getting-hired/first-full-time-role",
+      "advice/getting-hired/job-market",
       "advice/projects",
       "help",
       "help/resources"
@@ -1859,7 +1870,7 @@
     "title": "Axios: Handshake data on the class of 2025",
     "category": "Pay and career data",
     "summary": "Handshake's class of 2025 data: postings down 15% and applications per job up 30%.",
-    "pages": ["help/job-boards"]
+    "pages": ["advice/getting-hired/job-market", "help/job-boards"]
   },
   {
     "url": "https://ieee.auburn.edu/?p=34",
@@ -2072,6 +2083,41 @@
     "pages": ["advice/forever-learning/societies"]
   },
   {
+    "url": "https://www.insidehighered.com/node/180526",
+    "title": "Inside Higher Ed: The class of 2025 applies to more jobs",
+    "category": "Pay and career data",
+    "summary": "Handshake's count of applications per student for the class of 2025.",
+    "pages": ["advice/getting-hired/job-market"]
+  },
+  {
+    "url": "https://d341ezm4iqaae0.cloudfront.net/ews/20250925161702/Indeed-Tech-Talent-Report-2025-US.pdf",
+    "title": "Indeed Hiring Lab: Tech talent report 2025",
+    "category": "Pay and career data",
+    "summary": "Indeed's 2025 report on US tech postings against the 2020 baseline.",
+    "pages": ["advice/getting-hired/job-market"]
+  },
+  {
+    "url": "https://www.dice.com/recruiting/ebooks/dice-tech-job-report",
+    "title": "Dice: Tech job report",
+    "category": "Pay and career data",
+    "summary": "Dice's end-of-2025 figures on entry-level tech postings.",
+    "pages": ["advice/getting-hired/job-market"]
+  },
+  {
+    "url": "https://naceweb.org/about-us/press/2026/more-than-two-out-of-five-of-college-class-of-2026-had-a-job-offer-in-hand-by-graduation",
+    "title": "NACE: Two in five of the class of 2026 had an offer by graduation",
+    "category": "Pay and career data",
+    "summary": "NACE's 2026 student survey on offers before graduation.",
+    "pages": ["advice/getting-hired/job-market"]
+  },
+  {
+    "url": "https://naceweb.org/about-us/press/class-of-2025-college-grads-responded-to-challenges-of-a-tough-job-market",
+    "title": "NACE: The class of 2025 in a tough job market",
+    "category": "Pay and career data",
+    "summary": "NACE on when the class of 2025 started its search.",
+    "pages": ["advice/getting-hired/job-market"]
+  },
+  {
     "url": "https://www.ieee.org/membership/join",
     "title": "IEEE student membership",
     "category": "Communities",
@@ -2216,7 +2262,7 @@
     "title": "Workday: Global workforce report, September 2024",
     "category": "AI in the job search",
     "summary": "Workday's count of applications against openings in the first half of 2024.",
-    "pages": ["advice/getting-hired"]
+    "pages": ["advice/getting-hired", "advice/getting-hired/job-market"]
   },
   {
     "url": "https://blog.loopcv.pro/5-problems-that-can-happen-when-you-automate-job-applications/",

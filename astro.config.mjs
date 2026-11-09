@@ -322,6 +322,10 @@ export default defineConfig({
 									slug: 'advice/getting-hired/networking',
 								},
 								{
+									label: 'Job market',
+									slug: 'advice/getting-hired/job-market',
+								},
+								{
 									label: 'How to interview',
 									slug: 'advice/getting-hired/how-to-interview',
 								},
