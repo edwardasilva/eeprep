@@ -15,7 +15,7 @@ Hiring managers read hundreds of resumes and are reading for sameness. A page th
 9. Bolded lead-in labels. "Scalability: the system scales." Never bold a word inside a bullet.
 10. Em dashes and en dashes doing a comma's job. Use a comma or split the sentence.
 11. "Not only... but also." Split it into two plain bullets or state the stronger one.
-12. Smoothed facts. If the user said "AVX-512 vectorization gave a 1.6x speedup on the FIR filter", do not hand back "optimized software to improve performance". Put the specifics back.
+12. Smoothed facts. If the user said "AVX-512 vectorization gave a 1.6x speedup on legacy DSP code", do not hand back "optimized software to improve performance". Put the specifics back.
 
 ## Words to cut on sight
 
