@@ -18,7 +18,7 @@
     "title": "Colorado School of Mines: Resumes and cover letters",
     "category": "Resume guides",
     "summary": "Mines career center guidance on resumes and cover letters for engineering students.",
-    "pages": ["advice/resume/workshop"]
+    "pages": ["advice/resume", "advice/resume/workshop"]
   },
   {
     "url": "https://bizcareers.colostate.edu/resources/what-is-an-applicant-tracking-system-ats/",
@@ -124,7 +124,11 @@
     "title": "MIT CAPD: Resumes",
     "category": "Resume guides",
     "summary": "MIT's career office guide to writing, formatting and proofreading a resume.",
-    "pages": ["advice/resume/cleanup", "advice/resume/workshop"]
+    "pages": [
+      "advice/resume",
+      "advice/resume/cleanup",
+      "advice/resume/workshop"
+    ]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringResumes/wiki/index/",

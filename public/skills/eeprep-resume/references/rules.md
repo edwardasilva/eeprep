@@ -6,7 +6,7 @@ From [eeprep's resume page](https://eeprep.com/advice/resume/), which condenses 
 
 - One page. The wiki allows a second page at about 10 years of experience.
 - One column. No icons, images, graphics, photo, logos, tables, or text boxes.
-- Black text. 0.5 in margins (the wiki allows 0.4 in). Line spacing of at least 1.07.
+- Black text. Line spacing of at least 1.07.
 - No justified text. No hand indents.
 - Every date right-aligned to the right margin.
 - Bold only on section titles, entry titles, and the coursework, activities, and skills labels. Never on a keyword inside a bullet.

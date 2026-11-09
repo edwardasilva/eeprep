@@ -9,7 +9,7 @@
   "settings": {
     "sectionOrder": ["education", "projects", "experience", "skills"],
     "font": "libertinus",
-    "dateStyle": { "education": "semester", "projects": "semester", "experience": "month" }
+    "dateStyle": { "education": "semester", "projects": "semester", "experience": "semester" }
   },
   "header": {
     "name": "Alex Doe",
@@ -47,8 +47,8 @@
       "title": "Sales Associate",
       "company": "Retail store",
       "location": "Springfield, ST",
-      "start": "June 2023",
-      "end": "Aug 2024",
+      "start": "Summer 2023",
+      "end": "Summer 2024",
       "engineering": false,
       "bullets": []
     }
