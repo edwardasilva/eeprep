@@ -322,25 +322,25 @@ body {
 		--eep-gutter: 1.5rem;
 	}
 }
-/* Starlight pushes the column against the right sidebar (margin auto 0),
-   which leaves all the spare room on the left. Center it instead. */
+/* Starlight makes the right sidebar wider than the left one and pushes the column against it,
+   so the column sits left of the window center. Give the table of contents the same width as the
+   nav and center the column in what is left. The column's center is then the window's center. */
 @media (min-width: 72rem) {
+	:root[data-has-sidebar][data-has-toc] .right-sidebar-container {
+		width: var(--sl-sidebar-width);
+	}
+
 	:root[data-has-sidebar][data-has-toc] .main-pane {
 		--sl-content-margin-inline: auto;
+
+		width: calc(100% - var(--sl-sidebar-width));
 	}
 
 	/* A page with no table of contents puts its column where a page with one does, so the text
-	   starts at the same place on every page. The end padding is the width Starlight gives the
-	   table of contents, and the rule under the title still runs to the edge of the window. */
+	   starts at the same place on every page. The end padding is the width of the table of
+	   contents, and the rule under the title still runs to the edge of the window. */
 	:root[data-has-sidebar]:not([data-has-toc]) .content-panel {
-		padding-inline-end: calc(
-			var(--sl-content-pad-x) +
-				max(
-					var(--sl-sidebar-width),
-					var(--sl-sidebar-width) +
-						(100% - var(--sl-content-width) - var(--sl-sidebar-width)) / 2
-				)
-		);
+		padding-inline-end: calc(var(--sl-content-pad-x) + var(--sl-sidebar-width));
 	}
 }
 
