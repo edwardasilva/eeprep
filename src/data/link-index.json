@@ -807,13 +807,6 @@
     "pages": ["advice/projects/portfolio"]
   },
   {
-    "url": "https://en.wikipedia.org/wiki/IEEEXtreme",
-    "title": "Wikipedia: IEEEXtreme",
-    "category": "Tools and project resources",
-    "summary": "The 24-hour IEEE student programming contest and what it takes to enter.",
-    "pages": ["advice/forever-learning/societies"]
-  },
-  {
     "url": "https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/",
     "title": "Cornell ECE 4760: Final project archive",
     "category": "Tools and project resources",
@@ -1187,7 +1180,7 @@
     "url": "https://we25.swe.org/schedule-highlight/career-fair/",
     "title": "SWE: The WE25 career fair",
     "category": "Job search and referrals",
-    "summary": "SWE's 2025 conference career fair, with more than 400 organizations.",
+    "summary": "SWE's 2025 conference career fair, with hundreds of organizations.",
     "pages": [
       "advice/forever-learning/societies",
       "advice/getting-hired/networking"
@@ -1293,6 +1286,27 @@
     "category": "Job search and referrals",
     "summary": "Greenhouse's June 2025 release with its applications-per-job figure.",
     "pages": ["advice/getting-hired/job-market"]
+  },
+  {
+    "url": "https://capd.mit.edu/resources/conducting-informational-interviews/",
+    "title": "MIT CAPD: Conducting informational interviews",
+    "category": "Job search and referrals",
+    "summary": "Career-center guide to informational interviews, including thank-you notes.",
+    "pages": ["advice/getting-hired/networking"]
+  },
+  {
+    "url": "https://userapps.support.sap.com/sap/support/knowledge/en/2609981",
+    "title": "SAP SuccessFactors: Refer a Friend error when candidate already applied",
+    "category": "Job search and referrals",
+    "summary": "Knowledge article: a candidate with an active application cannot be referred to the same requisition.",
+    "pages": ["advice/getting-hired"]
+  },
+  {
+    "url": "https://www.linkedin.com/help/linkedin/answer/a563153",
+    "title": "LinkedIn Help: Personalize invitations to connect",
+    "category": "Job search and referrals",
+    "summary": "LinkedIn help article on personalized connection notes.",
+    "pages": ["advice/getting-hired/networking"]
   },
   {
     "url": "https://www.reddit.com/r/ECE/comments/1mojjy7/how_do_you_actually_get_referralsinterviews_for/",
@@ -1910,38 +1924,10 @@
     "pages": ["advice/getting-hired/job-market", "help/job-boards"]
   },
   {
-    "url": "https://ieee.auburn.edu/?p=34",
-    "title": "IEEE Auburn student branch: Join IEEE",
-    "category": "Pay and career data",
-    "summary": "A student branch page giving the US student rate of $32 a year.",
-    "pages": ["advice/forever-learning/societies"]
-  },
-  {
-    "url": "https://www.ieee.org/membership/join/dues.html",
-    "title": "IEEE: Membership dues",
-    "category": "Pay and career data",
-    "summary": "IEEE's own dues page, where the current student rate is.",
-    "pages": ["advice/forever-learning/societies"]
-  },
-  {
     "url": "https://hkn.ieee.org/knowledge-base/what-is-the-cost-of-an-induction?seq_no=2",
     "title": "IEEE-HKN: The cost of an induction",
     "category": "Pay and career data",
-    "summary": "HKN's one-time student induction fee and what it includes.",
-    "pages": ["advice/forever-learning/societies"]
-  },
-  {
-    "url": "https://www.andrew.cmu.edu/user/tbp/initiation.html",
-    "title": "Tau Beta Pi at Carnegie Mellon: Initiation",
-    "category": "Pay and career data",
-    "summary": "One chapter's one-time initiation fee.",
-    "pages": ["advice/forever-learning/societies"]
-  },
-  {
-    "url": "https://tbp.eng.uci.edu/content/initiation-requirements",
-    "title": "Tau Beta Pi at UC Irvine: Initiation requirements",
-    "category": "Pay and career data",
-    "summary": "Another chapter's one-time initiation fee.",
+    "summary": "What IEEE-HKN induction includes.",
     "pages": ["advice/forever-learning/societies"]
   },
   {
@@ -1962,49 +1948,21 @@
     "url": "https://swe.org/membership/collegiate-membership/",
     "title": "SWE: Collegiate membership",
     "category": "Pay and career data",
-    "summary": "SWE's student dues and membership year.",
+    "summary": "SWE's collegiate membership.",
     "pages": ["advice/forever-learning/societies"]
   },
   {
-    "url": "https://swe.org/membership",
-    "title": "SWE: Membership",
+    "url": "https://nsbe.org/collegiate/",
+    "title": "NSBE: Collegiate membership",
     "category": "Pay and career data",
-    "summary": "SWE's membership options, including the one-time college-plus-first-year payment.",
-    "pages": ["advice/forever-learning/societies"]
-  },
-  {
-    "url": "https://www.nsbe.org/membership/graduate-students-membership",
-    "title": "NSBE: Collegiate and graduate membership",
-    "category": "Pay and career data",
-    "summary": "NSBE's national dues for students.",
-    "pages": ["advice/forever-learning/societies"]
-  },
-  {
-    "url": "https://shpe.umbc.edu/membership/types/",
-    "title": "SHPE at UMBC: Membership types",
-    "category": "Pay and career data",
-    "summary": "A chapter page giving SHPE's undergraduate dues.",
-    "pages": ["advice/forever-learning/societies"]
-  },
-  {
-    "url": "https://shpe.org/membership/become-a-member/member-faqs/",
-    "title": "SHPE: Member FAQs",
-    "category": "Pay and career data",
-    "summary": "SHPE's membership questions, including reciprocal discounts.",
+    "summary": "NSBE's collegiate membership, through a campus chapter or at large.",
     "pages": ["advice/forever-learning/societies"]
   },
   {
     "url": "https://spie.org/membership/member-benefits",
     "title": "SPIE: Member benefits",
     "category": "Pay and career data",
-    "summary": "SPIE's student dues and benefits.",
-    "pages": ["advice/forever-learning/societies"]
-  },
-  {
-    "url": "https://creol.ucf.edu/wp-content/uploads/sites/2/2024/10/OPTICA-Membership-Dues-Guidline.pdf.pdf",
-    "title": "UCF CREOL: Optica dues guideline",
-    "category": "Pay and career data",
-    "summary": "A chapter guideline giving Optica's student dues.",
+    "summary": "SPIE's student membership benefits.",
     "pages": ["advice/forever-learning/societies"]
   },
   {
@@ -2033,13 +1991,6 @@
     "title": "NACE: Class of 2026 salary projections",
     "category": "Pay and career data",
     "summary": "NACE's Winter 2026 projection for engineering master's graduates.",
-    "pages": ["advice/forever-learning/graduate-study"]
-  },
-  {
-    "url": "https://spectrum.ieee.org/salary",
-    "title": "IEEE Spectrum: Engineers' salaries up in 2023",
-    "category": "Pay and career data",
-    "summary": "IEEE-USA's 2024 survey medians by degree, as reported by Spectrum.",
     "pages": ["advice/forever-learning/graduate-study"]
   },
   {
@@ -2162,11 +2113,18 @@
     "pages": ["advice/getting-hired/job-market"]
   },
   {
+    "url": "https://insight.ieeeusa.org/articles/ieee-usa-releases-2024-salary-benefits-report/",
+    "title": "IEEE-USA InSight: 2024 Salary & Benefits Report released",
+    "category": "Pay and career data",
+    "summary": "IEEE-USA salary report summary used on the graduate study page.",
+    "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
     "url": "https://www.ieee.org/membership/join",
-    "title": "IEEE student membership",
+    "title": "IEEE: Student membership",
     "category": "Communities",
-    "summary": "IEEE's page on student membership, benefits and student branches.",
-    "pages": ["advice/forever-learning"]
+    "summary": "IEEE's student membership page.",
+    "pages": ["advice/forever-learning", "advice/forever-learning/societies"]
   },
   {
     "url": "https://www.reddit.com/r/ECE/",
@@ -2207,7 +2165,7 @@
     "url": "https://www.reddit.com/r/ECE/comments/1j4yzv6/how_do_i_benefit_the_most_from_an_ieee_membership/",
     "title": "r/ECE: How do I benefit the most from an IEEE membership",
     "category": "Communities",
-    "summary": "An engineer with 25 years in the field on when IEEE dues stop paying off.",
+    "summary": "An engineer with 25 years in the field on when IEEE membership stops paying off.",
     "pages": ["advice/forever-learning/societies"]
   },
   {
@@ -2230,6 +2188,27 @@
     "category": "Communities",
     "summary": "RF engineers on which RF design roles expect a PhD.",
     "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
+    "url": "https://2024.ieeeannualreport.org/empowering-the-next-generation/",
+    "title": "IEEE Annual Report 2024: Empowering the next generation",
+    "category": "Communities",
+    "summary": "IEEEXtreme 18.0 in 2024: 19,916 participants in 8,793 teams.",
+    "pages": ["advice/forever-learning/societies"]
+  },
+  {
+    "url": "https://shpe.org/membership/become-a-member/",
+    "title": "SHPE: Become a member",
+    "category": "Communities",
+    "summary": "SHPE's membership page, including the reciprocal discount with SWE.",
+    "pages": ["advice/forever-learning/societies"]
+  },
+  {
+    "url": "https://www.optica.org/get_involved/students/",
+    "title": "Optica: Students",
+    "category": "Communities",
+    "summary": "Optica's students page, including student membership.",
+    "pages": ["advice/forever-learning/societies"]
   },
   {
     "url": "https://github.com/edwardasilva/eeprep/blob/main/.github/CONTRIBUTING.md",
