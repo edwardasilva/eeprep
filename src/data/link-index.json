@@ -41,7 +41,6 @@
     "summary": "Greenhouse explains the steps an application goes through after you submit it.",
     "pages": [
       "advice/getting-hired",
-      "advice/getting-hired/how-to-interview",
       "advice/resume",
       "advice/resume/quick-setup",
       "help/ai-use",
@@ -159,6 +158,20 @@
     "pages": ["advice/resume"]
   },
   {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1cms7al/random_thoughts_on_resumes/",
+    "title": "r/EngineeringResumes: Random thoughts on resumes",
+    "category": "Resume guides",
+    "summary": "A chief engineer's advice on a master resume, tailored versions, and a generic career-fair resume.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://www.askamanager.org/2014/01/do-you-need-multiple-versions-of-your-resume.html",
+    "title": "Ask a Manager: Do you need multiple versions of your resume?",
+    "category": "Resume guides",
+    "summary": "Alison Green on when multiple resume versions make sense.",
+    "pages": ["advice/resume"]
+  },
+  {
     "url": "https://drexel.edu/scdc/~/media/Drexel/EMSS-Site-Group/SCDC/Documents/best-practices/resumes/Electrical-and-Computer-Engineering.pdf",
     "title": "Drexel: Electrical and computer engineering sample resume",
     "category": "Sample resumes and templates",
@@ -256,8 +269,8 @@
     "pages": ["advice/resume", "advice/resume/workshop"]
   },
   {
-    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/alex.pdf",
-    "title": "resume-generator: alex.pdf",
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Alex-Doe-Resume.pdf",
+    "title": "resume-generator: Alex-Doe-Resume.pdf",
     "category": "Sample resumes and templates",
     "summary": "Alex Doe's finished one-page resume, the PDF behind Figure 4.4.",
     "pages": ["advice/resume/walkthrough"]
@@ -270,29 +283,29 @@
     "pages": ["advice/resume/walkthrough"]
   },
   {
-    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/first-year.pdf",
-    "title": "resume-generator: first-year.pdf",
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Jordan-Doe-Resume.pdf",
+    "title": "resume-generator: Jordan-Doe-Resume.pdf",
     "category": "Sample resumes and templates",
     "summary": "A first-year student's page: one class project, a one-line job, and a few skills.",
     "pages": ["advice/resume/walkthrough"]
   },
   {
-    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/sophomore.pdf",
-    "title": "resume-generator: sophomore.pdf",
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Sam-Doe-Resume.pdf",
+    "title": "resume-generator: Sam-Doe-Resume.pdf",
     "category": "Sample resumes and templates",
     "summary": "A second-year student's page: two projects, a club lead role, and a one-line job.",
     "pages": ["advice/resume/walkthrough"]
   },
   {
-    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/new-grad.pdf",
-    "title": "resume-generator: new-grad.pdf",
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Taylor-Doe-Resume.pdf",
+    "title": "resume-generator: Taylor-Doe-Resume.pdf",
     "category": "Sample resumes and templates",
     "summary": "A new graduate's page with two internships, experience first.",
     "pages": ["advice/resume/walkthrough"]
   },
   {
-    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/packed.pdf",
-    "title": "resume-generator: packed.pdf",
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Casey-Doe-Resume.pdf",
+    "title": "resume-generator: Casey-Doe-Resume.pdf",
     "category": "Sample resumes and templates",
     "summary": "A full page with three engineering roles and three projects, tightened to fit.",
     "pages": ["advice/resume/walkthrough"]
@@ -758,34 +771,6 @@
     "pages": ["advice/projects/portfolio"]
   },
   {
-    "url": "https://byronbradley.me/",
-    "title": "Byron Bradley: EE portfolio",
-    "category": "Tools and project resources",
-    "summary": "A junior's one-page portfolio with a measured number and a limitations paragraph on each project.",
-    "pages": ["advice/projects/portfolio"]
-  },
-  {
-    "url": "https://yasamankhe.github.io/",
-    "title": "Yasaman Kheradmand: EE portfolio",
-    "category": "Tools and project resources",
-    "summary": "One page per project, with PCB renders, a schematic PDF, and a bring-up video on a rover lighting controller.",
-    "pages": ["advice/projects/portfolio"]
-  },
-  {
-    "url": "https://panosdimts.github.io/EE-portfolio/",
-    "title": "Panos Dimtsoudis: EE portfolio",
-    "category": "Tools and project resources",
-    "summary": "A portfolio that opens with predictions against results and keeps a What broke note, with the site built using AI tools.",
-    "pages": ["advice/projects/portfolio"]
-  },
-  {
-    "url": "https://zaidsaifan-star.github.io/",
-    "title": "Zaid Saifan: EE portfolio",
-    "category": "Tools and project resources",
-    "summary": "Six projects with named sections, and an example of design targets shown where measurements belong.",
-    "pages": ["advice/projects/portfolio"]
-  },
-  {
     "url": "https://ece4760.github.io/Projects/Projects.html",
     "title": "Cornell ECE 4760: final project archive",
     "category": "Tools and project resources",
@@ -821,10 +806,10 @@
     "pages": ["advice/projects/portfolio"]
   },
   {
-    "url": "https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/s2004/mx23/myweb/index.htm",
-    "title": "Cornell ECE 4760: A student final project site",
+    "url": "https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/",
+    "title": "Cornell ECE 4760: Final project archive",
     "category": "Tools and project resources",
-    "summary": "One of the Cornell microcontroller course project sites whose section order the Portfolio page follows.",
+    "summary": "The Cornell microcontroller course project sites whose section order the Portfolio page follows.",
     "pages": ["advice/projects/portfolio"]
   },
   {
@@ -849,7 +834,6 @@
     "pages": [
       "advice/getting-hired",
       "advice/getting-hired/first-internship",
-      "advice/getting-hired/how-to-interview",
       "advice/getting-hired/job-market",
       "advice/getting-hired/networking",
       "advice/resume/quick-setup"
@@ -955,13 +939,6 @@
       "advice/getting-hired/first-full-time-role",
       "advice/resume/quick-setup"
     ]
-  },
-  {
-    "url": "https://iso.mit.edu/",
-    "title": "MIT International Students Office",
-    "category": "Job search and referrals",
-    "summary": "Example of a university international office that advises students on immigration rules.",
-    "pages": ["roadmap"]
   },
   {
     "url": "https://ecs.osu.edu/employers/recruiting-guidelines-policies/hiring-students",
@@ -1101,7 +1078,7 @@
     "title": "USCIS",
     "category": "Job search and referrals",
     "summary": "US Citizenship and Immigration Services, the federal agency for immigration and work authorization.",
-    "pages": ["advice", "roadmap"]
+    "pages": ["advice"]
   },
   {
     "url": "https://ocs.yale.edu/industry-hiring-timelines/",
@@ -1840,6 +1817,55 @@
     "pages": ["advice/getting-hired/how-to-interview"]
   },
   {
+    "url": "https://career.engin.umich.edu/technical-interviews",
+    "title": "Michigan Engineering: Technical interview resources",
+    "category": "Interview prep",
+    "summary": "Michigan's advice for technical interviews: think out loud, ask when stuck, use the whiteboard.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://capd.mit.edu/resources/a-guide-to-interview-timelines-and-structure/",
+    "title": "MIT CAPD: Interview timelines and structure",
+    "category": "Interview prep",
+    "summary": "MIT's overview of how interview timelines vary by company and industry.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://hdlbits.01xz.net/wiki/Main_Page",
+    "title": "HDLBits: Verilog practice",
+    "category": "Interview prep",
+    "summary": "Verilog practice problems that run in the browser.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://chipverify.com/interview-questions",
+    "title": "ChipVerify: Interview questions",
+    "category": "Interview prep",
+    "summary": "ASIC design and verification interview questions for digital roles.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://sites.gatech.edu/careercenterdev/files/2024/09/Interviewing_Career-Guide.pdf",
+    "title": "Georgia Tech: Interview Ready guide",
+    "category": "Interview prep",
+    "summary": "Georgia Tech's guide to interview formats, sample questions, and STAR answers.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://capd.mit.edu/resources/sample-interview-questions/",
+    "title": "MIT CAPD: Sample interview questions",
+    "category": "Interview prep",
+    "summary": "MIT's list of sample interview questions to practice with.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://github.com/mikinty/Hardware-Engineer-Interview-Questions",
+    "title": "GitHub: Hardware engineer interview questions",
+    "category": "Interview prep",
+    "summary": "A community list of hardware interview questions by topic.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
     "url": "https://www.bls.gov/ooh/architecture-and-engineering/electrical-and-electronics-engineers.htm",
     "title": "BLS: Electrical and electronics engineers",
     "category": "Pay and career data",
@@ -2235,7 +2261,7 @@
     "url": "https://github.com/edwardasilva/eeprep/issues/new/choose",
     "title": "eeprep issue forms",
     "category": "Site",
-    "summary": "Forms to ask for a page, report a site bug, or report a technical error.",
+    "summary": "Forms to suggest an idea or report something to fix.",
     "pages": ["roadmap/contributing"]
   },
   {
