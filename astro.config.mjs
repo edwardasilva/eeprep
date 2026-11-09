@@ -310,6 +310,7 @@ export default defineConfig({
 								{ label: 'Simple', slug: 'advice/resume/simple' },
 								{ label: 'Walkthrough', slug: 'advice/resume/walkthrough' },
 								{ label: 'Cleanup', slug: 'advice/resume/cleanup' },
+								{ label: 'Portfolio', slug: 'advice/resume/portfolio' },
 								{ label: 'Workshop', slug: 'advice/resume/workshop' },
 							],
 						},
@@ -317,6 +318,10 @@ export default defineConfig({
 							label: 'Getting hired',
 							items: [
 								{ label: 'Getting hired', slug: 'advice/getting-hired' },
+								{
+									label: 'Networking',
+									slug: 'advice/getting-hired/networking',
+								},
 								{
 									label: 'How to interview',
 									slug: 'advice/getting-hired/how-to-interview',
@@ -331,13 +336,28 @@ export default defineConfig({
 								},
 							],
 						},
-						{ label: 'Forever learning', slug: 'advice/forever-learning' },
+						{
+							label: 'Forever learning',
+							items: [
+								{ label: 'Forever learning', slug: 'advice/forever-learning' },
+								{
+									label: 'Graduate study',
+									slug: 'advice/forever-learning/graduate-study',
+								},
+								{
+									label: 'Professional societies',
+									slug: 'advice/forever-learning/societies',
+								},
+							],
+						},
 					],
 				},
 				{
 					label: 'Help',
 					items: [
 						{ label: 'Help', slug: 'help' },
+						{ label: 'Job boards', slug: 'help/job-boards' },
+						{ label: 'Repositories and resources', slug: 'help/resources' },
 						{ label: 'AI use', slug: 'help/ai-use' },
 						{ label: 'Sources', slug: 'help/all-links' },
 						{ label: 'Contributing', slug: 'help/contributing' },

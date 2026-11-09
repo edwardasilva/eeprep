@@ -1,0 +1,116 @@
+---
+// Figure 22.1 as HTML and CSS. How a curated list fits the search: the list
+// finds the role, the employer's page confirms it, a referral comes next, and
+// the application goes in on the employer's site. Four equal steps.
+const steps = [
+	{ title: 'Find it on a list', body: 'A curated repo or a daily list.' },
+	{
+		title: "Open the employer's page",
+		body: 'Check that the role is still open and read the real text.',
+	},
+	{
+		title: 'Ask for a referral',
+		body: 'Someone inside, before you apply.',
+	},
+	{
+		title: 'Apply at the source',
+		body: 'On the company site, within two weeks.',
+	},
+];
+const alt =
+	"Four steps in order. Find it on a list, a curated repo or a daily list. Open the employer's page to check that the role is still open and read the real text. Ask for a referral from someone inside before you apply. Apply at the source, on the company site, within two weeks.";
+const arrow = 'M1 1.5L9 5L1 8.5Z';
+---
+
+<figure class="eep-fig wide eep-l2a-fig" id="fig-22-1">
+	<p class="eep-kicker">From a list to an application</p>
+	<p class="sr-only">{alt}</p>
+	<div class="eep-l2a not-content" aria-hidden="true">
+		<ol>
+			{steps.map((s, i) => (
+				<li>
+					<p class="eep-l2a-title">{s.title}</p>
+					<p class="eep-l2a-body">{s.body}</p>
+					{i !== steps.length - 1 && (
+						<svg class="eep-l2a-arrow" viewBox="0 0 10 10" focusable="false">
+							<path d={arrow} />
+						</svg>
+					)}
+				</li>
+			))}
+		</ol>
+	</div>
+	<figcaption>
+		<span class="eep-fignum">Fig 22.1</span>{' '}
+		<span>
+			A list is for finding. The employer's page is for applying. The Getting
+			hired page has the referral script and the two-week rule.
+		</span>
+	</figcaption>
+</figure>
+
+<style>
+	.eep-l2a {
+		margin-top: 1rem;
+		container-type: inline-size;
+		font-family: var(--eep-font-sans);
+		color: var(--eep-ink);
+		--tint: color-mix(in srgb, var(--eep-dg-ink) 6%, var(--eep-dg-fill));
+	}
+	.eep-l2a p {
+		margin: 0;
+		max-width: none;
+		overflow-wrap: anywhere;
+	}
+	.eep-l2a ol {
+		display: grid;
+		gap: 1rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.eep-l2a li {
+		position: relative;
+		display: grid;
+		gap: 0.25rem;
+		align-content: start;
+		margin: 0;
+		max-width: none;
+		padding: 0.6rem 0.75rem;
+		border: 1px solid var(--eep-dg-mute);
+		border-radius: 4px;
+		background: var(--tint);
+	}
+	.eep-l2a-title {
+		font-size: 0.9375rem;
+		font-weight: 600;
+		line-height: 1.3;
+	}
+	.eep-l2a-body {
+		font-size: 0.8125rem;
+		line-height: 1.45;
+		color: var(--eep-ink-2);
+	}
+	/* Narrow: the arrow points down from the box to the next one. */
+	.eep-l2a-arrow {
+		position: absolute;
+		left: 50%;
+		bottom: -0.85rem;
+		width: 0.7rem;
+		height: 0.7rem;
+		transform: translateX(-50%) rotate(90deg);
+		fill: var(--eep-dg-ink);
+	}
+	@container (min-width: 36rem) {
+		.eep-l2a ol {
+			grid-template-columns: repeat(4, 1fr);
+		}
+		.eep-l2a-arrow {
+			left: auto;
+			right: -0.85rem;
+			top: 50%;
+			bottom: auto;
+			transform: translateY(-50%);
+		}
+	}
+</style>

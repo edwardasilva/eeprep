@@ -1,0 +1,104 @@
+---
+// Figure 18.1 as HTML and CSS. Where a job listing comes from, in three
+// columns: the employer posted it, the employer posted it and others copied
+// it, or it is a copy. Every column gets the same box. The page text says which
+// one to trust.
+const columns = [
+	{
+		title: 'The employer posted it',
+		body: 'Company career pages, Handshake, USAJOBS, the IEEE Job Site.',
+		note: 'Closes when the role closes.',
+	},
+	{
+		title: 'Posted and copied',
+		body: 'LinkedIn Jobs and Indeed mix direct posts with listings they index.',
+		note: 'A copy can outlive the role.',
+	},
+	{
+		title: 'A copy',
+		body: 'Scraped lists such as the Simplify repos, staffing agencies, and boards that repost.',
+		note: 'Good for finding. Apply at the source.',
+	},
+];
+const alt =
+	'Three boxes. One, the employer posted it: company career pages, Handshake, USAJOBS, and the IEEE Job Site. It closes when the role closes. Two, posted and copied: LinkedIn Jobs and Indeed mix direct posts with listings they index, and a copy can outlive the role. Three, a copy: scraped lists such as the Simplify repos, staffing agencies, and boards that repost. Good for finding, but apply at the source.';
+---
+
+<figure class="eep-fig wide eep-listing-fig" id="fig-18-1">
+	<p class="eep-kicker">Where a listing comes from</p>
+	<p class="sr-only">{alt}</p>
+	<div class="eep-listing not-content" aria-hidden="true">
+		<ol>
+			{columns.map((c) => (
+				<li>
+					<p class="eep-listing-title">{c.title}</p>
+					<p class="eep-listing-body">{c.body}</p>
+					<p class="eep-listing-note">{c.note}</p>
+				</li>
+			))}
+		</ol>
+	</div>
+	<figcaption>
+		<span class="eep-fignum">Fig 18.1</span>{' '}
+		<span>
+			The further a listing sits from the employer, the more likely it is stale.
+			Find the role anywhere, then confirm it and apply on the employer's own
+			page.
+		</span>
+	</figcaption>
+</figure>
+
+<style>
+	.eep-listing {
+		margin-top: 1rem;
+		container-type: inline-size;
+		font-family: var(--eep-font-sans);
+		color: var(--eep-ink);
+		--tint: color-mix(in srgb, var(--eep-dg-ink) 6%, var(--eep-dg-fill));
+	}
+	.eep-listing p {
+		margin: 0;
+		max-width: none;
+		overflow-wrap: anywhere;
+	}
+	.eep-listing ol {
+		display: grid;
+		gap: 0.75rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.eep-listing li {
+		display: grid;
+		gap: 0.3rem;
+		align-content: start;
+		margin: 0;
+		max-width: none;
+		padding: 0.6rem 0.75rem;
+		border: 1px solid var(--eep-dg-mute);
+		border-radius: 4px;
+		background: var(--tint);
+	}
+	.eep-listing-title {
+		font-size: 0.9375rem;
+		font-weight: 600;
+		line-height: 1.3;
+	}
+	.eep-listing-body {
+		font-size: 0.8125rem;
+		line-height: 1.45;
+		color: var(--eep-ink-2);
+	}
+	.eep-listing-note {
+		margin-top: 0.2rem;
+		padding-top: 0.35rem;
+		border-top: 1px solid var(--eep-dg-mute);
+		font-size: 0.8125rem;
+		line-height: 1.4;
+	}
+	@container (min-width: 36rem) {
+		.eep-listing ol {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+</style>

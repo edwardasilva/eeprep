@@ -18,11 +18,15 @@ The advice on these pages is one engineer's opinion, not a set of rules. If you 
   - [[Simple]] is the whole guide on one page, in seven steps.
   - [[Walkthrough]] takes one student's resume from a first draft to a finished PDF, with four more finished pages.
   - [[Cleanup]] is the audit to run on the PDF before you send it.
+  - [[Portfolio]] covers a free project site and a LinkedIn profile that recruiters find.
   - [[Workshop]] is a timed resume workshop for a class or student group, with a script and handouts.
 - [[Getting hired]] covers referrals, the 20-application rule, career fairs, and where to look.
+  - [[Networking]] covers who to ask, the 20-minute informational interview, and the referral request.
   - [[How to interview]] covers project questions, fundamentals, coding, behavioral stories, and the on-site day.
   - [[First internship]] shows how to land a first internship with no experience.
   - [[First full-time role]] covers senior-year recruiting, return offers, and new-grad programs.
-- [[Forever learning]] covers datasheets and errata, free courses, IEEE, the FE exam and PE license, and employer tuition help.
+- [[Forever learning]] covers datasheets and errata, free courses, the FE exam and PE license, and employer tuition help.
+  - [[Graduate study]] covers when a master's or PhD pays off for an EE, and how students pay for one.
+  - [[Professional societies]] covers what IEEE, the honor societies, and SWE, NSBE, and SHPE cost and give you.
 
-[[About]] tells how I got my first full-time engineering job. [[AI use]], under [[Help]], covers where an AI tool helps in the search and where it costs you.
+[[About]] tells how I got my first full-time engineering job. Under [[Help]], [[Job boards]] says where each board misleads, [[Repositories and resources]] lists the repos and lists this site leans on, and [[AI use]] covers where an AI tool helps in the search and where it costs you.
