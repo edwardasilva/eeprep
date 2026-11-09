@@ -155,6 +155,86 @@ button[data-open-modal] kbd {
 	color: var(--eep-ink-2);
 	font-size: 0.9375rem;
 }
+.eep-home {
+	display: grid;
+	gap: 2.5rem;
+	margin-top: 1.5rem;
+	counter-reset: eep-fig;
+}
+/* Starlight adds a top margin to every block after the first. In this grid
+   it would drop the cards 16px below the figure at 1280. */
+.eep-home > *,
+.eep-home-main > .eep-cards {
+	margin-top: 0;
+}
+.eep-cover {
+	/* The figure sits on the paper. Set both: the tint is computed at :root. */
+	--eep-dg-fill: var(--eep-paper);
+	--eep-dg-tint: color-mix(in srgb, var(--eep-dg-ink) 6%, var(--eep-paper));
+	container-type: inline-size;
+	counter-increment: eep-fig;
+	width: 100%;
+	max-width: 40rem;
+	margin: 0;
+}
+.eep-cover > svg {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.eep-cover > .eep-cover-full {
+	display: none;
+}
+.eep-cover > .eep-cover-mobile {
+	max-width: 26rem;
+}
+@container (min-width: 34rem) {
+	.eep-cover > .eep-cover-full {
+		display: block;
+	}
+	.eep-cover > .eep-cover-mobile {
+		display: none;
+	}
+}
+.eep-cover figcaption {
+	display: flex;
+	gap: var(--eep-space-3);
+	margin-top: 1rem;
+	padding-top: 0.75rem;
+	border-top: var(--eep-border);
+	font-size: var(--eep-text-caption);
+	line-height: 1.55;
+	color: var(--eep-ink-2);
+}
+.eep-cover .eep-fignum {
+	font: 600 var(--eep-text-eyebrow) / 1.9 var(--eep-font-serif);
+	color: var(--eep-mute);
+	white-space: nowrap;
+}
+.eep-cover .eep-fignum::before {
+	content: 'Figure ' counter(eep-fig);
+}
+@container (max-width: 25rem) {
+	.eep-cover figcaption {
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+}
+@media (min-width: 64rem) {
+	.eep-home {
+		grid-template-columns: minmax(0, 1fr) 34rem;
+		column-gap: 4rem;
+		align-items: start;
+	}
+	.eep-cover {
+		grid-column: 2;
+		grid-row: 1;
+	}
+	.eep-home-main {
+		grid-column: 1;
+		grid-row: 1;
+	}
+}
 .wikilink-missing {
 	color: var(--eep-ink-2);
 }

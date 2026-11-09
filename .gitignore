@@ -36,5 +36,12 @@ src/content/docs/.obsidian/
 *.out
 *.synctex.gz
 
+# Cover figure build: downloaded fonts and TeX intermediates
+.cache/
+src/figures/**/*.aux
+src/figures/**/*.log
+src/figures/**/*.xdv
+src/figures/**/*.raw.svg
+
 # Local Wrangler state
 .wrangler/
