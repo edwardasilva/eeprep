@@ -1,0 +1,33 @@
+name: Content request
+description: Ask for a page that answers a student question.
+title: 'Content request: '
+labels:
+  - 'type: content'
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form when you want the site to answer a question a student asked.
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: Write the question in the student's words.
+    validations:
+      required: true
+  - type: input
+    id: asked-at
+    attributes:
+      label: Where it was asked
+      description: Paste a link to the place where someone asked this question.
+      placeholder: https://
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      description: Name the page that will hold the answer. A path is best.
+      placeholder: path/to/page
+    validations:
+      required: true

@@ -1,0 +1,192 @@
+---
+import { externalLinks } from './caption';
+// Figure 13.1 as HTML and CSS. A schematic page with its regions outlined,
+// and one check per region beside it. The regions are the sections of Alex's
+// finished page in Figure 4.4, plus the file itself.
+const zones = [
+	{
+		label: 'File',
+		check:
+			'Extract the text and read it in order. One page. Title and author set.',
+	},
+	{
+		label: 'Header',
+		check: 'Every link clicked. Plain text, no icons. Location and relocation.',
+	},
+	{
+		label: 'Education',
+		check:
+			'GPA only if the posting sets a minimum you meet. One line of coursework.',
+	},
+	{
+		label: 'Projects',
+		check: 'Each bullet: a past-tense verb, a tool, a number you can explain.',
+	},
+	{
+		label: 'Experience',
+		check: 'Unrelated jobs on one line. Engineering roles get bullets.',
+	},
+	{
+		label: 'Skills',
+		check:
+			'Every tool appears in a bullet. No soft skills. C, C++ as two items.',
+	},
+];
+const alt =
+	'A schematic one-page resume with six regions outlined, and one check beside each. File: extract the text and read it in order, one page, title and author set. Header: every link clicked, plain text, no icons, location and relocation. Education: GPA only if the posting sets a minimum you meet, one line of coursework. Projects: each bullet has a past-tense verb, a tool, and a number you can explain. Experience: unrelated jobs on one line, engineering roles get bullets. Skills: every tool appears in a bullet, no soft skills, C and C++ as two items.';
+const caption = externalLinks(
+	`One check per region, in reading order. Sources: the <a href="https://www.reddit.com/r/EngineeringResumes/wiki/index/">r/EngineeringResumes wiki</a>, <a href="https://capd.mit.edu/resources/make-your-resume-ats-friendly/">MIT CAPD on ATS-friendly resumes</a>, and <a href="https://ecs.grainger.illinois.edu/student-resources/resumes-letters/resumes">Illinois Engineering Career Services</a>.`,
+);
+---
+
+<figure class="eep-fig wide eep-audit-fig" id="fig-13-1">
+	<p class="eep-kicker">The audit, top to bottom</p>
+	<p class="sr-only">{alt}</p>
+	<div class="eep-audit not-content" aria-hidden="true">
+		<div class="eep-audit-sheet">
+			{zones.slice(1).map((zone, i) => (
+				<div class:list={['eep-audit-zone', { 'eep-audit-header': i === 0 }]}>
+					<span class="eep-audit-num">{i + 2}</span>
+					<span class="eep-audit-zone-label">{zone.label}</span>
+					<span class="eep-audit-lines">
+						<span />
+						<span />
+						{i > 0 && <span />}
+					</span>
+				</div>
+			))}
+			<span class="eep-audit-file">
+				<span class="eep-audit-num">1</span>
+			</span>
+		</div>
+		<ol class="eep-audit-checks">
+			{zones.map((zone) => (
+				<li>
+					<span>
+						<strong>{zone.label}.</strong> {zone.check}
+					</span>
+				</li>
+			))}
+		</ol>
+	</div>
+	<figcaption>
+		<span class="eep-fignum">Fig 13.1</span> <span set:html={caption} />
+	</figcaption>
+</figure>
+
+<style>
+	.eep-audit-fig .eep-kicker {
+		line-height: 1.35;
+	}
+	.eep-audit {
+		margin-top: 1rem;
+		display: grid;
+		grid-template-columns: minmax(0, 0.8fr) minmax(14rem, 1.2fr);
+		gap: 1.5rem;
+		align-items: start;
+		container-type: inline-size;
+		font-family: var(--eep-font-sans);
+		color: var(--eep-ink);
+	}
+	.eep-audit p {
+		margin: 0;
+		max-width: none;
+	}
+	/* The page. Pin 1 sits on its top corner, because the first check is the file. */
+	.eep-audit-sheet {
+		position: relative;
+		display: grid;
+		gap: 0.55rem;
+		padding: 1.1rem 0.9rem 1rem;
+		border: 1px solid var(--eep-dg-mute);
+		border-radius: 4px;
+		background: var(--eep-dg-fill);
+	}
+	.eep-audit-file {
+		position: absolute;
+		top: -0.65rem;
+		left: -0.65rem;
+	}
+	.eep-audit-zone {
+		position: relative;
+		padding: 0.45rem 0.55rem 0.5rem 2.1rem;
+		border: 1.5px dashed var(--eep-dg-ink);
+		border-radius: 3px;
+	}
+	.eep-audit-header {
+		text-align: center;
+	}
+	.eep-audit-num {
+		position: absolute;
+		top: 0.4rem;
+		left: 0.45rem;
+		width: 1.25rem;
+		height: 1.25rem;
+		border-radius: 50%;
+		background: var(--eep-ink);
+		color: var(--eep-dg-fill);
+		font: 700 0.75rem/1.25rem var(--eep-font-sans);
+		text-align: center;
+	}
+	.eep-audit-file .eep-audit-num {
+		position: static;
+		display: block;
+	}
+	.eep-audit-zone-label {
+		display: block;
+		font-size: 0.75rem;
+		font-weight: 600;
+		line-height: 1.3;
+	}
+	.eep-audit-lines {
+		display: grid;
+		gap: 0.2rem;
+		margin-top: 0.3rem;
+	}
+	.eep-audit-lines span {
+		display: block;
+		height: 0.4rem;
+		border-radius: 2px;
+		background: var(--eep-dg-tint);
+		border: 1px solid var(--eep-dg-mute);
+	}
+	.eep-audit-header .eep-audit-lines span {
+		width: 60%;
+		margin: 0 auto;
+	}
+	.eep-audit-checks {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		counter-reset: audit;
+	}
+	.eep-audit-checks li {
+		display: flex;
+		gap: 0.6rem;
+		align-items: flex-start;
+		margin: 0 0 0.75rem;
+		max-width: none;
+		font-size: 0.9rem;
+		line-height: 1.45;
+	}
+	.eep-audit-checks li > span {
+		min-width: 0;
+	}
+	.eep-audit-checks li::before {
+		counter-increment: audit;
+		content: counter(audit);
+		flex: none;
+		width: 1.35rem;
+		height: 1.35rem;
+		border-radius: 50%;
+		background: var(--eep-ink);
+		color: var(--eep-dg-fill);
+		font: 700 0.75rem/1.35rem var(--eep-font-sans);
+		text-align: center;
+	}
+	@container (max-width: 34rem) {
+		.eep-audit {
+			grid-template-columns: minmax(0, 1fr);
+		}
+	}
+</style>

@@ -1,0 +1,123 @@
+---
+import { externalLinks } from '../resume/caption';
+// Figure 7.3 as HTML and CSS. One bar in STAR order. Action takes about 60%.
+// The source gives no split for the other three, so they are drawn equal.
+const parts = [
+	{ key: 's', label: 'Situation' },
+	{ key: 't', label: 'Task' },
+	{ key: 'a', label: 'Action: what you did, about 60%' },
+	{ key: 'r', label: 'Result' },
+];
+const alt =
+	'A bar split into Situation, Task, Action and Result. Action takes about 60% of the bar.';
+const caption = externalLinks(
+	`Spend most of a behavioral answer on what you did, and use "I", not "we". Source: <a href="https://capd.mit.edu/resources/the-star-method-for-behavioral-interviews/">MIT CAPD's STAR method guide</a>.`,
+);
+---
+
+<figure class="eep-fig wide eep-star-fig" id="fig-7-3">
+	<p class="eep-kicker">Where a STAR answer spends its time</p>
+	<p class="sr-only">{alt}</p>
+	<div class="eep-star not-content" aria-hidden="true">
+		<div class="eep-star-bar">
+			{parts.map((p) => (
+				<span class:list={['eep-star-seg', `eep-star-${p.key}`]} />
+			))}
+		</div>
+		<ul class="eep-star-labels">
+			{parts.map((p) => (
+				<li class:list={['eep-star-label', `eep-star-${p.key}`]}>
+					<span class="eep-star-swatch" />
+					{p.label}
+				</li>
+			))}
+		</ul>
+	</div>
+	<figcaption>
+		<span class="eep-fignum">Fig 7.3</span> <span set:html={caption} />
+	</figcaption>
+</figure>
+
+<style>
+	.eep-star-fig .eep-kicker {
+		line-height: 1.35;
+	}
+	.eep-star {
+		margin-top: 1rem;
+		--muted: color-mix(in srgb, var(--eep-dg-mute) 35%, var(--eep-dg-fill));
+		container-type: inline-size;
+		font-family: var(--eep-font-sans);
+		color: var(--eep-ink);
+	}
+	.eep-star-bar,
+	.eep-star-labels {
+		display: flex;
+		gap: 1px;
+	}
+	.eep-star-bar {
+		height: 1.75rem;
+	}
+	.eep-star-seg,
+	.eep-star-swatch {
+		box-sizing: border-box;
+		border: 1px solid var(--eep-dg-mute);
+		background: var(--muted);
+	}
+	.eep-star .eep-star-a {
+		flex: 0 0 60%;
+	}
+	.eep-star :is(.eep-star-s, .eep-star-t, .eep-star-r) {
+		flex: 1 1 0;
+		min-width: 0;
+	}
+	.eep-star-seg.eep-star-a,
+	.eep-star-a .eep-star-swatch {
+		border-color: var(--eep-dg-ink);
+		background: var(--eep-dg-ink);
+	}
+	.eep-star-labels {
+		margin: 0.5rem 0 0;
+		padding: 0;
+		list-style: none;
+	}
+	.eep-star-label {
+		margin: 0;
+		max-width: none;
+		font-size: 0.75rem;
+		line-height: 1.35;
+		color: var(--eep-ink-2);
+		text-align: center;
+		overflow-wrap: anywhere;
+	}
+	.eep-star-label.eep-star-a {
+		font-size: 0.8125rem;
+		font-weight: 600;
+		color: var(--eep-ink);
+		text-wrap: balance;
+	}
+	.eep-star-swatch {
+		display: none;
+	}
+	/* Narrow: the names no longer fit under their segments, so they become a
+	   key, one per line in bar order. */
+	@container (max-width: 28rem) {
+		.eep-star-labels {
+			display: grid;
+			gap: 0.35rem;
+			margin-top: 0.75rem;
+		}
+		.eep-star-label {
+			display: flex;
+			gap: 0.5rem;
+			align-items: center;
+			text-align: left;
+		}
+		.eep-star-swatch {
+			display: block;
+			flex: none;
+			width: 0.75rem;
+			height: 0.75rem;
+			border-radius: 2px;
+		}
+	}
+</style>

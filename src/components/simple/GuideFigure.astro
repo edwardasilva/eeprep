@@ -1,0 +1,190 @@
+---
+import { externalLinks } from '../resume/caption';
+// Figure 11.1 as HTML and CSS. The whole guide as one path of five steps. On
+// wide figures the steps run left to right in one row, with the retry rule in
+// a dashed box under the steps it sends you back to. On narrow ones they hang
+// off one line down the left side.
+const steps = [
+	{
+		title: 'One project',
+		body: 'Build it, measure it, and know every part of it.',
+	},
+	{
+		title: 'One page',
+		body: 'Projects or experience first, dates on the right, a number in each bullet.',
+	},
+	{
+		title: 'Referral, then apply',
+		body: 'Ask someone inside first. Apply within two weeks either way.',
+	},
+	{
+		title: 'Interview',
+		body: 'Your projects, then fundamentals, coding out loud, and STAR stories.',
+	},
+	{
+		title: 'Offer',
+		body: 'Get it in writing, compare it with pay data, then stop interviewing.',
+	},
+];
+const alt =
+	'Five steps in order: one project, one page, a referral and then the application, the interview, and the offer. A dashed note under the second and third steps says that 20 applications with zero interviews means changing the resume or the channel.';
+const caption = externalLinks(
+	`The guide in one line. Each page on eeprep goes deeper on one step. Sources: <a href="https://www.ashbyhq.com/talent-trends-report/reports/referrals">Ashby's referral report</a>, <a href="https://my.greenhouse.com/blogs/what-really-happens-after-you-apply-for-a-job">Greenhouse on what happens after you apply</a>, and <a href="https://capd.mit.edu/channels/negotiate-job-offers/">MIT's offer negotiation steps</a>.`,
+);
+const arrow = 'M1 1.5L9 5L1 8.5Z';
+---
+
+<figure class="eep-fig wide eep-guide-fig" id="fig-11-1">
+	<p class="eep-kicker">The whole guide</p>
+	<p class="sr-only">{alt}</p>
+	<div class="eep-guide not-content" aria-hidden="true">
+		<ol>
+			{steps.map((s, i) => (
+				<li
+					class:list={[
+						'eep-guide-step',
+						{ 'eep-guide-end': i === steps.length - 1 },
+					]}
+				>
+					<p class="eep-guide-title">{s.title}</p>
+					<p class="eep-guide-body">{s.body}</p>
+					{i !== steps.length - 1 && (
+						<svg class="eep-guide-arrow" viewBox="0 0 10 10" focusable="false">
+							<path d={arrow} />
+						</svg>
+					)}
+				</li>
+			))}
+		</ol>
+		<p class="eep-guide-retry">
+			20 applications and zero interviews? Change the resume or the channel,
+			then send the next 20.
+		</p>
+	</div>
+	<figcaption>
+		<span class="eep-fignum">Fig 11.1</span> <span set:html={caption} />
+	</figcaption>
+</figure>
+
+<style>
+	.eep-guide-fig .eep-kicker {
+		line-height: 1.35;
+	}
+	.eep-guide {
+		margin-top: 1rem;
+		--line: 1.5px;
+		--node: 0.8rem;
+		container-type: inline-size;
+		font-family: var(--eep-font-sans);
+		color: var(--eep-ink);
+	}
+	.eep-guide p {
+		margin: 0;
+		max-width: none;
+	}
+	.eep-guide ol {
+		position: relative;
+		display: grid;
+		gap: 1rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.eep-guide li {
+		margin: 0;
+		max-width: none;
+	}
+	.eep-guide .eep-guide-title {
+		font-size: 0.9375rem;
+		font-weight: 600;
+		line-height: 1.3;
+		text-wrap: balance;
+	}
+	.eep-guide .eep-guide-body {
+		margin-top: 0.2rem;
+		font-size: 0.8125rem;
+		line-height: 1.45;
+		color: var(--eep-ink-2);
+	}
+	/* Nodes: an open ring for each step and a filled dot at the offer. */
+	.eep-guide-step {
+		position: relative;
+		padding-left: 1.6rem;
+	}
+	.eep-guide-step::before {
+		content: '';
+		position: absolute;
+		z-index: 1;
+		top: 0.2rem;
+		left: 0;
+		box-sizing: border-box;
+		width: var(--node);
+		height: var(--node);
+		border: var(--line) solid var(--eep-dg-ink);
+		border-radius: 50%;
+		background: var(--eep-dg-fill);
+	}
+	.eep-guide-end::before {
+		background: var(--eep-dg-ink);
+	}
+	/* Narrow: one line down the left side, from the first dot to the last. */
+	.eep-guide ol::before {
+		content: '';
+		position: absolute;
+		top: 0.5rem;
+		bottom: 1rem;
+		left: calc(var(--node) / 2 - var(--line) / 2);
+		border-left: var(--line) solid var(--eep-dg-ink);
+	}
+	.eep-guide-arrow {
+		display: none;
+	}
+	.eep-guide .eep-guide-retry {
+		margin: 1rem 0 0 1.6rem;
+		padding: 0.55rem 0.75rem 0.6rem;
+		border: var(--line) dashed var(--eep-dg-ink);
+		border-radius: 4px;
+		font-size: 0.8125rem;
+		line-height: 1.45;
+		color: var(--eep-ink-2);
+	}
+	/* Wide: one row of five, and the retry note sits under steps 2 and 3. */
+	@container (min-width: 36rem) {
+		.eep-guide ol {
+			grid-template-columns: repeat(5, minmax(0, 1fr));
+			gap: 0 0.75rem;
+		}
+		.eep-guide ol::before {
+			display: none;
+		}
+		.eep-guide-step {
+			padding: 1.35rem 0 0;
+		}
+		.eep-guide-step::before {
+			top: 0;
+			left: 0;
+		}
+		.eep-guide-step:not(.eep-guide-end)::after {
+			content: '';
+			position: absolute;
+			top: calc(var(--node) / 2 - var(--line) / 2);
+			left: var(--node);
+			right: -0.4rem;
+			height: var(--line);
+			background: var(--eep-dg-ink);
+		}
+		.eep-guide-step .eep-guide-arrow {
+			display: block;
+			position: absolute;
+			top: calc(var(--node) / 2 - 0.3rem);
+			right: -0.75rem;
+			width: 0.6rem;
+			height: 0.6rem;
+			fill: var(--eep-dg-ink);
+		}
+		.eep-guide .eep-guide-retry {
+			width: calc(40% - 0.3rem);
+			margin: 1.25rem 0 0 calc(20% + 0.15rem);
+		}
+	}
+</style>
