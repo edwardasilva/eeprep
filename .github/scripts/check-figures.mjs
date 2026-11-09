@@ -36,6 +36,12 @@ for (const file of figureFiles) {
 	]) {
 		if (pattern.test(text)) problems.push(`${rel}: ${why}`);
 	}
+	// Figure numbers come from a CSS counter in theme.css, so each page counts
+	// 1, 2, 3 in page order. A typed number, or an id like fig-4-1, would bring
+	// back chapter-style numbering and break when a page is reordered.
+	if (/class="eep-fignum">\s*[^<\s]/.test(text)) {
+		problems.push(`${rel}: types a figure number, leave .eep-fignum empty`);
+	}
 	// A drawing hidden as a whole needs a spoken description beside it. A pin
 	// or an icon hidden on its own sits inside real text and needs nothing.
 	const hidesDrawing =
@@ -45,6 +51,32 @@ for (const file of figureFiles) {
 			`${rel}: hides its drawing from screen readers with no .sr-only text`,
 		);
 	}
+}
+
+// No page or component may refer to a figure as N.M. Say which figure by its
+// name and link to its anchor, and name the page when it is another page.
+const refPattern = /\bFig(?:ure)?\.? \d+\.\d+/;
+const scanned = [
+	...figureFiles,
+	...fs
+		.readdirSync(path.resolve('src/content/docs'), {
+			recursive: true,
+			withFileTypes: true,
+		})
+		.filter((ent) => ent.isFile() && /\.mdx?$/.test(ent.name))
+		.map((ent) => path.join(ent.parentPath ?? ent.path, ent.name)),
+];
+for (const file of scanned) {
+	const lines = fs.readFileSync(file, 'utf8').split('\n');
+	lines.forEach((line, i) => {
+		// Source comments in a component are notes, not text a reader sees.
+		if (/^\s*(\/\/|\/\*)/.test(line)) return;
+		if (refPattern.test(line)) {
+			problems.push(
+				`${path.relative(process.cwd(), file)}:${i + 1}: refers to a figure by an N.M number`,
+			);
+		}
+	});
 }
 
 for (const problem of problems) console.error(problem);
