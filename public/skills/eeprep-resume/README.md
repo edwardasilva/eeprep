@@ -16,7 +16,7 @@ for f in inventory rules bullets tailoring checklist humanize resume-generator; 
 done
 ```
 
-Then say "use the eeprep-resume skill" or just ask for a resume. The skill's description tells the agent when to load it.
+Then say "use the eeprep-resume skill" or ask for a resume. The skill's description tells the agent when to load it.
 
 Cursor and other agents that read a rules file: paste `SKILL.md` into `.cursor/rules/eeprep-resume.mdc` or `AGENTS.md`, and keep the `references/` folder next to it so the agent can open the files it names.
 
@@ -24,7 +24,7 @@ Cursor and other agents that read a rules file: paste `SKILL.md` into `.cursor/r
 
 | File                             | What it holds                                                                                       |
 | -------------------------------- | --------------------------------------------------------------------------------------------------- |
-| `SKILL.md`                       | The workflow and the one rule that beats the others: never invent a fact                            |
+| `SKILL.md`                       | The workflow and the main rule: never invent a fact                                                 |
 | `references/inventory.md`        | The questions that pull real material out of the student                                            |
 | `references/rules.md`            | Layout, section order, header, education, projects, experience, skills                              |
 | `references/bullets.md`          | Did X with Y to get Z, with the verbs to use and to avoid                                           |
