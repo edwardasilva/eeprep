@@ -771,45 +771,10 @@
     "pages": ["advice/projects/portfolio"]
   },
   {
-    "url": "https://byronbradley.me/",
-    "title": "Byron Bradley: EE portfolio",
-    "category": "Tools and project resources",
-    "summary": "A junior's one-page portfolio with a measured number and a limitations paragraph on each project.",
-    "pages": ["advice/projects/portfolio"]
-  },
-  {
-    "url": "https://yasamankhe.github.io/",
-    "title": "Yasaman Kheradmand: EE portfolio",
-    "category": "Tools and project resources",
-    "summary": "One page per project, with PCB renders, a schematic PDF, and a bring-up video on a rover lighting controller.",
-    "pages": ["advice/projects/portfolio"]
-  },
-  {
-    "url": "https://panosdimts.github.io/EE-portfolio/",
-    "title": "Panos Dimtsoudis: EE portfolio",
-    "category": "Tools and project resources",
-    "summary": "A portfolio that opens with predictions against results and keeps a What broke note, with the site built using AI tools.",
-    "pages": ["advice/projects/portfolio"]
-  },
-  {
-    "url": "https://zaidsaifan-star.github.io/",
-    "title": "Zaid Saifan: EE portfolio",
-    "category": "Tools and project resources",
-    "summary": "Six projects with named sections, and an example of design targets shown where measurements belong.",
-    "pages": ["advice/projects/portfolio"]
-  },
-  {
     "url": "https://ece4760.github.io/Projects/Projects.html",
     "title": "Cornell ECE 4760: final project archive",
     "category": "Tools and project resources",
     "summary": "A semester of student project sites at a time, each with design, hardware, software, results, and appendices.",
-    "pages": ["advice/projects/portfolio"]
-  },
-  {
-    "url": "https://ece4760.github.io/Projects/Fall2025/hw578/index.html",
-    "title": "Cornell ECE 5730: Julia set on eight RP2040s",
-    "category": "Tools and project resources",
-    "summary": "A student project page that spends its design section on the SPI bus bug and its fix.",
     "pages": ["advice/projects/portfolio"]
   },
   {
@@ -841,10 +806,10 @@
     "pages": ["advice/forever-learning/societies"]
   },
   {
-    "url": "https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/s2004/mx23/myweb/index.htm",
-    "title": "Cornell ECE 4760: A student final project site",
+    "url": "https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/",
+    "title": "Cornell ECE 4760: Final project archive since 2004",
     "category": "Tools and project resources",
-    "summary": "One of the Cornell microcontroller course project sites whose section order the Portfolio page follows.",
+    "summary": "The Cornell microcontroller course project sites whose section order the Portfolio page follows.",
     "pages": ["advice/projects/portfolio"]
   },
   {
