@@ -60,7 +60,6 @@
 	--eep-radius: 4px; /* figures, code blocks */
 	--eep-radius-lg: 8px; /* search, inputs, cards on landing */
 	--eep-border: 1px solid var(--eep-rule);
-	--eep-border-strong: 1px solid var(--eep-ink);
 	--eep-toc-bar: 1.5px;
 }
 
