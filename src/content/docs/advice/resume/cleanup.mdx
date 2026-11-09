@@ -15,7 +15,7 @@ Audit the finished PDF, not the source file, because the PDF is what the screene
 
 ## The file
 
-Save the PDF as plain text and read it. [MIT CAPD](https://capd.mit.edu/resources/make-your-resume-ats-friendly/) warns that LaTeX output can confuse an ATS, and the text layer is where it goes wrong. Every heading, entry, and bullet has to come out whole and in reading order. Watch for "fi" and "fl" that come out as blank or as odd symbols, which [the pdfTeX manual](https://texdoc.org/serve/pdftex-a.pdf/0) says happens without a Unicode map. If you use [resume-generator](https://github.com/edwardasilva/resume-generator), each build runs this check for you when `pdftotext` is installed.
+Save the PDF as plain text and read it. [Michigan Engineering](https://career.engin.umich.edu/resumes-cvs-cover-letters/) and [MIT CAPD](https://capd.mit.edu/resources/make-your-resume-ats-friendly/) both warn that LaTeX output can confuse an ATS, and the text layer is where it goes wrong. Every heading, entry, and bullet has to come out whole and in reading order. Watch for "fi" and "fl" that come out as blank or as odd symbols, which [the pdfTeX manual](https://texdoc.org/serve/pdftex-a.pdf/0) says happens without a Unicode map. If you use [resume-generator](https://github.com/edwardasilva/resume-generator), each build runs this check for you when `pdftotext` is installed.
 
 ```bash
 pdftotext resume.pdf - | less

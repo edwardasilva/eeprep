@@ -99,7 +99,7 @@
     "title": "Michigan Engineering: Resumes, CVs and cover letters",
     "category": "Resume guides",
     "summary": "University of Michigan engineering career center guide to resumes, CVs and cover letters.",
-    "pages": ["advice/resume"]
+    "pages": ["advice/resume", "advice/resume/cleanup"]
   },
   {
     "url": "https://career.engin.umich.edu/sample-impact-statements/",
@@ -1305,10 +1305,10 @@
     "pages": ["advice/forever-learning/societies"]
   },
   {
-    "url": "https://fortune.com/2025/01/16/job-market-rife-fake-listing-ghosting-hiring-managers/",
-    "title": "Fortune: Fake listings and ghosting in the job market",
+    "url": "https://www.resumebuilder.com/3-in-10-companies-currently-have-fake-job-posting-listed/",
+    "title": "Resume Builder: 3 in 10 companies have fake job postings listed",
     "category": "Job search and referrals",
-    "summary": "Fortune on the 2024 Resume Builder survey: 40% of hiring managers posted a job they did not plan to fill.",
+    "summary": "A May 2024 survey of 1,641 hiring managers: 40% said their company posted a fake job in the past year.",
     "pages": ["help/job-boards"]
   },
   {
