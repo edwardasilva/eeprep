@@ -22,6 +22,17 @@ Show proof in the pull request: the build output, or before-and-after screenshot
 
 Every merge is a squash merge, and the branch is deleted when it merges. Do not push straight to `main`.
 
+## Working with Claude
+
+Claude Code can take an issue to a pull request. `.github/workflows/claude.yml` runs it, and only the repo owner can start it.
+
+1. File the issue and add it to the project board.
+2. Add the `claude` label to the issue, or comment `@claude` on it with instructions. Claude works on a `claude/` branch and opens a pull request whose body has `Part of #N` and `Closes #N`.
+3. Review the pull request. Comment `@claude` on it, or in a review or a line comment, with a change or a question. Claude pushes the fix to the same branch or answers in a comment. Repeat until the pull request is ready.
+4. Squash-merge it. Claude never merges, pushes to `main`, tags, or cuts a release.
+
+A merge does not cut a release. A release happens only when the owner asks, and it follows the rule in [Releases and deploys](#releases-and-deploys).
+
 ## Checks
 
 Pull requests into `main` run these checks. A failed check does not stop the others, so one run lists every problem:
