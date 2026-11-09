@@ -8,7 +8,7 @@ Plain words point at [the other note](https://Example.com/other).
 
 A slash note counts too: [the slash note](https://example.com/slash/).
 
-The site itself is navigation: [EE Prep](https://eeprep.com/guide).
+The site itself is navigation: [eeprep](https://eeprep.com/guide).
 
 So is the repository: [repo](https://github.com/edwardasilva/eeprep).
 
