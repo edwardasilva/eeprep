@@ -135,6 +135,7 @@ export default defineConfig({
 	},
 	integrations: [
 		starlight({
+			disable404Route: true,
 			title: 'eeprep',
 			description: 'A prep guide for electrical engineering students.',
 			credits: false,
