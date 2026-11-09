@@ -1803,6 +1803,55 @@
     "pages": ["advice/getting-hired/how-to-interview"]
   },
   {
+    "url": "https://career.engin.umich.edu/technical-interviews",
+    "title": "Michigan Engineering: Technical interview resources",
+    "category": "Interview prep",
+    "summary": "Michigan's advice for technical interviews: think out loud, ask when stuck, use the whiteboard.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://capd.mit.edu/resources/a-guide-to-interview-timelines-and-structure/",
+    "title": "MIT CAPD: Interview timelines and structure",
+    "category": "Interview prep",
+    "summary": "MIT's overview of how interview timelines vary by company and industry.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://hdlbits.01xz.net/wiki/Main_Page",
+    "title": "HDLBits: Verilog practice",
+    "category": "Interview prep",
+    "summary": "Verilog practice problems that run in the browser.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://chipverify.com/interview-questions",
+    "title": "ChipVerify: Interview questions",
+    "category": "Interview prep",
+    "summary": "ASIC design and verification interview questions for digital roles.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://sites.gatech.edu/careercenterdev/files/2024/09/Interviewing_Career-Guide.pdf",
+    "title": "Georgia Tech: Interview Ready guide",
+    "category": "Interview prep",
+    "summary": "Georgia Tech's guide to interview formats, sample questions, and STAR answers.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://capd.mit.edu/resources/sample-interview-questions/",
+    "title": "MIT CAPD: Sample interview questions",
+    "category": "Interview prep",
+    "summary": "MIT's list of sample interview questions to practice with.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://github.com/mikinty/Hardware-Engineer-Interview-Questions",
+    "title": "GitHub: Hardware engineer interview questions",
+    "category": "Interview prep",
+    "summary": "A community list of hardware interview questions by topic.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
     "url": "https://www.bls.gov/ooh/architecture-and-engineering/electrical-and-electronics-engineers.htm",
     "title": "BLS: Electrical and electronics engineers",
     "category": "Pay and career data",
