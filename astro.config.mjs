@@ -146,7 +146,7 @@ export default defineConfig({
 	},
 	integrations: [
 		starlight({
-			title: 'EE Prep',
+			title: 'eeprep',
 			description: 'A prep guide for electrical engineering students.',
 			credits: false,
 			routeMiddleware: './src/route-data.ts',
