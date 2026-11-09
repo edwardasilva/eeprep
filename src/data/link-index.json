@@ -1640,6 +1640,15 @@
     ]
   },
   {
+    "url": "https://www.linkedin.com/help/linkedin/answer/a563153",
+    "title": "LinkedIn Help: Connection request notes",
+    "category": "Job search and referrals",
+    "summary": "LinkedIn help article on personalized connection notes.",
+    "pages": [
+      "advice/getting-hired/networking"
+    ]
+  },
+  {
     "url": "https://www.reddit.com/r/ECE/comments/1mojjy7/how_do_you_actually_get_referralsinterviews_for/",
     "title": "r/ECE: Getting referrals for hardware internships",
     "category": "Job search stories from students",
@@ -2399,46 +2408,10 @@
     ]
   },
   {
-    "url": "https://ieee.auburn.edu/?p=34",
-    "title": "IEEE Auburn student branch: Join IEEE",
-    "category": "Pay and career data",
-    "summary": "A student branch page giving the US student rate of $32 a year.",
-    "pages": [
-      "advice/forever-learning/societies"
-    ]
-  },
-  {
-    "url": "https://www.ieee.org/membership/join/dues.html",
-    "title": "IEEE: Membership dues",
-    "category": "Pay and career data",
-    "summary": "IEEE's own dues page, where the current student rate is.",
-    "pages": [
-      "advice/forever-learning/societies"
-    ]
-  },
-  {
     "url": "https://hkn.ieee.org/knowledge-base/what-is-the-cost-of-an-induction?seq_no=2",
     "title": "IEEE-HKN: The cost of an induction",
     "category": "Pay and career data",
-    "summary": "HKN's one-time student induction fee and what it includes.",
-    "pages": [
-      "advice/forever-learning/societies"
-    ]
-  },
-  {
-    "url": "https://www.andrew.cmu.edu/user/tbp/initiation.html",
-    "title": "Tau Beta Pi at Carnegie Mellon: Initiation",
-    "category": "Pay and career data",
-    "summary": "One chapter's one-time initiation fee.",
-    "pages": [
-      "advice/forever-learning/societies"
-    ]
-  },
-  {
-    "url": "https://tbp.eng.uci.edu/content/initiation-requirements",
-    "title": "Tau Beta Pi at UC Irvine: Initiation requirements",
-    "category": "Pay and career data",
-    "summary": "Another chapter's one-time initiation fee.",
+    "summary": "What IEEE-HKN induction includes.",
     "pages": [
       "advice/forever-learning/societies"
     ]
@@ -2465,7 +2438,7 @@
     "url": "https://swe.org/membership/collegiate-membership/",
     "title": "SWE: Collegiate membership",
     "category": "Pay and career data",
-    "summary": "SWE's student dues and membership year.",
+    "summary": "SWE's collegiate membership.",
     "pages": [
       "advice/forever-learning/societies"
     ]
@@ -2474,7 +2447,7 @@
     "url": "https://swe.org/membership",
     "title": "SWE: Membership",
     "category": "Pay and career data",
-    "summary": "SWE's membership options, including the one-time college-plus-first-year payment.",
+    "summary": "SWE's membership options, including one that covers college plus the first professional year.",
     "pages": [
       "advice/forever-learning/societies"
     ]
@@ -2483,16 +2456,7 @@
     "url": "https://www.nsbe.org/membership/graduate-students-membership",
     "title": "NSBE: Collegiate and graduate membership",
     "category": "Pay and career data",
-    "summary": "NSBE's national dues for students.",
-    "pages": [
-      "advice/forever-learning/societies"
-    ]
-  },
-  {
-    "url": "https://shpe.umbc.edu/membership/types/",
-    "title": "SHPE at UMBC: Membership types",
-    "category": "Pay and career data",
-    "summary": "A chapter page giving SHPE's undergraduate dues.",
+    "summary": "NSBE's collegiate membership.",
     "pages": [
       "advice/forever-learning/societies"
     ]
@@ -2501,16 +2465,7 @@
     "url": "https://spie.org/membership/member-benefits",
     "title": "SPIE: Member benefits",
     "category": "Pay and career data",
-    "summary": "SPIE's student dues and benefits.",
-    "pages": [
-      "advice/forever-learning/societies"
-    ]
-  },
-  {
-    "url": "https://creol.ucf.edu/wp-content/uploads/sites/2/2024/10/OPTICA-Membership-Dues-Guidline.pdf.pdf",
-    "title": "UCF CREOL: Optica dues guideline",
-    "category": "Pay and career data",
-    "summary": "A chapter guideline giving Optica's student dues.",
+    "summary": "SPIE's student membership benefits.",
     "pages": [
       "advice/forever-learning/societies"
     ]
@@ -2705,12 +2660,22 @@
     ]
   },
   {
+    "url": "https://insight.ieeeusa.org/articles/ieee-usa-releases-2024-salary-benefits-report/",
+    "title": "IEEE-USA InSight: 2024 Salary & Benefits Report released",
+    "category": "Pay and career data",
+    "summary": "IEEE-USA salary report summary used on the graduate study page.",
+    "pages": [
+      "advice/forever-learning/graduate-study"
+    ]
+  },
+  {
     "url": "https://www.ieee.org/membership/join",
     "title": "IEEE student membership",
     "category": "Communities",
-    "summary": "IEEE's page on student membership, benefits and student branches.",
+    "summary": "IEEE's student membership page.",
     "pages": [
-      "advice/forever-learning"
+      "advice/forever-learning",
+      "advice/forever-learning/societies"
     ]
   },
   {
@@ -2764,7 +2729,7 @@
     "url": "https://www.reddit.com/r/ECE/comments/1j4yzv6/how_do_i_benefit_the_most_from_an_ieee_membership/",
     "title": "r/ECE: How do I benefit the most from an IEEE membership",
     "category": "Communities",
-    "summary": "An engineer with 25 years in the field on when IEEE dues stop paying off.",
+    "summary": "An engineer with 25 years in the field on when IEEE membership stops paying off.",
     "pages": [
       "advice/forever-learning/societies"
     ]
@@ -2794,6 +2759,24 @@
     "summary": "RF engineers on which RF design roles expect a PhD.",
     "pages": [
       "advice/forever-learning/graduate-study"
+    ]
+  },
+  {
+    "url": "https://2024.ieeeannualreport.org/empowering-the-next-generation/",
+    "title": "IEEE Annual Report 2024: Empowering the next generation",
+    "category": "Communities",
+    "summary": "IEEE annual report section on next-generation programs.",
+    "pages": [
+      "advice/forever-learning/societies"
+    ]
+  },
+  {
+    "url": "https://shpe.org/membership/become-a-member/",
+    "title": "SHPE: Become a member",
+    "category": "Communities",
+    "summary": "SHPE's membership page, including the reciprocal discount with SWE.",
+    "pages": [
+      "advice/forever-learning/societies"
     ]
   },
   {
@@ -2912,42 +2895,6 @@
     "summary": "LinkedIn's count of applications, up more than 45% in a year at about 11,000 a minute.",
     "pages": [
       "help/job-boards"
-    ]
-  },
-  {
-    "url": "https://insight.ieeeusa.org/articles/ieee-usa-releases-2024-salary-benefits-report/",
-    "title": "IEEE-USA InSight: 2024 Salary & Benefits Report released",
-    "category": "Pay and career data",
-    "summary": "IEEE-USA salary report summary used on the graduate study page.",
-    "pages": [
-      "advice/forever-learning/graduate-study"
-    ]
-  },
-  {
-    "url": "https://2024.ieeeannualreport.org/empowering-the-next-generation/",
-    "title": "IEEE Annual Report 2024: Empowering the next generation",
-    "category": "Communities",
-    "summary": "IEEE annual report section on next-generation programs.",
-    "pages": [
-      "advice/forever-learning/societies"
-    ]
-  },
-  {
-    "url": "https://shpe.org/membership/become-a-member/",
-    "title": "SHPE: Become a member",
-    "category": "Communities",
-    "summary": "SHPE membership page cited on the societies page.",
-    "pages": [
-      "advice/forever-learning/societies"
-    ]
-  },
-  {
-    "url": "https://www.linkedin.com/help/linkedin/answer/a563153",
-    "title": "LinkedIn Help: Connection request notes",
-    "category": "Job search and referrals",
-    "summary": "LinkedIn help article on personalized connection notes.",
-    "pages": [
-      "advice/getting-hired/networking"
     ]
   }
 ]
