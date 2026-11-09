@@ -16,7 +16,7 @@ The pull request body names its issue on its own line:
 Part of #12
 ```
 
-CI fails a pull request when that line is missing. Dependabot is exempt, and so is a pull request labeled `no-epic`. Do not add that label to feature work. The check runs again when you edit the body or change a label, so no new push is needed.
+CI fails a pull request when that line is missing. Dependabot is exempt, and so is a pull request labeled `no-epic`. The repo owner creates the `no-epic` label the first time an exempt change needs it. Do not add that label to feature work. The check runs again when you edit the body or change a label, so no new push is needed.
 
 Show proof in the pull request: the build output, or before-and-after screenshots at desktop width and at 390 px for anything visual.
 
