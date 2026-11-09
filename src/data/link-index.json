@@ -779,6 +779,13 @@
     "pages": ["advice/projects/portfolio"]
   },
   {
+    "url": "https://ece4760.github.io/Projects/Fall2025/hw578/index.html",
+    "title": "Cornell ECE 5730: Julia set on eight RP2040s",
+    "category": "Tools and project resources",
+    "summary": "A student project page that spends its design section on the SPI bus bug and its fix.",
+    "pages": ["advice/projects/portfolio"]
+  },
+  {
     "url": "https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits",
     "title": "GitHub Docs: GitHub Pages limits",
     "category": "Tools and project resources",
