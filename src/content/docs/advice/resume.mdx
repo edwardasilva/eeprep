@@ -18,7 +18,7 @@ Keep your resume to one page. Lead with projects or work experience, and put a m
 
 This page condenses the [r/EngineeringResumes wiki](https://www.reddit.com/r/EngineeringResumes/wiki/index/), about 60 of its threads, and posts from recruiters on X. It leans toward EE, embedded, FPGA, and PCB work, and follows US and Canadian norms. I'm a working embedded software engineer who reviews friends' resumes. Where the advice is mine and not from a source, the page says so. Every bracket is a number you measure yourself.
 
-[The wiki](https://www.reddit.com/r/EngineeringResumes/wiki/index/) goes deeper, with templates and sample bullets. I tell students to follow it like gospel and to start from [its LaTeX template](https://www.reddit.com/r/EngineeringResumes/wiki/templates/). [Michigan Engineering](https://career.engin.umich.edu/resumes-cvs-cover-letters/) and [MIT CAPD](https://capd.mit.edu/resources/make-your-resume-ats-friendly/) warn that LaTeX output can confuse an ATS. Save your PDF as plain text and check that nothing is missing or out of order.
+[The wiki goes deeper](https://www.reddit.com/r/EngineeringResumes/wiki/index/), with templates and sample bullets. I tell students to follow it like gospel and to start from [its LaTeX template](https://www.reddit.com/r/EngineeringResumes/wiki/templates/). [Michigan Engineering](https://career.engin.umich.edu/resumes-cvs-cover-letters/) and [MIT CAPD](https://capd.mit.edu/resources/make-your-resume-ats-friendly/) warn that LaTeX output can confuse an ATS. Save your PDF as plain text and check that nothing is missing or out of order.
 
 Before you apply, try to get a referral from someone at the company. I tell every student this. [How to get a referral](/advice/getting-hired/#get-a-referral-first) lists who to ask and what to send.
 
@@ -65,7 +65,7 @@ If you write in LaTeX with pdfLaTeX, add these lines to the preamble:
 \hypersetup{pdftitle={Alex Doe Resume}, pdfauthor={Alex Doe}}
 ```
 
-The first 2 lines map each font glyph to Unicode inside the PDF. Without that map, [the pdfTeX manual](https://texdoc.org/serve/pdftex-a.pdf/0) says search is likely to fail on ligatures such as "fi". The switch does nothing without `\input{glyphtounicode}`. XeLaTeX and LuaLaTeX do not need it. `\hypersetup` comes from [the hyperref package](https://latex.us/macros/latex/contrib/hyperref/doc/hyperref-doc.html) and fills in the PDF's title and author fields. No source we found says an ATS reads them, so treat that line as tidiness.
+The first 2 lines map each font glyph to Unicode inside the PDF. Without that map, [the pdfTeX manual](https://texdoc.org/serve/pdftex-a.pdf/0) says search is likely to fail on ligatures such as "fi". The switch does nothing without `\input{glyphtounicode}`. XeLaTeX and LuaLaTeX do not need it. `\hypersetup` comes from [the hyperref package](https://latex.us/macros/latex/contrib/hyperref/doc/hyperref-doc.html) and fills in the PDF's title and author fields. No source I found says an ATS reads them, so treat that line as tidiness.
 
 ## Section order
 
@@ -106,7 +106,7 @@ Here is Alex's buck converter, before and after:
 
 <BulletFigure />
 
-The second bullet names the action, the tools, one spec that shows difficulty, and a check against the real board. [The wiki's EE sample bullets](https://www.reddit.com/r/EngineeringResumes/wiki/sample-bullet-points/) work the same way. One names a 5 uW LDO. Another names an oscillator that used 8x less power than the PLL designs it replaced.
+The rewritten bullet names the action, the tools, one spec that shows difficulty, and a check against the real board. [The wiki's EE sample bullets](https://www.reddit.com/r/EngineeringResumes/wiki/sample-bullet-points/) work the same way. One names a 5 uW LDO. Another names an oscillator that used 8x less power than the PLL designs it replaced.
 
 Rules for each bullet:
 

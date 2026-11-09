@@ -21,17 +21,17 @@ An EE degree can also move you between teams. That happened to me. A recruiter f
 
 ## Embedded firmware
 
-Firmware is the code that runs on a microcontroller. Start bare metal, with no operating system: set up a timer, read an ADC, and handle an interrupt. Alex's converter firmware tunes dead time on an STM32 timer. It samples input current at [X] kHz and cuts the rail within [Y] µs of a fault. The full line is under [[Hardware#Hardware builds that count]].
+Firmware is the code that runs on a microcontroller. Start bare metal, with no operating system: set up a timer, read an ADC, and handle an interrupt. The long converter entry under [[Hardware#Hardware builds that count]] has firmware that tunes dead time on an STM32 timer, samples input current at [X] kHz, and cuts the rail within [Y] µs of a fault.
 
 Add a real-time operating system once bare metal works. [FreeRTOS is a free kernel for microcontrollers, under the MIT license](https://www.freertos.org/).
 
 Follow a coding standard. [Barr Group offers its Embedded C Coding Standard as a free download](https://barrgroup.com/free-downloads). It sets rules for data types, functions, macros, and variables to keep bugs out of firmware.
 
-No board yet? [[Hardware#Starting on a student budget]] lists a free browser simulator for Arduino, ESP32, and STM32. Interviewers ask about `volatile` and interrupts, and [[How to interview#Fundamentals from the ground up]] lists what to know.
+If you have no board yet, [[Hardware#Starting on a student budget]] lists a free browser simulator for Arduino, ESP32, and STM32. Interviewers ask about `volatile` and interrupts, and [[How to interview#Fundamentals from the ground up]] lists what to know.
 
 ## Test automation and lab scripts
 
-Lab scripts turn bench work into software. Alex has two:
+Lab scripts turn bench work into software. The long resume under [[Hardware#Teams and undergraduate research]] has two:
 
 - Found [X] battery protection faults before launch review with a Python script that runs [Y] overnight charge cycles and flags any cell that drifts over [Z] mV from the pack average
 - Cut test time per device from [X] to [Y] minutes with Python and PyVISA scope capture
@@ -64,6 +64,6 @@ Put each project in its own repository with a README. [GitHub says a README tell
 
 ## Put it on the resume
 
-Write a software line the way you write a hardware line: the action, the tool, and a measured result. Alex's battery monitor line follows it: "Tracked [X] Li-ion cells within [Y] mV each on an ESP32 that streams to a Python dashboard."
+Write a software line the way you write a hardware line: the action, the tool, and a measured result. The battery monitor line under [[Hardware#Hardware builds that count]] follows it: "Tracked [X] Li-ion cells within [Y] mV each on an ESP32 that streams to a Python dashboard."
 
 Expect questions on every line. [A student who landed an NVIDIA internship said the interview questions were about how they built each project and what they did](https://www.reddit.com/r/EngineeringResumes/comments/1sj2rgt/student_landed_nvidia_offer_sophomore_cs_major_at/).
