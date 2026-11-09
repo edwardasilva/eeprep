@@ -2958,5 +2958,32 @@
     "pages": [
       "advice/resume"
     ]
+  },
+  {
+    "url": "https://www.irs.gov/newsroom/updates-to-frequently-asked-questions-about-educational-assistance-programs",
+    "title": "IRS: Educational assistance programs",
+    "category": "Pay and career data",
+    "summary": "The IRS on the $5,250 tax-free limit for employer education help, indexed after 2026.",
+    "pages": [
+      "advice/forever-learning/graduate-study"
+    ]
+  },
+  {
+    "url": "https://careers.rtx.com/global/en/lifeatrtx",
+    "title": "RTX careers: Life at RTX",
+    "category": "Pay and career data",
+    "summary": "RTX's description of its Employee Scholar Program.",
+    "pages": [
+      "advice/forever-learning/graduate-study"
+    ]
+  },
+  {
+    "url": "https://www.lockheedmartin.com/en-us/careers/why-lm/LM_Benefits.html",
+    "title": "Lockheed Martin careers: Benefits",
+    "category": "Pay and career data",
+    "summary": "Lockheed Martin's list of benefits, including tuition assistance.",
+    "pages": [
+      "advice/forever-learning/graduate-study"
+    ]
   }
 ]
