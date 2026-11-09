@@ -55,7 +55,6 @@
     "summary": "Greenhouse explains the steps an application goes through after you submit it.",
     "pages": [
       "advice/getting-hired",
-      "advice/getting-hired/how-to-interview",
       "advice/resume",
       "advice/resume/quick-setup",
       "help/ai-use",
@@ -863,7 +862,6 @@
     "pages": [
       "advice/getting-hired",
       "advice/getting-hired/first-internship",
-      "advice/getting-hired/how-to-interview",
       "advice/getting-hired/job-market",
       "advice/getting-hired/networking",
       "advice/resume/quick-setup"
@@ -1837,13 +1835,6 @@
     "title": "r/ElectricalEngineering: Frustrated with interview practices",
     "category": "Interview prep",
     "summary": "An EE describes interviews that keep escalating to harder technical questions.",
-    "pages": ["advice/getting-hired/how-to-interview"]
-  },
-  {
-    "url": "https://www.reddit.com/r/ElectricalEngineering/comments/15y0mnc/why_is_it_so_necessary_to_get_through_hard/",
-    "title": "r/ElectricalEngineering: Why hard technical interviews?",
-    "category": "Interview prep",
-    "summary": "Thread on why EE roles, even trainee positions, use hard technical interviews.",
     "pages": ["advice/getting-hired/how-to-interview"]
   },
   {

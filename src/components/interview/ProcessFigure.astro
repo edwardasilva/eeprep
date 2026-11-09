@@ -3,23 +3,22 @@
 // down the left side. On wide ones they run left to right in two rows, and
 // the line turns down the right edge from step 5 to step 6.
 const steps = [
-	{ title: 'Apply', body: 'Day one, no referral' },
-	{ title: 'Round 1', body: 'Recruiter phone screen' },
-	{ title: 'Round 2', body: 'Manager phone screen' },
-	{ title: 'Take-home', body: '3 hours, no AI tools' },
-	{ title: 'Round 3', body: 'Manager call, 30 minutes' },
-	{ title: 'Round 4', body: 'In-person day, 6 to 7 hours' },
-	{ title: 'Round 5', body: 'Senior leader call, 30 minutes' },
-	{ title: 'Round 6', body: 'Senior leader call, 30 minutes' },
+	{ title: 'Apply', body: 'Referral or cold' },
+	{ title: 'Recruiter screen', body: 'Phone, short' },
+	{ title: 'Manager screen', body: 'Phone, about your work' },
+	{ title: 'Take-home', body: 'Optional' },
+	{ title: 'Follow-up call', body: 'Often about projects' },
+	{ title: 'Interview loop', body: 'On-site or virtual' },
+	{ title: 'Senior leader calls', body: 'Short, near the end' },
 	{ title: 'Offer' },
 ];
 const alt =
-	'Timeline of a hiring process. An application on day one with no referral, a recruiter screen, a manager phone screen, a 3-hour take-home test, a 30-minute manager call, a 6- to 7-hour in-person day, two 30-minute senior leader calls, then an offer.';
+	'Timeline of a typical hiring process. An application, a recruiter screen, a manager screen, an optional take-home test, a follow-up call, an interview loop on-site or virtual, calls with senior leaders, then an offer.';
 const arrow = 'M1 1.5L9 5L1 8.5Z';
 ---
 
 <figure class="eep-fig wide eep-proc-fig" id="fig-7-1">
-	<p class="eep-kicker">The full process</p>
+	<p class="eep-kicker">A typical process</p>
 	<p class="sr-only">{alt}</p>
 	<div class="eep-proc not-content" aria-hidden="true">
 		<ol class="eep-proc-steps">
@@ -33,7 +32,7 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 				>
 					<p class="eep-proc-title">{s.title}</p>
 					{s.body && <p class="eep-proc-body">{s.body}</p>}
-					{i !== 4 && i !== 8 && (
+					{i !== 4 && i !== steps.length - 1 && (
 						<svg class="eep-proc-arrow" viewBox="0 0 10 10" focusable="false">
 							<path d={arrow} />
 						</svg>
@@ -50,8 +49,7 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 	<figcaption>
 		<span class="eep-fignum"></span>{' '}
 		<span>
-			My own hiring process at a large aerospace hardware company: 6 rounds plus
-			a take-home test.
+			A typical hiring process. Employers drop some stages and add others.
 		</span>
 	</figcaption>
 </figure>
@@ -134,7 +132,7 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 		display: none;
 	}
 
-	/* Wide: two rows, 1 to 5 and 6 to 9, read left to right. */
+	/* Wide: two rows, 1 to 5 and 6 to 8, read left to right. */
 	@container (min-width: 36rem) {
 		.eep-proc ol {
 			grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -153,8 +151,7 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 		}
 		.eep-proc-s6,
 		.eep-proc-s7,
-		.eep-proc-s8,
-		.eep-proc-s9 {
+		.eep-proc-s8 {
 			grid-row: 3;
 		}
 		/* The path line and its arrowhead run to the next node. */
