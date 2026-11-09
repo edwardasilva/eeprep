@@ -497,6 +497,7 @@
     "summary": "An embedded-focused sophomore shares the resume behind an NVIDIA offer.",
     "pages": [
       "advice/projects",
+      "advice/projects/career-paths",
       "advice/projects/software",
       "advice/resume",
       "advice/resume/cleanup"
@@ -854,6 +855,62 @@
     "category": "Tools and project resources",
     "summary": "The FTC on how an affiliate link has to be disclosed.",
     "pages": ["advice/forever-learning"]
+  },
+  {
+    "url": "https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/adalm2000.html",
+    "title": "Analog Devices: ADALM2000",
+    "category": "Tools and project resources",
+    "summary": "Analog Devices page on its USB student lab module for analog circuits.",
+    "pages": ["advice/projects/career-paths"]
+  },
+  {
+    "url": "https://www2.eecs.berkeley.edu/Courses/EE140/",
+    "title": "Berkeley: EE 140 analog integrated circuits",
+    "category": "Tools and project resources",
+    "summary": "Course page listing the topics and lab for Berkeley's analog IC class.",
+    "pages": ["advice/projects/career-paths"]
+  },
+  {
+    "url": "https://ece.illinois.edu/academics/courses/ece476",
+    "title": "Illinois: ECE 476 power system analysis",
+    "category": "Tools and project resources",
+    "summary": "Course page for power flow, faults, and relaying, with a load flow project.",
+    "pages": ["advice/projects/career-paths"]
+  },
+  {
+    "url": "https://ece.illinois.edu/academics/courses/ece464",
+    "title": "Illinois: ECE 464 power electronics",
+    "category": "Tools and project resources",
+    "summary": "Course page for converters, magnetics, and power semiconductor switches.",
+    "pages": ["advice/projects/career-paths"]
+  },
+  {
+    "url": "https://www2.eecs.berkeley.edu/Courses/ELENG117/index.html",
+    "title": "Berkeley: EE 117 electromagnetic fields and waves",
+    "category": "Tools and project resources",
+    "summary": "Course page listing transmission lines, microwave networks, and antennas.",
+    "pages": ["advice/projects/career-paths"]
+  },
+  {
+    "url": "https://ece.vt.edu/undergrad/courses/4104.html",
+    "title": "Virginia Tech: ECE 4104 microwave engineering",
+    "category": "Tools and project resources",
+    "summary": "Course page for S-parameters, the Smith chart, and impedance matching.",
+    "pages": ["advice/projects/career-paths"]
+  },
+  {
+    "url": "https://mtt.org/nanovna-program/",
+    "title": "IEEE MTT-S: NanoVNA program",
+    "category": "Tools and project resources",
+    "summary": "IEEE MTT-S funding for student chapters to buy nanoVNAs, with example projects.",
+    "pages": ["advice/projects/career-paths"]
+  },
+  {
+    "url": "https://www.fcc.gov/wireless/bureau-divisions/mobility-division/amateur-radio-service",
+    "title": "FCC: Amateur Radio Service",
+    "category": "Tools and project resources",
+    "summary": "The FCC on amateur radio licenses and the volunteer examiner exams.",
+    "pages": ["advice/projects/career-paths"]
   },
   {
     "url": "https://www.ashbyhq.com/talent-trends-report/reports/referrals",
@@ -1335,6 +1392,27 @@
     "category": "Job search and referrals",
     "summary": "LinkedIn help article on personalized connection notes.",
     "pages": ["advice/getting-hired/networking"]
+  },
+  {
+    "url": "https://analogdevices.wd1.myworkdayjobs.com/en-US/External/job/Analog-Design-Engineer_R267037-1",
+    "title": "Analog Devices: Analog design engineer posting",
+    "category": "Job search and referrals",
+    "summary": "An Analog Devices entry-level posting, used as one example of analog job requirements.",
+    "pages": ["advice/projects/career-paths"]
+  },
+  {
+    "url": "https://selinc.wd1.myworkdayjobs.com/en-US/SEL/job/Power-Engineer-Intern_2026-21156",
+    "title": "SEL: Power engineer intern posting",
+    "category": "Job search and referrals",
+    "summary": "A Schweitzer Engineering Laboratories protection systems internship, used as one example.",
+    "pages": ["advice/projects/career-paths"]
+  },
+  {
+    "url": "https://jobs.tdworld.com/job/qved98/associate-electrical-engineering-%28rochester-ny%29/rochester/ny",
+    "title": "L3Harris: Associate electrical engineer posting",
+    "category": "Job search and referrals",
+    "summary": "An L3Harris entry-level posting with RF and antenna tracks, used as one example.",
+    "pages": ["advice/projects/career-paths"]
   },
   {
     "url": "https://www.reddit.com/r/ECE/comments/1mojjy7/how_do_you_actually_get_referralsinterviews_for/",
@@ -1862,6 +1940,7 @@
       "advice/getting-hired/first-full-time-role",
       "advice/getting-hired/job-market",
       "advice/projects",
+      "advice/projects/career-paths",
       "help",
       "help/resources"
     ]
@@ -1921,7 +2000,7 @@
     "title": "NCEES: FE exam",
     "category": "Pay and career data",
     "summary": "NCEES page on the Fundamentals of Engineering exam, its format, and its fee.",
-    "pages": ["advice/forever-learning"]
+    "pages": ["advice/forever-learning", "advice/projects/career-paths"]
   },
   {
     "url": "https://ncees.org/licensure/",
@@ -1942,7 +2021,28 @@
     "title": "O*NET: Electrical engineers",
     "category": "Pay and career data",
     "summary": "Occupation profile listing tasks, skills, tools and pay for electrical engineers.",
-    "pages": ["help", "help/resources"]
+    "pages": ["advice/projects/career-paths", "help", "help/resources"]
+  },
+  {
+    "url": "https://www.onetonline.org/link/summary/17-2072.00",
+    "title": "O*NET: Electronics engineers",
+    "category": "Pay and career data",
+    "summary": "Occupation profile with tasks, tools, and reported titles for electronics engineers.",
+    "pages": ["advice/projects/career-paths"]
+  },
+  {
+    "url": "https://ece.gatech.edu/research/tigs",
+    "title": "Georgia Tech ECE: Technical interest groups",
+    "category": "Pay and career data",
+    "summary": "Georgia Tech's list of ECE areas and the topics under each.",
+    "pages": ["advice/projects/career-paths"]
+  },
+  {
+    "url": "https://ncees.org/wp-content/uploads/2025/04/PE-Electrical_Power_Oct_2025.pdf",
+    "title": "NCEES: PE Power exam specifications",
+    "category": "Pay and career data",
+    "summary": "NCEES topic list and format for the PE Electrical and Computer: Power exam.",
+    "pages": ["advice/projects/career-paths"]
   },
   {
     "url": "https://www.nbcsandiego.com/news/business/money-report/college-grads-face-a-tough-and-competitive-job-market-this-year-expert-says/3827152/",
