@@ -42,9 +42,7 @@ const caption = externalLinks(
 	<div class="eep-example-wrap">
 		<div class="eep-example-sheet">
 			<header class="eep-example-head eep-example-mark">
-				<span class="eep-pin" aria-hidden="true">
-					1
-				</span>
+				<span class="eep-pin" data-pin="1"></span>
 				<p class="eep-example-name">Alex Doe</p>
 				<p>
 					[phone] | alex.doe@[school].edu | linkedin.com/in/alex-doe-example |
@@ -58,17 +56,13 @@ const caption = externalLinks(
 					<strong>B.S. Electrical Engineering</strong>, GPA [X.XX]/4.00
 				</p>
 				<p class="eep-example-date eep-example-mark">
-					<span class="eep-pin eep-pin-right" aria-hidden="true">
-						2
-					</span>
+					<span class="eep-pin eep-pin-right" data-pin="2"></span>
 					Expected Spring 2027
 				</p>
 			</div>
 			<p>[University]</p>
 			<p class="eep-example-mark">
-				<span class="eep-pin" aria-hidden="true">
-					3
-				</span>
+				<span class="eep-pin" data-pin="3"></span>
 				<strong>Relevant coursework:</strong> Embedded Systems, Introduction to
 				High Power Electronics, Advanced Digital Design
 			</p>
@@ -76,9 +70,7 @@ const caption = externalLinks(
 				<strong>Activities:</strong> IEEE student branch, Tau Beta Pi
 			</p>
 			<div class="eep-example-mark">
-				<span class="eep-pin" aria-hidden="true">
-					4
-				</span>
+				<span class="eep-pin" data-pin="4"></span>
 				<p class="eep-example-sec">Projects</p>
 				<div class="eep-example-row">
 					<p>
@@ -122,9 +114,7 @@ const caption = externalLinks(
 			</div>
 			<p class="eep-example-sec">Skills</p>
 			<div class="eep-example-mark">
-				<span class="eep-pin" aria-hidden="true">
-					5
-				</span>
+				<span class="eep-pin" data-pin="5"></span>
 				<p>
 					<strong>Software:</strong> KiCad, LTspice, C, Python
 				</p>
@@ -257,6 +247,10 @@ const caption = externalLinks(
 		color: var(--eep-dg-fill);
 		font: 700 0.75rem/1.35rem var(--eep-font-sans);
 		text-align: center;
+	}
+	.eep-pin::before {
+		content: attr(data-pin);
+		content: attr(data-pin) / '';
 	}
 	.eep-pin-right {
 		left: auto;
