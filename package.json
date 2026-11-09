@@ -41,7 +41,6 @@
     "github-slugger": "2.0.0",
     "katex": "0.19.1",
     "picomatch": "4.0.7",
-    "rehype-callouts": "2.2.0",
     "rehype-katex": "7.0.1",
     "remark-math": "6.0.0",
     "remark-wiki-link": "2.0.1"
