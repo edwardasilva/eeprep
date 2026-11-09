@@ -11,29 +11,23 @@ import ProcessFigure from '../../../../components/interview/ProcessFigure.astro'
 import LayersFigure from '../../../../components/interview/LayersFigure.astro';
 import StarFigure from '../../../../components/interview/StarFigure.astro';
 
-Expect a long, tiring process, and know everything you put on your resume in full detail. Interviewers keep asking until they find the edge of what you know. Prepare in this order: your projects, then fundamentals, then coding, then behavioral stories. Get a referral before you apply if you can.
+Expect a long, tiring process, and know everything you put on your resume in full detail. Interviewers keep asking until they find the edge of what you know. Prepare in this order: your projects, then fundamentals, then coding, then behavioral stories. Before you apply, try to [[Getting hired#Get a referral first|get a referral]].
 
-This page follows one real hiring process for an embedded software role. Career center guides, hiring research, and posts from engineers fill in the rest.
+The advice here comes from career center guides, hiring research, and posts from engineers.
 
 ## What the process looks like now
 
-The process can run long: several rounds, a take-home test, and an in-person day of back-to-back sessions. [Michigan Engineering's career center says some employers hire after one interview and others run multiple rounds](https://career.engin.umich.edu/interviews/). Plan for the long version.
+The process can run long: several rounds, a take-home test, and an in-person day of back-to-back sessions. [Michigan Engineering's career center says some employers hire after one interview and others run multiple rounds](https://career.engin.umich.edu/interviews/). [MIT's career office says timelines vary by company and industry](https://capd.mit.edu/resources/a-guide-to-interview-timelines-and-structure/). Some candidates hear back within days, and others wait weeks or months. Plan for the long version.
 
 <ProcessFigure />
 
-Yours may drop some steps or add others. The second phone screen and the call after the take-home were both with the hiring manager, and that call was about projects.
+Your process may skip some of these steps or add others. Expect at least one call with the hiring manager about your projects.
 
 Each round goes deeper than the resume. [A recruiter on X says hiring managers now go 3 to 5 layers deep](https://x.com/randomrecruiter/status/2081829972415578607) on whatever you say: "How did you do that. Why that way. What broke. What would you do differently." The same post says candidates who padded their resumes with AI got caught in later rounds. One embedded new graduate [found that interviewers rarely asked the same project questions twice](https://www.reddit.com/r/EngineeringResumes/comments/1v9440p/0_yoe_finally_landed_an_embedded_systems_engineer/). Another early-career engineer [said they kept getting "hammered with harder questions until they can stump me"](https://www.reddit.com/r/ElectricalEngineering/comments/1da96fe/frustrated_with_interview_practices/). Expect to reach your limit.
 
 Entry-level roles run long too. [One EE was surprised that a trainee position came with a 70-minute technical interview](https://www.reddit.com/r/ElectricalEngineering/comments/15y0mnc/why_is_it_so_necessary_to_get_through_hard/). The engineer roles they applied to next ran the same way.
 
 Many employers score you against a fixed set of questions. [The US Office of Personnel Management defines a structured interview](https://www.opm.gov/frequently-asked-questions/assessment-policy-faq/structured-interviews/how-do-structured-interviews-differ-from-other-types-of-job-interviews/) as one where every candidate gets the same questions in the same order. Every answer is scored on the same scale. [A 2022 review of hiring research ranked structured interviews first among the selection methods it compared](https://pubmed.ncbi.nlm.nih.gov/34968080/). For you, that means the same topics come up for every candidate, so you can prepare for them.
-
-## Get a referral first
-
-A referral gets you into the process sooner. In [Ashby's hiring data, 40% of referred candidates went from application to interview](https://www.ashbyhq.com/talent-trends-report/reports/referrals). The [[Getting hired#Get a referral first|Get a referral first]] section on the Getting hired page lists who to ask and what to send.
-
-If you cannot get one, apply early. [Greenhouse says most recruiters review applications in the order they arrive](https://my.greenhouse.com/blogs/what-really-happens-after-you-apply-for-a-job). Check the career pages of your top companies every day.
 
 ## How to prepare
 
@@ -68,7 +62,7 @@ Review the topics your resume and the posting touch first:
 - Interrupts and memory. Know what happens from the interrupt to the return, and where each variable lives. [The MIT course has units on procedures and stacks, the memory hierarchy, and devices and interrupts](https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/).
 - Protocols and parts. [Hardware FYI lists I2C, SPI, and UART](https://www.hardwareinterviews.fyi/t/top-electrical-engineering-interview-questions/807), and when to pick a microcontroller, an FPGA, or an ASIC.
 - Analog and power. The same list includes MOSFETs versus BJTs, a buck converter versus an LDO, and deriving the gain of an inverting op-amp.
-- Digital logic and signals. It also lists a parallel-in, serial-out shift register, the Nyquist rate, and FIR versus IIR filters.
+- Digital logic and signals. It also lists a parallel-in, serial-out shift register, the Nyquist rate, and FIR versus IIR filters. For digital and FPGA roles, practice Verilog on [HDLBits](https://hdlbits.01xz.net/wiki/Main_Page) and work through [ChipVerify's ASIC design and verification interview questions](https://chipverify.com/interview-questions).
 
 Hardware interviews mix these. [One student's Microsoft hardware internship loop had 3 interviews](https://www.reddit.com/r/ECE/comments/1gmt5fg/microsoft_hardware_engineering_intern_interview/), each half behavioral and half technical. The technical half covered analog filters, timing analysis, signal integrity, and their projects.
 
@@ -80,7 +74,7 @@ Practice the format as well as the problems. [Illinois Engineering Career Servic
 
 Practice with someone watching. In a [2020 study by NC State and Microsoft researchers, having an interviewer watch cut performance by more than half](https://par.nsf.gov/servlets/purl/10196170). The study had 48 computer science students solve the same kind of problem in private or in front of an interviewer. You cannot remove the audience on the day, so get used to one beforehand.
 
-At the board, follow [Michigan Engineering's technical interview advice](https://career.engin.umich.edu/interviews/). Think out loud, watch for the clues the interviewer gives you, and ask when you are stuck. [Georgia Tech's career center says to clarify before solving](https://career.gatech.edu/graduate-job/interviewing/), and that many technical interviews give credit for a sound approach. Restate the problem and ask for what you need before you start.
+At the board, follow [Michigan Engineering's technical interview advice](https://career.engin.umich.edu/technical-interviews). Think out loud, watch for the clues the interviewer gives you, and ask when you are stuck. [Georgia Tech's career center says to clarify before solving](https://career.gatech.edu/graduate-job/interviewing/), and that many technical interviews give credit for a sound approach. Restate the problem and ask for what you need before you start.
 
 ### Behavioral stories
 
@@ -150,7 +144,7 @@ Send a thank-you email within 24 hours. [Illinois Engineering Career Services gi
 
 ## Further reading
 
-Start with these guides: [MIT's STAR worksheet](https://capd.mit.edu/resources/the-star-method-for-behavioral-interviews/), [Michigan Engineering's interview guide](https://career.engin.umich.edu/interviews/), [Georgia Tech's undergraduate interviewing guide](https://career.gatech.edu/undergrad-job-search/interviewing/), [Illinois Engineering Career Services interview basics](https://ecs.grainger.illinois.edu/student-resources/interviewing/fundamentals), and [Nigel Jones on the volatile keyword](https://barrgroup.com/embedded-systems/how-to/c-volatile-keyword).
+Start with these guides: [MIT's STAR worksheet](https://capd.mit.edu/resources/the-star-method-for-behavioral-interviews/), [Michigan Engineering's interview guide](https://career.engin.umich.edu/interviews/), [Georgia Tech's undergraduate interviewing guide](https://career.gatech.edu/undergrad-job-search/interviewing/), [Illinois Engineering Career Services interview basics](https://ecs.grainger.illinois.edu/student-resources/interviewing/fundamentals), and [Nigel Jones on the volatile keyword](https://barrgroup.com/embedded-systems/how-to/c-volatile-keyword). For practice, use [Georgia Tech's Interview Ready guide](https://sites.gatech.edu/careercenterdev/files/2024/09/Interviewing_Career-Guide.pdf), [MIT's sample interview questions](https://capd.mit.edu/resources/sample-interview-questions/), and [a community list of hardware engineer interview questions on GitHub](https://github.com/mikinty/Hardware-Engineer-Interview-Questions).
 
 ## Prep sheet
 
