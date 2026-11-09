@@ -1,6 +1,6 @@
 ---
 title: Portfolio
-description: "How an EE student builds a free portfolio site and a LinkedIn profile that recruiters find: what to host, what each project page holds, and what a reviewer actually looks at."
+description: "A project portfolio for EE students: optional, and worth it when you have hardware to show. What each project page holds, how to build one in a weekend with an AI tool, and how to post the work on LinkedIn."
 pageType: guide
 head:
   - tag: title
@@ -9,7 +9,7 @@ head:
 
 import ProjectPageFigure from '../../../../components/resume/ProjectPageFigure.astro';
 
-A portfolio is a page per project with a photo, a measured result, and the files. It does not replace the resume, and most screeners never click the link. It pays off later, when a hiring manager wants to see the work behind a bullet. Keep it small, keep every link alive, and put the same three projects on LinkedIn.
+A portfolio is a page per project with a photo, a measured result, and the files. It is optional. Most screeners never click the link, and no portfolio replaces the resume. It pays off later, when a hiring manager wants to see the work behind a bullet, and it pays off most for a student with hardware to show: a board you laid out, a bench you built, a scope capture that proves the thing works. If that is you, build one. It takes a weekend, and less with an AI tool doing the layout. Keep it small, keep every link alive, and post the same projects on LinkedIn as you go.
 
 ## What a reviewer does with the link
 
@@ -27,6 +27,14 @@ Put the code and the design files in one GitHub repository per project, with a R
 
 Three projects are enough. Pick the ones you can defend. The [[Projects|Projects page]] covers how to choose them.
 
+The pages that hold up are the ones that look like a lab report. [Cornell's ECE 4760 final project sites](https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/s2004/mx23/myweb/index.htm) have been doing this since the early 2000s: an introduction with the result, the high-level design, the hardware and software in their own sections, the results with measurements, and appendices with the schematic, the code, and the part list. The students who wrote them were your age, and a hiring manager can read one in two minutes and know whether the project is real. Copy that shape before you copy anyone's visual design.
+
+## Who needs one
+
+If your projects are software, a GitHub profile with pinned repositories and good READMEs does the job, and the [[Software#Show it on GitHub|Show it on GitHub]] section on the Software page covers it. A portfolio site earns its keep when the work is physical. A PCB, a power stage, a robot, a test rig, or an RF build has photos, scope captures, and layout images that a README shows badly and a page shows well. One student with no work experience [kept a separate project portfolio that showed the projects in depth](https://www.reddit.com/r/EngineeringResumes/comments/1r4c3rv/0_yoe_i_received_an_offer_recently_i_graduated/) and got an offer in February 2026 on the strength of it. The resume gave each project one line, and the portfolio held the rest.
+
+If you have one finished build and no photos of it, skip the site until you do. A thin portfolio reads worse than none.
+
 ## Hosting for free
 
 Every host below is free for a static site of a few pages and compressed images.
@@ -37,6 +45,10 @@ Every host below is free for a static site of a few pages and compressed images.
 
 Plain HTML is fine. If you want a generator, Astro or Hugo builds the pages from Markdown. Do not spend a weekend on the design. Spend it on the project pages.
 
+## Build it with an AI tool
+
+This is the one place in the job search where I tell students to let an AI tool do most of the work. The site is a container. The project pages are yours, and the tool cannot write them, because it has never seen your board. Give Claude, ChatGPT, or Cursor the list of your projects, the result line for each, and your photos, and ask for a static site with one page per project in the order in Figure 19.1. Ask for plain HTML or a small Astro project, no framework you cannot explain, and tell it to leave every number as a bracket you fill in. Then write the Design, Results, and What broke sections yourself, from your notebook. The tool saves you the day of layout and leaves you the hour of writing that matters. The [[AI use|AI use page]] has where a tool helps in the rest of the search and where it costs you.
+
 ## LinkedIn
 
 A recruiter's search finds the words in your profile, so the profile is where your resume lines get found. Three rules:
@@ -46,6 +58,10 @@ A recruiter's search finds the words in your profile, so the profile is where yo
 3. Turn on Open to Work for recruiters only while you search. [LinkedIn says that setting shows your status to people using LinkedIn Recruiter, and that it tries to hide it from recruiters at your current employer but cannot promise complete privacy](https://www.linkedin.com/help/linkedin/answer/a507508/let-recruiters-know-you-re-open-to-work?lang=en).
 
 Your school's career center has a LinkedIn guide. [Berkeley's](https://career.berkeley.edu/prepare-for-success/networking/using-linkedin/) and [MIT's](https://capd.mit.edu/resources/linkedin/) are public. Use LinkedIn for people, too. The [[Networking#LinkedIn|LinkedIn]] section on the Networking page covers the alumni tab.
+
+### Post the work as you go
+
+Post about your projects while you build them, and again when they are done. A photo of the board on the bench, a scope capture with one sentence on what it shows, a short note on the bug that ate your weekend. It never hurts to show off a little and toot your own horn, and a recruiter who searches for your tools finds a profile with proof on it instead of a bare headline. My own posts were the write-ups of what I was working on, and they are part of why people inside my company knew my name before I did. Keep each post to the fact and the picture. Nobody needs the lesson at the end.
 
 ## Keep it current
 

@@ -1,6 +1,6 @@
 # Filling in resume.json for resume-generator
 
-resume-generator (https://github.com/edwardasilva/resume-generator) turns one JSON file into a one-page PDF with the layout from eeprep's resume page. It does the layout and the one-page fit. You write the content. Its README has the full field guide; this is the short version, so you can fill the file from an inventory.
+[resume-generator](https://github.com/edwardasilva/resume-generator) turns one JSON file into a one-page PDF with the layout from eeprep's resume page. It does the layout and the one-page fit. You write the content. Its README has the full field guide; this is the short version, so you can fill the file from an inventory.
 
 ## Shape
 

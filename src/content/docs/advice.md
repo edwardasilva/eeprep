@@ -17,7 +17,7 @@ The advice on these pages is one engineer's opinion, not a set of rules. If you 
   - The [[Portfolio|Portfolio page]] covers a project site that shows the work behind the bullets, and a LinkedIn profile that recruiters find.
 - The [[Resume|Resume page]] covers a one-page layout, section order, and bullets with measured results.
   - The [[Quick setup|Quick setup page]] is the whole guide on one page, in seven steps.
-  - The [[Walkthrough|Walkthrough page]] takes one student's resume from a first draft to a finished PDF, with four more finished pages.
+  - The [[Walkthrough|Walkthrough page]] takes one student's resume from a first draft to a finished PDF, and shows how the page changes once experience takes over.
   - The [[Cleanup|Cleanup page]] is the audit to run on the PDF before you send it.
   - The [[Workshop|Workshop page]] is a timed resume workshop for a class or student group, with a script and handouts.
 - The [[Getting hired|Getting hired page]] covers referrals, the 20-application rule, career fairs, and where to look.
