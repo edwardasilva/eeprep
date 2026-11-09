@@ -58,7 +58,8 @@
       "advice/getting-hired/how-to-interview",
       "advice/resume",
       "advice/resume/simple",
-      "help/ai-use"
+      "help/ai-use",
+      "help/job-boards"
     ]
   },
   {
@@ -883,7 +884,7 @@
     "title": "Indeed",
     "category": "Job search and referrals",
     "summary": "General job search site for openings across employers and locations.",
-    "pages": ["advice/getting-hired"]
+    "pages": ["advice/getting-hired", "help/job-boards"]
   },
   {
     "url": "https://www.linkedin.com/help/linkedin/answer/a567083",
@@ -897,7 +898,7 @@
     "title": "LinkedIn Jobs",
     "category": "Job search and referrals",
     "summary": "LinkedIn's job search, with filters for internships and entry-level roles.",
-    "pages": ["help"]
+    "pages": ["help", "help/job-boards"]
   },
   {
     "url": "https://career.engin.umich.edu/students/job-search-policies/",
@@ -2270,5 +2271,12 @@
     "category": "AI in the job search",
     "summary": "An auto-apply vendor's own list of how its kind of tool goes wrong.",
     "pages": ["advice/getting-hired"]
+  },
+  {
+    "url": "https://www.semafor.com/article/06/24/2025/recruiters-swamped-with-ai-generated-job-applications",
+    "title": "Semafor: Recruiters swamped with AI-generated applications",
+    "category": "AI in the job search",
+    "summary": "LinkedIn's count of applications, up more than 45% in a year at about 11,000 a minute.",
+    "pages": ["help/job-boards"]
   }
 ]

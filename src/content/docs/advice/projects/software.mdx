@@ -17,21 +17,21 @@ EE employers hire for software. [Texas Instruments lists software engineer among
 
 [One recruiter in aerospace and defense wrote that embedded software engineers are the hardest and most expensive candidates to find in that industry](https://www.reddit.com/r/EngineeringResumes/comments/1sj2rgt/student_landed_nvidia_offer_sophomore_cs_major_at/).
 
-An EE degree can also move you between teams. That happened to me. A recruiter first matched me to a hardware role, and a manager moved me to software. [[How to interview#The recruiter moved the file]] tells that part.
+An EE degree can also move you between teams. That happened to me. A recruiter first matched me to a hardware role, and a manager moved me to software. The [[How to interview#The recruiter moved the file|The recruiter moved the file]] section on the How to interview page tells that part.
 
 ## Embedded firmware
 
-Firmware is the code that runs on a microcontroller. Start bare metal, with no operating system: set up a timer, read an ADC, and handle an interrupt. The long converter entry under [[Hardware#Hardware builds that count]] has firmware that tunes dead time on an STM32 timer, samples input current at [X] kHz, and cuts the rail within [Y] µs of a fault.
+Firmware is the code that runs on a microcontroller. Start bare metal, with no operating system: set up a timer, read an ADC, and handle an interrupt. The long converter entry under the [[Hardware#Hardware builds that count|Hardware builds that count]] section on the Hardware page has firmware that tunes dead time on an STM32 timer, samples input current at [X] kHz, and cuts the rail within [Y] µs of a fault.
 
 Add a real-time operating system once bare metal works. [FreeRTOS is a free kernel for microcontrollers, under the MIT license](https://www.freertos.org/).
 
 Follow a coding standard. [Barr Group offers its Embedded C Coding Standard as a free download](https://barrgroup.com/free-downloads). It sets rules for data types, functions, macros, and variables to keep bugs out of firmware.
 
-If you have no board yet, [[Hardware#Starting on a student budget]] lists a free browser simulator for Arduino, ESP32, and STM32. Interviewers ask about `volatile` and interrupts, and [[How to interview#Fundamentals from the ground up]] lists what to know.
+If you have no board yet, the [[Hardware#Starting on a student budget|Starting on a student budget]] section on the Hardware page lists a free browser simulator for Arduino, ESP32, and STM32. Interviewers ask about `volatile` and interrupts, and the [[How to interview#Fundamentals from the ground up|Fundamentals from the ground up]] section on the How to interview page lists what to know.
 
 ## Test automation and lab scripts
 
-Lab scripts turn bench work into software. The long resume under [[Hardware#Teams and undergraduate research]] has two:
+Lab scripts turn bench work into software. The long resume under the [[Hardware#Teams and undergraduate research|Teams and undergraduate research]] section on the Hardware page has two:
 
 - Found [X] battery protection faults before launch review with a Python script that runs [Y] overnight charge cycles and flags any cell that drifts over [Z] mV from the pack average
 - Cut test time per device from [X] to [Y] minutes with Python and PyVISA scope capture
@@ -44,7 +44,7 @@ Lab scripts turn bench work into software. The long resume under [[Hardware#Team
 
 ## FPGA and HDL
 
-HDL (hardware description language) describes a circuit in code, so an FPGA build is both hardware and software. Alex's FPGA equalizer is under [[Hardware#Hardware builds that count]]. Show how you verified the design as well as the design itself.
+HDL (hardware description language) describes a circuit in code, so an FPGA build is both hardware and software. Alex's FPGA equalizer is under the [[Hardware#Hardware builds that count|Hardware builds that count]] section on the Hardware page. Show how you verified the design as well as the design itself.
 
 - [cocotb lets you write testbenches for VHDL and SystemVerilog designs in Python](https://www.cocotb.org/).
 - [Verilator is a free, open-source Verilog and SystemVerilog simulator](https://www.veripool.org/verilator/) that also runs lint checks.
@@ -64,6 +64,6 @@ Put each project in its own repository with a README. [GitHub says a README tell
 
 ## Put it on the resume
 
-Write a software line the way you write a hardware line: the action, the tool, and a measured result. The battery monitor line under [[Hardware#Hardware builds that count]] follows it: "Tracked [X] Li-ion cells within [Y] mV each on an ESP32 that streams to a Python dashboard."
+Write a software line the way you write a hardware line: the action, the tool, and a measured result. The battery monitor line under the [[Hardware#Hardware builds that count|Hardware builds that count]] section on the Hardware page follows it: "Tracked [X] Li-ion cells within [Y] mV each on an ESP32 that streams to a Python dashboard."
 
 Expect questions on every line. [A student who landed an NVIDIA internship said the interview questions were about how they built each project and what they did](https://www.reddit.com/r/EngineeringResumes/comments/1sj2rgt/student_landed_nvidia_offer_sophomore_cs_major_at/).

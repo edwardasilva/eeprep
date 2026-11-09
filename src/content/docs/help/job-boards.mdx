@@ -1,23 +1,54 @@
 ---
 title: Job boards
-description: "Which job boards work for EE students and new grads, where each one misleads, how many postings are ghost jobs, and how to tell a live opening from a copy."
+description: "Where EE students actually find openings: company career pages and LinkedIn search, with Handshake and the federal site behind them, and which boards waste a student's time."
 pageType: resources
 head:
   - tag: title
-    content: "Job boards for EE students, and where each one misleads | EE Prep"
+    content: "Job boards for EE students: what works and what wastes time | EE Prep"
 ---
 
 import ListingSourceFigure from '../../../components/links/ListingSourceFigure.astro';
 
-Use a board to find the role, then apply on the employer's own page. Check three places each week: the career pages of the companies you want, one daily list for your level, and your school's fair calendar. Expect about one posting in five to be unfillable even on an employer's own system, and more on sites that copy listings.
+Two places found nearly every opening I applied to: the career pages of the companies I wanted, and LinkedIn search with an alert set for each title. I applied on the company's site every time. Handshake is worth a weekly look while you are a student, and USAJOBS is the only route into federal work. The rest of the boards, the IEEE Job Site included, cost more time than they return at the entry level.
 
 <ListingSourceFigure />
 
+## Start with the company's own page
+
+The posting lives there, so it closes when the role closes, and the application goes into the employer's own system instead of a copy. Pick the companies you want, bookmark their career pages, and check them once a week. Most of them run on Greenhouse, Workday, or Lever, and [Greenhouse says recruiters review applications in the order they arrive](https://my.greenhouse.com/blogs/what-really-happens-after-you-apply-for-a-job), so an early application on the company's site beats a late one anywhere else.
+
+I went one step further and wrote a scraper that watched the career pages I cared about and told me when a new role appeared. It flagged my current job the day it posted. The [[AI use]] page has that story.
+
+## Use LinkedIn to find, not to apply
+
+Search [LinkedIn Jobs](https://www.linkedin.com/jobs/) by title and metro area, and set an alert for each title you want. That is how I found most of the openings in my own search. Then open the employer's page and apply there. Skip the one-click apply. [LinkedIn's own count has applications up more than 45 percent in a year, at about 11,000 a minute](https://www.semafor.com/article/06/24/2025/recruiters-swamped-with-ai-generated-job-applications), and the easy-apply pile is where that volume lands.
+
+LinkedIn mixes postings employers put there with postings it indexes from elsewhere, so a listing can stay up after the role fills. The company page tells you whether it is still open.
+
+## Handshake while you are a student
+
+[Handshake](https://joinhandshake.com/students/) holds the listings employers post for your school, the fair schedule, and the on-campus interview slots. It is the only board where the employer chose your school. It is also crowded. [Handshake's data for the class of 2025 showed postings down 15 percent over the year and applications per job up 30 percent](https://www.axios.com/2025/05/25/labor-market-jobs-college-graduates-economy-trump). A recruiter message on Handshake is usually an automated invitation to apply, not an interview offer.
+
+## Curated lists for the daily check
+
+[SimplifyJobs keeps a GitHub list of new-grad roles](https://github.com/SimplifyJobs/New-Grad-Positions). On 9 November 2026 it listed 601 roles, 119 of them under hardware engineering, and it marks closed roles with a lock. [Its internship list](https://github.com/SimplifyJobs/Summer2027-Internships) listed 1,612 roles, 282 of them hardware, and its scraper checks company pages every hour. These lists are copies, but fresh ones, and the closed marker is the feature the big boards lack. The [[Repositories and resources]] page lists them with the other repos.
+
+## Federal work
+
+[USAJOBS](https://www.usajobs.gov/) is the one place federal jobs are posted, with a close date on every announcement. The [Pathways recent graduates program](https://opm.usajobs.gov/hiringpath/recentgraduates/) takes people within two years of a degree and lasts one year, and [conversion to a permanent job is not guaranteed](https://www.opm.gov/policy-data-oversight/hiring-information/students-recent-graduates/).
+
+## Boards that waste your time
+
+- The [IEEE Job Site](https://jobs.ieee.org/) leans senior and academic, and it sells resume reviews and coaching. A student searching for entry-level titles finds little. Membership in IEEE is worth it for other reasons, which the [[Professional societies]] page covers.
+- [Indeed](https://www.indeed.com/) indexes postings from elsewhere as well as hosting direct posts, [as its own employer pages say](https://www.indeed.com/hire/c/info/job-boards), so a copy can outlive the role. Anything you find there, confirm on the company page.
+- Staffing agencies such as Actalent and Aerotek post their clients' openings under their own name, often without naming the client, so the same role shows up several times across boards. [One new graduate did get a job through an agency that works with engineering companies](https://www.reddit.com/r/ElectricalEngineering/comments/1wj9mw3/how_easy_it_is_to_find_a_job_for_a_new_grad_if_my/), with the call 2 days after sending a resume. Ask who the client is before you interview.
+- Tools that apply for you. Never let one submit applications in your name. The Tools that apply for you section on the [[Getting hired#Tools that apply for you|Getting hired]] page has what happened to the people who did.
+
 ## How many postings are real
 
-[Greenhouse, which runs hiring for thousands of employers, told Axios in September 2024 that 18 to 22 percent of the jobs posted on its platform in any quarter are ghost jobs](https://www.axios.com/2024/09/24/greenhouse-job-ghosting-hiring-rejection-email), and that the figure for the second quarter of 2024 was 18.9 percent. Those are postings on the employer's own system. [In a 2024 Resume Builder survey of 1,641 hiring managers, reported by Fortune, 40 percent said their company had posted a job that year with no plan to fill it](https://fortune.com/2025/01/16/job-market-rife-fake-listing-ghosting-hiring-managers/).
+[Greenhouse told Axios in September 2024 that 18 to 22 percent of the jobs posted on its platform in any quarter are ghost jobs](https://www.axios.com/2024/09/24/greenhouse-job-ghosting-hiring-rejection-email), and that the figure for the second quarter of 2024 was 18.9 percent. Those are postings on the employer's own system, so the rate is higher on sites that copy listings. [In a 2024 Resume Builder survey of 1,641 hiring managers, reported by Fortune, 40 percent said their company had posted a job that year with no plan to fill it](https://fortune.com/2025/01/16/job-market-rife-fake-listing-ghosting-hiring-managers/).
 
-The posting can be real and still not entry level. [A LinkedIn analysis of 3.8 million postings found that 35 percent of entry-level openings asked for at least three years of experience](https://allwork.space/2021/11/what-happened-to-entry-level-jobs-job-seekers-baffled-by-requirements/). [[Hardware#Test or technician roles as a way in]] has the titles to search instead.
+The posting can be real and still not entry level. [A LinkedIn analysis of 3.8 million postings found that 35 percent of entry-level openings asked for at least three years of experience](https://allwork.space/2021/11/what-happened-to-entry-level-jobs-job-seekers-baffled-by-requirements/). The Test or technician roles section on the [[Hardware#Test or technician roles as a way in|Hardware]] page has the titles to search instead.
 
 Some postings are scams. [The FTC reported more than \$220 million in job-scam losses in the first six months of 2024](https://www.ftc.gov/news-events/news/press-releases/2024/12/new-ftc-data-show-skyrocketing-consumer-reports-about-game-online-job-scams). A real employer never asks you to pay, to buy equipment, or to send a tax form before an offer letter.
 
@@ -25,42 +56,8 @@ Some postings are scams. [The FTC reported more than \$220 million in job-scam l
 
 The numbers students post are low on every board. [One ECE student about to graduate had a handful of interviews after more than 100 applications](https://www.reddit.com/r/EngineeringResumes/comments/1jlzly6/student_about_to_graduate_only_a_handful_of/), and a commenter put that at a 2 to 3 percent response rate. [Another sent about 280 applications and got one interview](https://www.reddit.com/r/EngineeringResumes/comments/1in6orx/student_upcoming_computer_engineering_grad/), then [passed 400 applications with the interview count still at one](https://www.reddit.com/r/EngineeringResumes/comments/1jpre8s/student_upcoming_computer_engineering_grad_still/).
 
-The channels students credit with interviews are the ones where a person is attached. [One EE alumnus who looked in aerospace and defense wrote that six recruiter contacts over LinkedIn and email led to offers in three cases](https://www.reddit.com/r/EngineeringStudents/comments/118cye1/fulltime_electrical_engineering_job_search/). That is the 20-application rule from [[Getting hired#When online applications go quiet]] in one story. If a board brings nothing after 20, change the channel.
-
-## The boards, one by one
-
-### Company career pages
-
-The posting lives here, so it closes when the role closes, and the application goes to the employer's own system. Everything else on this page is a way to find out which company page to open.
-
-### Handshake
-
-[Handshake](https://joinhandshake.com/students/) holds the listings employers post for your school, plus the fair and on-campus interview schedules. It is the only board where the employer chose your school. It is also crowded. [Handshake's own data for the class of 2025 showed postings down 15 percent over the year and applications per job up 30 percent](https://www.axios.com/2025/05/25/labor-market-jobs-college-graduates-economy-trump). A recruiter message on Handshake is usually an automated invitation to apply, not an interview offer.
-
-### LinkedIn and Indeed
-
-Both mix listings employers post directly with listings they index from elsewhere. [Indeed says so on its own employer pages](https://www.indeed.com/hire/c/info/job-boards): a job can appear through indexing or be posted and managed on Indeed. A copy can stay up after the role fills. On either site, skip the one-click apply, open the employer's page, and apply there. [[Help#Finding openings]] covers the search itself.
-
-### Curated lists
-
-[SimplifyJobs keeps a GitHub list of new-grad roles](https://github.com/SimplifyJobs/New-Grad-Positions). On 9 November 2026 it listed 601 roles, 119 of them under hardware engineering, and it marks closed roles with a lock. [Its internship list](https://github.com/SimplifyJobs/Summer2027-Internships) listed 1,612 roles, 282 of them hardware, and says its scraper checks company pages every hour. These lists are copies, but fresh ones, and the closed marker is the feature the big boards lack. [[Repositories and resources]] lists more.
-
-### Staffing agencies
-
-Agencies such as Actalent and Aerotek post their clients' openings under their own name, often without naming the client. The same role can show up several times across boards under different agencies. [One new graduate got a job through an agency that works with engineering companies](https://www.reddit.com/r/ElectricalEngineering/comments/1wj9mw3/how_easy_it_is_to_find_a_job_for_a_new_grad_if_my/), with the call 2 days after sending a resume. Ask who the client is before you interview.
-
-### Federal work
-
-[USAJOBS](https://www.usajobs.gov/) is employer posted, with a close date on every announcement. The [Pathways recent graduates program](https://opm.usajobs.gov/hiringpath/recentgraduates/) takes people within two years of a degree, lasts one year, and [conversion to a permanent job is not guaranteed](https://www.opm.gov/policy-data-oversight/hiring-information/students-recent-graduates/).
-
-### IEEE's job site
-
-[The IEEE Job Site](https://jobs.ieee.org/) is employer posted and leans senior and academic. Search for entry-level titles. Skip the paid resume reviews.
+The channels students credit with interviews are the ones where a person is attached. [One EE alumnus who looked in aerospace and defense wrote that six recruiter contacts over LinkedIn and email led to offers in three cases](https://www.reddit.com/r/EngineeringStudents/comments/118cye1/fulltime_electrical_engineering_job_search/). That is the 20-application rule in one story. If a board brings nothing after 20 applications, change the channel. The When online applications go quiet section on the [[Getting hired#When online applications go quiet|Getting hired]] page has the rule.
 
 ## Pay data for an offer
 
-A board shows the posting, and the pay sites show what the role is worth. [[Help#Pay and offers]] covers the BLS, Levels.fyi, and NACE, and [[First full-time role#Evaluating an offer]] walks through the comparison.
-
-## Tools that apply for you
-
-Do not let a tool submit applications in your name. [[Getting hired#When online applications go quiet]] has what happened to the people who did.
+A board shows the posting, and the pay sites show what the role is worth. The Pay and offers section on the [[Help#Pay and offers|Help]] page covers the BLS, Levels.fyi, and NACE, and the Evaluating an offer section on the [[First full-time role#Evaluating an offer|First full-time role]] page walks through the comparison.
