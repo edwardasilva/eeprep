@@ -5,13 +5,7 @@
    Starlight convention: :root = DARK, :root[data-theme='light'] = LIGHT.
    ========================================================================== */
 
-/* ---------- 1. Fonts (self-hosted via Fontsource, imported in astro config/head)
-   npm i @fontsource-variable/newsreader @fontsource-variable/inter @fontsource-variable/jetbrains-mono
-   import '@fontsource-variable/newsreader/opsz.css';          // roman, wght+opsz
-   import '@fontsource-variable/newsreader/opsz-italic.css';   // italic, wght+opsz
-   import '@fontsource-variable/inter/opsz.css';
-   import '@fontsource-variable/jetbrains-mono';
-   All three: SIL Open Font License 1.1. */
+/* ---------- 1. Fonts: Source Serif 4 for all text, Source Code Pro for code only, self-hosted with Fontsource in fonts.css. Both SIL Open Font License 1.1. ---------- */
 
 /* ---------- 2. Raw tokens (mode-independent) ---------- */
 :root {
@@ -63,11 +57,9 @@
 
 	/* Radii & borders */
 	--eep-radius-sm: 2px; /* inline code, kbd */
-	--eep-radius: 4px; /* figures, code blocks, callouts (right side) */
+	--eep-radius: 4px; /* figures, code blocks */
 	--eep-radius-lg: 8px; /* search, inputs, cards on landing */
 	--eep-border: 1px solid var(--eep-rule);
-	--eep-border-strong: 1px solid var(--eep-ink); /* definition callout top rule */
-	--eep-callout-bar: 3px;
 	--eep-toc-bar: 1.5px;
 }
 
@@ -90,8 +82,7 @@
 	--eep-accent-hover: #7d1714;
 	--eep-accent-soft: #f8ecea; /* tip bg */
 	--eep-on-accent: #ffffff;
-	/* callout semantics (desaturated, textbook-appropriate) */
-	--eep-def: #16233a;
+	/* semantic colours (desaturated, textbook-appropriate) */
 	--eep-ex: #1d5f8a;
 	--eep-ex-soft: #eef4f8;
 	--eep-check: #3f6b22;
@@ -125,7 +116,6 @@
 	--eep-accent-hover: #f08b81;
 	--eep-accent-soft: #2a1a24;
 	--eep-on-accent: #0d1524;
-	--eep-def: #eceef2;
 	--eep-ex: #7fb3d9;
 	--eep-ex-soft: #14243a;
 	--eep-check: #9cc77a;
@@ -259,10 +249,7 @@ h1#_top {
 	font-size: 0.88em;
 }
 
-/* ---------- 7. Callouts (Obsidian syntax via rehype-callouts / remark-obsidian-callout:
-   <div class="callout" data-callout="tip"><div class="callout-title">…</div><div class="callout-content">…</div></div>)
-   Also styles Starlight asides (.starlight-aside--tip|caution|note|danger). ---------- */
-.callout,
+/* ---------- 7. Starlight asides (.starlight-aside--tip|caution|note|danger) ---------- */
 .starlight-aside {
 	--c: var(--eep-silver);
 	background: var(--eep-sunken);
@@ -275,15 +262,9 @@ h1#_top {
 	color: var(--eep-ink);
 }
 /* Warnings mark the bar only. */
-.callout:is(
-	[data-callout='warning'],
-	[data-callout='caution'],
-	[data-callout='danger']
-),
 .starlight-aside:is(.starlight-aside--caution, .starlight-aside--danger) {
 	--c: var(--eep-accent);
 }
-.callout-title,
 .starlight-aside__title {
 	font: 600 0.8125rem/1.2 var(--eep-font-sans);
 	color: var(--eep-ink-2);
@@ -292,40 +273,12 @@ h1#_top {
 	align-items: center;
 	margin-bottom: var(--eep-space-2);
 }
-:is(.callout-title-icon, .starlight-aside__icon) {
+.starlight-aside__icon {
 	display: none;
 }
-/* Obsidian-style parts sit flush, spaced like Starlight asides. */
-.sl-markdown-content :is(.callout-title-text, .callout-content) {
-	margin-top: 0;
-}
-.callout-content > p:first-child > strong:only-child {
-	display: block;
-	font: 550 1.25rem/1.3 var(--eep-font-serif);
-	color: var(--eep-ink);
-}
-.callout-content,
 .starlight-aside__content {
 	font-size: 0.96875rem;
 	color: var(--eep-ink);
-}
-.callout[data-callout='definition'] .callout-content strong:first-child {
-	font-family: var(--eep-font-serif);
-	font-style: italic;
-	font-weight: 500;
-	font-size: 1.15em;
-	color: var(--eep-ink);
-}
-.callout[data-callout='example'] .callout-content {
-	counter-reset: step;
-}
-.callout[data-callout='example'] .callout-content ol > li::marker {
-	font-family: var(--eep-font-mono);
-	color: var(--eep-ink);
-}
-.callout[data-callout='question'] details > summary,
-.callout.is-collapsible .callout-title {
-	cursor: pointer;
 }
 
 /* ---------- 8. Figures ---------- */
