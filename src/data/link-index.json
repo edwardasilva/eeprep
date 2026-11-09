@@ -270,8 +270,8 @@
     "pages": ["advice/resume", "advice/resume/workshop"]
   },
   {
-    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/alex.pdf",
-    "title": "resume-generator: alex.pdf",
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Alex-Doe-Resume.pdf",
+    "title": "resume-generator: Alex-Doe-Resume.pdf",
     "category": "Sample resumes and templates",
     "summary": "Alex Doe's finished one-page resume, the PDF behind Figure 4.4.",
     "pages": ["advice/resume/walkthrough"]
@@ -284,29 +284,29 @@
     "pages": ["advice/resume/walkthrough"]
   },
   {
-    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/first-year.pdf",
-    "title": "resume-generator: first-year.pdf",
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Jordan-Doe-Resume.pdf",
+    "title": "resume-generator: Jordan-Doe-Resume.pdf",
     "category": "Sample resumes and templates",
     "summary": "A first-year student's page: one class project, a one-line job, and a few skills.",
     "pages": ["advice/resume/walkthrough"]
   },
   {
-    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/sophomore.pdf",
-    "title": "resume-generator: sophomore.pdf",
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Sam-Doe-Resume.pdf",
+    "title": "resume-generator: Sam-Doe-Resume.pdf",
     "category": "Sample resumes and templates",
     "summary": "A second-year student's page: two projects, a club lead role, and a one-line job.",
     "pages": ["advice/resume/walkthrough"]
   },
   {
-    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/new-grad.pdf",
-    "title": "resume-generator: new-grad.pdf",
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Taylor-Doe-Resume.pdf",
+    "title": "resume-generator: Taylor-Doe-Resume.pdf",
     "category": "Sample resumes and templates",
     "summary": "A new graduate's page with two internships, experience first.",
     "pages": ["advice/resume/walkthrough"]
   },
   {
-    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/packed.pdf",
-    "title": "resume-generator: packed.pdf",
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Casey-Doe-Resume.pdf",
+    "title": "resume-generator: Casey-Doe-Resume.pdf",
     "category": "Sample resumes and templates",
     "summary": "A full page with three engineering roles and three projects, tightened to fit.",
     "pages": ["advice/resume/walkthrough"]
