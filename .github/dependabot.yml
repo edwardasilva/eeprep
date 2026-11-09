@@ -7,6 +7,8 @@ updates:
     directory: /
     schedule:
       interval: monthly
+    cooldown:
+      default-days: 7
     target-branch: main
     labels:
       - dependencies
@@ -29,6 +31,8 @@ updates:
     directory: /
     schedule:
       interval: monthly
+    cooldown:
+      default-days: 7
     target-branch: main
     labels:
       - dependencies
@@ -40,6 +44,8 @@ updates:
     directory: /
     schedule:
       interval: monthly
+    cooldown:
+      default-days: 7
     target-branch: main
     labels:
       - dependencies

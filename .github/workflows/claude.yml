@@ -22,7 +22,9 @@ jobs:
   claude:
     name: Claude
     if: >-
-      (github.event_name == 'issues' && github.event.label.name == 'claude') ||
+      (github.event_name == 'issues' &&
+        github.event.label.name == 'claude' &&
+        github.event.sender.login == github.repository_owner) ||
       (github.event_name == 'issue_comment' &&
         github.event.comment.user.login == github.repository_owner &&
         contains(github.event.comment.body, '@claude')) ||
@@ -56,7 +58,7 @@ jobs:
 
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          node-version: '22.23.4'
+          node-version-file: .nvmrc
           cache: npm
 
       - uses: anthropics/claude-code-action@9eb012b6d0900c2b9eede65ee1758cec4d2973e9 # v1.0.270
@@ -65,8 +67,8 @@ jobs:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           label_trigger: claude
           branch_prefix: claude/
-          # Only the owner's comments, Claude's own, and Bugbot's reach Claude as context.
-          include_comments_by_actor: ${{ github.repository_owner }},claude[bot],cursor[bot]
+          # Only the owner's comments and Claude's own reach Claude as context.
+          include_comments_by_actor: ${{ github.repository_owner }},claude[bot]
           additional_permissions: |
             actions: read
           claude_args: |
