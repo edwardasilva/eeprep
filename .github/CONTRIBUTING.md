@@ -44,6 +44,12 @@ Pull requests into `main` run these checks. A failed check does not stop the oth
 
 The `protect-main` ruleset requires two checks by name: `Checks` (ci.yml) and `PR body` (pr-body.yml). A pull request that changes only repo docs, such as `README.md`, `CLAUDE.md`, or `.github/ISSUE_TEMPLATE`, skips the tests and the build, but `Checks` still runs Vale and lint and still reports. CI is kept small to save runner time. The Playwright mobile audit runs from `audit.yml` on release tags and by hand (`gh workflow run audit.yml --ref main`), not on pull requests. CodeQL runs weekly, and the Source links check runs monthly. Dependabot opens grouped updates monthly.
 
+## Security and conduct
+
+Report a security problem in private through GitHub's private vulnerability reporting, not in a public issue.
+
+Be civil in issues and pull requests. The owner may remove comments that are not.
+
 ## Releases and deploys
 
 The site has two targets on Cloudflare Workers:
@@ -51,9 +57,9 @@ The site has two targets on Cloudflare Workers:
 | Trigger                        | Target                                  |
 | ------------------------------ | --------------------------------------- |
 | A merge to `main`              | The dev site, which search engines skip |
-| A version tag such as `v0.0.2` | eeprep.com                              |
+| A version tag such as `v0.1.0` | eeprep.com                              |
 
-All four repos (eeprep, resume-generator, edwardasilva, information) are on the 0.0.x beta line, and the current release is `v0.0.1`. A release bumps only the last number. Each release is exactly one commit on `main`. `v0.0.1` is a single commit with no parent. Each later release is one squashed commit whose parent is the previous release commit, tagged `vX.Y.Z` with an annotated tag whose message is `<repo> vX.Y.Z`. The work merged since the last release is squashed into that commit. Production deploys only from a tag. A merge to `main` deploys only the dev site. The tag publishes eeprep.com and creates the GitHub release. The `protect-main` ruleset is paused only while the release commit is force-pushed, and turned back on right after.
+v0.1.0 is the public release, and a release or tag happens only when Edward says so. Each release is exactly one commit on `main`. `v0.1.0` is a single commit with no parent. Each later release is one squashed commit whose parent is the previous release commit, tagged `vX.Y.Z` with an annotated tag whose message is `<repo> vX.Y.Z`. The work merged since the last release is squashed into that commit. Production deploys only from a tag. A merge to `main` deploys only the dev site. The tag publishes eeprep.com and creates the GitHub release. The `protect-main` ruleset is paused only while the release commit is force-pushed, and turned back on right after.
 
 To cut `vX.Y.Z` after `vA.B.C`:
 
