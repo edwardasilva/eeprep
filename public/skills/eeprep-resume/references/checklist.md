@@ -20,7 +20,7 @@ Audit the finished PDF, not the source file. Work top to bottom. Fix what fails,
 
 ## Education
 
-- GPA only if the posting sets a minimum the user meets, with matching decimals.
+- GPA listed at 3.50 or higher, judged at 3.0 to 3.49, left off below 3.0, with matching decimals.
 - Graduation date at the right margin, "Expected" if not yet graduated.
 - One line of coursework that matches the posting.
 - No high school.
@@ -65,7 +65,7 @@ Header
 [ ] One email, checked daily
 
 Education
-[ ] GPA only if the posting sets a minimum I meet, decimals matching
+[ ] GPA listed at 3.50 or higher, judged at 3.0 to 3.49, off below 3.0, decimals matching
 [ ] Graduation date at the right margin, "Expected" if not yet graduated
 [ ] One line of coursework that matches the posting
 [ ] No high school
