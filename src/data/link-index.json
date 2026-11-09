@@ -2060,8 +2060,11 @@
     "url": "https://naceweb.org/about-us/press/2026/salaries-expected-to-climb-for-class-of-2026-grads-despite-flat-hiring",
     "title": "NACE: Class of 2026 salary projections",
     "category": "Pay and career data",
-    "summary": "NACE's Winter 2026 projection for engineering master's graduates.",
-    "pages": ["advice/forever-learning/graduate-study"]
+    "summary": "NACE's Winter 2026 projected starting salaries for engineering graduates.",
+    "pages": [
+      "advice/forever-learning/graduate-study",
+      "advice/getting-hired/first-full-time-role"
+    ]
   },
   {
     "url": "https://spectrum.ieee.org/salary",
