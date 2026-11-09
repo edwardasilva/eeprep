@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping with EE Prep. This page covers how a change gets from an idea to the live site.
+Thanks for helping with eeprep. This page covers how a change gets from an idea to the live site.
 
 ## Start with an issue
 
