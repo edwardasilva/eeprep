@@ -1,6 +1,6 @@
 ---
 title: Roadmap
-description: "The big updates planned for eeprep: a resume builder, resume examples, more project and job-search pages, study guides, a company list, and more."
+description: "The big updates planned for eeprep: a resume builder, resume examples, a full system project guide, study guides, a company list, better graphics, and visa and security clearance guidance."
 head:
   - tag: title
     content: "Roadmap | EE Prep"

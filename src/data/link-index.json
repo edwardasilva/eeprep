@@ -1075,6 +1075,20 @@
     "pages": ["help", "help/job-boards"]
   },
   {
+    "url": "https://news.clearancejobs.com/2019/09/21/where-are-government-jobs-listed-ask-cj/",
+    "title": "ClearanceJobs: Where are government jobs listed?",
+    "category": "Job search and referrals",
+    "summary": "Excepted-service agencies such as the CIA, NSA, and FBI do not have to post on USAJOBS.",
+    "pages": ["help/job-boards"]
+  },
+  {
+    "url": "https://www.nasa.gov/learning-resources/internship-programs/",
+    "title": "NASA Internship Programs",
+    "category": "Job search and referrals",
+    "summary": "NASA's OSTEM and Pathways internships, with OSTEM applications through NASA STEM Gateway.",
+    "pages": ["help/job-boards"]
+  },
+  {
     "url": "https://usajobshelp.opm.gov/hc/en-us/articles/53059807800979-What-are-hiring-paths-and-how-can-they-help-you",
     "title": "USAJOBS Help: What are hiring paths?",
     "category": "Job search and referrals",
@@ -1176,7 +1190,7 @@
     "url": "https://arxiv.org/pdf/2601.10726",
     "title": "arXiv: A study of referral requests on Blind",
     "category": "Job search and referrals",
-    "summary": "A 2026 preprint found 54% of referral requests on Blind went unanswered.",
+    "summary": "A preprint on 2024 Blind referral requests: 54% got no referral offer and 31% got no comments.",
     "pages": ["advice/getting-hired/networking"]
   },
   {
@@ -1291,10 +1305,10 @@
     "pages": ["advice/forever-learning/societies"]
   },
   {
-    "url": "https://fortune.com/2025/01/16/job-market-rife-fake-listing-ghosting-hiring-managers/",
-    "title": "Fortune: Fake listings and ghosting in the job market",
+    "url": "https://www.resumebuilder.com/3-in-10-companies-currently-have-fake-job-posting-listed/",
+    "title": "Resume Builder: 3 in 10 companies have fake job postings listed",
     "category": "Job search and referrals",
-    "summary": "Fortune on the 2024 Resume Builder survey: 40% of hiring managers posted a job they did not plan to fill.",
+    "summary": "A May 2024 survey of 1,641 hiring managers: 40% said their company posted a fake job in the past year.",
     "pages": ["help/job-boards"]
   },
   {
@@ -1913,10 +1927,10 @@
     "pages": ["help", "help/resources"]
   },
   {
-    "url": "https://www.axios.com/2025/05/25/labor-market-jobs-college-graduates-economy-trump",
-    "title": "Axios: Handshake data on the class of 2025",
+    "url": "https://www.nbcsandiego.com/news/business/money-report/college-grads-face-a-tough-and-competitive-job-market-this-year-expert-says/3827152/",
+    "title": "CNBC: College grads face a tough and competitive job market",
     "category": "Pay and career data",
-    "summary": "Handshake's class of 2025 data: postings down 15% and applications per job up 30%.",
+    "summary": "May 2025: Handshake job postings down 15% over the past year, and applications up 30%.",
     "pages": ["advice/getting-hired/job-market", "help/job-boards"]
   },
   {
@@ -2046,17 +2060,10 @@
     "pages": ["advice/forever-learning/graduate-study"]
   },
   {
-    "url": "https://spectrum.ieee.org/electrical-engineer-salary-2023",
-    "title": "IEEE Spectrum: Electrical engineer salary 2023",
-    "category": "Pay and career data",
-    "summary": "IEEE-USA's 2023 survey medians by degree, as reported by Spectrum.",
-    "pages": ["advice/forever-learning/graduate-study"]
-  },
-  {
     "url": "https://spectrum.ieee.org/salary",
-    "title": "IEEE Spectrum: Salary coverage",
+    "title": "IEEE Spectrum: Engineers' salaries up in 2023",
     "category": "Pay and career data",
-    "summary": "Spectrum's salary reporting, including the 2024 bachelor's median.",
+    "summary": "IEEE-USA's 2024 survey medians by degree, as reported by Spectrum.",
     "pages": ["advice/forever-learning/graduate-study"]
   },
   {
@@ -2123,6 +2130,20 @@
     "pages": ["advice/forever-learning/graduate-study"]
   },
   {
+    "url": "https://ee.stanford.edu/admissions/eligibility",
+    "title": "Stanford EE: Graduate eligibility",
+    "category": "Pay and career data",
+    "summary": "Stanford EE's MS and PhD application rules, which do not require the GRE.",
+    "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
+    "url": "https://ece.illinois.edu/admissions/graduate",
+    "title": "Illinois ECE: Graduate admissions",
+    "category": "Pay and career data",
+    "summary": "Illinois ECE's graduate admissions page, which says GRE scores are no longer required.",
+    "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
     "url": "https://yp.ieee.org/blog/2023/11/15/check-out-the-career-programs-of-ieee-usa-part-2",
     "title": "IEEE Young Professionals: The career programs of IEEE-USA",
     "category": "Pay and career data",
@@ -2158,7 +2179,7 @@
     "pages": ["advice/getting-hired/job-market"]
   },
   {
-    "url": "https://naceweb.org/about-us/press/class-of-2025-college-grads-responded-to-challenges-of-a-tough-job-market",
+    "url": "https://www.naceweb.org/job-market/trends-and-predictions/facing-a-tough-job-market-class-of-2025-responded-accordingly",
     "title": "NACE: The class of 2025 in a tough job market",
     "category": "Pay and career data",
     "summary": "NACE on when the class of 2025 started its search.",
@@ -2270,10 +2291,10 @@
     "pages": ["help/ai-use"]
   },
   {
-    "url": "https://www.fortune.com/2025/02/04/anthropic-tells-job-candidates-dont-use-ai-employer-trend",
-    "title": "Fortune: Anthropic tells job candidates not to use AI in applications",
+    "url": "https://www.anthropic.com/candidate-ai-guidance",
+    "title": "Anthropic: How to collaborate with Claude during our hiring process",
     "category": "AI in the job search",
-    "summary": "A February 2025 report on an employer that asks applicants not to use AI assistants in the application process.",
+    "summary": "An employer's AI rules for candidates, updated July 2025: write your own first draft, and no AI in take-homes or live interviews unless allowed.",
     "pages": ["help/ai-use"]
   },
   {
