@@ -1,106 +1,22 @@
 ---
 title: Author's story
-description: "How I went from a computer science major who got knocked flat to an embedded software engineer: the jobs along the way, the switch to EE, a cold application, and what I'd tell a student now."
+description: "Who writes eeprep and the path the advice came from."
 pageType: guide
 head:
   - tag: title
-    content: "Author's story: from EE student to embedded engineer | eeprep"
+    content: "Author's story: where the advice comes from | EE Prep"
 ---
 
-import PathFigure from '../../../components/story/PathFigure.astro';
+eeprep is written by an electrical engineering graduate who now writes embedded software. The advice came out of one ordinary path: a switch from computer science to electrical engineering, a co-op that showed which work did not fit, an internship that showed which work did, and a fall of applications that went nowhere until the method changed.
 
-I'm an electrical engineering graduate, and I write embedded software for a large aerospace hardware company. I started as a computer science major, found out I liked hardware more, and switched. Along the way I tried work I didn't enjoy and work I did, and the second kind pointed me at low-level software. Most of the rules on the other pages came out of that path, so here it is.
+## What that path taught
 
-<PathFigure />
+Each lesson has its own page on the site.
 
-## How I got to engineering
+- A finished project you can defend opens the first door. The [[Projects|Projects page]] covers it.
+- One clean page in a standard template gets read. The [[Resume|Resume page]] covers it.
+- If 20 applications bring zero interviews, change the resume or the channel. The [[Getting hired|Getting hired page]] covers it.
+- A referral beats a cold application. The [[Networking|Networking page]] covers it.
+- Interviewers go as deep as you let them, so know every line and never bluff. The [[How to interview|How to interview page]] covers it.
 
-In high school I did fine, A's and B's, but I didn't care much. I worked a year of customer service at a pizza place and taught elementary and middle school kids to code. Neither had anything to do with a degree. Both put me in front of strangers all day.
-
-My first semester of college went well. I was a computer science major because I liked programming, and I also took a semester-long spot in a research lab on campus. Start early. When you have no experience, anything counts.
-
-Then the second semester hit me with Calculus II, chemistry, and Physics I at once, and I finished it at about a 2.5. That summer I couldn't find an internship, so I delivered flowers for two florists and took summer classes. The classes got me ahead, and that room is what later let me change majors without adding a year.
-
-In my second year I decided to take circuits and digital logic alongside my computer science core. They gave me a look at the hardware side, and I liked it more than I expected. Electrical engineering seemed like the most math-heavy subject that still let me move between physical engineering and software, and I loved the math. By the end of that year I'd switched.
-
-The jobs kept going. I spent a summer as an office assistant and a substitute teacher, led coding camps, mentored first-years, and graded calculus. None of it was engineering, and all of it was experience. Those jobs are why I can explain a design to a six-year-old or a vice president. When you list work like this, say what it taught you about people. The [[Resume#Experience|Experience]] section on the Resume page covers the format.
-
-## Finding out what I didn't want
-
-My first full semester of electrical engineering courses was feedback controls, signals and systems, and the rest of the junior load, and I nearly got straight A's. That was when I knew the switch was right.
-
-I then took the spring off for a six-month electrical design co-op at an engineering firm. I found it, and the internship after it, on LinkedIn and my school's internal job board. The work was multi-unit residential buildings: load and voltage-drop calculations, panel schedules, riser diagrams, and electrical code checks. I'd done undergraduate research on offshore wind the semester before, and I thought power was my field. Six months of design work told me otherwise. I wanted something more cerebral, with more depth, and closer to the math I'd switched majors for.
-
-That finding was worth the six months. A co-op you don't love still tells you where not to apply, and it still gives you bullets with real numbers in them.
-
-## Finding out what I did
-
-The week after the co-op ended, I started a software engineering internship at a defense contractor, on real-time signal processing code in C++. I got a 1.6x speedup out of a legacy signal chain with AVX-512 vectorization, which runs one instruction on many values at once, and I built the team a logging framework.
-
-That summer I fell for low-level programming. Signal processing has some of the hardest problems I've touched, and I learned I was good at programming. I still wanted work that used the physical side of my degree, and embedded software sits exactly there. So that's what I looked for.
-
-An unfinished project helped me get that internship. In July 2022 I built a solar tracker that crudely followed the light every two minutes. In August 2024 I restarted it to make the tracking smooth. The restart reached a working sensor prototype, and the motors and housing never got built. I showed the company my progress anyway, because it proved I could build something on my own. The [[Projects|Projects page]] covers how to pick and present a project, finished or not.
-
-## Senior year
-
-I signed up for 19 credits each semester, 38 in the year, to catch up after the co-op. I picked electives by what I found interesting and didn't worry about what looked employable: digital signal processing, modern and advanced controls, a graduate course in estimation and Kalman filtering, and the course most schools call Nand to Tetris, which builds a computer from logic gates up.
-
-Senior year ran on controls and signal processing, and I loved both. My resume ended up with a 50 Hz gantry crane controller, EKF and UKF state estimation, and a real-time pitch tracker in MATLAB. My capstone was a bicycle damper, and I owned its electromagnet design.
-
-The courses showed up in the projects. I modeled the damper's electromagnet with the Biot-Savart law from electromagnetics, and its flux path used the magnetic circuits from electric machinery. The internship showed up too. On a maze robot, our first I2C packets sent each value as an 8-byte double, but the Arduino only had room for a 4-byte float. I could debug that because the SIMD work had taught me a lot about registers and floating-point conversions.
-
-On the state estimation project, I tuned the filters for the simulation and simple inputs. If I did it again, I'd add more randomness to those inputs and tune against it.
-
-I graduated in May 2026 with a BS in electrical engineering and a minor in computer science. The minor came free, because I'd spent two years as a computer science major.
-
-## The job hunt
-
-I sent hundreds of applications in the fall of senior year and tried everything to see what would stick. I found most openings on LinkedIn, then applied by hand on each company's own site. I also wrote a web scraper with Perplexity and Claude that told me whenever a company I followed opened a new role. Use the tools you have to get the work done.
-
-I couldn't get a referral at my current employer, so I applied cold, and nobody inside vouched for me. My scraper flagged the opening and I applied the day it posted. Be scrappy, especially at big companies. The [[Getting hired#Get a referral first|Get a referral first]] section on the Getting hired page covers the referral side, which is still the better way in.
-
-## What didn't work
-
-My early resumes were the problem for a long time before I saw it. They weren't formatted properly, they lacked the language and skills these pages cover, and they didn't use a proper template. Then I found [the LaTeX template on r/EngineeringResumes](https://www.reddit.com/r/EngineeringResumes/wiki/templates/), rebuilt the page, and the replies changed. It's the one I recommend. The [[Resume|Resume page]] has those fixes.
-
-The rule of 20 came out of that stretch. If 20 applications bring zero interviews, stop and change the resume or the channel before you send 20 more. I didn't learn it from data. I learned it from the failures piling up until I had to admit the method was the problem. The [[Getting hired#When online applications go quiet|When online applications go quiet]] section on the Getting hired page puts the rule to work.
-
-## Referrals, from the other side
-
-About three months after I started, once people knew my name, I referred several friends. Each one went straight to the top of the resume pile. In my experience, a referral carries weight once the person giving it is known on the team. One would have made my own process far easier.
-
-## Interviews
-
-The process was long and tiring, and it ran from September to November of senior year. A recruiter first pitched me for a power electronics role, and the hiring manager moved me to software. Then came a phone screen with that manager, a three-hour take-home coding challenge with no AI tools allowed, and an on-site day.
-
-The on-site day opened with a factory tour that counted as part of the interview. Engineers pointed at equipment and asked how I thought it worked. Then I gave an hour-long talk on my internship work to six engineers, most of whom are now on my team, and they interrupted constantly to push on the details. Four one-hour interviews followed, mostly at a whiteboard: system design, my capstone in depth, a coding problem, and a behavioral talk with my manager. Lunch counted too. Calls with a director and a vice president closed it out, and the director told me never to bluff.
-
-At the end of each session I tried to ask something that challenged the interviewer the way they'd challenged me. Next time I'd come with more research on the company, and I'd get the recruiters to brag, because everyone loves to brag.
-
-What I took from it is to be confident without being arrogant, and to never bluff. Know everything you talk about in as much detail as you can. Explaining and defending my thinking out loud is still most of the job. The [[How to interview|How to interview page]] follows the whole process step by step.
-
-## Where I am now
-
-I started in July 2026 as an embedded software engineer, and I write drivers in C and C++. The company's mission sold me, and I love working there. I've also found that I love RF even more than DSP and controls, because of how much math and physics it asks for.
-
-Down the road I want graduate study, and eventually to teach, so I can pass on what I learned doing the work. It's early in my career to commit to more of a plan than that.
-
-I started eeprep because people kept asking me for help with their resumes. I'd built a system that worked, and eeprep is where I write it down.
-
-## What I'd tell a student now
-
-Above everything else, have confidence in yourself, your abilities, and your communication skills. The jobs before engineering gave me the communication part, and the interview day tested all three. Take extreme ownership whenever you can. I owned the electromagnet design on my capstone, so the hour on it at the whiteboard was mine to defend. Give tangible results that anyone can understand the value of. A 1.6x speedup says more to a reader than a list of tasks, and the [[Resume#Bullets|Bullets]] section on the Resume page shows how to write one.
-
-The rest, in short:
-
-- Ask for a referral before you apply. The [[Getting hired#Get a referral first|Get a referral first]] section on the Getting hired page lists who to ask.
-- If you can't get one, apply the day the posting opens.
-- If 20 applications bring zero interviews, change the resume or the channel.
-- Show a project that isn't finished if the progress is real.
-- Start early. When you have no experience, do anything to get some.
-- Take summer classes if you can. They give you room to change majors.
-- Try the work before you commit to the field. A co-op you don't love still teaches you where to look.
-- Tie each class to something you built, so you can say where you used it.
-- Know every line of your resume in full detail, because interviewers will ask.
-- Practice LeetCode-style problems out loud at a whiteboard.
-- Never bluff.
+Everything else on the site comes from a linked source. Where a page gives the author's own view, it says so.
