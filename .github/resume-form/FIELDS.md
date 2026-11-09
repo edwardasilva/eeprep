@@ -178,7 +178,7 @@ Fixed by the form. Students cannot change these:
 - Text at 10 to 11 pt. Start at 11 pt and go no lower than 10 pt. Source: resume page "Layout". The wiki asks for 10.5 pt or larger.
 - Margins at 0.4 to 0.75 in. Start at 0.5 in and go no lower than 0.4 in. Source: resume page "Layout" and the wiki's 0.4 in minimum.
 - One `\vspace` value between every pair of sections. Source: eeprep's author.
-- Section titles in bold with a full-width rule. Entry titles and the coursework and activities labels are bold. Nothing else is bold. Source: resume page, under Alex's page.
+- Section titles in bold with a full-width rule. Entry titles and the coursework, activities, and skills labels are bold. Nothing else is bold. Source: resume page, under Alex's page.
 - PDF metadata: `\hypersetup{pdftitle={<Name> Resume}, pdfauthor={<Name>}}`. Source: eeprep's author.
 
 ### Template license
