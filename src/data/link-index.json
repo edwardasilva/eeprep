@@ -597,6 +597,13 @@
     "pages": ["advice/forever-learning"]
   },
   {
+    "url": "https://careerhub.students.duke.edu/blog/2021/07/29/help-ive-heard-different-opinions-on-my-resume-and-or-search-plan-and-i-dont-know-what-to-do/",
+    "title": "Duke: Conflicting feedback on your resume",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "Duke's career hub on why five reviewers give five opinions and why you will not use all of the feedback.",
+    "pages": ["advice/resume"]
+  },
+  {
     "url": "https://www.accellera.org/downloads/standards/uvm",
     "title": "Accellera: Universal Verification Methodology (UVM)",
     "category": "Tools and project resources",
@@ -1321,6 +1328,13 @@
     "category": "Job search and referrals",
     "summary": "Greenhouse's June 2025 release with its applications-per-job figure.",
     "pages": ["advice/getting-hired/job-market"]
+  },
+  {
+    "url": "https://www.designreview.byu.edu/collections/more-than-a-profile",
+    "title": "BYU Design Review: More than a profile",
+    "category": "Job search and referrals",
+    "summary": "A BYU engineering article on recruiters searching LinkedIn for skills such as MATLAB or CAD.",
+    "pages": ["advice/projects/portfolio"]
   },
   {
     "url": "https://www.reddit.com/r/ECE/comments/1mojjy7/how_do_you_actually_get_referralsinterviews_for/",
