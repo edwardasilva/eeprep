@@ -9,23 +9,23 @@ const notes = [
 	},
 	{
 		title: 'Dates at the right margin.',
-		body: 'Eight of the nine samples put dates flush right. Alex uses semesters on every line.',
+		body: 'Eight of the nine samples put dates flush right. Alex uses semesters in every section.',
 	},
 	{
 		title: 'One line of coursework.',
 		body: 'Three upper-level courses, named as the Mines catalog names them. The Georgia Tech, MIT, and UIC samples list coursework under the degree.',
 	},
 	{
+		title: 'Skills right under Education.',
+		body: "Two labeled lines of tools, with no soft skills or skill levels. Eight of the nine samples put Skills under Education. Each of Alex's eight tools appears in a bullet. That rule is stricter than any sample. The UIC sample comes closest.",
+	},
+	{
 		title: 'Projects above Experience.',
 		body: 'Alex has no engineering job yet, so projects go first. The <a href="https://cdn.careercentral.pitt.edu/wp-content/uploads/sites/117/2023/09/Electrical-Engineering-Resume-Sample.pdf">Pitt</a> and <a href="https://www.oit.edu/sites/default/files/2026/documents/Sample%20Resume%20-%20Electrical%20Engineering.pdf">Oregon Tech</a> EE samples do the same. Each bullet starts with a past-tense verb, names the tool, and includes a measured number.',
 	},
-	{
-		title: 'Tools only, each one in a bullet.',
-		body: "Two labeled lines of tools, with no soft skills or skill levels. Each of Alex's eight tools appears in a bullet. That rule is stricter than any sample. The UIC sample comes closest.",
-	},
 ].map((note) => ({ ...note, body: externalLinks(note.body) }));
 const caption = externalLinks(
-	`Layout rules from the <a href="https://www.reddit.com/r/EngineeringResumes/wiki/index/">r/EngineeringResumes wiki</a>, plus the centered header I use, checked against the nine career center sample resumes listed under the figure.`,
+	`Layout rules from the <a href="https://www.reddit.com/r/EngineeringResumes/wiki/index/">r/EngineeringResumes wiki</a>, plus a centered header, checked against the nine career center sample resumes listed under the figure.`,
 );
 ---
 
@@ -69,8 +69,19 @@ const caption = externalLinks(
 			<p>
 				<strong>Activities:</strong> IEEE student branch, Tau Beta Pi
 			</p>
+			<p class="eep-example-sec">Skills</p>
 			<div class="eep-example-mark">
 				<span class="eep-pin" data-pin="4"></span>
+				<p>
+					<strong>Software:</strong> KiCad, LTspice, C, Python
+				</p>
+				<p>
+					<strong>Hardware/Lab:</strong> STM32, oscilloscope, electronic load,
+					logic analyzer
+				</p>
+			</div>
+			<div class="eep-example-mark">
+				<span class="eep-pin" data-pin="5"></span>
 				<p class="eep-example-sec">Projects</p>
 				<div class="eep-example-row">
 					<p>
@@ -111,17 +122,6 @@ const caption = externalLinks(
 					<strong>Sales Associate, [Retail store]</strong>
 				</p>
 				<p class="eep-example-date">Summer 2023 – Summer 2024</p>
-			</div>
-			<p class="eep-example-sec">Skills</p>
-			<div class="eep-example-mark">
-				<span class="eep-pin" data-pin="5"></span>
-				<p>
-					<strong>Software:</strong> KiCad, LTspice, C, Python
-				</p>
-				<p>
-					<strong>Hardware/Lab:</strong> STM32, oscilloscope, electronic load,
-					logic analyzer
-				</p>
 			</div>
 		</div>
 		<ol class="eep-example-notes">

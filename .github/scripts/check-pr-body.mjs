@@ -2,11 +2,16 @@ const actor = process.env.PR_ACTOR ?? '';
 const sender = process.env.PR_SENDER ?? '';
 const labels = readLabels(process.env.PR_LABELS ?? '[]');
 const body = process.env.PR_BODY ?? '';
+// Outside contributors may leave the issue line out. The owner's and Claude's pull requests
+// still need it.
+const association = process.env.PR_AUTHOR_ASSOCIATION ?? 'OWNER';
+const outside = association !== 'OWNER' && actor !== 'claude[bot]';
 
 if (
 	actor === 'dependabot[bot]' ||
 	sender === 'dependabot[bot]' ||
-	labels.includes('no-epic')
+	labels.includes('no-epic') ||
+	outside
 ) {
 	console.log('PR body check skipped for an exempt change.');
 	process.exit(0);
