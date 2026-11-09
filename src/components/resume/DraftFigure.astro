@@ -258,15 +258,16 @@ const caption = externalLinks(
 		.eep-draft-sheet {
 			margin-inline: calc(0.75rem - var(--eep-fig-pad, 2.25rem));
 		}
-		/* The inline pin would sit outside the sheet on a phone, so it goes above the date. */
+		/* The inline pin would sit outside the sheet on a phone, so the date takes its own line and the pin moves to the left gutter beside it. */
 		.eep-draft-mark-inline {
-			display: inline-block;
+			display: block;
+			width: fit-content;
 			margin-left: 0;
 		}
 		.eep-pin-inline {
-			top: -1.5rem;
+			top: 0.05rem;
 			right: auto;
-			left: 0;
+			left: -1.45rem;
 		}
 	}
 </style>

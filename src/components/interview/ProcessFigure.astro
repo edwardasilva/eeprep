@@ -3,23 +3,23 @@
 // down the left side. On wide ones they run left to right in two rows, and
 // the line turns down the right edge from step 5 to step 6.
 const steps = [
-	{ title: 'Apply', body: 'Day one, no referral' },
-	{ title: 'Round 1', body: 'Recruiter phone screen' },
-	{ title: 'Round 2', body: 'Manager phone screen' },
-	{ title: 'Take-home', body: '3 hours, no AI tools' },
-	{ title: 'Round 3', body: 'Manager call, 30 minutes' },
-	{ title: 'Round 4', body: 'In-person day, 6 to 7 hours' },
-	{ title: 'Round 5', body: 'Senior leader call, 30 minutes' },
-	{ title: 'Round 6', body: 'Senior leader call, 30 minutes' },
+	{ title: 'Apply', body: 'Referral or early' },
+	{ title: 'Recruiter screen', body: 'Phone call' },
+	{ title: 'Technical screen', body: 'Phone or video' },
+	{ title: 'Take-home', body: 'At some employers' },
+	{ title: 'Manager call', body: 'About your projects' },
+	{ title: 'Interview day', body: 'Back-to-back sessions' },
+	{ title: 'Follow-up calls', body: 'At some employers' },
+	{ title: 'Recruiter call', body: 'The decision' },
 	{ title: 'Offer' },
 ];
 const alt =
-	'Timeline of a hiring process. An application on day one with no referral, a recruiter screen, a manager phone screen, a 3-hour take-home test, a 30-minute manager call, a 6- to 7-hour in-person day, two 30-minute senior leader calls, then an offer.';
+	'Timeline of a typical hiring process: an application, a recruiter screen, a technical screen, a take-home test at some employers, a call with the hiring manager about your projects, an interview day of back-to-back sessions, follow-up calls at some employers, a recruiter call with the decision, then an offer.';
 const arrow = 'M1 1.5L9 5L1 8.5Z';
 ---
 
 <figure class="eep-fig wide eep-proc-fig" id="fig-7-1">
-	<p class="eep-kicker">The full process</p>
+	<p class="eep-kicker">A typical process</p>
 	<p class="sr-only">{alt}</p>
 	<div class="eep-proc not-content" aria-hidden="true">
 		<ol class="eep-proc-steps">
@@ -49,10 +49,7 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 	</div>
 	<figcaption>
 		<span class="eep-fignum"></span>{' '}
-		<span>
-			My own hiring process at a large aerospace hardware company: 6 rounds plus
-			a take-home test.
-		</span>
+		<span>A typical hiring process. Employers skip, merge, or add steps.</span>
 	</figcaption>
 </figure>
 

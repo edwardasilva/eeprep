@@ -5,7 +5,7 @@
 	"noProgress": true,
 	"globs": ["**/*.{md,mdx}"],
 	// Approved figure label sheet. Bare source URLs are part of the wording.
-	"ignores": ["resume-generator/**", ".claude/skills/**"],
+	"ignores": ["resume-generator/**"],
 	// Starlight pages and the PR templates open with YAML front matter, not a heading.
 	"frontMatter": "(^---\\s*$)[\\s\\S]*?(^---\\s*$)(\\r\\n|\\r|\\n|$)",
 	"config": {
