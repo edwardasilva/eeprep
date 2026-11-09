@@ -210,6 +210,24 @@
     ]
   },
   {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1cms7al/random_thoughts_on_resumes/",
+    "title": "r/EngineeringResumes: Random thoughts on resumes",
+    "category": "Resume guides",
+    "summary": "Pinned advice on a master resume, tailored versions, and a generic career-fair page.",
+    "pages": [
+      "advice/resume"
+    ]
+  },
+  {
+    "url": "https://www.askamanager.org/2014/01/do-you-need-multiple-versions-of-your-resume.html",
+    "title": "Ask a Manager: Do you need multiple versions of your resume?",
+    "category": "Resume guides",
+    "summary": "Alison Green on when multiple resume versions make sense.",
+    "pages": [
+      "advice/resume"
+    ]
+  },
+  {
     "url": "https://drexel.edu/scdc/~/media/Drexel/EMSS-Site-Group/SCDC/Documents/best-practices/resumes/Electrical-and-Computer-Engineering.pdf",
     "title": "Drexel: Electrical and computer engineering sample resume",
     "category": "Sample resumes and templates",
@@ -2732,6 +2750,33 @@
     ]
   },
   {
+    "url": "https://www.irs.gov/newsroom/updates-to-frequently-asked-questions-about-educational-assistance-programs",
+    "title": "IRS: Educational assistance programs",
+    "category": "Pay and career data",
+    "summary": "The IRS on the $5,250 tax-free limit for employer education help, indexed after 2026.",
+    "pages": [
+      "advice/forever-learning/graduate-study"
+    ]
+  },
+  {
+    "url": "https://careers.rtx.com/global/en/lifeatrtx",
+    "title": "RTX careers: Life at RTX",
+    "category": "Pay and career data",
+    "summary": "RTX's description of its Employee Scholar Program.",
+    "pages": [
+      "advice/forever-learning/graduate-study"
+    ]
+  },
+  {
+    "url": "https://www.lockheedmartin.com/en-us/careers/why-lm/LM_Benefits.html",
+    "title": "Lockheed Martin careers: Benefits",
+    "category": "Pay and career data",
+    "summary": "Lockheed Martin's list of benefits, including tuition assistance.",
+    "pages": [
+      "advice/forever-learning/graduate-study"
+    ]
+  },
+  {
     "url": "https://www.ieee.org/membership/join",
     "title": "IEEE student membership",
     "category": "Communities",
@@ -2939,51 +2984,6 @@
     "summary": "LinkedIn's count of applications, up more than 45% in a year at about 11,000 a minute.",
     "pages": [
       "help/job-boards"
-    ]
-  },
-  {
-    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1cms7al/random_thoughts_on_resumes/",
-    "title": "r/EngineeringResumes: Random thoughts on resumes",
-    "category": "Resume guides",
-    "summary": "Pinned advice on a master resume, tailored versions, and a generic career-fair page.",
-    "pages": [
-      "advice/resume"
-    ]
-  },
-  {
-    "url": "https://www.askamanager.org/2014/01/do-you-need-multiple-versions-of-your-resume.html",
-    "title": "Ask a Manager: Do you need multiple versions of your resume?",
-    "category": "Resume guides",
-    "summary": "Alison Green on when multiple resume versions make sense.",
-    "pages": [
-      "advice/resume"
-    ]
-  },
-  {
-    "url": "https://www.irs.gov/newsroom/updates-to-frequently-asked-questions-about-educational-assistance-programs",
-    "title": "IRS: Educational assistance programs",
-    "category": "Pay and career data",
-    "summary": "The IRS on the $5,250 tax-free limit for employer education help, indexed after 2026.",
-    "pages": [
-      "advice/forever-learning/graduate-study"
-    ]
-  },
-  {
-    "url": "https://careers.rtx.com/global/en/lifeatrtx",
-    "title": "RTX careers: Life at RTX",
-    "category": "Pay and career data",
-    "summary": "RTX's description of its Employee Scholar Program.",
-    "pages": [
-      "advice/forever-learning/graduate-study"
-    ]
-  },
-  {
-    "url": "https://www.lockheedmartin.com/en-us/careers/why-lm/LM_Benefits.html",
-    "title": "Lockheed Martin careers: Benefits",
-    "category": "Pay and career data",
-    "summary": "Lockheed Martin's list of benefits, including tuition assistance.",
-    "pages": [
-      "advice/forever-learning/graduate-study"
     ]
   }
 ]
