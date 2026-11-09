@@ -49,7 +49,7 @@ const groups = linkGroups.map((group) => ({
 		<section class="eep-links-group" aria-labelledby={group.id}>
 			<h2 id={group.id}>{group.name}</h2>
 			<table aria-labelledby={group.id}>
-				<thead>
+				<thead data-pagefind-ignore>
 					<tr>
 						<th scope="col">Link</th>
 						<th scope="col">What it is</th>
@@ -60,9 +60,9 @@ const groups = linkGroups.map((group) => ({
 					{group.rows.map((row) => (
 						<tr>
 							<th scope="row" class="eep-links-name">
-								<span set:html={row.link} />
+								<span set:html={row.link} />{' '}
 							</th>
-							<td data-label="What it is">{row.summary}</td>
+							<td data-label="What it is">{row.summary} </td>
 							<td data-label="Used on">
 								<ul>
 									{row.pages.map((page) => (
@@ -70,7 +70,7 @@ const groups = linkGroups.map((group) => ({
 											<a href={page.href}>{page.title}</a>
 										</li>
 									))}
-								</ul>
+								</ul>{' '}
 							</td>
 						</tr>
 					))}
@@ -113,7 +113,7 @@ const groups = linkGroups.map((group) => ({
 	}
 	.eep-links thead th {
 		padding-block: 0 0.5rem;
-		border-bottom-color: var(--eep-border-strong, var(--eep-rule));
+		border-bottom-color: var(--eep-rule);
 		font: 500 0.75rem/1.4 var(--eep-font-sans);
 		color: var(--eep-ink-2);
 	}
@@ -161,7 +161,7 @@ const groups = linkGroups.map((group) => ({
 			border-bottom: 1px solid var(--eep-rule);
 		}
 		.eep-links tbody tr:first-child {
-			border-top: 1px solid var(--eep-border-strong, var(--eep-rule));
+			border-top: 1px solid var(--eep-rule);
 		}
 		.eep-links th,
 		.eep-links td {

@@ -1,6 +1,11 @@
 ---
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import { externalLinks } from '../components/resume/caption';
+import coverFull from '../figures/home-cover/home-cover-full.svg?raw';
+import coverMobile from '../figures/home-cover/home-cover-mobile.svg?raw';
+
+const coverAlt =
+	'A datasheet front page for an imaginary part, EEP-101, a general-purpose intern. Its eight pins are labeled resume, first project, job market, ground, interviews, offer, help and supply. A table lists startup time 5 minutes with the one-page guide, supply 7 to 9 hours of sleep, inputs one resume and one hardware project, and output one internship.';
 
 // Like links in the guide text, the GitHub link opens in a new tab with the
 // external-link arrow.
@@ -30,43 +35,74 @@ const generatorLink = externalLinks(
 		<h1>
 			A guide to job searching for electrical engineers & computer scientists
 		</h1>
+		<p>
+			For EECS students looking for a first job: a free guide written by a
+			working embedded engineer, with sources linked throughout.
+		</p>
 	</section>
-	<ul class="eep-cards">
-		<li>
-			<a href="/help/">
-				<strong>Help</strong>
+	<div class="eep-home">
+		<ul class="eep-cards">
+			<li>
+				<a href="/help/">
+					<strong>Help</strong>
+					<span>
+						Links to job boards, pay data and other sites for your job search.
+					</span>
+				</a>
+			</li>
+			<li>
+				<a href="/advice/">
+					<strong>Advice</strong>
+					<span>
+						How to write a one-page resume, get hired, and pick projects that
+						count.
+					</span>
+				</a>
+			</li>
+		</ul>
+		<figure class="eep-cover not-content" id="fig-home-cover">
+			<p class="sr-only">{coverAlt}</p>
+			<Fragment
+				set:html={coverFull.replace(
+					'class="eep-cover-svg"',
+					'class="eep-cover-svg eep-cover-full"',
+				)}
+			/>
+			<Fragment
+				set:html={coverMobile.replace(
+					'class="eep-cover-svg"',
+					'class="eep-cover-svg eep-cover-mobile"',
+				)}
+			/>
+			<figcaption>
+				<span class="eep-fignum"></span>
 				<span>
-					Links to job boards, pay data and other sites for your job search.
+					Datasheet for a first internship. The signal pins follow the guide, in
+					order.
 				</span>
-			</a>
-		</li>
-		<li>
-			<a href="/advice/">
-				<strong>Advice</strong>
-				<span>
-					How to write a one-page resume, get hired, and pick projects that
-					count.
-				</span>
-			</a>
-		</li>
-	</ul>
-	<p>
-		New here?{' '}
-		<a href="/advice/resume/quick-setup/">The whole guide on one page</a> takes
-		five minutes.
-	</p>
-	<p>
-		Ask for a referral before you apply, whenever you can.{' '}
-		<a href="/advice/getting-hired/#get-a-referral-first">
-			Getting hired says how to ask
-		</a>
-		.
-	</p>
-	<p>
-		The <a href="/roadmap/">roadmap</a> lists what is coming next.
-	</p>
-	<p class="eep-generator">
-		<Fragment set:html={generatorLink} /> is a free, open-source tool that turns
-		one file into a one-page PDF, so you don't have to format a resume by hand.
-	</p>
+			</figcaption>
+		</figure>
+		<div class="eep-home-main">
+			<p>
+				New here?{' '}
+				<a href="/advice/resume/quick-setup/">The whole guide on one page</a>{' '}
+				takes five minutes.
+			</p>
+			<p>
+				Ask for a referral before you apply, whenever you can.{' '}
+				<a href="/advice/getting-hired/#get-a-referral-first">
+					Getting hired says how to ask
+				</a>
+				.
+			</p>
+			<p>
+				The <a href="/roadmap/">roadmap</a> lists what is coming next.
+			</p>
+			<p class="eep-generator">
+				<Fragment set:html={generatorLink} /> is a free, open-source tool that
+				turns one file into a one-page PDF, so you don't have to format a resume
+				by hand.
+			</p>
+		</div>
+	</div>
 </StarlightPage>
