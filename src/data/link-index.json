@@ -1,5 +1,40 @@
 [
   {
+    "url": "https://x.com/masonwong/status/1439132659947491330",
+    "title": "X: @masonwong on Greenhouse parsing",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "A post saying Greenhouse does not parse resumes for direct applicants.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://www.theladders.com/career-advice/is-it-true-that-recruiters-reject-a-resume-in-six-seconds",
+    "title": "Ladders: Do recruiters reject a resume in six seconds?",
+    "category": "Resume guides",
+    "summary": "Ladders article on its 2018 eye-tracking study of how recruiters scan resumes.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://x.com/TheJobfather__/status/2082954139298922755",
+    "title": "X: @TheJobfather__ on single-column resumes",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "A recruiter argues for a plain single-column resume over two-column layouts.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://cdn.careercentral.pitt.edu/wp-content/uploads/sites/117/2023/09/Electrical-Engineering-Resume-Sample.pdf",
+    "title": "Pitt: Electrical engineering resume sample",
+    "category": "Sample resumes and templates",
+    "summary": "PDF of an electrical engineering sample resume from Pitt's career center.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://www.oit.edu/sites/default/files/2026/documents/Sample%20Resume%20-%20Electrical%20Engineering.pdf",
+    "title": "Oregon Tech: Electrical engineering sample resume",
+    "category": "Sample resumes and templates",
+    "summary": "PDF of an electrical engineering sample resume from Oregon Tech career services.",
+    "pages": ["advice/resume"]
+  },
+  {
     "url": "https://catalog.mines.edu/search/?P=EENG470",
     "title": "Colorado School of Mines: EENG470 course listing",
     "category": "Resume guides",
@@ -19,13 +54,6 @@
     "category": "Resume guides",
     "summary": "Mines career center guidance on resumes and cover letters for engineering students.",
     "pages": ["advice/resume", "advice/resume/workshop"]
-  },
-  {
-    "url": "https://bizcareers.colostate.edu/resources/what-is-an-applicant-tracking-system-ats/",
-    "title": "Colorado State: What is an applicant tracking system?",
-    "category": "Resume guides",
-    "summary": "A university career center explains what an ATS does with your application.",
-    "pages": ["advice/resume"]
   },
   {
     "url": "https://grad.gatech.edu/news/8-ways-revamp-your-resume",
@@ -85,13 +113,6 @@
     "title": "Ladders 2018 eye-tracking study press release",
     "category": "Resume guides",
     "summary": "Press release with the 7.4-second average resume scan time from Ladders' study.",
-    "pages": ["advice/resume"]
-  },
-  {
-    "url": "https://www.theladders.com/career-advice/is-it-true-that-recruiters-reject-a-resume-in-six-seconds",
-    "title": "Ladders: Do recruiters reject a resume in six seconds?",
-    "category": "Resume guides",
-    "summary": "Ladders article on its 2018 eye-tracking study of how recruiters scan resumes.",
     "pages": ["advice/resume"]
   },
   {
@@ -173,24 +194,10 @@
     "pages": ["advice/resume"]
   },
   {
-    "url": "https://drexel.edu/scdc/~/media/Drexel/EMSS-Site-Group/SCDC/Documents/best-practices/resumes/Electrical-and-Computer-Engineering.pdf",
-    "title": "Drexel: Electrical and computer engineering sample resume",
-    "category": "Sample resumes and templates",
-    "summary": "PDF of an electrical and computer engineering sample resume from Drexel's career center.",
-    "pages": ["advice/resume"]
-  },
-  {
     "url": "https://career.gatech.edu/files/2026/06/JackieJacketResume.docx",
     "title": "Georgia Tech: Computer engineering sample resume",
     "category": "Sample resumes and templates",
     "summary": "Word file of a sample resume for a B.S. computer engineering student.",
-    "pages": ["advice/resume"]
-  },
-  {
-    "url": "https://career.gatech.edu/files/2026/06/CS-Sample-Resume.docx",
-    "title": "Georgia Tech: Computer science sample resume",
-    "category": "Sample resumes and templates",
-    "summary": "Word file of a sample resume for a computer science student.",
     "pages": ["advice/resume"]
   },
   {
@@ -208,25 +215,11 @@
     "pages": ["advice/resume"]
   },
   {
-    "url": "https://www.oit.edu/sites/default/files/2026/documents/Sample%20Resume%20-%20Electrical%20Engineering.pdf",
-    "title": "Oregon Tech: Electrical engineering sample resume",
-    "category": "Sample resumes and templates",
-    "summary": "PDF of an electrical engineering sample resume from Oregon Tech career services.",
-    "pages": ["advice/resume"]
-  },
-  {
     "url": "https://www.overleaf.com/",
     "title": "Overleaf",
     "category": "Sample resumes and templates",
     "summary": "Free online LaTeX editor for writing and compiling a resume in the browser.",
     "pages": ["advice/resume/workshop"]
-  },
-  {
-    "url": "https://cdn.careercentral.pitt.edu/wp-content/uploads/sites/117/2023/09/Electrical-Engineering-Resume-Sample.pdf",
-    "title": "Pitt: Electrical engineering resume sample",
-    "category": "Sample resumes and templates",
-    "summary": "PDF of an electrical engineering sample resume from Pitt's career center.",
-    "pages": ["advice/resume"]
   },
   {
     "url": "https://github.com/r-engineeringresumes/resume-templates/blob/main/r_EngineeringResumes_Template.tex",
@@ -312,13 +305,6 @@
     "pages": ["advice/resume/walkthrough"]
   },
   {
-    "url": "https://ecc.uic.edu/wp-content/uploads/sites/78/2026/06/Computer-Science-Updated-Summer-2026.docx.pdf",
-    "title": "UIC: Computer science example resume",
-    "category": "Sample resumes and templates",
-    "summary": "PDF of a computer science example resume from UIC's engineering career center.",
-    "pages": ["advice/resume"]
-  },
-  {
     "url": "https://ecc.uic.edu/wp-content/uploads/sites/78/2026/06/Electrical-Engineering-Example-Resume-Updated-Summer-2026.docx.pdf",
     "title": "UIC: Electrical engineering example resume",
     "category": "Sample resumes and templates",
@@ -326,24 +312,10 @@
     "pages": ["advice/resume"]
   },
   {
-    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1q7vpap/student_100_applications_4_interviews_2_offers_my/",
-    "title": "r/EngineeringResumes: 100 applications, 2 offers at BAE",
-    "category": "Resume feedback from reviewers and recruiters",
-    "summary": "A student describes landing an embedded internship at BAE after 100 applications.",
-    "pages": ["advice/resume"]
-  },
-  {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/1w1e5dp/student_100_embeddedhardware_intern_applications/",
     "title": "r/EngineeringResumes: 100 embedded applications, nothing yet",
     "category": "Resume feedback from reviewers and recruiters",
     "summary": "Resume review for an embedded student with over 100 applications and no offers.",
-    "pages": ["advice/resume"]
-  },
-  {
-    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1xa7k5e/student_submitted_150_internship_applications_and/",
-    "title": "r/EngineeringResumes: 150 applications, 0 interviews",
-    "category": "Resume feedback from reviewers and recruiters",
-    "summary": "Resume review for a student who sent 150 internship applications with no interviews.",
     "pages": ["advice/resume"]
   },
   {
@@ -456,13 +428,6 @@
     "pages": ["advice/resume"]
   },
   {
-    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1nwhs53/student_i_kept_getting_your_experience_looks/",
-    "title": "r/EngineeringResumes: Praise at career fairs, no interviews",
-    "category": "Resume feedback from reviewers and recruiters",
-    "summary": "A student hears good things at career fairs but gets no interviews.",
-    "pages": ["advice/resume"]
-  },
-  {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/1m6nzkm/8_yoe_readable_resumes_a_guide_to_allowing_anyone/",
     "title": "r/EngineeringResumes: Readable resumes guide",
     "category": "Resume feedback from reviewers and recruiters",
@@ -517,13 +482,6 @@
     "pages": ["advice/resume"]
   },
   {
-    "url": "https://x.com/masonwong/status/1439132659947491330",
-    "title": "X: @masonwong on Greenhouse parsing",
-    "category": "Resume feedback from reviewers and recruiters",
-    "summary": "A post saying Greenhouse does not parse resumes for direct applicants.",
-    "pages": ["advice/resume"]
-  },
-  {
     "url": "https://x.com/randomrecruiter/status/1688896357430358016",
     "title": "X: @randomrecruiter on fancy templates",
     "category": "Resume feedback from reviewers and recruiters",
@@ -562,32 +520,7 @@
     "title": "X: @randomrecruiter on skills missing from experience",
     "category": "Resume feedback from reviewers and recruiters",
     "summary": "A recruiter quotes hiring managers on skills listed but not shown in experience.",
-    "pages": [
-      "advice/resume",
-      "advice/resume/cleanup",
-      "advice/resume/workshop"
-    ]
-  },
-  {
-    "url": "https://x.com/randomrecruiter/status/1846631030918189213",
-    "title": "X: @randomrecruiter on the one-page rule",
-    "category": "Resume feedback from reviewers and recruiters",
-    "summary": "A recruiter calls the rule that a resume must be one page a myth.",
-    "pages": ["advice/resume"]
-  },
-  {
-    "url": "https://x.com/TheJobfather__/status/2082954139298922755",
-    "title": "X: @TheJobfather__ on single-column resumes",
-    "category": "Resume feedback from reviewers and recruiters",
-    "summary": "A recruiter argues for a plain single-column resume over two-column layouts.",
-    "pages": ["advice/resume"]
-  },
-  {
-    "url": "https://x.com/TheJobfather__/status/1576932082403647489",
-    "title": "X: @TheJobfather__ on white space",
-    "category": "Resume feedback from reviewers and recruiters",
-    "summary": "A recruiter says resumes must be skimmable and keep white space.",
-    "pages": ["advice/resume"]
+    "pages": ["advice/resume/cleanup", "advice/resume/workshop"]
   },
   {
     "url": "https://www.askamanager.org/?p=23426",
