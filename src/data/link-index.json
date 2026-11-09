@@ -955,13 +955,6 @@
     ]
   },
   {
-    "url": "https://iso.mit.edu/",
-    "title": "MIT International Students Office",
-    "category": "Job search and referrals",
-    "summary": "Example of a university international office that advises students on immigration rules.",
-    "pages": ["roadmap"]
-  },
-  {
     "url": "https://ecs.osu.edu/employers/recruiting-guidelines-policies/hiring-students",
     "title": "Ohio State Engineering: Hiring students",
     "category": "Job search and referrals",
@@ -1099,7 +1092,7 @@
     "title": "USCIS",
     "category": "Job search and referrals",
     "summary": "US Citizenship and Immigration Services, the federal agency for immigration and work authorization.",
-    "pages": ["advice", "roadmap"]
+    "pages": ["advice"]
   },
   {
     "url": "https://ocs.yale.edu/industry-hiring-timelines/",
