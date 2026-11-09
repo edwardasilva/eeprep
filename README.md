@@ -1,12 +1,12 @@
-# EE Prep
+# eeprep
 
-EE Prep is a free guide for electrical engineering students and new grads. It shows how to build a resume that works, find real experience, and land a first internship or full-time role.
+eeprep is a free guide for electrical engineering students and new grads. It shows how to build a resume that works, find real experience, and land a first internship or full-time role.
 
 Status: active development. Content and code are updated regularly.
 
 ## Why it exists
 
-EE courses teach circuits and signals, but they rarely teach you how to turn coursework into a first job. EE Prep puts that advice in one place, written plainly, with sources you can check.
+EE courses teach circuits and signals, but they rarely teach you how to turn coursework into a first job. eeprep puts that advice in one place, written plainly, with sources you can check.
 
 ## What you'll find
 
@@ -45,6 +45,6 @@ Content is licensed under [CC BY 4.0](LICENSE-CONTENT). You may share and adapt 
 
 Code is licensed under the [MIT License](LICENSE). Code means everything else, including the components, plugins, styles, scripts, worker, and config files. The resume-generator submodule has its own MIT license.
 
-The EE Prep name and logo files in `src/brand/` and `public/brand/` are not covered by either license.
+The eeprep name and logo files in `src/brand/` and `public/brand/` are not covered by either license.
 
 Everyone who takes part follows the [Code of Conduct](CODE_OF_CONDUCT.md).
