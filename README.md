@@ -32,6 +32,8 @@ git clone --recurse-submodules https://github.com/edwardasilva/eeprep.git
 
 The site builds without the submodule, so a plain clone also works.
 
+[company-lists](https://github.com/edwardasilva/company-lists), a list of companies by region, is a second submodule at `data/company-lists`. The site does not read it yet.
+
 To help with the guide, see [CONTRIBUTING](.github/CONTRIBUTING.md).
 
 ## License

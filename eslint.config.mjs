@@ -10,6 +10,7 @@ export default tseslint.config(
 			'.astro/**',
 			'coverage/**',
 			'resume-generator/**',
+			'data/company-lists/**',
 			'.claude/skills/**',
 		],
 	},
