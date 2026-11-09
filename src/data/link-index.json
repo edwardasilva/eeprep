@@ -54,9 +54,11 @@
     "category": "Resume guides",
     "summary": "Greenhouse explains the steps an application goes through after you submit it.",
     "pages": [
-      "advice/resume",
+      "advice/ai-use",
+      "advice/getting-hired",
       "advice/getting-hired/how-to-interview",
-      "advice/getting-hired"
+      "advice/resume",
+      "advice/simple"
     ]
   },
   {
@@ -64,14 +66,18 @@
     "title": "hyperref package manual",
     "category": "Resume guides",
     "summary": "Manual for the LaTeX package that adds clickable links and PDF metadata.",
-    "pages": ["advice/resume"]
+    "pages": ["advice/resume", "advice/resume/cleanup"]
   },
   {
     "url": "https://ecs.grainger.illinois.edu/student-resources/resumes-letters/resumes",
     "title": "Illinois Engineering: Resumes",
     "category": "Resume guides",
     "summary": "Illinois engineering career services guide to resume sections, content and format.",
-    "pages": ["advice/resume"]
+    "pages": [
+      "advice/resume",
+      "advice/resume/cleanup",
+      "advice/resume/walkthrough"
+    ]
   },
   {
     "url": "https://www.prnewswire.com/news-releases/ladders-updates-popular-recruiter-eye-tracking-study-with-new-key-insights-on-how-job-seekers-can-improve-their-resumes-300744217.html",
@@ -92,7 +98,7 @@
     "title": "Michigan Engineering: Resumes, CVs and cover letters",
     "category": "Resume guides",
     "summary": "University of Michigan engineering career center guide to resumes, CVs and cover letters.",
-    "pages": ["advice/resume"]
+    "pages": ["advice/resume", "advice/resume/cleanup"]
   },
   {
     "url": "https://career.engin.umich.edu/sample-impact-statements/",
@@ -106,28 +112,38 @@
     "title": "MIT CAPD: Make your resume ATS-friendly",
     "category": "Resume guides",
     "summary": "MIT's career office on formatting a resume so applicant tracking systems read it correctly.",
-    "pages": ["advice/resume", "advice/getting-hired/first-internship"]
+    "pages": [
+      "advice/getting-hired/first-internship",
+      "advice/resume",
+      "advice/resume/cleanup"
+    ]
   },
   {
     "url": "https://capd.mit.edu/resources/resumes/",
     "title": "MIT CAPD: Resumes",
     "category": "Resume guides",
     "summary": "MIT's career office guide to writing, formatting and proofreading a resume.",
-    "pages": ["advice/resume/workshop"]
+    "pages": ["advice/resume/cleanup", "advice/resume/workshop"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringResumes/wiki/index/",
     "title": "r/EngineeringResumes wiki",
     "category": "Resume guides",
     "summary": "The subreddit's resume guide, covering layout, sections, bullets and common mistakes.",
-    "pages": ["advice/resume", "advice/resume/workshop", "help-links"]
+    "pages": [
+      "advice/resume",
+      "advice/resume/cleanup",
+      "advice/resume/walkthrough",
+      "advice/resume/workshop",
+      "help-links"
+    ]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringResumes/wiki/typo/",
     "title": "r/EngineeringResumes wiki: Common mistakes",
     "category": "Resume guides",
     "summary": "Common resume mistakes, including misspelled software and tool names.",
-    "pages": ["advice/resume"]
+    "pages": ["advice/resume", "advice/resume/cleanup"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringResumes/wiki/sample-bullet-points/",
@@ -141,7 +157,7 @@
     "title": "The pdfTeX user manual",
     "category": "Resume guides",
     "summary": "Reference manual for pdfTeX, the engine that turns LaTeX source into PDF.",
-    "pages": ["advice/resume"]
+    "pages": ["advice/resume", "advice/resume/cleanup"]
   },
   {
     "url": "https://career.berkeley.edu/prepare-for-success/resumes/",
@@ -230,7 +246,13 @@
     "title": "resume-generator on GitHub",
     "category": "Sample resumes and templates",
     "summary": "eeprep's open-source tool that builds a one-page resume PDF from a data file.",
-    "pages": ["index", "advice/resume", "help-links/contributing"]
+    "pages": [
+      "advice/resume",
+      "advice/resume/cleanup",
+      "advice/resume/walkthrough",
+      "help-links/contributing",
+      "index"
+    ]
   },
   {
     "url": "https://github.com/edwardasilva/resume-generator/releases/tag/v0.2.3",
@@ -238,6 +260,48 @@
     "category": "Sample resumes and templates",
     "summary": "Release notes and downloads for version 0.2.3 of resume-generator.",
     "pages": ["advice/resume", "advice/resume/workshop"]
+  },
+  {
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/alex.pdf",
+    "title": "resume-generator: alex.pdf",
+    "category": "Sample resumes and templates",
+    "summary": "Alex Doe's finished one-page resume, the PDF behind Figure 4.4.",
+    "pages": ["advice/resume/walkthrough"]
+  },
+  {
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/alex.json",
+    "title": "resume-generator: alex.json",
+    "category": "Sample resumes and templates",
+    "summary": "The data file that builds Alex Doe's page.",
+    "pages": ["advice/resume/walkthrough"]
+  },
+  {
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/first-year.pdf",
+    "title": "resume-generator: first-year.pdf",
+    "category": "Sample resumes and templates",
+    "summary": "A first-year student's page: one class project, a one-line job, and a few skills.",
+    "pages": ["advice/resume/walkthrough"]
+  },
+  {
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/sophomore.pdf",
+    "title": "resume-generator: sophomore.pdf",
+    "category": "Sample resumes and templates",
+    "summary": "A second-year student's page: two projects, a club lead role, and a one-line job.",
+    "pages": ["advice/resume/walkthrough"]
+  },
+  {
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/new-grad.pdf",
+    "title": "resume-generator: new-grad.pdf",
+    "category": "Sample resumes and templates",
+    "summary": "A new graduate's page with two internships, experience first.",
+    "pages": ["advice/resume/walkthrough"]
+  },
+  {
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/packed.pdf",
+    "title": "resume-generator: packed.pdf",
+    "category": "Sample resumes and templates",
+    "summary": "A full page with three engineering roles and three projects, tightened to fit.",
+    "pages": ["advice/resume/walkthrough"]
   },
   {
     "url": "https://ecc.uic.edu/wp-content/uploads/sites/78/2026/06/Computer-Science-Updated-Summer-2026.docx.pdf",
@@ -293,7 +357,12 @@
     "title": "r/EngineeringResumes: Direct advice from a hiring manager",
     "category": "Resume feedback from reviewers and recruiters",
     "summary": "An engineering hiring manager explains how they read and screen hundreds of resumes.",
-    "pages": ["advice/resume", "advice/resume/workshop"]
+    "pages": [
+      "advice/resume",
+      "advice/resume/cleanup",
+      "advice/resume/workshop",
+      "advice/simple"
+    ]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/q4d5op/electrical_engineering_senior_no_experience/",
@@ -346,7 +415,11 @@
     "title": "r/EngineeringResumes: How ATSs work",
     "category": "Resume feedback from reviewers and recruiters",
     "summary": "An engineering hiring manager explains what an ATS filters and what people review.",
-    "pages": ["advice/resume", "advice/resume/workshop"]
+    "pages": [
+      "advice/resume",
+      "advice/resume/cleanup",
+      "advice/resume/workshop"
+    ]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/1v9440p/0_yoe_finally_landed_an_embedded_systems_engineer/",
@@ -360,7 +433,11 @@
     "title": "r/EngineeringResumes: My boss said my resume needs work",
     "category": "Resume feedback from reviewers and recruiters",
     "summary": "An intern posts their resume after their manager said it needed a lot of work.",
-    "pages": ["advice/resume", "advice/resume/workshop"]
+    "pages": [
+      "advice/resume",
+      "advice/resume/cleanup",
+      "advice/resume/workshop"
+    ]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/1crjxzf/0_yoe_new_grad_looking_for_fpga/",
@@ -409,7 +486,12 @@
     "title": "r/EngineeringResumes: Sophomore lands NVIDIA offer",
     "category": "Resume feedback from reviewers and recruiters",
     "summary": "An embedded-focused sophomore shares the resume behind an NVIDIA offer.",
-    "pages": ["advice/resume", "advice/projects", "advice/projects/software"]
+    "pages": [
+      "advice/projects",
+      "advice/projects/software",
+      "advice/resume",
+      "advice/resume/cleanup"
+    ]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/1pkixp9/today_i_made_a_top_5_list/",
@@ -444,7 +526,13 @@
     "title": "X: @randomrecruiter on knowing your resume",
     "category": "Resume feedback from reviewers and recruiters",
     "summary": "A recruiter says hiring managers now ask 3 to 5 layers deep on resume items.",
-    "pages": ["advice/resume", "advice/getting-hired/how-to-interview"]
+    "pages": [
+      "advice/ai-use",
+      "advice/getting-hired/how-to-interview",
+      "advice/resume",
+      "advice/resume/cleanup",
+      "advice/simple"
+    ]
   },
   {
     "url": "https://x.com/randomrecruiter/status/1615808809133346824",
@@ -465,7 +553,11 @@
     "title": "X: @randomrecruiter on skills missing from experience",
     "category": "Resume feedback from reviewers and recruiters",
     "summary": "A recruiter quotes hiring managers on skills listed but not shown in experience.",
-    "pages": ["advice/resume", "advice/resume/workshop"]
+    "pages": [
+      "advice/resume",
+      "advice/resume/cleanup",
+      "advice/resume/workshop"
+    ]
   },
   {
     "url": "https://x.com/randomrecruiter/status/1846631030918189213",
@@ -663,8 +755,9 @@
     "summary": "Ashby data on hire rates for referred and non-referred job applicants.",
     "pages": [
       "advice/getting-hired",
+      "advice/getting-hired/first-internship",
       "advice/getting-hired/how-to-interview",
-      "advice/getting-hired/first-internship"
+      "advice/simple"
     ]
   },
   {
@@ -763,7 +856,7 @@
     "title": "MIT CAPD: Negotiate job offers",
     "category": "Job search and referrals",
     "summary": "MIT's steps for responding to and negotiating a job offer, and which terms usually move.",
-    "pages": ["advice/getting-hired/first-full-time-role"]
+    "pages": ["advice/getting-hired/first-full-time-role", "advice/simple"]
   },
   {
     "url": "https://iso.mit.edu/",
@@ -891,7 +984,7 @@
     "title": "Yale: Industry hiring timelines",
     "category": "Job search and referrals",
     "summary": "Hiring seasons by industry, including the fall and winter peaks for engineering roles.",
-    "pages": ["advice/getting-hired/first-full-time-role"]
+    "pages": ["advice/getting-hired/first-full-time-role", "advice/simple"]
   },
   {
     "url": "https://www.reddit.com/r/ECE/comments/1mojjy7/how_do_you_actually_get_referralsinterviews_for/",
@@ -1032,7 +1125,7 @@
     "title": "r/EngineeringStudents: Projects that got you hired",
     "category": "Job search stories from students",
     "summary": "Students list the personal projects that helped them get internships.",
-    "pages": ["advice/projects"]
+    "pages": ["advice/projects", "advice/simple"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringStudents/comments/1ridrqh/im_a_sophomore_right_now_will_i_ever_get_a_job_if/",
@@ -1219,14 +1312,14 @@
     "title": "Barr Group: How to use C's volatile keyword",
     "category": "Interview prep",
     "summary": "Nigel Jones explains when embedded C code needs the volatile keyword.",
-    "pages": ["advice/getting-hired/how-to-interview"]
+    "pages": ["advice/ai-use", "advice/getting-hired/how-to-interview"]
   },
   {
     "url": "https://par.nsf.gov/servlets/purl/10196170",
     "title": "Behroozi et al. (2020): Does stress impact technical interview performance?",
     "category": "Interview prep",
     "summary": "PDF of a study comparing whiteboard coding with an observer against coding alone.",
-    "pages": ["advice/getting-hired/how-to-interview"]
+    "pages": ["advice/ai-use", "advice/getting-hired/how-to-interview"]
   },
   {
     "url": "https://careers.mines.edu/career-professional-development-workshops/",
@@ -1261,7 +1354,7 @@
     "title": "Hardware FYI: Top electrical engineering interview questions",
     "category": "Interview prep",
     "summary": "Common electrical engineering interview questions collected by Hardware FYI.",
-    "pages": ["advice/getting-hired/how-to-interview"]
+    "pages": ["advice/getting-hired/how-to-interview", "advice/resume/cleanup"]
   },
   {
     "url": "https://ecs.grainger.illinois.edu/student-resources/interviewing/fundamentals",
@@ -1275,7 +1368,7 @@
     "title": "Illinois Engineering: Mock interview",
     "category": "Interview prep",
     "summary": "How to schedule and use a mock interview with Illinois engineering career services.",
-    "pages": ["advice/getting-hired/how-to-interview"]
+    "pages": ["advice/ai-use", "advice/getting-hired/how-to-interview"]
   },
   {
     "url": "https://ecs.grainger.illinois.edu/student-resources/interviewing/tips",
@@ -1462,7 +1555,7 @@
     "title": "r/EngineeringResumes",
     "category": "Communities",
     "summary": "Subreddit where engineers post resumes for review and share job search results.",
-    "pages": ["help-links"]
+    "pages": ["advice/resume/cleanup", "help-links"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringStudents/",
@@ -1491,5 +1584,47 @@
     "category": "Site",
     "summary": "How to report a security problem in private.",
     "pages": ["help-links/contributing"]
+  },
+  {
+    "url": "https://naceweb.org/job-market/trends-and-predictions/student-concerns-about-ai-tempering-their-use-of-it-in-job-search",
+    "title": "NACE: Student concerns about AI tempering their use of it in the job search",
+    "category": "AI in the job search",
+    "summary": "NACE's 2025 student survey: 67.1% of graduating seniors did not use AI in their search, most often over ethics.",
+    "pages": ["advice/ai-use"]
+  },
+  {
+    "url": "https://naceweb.org/about-us/press/2026/ready-or-reluctant-employer-expectations-for-ai-skills-meet-student-skepticism",
+    "title": "NACE: Ready or reluctant? Employer expectations for AI skills meet student skepticism",
+    "category": "AI in the job search",
+    "summary": "NACE's 2026 student survey press release: 46% of graduating seniors used AI in their job search.",
+    "pages": ["advice/ai-use"]
+  },
+  {
+    "url": "https://www.fortune.com/2025/02/04/anthropic-tells-job-candidates-dont-use-ai-employer-trend",
+    "title": "Fortune: Anthropic tells job candidates not to use AI in applications",
+    "category": "AI in the job search",
+    "summary": "A February 2025 report on an employer that asks applicants not to use AI assistants in the application process.",
+    "pages": ["advice/ai-use"]
+  },
+  {
+    "url": "https://topresume.com/career-advice/ai-in-hiring-survey",
+    "title": "TopResume: Where employers draw the line on AI in hiring",
+    "category": "AI in the job search",
+    "summary": "A vendor survey of 600 US hiring managers on AI-written applications and how well they can spot them.",
+    "pages": ["advice/ai-use"]
+  },
+  {
+    "url": "https://alumni.ucdavis.edu/node/12666",
+    "title": "UC Davis: Using AI in the job search",
+    "category": "AI in the job search",
+    "summary": "A career office's prompts for using AI to review a resume against a posting.",
+    "pages": ["advice/ai-use"]
+  },
+  {
+    "url": "https://southernct.edu/career/ChatGPT-AI-Usage-in-Your-Career-Search",
+    "title": "Southern Connecticut State University: ChatGPT and AI usage in your career search",
+    "category": "AI in the job search",
+    "summary": "A career center's warning on submitting AI-generated content as your own work.",
+    "pages": ["advice/ai-use"]
   }
 ]
