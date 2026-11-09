@@ -1878,7 +1878,11 @@
     "title": "NACE: Internship experience decides between equal candidates",
     "category": "Pay and career data",
     "summary": "NACE Job Outlook 2026 data on which attributes employers use to choose between equal candidates.",
-    "pages": ["advice/getting-hired/first-full-time-role", "advice/projects"]
+    "pages": [
+      "advice/getting-hired/first-full-time-role",
+      "advice/projects",
+      "advice/resume/walkthrough"
+    ]
   },
   {
     "url": "https://ncees.org/exams/fe-exam/",
@@ -2186,7 +2190,7 @@
     "title": "r/EngineeringResumes",
     "category": "Communities",
     "summary": "Subreddit where engineers post resumes for review and share job search results.",
-    "pages": ["advice/resume/cleanup", "help"]
+    "pages": ["advice/resume", "advice/resume/cleanup", "help"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringStudents/",

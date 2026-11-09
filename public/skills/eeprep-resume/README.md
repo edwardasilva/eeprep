@@ -1,6 +1,6 @@
 # eeprep-resume
 
-A skill for Claude Code, Cursor, Codex, and other coding agents that teaches the agent how to write, review, and tailor a one-page engineering resume to the rules on https://eeprep.com, without inventing a single fact.
+A skill for Claude Code, Cursor, Codex, and other coding agents that teaches the agent how to write, review, and tailor a one-page engineering resume to the rules on [eeprep.com](https://eeprep.com), without inventing a single fact.
 
 ## Install
 
@@ -35,4 +35,4 @@ Cursor and other agents that read a rules file: paste `SKILL.md` into `.cursor/r
 
 ## License
 
-CC BY 4.0, the same as the rest of eeprep's content. The source is https://github.com/edwardasilva/eeprep under `public/skills/eeprep-resume/`.
+CC BY 4.0, the same as the rest of eeprep's content. The source is [the eeprep repository](https://github.com/edwardasilva/eeprep), under `public/skills/eeprep-resume/`.

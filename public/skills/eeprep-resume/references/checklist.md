@@ -1,4 +1,6 @@
-# The audit, from https://eeprep.com/advice/resume/cleanup/
+# The audit
+
+From [eeprep's Cleanup page](https://eeprep.com/advice/resume/cleanup/).
 
 Audit the finished PDF, not the source file. Work top to bottom. Fix what fails, rebuild, and run it again.
 

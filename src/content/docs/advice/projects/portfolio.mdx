@@ -8,6 +8,7 @@ head:
 ---
 
 import ProjectPageFigure from '../../../../components/resume/ProjectPageFigure.astro';
+import TallyFigure from '../../../../components/resume/TallyFigure.astro';
 
 A portfolio is a page per project with a photo, a measured result, and the files. It is optional. Most screeners never click the link, and no portfolio replaces the resume. It pays off later, when a hiring manager wants to see the work behind a bullet, and it pays off most for a student with hardware to show: a board you laid out, a bench you built, a scope capture that proves the thing works. If that is you, build one. It takes a weekend, and less with an AI tool doing the layout. Keep it small, keep every link alive, and post the same projects on LinkedIn as you go.
 
@@ -45,7 +46,9 @@ These are portfolios by EE students and new graduates, read from the public repo
 - [Zaid Saifan](https://zaidsaifan-star.github.io/), at Western, has the cleanest structure of the five, with sections named The brief, On the board, Protection, Validation, and Next step. It also shows the trap. The golf cart power board page gives 15 to 20 A as a design target with no bench number next to it, and the function generator waveforms are drawings. A design value is not a result. His repository holds the notes he wrote for Claude Code, including the line "don't invent numbers".
 - [The Cornell ECE 4760 archive](https://ece4760.github.io/Projects/Projects.html) holds a semester of these pages at a time, 45 in fall 2025 alone. [One of them](https://ece4760.github.io/Projects/Fall2025/hw578/index.html) runs a Julia set on eight RP2040s over a custom multi-slave SPI bus and spends its Program Design section on the bug: the slave kept driving MISO low when idle, which jammed the bus until the pin was switched to a null function. That is the paragraph an interviewer reads twice.
 
-Across the five, every site has photos and headline numbers, about half link code per project, two show a schematic, and none shows a scope capture. If you build one, the scope capture and the What broke section are where you pull ahead.
+Across the five, every site has photos and headline numbers, three link code per project, two show a schematic, three say what broke or what is unfinished, and none shows a scope capture. If you build one, the scope capture and the What broke section are where you pull ahead.
+
+<TallyFigure />
 
 ## Hosting for free
 
