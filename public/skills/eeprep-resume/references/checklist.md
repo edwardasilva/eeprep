@@ -20,10 +20,10 @@ Audit the finished PDF, not the source file. Work top to bottom. Fix what fails,
 
 ## Education
 
-- GPA only if the posting sets a minimum the user meets, with matching decimals.
+- GPA listed at 3.50 or higher, judged at 3.0 to 3.49, left off below 3.0, with matching decimals.
 - Graduation date at the right margin, "Expected" if not yet graduated.
 - One line of coursework that matches the posting.
-- No high school.
+- No high school after the first year.
 
 ## Projects and experience
 
@@ -31,7 +31,7 @@ Read each bullet against three questions. Does it start with a past-tense verb t
 
 - Every bullet fills one line or most of two.
 - No inflation.
-- Unrelated jobs on one line, no bullets.
+- Unrelated jobs on one line, no bullets, once the page has engineering work. Before that, they can keep bullets.
 
 ## Skills
 
@@ -42,7 +42,7 @@ Read each bullet against three questions. Does it start with a past-tense verb t
 ## The whole page
 
 - One column, no photo, no icons, no tables.
-- Dates right-aligned, one style.
+- Dates right-aligned, one style per section.
 - Same gap between every pair of sections.
 - Bold only on titles and labels.
 - Read by at least one other person, and better by several.
@@ -65,16 +65,16 @@ Header
 [ ] One email, checked daily
 
 Education
-[ ] GPA only if the posting sets a minimum I meet, decimals matching
+[ ] GPA listed at 3.50 or higher, judged at 3.0 to 3.49, off below 3.0, decimals matching
 [ ] Graduation date at the right margin, "Expected" if not yet graduated
 [ ] One line of coursework that matches the posting
-[ ] No high school
+[ ] No high school after the first year
 
 Projects and experience
 [ ] Every bullet: past-tense verb, a tool, a number I can explain
 [ ] No helped, assisted, worked on, or utilized
 [ ] Every bullet fills one line or most of two
-[ ] Unrelated jobs on one line
+[ ] Unrelated jobs on one line, once there is engineering work
 
 Skills
 [ ] Every tool appears in a bullet
@@ -83,7 +83,7 @@ Skills
 
 Whole page
 [ ] One column, no photo, no icons, no tables
-[ ] Dates right-aligned, one date style
+[ ] Dates right-aligned, one date style per section
 [ ] Same gap between every pair of sections
 [ ] Bold only on titles and labels
 [ ] Read by other people, and the general reaction noted
