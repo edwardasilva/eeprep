@@ -362,6 +362,17 @@ figure.eep-fig figcaption {
 	line-height: 1.55;
 	color: var(--eep-ink-2);
 }
+/* Figures are numbered by position on the page: 1, 2, 3 in page order. Each
+   page restarts at 1, so adding or moving a figure never needs a manual fix. */
+.sl-markdown-content {
+	counter-reset: eep-fig;
+}
+figure.eep-fig {
+	counter-increment: eep-fig;
+}
+figure.eep-fig figcaption .eep-fignum::before {
+	content: 'Figure ' counter(eep-fig);
+}
 figure.eep-fig figcaption .eep-fignum {
 	font: 600 var(--eep-text-eyebrow)/1.9 var(--eep-font-serif);
 	color: var(--eep-mute);

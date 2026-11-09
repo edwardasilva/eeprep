@@ -141,7 +141,7 @@ npm run lint
 vale --config .github/vale/.vale.ini src/content/docs
 ```
 
-`npm run check:figures` reads the figure components under `src/components` and fails on the figure rules in `.github/STYLE.md` section 7: a crimson token, a gradient, a glow, italics, or a drawing hidden from screen readers with no spoken text. `npm run check:external-links` fetches every source URL in `references.bib`. It runs monthly from the Source links workflow, not on pull requests, because outside sites go down on their own schedule.
+`npm run check:figures` reads the figure components under `src/components` and fails on the figure rules in `.github/STYLE.md` section 7: a crimson token, a gradient, a glow, italics, or a drawing hidden from screen readers with no spoken text. It also fails on a typed figure number and on any "Figure N.M" reference. A figure caption leaves `.eep-fignum` empty, and a CSS counter numbers the figures from 1 on each page in page order. To point at a figure on another page, link its anchor and name the page. `npm run check:external-links` fetches every source URL in `references.bib`. It runs monthly from the Source links workflow, not on pull requests, because outside sites go down on their own schedule.
 
 `npm run check:citations` reads `src/content/docs` and `src/content/references.bib`. It does not need a build. `npm run check:links` needs a `dist/` folder, so run `npm run build` first. `npm run check:pr-body` reads `PR_BODY` from the environment. Vale is a separate program. CI installs Vale 3.25.1 and runs `vale --config .github/vale/.vale.ini src/content/docs`.
 
