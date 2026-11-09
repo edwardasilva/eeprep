@@ -7,7 +7,11 @@ import { linkGroups } from '../lib/link-index';
 const titles = new Map([
 	[
 		'index',
-		{ href: '/', title: "Electrical engineer's guide to job searching" },
+		{
+			href: '/',
+			title:
+				'A guide to job searching for electrical engineers & computer scientists',
+		},
 	],
 ]);
 for (const doc of await getCollection('docs')) {
