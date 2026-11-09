@@ -19,6 +19,8 @@ const skipHosts = new Set([
 	'www.reddit.com',
 	'www.linkedin.com',
 	'linkedin.com',
+	// Drops every scripted connection without answering, as of November 2026.
+	'www.solidworks.com',
 ]);
 const timeoutMs = 20_000;
 const headers = {
@@ -37,29 +39,50 @@ const urls = [
 	),
 ];
 const skipped = [];
+const refused = [];
 const failed = [];
-let checked = 0;
 
-for (const url of urls) {
-	const host = new URL(url).hostname;
-	if (skipHosts.has(host)) {
-		skipped.push(url);
-		continue;
-	}
-	checked++;
-	const status = await fetchStatus(url);
-	if (status >= 200 && status < 400) continue;
-	failed.push({ url, status });
-	console.error(`${status || 'no response'} ${url}`);
-}
+const queue = urls.filter((url) => {
+	if (!skipHosts.has(new URL(url).hostname)) return true;
+	skipped.push(url);
+	return false;
+});
+// URLs actually fetched, after the skipped hosts.
+const checked = queue.length;
+
+// Eight requests in flight at once. The list spans many hosts, so no one host
+// sees a burst, and the run takes minutes instead of most of an hour.
+await Promise.all(
+	Array.from({ length: 8 }, async () => {
+		for (let url = queue.shift(); url; url = queue.shift()) {
+			const status = await fetchStatus(url);
+			if (status >= 200 && status < 400) continue;
+			// A 403 is a bot wall, not a dead page. Several university career
+			// sites and newsrooms answer every script that way.
+			if (status === 403) {
+				refused.push(url);
+				continue;
+			}
+			failed.push({ url, status });
+			console.error(`${status || 'no response'} ${url}`);
+		}
+	}),
+);
 
 const summary = [
-	`Checked ${checked} of ${urls.length} source URLs. ${failed.length} failed, ${skipped.length} skipped.`,
+	`Checked ${checked} of ${urls.length} source URLs. ${failed.length} failed, ${refused.length} refused a script, ${skipped.length} skipped.`,
 	'',
 	...(failed.length
 		? [
 				'Failed:',
 				...failed.map((f) => `- ${f.status || 'no response'} ${f.url}`),
+				'',
+			]
+		: []),
+	...(refused.length
+		? [
+				'Refused with 403 (a bot wall, check by hand if the page matters):',
+				...refused.map((u) => `- ${u}`),
 				'',
 			]
 		: []),
@@ -81,23 +104,28 @@ if (failed.length) process.exit(1);
  * @param {string} url
  */
 async function fetchStatus(url) {
-	for (const method of ['HEAD', 'GET']) {
-		try {
-			const res = await fetch(url, {
-				method,
-				headers,
-				redirect: 'follow',
-				signal: AbortSignal.timeout(timeoutMs),
-			});
-			if (
-				method === 'HEAD' &&
-				(res.status === 405 || res.status === 403 || res.status === 404)
-			)
-				continue;
-			return res.status;
-		} catch {
-			if (method === 'GET') return 0;
-		}
+	const head = await attempt(url, 'HEAD');
+	// A server that refuses HEAD gets one GET. A host that did not answer at
+	// all is not asked twice.
+	return head && ![403, 404, 405].includes(head) ? head : attempt(url, 'GET');
+}
+
+/**
+ * One request. The body is cancelled as soon as the status is known.
+ * @param {string} url
+ * @param {'HEAD' | 'GET'} method
+ */
+async function attempt(url, method) {
+	try {
+		const res = await fetch(url, {
+			method,
+			headers,
+			redirect: 'follow',
+			signal: AbortSignal.timeout(timeoutMs),
+		});
+		await res.body?.cancel();
+		return res.status;
+	} catch {
+		return 0;
 	}
-	return 0;
 }

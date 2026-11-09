@@ -188,12 +188,6 @@ const { sublist, nested } = Astro.props;
 	.eep-parent-link {
 		padding-inline-end: 2.25rem;
 	}
-	/* A top-level parent link reads like Starlight's group labels. */
-	.top-level > .eep-parent > .eep-parent-link {
-		font-size: var(--sl-text-lg);
-		font-weight: 600;
-		color: var(--sl-color-white);
-	}
 	.eep-parent-toggle {
 		position: absolute;
 		inset-block-start: 0;
@@ -224,7 +218,6 @@ const { sublist, nested } = Astro.props;
 		font-size: var(--sl-text-lg);
 	}
 	@media (min-width: 50rem) {
-		.top-level > .eep-parent > .eep-parent-link,
 		.top-level > .eep-parent > details > .eep-parent-toggle {
 			font-size: var(--sl-text-base);
 		}

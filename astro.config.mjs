@@ -26,17 +26,24 @@ const redirects = {
 	'/get-hired/resume/': '/advice/resume/',
 	'/get-hired/resume-workshop/': '/advice/resume/workshop/',
 	'/get-hired/first-internship/': '/advice/getting-hired/first-internship/',
-	'/get-hired/the-job-market/': '/help-links/',
+	'/get-hired/the-job-market/': '/help/',
 	'/succeed-in-school/': '/',
 	'/succeed-in-school/how-to-study/': '/',
 	'/advice/resume-workshop/': '/advice/resume/workshop/',
 	'/advice/first-internship/': '/advice/getting-hired/first-internship/',
 	'/advice/hardware-experience/': '/advice/projects/hardware/',
 	'/advice/how-to-interview/': '/advice/getting-hired/how-to-interview/',
-	'/advice/getting-hired/authors-story/': '/advice/about/',
-	'/reference/': '/help-links/',
-	'/reference/job-links/': '/help-links/',
-	'/reference/signals-and-dsp/': '/help-links/',
+	'/advice/getting-hired/authors-story/': '/about/',
+	'/advice/about/': '/about/',
+	'/advice/simple/': '/advice/resume/simple/',
+	'/advice/ai-use/': '/help/ai-use/',
+	'/help-links/': '/help/',
+	'/help-links/all-links/': '/help/all-links/',
+	'/help-links/contributing/': '/help/contributing/',
+	'/help-links/sitemap/': '/help/sitemap/',
+	'/reference/': '/help/',
+	'/reference/job-links/': '/help/',
+	'/reference/signals-and-dsp/': '/help/',
 };
 const lightCodeTheme = JSON.parse(
 	readFileSync(
@@ -287,8 +294,6 @@ export default defineConfig({
 					label: 'Advice',
 					items: [
 						{ label: 'Advice', slug: 'advice' },
-						{ label: 'Simple', slug: 'advice/simple' },
-						{ label: 'About', slug: 'advice/about' },
 						{
 							label: 'Projects',
 							items: [
@@ -301,8 +306,10 @@ export default defineConfig({
 							label: 'Resume',
 							items: [
 								{ label: 'Resume', slug: 'advice/resume' },
+								{ label: 'Simple', slug: 'advice/resume/simple' },
 								{ label: 'Walkthrough', slug: 'advice/resume/walkthrough' },
 								{ label: 'Cleanup', slug: 'advice/resume/cleanup' },
+								{ label: 'Portfolio', slug: 'advice/resume/portfolio' },
 								{ label: 'Workshop', slug: 'advice/resume/workshop' },
 							],
 						},
@@ -310,6 +317,14 @@ export default defineConfig({
 							label: 'Getting hired',
 							items: [
 								{ label: 'Getting hired', slug: 'advice/getting-hired' },
+								{
+									label: 'Networking',
+									slug: 'advice/getting-hired/networking',
+								},
+								{
+									label: 'Job market',
+									slug: 'advice/getting-hired/job-market',
+								},
 								{
 									label: 'How to interview',
 									slug: 'advice/getting-hired/how-to-interview',
@@ -324,19 +339,35 @@ export default defineConfig({
 								},
 							],
 						},
-						{ label: 'AI use', slug: 'advice/ai-use' },
-						{ label: 'Forever learning', slug: 'advice/forever-learning' },
+						{
+							label: 'Forever learning',
+							items: [
+								{ label: 'Forever learning', slug: 'advice/forever-learning' },
+								{
+									label: 'Graduate study',
+									slug: 'advice/forever-learning/graduate-study',
+								},
+								{
+									label: 'Professional societies',
+									slug: 'advice/forever-learning/societies',
+								},
+							],
+						},
 					],
 				},
 				{
-					label: 'Help links',
+					label: 'Help',
 					items: [
-						{ label: 'Help links', slug: 'help-links' },
-						{ label: 'Sources', slug: 'help-links/all-links' },
-						{ label: 'Contributing', slug: 'help-links/contributing' },
-						{ label: 'Sitemap', slug: 'help-links/sitemap' },
+						{ label: 'Help', slug: 'help' },
+						{ label: 'Job boards', slug: 'help/job-boards' },
+						{ label: 'Repositories and resources', slug: 'help/resources' },
+						{ label: 'AI use', slug: 'help/ai-use' },
+						{ label: 'Sources', slug: 'help/all-links' },
+						{ label: 'Contributing', slug: 'help/contributing' },
+						{ label: 'Sitemap', slug: 'help/sitemap' },
 					],
 				},
+				{ label: 'About', slug: 'about' },
 				{ label: 'Roadmap', slug: 'roadmap' },
 			],
 		}),

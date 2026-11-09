@@ -101,6 +101,8 @@
 	--eep-dg-accent: var(--eep-accent);
 	--eep-dg-mute: var(--eep-silver);
 	--eep-dg-fill: var(--eep-surface);
+	/* The 6% tint behind a figure box, from STYLE.md section 7. */
+	--eep-dg-tint: color-mix(in srgb, var(--eep-dg-ink) 6%, var(--eep-dg-fill));
 	--eep-dg-s2: #1d5f8a;
 	--eep-dg-s3: #4f7a28;
 	--eep-dg-grid: #e9ecf0;
@@ -132,6 +134,8 @@
 	--eep-dg-accent: var(--eep-accent);
 	--eep-dg-mute: var(--eep-silver);
 	--eep-dg-fill: var(--eep-surface);
+	/* The 6% tint behind a figure box, from STYLE.md section 7. */
+	--eep-dg-tint: color-mix(in srgb, var(--eep-dg-ink) 6%, var(--eep-dg-fill));
 	--eep-dg-s2: #8cc0e6;
 	--eep-dg-s3: #a9cf86;
 	--eep-dg-grid: #1c2537;
@@ -423,8 +427,12 @@ figure.eep-fig {
 	border-radius: 0;
 }
 .sidebar-content a {
-	font-size: var(--eep-text-sm);
 	color: var(--eep-ink);
+}
+/* Sub-page links are small. Starlight's .large marks a top-level link, and its
+   layered rule keeps those at the group-label size. */
+.sidebar-content a:not(.large) {
+	font-size: var(--eep-text-sm);
 }
 /* Inactive TOC entries are secondary; the current one is the accent. */
 starlight-toc a {

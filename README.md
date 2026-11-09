@@ -10,8 +10,9 @@ EE courses teach circuits and signals, but they rarely teach you how to turn cou
 
 ## What you'll find
 
-- Advice covers projects, resumes, getting hired for an internship or a first full-time role, interviews, and where an AI tool helps in the search. Simple is the whole guide on one page.
-- Help links has official and community links for pay data, openings, and forums.
+- Advice covers projects, resumes and a portfolio, networking and getting hired for an internship or a first full-time role, interviews, graduate study, and professional societies. Simple is the whole guide on one page.
+- Help has the job boards and where each one misleads, the repos and lists behind the site, pay data and forums, and where an AI tool helps in the search.
+- About is how the author got from school to a first embedded software job.
 
 ## How sources are handled
 
