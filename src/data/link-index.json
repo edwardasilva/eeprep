@@ -54,11 +54,11 @@
     "category": "Resume guides",
     "summary": "Greenhouse explains the steps an application goes through after you submit it.",
     "pages": [
-      "advice/ai-use",
+      "help/ai-use",
       "advice/getting-hired",
       "advice/getting-hired/how-to-interview",
       "advice/resume",
-      "advice/simple"
+      "advice/resume/simple"
     ]
   },
   {
@@ -135,7 +135,7 @@
       "advice/resume/cleanup",
       "advice/resume/walkthrough",
       "advice/resume/workshop",
-      "help-links"
+      "help"
     ]
   },
   {
@@ -234,12 +234,7 @@
     "title": "r/EngineeringResumes wiki: Recommended templates",
     "category": "Sample resumes and templates",
     "summary": "The subreddit's recommended resume templates in LaTeX, Word and Google Docs.",
-    "pages": [
-      "advice/about",
-      "advice/resume",
-      "advice/resume/workshop",
-      "roadmap"
-    ]
+    "pages": ["about", "advice/resume", "advice/resume/workshop", "roadmap"]
   },
   {
     "url": "https://github.com/edwardasilva/resume-generator",
@@ -250,7 +245,7 @@
       "advice/resume",
       "advice/resume/cleanup",
       "advice/resume/walkthrough",
-      "help-links/contributing",
+      "help/contributing",
       "index"
     ]
   },
@@ -361,7 +356,7 @@
       "advice/resume",
       "advice/resume/cleanup",
       "advice/resume/workshop",
-      "advice/simple"
+      "advice/resume/simple"
     ]
   },
   {
@@ -527,11 +522,11 @@
     "category": "Resume feedback from reviewers and recruiters",
     "summary": "A recruiter says hiring managers now ask 3 to 5 layers deep on resume items.",
     "pages": [
-      "advice/ai-use",
+      "help/ai-use",
       "advice/getting-hired/how-to-interview",
       "advice/resume",
       "advice/resume/cleanup",
-      "advice/simple"
+      "advice/resume/simple"
     ]
   },
   {
@@ -757,7 +752,7 @@
       "advice/getting-hired",
       "advice/getting-hired/first-internship",
       "advice/getting-hired/how-to-interview",
-      "advice/simple"
+      "advice/resume/simple"
     ]
   },
   {
@@ -793,14 +788,14 @@
     "title": "Handshake",
     "category": "Job search and referrals",
     "summary": "Job and internship platform that many universities use for student recruiting.",
-    "pages": ["advice/getting-hired", "help-links"]
+    "pages": ["advice/getting-hired", "help"]
   },
   {
     "url": "https://jobs.ieee.org/",
     "title": "IEEE Job Site",
     "category": "Job search and referrals",
     "summary": "IEEE's job board for electrical, electronics and computer engineering roles.",
-    "pages": ["help-links"]
+    "pages": ["help"]
   },
   {
     "url": "https://ecs.grainger.illinois.edu/student-resources/network-fairs/career-fairs",
@@ -828,7 +823,7 @@
     "title": "LinkedIn Jobs",
     "category": "Job search and referrals",
     "summary": "LinkedIn's job search, with filters for internships and entry-level roles.",
-    "pages": ["help-links"]
+    "pages": ["help"]
   },
   {
     "url": "https://career.engin.umich.edu/students/job-search-policies/",
@@ -856,7 +851,10 @@
     "title": "MIT CAPD: Negotiate job offers",
     "category": "Job search and referrals",
     "summary": "MIT's steps for responding to and negotiating a job offer, and which terms usually move.",
-    "pages": ["advice/getting-hired/first-full-time-role", "advice/simple"]
+    "pages": [
+      "advice/getting-hired/first-full-time-role",
+      "advice/resume/simple"
+    ]
   },
   {
     "url": "https://iso.mit.edu/",
@@ -884,7 +882,7 @@
     "title": "OPM: Students and recent graduates",
     "category": "Job search and referrals",
     "summary": "OPM policy page with the rules behind the federal Pathways programs.",
-    "pages": ["help-links"]
+    "pages": ["help"]
   },
   {
     "url": "https://careerdevelopment.princeton.edu/internships-jobs/recruiting-timelines",
@@ -949,28 +947,28 @@
     "title": "USAJOBS",
     "category": "Job search and referrals",
     "summary": "The US federal government's official job listings site.",
-    "pages": ["help-links"]
+    "pages": ["help"]
   },
   {
     "url": "https://usajobshelp.opm.gov/hc/en-us/articles/53059807800979-What-are-hiring-paths-and-how-can-they-help-you",
     "title": "USAJOBS Help: What are hiring paths?",
     "category": "Job search and referrals",
     "summary": "Explains the federal hiring paths that limit who can apply to a job posting.",
-    "pages": ["help-links"]
+    "pages": ["help"]
   },
   {
     "url": "https://opm.usajobs.gov/hiringpath/recentgraduates/",
     "title": "USAJOBS: Pathways for recent graduates",
     "category": "Job search and referrals",
     "summary": "Federal Pathways program for people who recently finished a degree.",
-    "pages": ["help-links", "advice/getting-hired/first-full-time-role"]
+    "pages": ["help", "advice/getting-hired/first-full-time-role"]
   },
   {
     "url": "https://opm.usajobs.gov/hiringpath/students/",
     "title": "USAJOBS: Pathways internships for students",
     "category": "Job search and referrals",
     "summary": "The federal Pathways internship program for students currently enrolled in school.",
-    "pages": ["help-links"]
+    "pages": ["help"]
   },
   {
     "url": "https://www.uscis.gov/",
@@ -984,7 +982,10 @@
     "title": "Yale: Industry hiring timelines",
     "category": "Job search and referrals",
     "summary": "Hiring seasons by industry, including the fall and winter peaks for engineering roles.",
-    "pages": ["advice/getting-hired/first-full-time-role", "advice/simple"]
+    "pages": [
+      "advice/getting-hired/first-full-time-role",
+      "advice/resume/simple"
+    ]
   },
   {
     "url": "https://www.reddit.com/r/ECE/comments/1mojjy7/how_do_you_actually_get_referralsinterviews_for/",
@@ -1125,7 +1126,7 @@
     "title": "r/EngineeringStudents: Projects that got you hired",
     "category": "Job search stories from students",
     "summary": "Students list the personal projects that helped them get internships.",
-    "pages": ["advice/projects", "advice/simple"]
+    "pages": ["advice/projects", "advice/resume/simple"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringStudents/comments/1ridrqh/im_a_sophomore_right_now_will_i_ever_get_a_job_if/",
@@ -1312,14 +1313,14 @@
     "title": "Barr Group: How to use C's volatile keyword",
     "category": "Interview prep",
     "summary": "Nigel Jones explains when embedded C code needs the volatile keyword.",
-    "pages": ["advice/ai-use", "advice/getting-hired/how-to-interview"]
+    "pages": ["help/ai-use", "advice/getting-hired/how-to-interview"]
   },
   {
     "url": "https://par.nsf.gov/servlets/purl/10196170",
     "title": "Behroozi et al. (2020): Does stress impact technical interview performance?",
     "category": "Interview prep",
     "summary": "PDF of a study comparing whiteboard coding with an observer against coding alone.",
-    "pages": ["advice/ai-use", "advice/getting-hired/how-to-interview"]
+    "pages": ["help/ai-use", "advice/getting-hired/how-to-interview"]
   },
   {
     "url": "https://careers.mines.edu/career-professional-development-workshops/",
@@ -1368,7 +1369,7 @@
     "title": "Illinois Engineering: Mock interview",
     "category": "Interview prep",
     "summary": "How to schedule and use a mock interview with Illinois engineering career services.",
-    "pages": ["advice/ai-use", "advice/getting-hired/how-to-interview"]
+    "pages": ["help/ai-use", "advice/getting-hired/how-to-interview"]
   },
   {
     "url": "https://ecs.grainger.illinois.edu/student-resources/interviewing/tips",
@@ -1457,7 +1458,7 @@
     "category": "Pay and career data",
     "summary": "Federal data on pay, job outlook and duties for electrical and electronics engineers.",
     "pages": [
-      "help-links",
+      "help",
       "advice/getting-hired/first-full-time-role",
       "advice/projects"
     ]
@@ -1474,18 +1475,14 @@
     "title": "Levels.fyi",
     "category": "Pay and career data",
     "summary": "Self-reported salary and total compensation data by company and level.",
-    "pages": [
-      "help-links",
-      "advice/getting-hired/first-full-time-role",
-      "roadmap"
-    ]
+    "pages": ["help", "advice/getting-hired/first-full-time-role", "roadmap"]
   },
   {
     "url": "https://www.naceweb.org/job-market/compensation/",
     "title": "NACE: Compensation",
     "category": "Pay and career data",
     "summary": "NACE data and reports on starting salaries for new college graduates.",
-    "pages": ["help-links", "advice/getting-hired/first-full-time-role"]
+    "pages": ["help", "advice/getting-hired/first-full-time-role"]
   },
   {
     "url": "https://www.naceweb.org/talent-acquisition/internships/intern-conversion-rate-hits-highest-mark-in-five-years",
@@ -1527,7 +1524,7 @@
     "title": "O*NET: Electrical engineers",
     "category": "Pay and career data",
     "summary": "Occupation profile listing tasks, skills, tools and pay for electrical engineers.",
-    "pages": ["help-links"]
+    "pages": ["help"]
   },
   {
     "url": "https://www.ieee.org/membership/join",
@@ -1541,90 +1538,90 @@
     "title": "r/ECE",
     "category": "Communities",
     "summary": "Subreddit for electrical and computer engineering students and professionals.",
-    "pages": ["help-links"]
+    "pages": ["help"]
   },
   {
     "url": "https://www.reddit.com/r/ElectricalEngineering/",
     "title": "r/ElectricalEngineering",
     "category": "Communities",
     "summary": "Subreddit for electrical engineering questions, projects and career discussion.",
-    "pages": ["help-links"]
+    "pages": ["help"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringResumes/",
     "title": "r/EngineeringResumes",
     "category": "Communities",
     "summary": "Subreddit where engineers post resumes for review and share job search results.",
-    "pages": ["advice/resume/cleanup", "help-links"]
+    "pages": ["advice/resume/cleanup", "help"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringStudents/",
     "title": "r/EngineeringStudents",
     "category": "Communities",
     "summary": "Subreddit where engineering students in every discipline discuss classes, internships and jobs.",
-    "pages": ["help-links"]
+    "pages": ["help"]
   },
   {
     "url": "https://github.com/edwardasilva/eeprep/blob/main/.github/CONTRIBUTING.md",
     "title": "Contributing",
     "category": "Site",
     "summary": "How a change to eeprep gets from an idea to the live site.",
-    "pages": ["help-links/contributing"]
+    "pages": ["help/contributing"]
   },
   {
     "url": "https://github.com/edwardasilva/eeprep/issues/new/choose",
     "title": "eeprep issue forms",
     "category": "Site",
     "summary": "Forms to ask for a page, report a site bug, or report a technical error.",
-    "pages": ["help-links/contributing"]
+    "pages": ["help/contributing"]
   },
   {
     "url": "https://github.com/edwardasilva/eeprep/blob/main/.github/SECURITY.md",
     "title": "eeprep security policy",
     "category": "Site",
     "summary": "How to report a security problem in private.",
-    "pages": ["help-links/contributing"]
+    "pages": ["help/contributing"]
   },
   {
     "url": "https://naceweb.org/job-market/trends-and-predictions/student-concerns-about-ai-tempering-their-use-of-it-in-job-search",
     "title": "NACE: Student concerns about AI tempering their use of it in the job search",
     "category": "AI in the job search",
     "summary": "NACE's 2025 student survey: 67.1% of graduating seniors did not use AI in their search, most often over ethics.",
-    "pages": ["advice/ai-use"]
+    "pages": ["help/ai-use"]
   },
   {
     "url": "https://naceweb.org/about-us/press/2026/ready-or-reluctant-employer-expectations-for-ai-skills-meet-student-skepticism",
     "title": "NACE: Ready or reluctant? Employer expectations for AI skills meet student skepticism",
     "category": "AI in the job search",
     "summary": "NACE's 2026 student survey press release: 46% of graduating seniors used AI in their job search.",
-    "pages": ["advice/ai-use"]
+    "pages": ["help/ai-use"]
   },
   {
     "url": "https://www.fortune.com/2025/02/04/anthropic-tells-job-candidates-dont-use-ai-employer-trend",
     "title": "Fortune: Anthropic tells job candidates not to use AI in applications",
     "category": "AI in the job search",
     "summary": "A February 2025 report on an employer that asks applicants not to use AI assistants in the application process.",
-    "pages": ["advice/ai-use"]
+    "pages": ["help/ai-use"]
   },
   {
     "url": "https://topresume.com/career-advice/ai-in-hiring-survey",
     "title": "TopResume: Where employers draw the line on AI in hiring",
     "category": "AI in the job search",
     "summary": "A vendor survey of 600 US hiring managers on AI-written applications and how well they can spot them.",
-    "pages": ["advice/ai-use"]
+    "pages": ["help/ai-use"]
   },
   {
     "url": "https://alumni.ucdavis.edu/node/12666",
     "title": "UC Davis: Using AI in the job search",
     "category": "AI in the job search",
     "summary": "A career office's prompts for using AI to review a resume against a posting.",
-    "pages": ["advice/ai-use"]
+    "pages": ["help/ai-use"]
   },
   {
     "url": "https://southernct.edu/career/ChatGPT-AI-Usage-in-Your-Career-Search",
     "title": "Southern Connecticut State University: ChatGPT and AI usage in your career search",
     "category": "AI in the job search",
     "summary": "A career center's warning on submitting AI-generated content as your own work.",
-    "pages": ["advice/ai-use"]
+    "pages": ["help/ai-use"]
   }
 ]

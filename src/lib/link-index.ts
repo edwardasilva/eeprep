@@ -28,7 +28,7 @@ export interface LinkGroup {
 }
 
 /** The page that renders the table. */
-export const linkIndexPage = 'help-links/all-links';
+export const linkIndexPage = 'help/all-links';
 
 /**
  * Entries grouped by category, in file order. The page headings and the

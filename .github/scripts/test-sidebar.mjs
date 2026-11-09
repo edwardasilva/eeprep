@@ -20,13 +20,10 @@ const group = (label, entries) => ({
 	collapsed: false,
 });
 
-const helpLinks = group('Help links', [
-	link('Help links'),
-	link('Sources', true),
-]);
+const helpLinks = group('Help', [link('Help'), link('Sources', true)]);
 const split = splitParentGroup(helpLinks);
 assert.ok(split);
-assert.equal(split.parent.label, 'Help links');
+assert.equal(split.parent.label, 'Help');
 assert.deepEqual(
 	split.children.map((e) => e.label),
 	['Sources'],

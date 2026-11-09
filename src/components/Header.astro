@@ -11,25 +11,25 @@ const shouldRenderSearch =
 
 const links = [
 	{ href: '/advice/', label: 'Advice', section: '/advice/' },
-	{ href: '/help-links/', label: 'Help links', section: '/help-links/' },
+	{ href: '/help/', label: 'Help', section: '/help/' },
 	{ href: '/roadmap/', label: 'Roadmap', section: '/roadmap/' },
 	{
-		href: '/help-links/sitemap/',
+		href: '/help/sitemap/',
 		label: 'Sitemap',
-		section: '/help-links/sitemap/',
+		section: '/help/sitemap/',
 	},
 ];
 
 const suggestions = [
 	{ href: '/advice/resume/', label: 'Resume' },
 	{ href: '/advice/getting-hired/', label: 'Getting hired' },
-	{ href: '/help-links/', label: 'Help links' },
+	{ href: '/help/', label: 'Help' },
 	{ href: '/roadmap/', label: 'Roadmap' },
 ];
 
 const pathname = Astro.url.pathname;
 
-// Sitemap sits inside Help links, so only the longest matching section is
+// Sitemap sits inside Help, so only the longest matching section is
 // marked current.
 const currentSection = links
 	.map((link) => link.section)

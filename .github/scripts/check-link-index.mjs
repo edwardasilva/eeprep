@@ -16,7 +16,7 @@ const indexPath = path.resolve(
 );
 const indexName = 'src/data/link-index.json';
 // The page that renders the table. Its links are the table itself.
-const selfPage = 'help-links/all-links';
+const selfPage = 'help/all-links';
 
 if (!fs.existsSync(dist)) {
 	console.error(

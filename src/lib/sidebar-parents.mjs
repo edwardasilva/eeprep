@@ -5,10 +5,10 @@
 // items as its sub-pages.
 //
 //   {
-//     label: 'Help links',
+//     label: 'Help',
 //     items: [
-//       { label: 'Help links', slug: 'help-links' },
-//       { label: 'Sources', slug: 'help-links/all-links' },
+//       { label: 'Help', slug: 'help' },
+//       { label: 'Sources', slug: 'help/all-links' },
 //     ],
 //   }
 
