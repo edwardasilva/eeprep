@@ -132,11 +132,12 @@ const alt =
 		line-height: 1.45;
 		color: var(--eep-ink-2);
 	}
-	/* The join is the line from the inventory to the versions. */
+	/* The join is the line from the inventory to the versions. It spans the grid gap on both
+	   sides, so it touches both boxes. */
 	.eep-ver-join {
-		height: 1.25rem;
+		height: 2.25rem;
 		width: var(--line);
-		margin: -0.4rem auto;
+		margin: -0.75rem auto;
 		background: var(--eep-dg-ink);
 	}
 	.eep-ver-list {
@@ -157,10 +158,11 @@ const alt =
 		line-height: 1.45;
 		color: var(--eep-ink-2);
 	}
-	@container (min-width: 40rem) {
+	@container (min-width: 36rem) {
 		.eep-ver {
-			grid-template-columns: minmax(0, 11rem) 1.5rem minmax(0, 1fr);
+			grid-template-columns: minmax(0, 11rem) 2rem minmax(0, 1fr);
 			grid-template-rows: auto auto;
+			column-gap: 0;
 			align-items: start;
 		}
 		.eep-ver-facts {
