@@ -1,6 +1,7 @@
 // Loads every built page at phone widths in both themes against `astro preview`
 // and fails on horizontal scroll, overlapping header controls, small tap
-// targets, and figure problems. It also checks that the header and its
+// targets, figure problems, images with no alt attribute, and drawings hidden
+// from screen readers with no spoken description beside them. It also checks that the header and its
 // controls sit at the same pixels on every page, at phone and desktop widths,
 // and that text in figures renders at 12px or more. Before loading pages it
 // fails if any built page or stylesheet has an emoji or an icon-style symbol.
@@ -198,6 +199,20 @@ function auditPage({ minTap, minLabelPx }) {
 			out.push(
 				`${label(el)} tap target is ${Math.round(r.width)}x${Math.round(r.height)}px`,
 			);
+	}
+
+	// Every image needs an alt attribute, even an empty one for decoration.
+	for (const img of document.querySelectorAll('img')) {
+		if (!img.hasAttribute('alt'))
+			out.push(`${img.getAttribute('src')} has no alt attribute`);
+	}
+	// A drawing hidden as a whole needs a spoken description in its figure.
+	for (const fig of document.querySelectorAll('figure')) {
+		const hidden = fig.querySelector(
+			':scope > :is(div, ol, ul, svg)[aria-hidden="true"]',
+		);
+		if (hidden && !fig.querySelector('.sr-only'))
+			out.push(`${fig.id || 'figure'} hides its drawing with no .sr-only text`);
 	}
 
 	// Figures.

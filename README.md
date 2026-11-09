@@ -10,7 +10,7 @@ EE courses teach circuits and signals, but they rarely teach you how to turn cou
 
 ## What you'll find
 
-- Advice covers resumes, getting hired for an internship or a first full-time role, interviews, and projects.
+- Advice covers projects, resumes, getting hired for an internship or a first full-time role, interviews, and where an AI tool helps in the search. Simple is the whole guide on one page.
 - Help links has official and community links for pay data, openings, and forums.
 
 ## How sources are handled

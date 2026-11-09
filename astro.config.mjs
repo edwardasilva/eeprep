@@ -287,6 +287,7 @@ export default defineConfig({
 					label: 'Advice',
 					items: [
 						{ label: 'Advice', slug: 'advice' },
+						{ label: 'Simple', slug: 'advice/simple' },
 						{ label: 'About', slug: 'advice/about' },
 						{
 							label: 'Projects',
@@ -300,6 +301,8 @@ export default defineConfig({
 							label: 'Resume',
 							items: [
 								{ label: 'Resume', slug: 'advice/resume' },
+								{ label: 'Walkthrough', slug: 'advice/resume/walkthrough' },
+								{ label: 'Cleanup', slug: 'advice/resume/cleanup' },
 								{ label: 'Workshop', slug: 'advice/resume/workshop' },
 							],
 						},
@@ -321,6 +324,7 @@ export default defineConfig({
 								},
 							],
 						},
+						{ label: 'AI use', slug: 'advice/ai-use' },
 						{ label: 'Forever learning', slug: 'advice/forever-learning' },
 					],
 				},

@@ -1,0 +1,263 @@
+---
+// Figure 15.1 as HTML and CSS. The author's path from the first semester to
+// the first full-time role, as dated steps on one line. On wide figures the
+// steps run left to right in two rows. On narrow ones they hang off one line
+// down the left side. Employers stay unnamed, as on the rest of the page.
+const steps = [
+	{
+		date: 'Fall 2022',
+		title: 'Computer science major',
+		body: 'A research lab job in the first semester.',
+	},
+	{
+		date: 'Summer 2023',
+		title: 'No internship',
+		body: 'Summer classes, and flowers delivered for two florists.',
+	},
+	{
+		date: '2024',
+		title: 'Electrical engineering',
+		body: 'Switched majors. Restarted the solar tracker. A fall in a faculty-led lab.',
+	},
+	{
+		date: 'Jan to Jun 2025',
+		title: 'Electrical design co-op',
+		body: 'Load calculations, panel schedules, and code checks.',
+	},
+	{
+		date: 'Summer 2025',
+		title: 'Defense internship',
+		body: 'Real-time signal processing in C++, a 1.6x speedup.',
+	},
+	{
+		date: 'Sep to Nov 2025',
+		title: 'Six interview rounds',
+		body: 'Cold application on day one. A take-home and an on-site day.',
+	},
+	{
+		date: 'May 2026',
+		title: 'Graduated',
+		body: 'BS in electrical engineering, minor in computer science.',
+	},
+	{
+		date: 'Jul 2026',
+		title: 'Embedded software engineer',
+		body: 'Drivers in C and C++.',
+	},
+];
+const alt =
+	'Eight dated steps. Fall 2022, a computer science major with a research lab job in the first semester. Summer 2023, no internship, so summer classes and flower deliveries. 2024, the switch to electrical engineering, the solar tracker restart, and a fall in a faculty-led lab. January to June 2025, an electrical design co-op. Summer 2025, a defense internship with real-time signal processing in C++ and a 1.6x speedup. September to November 2025, six interview rounds after a cold application on day one. May 2026, graduation with a BS in electrical engineering and a minor in computer science. July 2026, a start as an embedded software engineer.';
+const arrow = 'M1 1.5L9 5L1 8.5Z';
+---
+
+<figure class="eep-fig wide eep-path-fig" id="fig-15-1">
+	<p class="eep-kicker">My path, dated</p>
+	<p class="sr-only">{alt}</p>
+	<div class="eep-path not-content" aria-hidden="true">
+		<ol>
+			{steps.map((s, i) => (
+				<li
+					class:list={[
+						'eep-path-step',
+						`eep-path-s${i + 1}`,
+						{ 'eep-path-end': i === steps.length - 1 },
+					]}
+				>
+					<p class="eep-path-date">{s.date}</p>
+					<p class="eep-path-title">{s.title}</p>
+					<p class="eep-path-body">{s.body}</p>
+					{i !== 3 && i !== steps.length - 1 && (
+						<svg class="eep-path-arrow" viewBox="0 0 10 10" focusable="false">
+							<path d={arrow} />
+						</svg>
+					)}
+				</li>
+			))}
+			<li class="eep-path-turn">
+				<svg class="eep-path-arrow" viewBox="0 0 10 10" focusable="false">
+					<path d={arrow} />
+				</svg>
+			</li>
+		</ol>
+	</div>
+	<figcaption>
+		<span class="eep-fignum">Fig 15.1</span>{' '}
+		<span>
+			Four years from the first semester to the first full-time role. The jobs
+			before engineering are in the text above.
+		</span>
+	</figcaption>
+</figure>
+
+<style>
+	.eep-path-fig .eep-kicker {
+		line-height: 1.35;
+	}
+	.eep-path {
+		margin-top: 1rem;
+		--line: 1.5px;
+		--node: 0.8rem;
+		--lane: 1rem;
+		container-type: inline-size;
+		font-family: var(--eep-font-sans);
+		color: var(--eep-ink);
+	}
+	.eep-path p {
+		margin: 0;
+		max-width: none;
+	}
+	.eep-path ol {
+		position: relative;
+		display: grid;
+		gap: 1rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.eep-path li {
+		margin: 0;
+		max-width: none;
+	}
+	.eep-path .eep-path-date {
+		font: 0.75rem/1.4 var(--eep-font-serif);
+		color: var(--eep-ink-2);
+	}
+	.eep-path .eep-path-title {
+		font-size: 0.9375rem;
+		font-weight: 600;
+		line-height: 1.3;
+		text-wrap: balance;
+	}
+	.eep-path .eep-path-body {
+		margin-top: 0.2rem;
+		font-size: 0.8125rem;
+		line-height: 1.45;
+		color: var(--eep-ink-2);
+	}
+	/* Nodes: an open ring for each step and a filled dot at the job. */
+	.eep-path-step {
+		position: relative;
+		padding-left: 1.6rem;
+	}
+	.eep-path-step::before {
+		content: '';
+		position: absolute;
+		z-index: 1;
+		top: 0.3rem;
+		left: 0;
+		box-sizing: border-box;
+		width: var(--node);
+		height: var(--node);
+		border: var(--line) solid var(--eep-dg-ink);
+		border-radius: 50%;
+		background: var(--eep-dg-fill);
+	}
+	.eep-path-end::before {
+		background: var(--eep-dg-ink);
+	}
+	/* Narrow: one line down the left side. */
+	.eep-path ol::before {
+		content: '';
+		position: absolute;
+		top: 0.6rem;
+		bottom: 1rem;
+		left: calc(var(--node) / 2 - var(--line) / 2);
+		border-left: var(--line) solid var(--eep-dg-ink);
+	}
+	.eep-path-arrow,
+	.eep-path-turn {
+		display: none;
+	}
+	/* Wide: two rows of four, read left to right, with the line turning down
+	   the right edge from step 4 to step 5. */
+	@container (min-width: 36rem) {
+		.eep-path ol {
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+			gap: 0 0.75rem;
+			padding-right: var(--lane);
+		}
+		.eep-path ol::before {
+			display: none;
+		}
+		.eep-path-step {
+			padding: 1.35rem 0 0;
+		}
+		.eep-path-step::before {
+			top: 0;
+			left: 0;
+		}
+		.eep-path-s5,
+		.eep-path-s6,
+		.eep-path-s7,
+		.eep-path-s8 {
+			grid-row: 3;
+		}
+		.eep-path-step:not(.eep-path-s4, .eep-path-end)::after {
+			content: '';
+			position: absolute;
+			top: calc(var(--node) / 2 - var(--line) / 2);
+			left: var(--node);
+			right: -0.4rem;
+			height: var(--line);
+			background: var(--eep-dg-ink);
+		}
+		.eep-path-step .eep-path-arrow {
+			display: block;
+			position: absolute;
+			top: calc(var(--node) / 2 - 0.3rem);
+			right: -0.75rem;
+			width: 0.6rem;
+			height: 0.6rem;
+			fill: var(--eep-dg-ink);
+		}
+		/* Step 4 runs right into the lane and down to the turn. */
+		.eep-path-s4::after {
+			content: '';
+			position: absolute;
+			top: calc(var(--node) / 2 - var(--line) / 2);
+			left: var(--node);
+			right: calc(var(--lane) / -2);
+			bottom: 0;
+			border-top: var(--line) solid var(--eep-dg-ink);
+			border-right: var(--line) solid var(--eep-dg-ink);
+			border-top-right-radius: 4px;
+		}
+		/* The turn runs back left and drops onto step 5. */
+		.eep-path-turn {
+			display: block;
+			position: relative;
+			grid-row: 2;
+			grid-column: 1 / -1;
+			height: 1.75rem;
+		}
+		.eep-path-turn::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: calc(var(--node) / 2 - var(--line) / 2);
+			right: calc(var(--lane) / -2);
+			height: 50%;
+			border-right: var(--line) solid var(--eep-dg-ink);
+			border-bottom: var(--line) solid var(--eep-dg-ink);
+			border-bottom-right-radius: 4px;
+		}
+		.eep-path-turn::after {
+			content: '';
+			position: absolute;
+			top: calc(50% - var(--line));
+			bottom: 0.45rem;
+			left: calc(var(--node) / 2 - var(--line) / 2);
+			border-left: var(--line) solid var(--eep-dg-ink);
+		}
+		.eep-path-turn .eep-path-arrow {
+			display: block;
+			position: absolute;
+			bottom: 0.15rem;
+			left: calc(var(--node) / 2 - 0.3rem);
+			width: 0.6rem;
+			height: 0.6rem;
+			fill: var(--eep-dg-ink);
+			transform: rotate(90deg);
+		}
+	}
+</style>

@@ -27,7 +27,7 @@ Every merge is a squash merge, and the branch is deleted when it merges. Do not 
 Pull requests into `main` run these checks. A failed check does not stop the others, so one run lists every problem:
 
 - the body contains `Part of #<issue>` (Dependabot and `no-epic` skip this)
-- `npm ci`, wikilink check, citation check, production build, and HTML link check
+- `npm ci`, wikilink check, citation check, figure rules, production build, and HTML link check
 - Vale, using `.github/STYLE.md`, on `src/content/docs` (`vale --config .github/vale/.vale.ini src/content/docs`)
 - `npm run lint` (ESLint, markdownlint, and Prettier)
 
@@ -107,9 +107,12 @@ npm run check:citations
 npm run build
 npm run check:links
 npm run check:pr-body
+npm run check:figures
 npm run lint
 vale --config .github/vale/.vale.ini src/content/docs
 ```
+
+`npm run check:figures` reads the figure components under `src/components` and fails on the figure rules in `.github/STYLE.md` section 7: a crimson token, a gradient, a glow, italics, or a drawing hidden from screen readers with no spoken text. `npm run check:external-links` fetches every source URL in `references.bib`. It runs weekly from the Source links workflow, not on pull requests, because outside sites go down on their own schedule.
 
 `npm run check:citations` reads `src/content/docs` and `src/content/references.bib`. It does not need a build. `npm run check:links` needs a `dist/` folder, so run `npm run build` first. `npm run check:pr-body` reads `PR_BODY` from the environment. Vale is a separate program. CI installs Vale 3.25.1 and runs `vale --config .github/vale/.vale.ini src/content/docs`.
 
