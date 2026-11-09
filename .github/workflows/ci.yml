@@ -11,6 +11,7 @@ permissions:
 env:
   # engines.node is a range. setup-node cannot install that string from package.json.
   NODE_VERSION: '22.23.4'
+  VALE_VERSION: '3.25.1'
 
 concurrency:
   group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -18,128 +19,144 @@ concurrency:
 
 # The "Part of #" check is in pr-body.yml, so that editing the body or a
 # label doesn't restart this run.
+#
+# One job runs every check, so npm ci runs once and the mobile audit reads the
+# dist/ the build just wrote. A failed check doesn't stop the others. Each
+# check runs once what it needs is ready: node_modules, or dist/ for the checks
+# that read the build. One run lists every problem.
 jobs:
-  build:
-    name: Build and links
+  checks:
+    name: Checks
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
+      # Depth 2 fetches the merge commit and its first parent, the base branch,
+      # so the mobile audit can see which files the pull request changes.
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 2
+
+      - name: Cache Vale
+        id: vale-cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/vale-${{ env.VALE_VERSION }}
+          key: vale-${{ env.VALE_VERSION }}-linux-x64
+      - name: Install Vale
+        if: steps.vale-cache.outputs.cache-hit != 'true'
+        run: |
+          set -euo pipefail
+          base="https://github.com/vale-cli/vale/releases/download/v$VALE_VERSION"
+          curl -fsSL --retry 3 -o /tmp/vale.tar.gz "$base/vale_${VALE_VERSION}_Linux_64-bit.tar.gz"
+          echo "4bf5c5176b682b1da0830f471584d3494f1c2e27ee3029e1ad6f6661d4962182  /tmp/vale.tar.gz" | sha256sum -c -
+          mkdir -p "$HOME/vale-$VALE_VERSION"
+          tar -xzf /tmp/vale.tar.gz -C "$HOME/vale-$VALE_VERSION" vale
+      - name: Vale (guide prose)
+        run: '"$HOME/vale-$VALE_VERSION/vale" --config .github/vale/.vale.ini src/content/docs'
+
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        if: ${{ !cancelled() }}
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
-      - run: npm ci
-      - run: npm run test:wikilinks
-      - run: npm run check:wikilinks
-      - run: npm run test:citations
-      - run: npm run check:citations
-      - run: npm run check:dev
-      - run: npm run test:sidebar
-      - run: npm run build
-      - run: npm run check:deploy
-      - run: npm run check:deploy:dev
+      - name: npm ci
+        id: install
+        if: ${{ !cancelled() }}
+        run: npm ci
+
+      # Checks that read the source.
+      - name: Lint (ESLint, markdownlint, Prettier)
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: npm run lint
+      - name: Wikilink checker tests
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: npm run test:wikilinks
+      - name: Wikilinks
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: npm run check:wikilinks
+      - name: Citation checker tests
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: npm run test:citations
+      - name: Citations
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: npm run check:citations
+      - name: Sidebar tests
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: npm run test:sidebar
+      - name: Link index checker tests
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: npm run test:link-index
+      - name: Worker tests
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: npm run test:worker
+      - name: Dev server serves pages
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: npm run check:dev
       - name: Deploy pins the same Wrangler as package.json
+        if: ${{ !cancelled() }}
         run: |
           set -euo pipefail
           want="$(node -p "require('./package.json').devDependencies.wrangler")"
           if ! grep -Eq "^ +wranglerVersion: ${want//./\\.}$" .github/workflows/deploy.yml; then
-            echo "deploy.yml wranglerVersion must be $want, the wrangler version in package.json." >&2
+            echo "::error file=.github/workflows/deploy.yml::wranglerVersion must be $want, the wrangler version in package.json."
             exit 1
           fi
-      - run: npm run check:robots
-      - run: npm run test:worker
-      - run: npm run check:links
-      - run: npm run check:link-text
-      - run: npm run test:link-index
-      - run: npm run check:link-index
-      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
-        with:
-          name: dist
-          path: dist/
-          retention-days: 1
 
-  mobile:
-    name: Mobile audit
-    needs: [build]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          fetch-depth: 0
-      - name: Check whether Mobile is needed
+      # The build, then the checks that read dist/.
+      - name: Build
+        id: build
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: npm run build
+      - name: Links in the build
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: npm run check:links
+      - name: Link text
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: npm run check:link-text
+      - name: Link index
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: npm run check:link-index
+      - name: Robots meta tag
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: npm run check:robots
+      - name: Wrangler dry run (eeprep.com)
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: npm run check:deploy
+      - name: Wrangler dry run (dev)
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: npm run check:deploy:dev
+
+      # The mobile audit runs only when the pull request changes what it checks.
+      - name: Check whether the mobile audit is needed
         id: paths
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
         run: |
           set -euo pipefail
-          base="${{ github.event.pull_request.base.sha }}"
-          files="$(git diff --name-only "$base" HEAD)"
+          files="$(git diff --name-only HEAD^1 HEAD)"
           if printf '%s\n' "$files" | grep -Eq \
             '^(src/|astro\.config\.|package(-lock)?\.json$|\.github/scripts/mobile-audit\.mjs$|\.github/workflows/ci\.yml$)'; then
             echo "run=true" >> "$GITHUB_OUTPUT"
           else
             echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "This pull request changes no file the mobile audit checks."
           fi
-      - if: steps.paths.outputs.run == 'true'
-        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: npm
-      - if: steps.paths.outputs.run == 'true'
-        run: npm ci
-      - if: steps.paths.outputs.run == 'true'
-        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
-        with:
-          name: dist
-          path: dist
+      # The browser only changes when Playwright does, so the cache is keyed on
+      # Playwright's version. A key on the whole lockfile missed on every
+      # dependency bump and downloaded Chromium again.
+      - name: Find the Playwright version
+        id: playwright
+        if: ${{ !cancelled() && steps.paths.outputs.run == 'true' }}
+        run: echo "version=$(node -p "require('playwright/package.json').version")" >> "$GITHUB_OUTPUT"
       - name: Cache Playwright Chromium
-        if: steps.paths.outputs.run == 'true'
         id: playwright-cache
+        if: ${{ !cancelled() && steps.paths.outputs.run == 'true' }}
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: ~/.cache/ms-playwright
-          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          key: playwright-${{ runner.os }}-${{ steps.playwright.outputs.version }}
       - name: Install Playwright Chromium
-        if: steps.paths.outputs.run == 'true' && steps.playwright-cache.outputs.cache-hit != 'true'
+        if: ${{ !cancelled() && steps.paths.outputs.run == 'true' && steps.playwright-cache.outputs.cache-hit != 'true' }}
         run: npx playwright install --with-deps chromium
-      - if: steps.paths.outputs.run == 'true'
+      - name: Mobile audit
+        if: ${{ !cancelled() && steps.paths.outputs.run == 'true' }}
         run: npm run check:mobile
-
-  lint:
-    name: Lint
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: npm
-      - run: npm ci
-      - run: npm run lint
-
-  vale:
-    name: Vale
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - name: Cache Vale 3.25.1
-        id: vale-cache
-        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
-        with:
-          path: ~/vale-3.25.1
-          key: vale-3.25.1-linux-x64
-      - name: Install Vale 3.25.1
-        if: steps.vale-cache.outputs.cache-hit != 'true'
-        run: |
-          set -euo pipefail
-          base=https://github.com/vale-cli/vale/releases/download/v3.25.1
-          curl -fsSL -o /tmp/vale.tar.gz "$base/vale_3.25.1_Linux_64-bit.tar.gz"
-          echo "4bf5c5176b682b1da0830f471584d3494f1c2e27ee3029e1ad6f6661d4962182  /tmp/vale.tar.gz" | sha256sum -c -
-          mkdir -p "$HOME/vale-3.25.1"
-          tar -xzf /tmp/vale.tar.gz -C "$HOME/vale-3.25.1" vale
-      - name: Put Vale on PATH
-        run: |
-          set -euo pipefail
-          sudo cp "$HOME/vale-3.25.1/vale" /usr/local/bin/vale
-          sudo chmod +x /usr/local/bin/vale
-          vale --version
-      - name: Lint guide prose
-        run: vale --config .github/vale/.vale.ini src/content/docs
