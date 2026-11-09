@@ -417,6 +417,12 @@ figure.eep-fig {
 .expressive-code .frame {
 	border-radius: var(--eep-radius);
 }
+/* Each line's padding sits inside a box as wide as the frame, so a line that
+   scrolls sideways runs past it and ends flush against the frame edge. Padding
+   on the code element itself widens the scroll area to include the gap. */
+.expressive-code pre > code {
+	padding-inline-end: var(--ec-codePadInl, 1.375rem);
+}
 
 /* ---------- 11. Sidebar / chapter TOC ---------- */
 .sidebar-content a[aria-current='page'] {
