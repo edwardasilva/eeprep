@@ -163,9 +163,12 @@ button[data-open-modal] kbd {
 }
 /* Starlight adds a top margin to every block after the first. In this grid
    it would drop the cards 16px below the figure at 1280. */
-.eep-home > *,
-.eep-home-main > .eep-cards {
+.eep-home > * {
 	margin-top: 0;
+}
+/* Below 64rem the grid gap spaces the cards, so drop their own margin. */
+.eep-home > .eep-cards {
+	margin-bottom: 0;
 }
 .eep-cover {
 	/* The figure sits on the paper. Set both: the tint is computed at :root. */
@@ -223,16 +226,25 @@ button[data-open-modal] kbd {
 @media (min-width: 64rem) {
 	.eep-home {
 		grid-template-columns: minmax(0, 1fr) 34rem;
+		grid-template-rows: auto 1fr;
 		column-gap: 4rem;
+		row-gap: 0;
 		align-items: start;
+	}
+	/* The cards come first in the markup so the tab order matches the stacked
+	   layout. Here the cover moves to the right column beside cards and text. */
+	.eep-home > .eep-cards {
+		grid-column: 1;
+		grid-row: 1;
+		margin-bottom: 2.5rem;
 	}
 	.eep-cover {
 		grid-column: 2;
-		grid-row: 1;
+		grid-row: 1 / span 2;
 	}
 	.eep-home-main {
 		grid-column: 1;
-		grid-row: 1;
+		grid-row: 2;
 	}
 }
 .wikilink-missing {
