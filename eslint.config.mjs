@@ -5,7 +5,13 @@ import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
 	{
-		ignores: ['dist/**', '.astro/**', 'coverage/**', 'resume-generator/**'],
+		ignores: [
+			'dist/**',
+			'.astro/**',
+			'coverage/**',
+			'resume-generator/**',
+			'.claude/skills/**',
+		],
 	},
 	js.configs.recommended,
 	tseslint.configs.recommended,
