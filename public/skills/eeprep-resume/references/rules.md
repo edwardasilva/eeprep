@@ -10,7 +10,7 @@ From [eeprep's resume page](https://eeprep.com/advice/resume/), which condenses 
 - No justified text. No hand indents.
 - Every date right-aligned to the right margin.
 - Bold only on section titles, entry titles, and the coursework, activities, and skills labels. Never on a keyword inside a bullet.
-- Author's rule: 10 to 11 pt text and 0.4 to 0.75 in margins. The wiki asks for 10.5 pt or larger; eeprep allows 10 pt so a full page still fits.
+- Author's rule: 10 to 11 pt text and 0.5 in margins. The wiki asks for 10.5 pt or larger, and eeprep allows 10 pt so a full page still fits.
 - Author's rule: center the header, left-align everything below it.
 - Fill the page without cramming it. Empty gaps and half-used lines are wasted space. Never shrink white space to fit one more line.
 - The same gap between every pair of sections and every pair of entries.

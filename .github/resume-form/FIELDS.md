@@ -176,7 +176,7 @@ Fixed by the form. Students cannot change these:
 
 - 1 page and 1 column, black text, no icons, photo, or tables. Error if the output runs past one page. Source: the wiki and resume page "Layout".
 - Text at 10 to 11 pt. Start at 11 pt and go no lower than 10 pt. Source: resume page "Layout". The wiki asks for 10.5 pt or larger.
-- Margins at 0.4 to 0.75 in. Start at 0.5 in and go no lower than 0.4 in. Source: resume page "Layout" and the wiki's 0.4 in minimum.
+- Margins at 0.5 in. Source: resume page "Layout". The wiki's minimum is 0.4 in.
 - One `\vspace` value between every pair of sections. Source: eeprep's author.
 - Section titles in bold with a full-width rule. Entry titles and the coursework, activities, and skills labels are bold. Nothing else is bold. Source: resume page, under Alex's page.
 - PDF metadata: `\hypersetup{pdftitle={<Name> Resume}, pdfauthor={<Name>}}`. Source: eeprep's author.

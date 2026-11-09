@@ -3,7 +3,7 @@ name: eeprep-resume
 description: Write, review, and tailor a one-page engineering resume to the rules on eeprep.com, without inventing a single fact. Use when the user asks to build a resume, rewrite bullets, fit a page, review a draft, tailor a resume to a job posting, check it for ATS parsing, or fill in resume.json for resume-generator. Also use when the user pastes a resume or a posting and asks what to change.
 license: CC-BY-4.0
 metadata:
-  author: Edward Silva, eeprep.com
+  author: eeprep.com
   source: <https://eeprep.com/advice/resume/>
   version: "1.0.0"
 ---
