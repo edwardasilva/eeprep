@@ -9,8 +9,6 @@ permissions:
   contents: read
 
 env:
-  # engines.node is a range. setup-node cannot install that string from package.json.
-  NODE_VERSION: '22.23.4'
   VALE_VERSION: '3.25.1'
 
 concurrency:
@@ -38,6 +36,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 2
+          persist-credentials: false
 
       # A pull request that changes only repo docs, such as README.md, CLAUDE.md or
       # .github/ISSUE_TEMPLATE, skips the tests and the build. Lint and Vale still run, and
@@ -77,7 +76,7 @@ jobs:
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         if: ${{ !cancelled() }}
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-version-file: .nvmrc
           cache: npm
       - name: npm ci
         id: install
