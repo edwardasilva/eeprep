@@ -10,9 +10,9 @@ EE courses teach circuits and signals, but they rarely teach you how to turn cou
 
 ## What you'll find
 
-- Advice covers projects, resumes and a portfolio, networking and getting hired for an internship or a first full-time role, interviews, graduate study, and professional societies. Simple is the whole guide on one page.
+- Advice covers projects and a portfolio, resumes, networking and getting hired for an internship or a first full-time role, interviews, graduate study, and professional societies. Quick setup is the whole guide on one page, and Author's story is how the author got from school to a first embedded software job.
 - Help has the job boards and where each one misleads, the repos and lists behind the site, pay data and forums, and where an AI tool helps in the search.
-- About is how the author got from school to a first embedded software job.
+- Roadmap lists what is coming next and how to contribute.
 
 ## How sources are handled
 

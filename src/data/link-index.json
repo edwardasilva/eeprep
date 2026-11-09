@@ -57,7 +57,7 @@
       "advice/getting-hired",
       "advice/getting-hired/how-to-interview",
       "advice/resume",
-      "advice/resume/simple",
+      "advice/resume/quick-setup",
       "help/ai-use",
       "help/job-boards"
     ]
@@ -237,7 +237,7 @@
     "category": "Sample resumes and templates",
     "summary": "The subreddit's recommended resume templates in LaTeX, Word and Google Docs.",
     "pages": [
-      "about",
+      "advice/authors-story",
       "advice/resume",
       "advice/resume/workshop",
       "help/resources",
@@ -253,7 +253,7 @@
       "advice/resume",
       "advice/resume/cleanup",
       "advice/resume/walkthrough",
-      "help/contributing",
+      "roadmap/contributing",
       "help/resources",
       "index"
     ]
@@ -364,8 +364,8 @@
     "pages": [
       "advice/resume",
       "advice/resume/cleanup",
-      "advice/resume/portfolio",
-      "advice/resume/simple",
+      "advice/projects/portfolio",
+      "advice/resume/quick-setup",
       "advice/resume/workshop"
     ]
   },
@@ -535,7 +535,7 @@
       "advice/getting-hired/how-to-interview",
       "advice/resume",
       "advice/resume/cleanup",
-      "advice/resume/simple",
+      "advice/resume/quick-setup",
       "help/ai-use"
     ]
   },
@@ -765,28 +765,70 @@
     "title": "SlateGit: An embedded firmware portfolio",
     "category": "Tools and project resources",
     "summary": "What a hardware project page needs: rendered schematics, board photos, and captures that prove it works.",
-    "pages": ["advice/resume/portfolio"]
+    "pages": ["advice/projects/portfolio"]
+  },
+  {
+    "url": "https://byronbradley.me/",
+    "title": "Byron Bradley: EE portfolio",
+    "category": "Tools and project resources",
+    "summary": "A junior's one-page portfolio with a measured number and a limitations paragraph on each project.",
+    "pages": ["advice/projects/portfolio"]
+  },
+  {
+    "url": "https://yasamankhe.github.io/",
+    "title": "Yasaman Kheradmand: EE portfolio",
+    "category": "Tools and project resources",
+    "summary": "One page per project, with PCB renders, a schematic PDF, and a bring-up video on a rover lighting controller.",
+    "pages": ["advice/projects/portfolio"]
+  },
+  {
+    "url": "https://panosdimts.github.io/EE-portfolio/",
+    "title": "Panos Dimtsoudis: EE portfolio",
+    "category": "Tools and project resources",
+    "summary": "A portfolio that opens with predictions against results and keeps a What broke note, with the site built using AI tools.",
+    "pages": ["advice/projects/portfolio"]
+  },
+  {
+    "url": "https://zaidsaifan-star.github.io/",
+    "title": "Zaid Saifan: EE portfolio",
+    "category": "Tools and project resources",
+    "summary": "Six projects with named sections, and an example of design targets shown where measurements belong.",
+    "pages": ["advice/projects/portfolio"]
+  },
+  {
+    "url": "https://ece4760.github.io/Projects/Projects.html",
+    "title": "Cornell ECE 4760: final project archive",
+    "category": "Tools and project resources",
+    "summary": "A semester of student project sites at a time, each with design, hardware, software, results, and appendices.",
+    "pages": ["advice/projects/portfolio"]
+  },
+  {
+    "url": "https://ece4760.github.io/Projects/Fall2025/hw578/index.html",
+    "title": "Cornell ECE 5730: Julia set on eight RP2040s",
+    "category": "Tools and project resources",
+    "summary": "A student project page that spends its design section on the SPI bus bug and its fix.",
+    "pages": ["advice/projects/portfolio"]
   },
   {
     "url": "https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits",
     "title": "GitHub Docs: GitHub Pages limits",
     "category": "Tools and project resources",
     "summary": "The size and bandwidth limits of a free GitHub Pages site.",
-    "pages": ["advice/resume/portfolio"]
+    "pages": ["advice/projects/portfolio"]
   },
   {
     "url": "https://developers.cloudflare.com/pages/platform/limits",
     "title": "Cloudflare Docs: Pages limits",
     "category": "Tools and project resources",
     "summary": "The free plan limits for Cloudflare Pages.",
-    "pages": ["advice/resume/portfolio"]
+    "pages": ["advice/projects/portfolio"]
   },
   {
     "url": "https://vercel.com/docs/plans/hobby-plan",
     "title": "Vercel Docs: The Hobby plan",
     "category": "Tools and project resources",
     "summary": "What Vercel's free plan includes and its personal-use rule.",
-    "pages": ["advice/resume/portfolio"]
+    "pages": ["advice/projects/portfolio"]
   },
   {
     "url": "https://en.wikipedia.org/wiki/IEEEXtreme",
@@ -800,7 +842,7 @@
     "title": "Cornell ECE 4760: A student final project site",
     "category": "Tools and project resources",
     "summary": "One of the Cornell microcontroller course project sites whose section order the Portfolio page follows.",
-    "pages": ["advice/resume/portfolio"]
+    "pages": ["advice/projects/portfolio"]
   },
   {
     "url": "https://cs50.harvard.edu/x/2022/faqs",
@@ -827,7 +869,7 @@
       "advice/getting-hired/how-to-interview",
       "advice/getting-hired/job-market",
       "advice/getting-hired/networking",
-      "advice/resume/simple"
+      "advice/resume/quick-setup"
     ]
   },
   {
@@ -912,7 +954,7 @@
     "title": "MIT CAPD: Build your LinkedIn profile",
     "category": "Job search and referrals",
     "summary": "MIT career office guide to setting up a LinkedIn profile.",
-    "pages": ["advice/resume/portfolio"]
+    "pages": ["advice/projects/portfolio"]
   },
   {
     "url": "https://capd.mit.edu/resources/choosing-between-job-offers/",
@@ -928,7 +970,7 @@
     "summary": "MIT's steps for responding to and negotiating a job offer, and which terms usually move.",
     "pages": [
       "advice/getting-hired/first-full-time-role",
-      "advice/resume/simple"
+      "advice/resume/quick-setup"
     ]
   },
   {
@@ -1071,7 +1113,7 @@
     "summary": "Hiring seasons by industry, including the fall and winter peaks for engineering roles.",
     "pages": [
       "advice/getting-hired/first-full-time-role",
-      "advice/resume/simple"
+      "advice/resume/quick-setup"
     ]
   },
   {
@@ -1211,21 +1253,21 @@
     "title": "Georgia Tech: Networking tips",
     "category": "Job search and referrals",
     "summary": "A Georgia Tech handout on LinkedIn keywords, photos, and outreach.",
-    "pages": ["advice/resume/portfolio"]
+    "pages": ["advice/projects/portfolio"]
   },
   {
     "url": "https://www.linkedin.com/help/linkedin/answer/a507508/let-recruiters-know-you-re-open-to-work?lang=en",
     "title": "LinkedIn Help: Open to Work",
     "category": "Job search and referrals",
     "summary": "LinkedIn's own page on the Open to Work setting and who can see it.",
-    "pages": ["advice/resume/portfolio"]
+    "pages": ["advice/projects/portfolio"]
   },
   {
     "url": "https://career.berkeley.edu/prepare-for-success/networking/using-linkedin/",
     "title": "UC Berkeley: Using LinkedIn",
     "category": "Job search and referrals",
     "summary": "Berkeley's LinkedIn guide for students, with a profile checklist.",
-    "pages": ["advice/resume/portfolio"]
+    "pages": ["advice/projects/portfolio"]
   },
   {
     "url": "https://hkn.ieee.org/about/benefits",
@@ -1404,7 +1446,7 @@
     "title": "r/EngineeringStudents: Projects that got you hired",
     "category": "Job search stories from students",
     "summary": "Students list the personal projects that helped them get internships.",
-    "pages": ["advice/projects", "advice/resume/simple"]
+    "pages": ["advice/projects", "advice/resume/quick-setup"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringStudents/comments/1ridrqh/im_a_sophomore_right_now_will_i_ever_get_a_job_if/",
@@ -1626,7 +1668,7 @@
     "title": "r/EngineeringResumes: An EE graduate with no experience gets an offer",
     "category": "Job search stories from students",
     "summary": "An EE graduate with no work experience who kept an in-depth project portfolio beside the resume.",
-    "pages": ["advice/resume/portfolio"]
+    "pages": ["advice/projects/portfolio"]
   },
   {
     "url": "https://futurism.com/the-byte/unemployed-man-ai-apply-5000-jobs-gets-20-interviews",
@@ -1836,7 +1878,11 @@
     "title": "NACE: Internship experience decides between equal candidates",
     "category": "Pay and career data",
     "summary": "NACE Job Outlook 2026 data on which attributes employers use to choose between equal candidates.",
-    "pages": ["advice/getting-hired/first-full-time-role", "advice/projects"]
+    "pages": [
+      "advice/getting-hired/first-full-time-role",
+      "advice/projects",
+      "advice/resume/walkthrough"
+    ]
   },
   {
     "url": "https://ncees.org/exams/fe-exam/",
@@ -2144,7 +2190,7 @@
     "title": "r/EngineeringResumes",
     "category": "Communities",
     "summary": "Subreddit where engineers post resumes for review and share job search results.",
-    "pages": ["advice/resume/cleanup", "help"]
+    "pages": ["advice/resume", "advice/resume/cleanup", "help"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringStudents/",
@@ -2193,21 +2239,21 @@
     "title": "Contributing",
     "category": "Site",
     "summary": "How a change to eeprep gets from an idea to the live site.",
-    "pages": ["help/contributing"]
+    "pages": ["roadmap/contributing"]
   },
   {
     "url": "https://github.com/edwardasilva/eeprep/issues/new/choose",
     "title": "eeprep issue forms",
     "category": "Site",
     "summary": "Forms to ask for a page, report a site bug, or report a technical error.",
-    "pages": ["help/contributing"]
+    "pages": ["roadmap/contributing"]
   },
   {
     "url": "https://github.com/edwardasilva/eeprep/blob/main/.github/SECURITY.md",
     "title": "eeprep security policy",
     "category": "Site",
     "summary": "How to report a security problem in private.",
-    "pages": ["help/contributing"]
+    "pages": ["roadmap/contributing"]
   },
   {
     "url": "https://naceweb.org/job-market/trends-and-predictions/student-concerns-about-ai-tempering-their-use-of-it-in-job-search",

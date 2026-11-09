@@ -13,11 +13,7 @@ const links = [
 	{ href: '/advice/', label: 'Advice', section: '/advice/' },
 	{ href: '/help/', label: 'Help', section: '/help/' },
 	{ href: '/roadmap/', label: 'Roadmap', section: '/roadmap/' },
-	{
-		href: '/help/sitemap/',
-		label: 'Sitemap',
-		section: '/help/sitemap/',
-	},
+	{ href: '/sitemap/', label: 'Sitemap', section: '/sitemap/' },
 ];
 
 const suggestions = [
@@ -29,8 +25,7 @@ const suggestions = [
 
 const pathname = Astro.url.pathname;
 
-// Sitemap sits inside Help, so only the longest matching section is
-// marked current.
+// Only the longest matching section is marked current.
 const currentSection = links
 	.map((link) => link.section)
 	.filter((section) => pathname.startsWith(section))
