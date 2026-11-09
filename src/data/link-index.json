@@ -1323,6 +1323,20 @@
     "pages": ["advice/getting-hired/job-market"]
   },
   {
+    "url": "https://capd.mit.edu/resources/conducting-informational-interviews/",
+    "title": "MIT CAPD: Conducting informational interviews",
+    "category": "Job search and referrals",
+    "summary": "Career-center guide to informational interviews, including thank-you notes.",
+    "pages": ["advice/getting-hired/networking"]
+  },
+  {
+    "url": "https://userapps.support.sap.com/sap/support/knowledge/en/2609981",
+    "title": "SAP SuccessFactors: Refer a Friend error when candidate already applied",
+    "category": "Job search and referrals",
+    "summary": "Knowledge article: a candidate with an active application cannot be referred to the same requisition.",
+    "pages": ["advice/getting-hired"]
+  },
+  {
     "url": "https://www.reddit.com/r/ECE/comments/1mojjy7/how_do_you_actually_get_referralsinterviews_for/",
     "title": "r/ECE: Getting referrals for hardware internships",
     "category": "Job search stories from students",
