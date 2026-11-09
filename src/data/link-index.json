@@ -172,6 +172,20 @@
     "pages": ["advice/resume"]
   },
   {
+    "url": "https://c14750.wpmucdn.com/5568/files/2026/10/Cover-Letter-Guide26.pdf",
+    "title": "Georgia Tech: Cover letter guide 2026",
+    "category": "Resume guides",
+    "summary": "Georgia Tech's guide to when and how to write a cover letter.",
+    "pages": ["help/resources"]
+  },
+  {
+    "url": "https://capd.mit.edu/resources/graduate-school-application-essays/",
+    "title": "MIT CAPD: Graduate school application essays",
+    "category": "Resume guides",
+    "summary": "MIT's guide to statements of purpose and personal statements, with examples.",
+    "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
     "url": "https://drexel.edu/scdc/~/media/Drexel/EMSS-Site-Group/SCDC/Documents/best-practices/resumes/Electrical-and-Computer-Engineering.pdf",
     "title": "Drexel: Electrical and computer engineering sample resume",
     "category": "Sample resumes and templates",
@@ -834,6 +848,13 @@
     "pages": ["advice/forever-learning"]
   },
   {
+    "url": "https://interrupt.memfault.com/blog/embedded-systems-roadmap-bridging-the-gap",
+    "title": "Interrupt: Embedded systems roadmap",
+    "category": "Tools and project resources",
+    "summary": "A learning path for embedded systems, with curated resources on GitHub.",
+    "pages": ["advice/projects"]
+  },
+  {
     "url": "https://www.ashbyhq.com/talent-trends-report/reports/referrals",
     "title": "Ashby: Are referred candidates more likely to get hired?",
     "category": "Job search and referrals",
@@ -1311,6 +1332,132 @@
     "title": "LinkedIn Help: Personalize invitations to connect",
     "category": "Job search and referrals",
     "summary": "LinkedIn help article on personalized connection notes.",
+    "pages": ["advice/getting-hired/networking"]
+  },
+  {
+    "url": "https://ecs.grainger.illinois.edu/student-resources/offers/evaluation",
+    "title": "Illinois Engineering: Evaluate your offer",
+    "category": "Job search and referrals",
+    "summary": "Illinois Engineering's guide to weighing a job or internship offer.",
+    "pages": ["advice/getting-hired/first-full-time-role"]
+  },
+  {
+    "url": "https://ecs.grainger.illinois.edu/student-resources/offers/negotiation",
+    "title": "Illinois Engineering: Offer negotiation",
+    "category": "Job search and referrals",
+    "summary": "Illinois Engineering's guide to negotiating a job offer.",
+    "pages": ["advice/getting-hired/first-full-time-role"]
+  },
+  {
+    "url": "https://ecs.grainger.illinois.edu/student-resources/offers/reneging",
+    "title": "Illinois Engineering: Backing out of an accepted offer",
+    "category": "Job search and referrals",
+    "summary": "Why reneging on an accepted offer can cost a student career-center access.",
+    "pages": ["advice/getting-hired/first-full-time-role"]
+  },
+  {
+    "url": "https://careerservices.fas.harvard.edu/resources/harvard-college-evaluating-and-negotiating-job-and-internship-offers/",
+    "title": "Harvard: Evaluating and negotiating offers",
+    "category": "Job search and referrals",
+    "summary": "Harvard's guide to evaluating and negotiating job and internship offers.",
+    "pages": ["advice/getting-hired/first-full-time-role"]
+  },
+  {
+    "url": "https://spectrum.ieee.org/how-to-negotiate-your-salary",
+    "title": "IEEE Spectrum: How to negotiate your salary",
+    "category": "Job search and referrals",
+    "summary": "An IEEE Spectrum careers column on preparing for a salary negotiation.",
+    "pages": ["advice/getting-hired/first-full-time-role"]
+  },
+  {
+    "url": "https://capd.mit.edu/recruiting-guidelines-for-students/",
+    "title": "MIT CAPD: Recruiting guidelines for students",
+    "category": "Job search and referrals",
+    "summary": "MIT's rules for students on interviews, negotiating in good faith, and accepting offers.",
+    "pages": ["advice/getting-hired/first-full-time-role"]
+  },
+  {
+    "url": "https://ece.gatech.edu/current-students/coop-internship-opportunities",
+    "title": "Georgia Tech ECE: Co-op and internship opportunities",
+    "category": "Job search and referrals",
+    "summary": "How Georgia Tech's five-year co-op program alternates study and work terms.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://careers.northeastern.edu/co-op-information/",
+    "title": "Northeastern: Co-op information",
+    "category": "Job search and referrals",
+    "summary": "Northeastern's requirements before a student can search for a co-op.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://engineering.purdue.edu/ECE/Academics/Undergraduates/Enrichment/Co-Op",
+    "title": "Purdue ECE: Cooperative education program",
+    "category": "Job search and referrals",
+    "summary": "Purdue ECE's co-op program for undergraduates.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://www.nsf.gov/funding/initiatives/reu/students",
+    "title": "NSF: REU information for students",
+    "category": "Job search and referrals",
+    "summary": "NSF's guide to Research Experiences for Undergraduates sites.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://science.osti.gov/wdts/suli",
+    "title": "DOE: SULI internships",
+    "category": "Job search and referrals",
+    "summary": "DOE's undergraduate research internships at national labs.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://www.nasa.gov/careers/pathways/",
+    "title": "NASA: Pathways internships",
+    "category": "Job search and referrals",
+    "summary": "NASA's internship program that leads to full-time roles after graduation.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://www.onr.navy.mil/education-outreach/undergraduate-graduate/nreip-naval-internship",
+    "title": "ONR: NREIP naval internship",
+    "category": "Job search and referrals",
+    "summary": "The Navy's 10-week research internship for undergraduate and graduate students.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://afresearchlab.com/air-force-research-laboratory-afrl-scholars-program/",
+    "title": "AFRL Scholars Program",
+    "category": "Job search and referrals",
+    "summary": "Paid internships at Air Force Research Laboratory sites.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://spectrum.ieee.org/improving-interview-odds",
+    "title": "IEEE Spectrum: Improve your chances of an interview",
+    "category": "Job search and referrals",
+    "summary": "A careers column on why a referral stands out among AI-filled applications.",
+    "pages": ["advice/getting-hired/networking"]
+  },
+  {
+    "url": "https://capd.mit.edu/resources/suggested-questions-for-informational-interviewing/",
+    "title": "MIT CAPD: Informational interview questions",
+    "category": "Job search and referrals",
+    "summary": "MIT's list of questions to ask in an informational interview.",
+    "pages": ["advice/getting-hired/networking"]
+  },
+  {
+    "url": "https://capd.mit.edu/resources/linkedin-2/",
+    "title": "MIT CAPD: LinkedIn profiles and summaries",
+    "category": "Job search and referrals",
+    "summary": "MIT's five steps to a LinkedIn profile.",
+    "pages": ["advice/getting-hired/networking"]
+  },
+  {
+    "url": "https://sites.gatech.edu/careercenterdev/files/2024/09/Networking-and-Online-Persona_Career-Guide.pdf",
+    "title": "Georgia Tech: Networking and your virtual identity",
+    "category": "Job search and referrals",
+    "summary": "Georgia Tech's guide to outreach messages, follow-ups, and an online profile.",
     "pages": ["advice/getting-hired/networking"]
   },
   {
@@ -2177,6 +2324,76 @@
     "pages": ["advice/forever-learning/graduate-study"]
   },
   {
+    "url": "https://cockrell.utexas.edu/student-life/career-services/salaries-and-statistics",
+    "title": "UT Austin Cockrell: Salaries and statistics",
+    "category": "Pay and career data",
+    "summary": "Average starting salaries by engineering major for UT Austin graduates.",
+    "pages": ["advice/getting-hired/first-full-time-role"]
+  },
+  {
+    "url": "https://www.levels.fyi/blog/front-loaded-vesting.html",
+    "title": "Levels.fyi: Front-loaded vesting",
+    "category": "Pay and career data",
+    "summary": "How front-loaded stock vesting makes year-one pay higher than later years.",
+    "pages": ["advice/getting-hired/first-full-time-role"]
+  },
+  {
+    "url": "https://www.naceweb.org/job-market/trends-and-predictions/employers-expect-to-hire-nearly-four-percent-more-interns-this-year",
+    "title": "NACE: Employers expect nearly 4% more interns",
+    "category": "Pay and career data",
+    "summary": "NACE's 2026 projection of intern hiring, up 3.9% on the year before.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://www.naceweb.org/talent-acquisition/internships/hourly-wage-for-interns-climbs-but-is-down-over-last-10-years-in-real-terms",
+    "title": "NACE: Hourly wage for interns",
+    "category": "Pay and career data",
+    "summary": "Average hourly pay for bachelor's-level interns and co-op students.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://hiringlab.indeed.com/2026/04/23/new-grads-looking-for-work-the-struggle-is-real/",
+    "title": "Indeed Hiring Lab: New grads looking for work",
+    "category": "Pay and career data",
+    "summary": "How many new graduates searched for work on Indeed, and recent-grad unemployment.",
+    "pages": ["advice/getting-hired/job-market"]
+  },
+  {
+    "url": "https://www.naceweb.org/talent-acquisition/trends-and-predictions/employers-expect-to-hire-5-point-6-percent-more-new-college-graduates-this-year",
+    "title": "NACE: Employers expect 5.6% more new-grad hires",
+    "category": "Pay and career data",
+    "summary": "NACE's spring 2026 projection of new-graduate hiring.",
+    "pages": ["advice/getting-hired/job-market"]
+  },
+  {
+    "url": "https://www.semiconductors.org/chipping-away-assessing-and-addressing-the-labor-market-gap-facing-the-u-s-semiconductor-industry/",
+    "title": "SIA: Semiconductor labor market gap",
+    "category": "Pay and career data",
+    "summary": "SIA's projection of new chip industry jobs by 2030 and how many may go unfilled.",
+    "pages": ["advice/getting-hired/job-market"]
+  },
+  {
+    "url": "https://www.newyorkfed.org/research/college-labor-market",
+    "title": "New York Fed: Labor market for recent college graduates",
+    "category": "Pay and career data",
+    "summary": "Unemployment, underemployment, and pay for recent graduates by major.",
+    "pages": ["advice/getting-hired/job-market"]
+  },
+  {
+    "url": "https://eecs.berkeley.edu/resources/undergrads/grad-school/",
+    "title": "Berkeley EECS: Preparing for graduate school",
+    "category": "Pay and career data",
+    "summary": "Berkeley's advice to undergraduates on how long each degree takes and why to go.",
+    "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
+    "url": "https://engineering.purdue.edu/ECE/Academics/Graduates/MASTERS/why-masters-degree",
+    "title": "Purdue ECE: Why get a master's",
+    "category": "Pay and career data",
+    "summary": "Purdue's case for an ECE master's as a way to specialize.",
+    "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
     "url": "https://www.ieee.org/membership/join",
     "title": "IEEE: Student membership",
     "category": "Communities",
@@ -2268,6 +2485,13 @@
     "pages": ["advice/forever-learning/societies"]
   },
   {
+    "url": "https://wiki.hkn.illinois.edu/More%20Advice/6.Is%20grad%20school%20for%20you/",
+    "title": "HKN Illinois: Is grad school for me",
+    "category": "Communities",
+    "summary": "Illinois students' advice on deciding on and applying to grad school.",
+    "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
     "url": "https://github.com/edwardasilva/eeprep/blob/main/.github/CONTRIBUTING.md",
     "title": "Contributing",
     "category": "Site",
@@ -2357,5 +2581,19 @@
     "category": "AI in the job search",
     "summary": "LinkedIn: applications up over 45% in a year, about 11,000 a minute.",
     "pages": ["help/job-boards"]
+  },
+  {
+    "url": "https://semiengineering.com/college-grads-and-ai/",
+    "title": "Semiconductor Engineering: College grads and AI",
+    "category": "AI in the job search",
+    "summary": "An industry panel on demand for EE graduates as AI takes on junior tasks.",
+    "pages": ["advice/getting-hired/job-market"]
+  },
+  {
+    "url": "https://insight.ieeeusa.org/articles/what-tech-hiring-managers-really-think-of-ai-created-resumes-and-cover-letters/",
+    "title": "IEEE-USA InSight: Hiring managers on AI-created resumes",
+    "category": "AI in the job search",
+    "summary": "What tech hiring managers say about AI help on resumes and cover letters.",
+    "pages": ["help/ai-use"]
   }
 ]
