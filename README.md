@@ -47,4 +47,3 @@ Code is licensed under the [MIT License](LICENSE). Code means everything else, i
 
 The eeprep name and logo files in `src/brand/` and `public/brand/` are not covered by either license.
 
-Everyone who takes part follows the [Code of Conduct](CODE_OF_CONDUCT.md).

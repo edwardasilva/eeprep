@@ -17,8 +17,5 @@ package-lock.json
 # Submodule with its own formatting rules
 resume-generator
 
-# Verbatim Contributor Covenant text
-CODE_OF_CONDUCT.md
-
 # Vendored agent skills keep their upstream formatting
 .claude/skills

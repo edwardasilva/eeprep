@@ -1,33 +1,26 @@
 ---
 title: Contributing
-description: "How to send advice or a fix to eeprep. It is open source, and engineers, engineering managers, recruiters, and leadership are welcome to contribute."
+description: "How to suggest an idea or send a fix to eeprep."
 pageType: resources
 head:
   - tag: title
     content: "Contributing | eeprep"
 ---
 
-import ChangeFlowFigure from '../../../components/roadmap/ChangeFlowFigure.astro';
+eeprep is open source. If you hire electrical engineers or work as one, you can correct what these pages get wrong.
 
-eeprep is open source. Contributions and advice are welcome from engineers, engineering managers, recruiters, and leadership. If you hire electrical engineers or work as one, you can correct what these pages get wrong.
+## Suggest an idea or a fix
 
-## Send advice
+Open an [issue](https://github.com/edwardasilva/eeprep/issues/new/choose) and pick a template. Name the page, say what you would change, and say why. Link a public source when you can. Every claim on the site needs a real public source. A claim that can't be backed up stays off the site.
 
-Open an issue with one of the [eeprep issue forms](https://github.com/edwardasilva/eeprep/issues/new/choose). Name the page, say what you would change, and say why. Link a source if you have one. Every claim on eeprep links to its source, and a claim that can't be backed up stays off the site.
+## Edit a page
 
-## Change the site
-
-<ChangeFlowFigure />
-
-Every change starts as an issue. Then cut a short branch from `main` and open a pull request. Keep it to one page or one fix, about 50 to 300 changed lines. The [contribution guide](https://github.com/edwardasilva/eeprep/blob/main/.github/CONTRIBUTING.md) has the checks to run and the local commands.
-
-- Guide pages are Markdown and MDX files in `src/content/docs`. Every outside link needs an entry in `src/content/references.bib`.
-- Figures are components in `src/components`. Their words and drawings count as content.
-- Site code, such as plugins, styles, and scripts, is in `src/` and `.github/scripts`.
-- [resume-generator](https://github.com/edwardasilva/resume-generator) is a separate repo with its own pull requests and releases.
+Fork the repo, edit one page or one fix, and open a pull request into `main`. Guide pages live in `src/content/docs`. Outside links also need an entry in `src/content/references.bib`. The [contribution guide](https://github.com/edwardasilva/eeprep/blob/main/.github/CONTRIBUTING.md) has the local checks.
 
 Content is licensed under CC BY 4.0, and code is licensed under the MIT License.
 
-## Report a security problem
+## Conduct
 
-Do not open a public issue. A public issue shows the problem to every reader. Follow the [security policy](https://github.com/edwardasilva/eeprep/blob/main/.github/SECURITY.md) to report it in private.
+Be kind and assume good intent. To report a problem with someone's behavior, use GitHub's Report content feature or message the repository owner in private.
+
+For a security problem, follow the [security policy](https://github.com/edwardasilva/eeprep/blob/main/.github/SECURITY.md). Do not open a public issue.
