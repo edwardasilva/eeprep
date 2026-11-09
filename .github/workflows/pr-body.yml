@@ -1,13 +1,13 @@
 name: PR body
 
-# The body check runs on its own, so editing the "Part of #" line or a label
-# re-runs only this check. Bots also edit pull requests, and
-# that would otherwise cancel and restart the whole CI run.
+# The body check runs on its own so a synchronize does not restart the whole CI
+# run. It no longer runs on edited, labeled, or unlabeled. Editing a PR body
+# after open does not re-run this check; the next push will.
 on:
   pull_request:
     branches:
       - main
-    types: [opened, synchronize, reopened, edited, labeled, unlabeled]
+    types: [opened, synchronize, reopened]
 
 permissions:
   contents: read
