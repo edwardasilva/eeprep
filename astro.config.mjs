@@ -295,6 +295,7 @@ export default defineConfig({
 								{ label: 'Projects', slug: 'advice/projects' },
 								{ label: 'Software', slug: 'advice/projects/software' },
 								{ label: 'Hardware', slug: 'advice/projects/hardware' },
+								{ label: 'Career paths', slug: 'advice/projects/career-paths' },
 								{ label: 'Portfolio', slug: 'advice/projects/portfolio' },
 							],
 						},
