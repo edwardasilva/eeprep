@@ -55,7 +55,6 @@
     "summary": "Greenhouse explains the steps an application goes through after you submit it.",
     "pages": [
       "advice/getting-hired",
-      "advice/getting-hired/how-to-interview",
       "advice/resume",
       "advice/resume/quick-setup",
       "help/ai-use",
@@ -835,7 +834,6 @@
     "pages": [
       "advice/getting-hired",
       "advice/getting-hired/first-internship",
-      "advice/getting-hired/how-to-interview",
       "advice/getting-hired/job-market",
       "advice/getting-hired/networking",
       "advice/resume/quick-setup"
