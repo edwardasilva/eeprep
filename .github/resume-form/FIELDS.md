@@ -56,11 +56,11 @@ Rules:
 
 - Line 1: degree, then ", GPA " and the GPA on the same line, then the graduation date at the right margin. Line 2: school. Source: eeprep's author, resume page "Education".
 - GPA format is `N.NN/4.00`. Error if the two numbers have different decimal places, such as 3.3/4.00. Source: [an intern's resume review](https://www.reddit.com/r/EngineeringResumes/comments/15i3d8v/my_boss_said_my_resume_could_use_a_lot_of_work/).
-- GPA hint: "List it when the posting sets a minimum you meet." Source: eeprep's rule from "Getting hired", repeated on the resume page.
+- GPA hint: at 3.50 or higher, "List it, most of all at 3.7 or higher." From 3.0 to 3.49, "List it when the posting sets a minimum you meet." Below 3.0, "Leave it off." Source: eeprep's rule on the resume page.
 - Coursework and activities each print as one line, with the label "Relevant coursework:" or "Activities:" in bold. Both lines are omitted when blank. Source: eeprep's author.
 - Coursework hint: "Upper-level electives that match the posting." Source: [an ECE interviewer](https://www.reddit.com/r/EngineeringResumes/comments/q4d5op/electrical_engineering_senior_no_experience/).
 - Warning if an activity looks like a technical build team. The hint says to move real build work into Projects with bullets. Source: resume page "Projects".
-- Error on a high school entry. Source: the wiki.
+- Error on a high school entry after the student's first year. Source: the wiki, and eeprep's author.
 
 ### Projects
 
@@ -97,7 +97,7 @@ Rules:
 Rules:
 
 - Engineering role, yes: bold title and company, dates at the right margin, then the location, then the bullets. Source: resume page "Experience".
-- Engineering role, no: one line with title, company, and dates, and no bullets. The form hides the bullet fields. Source: [a commenter in the top 5 thread](https://www.reddit.com/r/EngineeringResumes/comments/1pkixp9/today_i_made_a_top_5_list/).
+- Engineering role, no: with good engineering experience elsewhere on the page, one line with title, company, and dates, and no bullets. Otherwise the form shows the bullet fields and prints them. Source: eeprep's author, and [a commenter in the top 5 thread](https://www.reddit.com/r/EngineeringResumes/comments/1pkixp9/today_i_made_a_top_5_list/).
 - The section heading is always "Experience", never "Work History". Source: resume page.
 
 ### Bullets
@@ -147,22 +147,22 @@ Rules:
 | ------------- | -------------- | --------------------- | ---------------------------------------- |
 | Target role   | `targetRole`   | text, not printed     | summer 2027 embedded firmware internship |
 | Date style    | `dateStyle`    | `semester` or `month` | semester                                 |
-| Section order | `sectionOrder` | list                  | Education, Projects, Experience, Skills  |
+| Section order | `sectionOrder` | list                  | Education, Skills, Projects, Experience  |
 
 Rules:
 
 - Target role is never printed. It drives the hints, such as "matches the posting" on coursework.
 - Section order allows these 4 presets, plus drag to reorder:
-  1. Education, Projects, Experience, Skills. Wiki default with no technical job. Alex uses it.
+  1. Education, Skills, Projects, Experience. Wiki default with no technical job, with Skills under Education. Alex uses it.
   2. Projects, Experience, Education, Skills. eeprep's author, when projects are strongest.
   3. Experience, Projects, Education, Skills. eeprep's author's own order as a working engineer.
-  4. Education, Experience, Projects, Skills. Wiki student default with work experience.
+  4. Education, Skills, Experience, Projects. Wiki student default with work experience, with Skills under Education.
 - Empty sections are not printed.
 - The form has no objective or summary field. The resume page says to cut it.
 
 ### Dates
 
-- Semester style: `Fall 2025`, `Spring 2026`, `Summer 2023`. Month style: `Mar 2026`. Error if one resume mixes the two styles. Source: [the wiki, Dates](https://www.reddit.com/r/EngineeringResumes/wiki/index/), and eeprep's author.
+- Semester style: `Fall 2025`, `Spring 2026`, `Summer 2023`. Month style: `Mar 2026`. Error if one section mixes the two styles. Sections may differ, such as semesters for projects and months for jobs. Source: [the wiki, Dates](https://www.reddit.com/r/EngineeringResumes/wiki/index/), and eeprep's author.
 - Month abbreviations: Jan, Feb, Mar, Apr, May, June, July, Aug, Sept, Oct, Nov, Dec, with no period. Source: the wiki, Dates.
 - Full 4-digit years only. Error on '25 or 9/2025. Source: the wiki, Dates.
 - Ranges use an en dash with a space on each side: `Fall 2025 – Spring 2026`. In LaTeX, write `--`. Source: the wiki, Dates.
