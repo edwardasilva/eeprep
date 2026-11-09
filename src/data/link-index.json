@@ -758,7 +758,7 @@
     "pages": ["advice/resume"]
   },
   {
-    "url": "https://www.ti.com/lit/an/slva477c/slva477c.pdf",
+    "url": "https://www.ti.com/lit/an/slva477/slva477.pdf",
     "title": "TI: Basic calculation of a buck converter's power stage",
     "category": "Tools and project resources",
     "summary": "TI application note with formulas for sizing a buck converter's power stage.",
@@ -2054,6 +2054,7 @@
     "category": "Pay and career data",
     "summary": "Federal data on pay, outlook and duties for electrical and electronics engineers.",
     "pages": [
+      "advice/forever-learning",
       "advice/getting-hired/first-full-time-role",
       "advice/getting-hired/job-market",
       "advice/projects",
@@ -2431,7 +2432,7 @@
     "pages": ["advice/forever-learning/graduate-study"]
   },
   {
-    "url": "https://www.ieee.org/membership/join",
+    "url": "https://www.ieee.org/membership/students",
     "title": "IEEE: Student membership",
     "category": "Communities",
     "summary": "IEEE's student membership page.",
