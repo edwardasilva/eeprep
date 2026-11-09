@@ -173,6 +173,20 @@
     "pages": ["advice/resume"]
   },
   {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1cms7al/random_thoughts_on_resumes/",
+    "title": "r/EngineeringResumes: Random thoughts on resumes",
+    "category": "Resume guides",
+    "summary": "A chief engineer's advice on a master resume, tailored versions, and a generic career-fair resume.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://www.askamanager.org/2014/01/do-you-need-multiple-versions-of-your-resume.html",
+    "title": "Ask a Manager: Do you need multiple versions of your resume?",
+    "category": "Resume guides",
+    "summary": "Alison Green on when multiple resume versions make sense.",
+    "pages": ["advice/resume"]
+  },
+  {
     "url": "https://drexel.edu/scdc/~/media/Drexel/EMSS-Site-Group/SCDC/Documents/best-practices/resumes/Electrical-and-Computer-Engineering.pdf",
     "title": "Drexel: Electrical and computer engineering sample resume",
     "category": "Sample resumes and templates",
