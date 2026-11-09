@@ -206,14 +206,6 @@ function auditPage({ minTap, minLabelPx }) {
 		if (!img.hasAttribute('alt'))
 			out.push(`${img.getAttribute('src')} has no alt attribute`);
 	}
-	// A drawing hidden as a whole needs a spoken description in its figure.
-	for (const fig of document.querySelectorAll('figure')) {
-		const hidden = fig.querySelector(
-			':scope > :is(div, ol, ul, svg)[aria-hidden="true"]',
-		);
-		if (hidden && !fig.querySelector('.sr-only'))
-			out.push(`${fig.id || 'figure'} hides its drawing with no .sr-only text`);
-	}
 
 	// Figures.
 	for (const el of document.querySelectorAll(

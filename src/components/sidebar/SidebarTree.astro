@@ -188,17 +188,6 @@ const { sublist, nested } = Astro.props;
 	.eep-parent-link {
 		padding-inline-end: 2.25rem;
 	}
-	/*
-	 * A top-level link reads like Starlight's group labels, whether it opens a
-	 * group (a parent link) or stands alone, such as About and Roadmap. The
-	 * site's .sidebar-content a rule would otherwise shrink the lone ones.
-	 */
-	.top-level > li > a.large,
-	.top-level > .eep-parent > .eep-parent-link {
-		font-size: var(--sl-text-lg);
-		font-weight: 600;
-		color: var(--sl-color-white);
-	}
 	.eep-parent-toggle {
 		position: absolute;
 		inset-block-start: 0;
@@ -229,8 +218,6 @@ const { sublist, nested } = Astro.props;
 		font-size: var(--sl-text-lg);
 	}
 	@media (min-width: 50rem) {
-		.top-level > li > a.large,
-		.top-level > .eep-parent > .eep-parent-link,
 		.top-level > .eep-parent > details > .eep-parent-toggle {
 			font-size: var(--sl-text-base);
 		}

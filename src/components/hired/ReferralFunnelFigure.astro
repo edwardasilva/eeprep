@@ -9,7 +9,6 @@ const stages = [
 	{ label: 'Got an offer', share: 27 },
 	{ label: 'Hired', share: 29 },
 ];
-const max = 100;
 const alt =
 	'Four bars showing the share of people at each hiring stage who were referred, at one large firm. Applicants, 6 percent. Interviewed, 21 percent. Got an offer, 27 percent. Hired, 29 percent.';
 const caption = externalLinks(
@@ -26,10 +25,7 @@ const caption = externalLinks(
 				<li>
 					<span class="eep-funnel-label">{s.label}</span>
 					<span class="eep-funnel-track">
-						<span
-							class="eep-funnel-bar"
-							style={`width: ${(s.share / max) * 100}%`}
-						/>
+						<span class="eep-funnel-bar" style={`width: ${s.share}%`} />
 					</span>
 					<span class="eep-funnel-value">{s.share}%</span>
 				</li>
@@ -46,7 +42,6 @@ const caption = externalLinks(
 		margin-top: 1rem;
 		font-family: var(--eep-font-sans);
 		color: var(--eep-ink);
-		--tint: color-mix(in srgb, var(--eep-dg-ink) 6%, var(--eep-dg-fill));
 	}
 	.eep-funnel ol {
 		display: grid;
@@ -72,7 +67,7 @@ const caption = externalLinks(
 		height: 1.1rem;
 		border: 1px solid var(--eep-dg-mute);
 		border-radius: 4px;
-		background: var(--tint);
+		background: var(--eep-dg-tint);
 		overflow: hidden;
 	}
 	.eep-funnel-bar {

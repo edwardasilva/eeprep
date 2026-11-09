@@ -38,7 +38,6 @@ const redirects = {
 	'/advice/simple/': '/advice/resume/simple/',
 	'/advice/ai-use/': '/help/ai-use/',
 	'/help-links/': '/help/',
-	'/help-links/ai-use/': '/help/ai-use/',
 	'/help-links/all-links/': '/help/all-links/',
 	'/help-links/contributing/': '/help/contributing/',
 	'/help-links/sitemap/': '/help/sitemap/',
