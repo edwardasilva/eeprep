@@ -9,16 +9,14 @@ permissions:
   contents: read
 
 env:
-  # engines.node is a range. setup-node cannot install that string from package.json.
-  NODE_VERSION: '22.23.4'
   VALE_VERSION: '3.25.1'
 
 concurrency:
   group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
-# The "Part of #" check is in pr-body.yml, so that editing the body or a
-# label doesn't restart this run.
+# The PR body step checks the "Part of #" line. Editing the body alone doesn't
+# start a new run, so fix the body before the last push.
 #
 # One job runs every check, so npm ci runs once. A failed check doesn't stop the
 # others. Each check runs once what it needs is ready: node_modules, or dist/ for
@@ -38,6 +36,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 2
+          persist-credentials: false
 
       # A pull request that changes only repo docs, such as README.md, CLAUDE.md or
       # .github/ISSUE_TEMPLATE, skips the tests and the build. Lint and Vale still run, and
@@ -77,12 +76,24 @@ jobs:
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         if: ${{ !cancelled() }}
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-version-file: .nvmrc
           cache: npm
       - name: npm ci
         id: install
         if: ${{ !cancelled() }}
         run: npm ci
+
+      # The body names its issue on a line of its own. Outside contributors,
+      # Dependabot and no-epic pull requests are exempt.
+      - name: PR body
+        if: ${{ !cancelled() && github.event_name == 'pull_request' }}
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+          PR_LABELS: ${{ toJSON(github.event.pull_request.labels.*.name) }}
+          PR_ACTOR: ${{ github.event.pull_request.user.login }}
+          PR_SENDER: ${{ github.actor }}
+          PR_AUTHOR_ASSOCIATION: ${{ github.event.pull_request.author_association }}
+        run: node .github/scripts/check-pr-body.mjs
 
       # Checks that read the source.
       - name: Lint (ESLint, markdownlint, Prettier)
