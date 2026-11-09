@@ -13,11 +13,11 @@ const generatorLink = externalLinks(
 	frontmatter={{
 		title: 'eeprep',
 		description:
-			"Electrical engineer's guide to job searching: a one-page resume, getting hired for an internship or a first full-time role, and help links for the search.",
+			"Electrical engineer's guide to job searching: a one-page resume, getting hired for an internship or a first full-time role, and help with the search.",
 		head: [
 			{
 				tag: 'title',
-				content: "Electrical engineer's guide to job searching | eeprep",
+				content: "Electrical engineer's guide to job searching | EE Prep",
 			},
 		],
 		template: 'splash',
@@ -33,7 +33,7 @@ const generatorLink = externalLinks(
 			<a href="/help/">
 				<strong>Help</strong>
 				<span>
-					Links to job boards, salary data and other sites for your job search.
+					Links to job boards, pay data and other sites for your job search.
 				</span>
 			</a>
 		</li>
@@ -52,11 +52,14 @@ const generatorLink = externalLinks(
 		takes five minutes.
 	</p>
 	<p>
-		Try to get a referral before you apply anywhere.{' '}
-		<a href="/advice/getting-hired/#get-a-referral-first">How to ask for one</a>
+		Ask for a referral before you apply anywhere.{' '}
+		<a href="/advice/getting-hired/#get-a-referral-first">
+			Getting hired says how to ask
+		</a>
+		.
 	</p>
 	<p>
-		<a href="/roadmap/">Roadmap</a>
+		The <a href="/roadmap/">roadmap</a> lists what is coming next.
 	</p>
 	<p class="eep-generator">
 		<Fragment set:html={generatorLink} /> is a free, open-source tool that turns
