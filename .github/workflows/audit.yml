@@ -13,10 +13,6 @@ on:
 permissions:
   contents: read
 
-env:
-  # engines.node is a range. setup-node cannot install that string from package.json.
-  NODE_VERSION: '22.23.4'
-
 concurrency:
   group: audit-${{ github.ref }}
   cancel-in-progress: true
@@ -28,25 +24,15 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: npm
+          node-version-file: .nvmrc
+          package-manager-cache: false
       - run: npm ci
       - run: npm run build
-      # The browser only changes when Playwright does, so the cache is keyed on
-      # Playwright's version.
-      - name: Find the Playwright version
-        id: playwright
-        run: echo "version=$(node -p "require('playwright/package.json').version")" >> "$GITHUB_OUTPUT"
-      - name: Cache Playwright Chromium
-        id: playwright-cache
-        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
-        with:
-          path: ~/.cache/ms-playwright
-          key: playwright-${{ runner.os }}-${{ steps.playwright.outputs.version }}
       - name: Install Playwright Chromium
-        if: steps.playwright-cache.outputs.cache-hit != 'true'
         run: npx playwright install --with-deps chromium
       - name: Mobile audit
         run: npm run check:mobile
