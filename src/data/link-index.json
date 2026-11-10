@@ -864,7 +864,43 @@
     "title": "OPM: Students and recent graduates",
     "category": "Job search and referrals",
     "summary": "OPM policy page with the rules behind the federal Pathways programs.",
-    "pages": ["help", "help/job-boards"]
+    "pages": [
+      "advice/getting-hired/first-internship",
+      "help",
+      "help/job-boards"
+    ]
+  },
+  {
+    "url": "https://www.federalhiringdata.com/articles/federal-student-pathways-hiring-2026",
+    "title": "Federal Hiring Data: Pathways hiring in 2026",
+    "category": "Job search and referrals",
+    "summary": "OPM workforce records on Pathways hires in 2026 compared with 2024 and 2025.",
+    "pages": [
+      "advice/getting-hired/first-full-time-role",
+      "help",
+      "help/job-boards"
+    ]
+  },
+  {
+    "url": "https://mse.nd.edu/research/smash-engineering-reu/",
+    "title": "Notre Dame: SMASH Engineering REU",
+    "category": "Job search and referrals",
+    "summary": "Notre Dame's NSF REU site page, cited as a site that did not run in summer 2026.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://www.paradim.org/REU_landing_page",
+    "title": "Cornell: PARADIM REU",
+    "category": "Job search and referrals",
+    "summary": "Cornell's PARADIM REU page, cited as a site that did not run in summer 2026.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://www.hmc.edu/cs/research/reu/",
+    "title": "Harvey Mudd: CS REU",
+    "category": "Job search and referrals",
+    "summary": "Harvey Mudd's CS REU page, cited as a site that did not run in summer 2026.",
+    "pages": ["advice/getting-hired/first-internship"]
   },
   {
     "url": "https://careerdevelopment.princeton.edu/internships-jobs/recruiting-timelines",
