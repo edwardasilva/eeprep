@@ -69,6 +69,7 @@
 - `hide: true` leaves an entry out without deleting it. Use it for a version aimed at one niche.
 - Links must be web addresses, `mailto:`, or `tel:`. Inside a bullet, `[text](url)` links the text.
 - The build keeps the margins at 0.5 in and steps text from 11 pt to 10 pt until the page fits, then fills the page by growing the spacing. It never shrinks spacing below the eeprep limits. If it still does not fit, it says about how many lines to cut.
+- The PDF is named after the header name, so Alex Doe gives `Alex-Doe-Resume.pdf`.
 - When `pdftotext` is installed, each build extracts the text and checks that every heading, entry, and bullet comes out whole.
 
 ## Versions
