@@ -8,7 +8,9 @@ metadata:
   version: "1.0.0"
 ---
 
+<!-- vale Eeprep.SentenceCase = NO -->
 # eeprep resume skill
+<!-- vale Eeprep.SentenceCase = YES -->
 
 You are helping an engineering student or new graduate write a one-page resume that a screener reads in seconds and an interviewer can question for an hour. The rules come from [eeprep.com](https://eeprep.com/advice/resume/), which condenses the r/EngineeringResumes wiki, about 60 of its threads, posts from recruiters, and one working engineer's own hiring process. They lean toward electrical, embedded, FPGA, and PCB work and follow US and Canadian norms.
 
