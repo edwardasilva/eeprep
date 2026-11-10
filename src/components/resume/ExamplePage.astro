@@ -41,23 +41,23 @@ const caption = externalLinks(
 			<header class="eep-example-head eep-example-mark">
 				<span class="eep-num eep-pin" data-pin="1"></span>
 				<p class="eep-example-name">Alex Doe</p>
-				<p>
-					[phone] | alex.doe@[school].edu | linkedin.com/in/alex-doe-example |
+				<p class="eep-example-contact">
+					alex@[school].edu | linkedin.com/in/alex-doe-example |
 					github.com/alex-doe-example
 				</p>
-				<p>City, ST | Willing to relocate</p>
+				<p>[phone] | City, ST | Willing to relocate</p>
 			</header>
 			<p class="eep-example-sec">Education</p>
+			<p>
+				<strong>B.S. Electrical Engineering</strong>, GPA [X.XX]/4.00
+			</p>
 			<div class="eep-example-row">
-				<p>
-					<strong>B.S. Electrical Engineering</strong>, GPA [X.XX]/4.00
-				</p>
+				<p>[University]</p>
 				<p class="eep-example-date eep-example-mark">
 					<span class="eep-num eep-pin eep-pin-right" data-pin="2"></span>
 					Expected Spring 2027
 				</p>
 			</div>
-			<p>[University]</p>
 			<p class="eep-example-mark">
 				<span class="eep-num eep-pin" data-pin="3"></span>
 				<strong>Relevant coursework:</strong> Embedded Systems, Power
@@ -82,7 +82,7 @@ const caption = externalLinks(
 				<p class="eep-example-sec">Projects</p>
 				<div class="eep-example-row">
 					<p>
-						<strong>CubeSat Power Board (KiCad, LTspice)</strong>
+						<strong>CubeSat Power Board</strong> (KiCad, LTspice)
 					</p>
 					<p class="eep-example-date">Fall 2025–Spring 2026</p>
 				</div>
@@ -98,7 +98,7 @@ const caption = externalLinks(
 				</ul>
 				<div class="eep-example-row">
 					<p>
-						<strong>Bench Data Logger (STM32, C, Python)</strong>
+						<strong>Bench Data Logger</strong> (STM32, C, Python)
 					</p>
 					<p class="eep-example-date">Spring 2025</p>
 				</div>
@@ -120,6 +120,7 @@ const caption = externalLinks(
 				</p>
 				<p class="eep-example-date">Summer 2023–Summer 2024</p>
 			</div>
+			<p>City, ST</p>
 		</div>
 		<ol class="eep-example-notes eep-num-list">
 			{notes.map((note) => (
@@ -183,6 +184,13 @@ const caption = externalLinks(
 	}
 	.eep-example-head {
 		text-align: center;
+	}
+	/* The contact line stays on one line whenever the sheet is wide enough
+	   for it. On phones the sheet is narrower, so it may wrap. */
+	@container (min-width: 36rem) {
+		.eep-example-contact {
+			white-space: nowrap;
+		}
 	}
 	.eep-example-name {
 		font-size: 1rem;
@@ -277,7 +285,10 @@ const caption = externalLinks(
 		font-size: 0.8125rem;
 		max-width: none;
 	}
-	@container (max-width: 36rem) {
+	/* The notes sit beside the sheet only when the sheet stays wide enough
+	   for the contact line and the degree line to fit on one line each.
+	   Below that width the notes go under the page. */
+	@container (max-width: 64rem) {
 		.eep-example-wrap {
 			grid-template-columns: minmax(0, 1fr);
 		}

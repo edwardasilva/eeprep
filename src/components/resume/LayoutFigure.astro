@@ -27,6 +27,16 @@ const dateLines = h([
 	[12, 108, 110],
 ]);
 
+// A correctly formatted page has a centered header. Every "Do" wireframe
+// starts with it, so each one still looks like a good page.
+const header = `<path class="wf-ink" d="${h([
+	[40, 14, 90],
+	[28, 22, 102],
+])}"/>`;
+// Entry titles with a date tick at the right margin.
+const dateTicks = (ys: number[]) =>
+	`<path class="wf-accent" d="${h(ys.map((y): Line => [96, y, 118]))}"/>`;
+
 const rules: { title: string; note: string; frames: [Frame, Frame] }[] = [
 	{
 		title: 'Columns',
@@ -37,23 +47,21 @@ const rules: { title: string; note: string; frames: [Frame, Frame] }[] = [
 				good: true,
 				svg:
 					frame() +
-					`<path class="wf-ink" d="${h([
-						[40, 14, 90],
-						[28, 22, 102],
-					])}"/>` +
+					header +
+					dateTicks([38, 70, 110, 142]) +
 					text(
 						h([
-							[12, 38, 118],
+							[12, 38, 74],
 							[12, 46, 110],
 							[12, 54, 114],
-							[12, 70, 118],
+							[12, 70, 74],
 							[12, 78, 104],
 							[12, 86, 116],
 							[12, 94, 108],
-							[12, 110, 118],
+							[12, 110, 74],
 							[12, 118, 100],
 							[12, 126, 112],
-							[12, 142, 118],
+							[12, 142, 74],
 							[12, 150, 96],
 						]),
 					),
@@ -95,13 +103,21 @@ const rules: { title: string; note: string; frames: [Frame, Frame] }[] = [
 				good: true,
 				svg:
 					frame() +
-					text(dateLines) +
-					`<path class="wf-accent" d="${h([
-						[92, 20, 118],
-						[92, 60, 118],
-						[92, 100, 118],
-					])}"/>` +
-					'<path class="wf-guide" d="M118.5 12V110"/>',
+					header +
+					text(
+						h([
+							[12, 44, 62],
+							[12, 52, 112],
+							[12, 60, 104],
+							[12, 84, 58],
+							[12, 92, 114],
+							[12, 100, 100],
+							[12, 124, 66],
+							[12, 132, 110],
+						]),
+					) +
+					dateTicks([44, 84, 124]) +
+					'<path class="wf-guide" d="M118.5 36V132"/>',
 			},
 			{
 				label: "Don't · scattered",
@@ -126,22 +142,22 @@ const rules: { title: string; note: string; frames: [Frame, Frame] }[] = [
 				good: true,
 				svg:
 					frame() +
+					header +
+					dateTicks([38, 70, 102, 134]) +
 					text(
 						h([
-							[12, 16, 118],
-							[12, 24, 112],
-							[12, 32, 116],
-							[12, 48, 118],
-							[12, 56, 108],
-							[12, 64, 114],
-							[12, 80, 118],
-							[12, 88, 110],
-							[12, 96, 116],
-							[12, 112, 118],
-							[12, 120, 104],
-							[12, 128, 114],
-							[12, 144, 118],
-							[12, 152, 112],
+							[12, 38, 74],
+							[12, 46, 118],
+							[12, 54, 108],
+							[12, 70, 74],
+							[12, 78, 114],
+							[12, 86, 110],
+							[12, 102, 74],
+							[12, 110, 118],
+							[12, 118, 104],
+							[12, 134, 74],
+							[12, 142, 116],
+							[12, 150, 112],
 						]),
 					),
 			},
