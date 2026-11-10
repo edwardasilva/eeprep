@@ -73,13 +73,6 @@
     "pages": ["advice/resume", "advice/resume/cleanup"]
   },
   {
-    "url": "https://career.engin.umich.edu/sample-impact-statements/",
-    "title": "Michigan Engineering: Sample impact statements",
-    "category": "Resume guides",
-    "summary": "Example resume bullets that state an action and a measurable result.",
-    "pages": ["advice/resume"]
-  },
-  {
     "url": "https://capd.mit.edu/resources/make-your-resume-ats-friendly/",
     "title": "MIT CAPD: Make your resume ATS-friendly",
     "category": "Resume guides",
@@ -348,18 +341,7 @@
     "title": "r/EngineeringResumes: Embedded internship success story",
     "category": "Resume feedback from reviewers and recruiters",
     "summary": "A student shares the resume behind 3 interviews and an embedded offer.",
-    "pages": [
-      "advice/getting-hired/how-to-interview",
-      "advice/resume",
-      "advice/resume/workshop"
-    ]
-  },
-  {
-    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1wxcvrq/student_how_do_you_find_good_project_ideas/",
-    "title": "r/EngineeringResumes: Finding good project ideas",
-    "category": "Resume feedback from reviewers and recruiters",
-    "summary": "Thread on picking resume projects that solve a real problem.",
-    "pages": ["advice/resume"]
+    "pages": ["advice/getting-hired/how-to-interview", "advice/resume/workshop"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/1e3yimi/ama_hardware_engineers_founders_of_hardware_fyi/",

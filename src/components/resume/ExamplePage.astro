@@ -5,27 +5,27 @@ import { externalLinks } from './caption';
 const notes = [
 	{
 		title: 'Centered header.',
-		body: 'Name, then one contact line with plain-text links, then location and relocation. The <a href="https://career.gatech.edu/files/2026/06/JackieJacketResume.docx">Georgia Tech</a>, <a href="https://cdn.uconnectlabs.com/wp-content/uploads/sites/123/2025/05/UG-Resume-with-Projects-1.pdf">MIT</a>, and <a href="https://ecc.uic.edu/wp-content/uploads/sites/78/2026/06/Electrical-Engineering-Example-Resume-Updated-Summer-2026.docx.pdf">UIC</a> samples center the name over one contact line.',
+		body: 'Name, then one contact line, then location and relocation.',
 	},
 	{
 		title: 'Dates at the right margin.',
-		body: 'Eight of the nine samples put dates flush right. Alex uses semesters in every section.',
+		body: 'Eight of the nine samples do this.',
 	},
 	{
 		title: 'One line of coursework.',
-		body: 'Three upper-level courses that match the posting. The Georgia Tech, MIT, and UIC samples list coursework under the degree.',
+		body: 'Three upper-level courses that match the posting.',
 	},
 	{
 		title: 'Skills right under Education.',
-		body: "Two labeled lines of tools, with no soft skills or skill levels. Eight of the nine samples put Skills under Education. Each of Alex's eight tools appears in a bullet. That rule is stricter than any sample. The UIC sample comes closest.",
+		body: "Eight of the nine samples do this. Each of Alex's eight tools appears in a bullet.",
 	},
 	{
 		title: 'Projects above Experience.',
-		body: 'Alex has no engineering job yet, so projects go first. The <a href="https://cdn.careercentral.pitt.edu/wp-content/uploads/sites/117/2023/09/Electrical-Engineering-Resume-Sample.pdf">Pitt</a> and <a href="https://www.oit.edu/sites/default/files/2026/documents/Sample%20Resume%20-%20Electrical%20Engineering.pdf">Oregon Tech</a> EE samples do the same. Each bullet starts with a past-tense verb, names the tool, and includes a measured number.',
+		body: 'Alex has no engineering job yet, so projects go first.',
 	},
 ].map((note) => ({ ...note, body: externalLinks(note.body) }));
 const caption = externalLinks(
-	`Layout rules from the <a href="https://www.reddit.com/r/EngineeringResumes/wiki/index/">r/EngineeringResumes wiki</a>, plus a centered header, checked against the nine career center sample resumes listed under the figure.`,
+	`Layout from the <a href="https://www.reddit.com/r/EngineeringResumes/wiki/index/">r/EngineeringResumes wiki</a>, checked against nine career center samples.`,
 );
 ---
 
@@ -135,8 +135,7 @@ const caption = externalLinks(
 		</ol>
 	</div>
 	<p class="eep-example-aside">
-		Bold only on section titles, entry titles, and line labels. Dashed outlines
-		are callouts and don't appear on the real page.
+		Dashed outlines are callouts and don't appear on the real page.
 	</p>
 	<figcaption>
 		<span class="eep-fignum"></span> <span set:html={caption} />
