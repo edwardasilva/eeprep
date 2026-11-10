@@ -164,7 +164,7 @@ for (const file of listHtml(dist)) {
 for (const problem of problems) console.error(problem);
 if (problems.length) {
 	console.error(
-		'Write each link in lower case, or add its first word to the names list in .github/scripts/check-link-case.mjs if it is a proper noun.',
+		'Write each link in lower case. If it starts with a proper noun, add that name (or a phrase that starts with it) to the names list in .github/scripts/check-link-case.mjs.',
 	);
 	process.exit(1);
 }
