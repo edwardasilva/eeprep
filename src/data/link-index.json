@@ -7,20 +7,6 @@
     "pages": ["advice/resume", "advice/resume/workshop"]
   },
   {
-    "url": "https://bizcareers.colostate.edu/resources/what-is-an-applicant-tracking-system-ats/",
-    "title": "Colorado State: What is an applicant tracking system?",
-    "category": "Resume guides",
-    "summary": "A university career center explains what an ATS does with your application.",
-    "pages": ["advice/resume"]
-  },
-  {
-    "url": "https://grad.gatech.edu/news/8-ways-revamp-your-resume",
-    "title": "Georgia Tech: 8 ways to revamp your resume",
-    "category": "Resume guides",
-    "summary": "Georgia Tech graduate education tips, including a formula for writing resume bullets.",
-    "pages": ["advice/resume"]
-  },
-  {
     "url": "https://bpb-us-e1.wpmucdn.com/sites.gatech.edu/dist/7/2441/files/2026/01/Career-Fair-Prep-PDF.pdf",
     "title": "Georgia Tech: How to prep for a career fair",
     "category": "Resume guides",
@@ -186,24 +172,10 @@
     "pages": ["advice/forever-learning/graduate-study"]
   },
   {
-    "url": "https://drexel.edu/scdc/~/media/Drexel/EMSS-Site-Group/SCDC/Documents/best-practices/resumes/Electrical-and-Computer-Engineering.pdf",
-    "title": "Drexel: Electrical and computer engineering sample resume",
-    "category": "Sample resumes and templates",
-    "summary": "Drexel career center sample resume for electrical and computer engineering, as PDF.",
-    "pages": ["advice/resume"]
-  },
-  {
     "url": "https://career.gatech.edu/files/2026/06/JackieJacketResume.docx",
     "title": "Georgia Tech: Computer engineering sample resume",
     "category": "Sample resumes and templates",
     "summary": "Word file of a sample resume for a B.S. computer engineering student.",
-    "pages": ["advice/resume"]
-  },
-  {
-    "url": "https://career.gatech.edu/files/2026/06/CS-Sample-Resume.docx",
-    "title": "Georgia Tech: Computer science sample resume",
-    "category": "Sample resumes and templates",
-    "summary": "Word file of a sample resume for a computer science student.",
     "pages": ["advice/resume"]
   },
   {
@@ -270,7 +242,6 @@
       "advice/resume",
       "advice/resume/cleanup",
       "advice/resume/walkthrough",
-      "roadmap/contributing",
       "help/resources",
       "index"
     ]
@@ -325,13 +296,6 @@
     "pages": ["advice/resume/walkthrough"]
   },
   {
-    "url": "https://ecc.uic.edu/wp-content/uploads/sites/78/2026/06/Computer-Science-Updated-Summer-2026.docx.pdf",
-    "title": "UIC: Computer science example resume",
-    "category": "Sample resumes and templates",
-    "summary": "PDF of a computer science example resume from UIC's engineering career center.",
-    "pages": ["advice/resume"]
-  },
-  {
     "url": "https://ecc.uic.edu/wp-content/uploads/sites/78/2026/06/Electrical-Engineering-Example-Resume-Updated-Summer-2026.docx.pdf",
     "title": "UIC: Electrical engineering example resume",
     "category": "Sample resumes and templates",
@@ -339,24 +303,10 @@
     "pages": ["advice/resume"]
   },
   {
-    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1q7vpap/student_100_applications_4_interviews_2_offers_my/",
-    "title": "r/EngineeringResumes: 100 applications, 2 offers at BAE",
-    "category": "Resume feedback from reviewers and recruiters",
-    "summary": "A student describes landing an embedded internship at BAE after 100 applications.",
-    "pages": ["advice/resume"]
-  },
-  {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/1w1e5dp/student_100_embeddedhardware_intern_applications/",
     "title": "r/EngineeringResumes: 100 embedded applications, nothing yet",
     "category": "Resume feedback from reviewers and recruiters",
     "summary": "Resume review for an embedded student with 100-plus applications, no offers.",
-    "pages": ["advice/resume"]
-  },
-  {
-    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1xa7k5e/student_submitted_150_internship_applications_and/",
-    "title": "r/EngineeringResumes: 150 applications, 0 interviews",
-    "category": "Resume feedback from reviewers and recruiters",
-    "summary": "Resume review for a student with 150 internship applications, no interviews.",
     "pages": ["advice/resume"]
   },
   {
@@ -412,13 +362,6 @@
     "pages": ["advice/resume"]
   },
   {
-    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1bz7gud/student_rewrote_resume_using_the_wiki_template/",
-    "title": "r/EngineeringResumes: Half-page resume on the wiki template",
-    "category": "Resume feedback from reviewers and recruiters",
-    "summary": "An EE student asks how to fill a half-page resume.",
-    "pages": ["advice/resume"]
-  },
-  {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/1e3yimi/ama_hardware_engineers_founders_of_hardware_fyi/",
     "title": "r/EngineeringResumes: Hardware FYI AMA (July 2024)",
     "category": "Resume feedback from reviewers and recruiters",
@@ -469,13 +412,6 @@
     "pages": ["advice/resume"]
   },
   {
-    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1nwhs53/student_i_kept_getting_your_experience_looks/",
-    "title": "r/EngineeringResumes: Praise at career fairs, no interviews",
-    "category": "Resume feedback from reviewers and recruiters",
-    "summary": "A student hears good things at career fairs but gets no interviews.",
-    "pages": ["advice/resume"]
-  },
-  {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/1m6nzkm/8_yoe_readable_resumes_a_guide_to_allowing_anyone/",
     "title": "r/EngineeringResumes: Readable resumes guide",
     "category": "Resume feedback from reviewers and recruiters",
@@ -494,13 +430,6 @@
     "title": "r/EngineeringResumes: Resume rules debate",
     "category": "Resume feedback from reviewers and recruiters",
     "summary": "Commenters debate a sample resume that breaks the subreddit's wiki guidelines.",
-    "pages": ["advice/resume"]
-  },
-  {
-    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1sltoyk/student_entering_senior_year_with_no_internship/",
-    "title": "r/EngineeringResumes: Senior year with no internship",
-    "category": "Resume feedback from reviewers and recruiters",
-    "summary": "Resume review for a student entering senior year without an internship.",
     "pages": ["advice/resume"]
   },
   {
@@ -565,22 +494,11 @@
     "pages": ["advice/resume"]
   },
   {
-    "url": "https://x.com/randomrecruiter/status/1759685173044498630",
-    "title": "X: @randomrecruiter on quantifying results",
-    "category": "Resume feedback from reviewers and recruiters",
-    "summary": "A recruiter urges job seekers to add numbers to their resume bullets.",
-    "pages": ["advice/resume"]
-  },
-  {
     "url": "https://x.com/randomrecruiter/status/2007074490233053671",
     "title": "X: @randomrecruiter on skills missing from experience",
     "category": "Resume feedback from reviewers and recruiters",
     "summary": "A recruiter quotes managers on skills listed but not shown in experience.",
-    "pages": [
-      "advice/resume",
-      "advice/resume/cleanup",
-      "advice/resume/workshop"
-    ]
+    "pages": ["advice/resume/cleanup", "advice/resume/workshop"]
   },
   {
     "url": "https://x.com/randomrecruiter/status/1846631030918189213",
@@ -597,13 +515,6 @@
     "pages": ["advice/resume"]
   },
   {
-    "url": "https://x.com/TheJobfather__/status/1576932082403647489",
-    "title": "X: @TheJobfather__ on white space",
-    "category": "Resume feedback from reviewers and recruiters",
-    "summary": "A recruiter says resumes must be skimmable and keep white space.",
-    "pages": ["advice/resume"]
-  },
-  {
     "url": "https://www.askamanager.org/?p=23426",
     "title": "Ask a Manager: Trainings and certificates on a resume",
     "category": "Resume feedback from reviewers and recruiters",
@@ -615,13 +526,6 @@
     "title": "Duke: Conflicting feedback on your resume",
     "category": "Resume feedback from reviewers and recruiters",
     "summary": "Duke's career hub on why five reviewers give five opinions and why you will not use all of the feedback.",
-    "pages": ["advice/resume"]
-  },
-  {
-    "url": "https://www.accellera.org/downloads/standards/uvm",
-    "title": "Accellera: Universal Verification Methodology (UVM)",
-    "category": "Tools and project resources",
-    "summary": "Standard downloads and documentation for UVM, the common SystemVerilog verification methodology.",
     "pages": ["advice/resume"]
   },
   {
