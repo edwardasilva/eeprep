@@ -54,6 +54,10 @@ The goal is good writing, not beating a detector. Detectors are unreliable and f
 
 10. Define a technical term in a few words the first time you use it, e.g. "idempotent (safe to run twice)". Do not define product names or standard names.
 
+11. Write a range that stands alone as a label, a span of years, or a resume date with an unspaced en dash: Jul–Aug, 2023–24, 2025–2035, June–August 2025, Fall 2025–Spring 2026. Do not put spaces around the dash.
+
+12. In a sentence, keep "from X to Y": "a second wave runs from January to March". Screen-reader text can keep "to" too.
+
 ## 3. Words to cut
 
 Cut these on sight. One may be a coincidence, but several together read as AI:
