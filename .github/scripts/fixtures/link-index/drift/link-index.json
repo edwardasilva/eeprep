@@ -1,0 +1,30 @@
+[
+  {
+    "url": "https://example.com/listed/",
+    "title": "Listed",
+    "category": "Tools",
+    "summary": "Listed on the wrong pages.",
+    "pages": ["index", "roadmap"]
+  },
+  {
+    "url": "https://example.com/gone",
+    "title": "Gone",
+    "category": "Tools",
+    "summary": "No page links it.",
+    "pages": ["index"]
+  },
+  {
+    "url": "https://example.com/twice",
+    "title": "Twice",
+    "category": "Tools",
+    "summary": "First copy.",
+    "pages": ["guide"]
+  },
+  {
+    "url": "https://www.example.com/twice/#top",
+    "title": "Twice again",
+    "category": "Tools",
+    "summary": "Second copy.",
+    "pages": ["guide"]
+  }
+]

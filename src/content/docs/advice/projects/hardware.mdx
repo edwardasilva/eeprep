@@ -1,0 +1,97 @@
+---
+title: Hardware
+description: "How to build practical electrical engineering proof with no internship: bench skills, hardware builds, student lab benches, design teams, and technician roles."
+pageType: guide
+head:
+  - tag: title
+    content: "Hardware experience without an internship | eeprep"
+---
+
+import HardwareProofFigure from '../../../../components/projects/HardwareProofFigure.astro';
+
+Before your first internship, learn the lab instruments, take one project from schematic to bench test, and join a campus design team. [Reviewers see the same kit builds over and over](https://www.reddit.com/r/ECE/comments/1vt6jvy/19f_need_to_get_my_resume_politely_roasted_for/), so show depth instead. If entry-level design roles are scarce, take a technician or test role as a bridge. The [[Career paths|Career paths page]] names the titles and employers for power, analog, RF, and controls work.
+
+<HardwareProofFigure />
+
+## Bench skills come first
+
+A tool on a resume counts only next to work you did with it. [Students get called out for listing an oscilloscope or a function generator they cannot run](https://x.com/OnosSpeaks/status/2001938854585270650). Practice on the lab scope and function generator until you can run both without help, and say so at the fair.
+
+## Hardware builds that count
+
+Aim the build at the hardware the company makes. [Astranis is hiring a summer 2027 intern](https://x.com/ApplyBoltApp/status/2104728614407164037) to design, build, and lab-test the software-defined radio hardware in its satellites. The post asks for EE students who have designed and built a PCB from scratch. The role is on-site in San Francisco and pays \$29 an hour.
+
+Read what working engineers post about the parts they are moving to. One wrote that [silicon carbide modules are taking inverter work from silicon](https://x.com/ElectronJacob/status/2098924357359677471) because they switch faster and run hotter with less cooling. If you build a power converter, that is the kind of part to read up on first.
+
+Alex's page in the [[Resume#Alex's finished page|Alex's finished page]] section on the Resume page gives the converter two lines. The entries on this page come from a fuller version of Alex's list, with more builds and roles than fit on that one page. The entry below is the long version a senior with more bench time could write. List yours the same way. A bracket such as [X] is a number you measure, and a bracket such as [University lab] is a name you fill in.
+
+- Synchronous Buck Converter for a CubeSat Power Board, Fall 2025 – Spring 2026, KiCad, LTspice, STM32, Embedded C, bench testing with an electronic load
+  - Raised peak efficiency from [W]% to [X]% at [Y] A on an electronic load by replacing the catch diode with a synchronous MOSFET and tuning dead time to [Z] ns on an STM32 timer
+  - Cut output ripple from [X] mV to [Y] mV peak to peak with a [Z]-layer KiCad layout that has a solid ground plane, a smaller switching loop, and an LC filter sized for [W] kHz
+  - Kept the board alive through [Z] deliberate shorts at [W] V input with STM32 firmware in C that samples input current at [X] kHz and cuts the rail within [Y] µs of a fault
+  - Held the FETs under [X] °C at full load with thermal vias and a [Y] oz copper pour under them
+
+The battery monitor and the equalizer are two more builds written the same way.
+
+- Bluetooth Battery Monitor, Fall 2024, ESP32, Arduino C++, Python, INA219 current sensor
+  - Tracked [X] Li-ion cells within [Y] mV each on an ESP32 that streams to a Python dashboard
+  - Extended pack runtime [X]% in field tests by adding a cutoff that drops non-critical loads at [Y] V
+- FPGA [N]-Band Audio Equalizer, Spring 2025, Verilog, Vivado, MATLAB, Basys 3 FPGA, fixed-point DSP
+  - Processed [X] kHz stereo audio at [Y] ms latency by pipelining [Z] [W]-tap FIR filters in Verilog
+  - Matched the MATLAB response within [X] dB from [Y] Hz to [Z] kHz by testing coefficients in Vivado
+  - Cut LUT use [X]% by time-sharing 1 multiplier per filter across all [Y] taps
+
+## Starting on a student budget
+
+Cost stops students before they build, but most of it has a free route.
+
+- [Wokwi](https://wokwi.com/) simulates Arduino, ESP32, and STM32 boards in the browser for free.
+- Department labs hold idle oscilloscopes, dev kits in a cupboard, and unused parts. Ask the lecturer or the lab technician before you buy.
+- [Five students can split the cost of one shared dev kit](https://x.com/princess_yfe/status/2052407178993029236).
+
+[An EE with more than 35 years of teaching](https://x.com/BackwoodsEnginr/status/2061281029155918079) starts students on [KiCad](https://www.kicad.org/), including co-op students and interns at work. They have used Cadence, OrCad, Altium, Eagle, and other board tools.
+
+Request an [Altium student license](https://www.altium.com/education/students) if you want practice in that tool before a job search, as [one post on X recommends](https://x.com/blind_via/status/2061016080370573758).
+
+[One EE student is skipping hardware builds because the parts cost too much](https://x.com/CodeWithOnari/status/2006474598318252292). [Hardware also has a higher opportunity cost than software](https://x.com/karanbhilatiya/status/2078038754368065816). Opportunity cost is the other work you give up to do it.
+
+Look up prices on the day you buy. Alex leaves the budget blank until the number is real. To borrow an idle scope, send a note like this:
+
+> I want to use an idle oscilloscope outside class.
+>
+> I can come on [day] at [time].
+>
+> I will leave the bench as I found it.
+
+## Teams and undergraduate research
+
+[Join a racing or rocket team in your first year](https://www.reddit.com/r/ElectricalEngineering/comments/1puvlji/how_to_not_waste_my_undergrad_2nd_year_with_no/). It gives you real work to talk about at a career fair.
+
+Students debate [whether to take an internship or a research position](https://www.reddit.com/r/EngineeringStudents/comments/1qbbfra/internship_or_research/), and what undergraduate research is for, in that thread and in two more on [internships with little experience](https://www.reddit.com/r/ECE/comments/1q4oypq/how_to_get_internships_in_college_without_much/) and [undergraduate research](https://www.reddit.com/r/ElectricalEngineering/comments/1u0q7n5/undergraduate_research/). If you can take only one, choose the one where you will own a part you can explain. The entries below list both and do not rank them.
+
+- Power Subsystem Engineer, [Student satellite team], Fall 2024 – Spring 2026
+  - Cut power board mass by [X] g by replacing [Y] linear regulators with 1 buck converter board that passed thermal vacuum testing from [Z] °C to [W] °C on the first try
+  - Found [X] battery protection faults before launch review with a Python script that runs [Y] overnight charge cycles and flags any cell that drifts over [Z] mV from the pack average
+- Undergraduate Research Assistant, [University lab], Summer 2025
+  - Reduced GaN switching-loss error from [X]% to [Y]% by adding probe deskew to the double-pulse test
+  - Cut test time per device from [X] to [Y] minutes with Python and PyVISA scope capture
+
+## Test or technician roles as a way in
+
+Junior design titles are scarce. Search under other titles, and treat a test or technician role as a bridge. Before you accept one, write down the design title you still want.
+
+[One digest read 1,285 engineering roles in 24 hours](https://x.com/tech_withrobin/status/2094768485448536101). Of the 120 it read line by line, six carried a junior or intern tag. Five of the six came from one company, and the sixth was a social media job. The more open role that day was Test Engineer II at [Blue Canyon Technologies](https://www.bluecanyontech.com/) in Boulder. It was on-site work testing flight hardware, posted at \$80,000 to \$120,000, and asked for at most two years of experience.
+
+Entry-level ads often ask for 2 to 3 years. [One engineer who graduated in 2021 took 2 years to land a first electrical engineer role](https://x.com/thezachpendley/status/2001891601753497665). [Other ads ask for 10 or more years and still call the job entry-level](https://x.com/Faceofboe5/status/2050228727410311464).
+
+Paste these words into a search box:
+
+- test
+- validation
+- manufacturing
+- controls
+- field applications engineer
+
+[One new graduate took a short technician stint at an aerospace company](https://www.reddit.com/r/ElectricalEngineering/comments/1ub50g2/where_do_i_apply_now_with_constant_rejection_and/). Five months after graduation, they were still in final rounds for FPGA and analog roles, with no offer. An FPGA is a chip you set up by writing a configuration. Search the titles above and apply on the company site. When a final round goes quiet, write down the questions you missed.
+
+[Another person started as a lab engineer technician](https://x.com/SogeKingu2000/status/2090407950410231918), moved to data center tech, and now does hardware and system validation while still in school.

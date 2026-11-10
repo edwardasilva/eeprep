@@ -1,0 +1,96 @@
+---
+import { externalLinks } from '../resume/caption';
+// Figure 23.1 as HTML and CSS. Four numbers that describe the entry-level
+// market, each in its own box with the source year. Same box for each, so no
+// number is the headline. The page text says what to do about them.
+const numbers = [
+	{
+		value: '+102%',
+		label: 'applications per job on Greenhouse, late 2022 to late 2024',
+	},
+	{
+		value: '-15%',
+		label: 'job postings on Handshake over the year to spring 2025',
+	},
+	{
+		value: '-36%',
+		label: 'tech postings on Indeed, July 2025 against early 2020',
+	},
+	{
+		value: '8%',
+		label:
+			'growth the BLS projects for electrical and electronics engineers, 2025 to 2035',
+	},
+];
+const alt =
+	'Four numbers. Applications per job on Greenhouse rose 102 percent from late 2022 to late 2024. Job postings on Handshake fell 15 percent over the year to spring 2025. Tech postings on Indeed in July 2025 were 36 percent below early 2020. The BLS projects 8 percent growth for electrical and electronics engineers from 2025 to 2035.';
+const caption = externalLinks(
+	`More applications chase fewer postings, and the long-run demand for the job is still there. Sources: <a href="https://www.greenhouse.com/newsroom/greenhouse-launches-dream-job-to-fix-job-hunting-and-boost-candidates-chances-of-getting-hired">Greenhouse</a>, <a href="https://www.nbcsandiego.com/news/business/money-report/college-grads-face-a-tough-and-competitive-job-market-this-year-expert-says/3827152/">CNBC on Handshake's data</a>, <a href="https://d341ezm4iqaae0.cloudfront.net/ews/20250925161702/Indeed-Tech-Talent-Report-2025-US.pdf">Indeed Hiring Lab</a>, and <a href="https://www.bls.gov/ooh/architecture-and-engineering/electrical-and-electronics-engineers.htm">the BLS</a>.`,
+);
+---
+
+<figure class="eep-fig wide eep-market-fig" id="fig-23-1">
+	<p class="eep-kicker">The entry-level market in four numbers</p>
+	<p class="sr-only">{alt}</p>
+	<div class="eep-market not-content" aria-hidden="true">
+		<ol>
+			{numbers.map((n) => (
+				<li>
+					<p class="eep-market-value">{n.value}</p>
+					<p class="eep-market-label">{n.label}</p>
+				</li>
+			))}
+		</ol>
+	</div>
+	<figcaption>
+		<span class="eep-fignum"></span> <span set:html={caption} />
+	</figcaption>
+</figure>
+
+<style>
+	.eep-market {
+		margin-top: 1rem;
+		container-type: inline-size;
+		font-family: var(--eep-font-sans);
+		color: var(--eep-ink);
+	}
+	.eep-market p {
+		margin: 0;
+		max-width: none;
+		overflow-wrap: anywhere;
+	}
+	.eep-market ol {
+		display: grid;
+		gap: 0.75rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.eep-market li {
+		display: grid;
+		gap: 0.3rem;
+		align-content: start;
+		margin: 0;
+		max-width: none;
+		padding: 0.6rem 0.75rem;
+		border: 1px solid var(--eep-dg-mute);
+		border-radius: 4px;
+		background: var(--eep-dg-tint);
+	}
+	.eep-market-value {
+		font-size: 1.5rem;
+		font-weight: 600;
+		line-height: 1.1;
+		font-variant-numeric: tabular-nums;
+	}
+	.eep-market-label {
+		font-size: 0.8125rem;
+		line-height: 1.45;
+		color: var(--eep-ink-2);
+	}
+	@container (min-width: 36rem) {
+		.eep-market ol {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+</style>

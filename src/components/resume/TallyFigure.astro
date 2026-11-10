@@ -1,0 +1,101 @@
+---
+// Figure 19.2 as HTML and CSS. What five student portfolio sites show, as a
+// tally per item: how many of the five have it. Bars in one ink, lengths by
+// the count, so no row is highlighted. The page text names the five sites.
+const rows = [
+	{ label: 'Photos of the build', count: 5 },
+	{ label: 'A headline number per project', count: 5 },
+	{ label: 'Code linked per project', count: 3 },
+	{ label: 'A schematic', count: 2 },
+	{ label: 'A what-broke or limitations section', count: 3 },
+	{ label: 'A scope capture', count: 0 },
+];
+const total = 5;
+const alt =
+	'A tally of six items across five student portfolio sites. Photos of the build: five of five. A headline number per project: five of five. Code linked per project: three of five. A schematic: two of five. A what-broke or limitations section: three of five. A scope capture: zero of five.';
+---
+
+<figure class="eep-fig wide eep-tally-fig" id="fig-19-2">
+	<p class="eep-kicker">What five student portfolios show</p>
+	<p class="sr-only">{alt}</p>
+	<div class="eep-tally not-content" aria-hidden="true">
+		<ol>
+			{rows.map((r) => (
+				<li>
+					<span class="eep-tally-label">{r.label}</span>
+					<span class="eep-tally-track">
+						<span
+							class="eep-tally-bar"
+							style={`width: ${(r.count / total) * 100}%`}
+						/>
+					</span>
+					<span class="eep-tally-value">
+						{r.count} of {total}
+					</span>
+				</li>
+			))}
+		</ol>
+	</div>
+	<figcaption>
+		<span class="eep-fignum"></span>{' '}
+		<span>
+			Read from the public repositories of the five sites described in the text,
+			in November 2026. The scope capture and the what-broke section are where a
+			new portfolio pulls ahead.
+		</span>
+	</figcaption>
+</figure>
+
+<style>
+	.eep-tally {
+		margin-top: 1rem;
+		font-family: var(--eep-font-sans);
+		color: var(--eep-ink);
+	}
+	.eep-tally ol {
+		display: grid;
+		gap: 0.6rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.eep-tally li {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) 3.5rem;
+		gap: 0.25rem 0.75rem;
+		align-items: center;
+		margin: 0;
+		max-width: none;
+	}
+	.eep-tally-label {
+		grid-column: 1 / -1;
+		font-size: 0.8125rem;
+		line-height: 1.4;
+	}
+	.eep-tally-track {
+		display: block;
+		height: 0.8rem;
+		border: 1px solid var(--eep-dg-mute);
+		border-radius: 2px;
+		background: var(--eep-dg-tint);
+	}
+	.eep-tally-bar {
+		display: block;
+		height: 100%;
+		background: var(--eep-dg-ink);
+	}
+	.eep-tally-value {
+		font-size: 0.8125rem;
+		line-height: 1.4;
+		color: var(--eep-ink-2);
+		white-space: nowrap;
+	}
+	@media (min-width: 36rem) {
+		.eep-tally li {
+			grid-template-columns: 15rem minmax(0, 1fr) 3.5rem;
+		}
+		.eep-tally-label {
+			grid-column: auto;
+		}
+	}
+</style>

@@ -1,0 +1,14 @@
+---
+import Default from '@astrojs/starlight/components/PageSidebar.astro';
+import Backlinks from './Backlinks.astro';
+
+const { entry } = Astro.locals.starlightRoute;
+const splash = entry.data.template === 'splash';
+---
+
+{splash ? null : (
+	<>
+		<Default />
+		<Backlinks class="right-sidebar-panel sl-hidden lg:sl-block" />
+	</>
+)}

@@ -1,0 +1,2499 @@
+[
+  {
+    "url": "https://careers.mines.edu/resumes-and-cover-letters/",
+    "title": "Colorado School of Mines: Resumes and cover letters",
+    "category": "Resume guides",
+    "summary": "Mines career center guidance on resumes and cover letters for engineering students.",
+    "pages": ["advice/resume", "advice/resume/workshop"]
+  },
+  {
+    "url": "https://bpb-us-e1.wpmucdn.com/sites.gatech.edu/dist/7/2441/files/2026/01/Career-Fair-Prep-PDF.pdf",
+    "title": "Georgia Tech: How to prep for a career fair",
+    "category": "Resume guides",
+    "summary": "Georgia Tech career fair handout, including employer survey results on resume length.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://support.greenhouse.io/hc/en-us/articles/360000653472-Auto-reject",
+    "title": "Greenhouse: Auto-reject",
+    "category": "Resume guides",
+    "summary": "Greenhouse help article on how employers set rules that reject applications automatically.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://my.greenhouse.com/blogs/what-really-happens-after-you-apply-for-a-job",
+    "title": "Greenhouse: What really happens after you apply",
+    "category": "Resume guides",
+    "summary": "Greenhouse explains the steps an application goes through after you submit it.",
+    "pages": [
+      "advice/getting-hired",
+      "advice/resume",
+      "advice/resume/quick-setup",
+      "help/ai-use",
+      "help/job-boards"
+    ]
+  },
+  {
+    "url": "https://latex.us/macros/latex/contrib/hyperref/doc/hyperref-doc.html",
+    "title": "hyperref package manual",
+    "category": "Resume guides",
+    "summary": "Manual for the LaTeX package that adds clickable links and PDF metadata.",
+    "pages": ["advice/resume", "advice/resume/cleanup"]
+  },
+  {
+    "url": "https://ecs.grainger.illinois.edu/student-resources/resumes-letters/resumes",
+    "title": "Illinois Engineering: Resumes",
+    "category": "Resume guides",
+    "summary": "Illinois engineering career services guide to resume sections, content and format.",
+    "pages": [
+      "advice/resume",
+      "advice/resume/cleanup",
+      "advice/resume/walkthrough"
+    ]
+  },
+  {
+    "url": "https://www.prnewswire.com/news-releases/ladders-updates-popular-recruiter-eye-tracking-study-with-new-key-insights-on-how-job-seekers-can-improve-their-resumes-300744217.html",
+    "title": "Ladders 2018 eye-tracking study press release",
+    "category": "Resume guides",
+    "summary": "Press release with the 7.4-second average resume scan time from Ladders' study.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://www.theladders.com/career-advice/is-it-true-that-recruiters-reject-a-resume-in-six-seconds",
+    "title": "Ladders: Do recruiters reject a resume in six seconds?",
+    "category": "Resume guides",
+    "summary": "Ladders article on its 2018 eye-tracking study of how recruiters scan resumes.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://career.engin.umich.edu/resumes-cvs-cover-letters/",
+    "title": "Michigan Engineering: Resumes, CVs and cover letters",
+    "category": "Resume guides",
+    "summary": "Michigan engineering career center guide to resumes, CVs and cover letters.",
+    "pages": ["advice/resume", "advice/resume/cleanup"]
+  },
+  {
+    "url": "https://capd.mit.edu/resources/make-your-resume-ats-friendly/",
+    "title": "MIT CAPD: Make your resume ATS-friendly",
+    "category": "Resume guides",
+    "summary": "MIT's career office on formatting a resume for applicant tracking systems.",
+    "pages": [
+      "advice/getting-hired/first-internship",
+      "advice/resume",
+      "advice/resume/cleanup"
+    ]
+  },
+  {
+    "url": "https://capd.mit.edu/resources/resumes/",
+    "title": "MIT CAPD: Resumes",
+    "category": "Resume guides",
+    "summary": "MIT's career office guide to writing, formatting and proofreading a resume.",
+    "pages": [
+      "advice/resume",
+      "advice/resume/cleanup",
+      "advice/resume/workshop"
+    ]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/wiki/index/",
+    "title": "r/EngineeringResumes wiki",
+    "category": "Resume guides",
+    "summary": "The subreddit's resume guide, covering layout, sections, bullets and common mistakes.",
+    "pages": [
+      "advice/resume",
+      "advice/resume/cleanup",
+      "advice/resume/walkthrough",
+      "advice/resume/workshop",
+      "help",
+      "help/resources"
+    ]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/wiki/typo/",
+    "title": "r/EngineeringResumes wiki: Common mistakes",
+    "category": "Resume guides",
+    "summary": "Common resume mistakes, including misspelled software and tool names.",
+    "pages": ["advice/resume", "advice/resume/cleanup"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/wiki/sample-bullet-points/",
+    "title": "r/EngineeringResumes wiki: Sample bullet points",
+    "category": "Resume guides",
+    "summary": "Sample resume bullets by discipline, including electrical engineering.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://texdoc.org/serve/pdftex-a.pdf/0",
+    "title": "The pdfTeX user manual",
+    "category": "Resume guides",
+    "summary": "Reference manual for pdfTeX, the engine that turns LaTeX source into PDF.",
+    "pages": ["advice/resume", "advice/resume/cleanup"]
+  },
+  {
+    "url": "https://career.berkeley.edu/prepare-for-success/resumes/",
+    "title": "UC Berkeley: Resumes",
+    "category": "Resume guides",
+    "summary": "Berkeley's career center guide to resumes, including how to quantify results.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1cms7al/random_thoughts_on_resumes/",
+    "title": "r/EngineeringResumes: Random thoughts on resumes",
+    "category": "Resume guides",
+    "summary": "A chief engineer's advice on a master resume, tailored versions, and a generic career-fair resume.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://www.askamanager.org/2014/01/do-you-need-multiple-versions-of-your-resume.html",
+    "title": "Ask a Manager: Do you need multiple versions of your resume?",
+    "category": "Resume guides",
+    "summary": "Alison Green on when multiple resume versions make sense.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://c14750.wpmucdn.com/5568/files/2026/10/Cover-Letter-Guide26.pdf",
+    "title": "Georgia Tech: Cover letter guide 2026",
+    "category": "Resume guides",
+    "summary": "Georgia Tech's guide to when and how to write a cover letter.",
+    "pages": ["help/resources"]
+  },
+  {
+    "url": "https://capd.mit.edu/resources/graduate-school-application-essays/",
+    "title": "MIT CAPD: Graduate school application essays",
+    "category": "Resume guides",
+    "summary": "MIT's guide to statements of purpose and personal statements, with examples.",
+    "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
+    "url": "https://career.gatech.edu/files/2026/06/JackieJacketResume.docx",
+    "title": "Georgia Tech: Computer engineering sample resume",
+    "category": "Sample resumes and templates",
+    "summary": "Word file of a sample resume for a B.S. computer engineering student.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://publish.illinois.edu/engineering-care/files/2015/09/Electrical-Engineering-Profile.pdf",
+    "title": "Illinois Engineering: Electrical engineering career profile",
+    "category": "Sample resumes and templates",
+    "summary": "PDF career profile for electrical engineering with a sample resume.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://cdn.uconnectlabs.com/wp-content/uploads/sites/123/2025/05/UG-Resume-with-Projects-1.pdf",
+    "title": "MIT CAPD: Undergraduate sample resume with projects",
+    "category": "Sample resumes and templates",
+    "summary": "PDF of an MIT undergraduate sample resume with a projects section.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://www.oit.edu/sites/default/files/2026/documents/Sample%20Resume%20-%20Electrical%20Engineering.pdf",
+    "title": "Oregon Tech: Electrical engineering sample resume",
+    "category": "Sample resumes and templates",
+    "summary": "PDF of an electrical engineering sample resume from Oregon Tech career services.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://www.overleaf.com/",
+    "title": "Overleaf",
+    "category": "Sample resumes and templates",
+    "summary": "Free online LaTeX editor for writing and compiling a resume.",
+    "pages": ["advice/resume/workshop"]
+  },
+  {
+    "url": "https://cdn.careercentral.pitt.edu/wp-content/uploads/sites/117/2023/09/Electrical-Engineering-Resume-Sample.pdf",
+    "title": "Pitt: Electrical engineering resume sample",
+    "category": "Sample resumes and templates",
+    "summary": "PDF of an electrical engineering sample resume from Pitt's career center.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://github.com/r-engineeringresumes/resume-templates/blob/main/r_EngineeringResumes_Template.tex",
+    "title": "r/EngineeringResumes LaTeX template file",
+    "category": "Sample resumes and templates",
+    "summary": "The LaTeX source file for the subreddit's one-column resume template.",
+    "pages": ["advice/resume/workshop"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/wiki/templates/",
+    "title": "r/EngineeringResumes wiki: Recommended templates",
+    "category": "Sample resumes and templates",
+    "summary": "The subreddit's recommended resume templates in LaTeX, Word and Google Docs.",
+    "pages": [
+      "advice/resume",
+      "advice/resume/workshop",
+      "help/resources",
+      "roadmap"
+    ]
+  },
+  {
+    "url": "https://github.com/edwardasilva/resume-generator",
+    "title": "resume-generator on GitHub",
+    "category": "Sample resumes and templates",
+    "summary": "eeprep's open-source tool that builds a one-page resume PDF.",
+    "pages": [
+      "advice/resume",
+      "advice/resume/cleanup",
+      "advice/resume/walkthrough",
+      "help/resources",
+      "index"
+    ]
+  },
+  {
+    "url": "https://github.com/edwardasilva/resume-generator/releases/latest",
+    "title": "resume-generator latest release",
+    "category": "Sample resumes and templates",
+    "summary": "Release notes and downloads for the newest version of resume-generator.",
+    "pages": ["advice/resume", "advice/resume/workshop"]
+  },
+  {
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Alex-Doe-Resume.pdf",
+    "title": "resume-generator: Alex-Doe-Resume.pdf",
+    "category": "Sample resumes and templates",
+    "summary": "Alex Doe's finished one-page resume, the PDF behind Figure 4.4.",
+    "pages": ["advice/resume/walkthrough"]
+  },
+  {
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/alex.json",
+    "title": "resume-generator: alex.json",
+    "category": "Sample resumes and templates",
+    "summary": "The data file that builds Alex Doe's page.",
+    "pages": ["advice/resume/walkthrough"]
+  },
+  {
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Jordan-Doe-Resume.pdf",
+    "title": "resume-generator: Jordan-Doe-Resume.pdf",
+    "category": "Sample resumes and templates",
+    "summary": "A first-year student's page: one class project, a one-line job, and a few skills.",
+    "pages": ["advice/resume/walkthrough"]
+  },
+  {
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Sam-Doe-Resume.pdf",
+    "title": "resume-generator: Sam-Doe-Resume.pdf",
+    "category": "Sample resumes and templates",
+    "summary": "A second-year student's page: two projects, a club lead role, and a one-line job.",
+    "pages": ["advice/resume/walkthrough"]
+  },
+  {
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Taylor-Doe-Resume.pdf",
+    "title": "resume-generator: Taylor-Doe-Resume.pdf",
+    "category": "Sample resumes and templates",
+    "summary": "A new graduate's page with two internships, experience first.",
+    "pages": ["advice/resume/walkthrough"]
+  },
+  {
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Casey-Doe-Resume.pdf",
+    "title": "resume-generator: Casey-Doe-Resume.pdf",
+    "category": "Sample resumes and templates",
+    "summary": "A full page with three engineering roles and three projects, tightened to fit.",
+    "pages": ["advice/resume/walkthrough"]
+  },
+  {
+    "url": "https://ecc.uic.edu/wp-content/uploads/sites/78/2026/06/Electrical-Engineering-Example-Resume-Updated-Summer-2026.docx.pdf",
+    "title": "UIC: Electrical engineering example resume",
+    "category": "Sample resumes and templates",
+    "summary": "PDF of an electrical engineering example resume from UIC's engineering career center.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1w1e5dp/student_100_embeddedhardware_intern_applications/",
+    "title": "r/EngineeringResumes: 100 embedded applications, nothing yet",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "Resume review for an embedded student with 100-plus applications, no offers.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1m65ime/0_yoe_got_3_ee_offers_without_an_internship_i/",
+    "title": "r/EngineeringResumes: 3 EE offers without an internship",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "An EE graduate shares the resume behind 3 offers without an internship.",
+    "pages": ["advice/resume", "advice/resume/workshop"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1el24sw/15_yoe_hiring_managers_perspective_after_recent/",
+    "title": "r/EngineeringResumes: A hiring manager on entry-level resumes",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "A hiring manager shares what they saw reviewing hundreds of entry-level resumes.",
+    "pages": ["advice/resume", "advice/resume/workshop"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1hw10ms/12_yoe_some_long_direct_advice_in_tech_from_a/",
+    "title": "r/EngineeringResumes: Direct advice from a hiring manager",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "An engineering hiring manager explains how they screen hundreds of resumes.",
+    "pages": [
+      "advice/resume",
+      "advice/resume/cleanup",
+      "advice/projects/portfolio",
+      "advice/resume/quick-setup",
+      "advice/resume/workshop"
+    ]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/q4d5op/electrical_engineering_senior_no_experience/",
+    "title": "r/EngineeringResumes: EE senior with no experience",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "Resume review thread for an electrical engineering senior with no work experience.",
+    "pages": ["advice/resume", "advice/resume/workshop"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1wxcvrq/student_how_do_you_find_good_project_ideas/",
+    "title": "r/EngineeringResumes: Finding good project ideas",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "Thread on picking resume projects that solve a real problem.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1i6v8x8/student_success_story_landed_3_interviews_and_an/",
+    "title": "r/EngineeringResumes: Embedded internship success story",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "A student shares the resume behind 3 interviews and an embedded offer.",
+    "pages": ["advice/getting-hired/how-to-interview", "advice/resume/workshop"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1e3yimi/ama_hardware_engineers_founders_of_hardware_fyi/",
+    "title": "r/EngineeringResumes: Hardware FYI AMA (July 2024)",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "Hardware FYI founders answer questions on hardware resumes and projects.",
+    "pages": ["advice/resume/workshop"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1bmtjgj/ama_hardware_engineers_founders_of_hardware_fyi/",
+    "title": "r/EngineeringResumes: Hardware FYI AMA (March 2024)",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "Hardware FYI founders answer questions on hardware recruiting and resumes.",
+    "pages": ["advice/resume/workshop"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/192hkg8/how_atss_actually_work_from_an_engineering_hiring/",
+    "title": "r/EngineeringResumes: How ATSs work",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "An engineering hiring manager explains what an ATS filters versus people.",
+    "pages": [
+      "advice/resume",
+      "advice/resume/cleanup",
+      "advice/resume/workshop"
+    ]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1v9440p/0_yoe_finally_landed_an_embedded_systems_engineer/",
+    "title": "r/EngineeringResumes: Landed an embedded systems role",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "A new graduate compares old and new resumes and charts their applications.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/15i3d8v/my_boss_said_my_resume_could_use_a_lot_of_work/",
+    "title": "r/EngineeringResumes: My boss said my resume needs work",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "An intern posts their resume after a manager said it needed work.",
+    "pages": [
+      "advice/resume",
+      "advice/resume/cleanup",
+      "advice/resume/workshop"
+    ]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1m6nzkm/8_yoe_readable_resumes_a_guide_to_allowing_anyone/",
+    "title": "r/EngineeringResumes: Readable resumes guide",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "A reviewer's guide to writing a resume any reader can scan quickly.",
+    "pages": ["advice/resume", "advice/resume/workshop"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1si2l4m/resume_advice_from_a_hiring_manager/",
+    "title": "r/EngineeringResumes: Resume advice from a hiring manager",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "A hiring manager's resume advice, including how to list degrees.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1sj2rgt/student_landed_nvidia_offer_sophomore_cs_major_at/",
+    "title": "r/EngineeringResumes: Sophomore lands NVIDIA offer",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "An embedded-focused sophomore shares the resume behind an NVIDIA offer.",
+    "pages": [
+      "advice/projects",
+      "advice/projects/career-paths",
+      "advice/projects/software",
+      "advice/resume/cleanup"
+    ]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1pkixp9/today_i_made_a_top_5_list/",
+    "title": "r/EngineeringResumes: Today I made a top 5 list",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "A reviewer picks a top 5 from many resumes in 90 minutes.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://x.com/ConnorLibutti/status/1750604328086151194",
+    "title": "X: @ConnorLibutti on 41 ATS platforms",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "A recruiter lists 41 applicant tracking systems that do not auto-reject resumes.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://x.com/masonwong/status/1439132659947491330",
+    "title": "X: @masonwong on Greenhouse parsing",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "A post saying Greenhouse does not parse resumes for direct applicants.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://x.com/randomrecruiter/status/1688896357430358016",
+    "title": "X: @randomrecruiter on fancy templates",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "A recruiter warns against templates with tables, pictures and self-rated skills.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://x.com/randomrecruiter/status/2081829972415578607",
+    "title": "X: @randomrecruiter on knowing your resume",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "A recruiter says managers probe resume items 3 to 5 layers deep.",
+    "pages": [
+      "advice/getting-hired/how-to-interview",
+      "advice/resume/cleanup",
+      "advice/resume/quick-setup",
+      "help/ai-use"
+    ]
+  },
+  {
+    "url": "https://x.com/randomrecruiter/status/1615808809133346824",
+    "title": "X: @randomrecruiter on listing duties",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "A recruiter names listing generic duties as the most common resume mistake.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://x.com/randomrecruiter/status/2007074490233053671",
+    "title": "X: @randomrecruiter on skills missing from experience",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "A recruiter quotes managers on skills listed but not shown in experience.",
+    "pages": ["advice/resume/cleanup", "advice/resume/workshop"]
+  },
+  {
+    "url": "https://x.com/randomrecruiter/status/1846631030918189213",
+    "title": "X: @randomrecruiter on the one-page rule",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "A recruiter calls the one-page resume rule a myth.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://x.com/TheJobfather__/status/2082954139298922755",
+    "title": "X: @TheJobfather__ on single-column resumes",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "A recruiter argues for a plain single-column resume over two-column layouts.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://www.askamanager.org/?p=23426",
+    "title": "Ask a Manager: Trainings and certificates on a resume",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "Alison Green on keeping small trainings and certificates off the resume.",
+    "pages": ["advice/forever-learning"]
+  },
+  {
+    "url": "https://www.altium.com/education/students",
+    "title": "Altium for students",
+    "category": "Tools and project resources",
+    "summary": "Altium's program for free student licenses of its PCB design software.",
+    "pages": ["advice/projects/hardware"]
+  },
+  {
+    "url": "https://ansys.synopsys.com/products/electronics/ansys-hfss",
+    "title": "Ansys HFSS",
+    "category": "Tools and project resources",
+    "summary": "Ansys HFSS product page, a 3D electromagnetic simulator for RF design.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://barrgroup.com/free-downloads",
+    "title": "Barr Group: Free downloads",
+    "category": "Tools and project resources",
+    "summary": "Free downloads from Barr Group, including the Embedded C Coding Standard book.",
+    "pages": ["advice/projects/software"]
+  },
+  {
+    "url": "https://www.cocotb.org/",
+    "title": "cocotb",
+    "category": "Tools and project resources",
+    "summary": "Python framework for writing testbenches for VHDL and SystemVerilog designs.",
+    "pages": ["advice/projects", "advice/projects/software"]
+  },
+  {
+    "url": "https://www.edaplayground.com/",
+    "title": "EDA Playground",
+    "category": "Tools and project resources",
+    "summary": "Browser-based site for writing and simulating HDL code with free simulators.",
+    "pages": ["advice/projects", "advice/projects/software"]
+  },
+  {
+    "url": "https://www.eplan.com/us-en/",
+    "title": "EPLAN",
+    "category": "Tools and project resources",
+    "summary": "Electrical design software for control panels and industrial wiring schematics.",
+    "pages": ["advice/getting-hired"]
+  },
+  {
+    "url": "https://www.fsaeonline.com/",
+    "title": "Formula SAE",
+    "category": "Tools and project resources",
+    "summary": "SAE International's student competition for designing and building a race car.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://www.freertos.org/",
+    "title": "FreeRTOS",
+    "category": "Tools and project resources",
+    "summary": "Free, MIT-licensed real-time operating system kernel for microcontrollers and small microprocessors.",
+    "pages": ["advice/projects/software"]
+  },
+  {
+    "url": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes",
+    "title": "GitHub Docs: About READMEs",
+    "category": "Tools and project resources",
+    "summary": "What a repository README is for and what to put in it.",
+    "pages": ["advice/projects", "advice/projects/software"]
+  },
+  {
+    "url": "https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme",
+    "title": "GitHub Docs: Managing your profile README",
+    "category": "Tools and project resources",
+    "summary": "How to add a profile README to your GitHub profile.",
+    "pages": ["advice/projects/software"]
+  },
+  {
+    "url": "https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/pinning-items-to-your-profile",
+    "title": "GitHub Docs: Pinning items to your profile",
+    "category": "Tools and project resources",
+    "summary": "How to pin up to six repositories on your GitHub profile.",
+    "pages": ["advice/projects/software"]
+  },
+  {
+    "url": "https://www.kicad.org/",
+    "title": "KiCad EDA",
+    "category": "Tools and project resources",
+    "summary": "Free, open-source schematic capture and PCB layout software.",
+    "pages": ["advice/projects", "advice/projects/hardware"]
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/",
+    "title": "MIT OCW: 6.002 Circuits and Electronics",
+    "category": "Tools and project resources",
+    "summary": "MIT's free first circuits course for EE and EECS students.",
+    "pages": ["advice/forever-learning", "roadmap"]
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/",
+    "title": "MIT OCW: 6.003 Signals and Systems",
+    "category": "Tools and project resources",
+    "summary": "MIT's free signals and systems course, from Fourier transforms to sampling.",
+    "pages": ["advice/forever-learning", "roadmap"]
+  },
+  {
+    "url": "https://ocw.mit.edu/about/",
+    "title": "MIT OpenCourseWare: About",
+    "category": "Tools and project resources",
+    "summary": "MIT's free course materials from more than 2,500 courses.",
+    "pages": ["advice/forever-learning", "help/resources"]
+  },
+  {
+    "url": "https://docs.pytest.org/en/stable/",
+    "title": "pytest documentation",
+    "category": "Tools and project resources",
+    "summary": "Documentation for pytest, a framework for writing and running tests in Python.",
+    "pages": ["advice/projects/software"]
+  },
+  {
+    "url": "https://pyvisa.readthedocs.io/en/latest/",
+    "title": "PyVISA documentation",
+    "category": "Tools and project resources",
+    "summary": "Python library for controlling lab instruments over GPIB, RS232, USB and Ethernet.",
+    "pages": ["advice/projects/software"]
+  },
+  {
+    "url": "https://www.siemens.com/en-us/products/tia-portal/",
+    "title": "Siemens TIA Portal",
+    "category": "Tools and project resources",
+    "summary": "Siemens software for programming and configuring PLCs and industrial automation systems.",
+    "pages": ["advice/getting-hired"]
+  },
+  {
+    "url": "https://www.solidworks.com/certifications",
+    "title": "SOLIDWORKS Design Professional (CSWP)",
+    "category": "Tools and project resources",
+    "summary": "Exam details for the CSWP certification in SOLIDWORKS part and assembly modeling.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://www.ti.com/lit/an/slva477/slva477.pdf",
+    "title": "TI: Basic calculation of a buck converter's power stage",
+    "category": "Tools and project resources",
+    "summary": "TI application note with formulas for sizing a buck converter's power stage.",
+    "pages": ["advice/forever-learning"]
+  },
+  {
+    "url": "https://www.ti.com/lit/er/slaz314/slaz314.pdf",
+    "title": "TI: MSP430F5529 errata sheet",
+    "category": "Tools and project resources",
+    "summary": "Example errata sheet listing where a microcontroller differs from its datasheet.",
+    "pages": ["advice/forever-learning"]
+  },
+  {
+    "url": "https://www.veripool.org/verilator/",
+    "title": "Verilator",
+    "category": "Tools and project resources",
+    "summary": "Open-source Verilog and SystemVerilog simulator that also runs lint checks.",
+    "pages": ["advice/projects", "advice/projects/software"]
+  },
+  {
+    "url": "https://wokwi.com/",
+    "title": "Wokwi",
+    "category": "Tools and project resources",
+    "summary": "Browser-based simulator for Arduino, ESP32 and other microcontroller projects.",
+    "pages": ["advice/projects", "advice/projects/hardware"]
+  },
+  {
+    "url": "https://slategit.com/blog/embedded-firmware-engineer-portfolio-hardware-projects",
+    "title": "SlateGit: An embedded firmware portfolio",
+    "category": "Tools and project resources",
+    "summary": "A hardware project page needs schematics, board photos, and proof it works.",
+    "pages": ["advice/projects/portfolio"]
+  },
+  {
+    "url": "https://ece4760.github.io/Projects/Projects.html",
+    "title": "Cornell ECE 4760: final project archive",
+    "category": "Tools and project resources",
+    "summary": "Semester of student project sites, each with design, hardware, software, results.",
+    "pages": ["advice/projects/portfolio"]
+  },
+  {
+    "url": "https://ece4760.github.io/Projects/Fall2025/hw578/index.html",
+    "title": "Cornell ECE 5730: Julia set on eight RP2040s",
+    "category": "Tools and project resources",
+    "summary": "A student project page whose design section covers an SPI bus bug.",
+    "pages": ["advice/projects/portfolio"]
+  },
+  {
+    "url": "https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits",
+    "title": "GitHub Docs: GitHub Pages limits",
+    "category": "Tools and project resources",
+    "summary": "The size and bandwidth limits of a free GitHub Pages site.",
+    "pages": ["advice/projects/portfolio"]
+  },
+  {
+    "url": "https://developers.cloudflare.com/pages/platform/limits",
+    "title": "Cloudflare Docs: Pages limits",
+    "category": "Tools and project resources",
+    "summary": "The free plan limits for Cloudflare Pages.",
+    "pages": ["advice/projects/portfolio"]
+  },
+  {
+    "url": "https://vercel.com/docs/plans/hobby-plan",
+    "title": "Vercel Docs: The Hobby plan",
+    "category": "Tools and project resources",
+    "summary": "What Vercel's free plan includes and its personal-use rule.",
+    "pages": ["advice/projects/portfolio"]
+  },
+  {
+    "url": "https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/",
+    "title": "Cornell ECE 4760: Final project archive",
+    "category": "Tools and project resources",
+    "summary": "The Cornell microcontroller course project sites whose section order the Portfolio page follows.",
+    "pages": ["advice/projects/portfolio"]
+  },
+  {
+    "url": "https://cs50.harvard.edu/x/2022/faqs",
+    "title": "CS50: Frequently asked questions",
+    "category": "Tools and project resources",
+    "summary": "Which CS50 certificate is free and which one edX charges for.",
+    "pages": ["advice/forever-learning"]
+  },
+  {
+    "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "title": "FTC: The Endorsement Guides, what people are asking",
+    "category": "Tools and project resources",
+    "summary": "The FTC on how an affiliate link has to be disclosed.",
+    "pages": ["advice/forever-learning"]
+  },
+  {
+    "url": "https://www.fcc.gov/wireless/bureau-divisions/mobility-division/amateur-radio-service",
+    "title": "FCC: Amateur Radio Service",
+    "category": "Tools and project resources",
+    "summary": "The FCC on amateur radio licenses and the volunteer examiner exams.",
+    "pages": ["advice/projects/career-paths"]
+  },
+  {
+    "url": "https://interrupt.memfault.com/blog/embedded-systems-roadmap-bridging-the-gap",
+    "title": "Interrupt: Embedded systems roadmap",
+    "category": "Tools and project resources",
+    "summary": "A learning path for embedded systems, with curated resources on GitHub.",
+    "pages": ["advice/projects"]
+  },
+  {
+    "url": "https://www.ashbyhq.com/talent-trends-report/reports/referrals",
+    "title": "Ashby: Are referred candidates more likely to get hired?",
+    "category": "Job search and referrals",
+    "summary": "Ashby data on hire rates for referred and non-referred job applicants.",
+    "pages": [
+      "advice/getting-hired",
+      "advice/getting-hired/first-internship",
+      "advice/getting-hired/job-market",
+      "advice/getting-hired/networking",
+      "advice/resume/quick-setup"
+    ]
+  },
+  {
+    "url": "https://www.bluecanyontech.com/",
+    "title": "Blue Canyon Technologies",
+    "category": "Job search and referrals",
+    "summary": "Company site for a small-satellite and spacecraft component maker.",
+    "pages": ["advice/projects/hardware"]
+  },
+  {
+    "url": "https://www.lebow.drexel.edu/careers-recruiting/center-career-readiness/advising/job-search-timeline",
+    "title": "Drexel LeBow: Senior year job search timeline",
+    "category": "Job search and referrals",
+    "summary": "Month-by-month plan for a full-time job search during senior year.",
+    "pages": ["advice/getting-hired/first-full-time-role"]
+  },
+  {
+    "url": "https://career.gatech.edu/undergrad-job-search/networking-outreach/",
+    "title": "Georgia Tech: Networking and outreach",
+    "category": "Job search and referrals",
+    "summary": "Georgia Tech career center guide to networking and contacting people at employers.",
+    "pages": ["advice/getting-hired"]
+  },
+  {
+    "url": "https://support.greenhouse.io/hc/en-us/articles/200721674-Generate-my-referrer-link",
+    "title": "Greenhouse: Generate my referrer link",
+    "category": "Job search and referrals",
+    "summary": "Greenhouse help article on the link employees use to refer a candidate.",
+    "pages": ["advice/getting-hired"]
+  },
+  {
+    "url": "https://joinhandshake.com/students/",
+    "title": "Handshake",
+    "category": "Job search and referrals",
+    "summary": "Job and internship platform that many universities use for student recruiting.",
+    "pages": ["advice/getting-hired", "help", "help/job-boards"]
+  },
+  {
+    "url": "https://jobs.ieee.org/",
+    "title": "IEEE Job Site",
+    "category": "Job search and referrals",
+    "summary": "IEEE's job board for electrical, electronics and computer engineering roles.",
+    "pages": ["help", "help/job-boards"]
+  },
+  {
+    "url": "https://ecs.grainger.illinois.edu/student-resources/network-fairs/career-fairs",
+    "title": "Illinois Engineering: Career fair tips",
+    "category": "Job search and referrals",
+    "summary": "Illinois engineering career services advice on preparing for a career fair.",
+    "pages": ["advice/getting-hired"]
+  },
+  {
+    "url": "https://www.indeed.com/",
+    "title": "Indeed",
+    "category": "Job search and referrals",
+    "summary": "General job search site for openings across employers and locations.",
+    "pages": ["advice/getting-hired", "help/job-boards"]
+  },
+  {
+    "url": "https://www.linkedin.com/help/linkedin/answer/a567083",
+    "title": "LinkedIn Help: Alumni tab on a LinkedIn Page",
+    "category": "Job search and referrals",
+    "summary": "How to use a school's Alumni tab to find graduates by employer.",
+    "pages": ["advice/getting-hired"]
+  },
+  {
+    "url": "https://www.linkedin.com/jobs/",
+    "title": "LinkedIn Jobs",
+    "category": "Job search and referrals",
+    "summary": "LinkedIn's job search, with filters for internships and entry-level roles.",
+    "pages": ["help", "help/job-boards"]
+  },
+  {
+    "url": "https://career.engin.umich.edu/students/job-search-policies/",
+    "title": "Michigan Engineering: Student responsibilities and policies",
+    "category": "Job search and referrals",
+    "summary": "Michigan's student job search policies, including rules on reneging on offers.",
+    "pages": ["advice/getting-hired/first-full-time-role"]
+  },
+  {
+    "url": "https://capd.mit.edu/resources/linkedin/",
+    "title": "MIT CAPD: Build your LinkedIn profile",
+    "category": "Job search and referrals",
+    "summary": "MIT career office guide to setting up a LinkedIn profile.",
+    "pages": ["advice/projects/portfolio"]
+  },
+  {
+    "url": "https://capd.mit.edu/resources/choosing-between-job-offers/",
+    "title": "MIT CAPD: Choosing between job offers",
+    "category": "Job search and referrals",
+    "summary": "A worksheet for rating what matters and scoring each job offer.",
+    "pages": ["advice/getting-hired/first-full-time-role"]
+  },
+  {
+    "url": "https://capd.mit.edu/channels/negotiate-job-offers/",
+    "title": "MIT CAPD: Negotiate job offers",
+    "category": "Job search and referrals",
+    "summary": "MIT's steps for negotiating a job offer and which terms usually move.",
+    "pages": [
+      "advice/getting-hired/first-full-time-role",
+      "advice/resume/quick-setup"
+    ]
+  },
+  {
+    "url": "https://ecs.osu.edu/employers/recruiting-guidelines-policies/hiring-students",
+    "title": "Ohio State Engineering: Hiring students",
+    "category": "Job search and referrals",
+    "summary": "Ohio State's rules for employers on offer deadlines and fall recruiting.",
+    "pages": ["advice/getting-hired/first-full-time-role"]
+  },
+  {
+    "url": "https://ecs.osu.edu/students/empower-support/job-offer-guidelines",
+    "title": "Ohio State Engineering: Job offer guidelines",
+    "category": "Job search and referrals",
+    "summary": "Ohio State advice on handling offers and asking for an extension.",
+    "pages": ["advice/getting-hired/first-full-time-role"]
+  },
+  {
+    "url": "https://www.opm.gov/policy-data-oversight/hiring-information/students-recent-graduates/",
+    "title": "OPM: Students and recent graduates",
+    "category": "Job search and referrals",
+    "summary": "OPM policy page with the rules behind the federal Pathways programs.",
+    "pages": ["help", "help/job-boards"]
+  },
+  {
+    "url": "https://careerdevelopment.princeton.edu/internships-jobs/recruiting-timelines",
+    "title": "Princeton: Recruiting timelines",
+    "category": "Job search and referrals",
+    "summary": "When employers recruit by industry, and advice to apply within two weeks.",
+    "pages": [
+      "advice/getting-hired",
+      "advice/getting-hired/first-full-time-role"
+    ]
+  },
+  {
+    "url": "https://github.com/SimplifyJobs/New-Grad-Positions",
+    "title": "SimplifyJobs: New-Grad-Positions",
+    "category": "Job search and referrals",
+    "summary": "GitHub list of new-grad job postings, with a hardware engineering section.",
+    "pages": [
+      "advice/getting-hired/first-full-time-role",
+      "help/job-boards",
+      "help/resources"
+    ]
+  },
+  {
+    "url": "https://github.com/SimplifyJobs/Summer2027-Internships",
+    "title": "SimplifyJobs: Summer2027-Internships",
+    "category": "Job search and referrals",
+    "summary": "GitHub list of summer 2027 internship postings, updated as companies open roles.",
+    "pages": [
+      "advice/getting-hired/first-internship",
+      "help/job-boards",
+      "help/resources"
+    ]
+  },
+  {
+    "url": "https://career.clemson.edu/jobs/texas-instruments-ti-career-accelerator-program-software-engineer/",
+    "title": "Texas Instruments: Career Accelerator Program software engineer posting",
+    "category": "Job search and referrals",
+    "summary": "A TI new-grad software engineer posting with degree, GPA and language requirements.",
+    "pages": [
+      "advice/getting-hired/first-full-time-role",
+      "advice/projects/software"
+    ]
+  },
+  {
+    "url": "https://careers.ti.com/en/sites/CX/pages/students-new-grads",
+    "title": "Texas Instruments: Students and new grads",
+    "category": "Job search and referrals",
+    "summary": "TI's internships and new-grad roles, including its Career Accelerator Program.",
+    "pages": [
+      "advice/getting-hired/first-full-time-role",
+      "advice/projects/software"
+    ]
+  },
+  {
+    "url": "https://coop.apsc.ubc.ca/undergraduate/current-students/undergraduate-students-terms-and-conditions",
+    "title": "UBC Engineering co-op: Terms and conditions",
+    "category": "Job search and referrals",
+    "summary": "Rules for undergraduate students in UBC's engineering co-op program.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://www.eng.ufl.edu/undergraduate/programs-and-partnerships/center-for-experiential-learning/general-career-services/",
+    "title": "UF Engineering: General career services",
+    "category": "Job search and referrals",
+    "summary": "University of Florida engineering career services and its employer offer deadline policy.",
+    "pages": ["advice/getting-hired/first-full-time-role"]
+  },
+  {
+    "url": "https://www.usajobs.gov/",
+    "title": "USAJOBS",
+    "category": "Job search and referrals",
+    "summary": "The US federal government's official job listings site.",
+    "pages": ["help", "help/job-boards"]
+  },
+  {
+    "url": "https://www.nasa.gov/learning-resources/internship-programs/",
+    "title": "NASA Internship Programs",
+    "category": "Job search and referrals",
+    "summary": "NASA's OSTEM and Pathways internships, with OSTEM applications through NASA STEM Gateway.",
+    "pages": ["help/job-boards"]
+  },
+  {
+    "url": "https://usajobshelp.opm.gov/hc/en-us/articles/53059807800979-What-are-hiring-paths-and-how-can-they-help-you",
+    "title": "USAJOBS Help: What are hiring paths?",
+    "category": "Job search and referrals",
+    "summary": "Explains the federal hiring paths that limit who can apply.",
+    "pages": ["help"]
+  },
+  {
+    "url": "https://opm.usajobs.gov/hiringpath/recentgraduates/",
+    "title": "USAJOBS: Pathways for recent graduates",
+    "category": "Job search and referrals",
+    "summary": "Federal Pathways program for people who recently finished a degree.",
+    "pages": [
+      "advice/getting-hired/first-full-time-role",
+      "help",
+      "help/job-boards"
+    ]
+  },
+  {
+    "url": "https://opm.usajobs.gov/hiringpath/students/",
+    "title": "USAJOBS: Pathways internships for students",
+    "category": "Job search and referrals",
+    "summary": "The federal Pathways internship program for students currently enrolled in school.",
+    "pages": ["help"]
+  },
+  {
+    "url": "https://www.uscis.gov/",
+    "title": "USCIS",
+    "category": "Job search and referrals",
+    "summary": "US Citizenship and Immigration Services, the agency for immigration and work authorization.",
+    "pages": ["advice"]
+  },
+  {
+    "url": "https://ocs.yale.edu/industry-hiring-timelines/",
+    "title": "Yale: Industry hiring timelines",
+    "category": "Job search and referrals",
+    "summary": "Hiring seasons by industry, including fall and winter peaks for engineering.",
+    "pages": [
+      "advice/getting-hired/first-full-time-role",
+      "advice/resume/quick-setup"
+    ]
+  },
+  {
+    "url": "https://www.newyorkfed.org/research/staff_reports/sr568",
+    "title": "New York Fed: Do informal referrals lead to better matches?",
+    "category": "Job search and referrals",
+    "summary": "One firm's data: referrals were 6% of applicants and 29% of hires.",
+    "pages": ["advice/getting-hired/networking"]
+  },
+  {
+    "url": "https://www.globenewswire.com/news-release/2016/10/05/877340/0/en/New-Research-Shows-Only-One-in-100-Candidates-is-Hired-Referred-Candidates-Nearly-10-Times-as-Likely-to-be-Hired-as-Applicants.html",
+    "title": "Lever: Referred candidates nearly 10 times as likely to be hired",
+    "category": "Job search and referrals",
+    "summary": "Lever, 2016: referrals hired 1 in 16, career-site applicants 1 in 152.",
+    "pages": ["advice/getting-hired/networking"]
+  },
+  {
+    "url": "https://www.csus.edu/college/business-administration/graduate/_internal/_docs/informational-interview_tips-2.pdf",
+    "title": "Sacramento State: Informational interview tips",
+    "category": "Job search and referrals",
+    "summary": "Career tips: 20 to 30 minutes, name your source, ask for information.",
+    "pages": ["advice/getting-hired/networking"]
+  },
+  {
+    "url": "https://www.scheller.gatech.edu/_files/pdf-pages/undergraduate/Informational-Interview.pdf",
+    "title": "Georgia Tech: Informational interview handout",
+    "category": "Job search and referrals",
+    "summary": "Georgia Tech handout: never ask for a job in an informational interview.",
+    "pages": ["advice/getting-hired/networking"]
+  },
+  {
+    "url": "https://careerhub.students.duke.edu/blog/2025/01/28/informational-interviews-connecting-to-learn-and-build-relationships/",
+    "title": "Duke: Informational interviews, connecting to learn",
+    "category": "Job search and referrals",
+    "summary": "Duke's career hub on why mutual-contact requests get more replies.",
+    "pages": ["advice/getting-hired/networking"]
+  },
+  {
+    "url": "https://www.training.nih.gov/documents/25/2024_Informational_Interview_Handout.pdf",
+    "title": "NIH: Informational interview handout",
+    "category": "Job search and referrals",
+    "summary": "NIH training office handout on requesting and following up an informational interview.",
+    "pages": ["advice/getting-hired/networking"]
+  },
+  {
+    "url": "https://www.reddit.com/comments/1rmcm69/",
+    "title": "Reddit: Referral requests from strangers",
+    "category": "Job search and referrals",
+    "summary": "A recruiter and engineers on what happens to referral requests from strangers.",
+    "pages": ["advice/getting-hired/networking"]
+  },
+  {
+    "url": "https://www.teamblind.com/post/iMeq6kEY",
+    "title": "Blind: How to ask for a referral, from an engineering manager",
+    "category": "Job search and referrals",
+    "summary": "An engineering manager on what a referral request has to contain.",
+    "pages": ["advice/getting-hired/networking"]
+  },
+  {
+    "url": "https://arxiv.org/pdf/2601.10726",
+    "title": "arXiv: A study of referral requests on Blind",
+    "category": "Job search and referrals",
+    "summary": "Preprint: Blind referral requests, 2024. 54% got no offer, 31% no comments.",
+    "pages": ["advice/getting-hired/networking"]
+  },
+  {
+    "url": "https://naceweb.org/talent-acquisition/student-attitudes/more-than-half-of-students-attended-a-career-fair-in-the-past-12-months",
+    "title": "NACE: More than half of students attended a career fair",
+    "category": "Job search and referrals",
+    "summary": "NACE 2024: over 45% of fair attendees got interviews, nearly 25% offers.",
+    "pages": ["advice/getting-hired/networking"]
+  },
+  {
+    "url": "https://naceweb.org/talent-acquisition/internships/in-person-activities-more-effective-than-virtual-ones-for-recruiting-interns",
+    "title": "NACE: In-person activities more effective for recruiting interns",
+    "category": "Job search and referrals",
+    "summary": "NACE 2025: over two thirds of employers rated in-person fairs effective.",
+    "pages": ["advice/getting-hired/networking"]
+  },
+  {
+    "url": "https://we25.swe.org/schedule-highlight/career-fair/",
+    "title": "SWE: The WE25 career fair",
+    "category": "Job search and referrals",
+    "summary": "SWE's 2025 conference career fair, with hundreds of organizations.",
+    "pages": [
+      "advice/forever-learning/societies",
+      "advice/getting-hired/networking"
+    ]
+  },
+  {
+    "url": "https://www.energy.gov/node/4848689",
+    "title": "Department of Energy: The 2025 NSBE convention",
+    "category": "Job search and referrals",
+    "summary": "Federal event listing for NSBE's 2025 convention, with 400-plus career fair exhibitors.",
+    "pages": [
+      "advice/forever-learning/societies",
+      "advice/getting-hired/networking"
+    ]
+  },
+  {
+    "url": "https://www.scu.edu/careercenter/toolkit/networking/alumnitool/",
+    "title": "Santa Clara: The LinkedIn alumni tool",
+    "category": "Job search and referrals",
+    "summary": "How to filter school alumni on LinkedIn by employer, role, major.",
+    "pages": ["advice/getting-hired/networking"]
+  },
+  {
+    "url": "https://www.axios.com/2024/09/24/greenhouse-job-ghosting-hiring-rejection-email",
+    "title": "Axios: Greenhouse on ghost jobs",
+    "category": "Job search and referrals",
+    "summary": "Greenhouse's own data: 18 to 22% of quarterly postings are ghost jobs.",
+    "pages": ["help/job-boards"]
+  },
+  {
+    "url": "https://allwork.space/2021/11/what-happened-to-entry-level-jobs-job-seekers-baffled-by-requirements/",
+    "title": "Allwork: What happened to entry-level jobs",
+    "category": "Job search and referrals",
+    "summary": "LinkedIn analysis, 3.8 million postings: 35% of entry-level roles wanted 3-plus years.",
+    "pages": ["help/job-boards"]
+  },
+  {
+    "url": "https://www.ftc.gov/news-events/news/press-releases/2024/12/new-ftc-data-show-skyrocketing-consumer-reports-about-game-online-job-scams",
+    "title": "FTC: Consumer reports about online job scams",
+    "category": "Job search and referrals",
+    "summary": "FTC: job-scam losses over $220 million in the first half of 2024.",
+    "pages": ["help/job-boards"]
+  },
+  {
+    "url": "https://www.indeed.com/hire/c/info/job-boards",
+    "title": "Indeed: How job postings reach Indeed",
+    "category": "Job search and referrals",
+    "summary": "Indeed's own explanation that it indexes outside postings and hosts direct posts.",
+    "pages": ["help/job-boards"]
+  },
+  {
+    "url": "https://www.cc.gatech.edu/sites/default/files/documents/2024/Networking-Tips-Word-Doc.docx",
+    "title": "Georgia Tech: Networking tips",
+    "category": "Job search and referrals",
+    "summary": "A Georgia Tech handout on LinkedIn keywords, photos, and outreach.",
+    "pages": ["advice/projects/portfolio"]
+  },
+  {
+    "url": "https://www.linkedin.com/help/linkedin/answer/a507508/let-recruiters-know-you-re-open-to-work?lang=en",
+    "title": "LinkedIn Help: Open to Work",
+    "category": "Job search and referrals",
+    "summary": "LinkedIn's own page on Open to Work and who sees it.",
+    "pages": ["advice/projects/portfolio"]
+  },
+  {
+    "url": "https://career.berkeley.edu/prepare-for-success/networking/using-linkedin/",
+    "title": "UC Berkeley: Using LinkedIn",
+    "category": "Job search and referrals",
+    "summary": "Berkeley's LinkedIn guide for students, with a profile checklist.",
+    "pages": ["advice/projects/portfolio"]
+  },
+  {
+    "url": "https://hkn.ieee.org/about/benefits",
+    "title": "IEEE-HKN: Benefits",
+    "category": "Job search and referrals",
+    "summary": "HKN's own list of member benefits, including a claim about employer recruiting.",
+    "pages": ["advice/forever-learning/societies"]
+  },
+  {
+    "url": "https://annualreport25.nsbe.org/events/",
+    "title": "NSBE: 2025 annual report, events",
+    "category": "Job search and referrals",
+    "summary": "Attendance at NSBE's 2025 convention.",
+    "pages": ["advice/forever-learning/societies"]
+  },
+  {
+    "url": "https://www.accessnewswire.com/newsroom/en/education/2025-shpe-national-convention-brings-12-000-attendees-to-philadelphia-for-a-stem-career-f-1070160",
+    "title": "SHPE: The 2025 national convention",
+    "category": "Job search and referrals",
+    "summary": "SHPE's press release on its 2025 convention and career fair.",
+    "pages": ["advice/forever-learning/societies"]
+  },
+  {
+    "url": "https://www.resumebuilder.com/3-in-10-companies-currently-have-fake-job-posting-listed/",
+    "title": "Resume Builder: 3 in 10 companies have fake job postings listed",
+    "category": "Job search and referrals",
+    "summary": "May 2024 survey: 40% of 1,641 hiring managers posted a fake job.",
+    "pages": ["help/job-boards"]
+  },
+  {
+    "url": "https://www.greenhouse.com/newsroom/greenhouse-launches-dream-job-to-fix-job-hunting-and-boost-candidates-chances-of-getting-hired",
+    "title": "Greenhouse: Applications per job up 102%",
+    "category": "Job search and referrals",
+    "summary": "Greenhouse's June 2025 release with its applications-per-job figure.",
+    "pages": ["advice/getting-hired/job-market"]
+  },
+  {
+    "url": "https://www.designreview.byu.edu/collections/more-than-a-profile",
+    "title": "BYU Design Review: More than a profile",
+    "category": "Job search and referrals",
+    "summary": "A BYU engineering article on recruiters searching LinkedIn for skills such as MATLAB or CAD.",
+    "pages": ["advice/projects/portfolio"]
+  },
+  {
+    "url": "https://capd.mit.edu/resources/conducting-informational-interviews/",
+    "title": "MIT CAPD: Conducting informational interviews",
+    "category": "Job search and referrals",
+    "summary": "Career-center guide to informational interviews, including thank-you notes.",
+    "pages": ["advice/getting-hired/networking"]
+  },
+  {
+    "url": "https://userapps.support.sap.com/sap/support/knowledge/en/2609981",
+    "title": "SAP SuccessFactors: Refer a Friend error when candidate already applied",
+    "category": "Job search and referrals",
+    "summary": "Knowledge article: an applicant cannot also be referred to that requisition.",
+    "pages": ["advice/getting-hired"]
+  },
+  {
+    "url": "https://www.linkedin.com/help/linkedin/answer/a563153",
+    "title": "LinkedIn Help: Personalize invitations to connect",
+    "category": "Job search and referrals",
+    "summary": "LinkedIn help article on personalized connection notes.",
+    "pages": ["advice/getting-hired/networking"]
+  },
+  {
+    "url": "https://www.analog.com/en/careers/student-resources.html",
+    "title": "Analog Devices: Student resources",
+    "category": "Job search and referrals",
+    "summary": "Analog Devices on its internships, co-ops, and example intern projects.",
+    "pages": ["advice/projects/career-paths"]
+  },
+  {
+    "url": "https://selinc.com/company/careers/sel-internships/",
+    "title": "SEL: Internships",
+    "category": "Job search and referrals",
+    "summary": "Schweitzer Engineering Laboratories on its year-round internships.",
+    "pages": ["advice/projects/career-paths"]
+  },
+  {
+    "url": "https://ecs.grainger.illinois.edu/student-resources/offers/evaluation",
+    "title": "Illinois Engineering: Evaluate your offer",
+    "category": "Job search and referrals",
+    "summary": "Illinois Engineering's guide to weighing a job or internship offer.",
+    "pages": ["advice/getting-hired/first-full-time-role"]
+  },
+  {
+    "url": "https://ecs.grainger.illinois.edu/student-resources/offers/negotiation",
+    "title": "Illinois Engineering: Offer negotiation",
+    "category": "Job search and referrals",
+    "summary": "Illinois Engineering's guide to negotiating a job offer.",
+    "pages": ["advice/getting-hired/first-full-time-role"]
+  },
+  {
+    "url": "https://ecs.grainger.illinois.edu/student-resources/offers/reneging",
+    "title": "Illinois Engineering: Backing out of an accepted offer",
+    "category": "Job search and referrals",
+    "summary": "Why reneging on an accepted offer can cost a student career-center access.",
+    "pages": ["advice/getting-hired/first-full-time-role"]
+  },
+  {
+    "url": "https://careerservices.fas.harvard.edu/resources/harvard-college-evaluating-and-negotiating-job-and-internship-offers/",
+    "title": "Harvard: Evaluating and negotiating offers",
+    "category": "Job search and referrals",
+    "summary": "Harvard's guide to evaluating and negotiating job and internship offers.",
+    "pages": ["advice/getting-hired/first-full-time-role"]
+  },
+  {
+    "url": "https://spectrum.ieee.org/how-to-negotiate-your-salary",
+    "title": "IEEE Spectrum: How to negotiate your salary",
+    "category": "Job search and referrals",
+    "summary": "An IEEE Spectrum careers column on preparing for a salary negotiation.",
+    "pages": ["advice/getting-hired/first-full-time-role"]
+  },
+  {
+    "url": "https://capd.mit.edu/recruiting-guidelines-for-students/",
+    "title": "MIT CAPD: Recruiting guidelines for students",
+    "category": "Job search and referrals",
+    "summary": "MIT's rules for students on interviews, negotiating in good faith, and accepting offers.",
+    "pages": ["advice/getting-hired/first-full-time-role"]
+  },
+  {
+    "url": "https://ece.gatech.edu/current-students/coop-internship-opportunities",
+    "title": "Georgia Tech ECE: Co-op and internship opportunities",
+    "category": "Job search and referrals",
+    "summary": "How Georgia Tech's five-year co-op program alternates study and work terms.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://careers.northeastern.edu/co-op-information/",
+    "title": "Northeastern: Co-op information",
+    "category": "Job search and referrals",
+    "summary": "Northeastern's requirements before a student can search for a co-op.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://engineering.purdue.edu/ECE/Academics/Undergraduates/Enrichment/Co-Op",
+    "title": "Purdue ECE: Cooperative education program",
+    "category": "Job search and referrals",
+    "summary": "Purdue ECE's co-op program for undergraduates.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://www.nsf.gov/funding/initiatives/reu/students",
+    "title": "NSF: REU information for students",
+    "category": "Job search and referrals",
+    "summary": "NSF's guide to Research Experiences for Undergraduates sites.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://science.osti.gov/wdts/suli",
+    "title": "DOE: SULI internships",
+    "category": "Job search and referrals",
+    "summary": "DOE's undergraduate research internships at national labs.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://www.nasa.gov/careers/pathways/",
+    "title": "NASA: Pathways internships",
+    "category": "Job search and referrals",
+    "summary": "NASA's internship program that leads to full-time roles after graduation.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://www.onr.navy.mil/education-outreach/undergraduate-graduate/nreip-naval-internship",
+    "title": "ONR: NREIP naval internship",
+    "category": "Job search and referrals",
+    "summary": "The Navy's 10-week research internship for undergraduate and graduate students.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://afresearchlab.com/air-force-research-laboratory-afrl-scholars-program/",
+    "title": "AFRL Scholars Program",
+    "category": "Job search and referrals",
+    "summary": "Paid internships at Air Force Research Laboratory sites.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://spectrum.ieee.org/improving-interview-odds",
+    "title": "IEEE Spectrum: Improve your chances of an interview",
+    "category": "Job search and referrals",
+    "summary": "A careers column on why a referral stands out among AI-filled applications.",
+    "pages": ["advice/getting-hired/networking"]
+  },
+  {
+    "url": "https://capd.mit.edu/resources/suggested-questions-for-informational-interviewing/",
+    "title": "MIT CAPD: Informational interview questions",
+    "category": "Job search and referrals",
+    "summary": "MIT's list of questions to ask in an informational interview.",
+    "pages": ["advice/getting-hired/networking"]
+  },
+  {
+    "url": "https://capd.mit.edu/resources/linkedin-2/",
+    "title": "MIT CAPD: LinkedIn profiles and summaries",
+    "category": "Job search and referrals",
+    "summary": "MIT's five steps to a LinkedIn profile.",
+    "pages": ["advice/getting-hired/networking"]
+  },
+  {
+    "url": "https://sites.gatech.edu/careercenterdev/files/2024/09/Networking-and-Online-Persona_Career-Guide.pdf",
+    "title": "Georgia Tech: Networking and your virtual identity",
+    "category": "Job search and referrals",
+    "summary": "Georgia Tech's guide to outreach messages, follow-ups, and an online profile.",
+    "pages": ["advice/getting-hired/networking"]
+  },
+  {
+    "url": "https://www.reddit.com/r/ECE/comments/1mojjy7/how_do_you_actually_get_referralsinterviews_for/",
+    "title": "r/ECE: Getting referrals for hardware internships",
+    "category": "Job search stories from students",
+    "summary": "Thread on how students get referrals and interviews for hardware internships.",
+    "pages": ["advice/getting-hired", "advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://www.reddit.com/r/ECE/comments/1vscm44/how_bad_is_it_to_graduate_with_zero_internships/",
+    "title": "r/ECE: Graduating with zero internships",
+    "category": "Job search stories from students",
+    "summary": "A graduate with projects, no internships: about 500 applications, 2 interviews.",
+    "pages": ["advice/getting-hired", "advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://www.reddit.com/r/ECE/comments/1q4oypq/how_to_get_internships_in_college_without_much/",
+    "title": "r/ECE: Internships without much experience",
+    "category": "Job search stories from students",
+    "summary": "Thread on how students with little experience get internships right now.",
+    "pages": [
+      "advice/getting-hired/first-internship",
+      "advice/projects/hardware"
+    ]
+  },
+  {
+    "url": "https://www.reddit.com/r/ECE/comments/1vt6jvy/19f_need_to_get_my_resume_politely_roasted_for/",
+    "title": "r/ECE: Resume review for summer 2027 internships",
+    "category": "Job search stories from students",
+    "summary": "A student asks for resume feedback, and reviewers discuss kit projects.",
+    "pages": ["advice/projects", "advice/projects/hardware"]
+  },
+  {
+    "url": "https://www.reddit.com/r/ElectricalEngineering/comments/1ub50g2/where_do_i_apply_now_with_constant_rejection_and/",
+    "title": "r/ElectricalEngineering: Constant rejection after graduating",
+    "category": "Job search stories from students",
+    "summary": "An unemployed EE graduate asks where to apply after constant rejections.",
+    "pages": [
+      "advice/getting-hired/first-internship",
+      "advice/projects/hardware"
+    ]
+  },
+  {
+    "url": "https://www.reddit.com/r/ElectricalEngineering/comments/1s21ek8/how_bad_is_it_to_graduate_with_no_internships/",
+    "title": "r/ElectricalEngineering: Graduating with no internships",
+    "category": "Job search stories from students",
+    "summary": "Thread on graduating without internships or projects and how to recover.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://www.reddit.com/r/ElectricalEngineering/comments/1oyd4a7/how_much_does_gpa_matter_when_applying_for/",
+    "title": "r/ElectricalEngineering: How much GPA matters",
+    "category": "Job search stories from students",
+    "summary": "Thread on how much GPA matters when applying for internships and jobs.",
+    "pages": ["advice/getting-hired"]
+  },
+  {
+    "url": "https://www.reddit.com/r/ElectricalEngineering/comments/1puvlji/how_to_not_waste_my_undergrad_2nd_year_with_no/",
+    "title": "r/ElectricalEngineering: How to not waste my undergrad",
+    "category": "Job search stories from students",
+    "summary": "A second-year student with no network or experience asks what's next.",
+    "pages": [
+      "advice/getting-hired/first-internship",
+      "advice/projects/hardware"
+    ]
+  },
+  {
+    "url": "https://www.reddit.com/r/ElectricalEngineering/comments/1v36dj4/best_ways_to_get_an_internship_as_2nd_year_ee/",
+    "title": "r/ElectricalEngineering: Internship as a second-year EE",
+    "category": "Job search stories from students",
+    "summary": "Thread with advice for second-year EE students looking for an internship.",
+    "pages": ["advice/getting-hired", "advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://www.reddit.com/r/ElectricalEngineering/comments/1wjc383/how_to_get_into_internships_without_actually/",
+    "title": "r/ElectricalEngineering: Internships before engineering classes",
+    "category": "Job search stories from students",
+    "summary": "A community college student explains how they landed two EE internships early.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://www.reddit.com/r/ElectricalEngineering/comments/1vvqcgw/lack_of_2027_new_grad_jobs/",
+    "title": "r/ElectricalEngineering: Lack of 2027 new grad jobs",
+    "category": "Job search stories from students",
+    "summary": "A student sees many summer 2027 internship posts but few new-grad roles.",
+    "pages": [
+      "advice/getting-hired/first-full-time-role",
+      "advice/getting-hired/first-internship",
+      "advice/getting-hired/job-market"
+    ]
+  },
+  {
+    "url": "https://www.reddit.com/r/ElectricalEngineering/comments/1wj9mw3/how_easy_it_is_to_find_a_job_for_a_new_grad_if_my/",
+    "title": "r/ElectricalEngineering: New grad job with low expectations",
+    "category": "Job search stories from students",
+    "summary": "A new graduate asks how hard a search is with modest expectations.",
+    "pages": [
+      "advice/getting-hired/first-full-time-role",
+      "advice/getting-hired/first-internship",
+      "advice/getting-hired/job-market",
+      "help/job-boards"
+    ]
+  },
+  {
+    "url": "https://www.reddit.com/r/ElectricalEngineering/comments/1qsr99n/am_i_cooked_if_i_dont_have_an_internship_summer/",
+    "title": "r/ElectricalEngineering: No internship as a junior",
+    "category": "Job search stories from students",
+    "summary": "Thread on what a junior can do without a summer internship.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://www.reddit.com/r/ElectricalEngineering/comments/1ndmj2u/could_anyone_recommend_a_project_for_ee_majors/",
+    "title": "r/ElectricalEngineering: Resume projects for EE majors",
+    "category": "Job search stories from students",
+    "summary": "Thread with project ideas that EE students can put on a resume.",
+    "pages": ["advice/getting-hired/first-internship", "advice/projects"]
+  },
+  {
+    "url": "https://www.reddit.com/r/ElectricalEngineering/comments/1u0q7n5/undergraduate_research/",
+    "title": "r/ElectricalEngineering: Undergraduate research",
+    "category": "Job search stories from students",
+    "summary": "Thread on how EE students find and use undergraduate research positions.",
+    "pages": ["advice/projects/hardware"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringStudents/comments/1qbbfra/internship_or_research/",
+    "title": "r/EngineeringStudents: Internship or research?",
+    "category": "Job search stories from students",
+    "summary": "Thread weighing an internship against an undergraduate research position.",
+    "pages": ["advice/projects/hardware"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringStudents/comments/1v5lag3/no_internship_am_i_cooked/",
+    "title": "r/EngineeringStudents: No internship",
+    "category": "Job search stories from students",
+    "summary": "Students discuss what having no internship means for a job search.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringStudents/comments/1odiu6l/personal_projects_that_got_you_hired_for/",
+    "title": "r/EngineeringStudents: Projects that got you hired",
+    "category": "Job search stories from students",
+    "summary": "Students list the personal projects that helped them get internships.",
+    "pages": ["advice/projects", "advice/resume/quick-setup"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringStudents/comments/1ridrqh/im_a_sophomore_right_now_will_i_ever_get_a_job_if/",
+    "title": "r/EngineeringStudents: Sophomore with no internship",
+    "category": "Job search stories from students",
+    "summary": "A sophomore asks whether missing one summer internship hurts their job chances.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://x.com/3184_farm_ridge/status/1986623534236406115",
+    "title": "X: @3184_farm_ridge on a junior's search",
+    "category": "Job search stories from students",
+    "summary": "A parent describes their junior EE student's internship search.",
+    "pages": ["advice/getting-hired"]
+  },
+  {
+    "url": "https://x.com/ApplyBoltApp/status/2104728614407164037",
+    "title": "X: @ApplyBoltApp on an Astranis internship",
+    "category": "Job search stories from students",
+    "summary": "A post announcing that Astranis is hiring a summer hardware intern.",
+    "pages": ["advice/projects/hardware"]
+  },
+  {
+    "url": "https://x.com/BackwoodsEnginr/status/2061281029155918079",
+    "title": "X: @BackwoodsEnginr on KiCad",
+    "category": "Job search stories from students",
+    "summary": "An EE and RF engineer with 35-plus years of experience recommends KiCad.",
+    "pages": ["advice/projects/hardware"]
+  },
+  {
+    "url": "https://x.com/blind_via/status/2061016080370573758",
+    "title": "X: @blind_via on Altium student licenses",
+    "category": "Job search stories from students",
+    "summary": "A post telling engineering students they can request a free Altium license.",
+    "pages": ["advice/projects/hardware"]
+  },
+  {
+    "url": "https://x.com/CodeWithOnari/status/2006474598318252292",
+    "title": "X: @CodeWithOnari on hardware costs",
+    "category": "Job search stories from students",
+    "summary": "An EE student says parts cost keeps them from building hardware.",
+    "pages": ["advice/projects/hardware"]
+  },
+  {
+    "url": "https://x.com/ElectronJacob/status/2098924357359677471",
+    "title": "X: @ElectronJacob on silicon carbide inverters",
+    "category": "Job search stories from students",
+    "summary": "Silicon carbide modules replacing silicon in inverters for faster switching.",
+    "pages": ["advice/projects/hardware"]
+  },
+  {
+    "url": "https://x.com/Faceofboe5/status/2050228727410311464",
+    "title": "X: @Faceofboe5 on 10-year entry-level ads",
+    "category": "Job search stories from students",
+    "summary": "A post on entry-level EE ads asking for 10-plus years.",
+    "pages": ["advice/projects/hardware"]
+  },
+  {
+    "url": "https://x.com/gm16108/status/1989798011690783186",
+    "title": "X: @gm16108 on entry-level jobs",
+    "category": "Job search stories from students",
+    "summary": "An AI company parent describes the entry-level market and referring their child.",
+    "pages": ["advice/getting-hired"]
+  },
+  {
+    "url": "https://x.com/Gradient9/status/2017492024698732721",
+    "title": "X: @Gradient9 on a friend with no internship",
+    "category": "Job search stories from students",
+    "summary": "A student's EE friend at a more prestigious school has no internship.",
+    "pages": ["advice/getting-hired"]
+  },
+  {
+    "url": "https://x.com/HiddenCircuit/status/2030726124863467683",
+    "title": "X: @HiddenCircuit on 200 rejections",
+    "category": "Job search stories from students",
+    "summary": "An EE graduate describes 200-plus rejections and borrowing industrial software to learn.",
+    "pages": ["advice/getting-hired"]
+  },
+  {
+    "url": "https://x.com/karanbhilatiya/status/2078038754368065816",
+    "title": "X: @karanbhilatiya on hardware's opportunity cost",
+    "category": "Job search stories from students",
+    "summary": "A post arguing hardware is harder to learn and slower than software.",
+    "pages": ["advice/projects", "advice/projects/hardware"]
+  },
+  {
+    "url": "https://x.com/OnosSpeaks/status/2001938854585270650",
+    "title": "X: @OnosSpeaks on bench skills",
+    "category": "Job search stories from students",
+    "summary": "A post urging EE students to learn oscilloscopes and other bench tools.",
+    "pages": [
+      "advice/getting-hired/first-internship",
+      "advice/projects/hardware"
+    ]
+  },
+  {
+    "url": "https://x.com/princess_yfe/status/2052407178993029236",
+    "title": "X: @princess_yfe on hardware on a budget",
+    "category": "Job search stories from students",
+    "summary": "Student-budget hardware tips using free tools and lab gear.",
+    "pages": [
+      "advice/getting-hired/first-internship",
+      "advice/projects/hardware"
+    ]
+  },
+  {
+    "url": "https://x.com/PythonHub/status/2093477553554006095",
+    "title": "X: @PythonHub on the Summer2027-Internships list",
+    "category": "Job search stories from students",
+    "summary": "A post pointing to the SimplifyJobs list of summer 2027 internships.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://x.com/RubenGonVera/status/2092305849330852031",
+    "title": "X: @RubenGonVera on standing out as a new grad",
+    "category": "Job search stories from students",
+    "summary": "An EE new grad asks how to stand out for target roles.",
+    "pages": ["advice/projects"]
+  },
+  {
+    "url": "https://x.com/SogeKingu2000/status/2090407950410231918",
+    "title": "X: @SogeKingu2000 on starting as a lab technician",
+    "category": "Job search stories from students",
+    "summary": "An engineer describes going from lab technician to data center work.",
+    "pages": [
+      "advice/getting-hired/first-internship",
+      "advice/projects/hardware"
+    ]
+  },
+  {
+    "url": "https://x.com/sTYLz2021/status/2078043532250493266",
+    "title": "X: @sTYLz2021 on a first space industry job",
+    "category": "Job search stories from students",
+    "summary": "A senior working fast food asks how to land a space job.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://x.com/tech_withrobin/status/2094768485448536101",
+    "title": "X: @tech_withrobin on 1,285 engineering postings",
+    "category": "Job search stories from students",
+    "summary": "A digest summarizing 1,285 engineering job postings read in a single day.",
+    "pages": ["advice/projects/hardware"]
+  },
+  {
+    "url": "https://x.com/techwithvivian/status/1991690947277840422",
+    "title": "X: @techwithvivian on hardware interview resources",
+    "category": "Job search stories from students",
+    "summary": "An engineer notes how little public interview prep exists for hardware roles.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://x.com/techwithvivian/status/2004807338101026964",
+    "title": "X: @techwithvivian on hardware recruiting guides",
+    "category": "Job search stories from students",
+    "summary": "An engineer notes that hardware recruiting guides are scarce compared with software.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://x.com/thezachpendley/status/2001891601753497665",
+    "title": "X: @thezachpendley on entry-level requirements",
+    "category": "Job search stories from students",
+    "summary": "An engineer describes \"entry-level\" postings that ask for years of experience.",
+    "pages": [
+      "advice/getting-hired/first-full-time-role",
+      "advice/projects/hardware"
+    ]
+  },
+  {
+    "url": "https://x.com/TyskiDziku/status/2063929723323834812",
+    "title": "X: @TyskiDziku on putting parts together",
+    "category": "Job search stories from students",
+    "summary": "A student who knows electronics asks how to combine parts into designs.",
+    "pages": ["advice/projects"]
+  },
+  {
+    "url": "https://x.com/WRoykhan31606/status/2093004652883427489",
+    "title": "X: @WRoykhan31606 on an embedded portfolio",
+    "category": "Job search stories from students",
+    "summary": "A third-year EE asks what to learn and build for embedded roles.",
+    "pages": ["advice/projects"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringStudents/comments/1rrudb3/",
+    "title": "r/EngineeringStudents: An employer's view of a career fair booth",
+    "category": "Job search stories from students",
+    "summary": "An engineer staffed a booth, took about 100 resumes, picked 4.",
+    "pages": ["advice/getting-hired/networking"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1jlzly6/student_about_to_graduate_only_a_handful_of/",
+    "title": "r/EngineeringResumes: A handful of interviews after 100 applications",
+    "category": "Job search stories from students",
+    "summary": "An ECE senior with a few interviews after 100-plus applications.",
+    "pages": ["help/job-boards"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1in6orx/student_upcoming_computer_engineering_grad/",
+    "title": "r/EngineeringResumes: 280 applications, one interview",
+    "category": "Job search stories from students",
+    "summary": "A computer engineering student with one interview from about 280 applications.",
+    "pages": ["help/job-boards"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1jpre8s/student_upcoming_computer_engineering_grad_still/",
+    "title": "r/EngineeringResumes: 400 applications, still one interview",
+    "category": "Job search stories from students",
+    "summary": "The same student two months later, past 400 applications with one interview.",
+    "pages": ["help/job-boards"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringStudents/comments/118cye1/fulltime_electrical_engineering_job_search/",
+    "title": "r/EngineeringStudents: A full-time EE job search in aerospace and defense",
+    "category": "Job search stories from students",
+    "summary": "An EE alumnus whose six recruiter contacts led to three offers.",
+    "pages": ["help/job-boards"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1r4c3rv/0_yoe_i_received_an_offer_recently_i_graduated/",
+    "title": "r/EngineeringResumes: An EE graduate with no experience gets an offer",
+    "category": "Job search stories from students",
+    "summary": "An EE graduate with no work experience and an in-depth project portfolio.",
+    "pages": ["advice/projects/portfolio"]
+  },
+  {
+    "url": "https://futurism.com/the-byte/unemployed-man-ai-apply-5000-jobs-gets-20-interviews",
+    "title": "Futurism: 5,000 AI applications, 20 interviews",
+    "category": "Job search stories from students",
+    "summary": "Laid-off engineer's auto-apply run: 5,000 applications, 20 interviews, same as by hand.",
+    "pages": ["advice/getting-hired"]
+  },
+  {
+    "url": "https://barrgroup.com/embedded-systems/how-to/c-volatile-keyword",
+    "title": "Barr Group: How to use C's volatile keyword",
+    "category": "Interview prep",
+    "summary": "Nigel Jones explains when embedded C code needs the volatile keyword.",
+    "pages": ["advice/getting-hired/how-to-interview", "help/ai-use"]
+  },
+  {
+    "url": "https://par.nsf.gov/servlets/purl/10196170",
+    "title": "Behroozi et al. (2020): Does stress impact technical interview performance?",
+    "category": "Interview prep",
+    "summary": "PDF study comparing whiteboard coding with an observer against coding alone.",
+    "pages": ["advice/getting-hired/how-to-interview", "help/ai-use"]
+  },
+  {
+    "url": "https://careers.mines.edu/career-professional-development-workshops/",
+    "title": "Colorado School of Mines: Career workshops",
+    "category": "Interview prep",
+    "summary": "Mines career center workshops, including peer mock interviews.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://careers.mines.edu/interview-preparation/",
+    "title": "Colorado School of Mines: Interview preparation",
+    "category": "Interview prep",
+    "summary": "Mines career center guidance on preparing answers and researching employers.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://career.gatech.edu/graduate-job/interviewing/",
+    "title": "Georgia Tech: Interviewing for graduate students",
+    "category": "Interview prep",
+    "summary": "Georgia Tech career center interview guide, including how to approach technical questions.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://career.gatech.edu/undergrad-job-search/interviewing/",
+    "title": "Georgia Tech: Interviewing for undergraduate students",
+    "category": "Interview prep",
+    "summary": "Georgia Tech career center interview guide for undergraduates.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://www.hardwareinterviews.fyi/t/top-electrical-engineering-interview-questions/807",
+    "title": "Hardware FYI: Top electrical engineering interview questions",
+    "category": "Interview prep",
+    "summary": "Common electrical engineering interview questions collected by Hardware FYI.",
+    "pages": ["advice/getting-hired/how-to-interview", "advice/resume/cleanup"]
+  },
+  {
+    "url": "https://ecs.grainger.illinois.edu/student-resources/interviewing/fundamentals",
+    "title": "Illinois Engineering: Interview fundamentals",
+    "category": "Interview prep",
+    "summary": "Illinois engineering career services guide to interview types and how to prepare.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://ecs.grainger.illinois.edu/student-resources/interviewing/mock",
+    "title": "Illinois Engineering: Mock interview",
+    "category": "Interview prep",
+    "summary": "How to schedule a mock interview with Illinois engineering career services.",
+    "pages": ["advice/getting-hired/how-to-interview", "help/ai-use"]
+  },
+  {
+    "url": "https://ecs.grainger.illinois.edu/student-resources/interviewing/tips",
+    "title": "Illinois Engineering: Preparation tips",
+    "category": "Interview prep",
+    "summary": "Interview-day tips from Illinois engineering career services, including arrival time.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://career.engin.umich.edu/interviews/",
+    "title": "Michigan Engineering: Interviews",
+    "category": "Interview prep",
+    "summary": "University of Michigan engineering career center guide to interview formats and preparation.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://career.engin.umich.edu/phd-industry-job-search/",
+    "title": "Michigan Engineering: PhD industry job search",
+    "category": "Interview prep",
+    "summary": "Michigan guide to industry job searches, including technical interview talks.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://capd.mit.edu/resources/questions-to-ask-interviewer/",
+    "title": "MIT CAPD: Questions to ask an interviewer",
+    "category": "Interview prep",
+    "summary": "Sample questions to ask at an interview's end, from MIT's career office.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://capd.mit.edu/resources/the-star-method-for-behavioral-interviews/",
+    "title": "MIT CAPD: The STAR method",
+    "category": "Interview prep",
+    "summary": "MIT's guide to answering behavioral questions with STAR, with a worksheet.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/",
+    "title": "MIT OCW: 6.004 Computation Structures",
+    "category": "Interview prep",
+    "summary": "Free MIT course on building a processor from transistors and logic.",
+    "pages": [
+      "advice/forever-learning",
+      "advice/getting-hired/how-to-interview",
+      "roadmap"
+    ]
+  },
+  {
+    "url": "https://www.opm.gov/frequently-asked-questions/assessment-policy-faq/structured-interviews/how-do-structured-interviews-differ-from-other-types-of-job-interviews/",
+    "title": "OPM: How structured interviews differ",
+    "category": "Interview prep",
+    "summary": "OPM defines a structured interview and how it differs from other interviews.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://www.reddit.com/r/ECE/comments/1gmt5fg/microsoft_hardware_engineering_intern_interview/",
+    "title": "r/ECE: Microsoft hardware engineering intern interview",
+    "category": "Interview prep",
+    "summary": "A student describes the rounds and questions in a hardware internship interview.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://www.reddit.com/r/ElectricalEngineering/comments/1da96fe/frustrated_with_interview_practices/",
+    "title": "r/ElectricalEngineering: Frustrated with interview practices",
+    "category": "Interview prep",
+    "summary": "An EE describes interviews that keep escalating to harder technical questions.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://www.reddit.com/r/ElectricalEngineering/comments/15y0mnc/why_is_it_so_necessary_to_get_through_hard/",
+    "title": "r/ElectricalEngineering: Why hard technical interviews?",
+    "category": "Interview prep",
+    "summary": "Thread on why EE roles, even trainee positions, use hard technical interviews.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34968080/",
+    "title": "Sackett et al. (2022): Validity in personnel selection",
+    "category": "Interview prep",
+    "summary": "PubMed abstract of a 2022 review ranking hiring methods by predictive power.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://career.engin.umich.edu/technical-interviews",
+    "title": "Michigan Engineering: Technical interview resources",
+    "category": "Interview prep",
+    "summary": "Michigan's advice for technical interviews: think out loud, ask when stuck, use the whiteboard.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://capd.mit.edu/resources/a-guide-to-interview-timelines-and-structure/",
+    "title": "MIT CAPD: Interview timelines and structure",
+    "category": "Interview prep",
+    "summary": "MIT's overview of how interview timelines vary by company and industry.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://hdlbits.01xz.net/wiki/Main_Page",
+    "title": "HDLBits: Verilog practice",
+    "category": "Interview prep",
+    "summary": "Verilog practice problems that run in the browser.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://chipverify.com/interview-questions",
+    "title": "ChipVerify: Interview questions",
+    "category": "Interview prep",
+    "summary": "ASIC design and verification interview questions for digital roles.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://sites.gatech.edu/careercenterdev/files/2024/09/Interviewing_Career-Guide.pdf",
+    "title": "Georgia Tech: Interview Ready guide",
+    "category": "Interview prep",
+    "summary": "Georgia Tech's guide to interview formats, sample questions, and STAR answers.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://capd.mit.edu/resources/sample-interview-questions/",
+    "title": "MIT CAPD: Sample interview questions",
+    "category": "Interview prep",
+    "summary": "MIT's list of sample interview questions to practice with.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://github.com/mikinty/Hardware-Engineer-Interview-Questions",
+    "title": "GitHub: Hardware engineer interview questions",
+    "category": "Interview prep",
+    "summary": "A community list of hardware interview questions by topic.",
+    "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://www.bls.gov/ooh/architecture-and-engineering/electrical-and-electronics-engineers.htm",
+    "title": "BLS: Electrical and electronics engineers",
+    "category": "Pay and career data",
+    "summary": "Federal data on pay, outlook and duties for electrical and electronics engineers.",
+    "pages": [
+      "advice/forever-learning",
+      "advice/getting-hired/first-full-time-role",
+      "advice/getting-hired/job-market",
+      "advice/projects",
+      "advice/projects/career-paths",
+      "help",
+      "help/resources"
+    ]
+  },
+  {
+    "url": "https://www.irs.gov/publications/p15b",
+    "title": "IRS Publication 15-B: Fringe benefits",
+    "category": "Pay and career data",
+    "summary": "IRS rules on employer education help, tax-free up to $5,250 a year.",
+    "pages": [
+      "advice/forever-learning",
+      "advice/forever-learning/graduate-study"
+    ]
+  },
+  {
+    "url": "https://www.levels.fyi/",
+    "title": "Levels.fyi",
+    "category": "Pay and career data",
+    "summary": "Self-reported salary and total compensation data by company and level.",
+    "pages": [
+      "advice/getting-hired/first-full-time-role",
+      "help",
+      "help/resources"
+    ]
+  },
+  {
+    "url": "https://www.naceweb.org/job-market/compensation/",
+    "title": "NACE: Compensation",
+    "category": "Pay and career data",
+    "summary": "NACE data and reports on starting salaries for new college graduates.",
+    "pages": [
+      "advice/getting-hired/first-full-time-role",
+      "help",
+      "help/resources"
+    ]
+  },
+  {
+    "url": "https://www.naceweb.org/talent-acquisition/internships/intern-conversion-rate-hits-highest-mark-in-five-years",
+    "title": "NACE: Intern conversion rate hits five-year high",
+    "category": "Pay and career data",
+    "summary": "NACE data on how many interns received and accepted full-time offers, 2024-25.",
+    "pages": ["advice/getting-hired/first-full-time-role"]
+  },
+  {
+    "url": "https://www.naceweb.org/talent-acquisition/candidate-selection/internship-experience-often-the-deciding-factor-between-equal-candidates",
+    "title": "NACE: Internship experience decides between equal candidates",
+    "category": "Pay and career data",
+    "summary": "NACE Job Outlook 2026: attributes employers use to choose between equal candidates.",
+    "pages": [
+      "advice/getting-hired/first-full-time-role",
+      "advice/projects",
+      "advice/resume/walkthrough"
+    ]
+  },
+  {
+    "url": "https://ncees.org/exams/fe-exam/",
+    "title": "NCEES: FE exam",
+    "category": "Pay and career data",
+    "summary": "NCEES page on the Fundamentals of Engineering exam format and fee.",
+    "pages": ["advice/forever-learning", "advice/projects/career-paths"]
+  },
+  {
+    "url": "https://ncees.org/licensure/",
+    "title": "NCEES: Licensure",
+    "category": "Pay and career data",
+    "summary": "NCEES on the path to a PE license: degree, experience, two exams.",
+    "pages": ["advice/forever-learning", "help/resources"]
+  },
+  {
+    "url": "https://ncees.org/exams/pe-exam/electrical-and-computer/",
+    "title": "NCEES: PE Electrical and Computer exam",
+    "category": "Pay and career data",
+    "summary": "NCEES page on the three PE Electrical and Computer exams.",
+    "pages": ["advice/forever-learning", "advice/projects/career-paths"]
+  },
+  {
+    "url": "https://www.onetonline.org/link/summary/17-2071.00",
+    "title": "O*NET: Electrical engineers",
+    "category": "Pay and career data",
+    "summary": "Occupation profile listing tasks, skills, tools and pay for electrical engineers.",
+    "pages": ["advice/projects/career-paths", "help", "help/resources"]
+  },
+  {
+    "url": "https://www.onetonline.org/link/summary/17-2072.00",
+    "title": "O*NET: Electronics engineers",
+    "category": "Pay and career data",
+    "summary": "Occupation profile with tasks, tools, and reported titles for electronics engineers.",
+    "pages": ["advice/projects/career-paths"]
+  },
+  {
+    "url": "https://ece.gatech.edu/research/tigs",
+    "title": "Georgia Tech ECE: Technical interest groups",
+    "category": "Pay and career data",
+    "summary": "Georgia Tech's list of ECE areas and the topics under each.",
+    "pages": ["advice/projects/career-paths"]
+  },
+  {
+    "url": "https://www.nbcsandiego.com/news/business/money-report/college-grads-face-a-tough-and-competitive-job-market-this-year-expert-says/3827152/",
+    "title": "CNBC: College grads face a tough and competitive job market",
+    "category": "Pay and career data",
+    "summary": "May 2025: Handshake postings down 15% in a year, applications up 30%.",
+    "pages": ["advice/getting-hired/job-market", "help/job-boards"]
+  },
+  {
+    "url": "https://hkn.ieee.org/knowledge-base/what-is-the-cost-of-an-induction?seq_no=2",
+    "title": "IEEE-HKN: The cost of an induction",
+    "category": "Pay and career data",
+    "summary": "What IEEE-HKN induction includes.",
+    "pages": ["advice/forever-learning/societies"]
+  },
+  {
+    "url": "https://www.tbp.org/static/docs/ScholarInfoSheet26.pdf",
+    "title": "Tau Beta Pi: Scholarship information sheet",
+    "category": "Pay and career data",
+    "summary": "The senior-year scholarship: 254 awards from 532 applicants in 2025.",
+    "pages": ["advice/forever-learning/societies"]
+  },
+  {
+    "url": "https://www.tbp.org/static/docs/FellowshipInfoSheet26.pdf",
+    "title": "Tau Beta Pi: Fellowship information sheet",
+    "category": "Pay and career data",
+    "summary": "The graduate fellowship: 31 awards of $10,000 from 376 applicants in 2025.",
+    "pages": ["advice/forever-learning/societies"]
+  },
+  {
+    "url": "https://swe.org/membership/collegiate-membership/",
+    "title": "SWE: Collegiate membership",
+    "category": "Pay and career data",
+    "summary": "SWE's collegiate membership.",
+    "pages": ["advice/forever-learning/societies"]
+  },
+  {
+    "url": "https://nsbe.org/collegiate/",
+    "title": "NSBE: Collegiate membership",
+    "category": "Pay and career data",
+    "summary": "NSBE's collegiate membership, through a campus chapter or at large.",
+    "pages": ["advice/forever-learning/societies"]
+  },
+  {
+    "url": "https://spie.org/membership/member-benefits",
+    "title": "SPIE: Member benefits",
+    "category": "Pay and career data",
+    "summary": "SPIE's student membership benefits.",
+    "pages": ["advice/forever-learning/societies"]
+  },
+  {
+    "url": "https://www.acm.org/membership/membership-options",
+    "title": "ACM: Membership options",
+    "category": "Pay and career data",
+    "summary": "ACM's student membership tiers.",
+    "pages": ["advice/forever-learning/societies"]
+  },
+  {
+    "url": "https://naceweb.org/job-market/trends-and-predictions/differential-in-starting-salaries-between-bachelors-and-masters-grads-is-diminishing",
+    "title": "NACE: The master's starting-salary premium is shrinking",
+    "category": "Pay and career data",
+    "summary": "NACE's analysis of the engineering master's premium over a bachelor's.",
+    "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
+    "url": "https://naceweb.org/job-market/compensation/class-of-2025-engineering-business-grads-expected-to-see-salaries-climb-at-the-masters--level",
+    "title": "NACE: Class of 2025 master's salaries",
+    "category": "Pay and career data",
+    "summary": "NACE's projected starting salary for engineering master's graduates in 2025.",
+    "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
+    "url": "https://naceweb.org/about-us/press/2026/salaries-expected-to-climb-for-class-of-2026-grads-despite-flat-hiring",
+    "title": "NACE: Class of 2026 salary projections",
+    "category": "Pay and career data",
+    "summary": "NACE's Winter 2026 projected starting salaries for engineering graduates.",
+    "pages": [
+      "advice/forever-learning/graduate-study",
+      "advice/getting-hired/first-full-time-role"
+    ]
+  },
+  {
+    "url": "https://www.eecs.mit.edu/wp-content/uploads/2023/11/Funding-Guide-for-Graduate-Students-in-EECS-AY23-24.pdf",
+    "title": "MIT EECS: Funding guide for graduate students",
+    "category": "Pay and career data",
+    "summary": "What a funded MIT EECS PhD paid in 2023 to 2024.",
+    "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
+    "url": "https://gue.mit.edu/news/ay2026-stipend-levels-additional-support-for-graduate-students/",
+    "title": "MIT: 2026 stipend levels",
+    "category": "Pay and career data",
+    "summary": "MIT's stipend increase for the 2025 to 2026 year.",
+    "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
+    "url": "https://grainger.illinois.edu/academics/graduate/phd-funding-guarantee",
+    "title": "Illinois Grainger: Five-year PhD funding guarantee",
+    "category": "Pay and career data",
+    "summary": "Illinois's funding guarantee for engineering PhD students.",
+    "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
+    "url": "https://ece.gatech.edu/current-students/graduate/financial-assistance",
+    "title": "Georgia Tech ECE: Financial assistance",
+    "category": "Pay and career data",
+    "summary": "How Georgia Tech ECE funds its graduate students.",
+    "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
+    "url": "https://umaine.edu/academics/?p=11111",
+    "title": "University of Maine: The EE master's",
+    "category": "Pay and career data",
+    "summary": "One school's description of the one-year and two-year master's paths.",
+    "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
+    "url": "https://www.irs.gov/newsroom/updates-to-frequently-asked-questions-about-educational-assistance-programs",
+    "title": "IRS: Educational assistance programs",
+    "category": "Pay and career data",
+    "summary": "IRS on the $5,250 tax-free employer education help limit, indexed after 2026.",
+    "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
+    "url": "https://careers.rtx.com/global/en/lifeatrtx",
+    "title": "RTX careers: Life at RTX",
+    "category": "Pay and career data",
+    "summary": "RTX's description of its Employee Scholar Program.",
+    "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
+    "url": "https://www.lockheedmartin.com/en-us/careers/why-lm/LM_Benefits.html",
+    "title": "Lockheed Martin careers: Benefits",
+    "category": "Pay and career data",
+    "summary": "Lockheed Martin's list of benefits, including tuition assistance.",
+    "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
+    "url": "https://engr.source.colostate.edu/systems-engineering-electrical-and-computer-engineering-remove-gre-graduate-program-admission-requirement/",
+    "title": "Colorado State: ECE removes the GRE requirement",
+    "category": "Pay and career data",
+    "summary": "One engineering department's move away from the GRE.",
+    "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
+    "url": "https://ee.stanford.edu/admissions/eligibility",
+    "title": "Stanford EE: Graduate eligibility",
+    "category": "Pay and career data",
+    "summary": "Stanford EE's MS and PhD application rules, with no GRE requirement.",
+    "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
+    "url": "https://ece.illinois.edu/admissions/graduate",
+    "title": "Illinois ECE: Graduate admissions",
+    "category": "Pay and career data",
+    "summary": "Illinois ECE graduate admissions: GRE scores are no longer required.",
+    "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
+    "url": "https://yp.ieee.org/blog/2023/11/15/check-out-the-career-programs-of-ieee-usa-part-2",
+    "title": "IEEE Young Professionals: The career programs of IEEE-USA",
+    "category": "Pay and career data",
+    "summary": "IEEE-USA member job-hunt tools: salary calculator, Job Site, Employment Navigator.",
+    "pages": ["advice/forever-learning/societies"]
+  },
+  {
+    "url": "https://www.insidehighered.com/node/180526",
+    "title": "Inside Higher Ed: The class of 2025 applies to more jobs",
+    "category": "Pay and career data",
+    "summary": "Handshake's count of applications per student for the class of 2025.",
+    "pages": ["advice/getting-hired/job-market"]
+  },
+  {
+    "url": "https://d341ezm4iqaae0.cloudfront.net/ews/20250925161702/Indeed-Tech-Talent-Report-2025-US.pdf",
+    "title": "Indeed Hiring Lab: Tech talent report 2025",
+    "category": "Pay and career data",
+    "summary": "Indeed's 2025 report on US tech postings against the 2020 baseline.",
+    "pages": ["advice/getting-hired/job-market"]
+  },
+  {
+    "url": "https://www.dice.com/recruiting/ebooks/dice-tech-job-report",
+    "title": "Dice: Tech job report",
+    "category": "Pay and career data",
+    "summary": "Dice's end-of-2025 figures on entry-level tech postings.",
+    "pages": ["advice/getting-hired/job-market"]
+  },
+  {
+    "url": "https://naceweb.org/about-us/press/2026/more-than-two-out-of-five-of-college-class-of-2026-had-a-job-offer-in-hand-by-graduation",
+    "title": "NACE: Two in five of the class of 2026 had an offer by graduation",
+    "category": "Pay and career data",
+    "summary": "NACE's 2026 student survey on offers before graduation.",
+    "pages": ["advice/getting-hired/job-market"]
+  },
+  {
+    "url": "https://www.naceweb.org/job-market/trends-and-predictions/facing-a-tough-job-market-class-of-2025-responded-accordingly",
+    "title": "NACE: The class of 2025 in a tough job market",
+    "category": "Pay and career data",
+    "summary": "NACE on when the class of 2025 started its search.",
+    "pages": ["advice/getting-hired/job-market"]
+  },
+  {
+    "url": "https://insight.ieeeusa.org/articles/ieee-usa-releases-2024-salary-benefits-report/",
+    "title": "IEEE-USA InSight: 2024 Salary & Benefits Report released",
+    "category": "Pay and career data",
+    "summary": "IEEE-USA salary report summary used on the graduate study page.",
+    "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
+    "url": "https://cockrell.utexas.edu/student-life/career-services/salaries-and-statistics",
+    "title": "UT Austin Cockrell: Salaries and statistics",
+    "category": "Pay and career data",
+    "summary": "Average starting salaries by engineering major for UT Austin graduates.",
+    "pages": ["advice/getting-hired/first-full-time-role"]
+  },
+  {
+    "url": "https://www.levels.fyi/blog/front-loaded-vesting.html",
+    "title": "Levels.fyi: Front-loaded vesting",
+    "category": "Pay and career data",
+    "summary": "How front-loaded stock vesting makes year-one pay higher than later years.",
+    "pages": ["advice/getting-hired/first-full-time-role"]
+  },
+  {
+    "url": "https://www.naceweb.org/job-market/trends-and-predictions/employers-expect-to-hire-nearly-four-percent-more-interns-this-year",
+    "title": "NACE: Employers expect nearly 4% more interns",
+    "category": "Pay and career data",
+    "summary": "NACE's 2026 projection of intern hiring, up 3.9% on the year before.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://www.naceweb.org/talent-acquisition/internships/hourly-wage-for-interns-climbs-but-is-down-over-last-10-years-in-real-terms",
+    "title": "NACE: Hourly wage for interns",
+    "category": "Pay and career data",
+    "summary": "Average hourly pay for bachelor's-level interns and co-op students.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://hiringlab.indeed.com/2026/04/23/new-grads-looking-for-work-the-struggle-is-real/",
+    "title": "Indeed Hiring Lab: New grads looking for work",
+    "category": "Pay and career data",
+    "summary": "How many new graduates searched for work on Indeed, and recent-grad unemployment.",
+    "pages": ["advice/getting-hired/job-market"]
+  },
+  {
+    "url": "https://www.naceweb.org/talent-acquisition/trends-and-predictions/employers-expect-to-hire-5-point-6-percent-more-new-college-graduates-this-year",
+    "title": "NACE: Employers expect 5.6% more new-grad hires",
+    "category": "Pay and career data",
+    "summary": "NACE's spring 2026 projection of new-graduate hiring.",
+    "pages": ["advice/getting-hired/job-market"]
+  },
+  {
+    "url": "https://www.semiconductors.org/chipping-away-assessing-and-addressing-the-labor-market-gap-facing-the-u-s-semiconductor-industry/",
+    "title": "SIA: Semiconductor labor market gap",
+    "category": "Pay and career data",
+    "summary": "SIA's projection of new chip industry jobs by 2030 and how many may go unfilled.",
+    "pages": ["advice/getting-hired/job-market"]
+  },
+  {
+    "url": "https://www.newyorkfed.org/research/college-labor-market",
+    "title": "New York Fed: Labor market for recent college graduates",
+    "category": "Pay and career data",
+    "summary": "Unemployment, underemployment, and pay for recent graduates by major.",
+    "pages": ["advice/getting-hired/job-market"]
+  },
+  {
+    "url": "https://eecs.berkeley.edu/resources/undergrads/grad-school/",
+    "title": "Berkeley EECS: Preparing for graduate school",
+    "category": "Pay and career data",
+    "summary": "Berkeley's advice to undergraduates on how long each degree takes and why to go.",
+    "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
+    "url": "https://engineering.purdue.edu/ECE/Academics/Graduates/MASTERS/why-masters-degree",
+    "title": "Purdue ECE: Why get a master's",
+    "category": "Pay and career data",
+    "summary": "Purdue's case for an ECE master's as a way to specialize.",
+    "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
+    "url": "https://www.ieee.org/membership/students",
+    "title": "IEEE: Student membership",
+    "category": "Communities",
+    "summary": "IEEE's student membership page.",
+    "pages": ["advice/forever-learning", "advice/forever-learning/societies"]
+  },
+  {
+    "url": "https://www.reddit.com/r/ECE/",
+    "title": "r/ECE",
+    "category": "Communities",
+    "summary": "Subreddit for electrical and computer engineering students and professionals.",
+    "pages": ["help"]
+  },
+  {
+    "url": "https://www.reddit.com/r/ElectricalEngineering/",
+    "title": "r/ElectricalEngineering",
+    "category": "Communities",
+    "summary": "Subreddit for electrical engineering questions, projects and career discussion.",
+    "pages": ["help"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/",
+    "title": "r/EngineeringResumes",
+    "category": "Communities",
+    "summary": "Subreddit where engineers post resumes for review and share job search results.",
+    "pages": ["advice/resume", "advice/resume/cleanup", "help"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringStudents/",
+    "title": "r/EngineeringStudents",
+    "category": "Communities",
+    "summary": "Subreddit where engineering students in every discipline discuss classes, internships and jobs.",
+    "pages": ["help"]
+  },
+  {
+    "url": "https://www.reddit.com/r/ElectricalEngineering/comments/1jukzwd/should_i_join_the_ieee/",
+    "title": "r/ElectricalEngineering: Should I join the IEEE?",
+    "category": "Communities",
+    "summary": "Working engineers on whether IEEE membership pays for itself.",
+    "pages": ["advice/forever-learning/societies"]
+  },
+  {
+    "url": "https://www.reddit.com/r/ECE/comments/1j4yzv6/how_do_i_benefit_the_most_from_an_ieee_membership/",
+    "title": "r/ECE: How do I benefit the most from an IEEE membership",
+    "category": "Communities",
+    "summary": "A 25-year engineer on when IEEE membership stops paying off.",
+    "pages": ["advice/forever-learning/societies"]
+  },
+  {
+    "url": "https://www.reddit.com/r/ECE/comments/1jrl68r/whats_the_common_phd_pay_bump/",
+    "title": "r/ECE: What's the common PhD pay bump?",
+    "category": "Communities",
+    "summary": "Working engineers on what a master's and a PhD add to pay.",
+    "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
+    "url": "https://www.reddit.com/r/ECE/comments/1ir9v2y/was_your_masters_degree_worth_it/",
+    "title": "r/ECE: Was your master's degree worth it?",
+    "category": "Communities",
+    "summary": "Engineers on whether the master's paid off, with the numbers they saw.",
+    "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
+    "url": "https://www.reddit.com/r/rfelectronics/comments/1gjg088/phd_in_rf/",
+    "title": "r/rfelectronics: PhD in RF",
+    "category": "Communities",
+    "summary": "RF engineers on which RF design roles expect a PhD.",
+    "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
+    "url": "https://2024.ieeeannualreport.org/empowering-the-next-generation/",
+    "title": "IEEE Annual Report 2024: Empowering the next generation",
+    "category": "Communities",
+    "summary": "IEEEXtreme 18.0 in 2024: 19,916 participants in 8,793 teams.",
+    "pages": ["advice/forever-learning/societies"]
+  },
+  {
+    "url": "https://shpe.org/membership/become-a-member/",
+    "title": "SHPE: Become a member",
+    "category": "Communities",
+    "summary": "SHPE's membership page, including the reciprocal discount with SWE.",
+    "pages": ["advice/forever-learning/societies"]
+  },
+  {
+    "url": "https://www.optica.org/get_involved/students/",
+    "title": "Optica: Students",
+    "category": "Communities",
+    "summary": "Optica's students page, including student membership.",
+    "pages": ["advice/forever-learning/societies"]
+  },
+  {
+    "url": "https://wiki.hkn.illinois.edu/More%20Advice/6.Is%20grad%20school%20for%20you/",
+    "title": "HKN Illinois: Is grad school for me",
+    "category": "Communities",
+    "summary": "Illinois students' advice on deciding on and applying to grad school.",
+    "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
+    "url": "https://github.com/edwardasilva/eeprep/blob/main/.github/CONTRIBUTING.md",
+    "title": "Contributing",
+    "category": "Site",
+    "summary": "How an eeprep change goes from idea to live site.",
+    "pages": ["roadmap/contributing"]
+  },
+  {
+    "url": "https://github.com/edwardasilva/eeprep/issues/new/choose",
+    "title": "eeprep issue forms",
+    "category": "Site",
+    "summary": "Forms to suggest an idea or report something to fix.",
+    "pages": ["roadmap/contributing"]
+  },
+  {
+    "url": "https://github.com/edwardasilva/eeprep/blob/main/.github/SECURITY.md",
+    "title": "eeprep security policy",
+    "category": "Site",
+    "summary": "How to report a security problem in private.",
+    "pages": ["roadmap/contributing"]
+  },
+  {
+    "url": "https://naceweb.org/job-market/trends-and-predictions/student-concerns-about-ai-tempering-their-use-of-it-in-job-search",
+    "title": "NACE: Student concerns about AI tempering their use of it in the job search",
+    "category": "AI in the job search",
+    "summary": "NACE 2025: 67.1% of seniors did not use AI, mostly over ethics.",
+    "pages": ["help/ai-use"]
+  },
+  {
+    "url": "https://naceweb.org/about-us/press/2026/ready-or-reluctant-employer-expectations-for-ai-skills-meet-student-skepticism",
+    "title": "NACE: Ready or reluctant? Employer expectations for AI skills meet student skepticism",
+    "category": "AI in the job search",
+    "summary": "NACE 2026 release: 46% of graduating seniors used AI in job search.",
+    "pages": ["help/ai-use"]
+  },
+  {
+    "url": "https://www.anthropic.com/candidate-ai-guidance",
+    "title": "Anthropic: How to collaborate with Claude during our hiring process",
+    "category": "AI in the job search",
+    "summary": "Employer AI rules, July 2025: draft it yourself, no AI unless allowed.",
+    "pages": ["help/ai-use"]
+  },
+  {
+    "url": "https://topresume.com/career-advice/ai-in-hiring-survey",
+    "title": "TopResume: Where employers draw the line on AI in hiring",
+    "category": "AI in the job search",
+    "summary": "A vendor survey of 600 US hiring managers on spotting AI-written applications.",
+    "pages": ["help/ai-use"]
+  },
+  {
+    "url": "https://alumni.ucdavis.edu/node/12666",
+    "title": "UC Davis: Using AI in the job search",
+    "category": "AI in the job search",
+    "summary": "Career office prompts for AI review of a resume against a posting.",
+    "pages": ["help/ai-use"]
+  },
+  {
+    "url": "https://southernct.edu/career/ChatGPT-AI-Usage-in-Your-Career-Search",
+    "title": "Southern Connecticut State University: ChatGPT and AI usage in your career search",
+    "category": "AI in the job search",
+    "summary": "A career center's warning on submitting AI-generated content as your own work.",
+    "pages": ["help/ai-use"]
+  },
+  {
+    "url": "https://fortune.com/2025/05/13/greenhouse-ceo-daniel-chait-says-hiring-process-broken-hr-leaders-fix-by-adding-more-friction/",
+    "title": "Fortune: Greenhouse's CEO on auto-applying",
+    "category": "AI in the job search",
+    "summary": "Greenhouse's CEO on what mass auto-apply did to hiring and in-person finals.",
+    "pages": ["advice/getting-hired"]
+  },
+  {
+    "url": "https://newsroom.workday.com/2024-09-10-Workday-Global-Workforce-Report-Job-Market-Tightens-as-AI-Reshapes-Hiring-Processes",
+    "title": "Workday: Global workforce report, September 2024",
+    "category": "AI in the job search",
+    "summary": "Workday's count of applications against openings in the first half of 2024.",
+    "pages": ["advice/getting-hired", "advice/getting-hired/job-market"]
+  },
+  {
+    "url": "https://blog.loopcv.pro/5-problems-that-can-happen-when-you-automate-job-applications/",
+    "title": "LoopCV: Five problems with automated applications",
+    "category": "AI in the job search",
+    "summary": "An auto-apply vendor's own list of how such tools go wrong.",
+    "pages": ["advice/getting-hired"]
+  },
+  {
+    "url": "https://www.semafor.com/article/06/24/2025/recruiters-swamped-with-ai-generated-job-applications",
+    "title": "Semafor: Recruiters swamped with AI-generated applications",
+    "category": "AI in the job search",
+    "summary": "LinkedIn: applications up over 45% in a year, about 11,000 a minute.",
+    "pages": ["help/job-boards"]
+  },
+  {
+    "url": "https://semiengineering.com/college-grads-and-ai/",
+    "title": "Semiconductor Engineering: College grads and AI",
+    "category": "AI in the job search",
+    "summary": "An industry panel on demand for EE graduates as AI takes on junior tasks.",
+    "pages": ["advice/getting-hired/job-market"]
+  },
+  {
+    "url": "https://insight.ieeeusa.org/articles/what-tech-hiring-managers-really-think-of-ai-created-resumes-and-cover-letters/",
+    "title": "IEEE-USA InSight: Hiring managers on AI-created resumes",
+    "category": "AI in the job search",
+    "summary": "What tech hiring managers say about AI help on resumes and cover letters.",
+    "pages": ["help/ai-use"]
+  }
+]
