@@ -1,5 +1,4 @@
-// Starts `astro dev` on a free port and fails if a page 500s the way main did
-// when the micromatch alias leaked into Vite's SSR runner.
+// Starts `astro dev` on a free port and fails if a page returns an error.
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
 import net from 'node:net';

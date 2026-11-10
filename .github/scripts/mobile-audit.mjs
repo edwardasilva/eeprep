@@ -20,14 +20,6 @@ const themes = ['light', 'dark'];
 const minTap = 44;
 const minLabelPx = 11;
 const minFigurePx = 12;
-// Smallest source font size, in viewBox units, of each SVG figure. The SVGs
-// draw text as outlines, so the size can't be read from the file.
-const svgMinFont = {};
-// HTML figures still waiting for their own fix. Listed, like the SVG
-// figures, but they don't fail yet.
-const knownSmall = new Set([]);
-// Figures below the minimum that are listed but don't fail yet.
-const smallFigures = new Map();
 const dist = path.resolve('dist');
 
 if (!fs.existsSync(dist)) {
@@ -115,8 +107,6 @@ try {
 	preview?.kill();
 }
 
-for (const [fig, px] of smallFigures)
-	console.log(`Note: the smallest text in ${fig} renders at about ${px}px.`);
 for (const problem of problems) console.error(problem);
 const checks = pages.length * widths.length * themes.length;
 if (problems.length) {
@@ -243,34 +233,21 @@ function auditPage({ minTap, minLabelPx }) {
 	return out;
 }
 
-/** @param {string} dir @param {string} [prefix] */
-// Records the header boxes of the first page and reports any page where one
-// of them is somewhere else.
-// Text in an HTML figure must render at minFigurePx or more. For SVG figures
-// the size is estimated as source size times rendered width over viewBox
-// width, and only listed for now.
+// Text in an HTML figure must render at minFigurePx or more.
 async function checkFigureText(route, label, page) {
-	const { html, svg } = await page.evaluate(figureText, svgMinFont);
-	const note = (fig, px) => {
-		const key = `${route}#${fig}`;
-		smallFigures.set(key, Math.min(px, smallFigures.get(key) ?? Infinity));
-	};
+	const html = await page.evaluate(figureText);
 	for (const { fig, px, text } of html) {
 		if (px >= minFigurePx) continue;
-		if (knownSmall.has(fig)) note(fig, px);
-		else
-			problems.push(
-				`${route} ${label}: ${fig} text "${text}" renders at ${px}px, under ${minFigurePx}px`,
-			);
+		problems.push(
+			`${route} ${label}: ${fig} text "${text}" renders at ${px}px, under ${minFigurePx}px`,
+		);
 	}
-	for (const { fig, px } of svg) if (px < minFigurePx) note(fig, px);
 }
 
 // Runs in the page. Smallest rendered text in each figure.
-function figureText(sources) {
+function figureText() {
 	const round = (n) => Math.round(n * 10) / 10;
 	const html = [];
-	const svg = [];
 	for (const fig of document.querySelectorAll('figure')) {
 		const name = fig.id || 'figure';
 		const walker = document.createTreeWalker(fig, NodeFilter.SHOW_TEXT);
@@ -285,22 +262,12 @@ function figureText(sources) {
 				min = { fig: name, px: round(px), text: node.textContent.trim() };
 		}
 		if (min) html.push(min);
-		for (const img of fig.querySelectorAll('img')) {
-			if (!img.getClientRects().length) continue;
-			const file = (img.getAttribute('src') ?? '').split('/').pop() ?? '';
-			const key = file
-				.replace(/(\.[\w-]{6,})?\.svg$/, '')
-				.replace(/-dark$/, '');
-			const source = sources[key];
-			const width = Number(img.getAttribute('width'));
-			if (!source || !width) continue;
-			const px = (source * img.getBoundingClientRect().width) / width;
-			svg.push({ fig: `${name} (${key}.svg)`, px: round(px) });
-		}
 	}
-	return { html, svg };
+	return html;
 }
 
+// Records the header boxes of the first page and reports any page where one
+// of them is somewhere else.
 function headerCheck(label) {
 	let first = null;
 	return (route, boxes) => {
@@ -377,6 +344,7 @@ function emojiProblems(dir) {
 	return out;
 }
 
+/** @param {string} dir @param {string} [prefix] */
 function listPages(dir, prefix = '/') {
 	const routes = [];
 	for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -391,6 +359,9 @@ function listPages(dir, prefix = '/') {
 			if (!/http-equiv="refresh"/i.test(html)) routes.push(prefix);
 		}
 	}
+	// The 404 page is dist/404.html, not a folder with an index.html.
+	if (prefix === '/' && fs.existsSync(path.join(dir, '404.html')))
+		routes.push('/404.html');
 	return routes.sort();
 }
 

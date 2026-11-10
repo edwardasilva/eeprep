@@ -1,7 +1,6 @@
-# Response headers for every page and file on eeprep.com.
-# Cloudflare applies this file to static asset responses. The dev site runs
-# worker/dev.mjs first, which sets the same headers. Change both together;
-# worker/dev.test.mjs fails if they differ.
+# Response headers for every page and file on eeprep.com and the dev site.
+# Cloudflare applies this file to static asset responses. The dev deploy adds
+# X-Robots-Tag: noindex inside the /* rule (see .github/workflows/deploy.yml).
 /*
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
