@@ -1,4 +1,4 @@
-# Security headers for every page and file on eeprep.com.
+# Response headers for every page and file on eeprep.com.
 # Cloudflare applies this file to static asset responses. The dev site runs
 # worker/dev.mjs first, which sets the same headers. Change both together;
 # worker/dev.test.mjs fails if they differ.
@@ -8,3 +8,7 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
   Content-Security-Policy: frame-ancestors 'none'; base-uri 'self'; object-src 'none'; form-action 'self'
+
+# Astro fingerprints every file in /_astro/, so a changed file gets a new name.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable

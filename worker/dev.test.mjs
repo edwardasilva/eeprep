@@ -1,7 +1,11 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import test from 'node:test';
-import worker, { securityHeaders, withRobotsHeader } from './dev.mjs';
+import worker, {
+	immutableCache,
+	securityHeaders,
+	withRobotsHeader,
+} from './dev.mjs';
 
 const assets = (status = 200) => ({
 	fetch: async () =>
@@ -38,11 +42,39 @@ test('the dev Worker sets the same security headers as public/_headers', () => {
 		new URL('../public/_headers', import.meta.url),
 		'utf8',
 	);
-	/** @type {Record<string, string>} */
-	const fromFile = {};
+	/** @type {Record<string, Record<string, string>>} */
+	const blocks = {};
+	let current = '';
 	for (const line of file.split('\n')) {
+		if (/^\//.test(line)) {
+			current = line.trim();
+			blocks[current] = {};
+			continue;
+		}
 		const match = /^\s+([A-Za-z-]+):\s*(.+?)\s*$/.exec(line);
-		if (match) fromFile[match[1]] = match[2];
+		if (match && current) blocks[current][match[1]] = match[2];
 	}
-	assert.deepEqual(securityHeaders, fromFile);
+	assert.deepEqual(securityHeaders, blocks['/*']);
+	assert.deepEqual(blocks['/_astro/*'], { 'Cache-Control': immutableCache });
+});
+
+test('fingerprinted /_astro/ files are cached as immutable on dev', async () => {
+	const cases = [
+		['/_astro/a.css', 200, immutableCache],
+		['/_astro/missing.css', 404, 'public, max-age=0, must-revalidate'],
+		['/guide/', 200, 'public, max-age=0, must-revalidate'],
+	];
+	for (const [path, status, expected] of cases) {
+		const res = await worker.fetch(new Request(`https://dev.example${path}`), {
+			ASSETS: {
+				fetch: async () =>
+					new Response('x', {
+						status,
+						headers: { 'Cache-Control': 'public, max-age=0, must-revalidate' },
+					}),
+			},
+			SITE_ENV: 'dev',
+		});
+		assert.equal(res.headers.get('Cache-Control'), expected);
+	}
 });

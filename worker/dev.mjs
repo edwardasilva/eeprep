@@ -16,16 +16,23 @@ export const securityHeaders = {
 		"frame-ancestors 'none'; base-uri 'self'; object-src 'none'; form-action 'self'",
 };
 
+// Fingerprinted files under /_astro/ never change, so cache them for a year.
+// Matches the /_astro/* rule in public/_headers.
+export const immutableCache = 'public, max-age=31536000, immutable';
+
 /**
  * @param {Response} response
  * @param {string | undefined} siteEnv
+ * @param {string} [pathname]
  * @returns {Response}
  */
-export function withRobotsHeader(response, siteEnv) {
+export function withRobotsHeader(response, siteEnv, pathname = '') {
 	if (siteEnv !== 'dev') return response;
 	const out = new Response(response.body, response);
 	for (const [name, value] of Object.entries(securityHeaders))
 		out.headers.set(name, value);
+	if (pathname.startsWith('/_astro/') && response.ok)
+		out.headers.set('Cache-Control', immutableCache);
 	out.headers.set('X-Robots-Tag', 'noindex, nofollow');
 	return out;
 }
@@ -36,6 +43,10 @@ export default {
 	 * @param {{ ASSETS: { fetch: typeof fetch }, SITE_ENV?: string }} env
 	 */
 	async fetch(request, env) {
-		return withRobotsHeader(await env.ASSETS.fetch(request), env.SITE_ENV);
+		return withRobotsHeader(
+			await env.ASSETS.fetch(request),
+			env.SITE_ENV,
+			new URL(request.url).pathname,
+		);
 	},
 };
