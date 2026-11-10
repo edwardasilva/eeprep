@@ -68,12 +68,13 @@ jobs:
       - run: npm ci
       - run: npm run build
       # The dev build already has the noindex meta tag (SITE_ENV=dev). This adds the
-      # header too, for every file and the 404 page. Pages merges this rule with the
-      # security headers in public/_headers.
+      # header too, for every file and the 404 page. It goes inside the existing /*
+      # rule: a second /* rule would replace the security headers instead of adding to them.
       - name: Add the noindex header to the dev build
         if: env.TARGET == 'dev'
         run: |
-          printf '\n/*\n  X-Robots-Tag: noindex, nofollow\n' >> dist/_headers
+          sed -i '/^\/\*$/a\  X-Robots-Tag: noindex, nofollow' dist/_headers
+          grep -q '^  X-Robots-Tag: noindex, nofollow$' dist/_headers
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: dist
