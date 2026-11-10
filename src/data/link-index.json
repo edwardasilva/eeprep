@@ -887,6 +887,13 @@
     ]
   },
   {
+    "url": "https://github.com/edwardasilva/company-lists",
+    "title": "company-lists on GitHub",
+    "category": "Job search and referrals",
+    "summary": "Open list of companies by region, starting with the Denver metro, with a public source for every row.",
+    "pages": ["help/job-boards", "help/resources", "roadmap"]
+  },
+  {
     "url": "https://github.com/SimplifyJobs/Summer2027-Internships",
     "title": "SimplifyJobs: Summer2027-Internships",
     "category": "Job search and referrals",
@@ -957,10 +964,7 @@
     "title": "USAJOBS: Pathways for recent graduates",
     "category": "Job search and referrals",
     "summary": "Federal Pathways program for people who recently finished a degree.",
-    "pages": [
-      "advice/getting-hired/first-full-time-role",
-      "help/job-boards"
-    ]
+    "pages": ["advice/getting-hired/first-full-time-role", "help/job-boards"]
   },
   {
     "url": "https://opm.usajobs.gov/hiringpath/students/",
@@ -968,13 +972,6 @@
     "category": "Job search and referrals",
     "summary": "The federal Pathways internship program for students currently enrolled in school.",
     "pages": ["help/job-boards"]
-  },
-  {
-    "url": "https://www.uscis.gov/",
-    "title": "USCIS",
-    "category": "Job search and referrals",
-    "summary": "US Citizenship and Immigration Services, the agency for immigration and work authorization.",
-    "pages": ["advice"]
   },
   {
     "url": "https://ocs.yale.edu/industry-hiring-timelines/",
@@ -1937,20 +1934,14 @@
     "title": "Levels.fyi",
     "category": "Pay and career data",
     "summary": "Self-reported salary and total compensation data by company and level.",
-    "pages": [
-      "advice/getting-hired/first-full-time-role",
-      "help/resources"
-    ]
+    "pages": ["advice/getting-hired/first-full-time-role", "help/resources"]
   },
   {
     "url": "https://www.naceweb.org/job-market/compensation/",
     "title": "NACE: Compensation",
     "category": "Pay and career data",
     "summary": "NACE data and reports on starting salaries for new college graduates.",
-    "pages": [
-      "advice/getting-hired/first-full-time-role",
-      "help/resources"
-    ]
+    "pages": ["advice/getting-hired/first-full-time-role", "help/resources"]
   },
   {
     "url": "https://www.naceweb.org/talent-acquisition/internships/intern-conversion-rate-hits-highest-mark-in-five-years",

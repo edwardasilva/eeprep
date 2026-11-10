@@ -48,4 +48,4 @@ Code is licensed under the [MIT License](LICENSE). Code means everything else, i
 
 The eeprep name and logo files in `src/brand/` and `public/brand/` are not covered by either license.
 
-The owner's other projects and repos are not covered by either license. All rights are reserved.
+Other repos carry their own licenses.
