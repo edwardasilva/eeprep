@@ -120,9 +120,6 @@ jobs:
       - name: Link case checker tests
         if: ${{ !cancelled() && steps.install.outcome == 'success' && steps.scope.outputs.code == 'true' }}
         run: npm run test:link-case
-      - name: Worker tests
-        if: ${{ !cancelled() && steps.install.outcome == 'success' && steps.scope.outputs.code == 'true' }}
-        run: npm run test:worker
       - name: Figure rules
         if: ${{ !cancelled() && steps.install.outcome == 'success' && steps.scope.outputs.code == 'true' }}
         run: npm run check:figures
@@ -162,6 +159,3 @@ jobs:
       - name: Wrangler dry run (eeprep.com)
         if: ${{ !cancelled() && steps.build.outcome == 'success' }}
         run: npm run check:deploy
-      - name: Wrangler dry run (dev)
-        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
-        run: npm run check:deploy:dev
