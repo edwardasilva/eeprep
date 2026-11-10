@@ -6,7 +6,7 @@ head:
     content: "Roadmap | eeprep"
 ---
 
-These are the updates planned for eeprep, and the plan may change. Each row lists links to use until the update ships. To help with one, see the [[Contributing|contributing page]]. The [[Company list|company list page]] is up; it is built from [company-lists](https://github.com/edwardasilva/company-lists) and starts with the Denver, Colorado metro.
+These are the updates planned for eeprep, and the plan may change. Each row lists links to use until the update ships. To help with one, see the [[Contributing|contributing page]]. The [[Company list|company list page]] is up; it is built from [company-lists](https://github.com/edwardasilva/company-lists).
 
 | What's coming                                                                                     | Use in the meantime                                                                                                                                                                                                                                                                                                                 |
 | ------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

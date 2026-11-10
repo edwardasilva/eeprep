@@ -628,6 +628,8 @@ a.external-link .eep-ext-last::after {
 	line-height: 1.5;
 }
 .eep-companies .eep-company-list caption {
+	display: block;
+	width: 100%;
 	caption-side: top;
 	margin: 0 0 var(--eep-space-3);
 	text-align: left;
@@ -779,9 +781,9 @@ a.external-link .eep-ext-last::after {
 	.eep-companies .eep-company-list td {
 		overflow-wrap: break-word;
 	}
-	.eep-companies .eep-company-list :is(th, td):nth-child(n + 4) {
-		white-space: nowrap;
-		overflow-wrap: normal;
+	.eep-companies .eep-company-list caption {
+		display: table-caption;
+		width: auto;
 	}
 }
 
