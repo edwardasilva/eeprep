@@ -39,7 +39,7 @@ For a security problem, follow the [security policy](SECURITY.md). Do not open a
 
 ## Releases
 
-Only the repository owner cuts releases. Before a release, run the release-cut workflow and land or close every `release-sweep` issue.
+Only the repository owner cuts releases.
 
 ## License
 
