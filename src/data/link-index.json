@@ -219,7 +219,6 @@
     "category": "Sample resumes and templates",
     "summary": "The subreddit's recommended resume templates in LaTeX, Word and Google Docs.",
     "pages": [
-      "advice/authors-story",
       "advice/resume",
       "advice/resume/workshop",
       "help/resources",
