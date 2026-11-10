@@ -53,6 +53,15 @@ export type CompanyRow = {
 	sourceUrl: string;
 	notes: string;
 	search: string;
+	// Every location of the company, in a stable order. city, state, and
+	// region hold the same values joined with "; " for display.
+	locations: CompanyLocation[];
+};
+
+export type CompanyLocation = {
+	city: string;
+	state: string;
+	region: string;
 };
 
 export type CompanyFilter = {
@@ -242,6 +251,77 @@ function optionList(
 		.map(([value, label]) => ({ value, label }));
 }
 
+const LOCATION_JOIN = '; ';
+
+/**
+ * Key that identifies one company across regions: the website host without
+ * a leading "www.", or the lowercased name when there is no usable website.
+ */
+export function companyKey(row: { name: string; website: string }): string {
+	try {
+		const host = new URL(row.website).hostname.toLowerCase();
+		if (host) {
+			return host.replace(/^www\./, '');
+		}
+	} catch {
+		// Fall through to the name.
+	}
+	return row.name.trim().toLowerCase();
+}
+
+function joinUnique(values: string[]): string {
+	return [...new Set(values.filter(Boolean))].join(LOCATION_JOIN);
+}
+
+/**
+ * Merge rows that describe the same company in different regions into one
+ * row that lists every location. Input order decides which row supplies the
+ * shared fields, so sort the input first.
+ */
+export function mergeCompanies(rows: CompanyRow[]): CompanyRow[] {
+	const byKey = new Map<string, CompanyRow[]>();
+	for (const row of rows) {
+		const key = companyKey(row);
+		byKey.set(key, [...(byKey.get(key) ?? []), row]);
+	}
+	return [...byKey.values()].map((group) => {
+		const first = group[0];
+		if (group.length === 1) {
+			return first;
+		}
+		const locations = group
+			.flatMap((row) => row.locations)
+			.sort(
+				(a, b) =>
+					a.state.localeCompare(b.state, 'en') ||
+					a.city.localeCompare(b.city, 'en', { sensitivity: 'base' }),
+			);
+		return {
+			...first,
+			careersUrl: group.find((row) => row.careersUrl)?.careersUrl ?? '',
+			city: joinUnique(locations.map((l) => l.city)),
+			state: joinUnique(locations.map((l) => l.state)),
+			region: joinUnique(locations.map((l) => l.region)),
+			locations,
+			search: [...new Set(group.map((row) => row.search))].join(' '),
+		};
+	});
+}
+
+/** Keys of companies that appear on more than one row. */
+export function duplicateCompanies(rows: CompanyRow[]): string[] {
+	const seen = new Set<string>();
+	const dupes = new Set<string>();
+	for (const row of rows) {
+		const key = companyKey(row);
+		if (seen.has(key)) {
+			dupes.add(key);
+		}
+		seen.add(key);
+	}
+	return [...dupes];
+}
+
 function coverageSentence(rows: CompanyRow[]): string {
 	const byState = new Map<string, Set<string>>();
 	for (const row of rows) {
@@ -357,6 +437,13 @@ export function loadCompanyList(): CompanyListData {
 				sourceUrl: raw.source_url ?? '',
 				notes: raw.notes ?? '',
 				search,
+				locations: [
+					{
+						city: raw.city ?? '',
+						state: raw.state ?? '',
+						region: raw.region ?? '',
+					},
+				],
 			});
 		}
 	}
@@ -372,6 +459,13 @@ export function loadCompanyList(): CompanyListData {
 		}
 		return a.city.localeCompare(b.city, 'en', { sensitivity: 'base' });
 	});
+
+	// Filter options and the coverage sentence come from the per-region rows.
+	const merged = mergeCompanies(rows);
+	const dupes = duplicateCompanies(merged);
+	if (dupes.length > 0) {
+		throw new Error(`Company list has repeated rows for: ${dupes.join(', ')}.`);
+	}
 
 	const filters: CompanyFilter[] = [
 		{
@@ -421,5 +515,5 @@ export function loadCompanyList(): CompanyListData {
 		},
 	];
 
-	return { rows, filters, coverage: coverageSentence(rows) };
+	return { rows: merged, filters, coverage: coverageSentence(rows) };
 }

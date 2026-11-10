@@ -163,6 +163,9 @@ function companyCell(row: (typeof rows)[number]): string {
 						data-city={row.city}
 						data-state={row.state}
 						data-region={row.region}
+						data-cities={row.locations.map((l) => l.city).join('|')}
+						data-states={row.locations.map((l) => l.state).join('|')}
+						data-regions={row.locations.map((l) => l.region).join('|')}
 						data-search={row.search}
 					>
 						<td data-label="Company" set:html={companyCell(row)} />
@@ -211,6 +214,9 @@ function companyCell(row: (typeof rows)[number]): string {
 
 		const compare = (a: string, b: string) =>
 			a.localeCompare(b, 'en', { sensitivity: 'base', numeric: true });
+
+		const hasValue = (list: string | undefined, value: string) =>
+			(list ?? '').split('|').includes(value);
 
 		const sortKey = (row: HTMLTableRowElement, key: string) => {
 			if (key === 'industry') {
@@ -272,11 +278,11 @@ function companyCell(row: (typeof rows)[number]): string {
 				const hay = row.dataset.search ?? '';
 				const match =
 					query.every((word) => hay.includes(word)) &&
-					(!state || row.dataset.state === state) &&
-					(!region || row.dataset.region === region) &&
+					(!state || hasValue(row.dataset.states, state)) &&
+					(!region || hasValue(row.dataset.regions, region)) &&
 					(!industry || row.dataset.industry === industry) &&
 					(!field || row.dataset.field === field) &&
-					(!city || row.dataset.city === city);
+					(!city || hasValue(row.dataset.cities, city));
 				row.hidden = !match;
 				if (match) {
 					shown += 1;
