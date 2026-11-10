@@ -591,6 +591,13 @@
     "pages": ["advice/forever-learning", "roadmap"]
   },
   {
+    "url": "https://www.eecs.mit.edu/academics/subject-numbering/",
+    "title": "MIT EECS: Subject numbering",
+    "category": "Tools and project resources",
+    "summary": "MIT's table of old and new course numbers, such as 6.003 and 6.3000.",
+    "pages": ["advice/forever-learning"]
+  },
+  {
     "url": "https://ocw.mit.edu/about/",
     "title": "MIT OpenCourseWare: About",
     "category": "Tools and project resources",
