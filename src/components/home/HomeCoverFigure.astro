@@ -1,62 +1,130 @@
 ---
-// The home cover: the guide's path as one line of five steps, each linking to
-// its page. The steps hang off a line down the left side at every width, so
-// the line always touches the first and last dot.
-const steps = [
+// The home cover: the guide as an 8-pin chip, top view, with the pin-1 notch
+// and dot. Pin numbers sit inside the body and names sit outside. DIP numbering
+// runs down the left side and up the right, so the pins are listed in pin
+// order, which is also the order of the guide and the tab order.
+// Colors come from the site's CSS variables, so the chip follows the theme.
+const pitch = 44;
+const top = 40;
+const bodyLeft = 132;
+const bodyRight = 208;
+const leadWidth = 14;
+
+type Pin = { n: number; name: string; href?: string };
+const left: Pin[] = [
+	{ n: 1, name: 'Resume', href: '/advice/resume/' },
+	{ n: 2, name: 'First project', href: '/advice/projects/' },
+	{ n: 3, name: 'Job market', href: '/advice/getting-hired/job-market/' },
+	{ n: 4, name: 'Ground' },
+];
+// Pin 5 is at the bottom right and pin 8 at the top right.
+const right: Pin[] = [
 	{
-		title: 'Resume',
-		body: 'One page, with a number in each bullet.',
-		href: '/advice/resume/',
+		n: 8,
+		name: 'Supply',
 	},
+	{ n: 7, name: 'Help', href: '/help/' },
 	{
-		title: 'First project',
-		body: 'Build something, measure it, and know every part.',
-		href: '/advice/projects/',
-	},
-	{
-		title: 'Job market',
-		body: 'Find openings, ask for referrals, and apply.',
-		href: '/advice/getting-hired/job-market/',
-	},
-	{
-		title: 'Interviews',
-		body: 'Your projects, fundamentals, and coding out loud.',
-		href: '/advice/getting-hired/how-to-interview/',
-	},
-	{
-		title: 'Offer',
-		body: 'Read it, compare it, and decide.',
+		n: 6,
+		name: 'Offer',
 		href: '/advice/getting-hired/first-full-time-role/#evaluating-an-offer',
 	},
+	{
+		n: 5,
+		name: 'Interviews',
+		href: '/advice/getting-hired/how-to-interview/',
+	},
+];
+const pins = [
+	...left.map((p, i) => ({ ...p, side: 'left', y: top + i * pitch })),
+	...right
+		.slice()
+		.reverse()
+		.map((p, i) => ({
+			...p,
+			side: 'right',
+			y: top + (3 - i) * pitch,
+		})),
 ];
 const alt =
-	'The guide as five steps in order: resume, first project, job market, interviews, and offer. Each step links to its page.';
+	'The guide as a chip with eight pins, seen from above. In order, the pins are resume, first project, job market, ground, interviews, offer, help and supply. All but ground and supply link to their pages.';
 ---
 
 <figure class="home-cover not-content" id="fig-home-cover">
-	<p class="home-cover-kicker">The guide in order</p>
-	<p class="sr-only">{alt}</p>
-	<ol class="home-cover-steps">
-		{steps.map((s) => (
-			<li>
-				<a href={s.href}>
-					<span class="home-cover-title">{s.title}</span>
-					<span class="home-cover-body">{s.body}</span>
-				</a>
-			</li>
+	<p class="sr-only" id="home-cover-alt">
+		{alt}
+	</p>
+	<svg viewBox="0 0 340 212" focusable="false">
+		{pins.map((p) => (
+			<rect
+				class="pin-lead"
+				aria-hidden="true"
+				x={p.side === 'left' ? bodyLeft - leadWidth : bodyRight}
+				y={p.y - 6}
+				width={leadWidth}
+				height="12"
+			/>
 		))}
-	</ol>
+		<path
+			class="chip-body"
+			aria-hidden="true"
+			d={`M${bodyLeft},10 H171 A9,9 0 0 0 189,10 H${bodyRight} V202 H${bodyLeft} Z`}
+		/>
+		<circle class="chip-dot" aria-hidden="true" cx="143" cy="25" r="3" />
+		{pins.map((p) => {
+			const isLeft = p.side === 'left';
+			const num = (
+				<text
+					class="pin-num"
+					aria-hidden="true"
+					x={isLeft ? bodyLeft + 8 : bodyRight - 8}
+					y={p.y}
+					dy="0.35em"
+					text-anchor={isLeft ? 'start' : 'end'}
+				>
+					{p.n}
+				</text>
+			);
+			const name = (
+				<text
+					class="pin-name"
+					x={isLeft ? bodyLeft - leadWidth - 8 : bodyRight + leadWidth + 8}
+					y={p.y}
+					dy="0.35em"
+					text-anchor={isLeft ? 'end' : 'start'}
+				>
+					{p.name}
+				</text>
+			);
+			return (
+				<g>
+					{num}
+					{p.href ? (
+						<a href={p.href} class="pin-link">
+							<rect
+								class="pin-hit"
+								x={isLeft ? 0 : bodyRight + leadWidth}
+								y={p.y - pitch / 2}
+								width={bodyLeft - leadWidth}
+								height={pitch}
+							/>
+							{name}
+						</a>
+					) : (
+						name
+					)}
+				</g>
+			);
+		})}
+	</svg>
 	<figcaption>
 		<span class="home-cover-fignum"></span>
-		<span>The steps of the guide, in the order a reader follows them.</span>
+		<span>The guide as a chip: each pin is a part of the search.</span>
 	</figcaption>
 </figure>
 
 <style>
 	.home-cover {
-		--line: 1.5px;
-		--node: 0.8rem;
-		--eep-dg-fill: var(--eep-paper);
 		container-type: inline-size;
 		counter-increment: eep-fig;
 		width: 100%;
@@ -67,67 +135,56 @@ const alt =
 	.home-cover p {
 		margin: 0;
 	}
-	.home-cover .home-cover-kicker {
-		margin-bottom: 1rem;
-		font: 600 var(--eep-text-eyebrow) / 1.35 var(--eep-font-serif);
-		color: var(--eep-mute);
-	}
-	.home-cover-steps {
-		position: relative;
-		display: grid;
-		gap: 1rem;
-		margin: 0;
-		padding: 0;
-		list-style: none;
-	}
-	/* One line from the first dot to the last. */
-	.home-cover-steps::before {
-		content: '';
-		position: absolute;
-		top: 0.5rem;
-		bottom: 1.6rem;
-		left: calc(var(--node) / 2 - var(--line) / 2);
-		border-left: var(--line) solid var(--eep-dg-ink);
-	}
-	.home-cover-steps li {
-		position: relative;
-		margin: 0;
-		padding-left: 1.6rem;
-	}
-	.home-cover-steps li::before {
-		content: '';
-		position: absolute;
-		z-index: 1;
-		top: 0.3rem;
-		left: 0;
-		box-sizing: border-box;
-		width: var(--node);
-		height: var(--node);
-		border: var(--line) solid var(--eep-dg-ink);
-		border-radius: 50%;
-		background: var(--eep-dg-fill);
-	}
-	.home-cover-steps a {
+	/* The chip scales with its box. Labels are 15 units on a 340 unit
+	   box, so they render at 12px or more down to a 272px box (a 320px phone),
+	   and the cap keeps them near 17px on a wide column. */
+	.home-cover svg {
 		display: block;
-		color: var(--eep-ink);
-		text-decoration: none;
+		width: 100%;
+		max-width: 24rem;
+		height: auto;
+		margin: 0 auto;
+		overflow: visible;
 	}
-	.home-cover-title {
-		display: block;
-		font-size: 0.9375rem;
-		font-weight: 600;
-		line-height: 1.3;
+	.chip-body {
+		fill: var(--eep-dg-tint);
+		stroke: var(--eep-dg-ink);
+		stroke-width: 1.5;
+		stroke-linejoin: round;
 	}
-	.home-cover-steps a:hover .home-cover-title,
-	.home-cover-steps a:focus-visible .home-cover-title {
+	.pin-lead {
+		fill: var(--eep-dg-fill);
+		stroke: var(--eep-dg-ink);
+		stroke-width: 1.5;
+	}
+	.chip-dot {
+		fill: var(--eep-dg-ink);
+	}
+	.home-cover text {
+		font-family: var(--eep-font-sans);
+		font-size: 15px;
+	}
+	.pin-num {
+		fill: var(--eep-ink-2);
+	}
+	.pin-name {
+		fill: var(--eep-ink);
+		font-weight: 500;
+	}
+	.pin-link .pin-name {
 		text-decoration: underline;
+		text-decoration-thickness: 1px;
+		text-underline-offset: 3px;
 	}
-	.home-cover-body {
-		display: block;
-		margin-top: 0.2rem;
-		font-size: 0.8125rem;
-		line-height: 1.45;
-		color: var(--eep-ink-2);
+	.pin-hit {
+		fill: transparent;
+	}
+	.pin-link:hover .pin-name {
+		text-decoration-thickness: 2px;
+	}
+	.pin-link:focus-visible {
+		outline: 2px solid var(--eep-dg-ink);
+		outline-offset: -2px;
 	}
 	.home-cover figcaption {
 		display: flex;
