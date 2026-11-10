@@ -27,6 +27,7 @@ assert.equal(bad.status, 1);
 assert.match(bad.stderr, /guide\/index\.html: link text "Resume page" starts/);
 assert.match(bad.stderr, /link text "Layout" starts/);
 assert.match(bad.stderr, /link text "Where to look" starts/);
+assert.match(bad.stderr, /link text "Ask a professor" starts/);
 assert.doesNotMatch(bad.stderr, /link text "resume page"/);
 assert.doesNotMatch(bad.stderr, /Alex's finished page/);
 assert.equal(
@@ -34,7 +35,7 @@ assert.equal(
 		.trim()
 		.split('\n')
 		.filter((line) => line.includes('link text')).length,
-	3,
+	4,
 	bad.stderr,
 );
 

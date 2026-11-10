@@ -30,21 +30,24 @@ if (!fs.existsSync(dist)) {
 	process.exit(1);
 }
 
-// Single-capital proper nouns, brands and the pronoun "I".
-const names = new Set([
+// Proper nouns, brands and the pronoun "I". An entry matches the start of the
+// link text on a word boundary, so "Alex" also covers "Alex's finished page".
+// Use a longer phrase when the first word is an ordinary word on its own, such
+// as "Ask a Manager" or "University of".
+const names = [
 	'Alex',
 	'Altium',
 	'Ansys',
 	'Ashby',
-	'Ask',
+	'Ask a Manager',
 	'Berkeley',
 	'Beta',
-	'Blue',
-	'Bureau',
+	'Blue Canyon',
+	'Bureau of Labor Statistics',
 	'Cornell',
 	'Doe',
 	'Drexel',
-	'Georgia',
+	'Georgia Tech',
 	'Greenhouse',
 	'Handshake',
 	'Harvard',
@@ -52,28 +55,36 @@ const names = new Set([
 	'I',
 	'Illinois',
 	'Indeed',
-	'Interrupt',
+	"Interrupt's",
 	'Ladders',
-	'Lockheed',
+	'Lockheed Martin',
 	'Michigan',
 	'Mines',
-	'Nigel',
+	'Nigel Jones',
 	'Obsidian',
-	'Ohio',
+	'Ohio State',
 	'Optica',
-	'Oregon',
+	'Oregon Tech',
 	'Overleaf',
-	'Pathways',
+	'Pathways internship',
+	'Pathways recent',
 	'Pi',
 	'Pitt',
 	'Princeton',
 	'Reddit',
 	'Tau',
-	'University',
+	'University of',
 	'Verilator',
 	'Wokwi',
 	'Yale',
-]);
+];
+const nameStarts = names.map(
+	(name) =>
+		new RegExp(
+			`^${name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?![\\p{L}\\p{N}])`,
+			'u',
+		),
+);
 
 const months = new Set([
 	'January',
@@ -127,12 +138,19 @@ const blocks = new Set([
 ]);
 
 const problems = [];
+/** Pages with no page content region, which the check cannot read. */
+const skipped = [];
 let checked = 0;
 for (const file of listHtml(dist)) {
 	const html = fs.readFileSync(file, 'utf8');
 	if (/http-equiv="refresh"/i.test(html)) continue; // redirect stub
 	const rel = path.relative(dist, file);
-	for (const link of links(content(html))) {
+	const body = content(html);
+	if (body === null) {
+		skipped.push(rel);
+		continue;
+	}
+	for (const link of links(body)) {
 		checked++;
 		const reason = problemWith(link.before, link.text);
 		if (reason) {
@@ -150,15 +168,20 @@ if (problems.length) {
 	);
 	process.exit(1);
 }
-console.log(`Link text has sentence case in ${checked} links.`);
+console.log(
+	`Link text has sentence case in ${checked} links` +
+		(skipped.length
+			? ` (no page content in ${skipped.length} files: ${skipped.join(', ')}).`
+			: '.'),
+);
 
 /**
  * The page content, without the footer and pagination.
  * @param {string} html
  */
 function content(html) {
-	const start = html.indexOf('sl-markdown-content');
-	if (start < 0) return '';
+	const start = html.search(/class="[^"]*\bsl-markdown-content\b/);
+	if (start < 0) return null;
 	let body = html.slice(start);
 	const end = body.search(/<footer\b/);
 	if (end >= 0) body = body.slice(0, end);
@@ -220,7 +243,9 @@ function problemWith(before, text) {
 	const word = /^[^\p{L}\p{N}]*([\p{L}\p{N}'’]+)/u.exec(text)?.[1];
 	if (!word || !/^\p{Lu}/u.test(word)) return '';
 	const base = word.replace(/['’]s?$/, '');
-	if (names.has(base) || months.has(base)) return '';
+	const plain = text.replace(/’/g, "'").replace(/^[^\p{L}\p{N}]+/u, '');
+	if (months.has(base) || nameStarts.some((start) => start.test(plain)))
+		return '';
 	if (/^\p{Lu}{2,}$/u.test(base.replace(/[\d]/g, ''))) return '';
 	if (/\p{Ll}\p{Lu}/u.test(base)) return '';
 	return 'starts with a capital letter in the middle of a sentence';
