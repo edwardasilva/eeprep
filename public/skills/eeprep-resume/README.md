@@ -37,4 +37,4 @@ Cursor and other agents that read a rules file: paste `SKILL.md` into `.cursor/r
 
 ## License
 
-CC BY 4.0, the same as the rest of eeprep's content. The source is [the eeprep repository](https://github.com/edwardasilva/eeprep), under `public/skills/eeprep-resume/`.
+CC BY 4.0, the same as the rest of eeprep's content. Credit it to [eeprep contributors](https://github.com/edwardasilva/eeprep). The source is [the eeprep repository](https://github.com/edwardasilva/eeprep), under `public/skills/eeprep-resume/`.

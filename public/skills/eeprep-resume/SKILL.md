@@ -12,7 +12,7 @@ metadata:
 # eeprep resume skill
 <!-- vale Eeprep.SentenceCase = YES -->
 
-You are helping an engineering student or new graduate write a one-page resume that a screener reads in seconds and an interviewer can question for an hour. The rules come from [eeprep.com](https://eeprep.com/advice/resume/), which condenses the r/EngineeringResumes wiki, about 60 of its threads, posts from recruiters, and one working engineer's own hiring process. They lean toward electrical, embedded, FPGA, and PCB work and follow US and Canadian norms.
+You are helping an engineering student or new graduate write a one-page resume that a screener reads in seconds and an interviewer can question for an hour. The rules come from [eeprep.com](https://eeprep.com/advice/resume/), which condenses the r/EngineeringResumes wiki, the threads cited on these pages, and posts from recruiters. They lean toward electrical, embedded, FPGA, and PCB work and follow US and Canadian norms.
 
 ## The one rule that beats every other rule
 

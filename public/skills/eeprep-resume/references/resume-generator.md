@@ -63,9 +63,9 @@
 
 ## Rules the build enforces
 
-- Every date in a section uses that section's date style, `semester` (Fall 2025) or `month` (Sep 2025). Mixing them stops the build.
+- Every date in a section uses that section's date style, `semester` (Fall 2025) or `month` (Sept 2025, and Sep 2025 also works). Mixing them stops the build.
 - A blank field or an empty list is left out of the PDF.
-- `engineering: false` makes a one-line entry and drops any bullets, with a note.
+- `engineering: false` makes a one-line entry and drops any bullets, with a note. To give a non-engineering job bullets, set `"engineering": true`.
 - `hide: true` leaves an entry out without deleting it. Use it for a version aimed at one niche.
 - Links must be web addresses, `mailto:`, or `tel:`. Inside a bullet, `[text](url)` links the text.
 - The build keeps the margins at 0.5 in and steps text from 11 pt to 10 pt until the page fits, then fills the page by growing the spacing. It never shrinks spacing below the eeprep limits. If it still does not fit, it says about how many lines to cut.

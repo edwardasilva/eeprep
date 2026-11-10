@@ -1,4 +1,10 @@
-import { existsSync, readFileSync, renameSync, rmdirSync } from 'node:fs';
+import {
+	existsSync,
+	readFileSync,
+	renameSync,
+	rmdirSync,
+	writeFileSync,
+} from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
@@ -66,6 +72,26 @@ const redirects = {
 	'/reference/job-links/': '/help/',
 	'/reference/signals-and-dsp/': '/help/',
 };
+
+// Astro builds each redirect as a 200 page with a meta refresh. Cloudflare
+// reads dist/_redirects and answers with a real 301 before it serves that page.
+// Both slash forms get a rule, because a rule matches the literal path.
+// Write the file from the list above so the two cannot drift apart.
+const permanentRedirects = {
+	name: 'permanent-redirects',
+	hooks: {
+		'astro:build:done': ({ dir }) => {
+			const lines = Object.entries(redirects).flatMap(([from, to]) => [
+				`${from} ${to} 301`,
+				`${from.replace(/\/$/, '')} ${to} 301`,
+			]);
+			writeFileSync(
+				fileURLToPath(new URL('_redirects', dir)),
+				`${lines.join('\n')}\n`,
+			);
+		},
+	},
+};
 const lightCodeTheme = JSON.parse(
 	readFileSync(
 		new URL('./src/styles/ec-eeprep-light.json', import.meta.url),
@@ -83,28 +109,6 @@ export default defineConfig({
 	site: 'https://eeprep.com',
 	redirects,
 	trailingSlash: 'always',
-	vite: {
-		plugins: [
-			{
-				// The site graph's client script imports micromatch 4, whose picomatch 2 reads
-				// process.platform and process.version, and those throw in the browser.
-				// picomatch 4's posix build has the same isMatch and no Node globals.
-				// Swap it only for the browser build. On the server, picomatch/posix is
-				// CommonJS and Vite's SSR runner can't evaluate it inline.
-				name: 'eeprep:micromatch-browser',
-				enforce: 'pre',
-				applyToEnvironment: (env) => env.config.consumer === 'client',
-				resolveId(id, importer, options) {
-					if (id !== 'micromatch') return null;
-					return this.resolve('picomatch/posix', importer, {
-						...options,
-						skipSelf: true,
-					});
-				},
-			},
-		],
-		optimizeDeps: { include: ['picomatch/posix'] },
-	},
 	markdown: {
 		processor: unified({
 			gfm: true,
@@ -154,7 +158,8 @@ export default defineConfig({
 		starlight({
 			disable404Route: true,
 			title: 'eeprep',
-			description: 'A prep guide for electrical engineering students.',
+			description:
+				'A guide to job searching for electrical engineers & computer scientists.',
 			credits: false,
 			routeMiddleware: './src/route-data.ts',
 			favicon: '/favicon.svg',
@@ -306,7 +311,7 @@ export default defineConfig({
 					label: 'Advice',
 					items: [
 						{ label: 'Advice', slug: 'advice' },
-						{ label: "Author's story", slug: 'advice/authors-story' },
+						{ label: 'Quick setup', slug: 'advice/resume/quick-setup' },
 						{
 							label: 'Projects',
 							items: [
@@ -321,7 +326,6 @@ export default defineConfig({
 							label: 'Resume',
 							items: [
 								{ label: 'Resume', slug: 'advice/resume' },
-								{ label: 'Quick setup', slug: 'advice/resume/quick-setup' },
 								{ label: 'Walkthrough', slug: 'advice/resume/walkthrough' },
 								{ label: 'Cleanup', slug: 'advice/resume/cleanup' },
 								{ label: 'Workshop', slug: 'advice/resume/workshop' },
@@ -358,6 +362,10 @@ export default defineConfig({
 							items: [
 								{ label: 'Forever learning', slug: 'advice/forever-learning' },
 								{
+									label: 'Getting into graduate study',
+									slug: 'advice/forever-learning/getting-into-graduate-study',
+								},
+								{
 									label: 'Graduate study',
 									slug: 'advice/forever-learning/graduate-study',
 								},
@@ -367,6 +375,7 @@ export default defineConfig({
 								},
 							],
 						},
+						{ label: "Author's story", slug: 'advice/authors-story' },
 					],
 				},
 				{
@@ -391,5 +400,6 @@ export default defineConfig({
 			],
 		}),
 		flatNotFoundPage,
+		permanentRedirects,
 	],
 });

@@ -40,7 +40,7 @@ Degree on the first line with GPA on the same line. School under it with the gra
 
 Coursework is where EE parts from the wiki. The wiki says to leave it off unless the courses are specialized. ECE interviewers say the courses show whether the student can pass the interview, and recruiters like it. List upper-level electives that match the posting.
 
-GPA: list 3.50 or higher always, and most of all 3.7 or higher. From 3.0 to 3.49, list it when the posting sets a minimum the user meets, and leave it off otherwise. Below 3.0, leave it off. If listed, match the decimals, as in 3.30/4.00.
+GPA: list 3.50 or higher always. From 3.0 to 3.49, list it when the posting sets a minimum the user meets, and leave it off otherwise. Below 3.0, leave it off. If listed, match the decimals, as in 3.30/4.00.
 
 ## Projects
 

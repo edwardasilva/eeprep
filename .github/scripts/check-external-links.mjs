@@ -21,6 +21,8 @@ const skipHosts = new Set([
 	'linkedin.com',
 	// Drops every scripted connection without answering, as of November 2026.
 	'www.solidworks.com',
+	// Drops every scripted connection without answering, as of November 2026.
+	'www.analog.com',
 ]);
 const timeoutMs = 20_000;
 const headers = {
@@ -107,7 +109,8 @@ async function fetchStatus(url) {
 	const head = await attempt(url, 'HEAD');
 	// A server that refuses HEAD gets one GET. A host that did not answer at
 	// all is not asked twice.
-	return head && ![403, 404, 405].includes(head) ? head : attempt(url, 'GET');
+	if (head === 0) return 0;
+	return [403, 404, 405].includes(head) ? attempt(url, 'GET') : head;
 }
 
 /**
