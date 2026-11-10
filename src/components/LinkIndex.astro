@@ -1,19 +1,12 @@
 ---
 import { getCollection } from 'astro:content';
 import { externalLinks } from './resume/caption';
+import { homeTitle } from '../lib/home';
 import { linkGroups } from '../lib/link-index';
 
-// The home page is src/pages/index.astro, not a docs entry.
-const titles = new Map([
-	[
-		'index',
-		{
-			href: '/',
-			title:
-				'A guide to job searching for electrical engineers & computer scientists',
-		},
-	],
-]);
+// The home page is src/pages/index.astro, not a docs entry. Its title is in
+// src/lib/home.ts.
+const titles = new Map([['index', { href: '/', title: homeTitle }]]);
 for (const doc of await getCollection('docs')) {
 	titles.set(doc.id, { href: `/${doc.id}/`, title: doc.data.title });
 }
