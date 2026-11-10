@@ -4,7 +4,7 @@ Thanks for helping with [eeprep](https://github.com/edwardasilva/eeprep). Fixes 
 
 ## Suggest an idea or a fix
 
-Open an [issue](https://github.com/edwardasilva/eeprep/issues/new/choose) and describe what you would change. A short description is all it needs. Naming the page and linking a public source help when you can. Every claim on the site needs a real public source before it goes on the site, and maintainers check that during review.
+Open an [issue](https://github.com/edwardasilva/eeprep/issues/new/choose) and describe what you would change. A short description is all it needs. Naming the page and linking a public source help when you can. Every claim needs a real public source before it goes on the site, and maintainers check that during review.
 
 ## Edit a page
 
