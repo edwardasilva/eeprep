@@ -3,7 +3,8 @@ name: Deploy
 # A push to main deploys the dev site: the "dev" branch of the eeprep Pages project,
 # served at https://dev.eeprep.pages.dev/.
 # A version tag, such as v0.1.0, deploys eeprep.com. Tags are cut only when Edward says so.
-# A manual run picks either.
+# A manual run can deploy dev from any ref. A manual production run must start
+# from a version tag.
 # Docs-only and .github-only pushes to main skip this workflow. Site pages live
 # under src/ as .md and .mdx, so those paths are not ignored. Path filters are
 # not evaluated for tag pushes.
@@ -47,6 +48,15 @@ jobs:
     outputs:
       wrangler-env: ${{ steps.target.outputs.wrangler-env }}
     steps:
+      # Production deploys only from a version tag, so a manual run on a branch cannot
+      # reach eeprep.com. The pattern matches the v*.*.* push trigger.
+      - name: Production deploys only from a version tag
+        if: env.TARGET == 'production'
+        run: |
+          if ! [[ "$GITHUB_REF" =~ ^refs/tags/v[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]]; then
+            echo "::error::Production deploys only from a v*.*.* tag. Run this workflow on the tag ref, or pick dev."
+            exit 1
+          fi
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
@@ -83,7 +93,11 @@ jobs:
   deploy:
     name: Deploy (${{ github.event_name == 'workflow_dispatch' && inputs.target || (startsWith(github.ref, 'refs/tags/v') && 'production' || 'dev') }})
     needs: build
-    if: vars.DEPLOY_ENABLED == 'true'
+    if: >-
+      vars.DEPLOY_ENABLED == 'true' && (
+        startsWith(github.ref, 'refs/tags/v') ||
+        (github.event_name == 'workflow_dispatch' && inputs.target == 'dev') ||
+        (github.event_name == 'push' && github.ref == 'refs/heads/main'))
     runs-on: ubuntu-latest
     timeout-minutes: 10
     # The Cloudflare secrets live in this environment, so both targets use it.
