@@ -2294,11 +2294,18 @@
     "pages": ["advice/forever-learning/graduate-study"]
   },
   {
-    "url": "https://www.ieee.org/membership/students",
-    "title": "IEEE: Student membership",
+    "url": "https://students.ieee.org/",
+    "title": "IEEE Students",
     "category": "Communities",
-    "summary": "IEEE's student membership page.",
-    "pages": ["advice/forever-learning", "advice/forever-learning/societies"]
+    "summary": "IEEE's home for student members, with benefits and student branches.",
+    "pages": ["advice/forever-learning"]
+  },
+  {
+    "url": "https://www.ieee.org/membership/qualifications",
+    "title": "IEEE: Membership qualifications",
+    "category": "Communities",
+    "summary": "IEEE's page on who can join, including the student eligibility rule.",
+    "pages": ["advice/forever-learning/societies"]
   },
   {
     "url": "https://www.reddit.com/r/ECE/",
