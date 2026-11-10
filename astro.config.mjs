@@ -385,6 +385,7 @@ export default defineConfig({
 					items: [
 						{ label: 'Help', slug: 'help' },
 						{ label: 'AI use', slug: 'help/ai-use' },
+						{ label: 'Company list', slug: 'help/company-list' },
 						{ label: 'Job boards', slug: 'help/job-boards' },
 						{ label: 'Resources', slug: 'help/resources' },
 						{ label: 'Sources', slug: 'help/all-links' },

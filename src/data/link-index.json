@@ -962,8 +962,9 @@
     "url": "https://github.com/edwardasilva/company-lists",
     "title": "company-lists on GitHub",
     "category": "Job search and referrals",
-    "summary": "Open list of companies by region, starting with the Denver metro, with a public source for every row.",
+    "summary": "Open list of companies by region, covering metros in Colorado, Texas, California, and Northern Virginia, with a public source for every row.",
     "pages": [
+      "help/company-list",
       "help/job-boards",
       "help/resources",
       "roadmap",
