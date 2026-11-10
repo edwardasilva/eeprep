@@ -1,4 +1,5 @@
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync, renameSync, rmdirSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import { unified } from '@astrojs/markdown-remark';
@@ -17,6 +18,22 @@ import {
 } from './src/lib/wiki-index.mjs';
 
 const wiki = loadWikiIndex();
+
+// The 404 page is a docs page (src/content/docs/404.md), so Astro writes it to
+// dist/404/index.html. Cloudflare's not_found_handling "404-page" looks for
+// dist/404.html, so move it there after the build.
+const flatNotFoundPage = {
+	name: 'flat-404-page',
+	hooks: {
+		'astro:build:done': ({ dir }) => {
+			const from = fileURLToPath(new URL('404/index.html', dir));
+			const to = fileURLToPath(new URL('404.html', dir));
+			if (!existsSync(from)) return;
+			renameSync(from, to);
+			rmdirSync(fileURLToPath(new URL('404/', dir)));
+		},
+	},
+};
 
 // Old URLs: moved pages go to their new address, removed pages to the closest
 // page that is left.
@@ -373,5 +390,6 @@ export default defineConfig({
 				{ label: 'Sitemap', slug: 'sitemap' },
 			],
 		}),
+		flatNotFoundPage,
 	],
 });
