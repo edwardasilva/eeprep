@@ -248,7 +248,7 @@ h1#_top {
 	background: var(--eep-sunken);
 	border: 0;
 	border-radius: var(--eep-radius-sm);
-	box-shadow: inset 2px 0 0 var(--c);
+	box-shadow: inset var(--eep-toc-bar) 0 0 var(--c);
 	padding: var(--eep-space-5) var(--eep-space-6);
 	margin: var(--eep-space-7) 0;
 	max-width: calc(var(--eep-measure) + 4rem);
