@@ -62,7 +62,6 @@ const alt =
 		container-type: inline-size;
 		font-family: var(--eep-font-sans);
 		color: var(--eep-ink);
-		--line: 1.5px;
 	}
 	.eep-sites p {
 		margin: 0;
@@ -103,7 +102,7 @@ const alt =
 	/* Narrow: a short line drops from the question to its sites. */
 	.eep-sites-line {
 		display: block;
-		width: var(--line);
+		width: var(--eep-dg-line);
 		height: 0.5rem;
 		margin-left: 1.25rem;
 		background: var(--eep-dg-ink);
@@ -116,7 +115,7 @@ const alt =
 		}
 		.eep-sites-line {
 			width: 100%;
-			height: var(--line);
+			height: var(--eep-dg-line);
 			margin: 0;
 		}
 	}

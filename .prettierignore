@@ -14,5 +14,6 @@ package-lock.json
 
 # Approved figure label sheet. Wording stays as written.
 
-# Submodule with its own formatting rules
+# Submodules with their own formatting rules
 resume-generator
+company-lists
