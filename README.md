@@ -1,3 +1,8 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="public/brand/eeprep-lockup-stacked-dark.png">
+  <img src="public/brand/eeprep-lockup-stacked.png" alt="eeprep" width="240">
+</picture>
+
 <!-- vale Eeprep.SentenceCase = NO -->
 
 # eeprep
