@@ -81,7 +81,7 @@ const caption = externalLinks(
 		margin: var(--gap) 0 0 calc(var(--step) * var(--depth));
 		max-width: none;
 		padding: 0.55rem 0.75rem 0.6rem;
-		border: 1px solid var(--eep-dg-mute);
+		border: var(--eep-dg-line) solid var(--eep-dg-mute);
 		border-radius: 4px;
 		background: color-mix(in srgb, var(--eep-dg-ink) 6%, var(--eep-dg-fill));
 	}
@@ -95,8 +95,8 @@ const caption = externalLinks(
 	.eep-layers-card::before {
 		content: '';
 		position: absolute;
-		top: calc(-1 * var(--gap) - 1px);
-		left: calc(var(--step) / -2 - 1px);
+		top: calc(-1 * var(--gap) - var(--eep-dg-line));
+		left: calc(var(--step) / -2 - var(--eep-dg-line));
 		width: calc(var(--step) / 2);
 		height: calc(var(--gap) + 1.05rem);
 		box-sizing: border-box;

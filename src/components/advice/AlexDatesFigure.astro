@@ -83,7 +83,7 @@ const rows = [
 		position: absolute;
 		z-index: 1;
 		top: 0.65rem;
-		left: calc(-1 * var(--rail) - 1px);
+		left: calc(-1 * var(--rail) - var(--eep-dg-line));
 		box-sizing: border-box;
 		width: var(--node);
 		height: var(--node);
@@ -97,9 +97,10 @@ const rows = [
 		position: absolute;
 		top: calc(0.65rem + var(--node) / 2);
 		left: calc(
-			-1 * var(--rail) - 1px + var(--node) / 2 - var(--eep-dg-line) / 2
+			-1 * var(--rail) - var(--eep-dg-line) + var(--node) / 2 -
+				var(--eep-dg-line) / 2
 		);
-		height: calc(100% + 2px + 0.5rem);
+		height: calc(100% + 2 * var(--eep-dg-line) + 0.5rem);
 		border-left: var(--eep-dg-line) solid var(--eep-dg-ink);
 	}
 	.eep-alex p {

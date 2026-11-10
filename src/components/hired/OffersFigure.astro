@@ -69,7 +69,7 @@ const caption = externalLinks(
 		box-sizing: border-box;
 		height: 1.25rem;
 		margin-top: 0.35rem;
-		border: 1px solid var(--eep-dg-mute);
+		border: var(--eep-dg-line) solid var(--eep-dg-mute);
 		border-radius: 2px;
 		background: color-mix(in srgb, var(--eep-dg-ink) 8%, var(--eep-dg-fill));
 	}
@@ -85,7 +85,7 @@ const caption = externalLinks(
 		right: 6px;
 		font-size: 0.9375rem;
 		font-weight: 600;
-		line-height: calc(1.25rem - 2px);
+		line-height: calc(1.25rem - 2 * var(--eep-dg-line));
 		font-variant-numeric: tabular-nums;
 		white-space: nowrap;
 		color: var(--eep-paper);
@@ -97,7 +97,7 @@ const caption = externalLinks(
 			margin-bottom: 1.4rem;
 		}
 		.eep-offer-value {
-			top: calc(100% + 1px);
+			top: calc(100% + var(--eep-dg-line));
 			right: auto;
 			left: 0;
 			color: var(--eep-ink);

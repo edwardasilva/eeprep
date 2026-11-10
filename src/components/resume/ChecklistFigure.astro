@@ -48,7 +48,7 @@ const polish = [
 				d="M2 10H40M33 3L40 10L33 17"
 				fill="none"
 				stroke="currentColor"
-				stroke-width="1.4"
+				style="stroke-width: var(--eep-dg-line)"
 			></path>
 		</svg>
 		<section class="eep-pass">
@@ -89,7 +89,7 @@ const polish = [
 		color: var(--eep-ink-2);
 	}
 	.eep-pass {
-		border: 1px solid var(--eep-dg-mute);
+		border: var(--eep-dg-line) solid var(--eep-dg-mute);
 		border-radius: 4px;
 		padding: 0.9rem 1rem 0.7rem;
 		background: color-mix(in srgb, var(--eep-dg-ink) 6%, var(--eep-dg-fill));
@@ -122,7 +122,7 @@ const polish = [
 		width: 0.85rem;
 		height: 0.85rem;
 		margin-top: 0.15rem;
-		border: 1.2px solid var(--eep-ink);
+		border: var(--eep-dg-line) solid var(--eep-dg-ink);
 		border-radius: 2px;
 	}
 	.eep-checks-arrow {
