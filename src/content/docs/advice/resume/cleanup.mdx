@@ -7,6 +7,7 @@ head:
     content: "How to audit a resume before you send it | eeprep"
 ---
 
+import Checklist from '../../../../components/Checklist.astro';
 import AuditFigure from '../../../../components/resume/AuditFigure.astro';
 
 Audit the finished PDF, not the source file, because the PDF is what the screener and the applicant tracking system get. Work top to bottom: the file, the header, each section, then the whole page. Fix what you find, rebuild, and run the audit again. It takes less time than one application.
@@ -15,7 +16,7 @@ Audit the finished PDF, not the source file, because the PDF is what the screene
 
 ## The file
 
-Save the PDF as plain text and read it. [Michigan Engineering](https://career.engin.umich.edu/resumes-cvs-cover-letters/) and [MIT's career office](https://capd.mit.edu/resources/make-your-resume-ats-friendly/) both warn that LaTeX output can confuse an ATS, and the text layer is where it goes wrong. Every heading, entry, and bullet has to come out whole and in reading order. Watch for "fi" and "fl" that come out as blank or as odd symbols, which [the pdfTeX manual](https://texdoc.org/serve/pdftex-a.pdf/0) says happens without a Unicode map. If you use [resume-generator](https://github.com/edwardasilva/resume-generator), each build runs this check for you when `pdftotext` is installed.
+Save the PDF as plain text and read it. [Michigan Engineering](https://career.engin.umich.edu/resumes-cvs-cover-letters/) says LaTeX is incompatible with most ATS, and [MIT's career office](https://capd.mit.edu/resources/make-your-resume-ats-friendly/) warns it can confound one. The text layer is where it goes wrong. Every heading, entry, and bullet has to come out whole and in reading order. Watch for "fi" and "fl" that come out as blank or as odd symbols, which [the pdfTeX manual](https://texdoc.org/serve/pdftex-a.pdf/0) says happens without a Unicode map. If you use [resume-generator](https://github.com/edwardasilva/resume-generator), each build runs this check for you when `pdftotext` is installed.
 
 ```bash
 pdftotext Alex-Doe-Resume.pdf - | less
@@ -55,44 +56,65 @@ Then hand it to someone else. [MIT's career office says your best proofreader is
 
 ## The checklist
 
-Copy this into a note and tick it for every version you send.
+Tick every box for each version you send.
 
-```text wrap preserveIndent
-RESUME AUDIT
-File
-[ ] pdftotext output has every heading, entry, and bullet, whole and in order
-[ ] No broken fi or fl ligatures in the text
-[ ] PDF title is "[Name] Resume", author is [Name]
-[ ] File is named [Name]-Resume.pdf
-[ ] One page
-
-Header
-[ ] Every link clicked today
-[ ] Links are plain text, no icons, no "Phone:" or "Email:" labels
-[ ] Location present, and "Willing to relocate" if true
-[ ] One email, checked daily
-
-Education
-[ ] GPA listed at 3.50 or higher, judged at 3.0 to 3.49, off below 3.0, decimals matching
-[ ] Graduation date at the right margin, "Expected" if not yet graduated
-[ ] One line of coursework that matches the posting
-[ ] No high school after the first year
-
-Projects and experience
-[ ] Every bullet: past-tense verb, a tool, a number I can explain
-[ ] No helped, assisted, worked on, or utilized
-[ ] Every bullet fills one line or most of two
-[ ] Unrelated jobs on one line, once there is engineering work
-
-Skills
-[ ] Every tool appears in a bullet
-[ ] No soft skills
-[ ] Exact product names, C and C++ as two items
-
-Whole page
-[ ] One column, no photo, no icons, no tables
-[ ] Dates right-aligned, one date style per section
-[ ] Same gap between every pair of sections
-[ ] Bold only on titles and labels
-[ ] Read by one other person
-```
+<Checklist
+	title="Resume audit"
+	groups={[
+		{
+			heading: 'File',
+			items: [
+				'pdftotext output has every heading, entry, and bullet, whole and in order',
+				'No broken fi or fl ligatures in the text',
+				'PDF title is "[Name] Resume", author is [Name]',
+				'File is named [Name]-Resume.pdf',
+				'One page',
+			],
+		},
+		{
+			heading: 'Header',
+			items: [
+				'Every link clicked today',
+				'Links are plain text, no icons, no "Phone:" or "Email:" labels',
+				'Location present, and "Willing to relocate" if true',
+				'One email, checked daily',
+			],
+		},
+		{
+			heading: 'Education',
+			items: [
+				'GPA listed at 3.50 or higher, judged at 3.0 to 3.49, off below 3.0, decimals matching',
+				'Graduation date at the right margin, "Expected" if not yet graduated',
+				'One line of coursework that matches the posting',
+				'No high school after the first year',
+			],
+		},
+		{
+			heading: 'Projects and experience',
+			items: [
+				'Every bullet: past-tense verb, a tool, a number I can explain',
+				'No helped, assisted, worked on, or utilized',
+				'Every bullet fills one line or most of two',
+				'Unrelated jobs on one line, once there is engineering work',
+			],
+		},
+		{
+			heading: 'Skills',
+			items: [
+				'Every tool appears in a bullet',
+				'No soft skills',
+				'Exact product names, C and C++ as two items',
+			],
+		},
+		{
+			heading: 'Whole page',
+			items: [
+				'One column, no photo, no icons, no tables',
+				'Dates right-aligned, one date style per section',
+				'Same gap between every pair of sections',
+				'Bold only on titles and labels',
+				'Read by one other person',
+			],
+		},
+	]}
+/>

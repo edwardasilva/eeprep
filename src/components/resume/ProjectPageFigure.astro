@@ -26,7 +26,7 @@ const caption = externalLinks(
 		<ol>
 			{sections.map((s, i) => (
 				<li>
-					<span class="eep-ppage-num">{i + 1}</span>
+					<span class="eep-num">{i + 1}</span>
 					<div>
 						<p class="eep-ppage-title">{s.title}</p>
 						<p class="eep-ppage-body">{s.body}</p>
@@ -70,17 +70,6 @@ const caption = externalLinks(
 		border: 1px solid var(--eep-dg-mute);
 		border-radius: var(--eep-radius);
 		background: var(--eep-dg-tint);
-	}
-	.eep-ppage-num {
-		display: grid;
-		place-items: center;
-		width: 1.75rem;
-		height: 1.75rem;
-		border: 1.5px solid var(--eep-dg-ink);
-		border-radius: 50%;
-		font-size: 0.8125rem;
-		font-weight: 600;
-		line-height: 1;
 	}
 	.eep-ppage-title {
 		font-size: 0.9375rem;
