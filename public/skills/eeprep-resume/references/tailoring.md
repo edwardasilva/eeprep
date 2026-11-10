@@ -16,10 +16,10 @@ The same facts appear on every version. What changes is which projects lead, whi
 
 ## How to tailor one version to one posting
 
-1. Read the posting and list its required and preferred items: tools, languages, protocols, standards, degree, years, clearance, location.
+1. Read the posting and list its required and preferred items: tools, languages, protocols, standards, degree, years, location.
 2. For each item, find where the user has already done it, in the inventory or on the current page. Mark each one as: shown, done but not shown, or not done.
 3. For "done but not shown", surface it. Move the project up, give its bullet the second line, add the tool to the Skills line, or add the course to the coursework line. Use the posting's own word when the user's experience is the same thing: write CAD when the posting says CAD, write "3D drawings" when it says that.
-4. For "not done", leave it off. Say to the user which requirements the page does not meet and whether they are tools and years (apply anyway) or a degree, license, or clearance (usually a hard filter).
+4. For "not done", leave it off. Say to the user which requirements the page does not meet and whether they are tools and years (apply anyway) or a degree or license (usually a hard filter).
 5. Reorder, do not rewrite. The bullets already hold the facts. Tailoring moves and trims. If you find yourself writing a new claim, stop and ask whether it is true.
 6. Keep the one-line role statement, if there is one, in step with the posting's title.
 
