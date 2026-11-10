@@ -17,8 +17,9 @@ Before you push, from the repo root:
 ```bash
 npm ci
 npm run build
-vale --config .github/vale/.vale.ini src/content/docs
 ```
+
+Vale checks the writing style. To run it locally, [install Vale](https://vale.sh/docs/install), then run `vale --config .github/vale/.vale.ini src/content/docs`. If you skip it, CI runs it on your pull request.
 
 CI runs the same checks on the pull request. Merges are squash merges.
 
