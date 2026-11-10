@@ -85,6 +85,10 @@
 	--eep-dg-fill: var(--eep-surface);
 	/* The 6% tint behind a figure box, from STYLE.md section 7. */
 	--eep-dg-tint: color-mix(in srgb, var(--eep-dg-ink) 6%, var(--eep-dg-fill));
+	/* One figure stroke: the weight for lines, outlines and SVG strokes, plus the dashed style. */
+	--eep-dg-line: 1.5px;
+	--eep-dg-dash: var(--eep-dg-line) dashed var(--eep-dg-ink);
+	--eep-dg-dasharray: 3 3;
 	--eep-dg-grid: #e9ecf0;
 }
 
@@ -113,6 +117,10 @@
 	--eep-dg-fill: var(--eep-surface);
 	/* The 6% tint behind a figure box, from STYLE.md section 7. */
 	--eep-dg-tint: color-mix(in srgb, var(--eep-dg-ink) 6%, var(--eep-dg-fill));
+	/* One figure stroke: the weight for lines, outlines and SVG strokes, plus the dashed style. */
+	--eep-dg-line: 1.5px;
+	--eep-dg-dash: var(--eep-dg-line) dashed var(--eep-dg-ink);
+	--eep-dg-dasharray: 3 3;
 	--eep-dg-grid: #1c2537;
 }
 
