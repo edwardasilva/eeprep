@@ -66,6 +66,15 @@ const currentSection = links
 </template>
 
 <script>
+	// The button's accessible name is "Search". Hide the visible "Ctrl K" hint
+	// from assistive tech so the name contains the visible text (WCAG 2.5.3).
+	// The button keeps aria-keyshortcuts, so the shortcut is still announced.
+	document
+		.querySelector('button[data-open-modal] > kbd')
+		?.setAttribute('aria-hidden', 'true');
+</script>
+
+<script>
 	// Show suggested pages in the search dialog while the query is empty.
 	const dialog = document.querySelector('site-search dialog');
 	const template = document.querySelector<HTMLTemplateElement>(

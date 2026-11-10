@@ -61,7 +61,7 @@ File
 Header
 [ ] Every link clicked today
 [ ] Links are plain text, no icons, no "Phone:" or "Email:" labels
-[ ] Location and "Willing to relocate" present
+[ ] Location present, and "Willing to relocate" if true
 [ ] One email, checked daily
 
 Education
