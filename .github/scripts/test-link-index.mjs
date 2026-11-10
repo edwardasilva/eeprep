@@ -17,7 +17,7 @@ const check = (dir) =>
 	});
 
 // Case, www., utm_*, the fragment and a trailing slash don't matter. Own
-// hosts, workers.dev, relative links, mailto, <link> tags, the footer license
+// hosts, the dev site, relative links, mailto, <link> tags, the footer license
 // links, redirect stubs and the Sources page itself are skipped.
 const good = check('good');
 assert.equal(good.status, 0, `${good.stdout}\n${good.stderr}`);
