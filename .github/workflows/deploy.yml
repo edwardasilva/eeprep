@@ -1,6 +1,7 @@
 name: Deploy
 
-# A push to main deploys the dev site (the eeprep-dev Worker on workers.dev).
+# A push to main deploys the dev site: the "dev" branch of the eeprep Pages project,
+# served at https://dev.eeprep.pages.dev/.
 # A version tag, such as v0.1.0, deploys eeprep.com. Tags are cut only when Edward says so.
 # A manual run picks either.
 # Docs-only and .github-only pushes to main skip this workflow. Site pages live
@@ -66,6 +67,13 @@ jobs:
           fi
       - run: npm ci
       - run: npm run build
+      # The dev build already has the noindex meta tag (SITE_ENV=dev). This adds the
+      # header too, for every file and the 404 page. Pages merges this rule with the
+      # security headers in public/_headers.
+      - name: Add the noindex header to the dev build
+        if: env.TARGET == 'dev'
+        run: |
+          printf '\n/*\n  X-Robots-Tag: noindex, nofollow\n' >> dist/_headers
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: dist
@@ -87,13 +95,27 @@ jobs:
         with:
           name: dist
           path: dist
-      - uses: cloudflare/wrangler-action@953926a2e2182532811c01a25e53647d93bf07c0 # v4.1.3
+      # eeprep.com: the eeprep-site Worker.
+      - name: Deploy eeprep.com
+        if: env.TARGET == 'production'
+        uses: cloudflare/wrangler-action@953926a2e2182532811c01a25e53647d93bf07c0 # v4.1.3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           # Keep in step with wrangler in package.json, which the CI dry run uses.
           wranglerVersion: 4.158.0
           command: deploy --env="${{ needs.build.outputs.wrangler-env }}"
+      # Dev site: the "dev" branch of the eeprep Pages project. Pages treats main as
+      # production, so any other branch is a preview, and "dev" gets the stable
+      # alias dev.eeprep.pages.dev. The token needs Account > Cloudflare Pages > Edit.
+      - name: Deploy the dev site
+        if: env.TARGET == 'dev'
+        uses: cloudflare/wrangler-action@953926a2e2182532811c01a25e53647d93bf07c0 # v4.1.3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          wranglerVersion: 4.158.0
+          command: pages deploy dist --project-name=eeprep --branch=dev --commit-hash=${{ github.sha }}
 
   release:
     name: GitHub release
