@@ -1,6 +1,6 @@
 # A year range takes an en dash, as in 2024–25. Dates in URLs are not linted. Wrap a quoted source in an inline code span or add a Vale off comment.
 extends: existence
-message: "Use an en dash in a year range, as in 2024–25."
+message: 'Use an en dash in a year range, as in 2024–25.'
 level: error
 nonword: true
 tokens:
