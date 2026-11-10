@@ -60,9 +60,12 @@ function hrefsIn(html) {
  * @returns {{ pathname: string, hash: string } | null}
  */
 function resolveLocal(href, fromFile) {
+	if (href === '#') return null;
+	if (href.startsWith('#')) {
+		return { pathname: `/${fromFile}`, hash: href.slice(1) };
+	}
 	if (
 		!href ||
-		href.startsWith('#') ||
 		href.startsWith('mailto:') ||
 		href.startsWith('javascript:') ||
 		href.startsWith('data:')
