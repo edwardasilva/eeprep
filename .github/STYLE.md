@@ -157,3 +157,13 @@ Following sections 1 to 4 too literally makes a second kind of tell: copy that i
 9. Write about the subject, not the page. "This site has the long versions of my projects" and "My job history is on LinkedIn" describe the page, and the nav and footer already say both. Start with the fact: "I write embedded software for a large aerospace hardware company." A line about the page stays only when it tells the reader something the page cannot show, such as where its advice comes from.
 
 10. Give a summary one job. A card blurb or a page description says what the thing is in one sentence, plus one number or result if it has one. The page itself holds the rest.
+
+## 9. Naming people
+
+1. The only private individuals linked by name are the credited student portfolios on the portfolio page. Do not name or link any other private person.
+
+2. This rule does not cover cited public sources. A published author, a CEO quoted in the press, or a recruiter's public post on X may be named, and the link to the source may stay.
+
+3. A cited source still needs a real, reachable link that supports the claim, per section 1. Name the person only when the name helps the reader find or judge the source.
+
+4. To check the rule, look at each named person on a page. The person must be a credited student portfolio, or the author or speaker of a public source that the page cites.
