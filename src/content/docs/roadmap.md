@@ -6,7 +6,7 @@ head:
     content: "Roadmap | eeprep"
 ---
 
-These are the updates planned for eeprep, and the plan may change. Each row lists links to use until the update ships. To help with one, see the [[Contributing|Contributing page]].
+These are the updates planned for eeprep, and the plan may change. Each row lists links to use until the update ships. To help with one, see the [[Contributing|contributing page]].
 
 | What's coming                                                                                     | Use in the meantime                                                                                                                                                                                                                                                                                                                 |
 | ------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
