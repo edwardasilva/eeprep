@@ -84,11 +84,13 @@ Also cut "not just X, but Y", "not X, but Y", "Y rather than X" used for drama, 
 
 5. Use no emoji, and straight quotes ' " rather than curly ones.
 
-6. Put the warning before the risk: "Do not run this against production. The command deletes rows."
+6. Spell out "percent" in running prose and in alt text: "40 percent of referred candidates". Use "%" only inside figures, tables, and resume bullets that use [X]%. Write a negative value with a real minus sign (−15%), not a hyphen.
 
-7. Write link text as if it were not a link. Capitalize it only at the start of a sentence, a list item, a table cell, or a heading. Also capitalize a proper noun, an acronym, or a brand (IEEE, LinkedIn, Handshake, Alex Doe). Write "the resume page" and "the section on getting a referral first", not "the Resume page" or "the Get a referral first section". A colon does not start a sentence, so "Next: the resume page" stays lowercase. Headings, navigation, sidebar labels, card titles, and figure titles keep their own case.
+7. Put the warning before the risk: "Do not run this against production. The command deletes rows."
 
-8. Give a wikilink an explicit alias when its label would be capitalized in the middle of a sentence, as in `[[Resume|resume]] page`. The link target stays as it is. `npm run check:link-case` reads the built pages after `npm run build` and fails on a capitalized link in running text. If the link starts with a real proper noun, add that name, or a phrase that starts with it, to the names list in `.github/scripts/check-link-case.mjs`.
+8. Write link text as if it were not a link. Capitalize it only at the start of a sentence, a list item, a table cell, or a heading. Also capitalize a proper noun, an acronym, or a brand (IEEE, LinkedIn, Handshake, Alex Doe). Write "the resume page" and "the section on getting a referral first", not "the Resume page" or "the Get a referral first section". A colon does not start a sentence, so "Next: the resume page" stays lowercase. Headings, navigation, sidebar labels, card titles, and figure titles keep their own case.
+
+9. Give a wikilink an explicit alias when its label would be capitalized in the middle of a sentence, as in `[[Resume|resume]] page`. The link target stays as it is. `npm run check:link-case` reads the built pages after `npm run build` and fails on a capitalized link in running text. If the link starts with a real proper noun, add that name, or a phrase that starts with it, to the names list in `.github/scripts/check-link-case.mjs`.
 
 ## 5. Voice and register
 
