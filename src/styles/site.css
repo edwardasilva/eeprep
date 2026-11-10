@@ -484,6 +484,12 @@ a.external-link .eep-ext-last::after {
 .sl-markdown-content .eep-roadmap td + td {
 	margin-top: 0.5rem;
 }
+/* Links stacked with <br /> must each be at least 24px tall (WCAG 2.5.8). */
+.sl-markdown-content .eep-roadmap td a {
+	display: inline-block;
+	min-height: 1.5rem;
+	line-height: 1.5rem;
+}
 .sl-markdown-content .eep-roadmap td[data-label]::before {
 	content: attr(data-label);
 	display: block;
