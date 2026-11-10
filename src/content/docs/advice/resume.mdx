@@ -25,7 +25,7 @@ Start from [the wiki's LaTeX template](https://www.reddit.com/r/EngineeringResum
 
 [One hiring manager reads about 350 resumes a week](https://www.reddit.com/r/EngineeringResumes/comments/1hw10ms/12_yoe_some_long_direct_advice_in_tech_from_a/). [Michigan Engineering puts the first scan at about 20 seconds](https://career.engin.umich.edu/resumes-cvs-cover-letters/), and [Ladders' eye-tracking update measured 7.4 seconds](https://www.prnewswire.com/news-releases/ladders-updates-popular-recruiter-eye-tracking-study-with-new-key-insights-on-how-job-seekers-can-improve-their-resumes-300744217.html). [A recruiter](https://www.reddit.com/r/EngineeringResumes/comments/1pkixp9/today_i_made_a_top_5_list/) and [Ladders' 2018 study](https://www.theladders.com/career-advice/is-it-true-that-recruiters-reject-a-resume-in-six-seconds) agree that company, title, and dates get read first.
 
-At many companies, the applicant tracking system (ATS, the software that stores applications) does not auto-reject. [A recruiter on X listed 41 systems](https://x.com/ConnorLibutti/status/1750604328086151194) that 43 or more recruiters said do not. [Knockout questions on the form can cut you](https://www.reddit.com/r/EngineeringResumes/comments/192hkg8/how_atss_actually_work_from_an_engineering_hiring/), and [Greenhouse can do so on screening questions but not on resume content](https://x.com/masonwong/status/1439132659947491330), as [its auto-reject rules](https://support.greenhouse.io/hc/en-us/articles/360000653472-Auto-reject) explain.
+At many companies, the applicant tracking system (ATS, the software that stores applications) does not auto-reject. [A recruiter on X listed 41 systems](https://x.com/ConnorLibutti/status/1750604328086151194) that 43 or more recruiters said do not. [Knockout questions on the form can cut you](https://www.reddit.com/r/EngineeringResumes/comments/192hkg8/how_atss_actually_work_from_an_engineering_hiring/), and [a recruiting-systems specialist says](https://x.com/masonwong/status/1439132659947491330) Greenhouse can do so on screening questions but not on resume content. Greenhouse documents [how its auto-reject rules work](https://support.greenhouse.io/hc/en-us/articles/360000653472-Auto-reject).
 
 Three habits follow:
 
@@ -39,15 +39,15 @@ Three habits follow:
 
 These [wiki rules](https://www.reddit.com/r/EngineeringResumes/wiki/index/) carry the most weight:
 
-- Keep it to 1 page. The wiki allows a second page at about 10 years of experience, and [a recruiter on X agrees](https://x.com/randomrecruiter/status/1846631030918189213).
-- Use a [single-column layout](https://x.com/TheJobfather__/status/2082954139298922755) with [no tables, icons, images, or graphics](https://x.com/randomrecruiter/status/1688896357430358016). That means no photo and no logos.
+- Keep it to 1 page. The wiki allows a second page at about 10 years of experience, and [a recruiter on X calls one page a myth](https://x.com/randomrecruiter/status/1846631030918189213) for a longer career.
+- Use a [single-column layout](https://x.com/TheJobfather__/status/2082954139298922755) with no icons, images, or graphics. That means no photo and no logos. [One recruiter rejects tables and self-rated skills](https://x.com/randomrecruiter/status/1688896357430358016) too.
 - Use black text and line spacing of at least 1.07.
 - Do not use justified text or indent sections by hand.
 - Right-align every date to the right margin.
 - Use bold sparingly, and never on keywords inside a bullet.
 - Keep the gap between every pair of sections the same. In LaTeX, use one `\vspace` value everywhere.
 
-eeprep adds two rules. Keep text at 10 to 11 pt and margins at 0.5 in. [Michigan](https://career.engin.umich.edu/resumes-cvs-cover-letters/), [Georgia Tech](https://bpb-us-e1.wpmucdn.com/sites.gatech.edu/dist/7/2441/files/2026/01/Career-Fair-Prep-PDF.pdf), [Mines](https://careers.mines.edu/resumes-and-cover-letters/), [MIT](https://capd.mit.edu/resources/resumes/), and [Berkeley](https://career.berkeley.edu/prepare-for-success/resumes/) all set 0.5 in as the smallest margin, and the wiki's 0.4 in is the only smaller figure in those sources. [The wiki asks for 10.5 pt or larger](https://www.reddit.com/r/EngineeringResumes/wiki/index/), and eeprep allows 10 pt, the floor those career centers use, so a full page still fits. Center the header and left-align everything below it. Fill the page without cramming it.
+eeprep adds two rules. Keep text at 10 to 11 pt and margins at 0.5 in. [Michigan](https://career.engin.umich.edu/resumes-cvs-cover-letters/), [Georgia Tech](https://bpb-us-e1.wpmucdn.com/sites.gatech.edu/dist/7/2441/files/2026/01/Career-Fair-Prep-PDF.pdf), [Mines](https://careers.mines.edu/resumes-and-cover-letters/), [MIT](https://capd.mit.edu/resources/resumes/), and [Berkeley](https://career.berkeley.edu/prepare-for-success/resumes/) all set 0.5 in as the smallest margin, and the wiki's 0.4 in is the only smaller figure in those sources. [The wiki asks for 10.5 pt or larger](https://www.reddit.com/r/EngineeringResumes/wiki/index/), and eeprep allows 10 pt, the floor those career centers use, so a full page still fits. Center the header and left-align everything below it. Fill the page without cramming it, and never shrink margins or spacing to fit one more line.
 
 <LayoutFigure />
 
@@ -59,7 +59,7 @@ If you write in pdfLaTeX, add these lines to the preamble:
 \hypersetup{pdftitle={Alex Doe Resume}, pdfauthor={Alex Doe}}
 ```
 
-The first 2 lines map each font glyph to Unicode. Without that map, [the pdfTeX manual](https://texdoc.org/serve/pdftex-a.pdf/0) says search is likely to fail on ligatures such as "fi". XeLaTeX and LuaLaTeX do not need it. `\hypersetup` comes from [the hyperref package](https://latex.us/macros/latex/contrib/hyperref/doc/hyperref-doc.html). No source says an ATS reads the title and author fields, so treat that line as tidiness.
+The first 2 lines map each font glyph to Unicode, and without them [the pdfTeX manual](https://texdoc.org/serve/pdftex-a.pdf/0) says search is likely to fail on ligatures such as "fi". XeLaTeX and LuaLaTeX do not need them. `\hypersetup` comes from [the hyperref package](https://latex.us/macros/latex/contrib/hyperref/doc/hyperref-doc.html), and no source says an ATS reads those fields.
 
 ## Section order
 
@@ -86,7 +86,7 @@ Put the degree on the first line, with GPA on the same line. The school goes und
 
 [The wiki says to leave coursework off unless the courses are extremely specialized](https://www.reddit.com/r/EngineeringResumes/wiki/index/), but [an ECE interviewer called that bad advice for ECE](https://www.reddit.com/r/EngineeringResumes/comments/q4d5op/electrical_engineering_senior_no_experience/) because your courses show whether you can pass the interview. List upper-level electives that match the posting, such as Power Electronics or Digital Design, and move topics such as orbital mechanics here from Skills.
 
-[The wiki says to list GPA above 3.75](https://www.reddit.com/r/EngineeringResumes/wiki/index/), and [Michigan Engineering says above 3.0](https://career.engin.umich.edu/resumes-cvs-cover-letters/). eeprep's rule: list a GPA of 3.50 or higher, and most of all at 3.7 or higher. From 3.0 to 3.49, list it when the posting sets a minimum you meet, as the [[Getting hired|Getting hired page]] says. Below 3.0, leave it off. [Match the decimals](https://www.reddit.com/r/EngineeringResumes/comments/15i3d8v/my_boss_said_my_resume_could_use_a_lot_of_work/), as in 3.30/4.00, and check for stray periods.
+[Michigan Engineering says to list GPA above 3.0](https://career.engin.umich.edu/resumes-cvs-cover-letters/), and the wiki says above 3.75. eeprep's rule: list a GPA of 3.50 or higher, and most of all at 3.7 or higher. From 3.0 to 3.49, list it when the posting sets a minimum you meet, as the [[Getting hired|Getting hired page]] says. Below 3.0, leave it off. [Match the decimals](https://www.reddit.com/r/EngineeringResumes/comments/15i3d8v/my_boss_said_my_resume_could_use_a_lot_of_work/), as in 3.30/4.00, and check for stray periods.
 
 ## Bullets
 
@@ -103,7 +103,7 @@ Rules for each bullet:
 - Ask what happened next: did the design fix the problem, and what did the analysis lead to?
 - [Do not inflate](https://www.reddit.com/r/EngineeringResumes/comments/1si2l4m/resume_advice_from_a_hiring_manager/). [One manager said](https://www.reddit.com/r/EngineeringResumes/comments/192hkg8/how_atss_actually_work_from_an_engineering_hiring/) an intern who claims $2 million in yearly savings will be asked to justify it.
 
-Lead with the embedded action, and do not force a number. [One reviewer told an embedded student](https://www.reddit.com/r/EngineeringResumes/comments/1w1e5dp/student_100_embeddedhardware_intern_applications/) that "designed a PCB in KiCad" says more than trivia such as exact step-down voltages. [The wiki's EE samples](https://www.reddit.com/r/EngineeringResumes/wiki/sample-bullet-points/) and [Michigan Engineering's impact statements](https://career.engin.umich.edu/sample-impact-statements/) have more worked bullets.
+Lead with the embedded action, and do not force a number. [One reviewer told an embedded student](https://www.reddit.com/r/EngineeringResumes/comments/1w1e5dp/student_100_embeddedhardware_intern_applications/) that "designed a PCB in KiCad" says more than trivia such as exact step-down voltages. A spec belongs in the bullet when it shows difficulty, such as register-level setup of an SPI peripheral. [The wiki's EE samples](https://www.reddit.com/r/EngineeringResumes/wiki/sample-bullet-points/) and [Michigan Engineering's impact statements](https://career.engin.umich.edu/sample-impact-statements/) have more worked bullets.
 
 ## Projects
 
@@ -137,7 +137,7 @@ When one posting matters, tailor by hand. Read its requirements, find where you 
 
 A cover letter depends on the employer. [The Hardware FYI founders said many big tech recruiters throw them out](https://www.reddit.com/r/EngineeringResumes/comments/1bmtjgj/ama_hardware_engineers_founders_of_hardware_fyi/), while defense contractors and Midwest firms tend to read them. Write one when your resume is not an obvious fit. [One manager said the good ones were 2 short paragraphs](https://www.reddit.com/r/EngineeringResumes/comments/1el24sw/15_yoe_hiring_managers_perspective_after_recent/) on why you meet the posting.
 
-Then get reviewers, and more than one. Hand the page to the career center, to two or three engineers in the field you want, and to [the r/EngineeringResumes forum](https://www.reddit.com/r/EngineeringResumes/) with your name, phone number, address, and email removed. They will disagree. [Duke's career center says that if you ask five people, you get five opinions, and that you will likely not use all of the feedback](https://careerhub.students.duke.edu/blog/2021/07/29/help-ive-heard-different-opinions-on-my-resume-and-or-search-plan-and-i-dont-know-what-to-do/). If three strangers stumble on the same bullet, that bullet has a problem, whatever each one said the fix was. Give the most weight to people who do the hiring where you want to work.
+Then get reviewers, and more than one. Hand the page to the career center, to two or three engineers in the field you want, and to [the r/EngineeringResumes forum](https://www.reddit.com/r/EngineeringResumes/) with your name, phone number, address, and email removed. They will disagree with each other. [Duke's career center says that if you ask five people, you get five opinions, and that you will likely not use all of the feedback](https://careerhub.students.duke.edu/blog/2021/07/29/help-ive-heard-different-opinions-on-my-resume-and-or-search-plan-and-i-dont-know-what-to-do/). Take every comment with a grain of salt and read the general reaction instead. If three strangers stumble on the same bullet, that bullet has a problem, whatever each one said the fix was. Give the most weight to people who do the hiring where you want to work, and the least to anyone who has never read a stack of resumes.
 
 To have a coding agent follow these rules, see [[AI use#Checking a draft|the AI use page]].
 
@@ -157,14 +157,8 @@ Review a resume in two passes. The first pass fixes content, and the polish pass
 
 ## Build your resume
 
-[resume-generator](https://github.com/edwardasilva/resume-generator) is a free, open-source tool that follows the layout on this page. You write your content in one file, and it writes a one-page PDF.
-
-1. Download the zip from the [latest release](https://github.com/edwardasilva/resume-generator/releases/latest) and unzip it.
-2. Open `resume.json`, which holds a sample resume for Alex Doe, and replace Alex's details with your own. The README explains each field.
-3. In a terminal, run `./run` from that folder. It writes `resume.pdf`.
-
-The tool bundles open-licensed fonts, so the PDF looks the same on any system. It runs on Linux, on macOS, and on Windows through WSL (Windows Subsystem for Linux).
+[resume-generator](https://github.com/edwardasilva/resume-generator) is a free, open-source tool that follows the layout on this page. Unzip the [latest release](https://github.com/edwardasilva/resume-generator/releases/latest), replace Alex Doe's details in `resume.json` with your own, and run `./run` to write `resume.pdf`. It runs on Linux, on macOS, and on Windows through WSL (Windows Subsystem for Linux).
 
 <RunFigure />
 
-You still write the bullets. Check the PDF before you send it, and fix a bullet that spills onto a second line as [Bullets](#bullets) says.
+You still write the bullets. Check the PDF before you send it, and if a bullet spills a word or two onto a second line, cut it to one line or add a detail that fills both.
