@@ -4,24 +4,22 @@ Thanks for helping with [eeprep](https://github.com/edwardasilva/eeprep). Fixes 
 
 ## Suggest an idea or a fix
 
-Open an [issue](https://github.com/edwardasilva/eeprep/issues/new/choose) and pick a template. Name the page, say what you would change, and say why. Link a public source when you can. Every claim on the site needs a real public source, and a claim that can't be backed up stays off the site.
+Open an [issue](https://github.com/edwardasilva/eeprep/issues/new/choose) and describe what you would change. A short description is all it needs. Naming the page and linking a public source help when you can. Every claim on the site needs a real public source before it goes on the site, and maintainers check that during review.
 
 ## Edit a page
 
 1. Fork the repo (or cut a short branch if you have write access).
-2. Edit one page or one fix. Guide pages live in `src/content/docs`. Outside links also need an entry in `src/content/references.bib`.
-3. Open a pull request into `main`. Keep it small.
+2. Edit one page or one fix. Guide pages live in `src/content/docs`. Outside links go in `src/content/references.bib` too, and maintainers can add that entry during review.
+3. Open a pull request into `main` with a short description of what changed and why. That is all a pull request needs. An issue link is optional. Maintainers review the change.
 
-Before you push, from the repo root:
+If you can, build it before you push, from the repo root:
 
 ```bash
 npm ci
 npm run build
 ```
 
-Vale checks the writing style. To run it locally, [install Vale](https://vale.sh/docs/install), then run `vale --config .github/vale/.vale.ini src/content/docs`. If you skip it, CI runs it on your pull request.
-
-CI runs the same checks on the pull request. Merges are squash merges.
+Vale checks the writing style. To run it locally, [install Vale](https://vale.sh/docs/install), then run `vale --config .github/vale/.vale.ini src/content/docs`. If you skip either step, maintainers run the checks before merging. Merges are squash merges.
 
 ## Coding agents
 

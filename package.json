@@ -29,7 +29,6 @@
     "check:external-links": "node .github/scripts/check-external-links.mjs",
     "test:sidebar": "node .github/scripts/test-sidebar.mjs",
     "brand": "node .github/scripts/render-brand.mjs",
-    "check:pr-body": "node .github/scripts/check-pr-body.mjs",
     "lint": "eslint . && markdownlint-cli2 && prettier --check .",
     "format": "prettier --write . && eslint . --fix"
   },

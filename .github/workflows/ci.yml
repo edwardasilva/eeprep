@@ -15,9 +15,6 @@ concurrency:
   group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
-# The PR body step checks the "Part of #" line. Editing the body alone doesn't
-# start a new run, so fix the body before the last push.
-#
 # One job runs every check, so npm ci runs once. A failed check doesn't stop the
 # others. Each check runs once what it needs is ready: node_modules, or dist/ for
 # the checks that read the build. One run lists every problem.
@@ -82,18 +79,6 @@ jobs:
         id: install
         if: ${{ !cancelled() }}
         run: npm ci
-
-      # The body names its issue on a line of its own. Outside contributors,
-      # Dependabot and no-epic pull requests are exempt.
-      - name: PR body
-        if: ${{ !cancelled() && github.event_name == 'pull_request' }}
-        env:
-          PR_BODY: ${{ github.event.pull_request.body }}
-          PR_LABELS: ${{ toJSON(github.event.pull_request.labels.*.name) }}
-          PR_ACTOR: ${{ github.event.pull_request.user.login }}
-          PR_SENDER: ${{ github.actor }}
-          PR_AUTHOR_ASSOCIATION: ${{ github.event.pull_request.author_association }}
-        run: node .github/scripts/check-pr-body.mjs
 
       # Checks that read the source.
       - name: Lint (ESLint, markdownlint, Prettier)
