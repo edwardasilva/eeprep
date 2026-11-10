@@ -41,7 +41,7 @@ The repo has two licenses, one for content and one for code.
 Content is licensed under [CC BY 4.0](LICENSE-CONTENT). You may share and adapt it if you give credit and link the license. Credit it to Edward Silva and eeprep ([eeprep.com](https://eeprep.com)). Content means:
 
 - the guide pages and their sources in `src/content/`
-- the words and drawings shown by the figures in `src/components/advice/`, `src/components/guide/`, `src/components/hired/`, `src/components/interview/`, `src/components/links/`, `src/components/projects/`, `src/components/resume/`, `src/components/roadmap/`, `src/components/simple/`, and `src/components/story/`
+- the words and drawings shown by the figures in `src/components/advice/`, `src/components/guide/`, `src/components/hired/`, `src/components/interview/`, `src/components/links/`, `src/components/projects/`, `src/components/resume/`, `src/components/simple/`, and `src/components/story/`
 - the resume skill in `public/skills/eeprep-resume/`
 
 Code is licensed under the [MIT License](LICENSE). Code means everything else, including the components, plugins, styles, scripts, worker, and config files. The resume-generator submodule has its own licenses: MIT for code and CC BY 4.0 for its examples and docs.
