@@ -1,0 +1,167 @@
+---
+import { externalLinks } from '../resume/caption';
+// Two columns: senior year and the master's year. A solid connector carries the
+// hours across. A dashed box and dashed connector hold the BS/MS aside. On
+// narrow figures everything stacks and the connectors run down.
+const alt =
+	"Two columns, senior year and master's year. In senior year, graduate courses taken as a senior, with department permission. A connector to the master's year reads: up to 12 hours can count toward the master's. In the master's year, the hours that count toward the master's: up to 12 hours can count if they were not already used for the bachelor's. A dashed aside under the master's year reads: up to 6 hours can also count toward the bachelor's in a formal BS/MS. The numbers are one school's rules, Georgia Tech's. Ask your department for its own limits.";
+const caption = externalLinks(
+	`The hour limits are Georgia Tech's rules. Ask your department for its own BS/MS or 4+1 limits. Sources: <a href="https://catalog.gatech.edu/academics/undergraduate/undergraduate-students-taking-graduate-courses/">Georgia Tech catalog on undergraduates taking graduate courses</a> and <a href="https://ece.gatech.edu/academics/joint-bs-ms">Georgia Tech ECE on the joint BS/MS</a>.`,
+);
+---
+
+<figure class="eep-fig wide eep-gradcredit-fig" id="fig-grad-credits">
+	<p class="eep-kicker">How senior-year courses can count</p>
+	<p class="sr-only">{alt}</p>
+	<div class="eep-gradcredit not-content" aria-hidden="true">
+		<div class="eep-gradcredit-box a">
+			<p class="eep-gradcredit-col">Senior year</p>
+			<p class="eep-gradcredit-title">Graduate courses taken as a senior</p>
+			<p class="eep-gradcredit-body">Taken with department permission.</p>
+		</div>
+		<div class="eep-gradcredit-link">
+			<p class="eep-gradcredit-label">
+				Up to 12 hours can count toward the master's.
+			</p>
+			<span class="eep-gradcredit-line"></span>
+		</div>
+		<div class="eep-gradcredit-box b">
+			<p class="eep-gradcredit-col">Master's year</p>
+			<p class="eep-gradcredit-title">Hours that count toward the master's</p>
+			<p class="eep-gradcredit-body">
+				Up to 12 hours can count if they were not already used for the
+				bachelor's.
+			</p>
+		</div>
+		<span class="eep-gradcredit-dash"></span>
+		<div class="eep-gradcredit-box aside">
+			<p class="eep-gradcredit-body">
+				Up to 6 hours can also count toward the bachelor's in a formal BS/MS.
+			</p>
+		</div>
+	</div>
+	<figcaption>
+		<span class="eep-fignum"></span> <span set:html={caption} />
+	</figcaption>
+</figure>
+
+<style>
+	.eep-gradcredit {
+		--line: 1.5px solid var(--eep-dg-ink);
+		margin-top: 1rem;
+		container-type: inline-size;
+		font-family: var(--eep-font-sans);
+		color: var(--eep-ink);
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-areas: 'a' 'link' 'b' 'dash' 'aside';
+	}
+	.eep-gradcredit p {
+		margin: 0;
+		max-width: none;
+		overflow-wrap: anywhere;
+	}
+	.eep-gradcredit-box {
+		padding: 0.6rem 0.75rem;
+		border: 1px solid var(--eep-dg-mute);
+		border-radius: 4px;
+		background: var(--eep-dg-tint);
+	}
+	.eep-gradcredit-box.a {
+		grid-area: a;
+	}
+	.eep-gradcredit-box.b {
+		grid-area: b;
+	}
+	.eep-gradcredit-box.aside {
+		grid-area: aside;
+		border-style: dashed;
+	}
+	.eep-gradcredit .eep-gradcredit-col {
+		padding-bottom: 0.35rem;
+		margin-bottom: 0.35rem;
+		border-bottom: 1px solid var(--eep-dg-mute);
+		font-size: 0.8125rem;
+		line-height: 1.4;
+	}
+	.eep-gradcredit .eep-gradcredit-title {
+		font-size: 0.9375rem;
+		font-weight: 600;
+		line-height: 1.3;
+	}
+	.eep-gradcredit .eep-gradcredit-body {
+		margin-top: 0.2rem;
+		font-size: 0.8125rem;
+		line-height: 1.45;
+		color: var(--eep-ink-2);
+	}
+	.eep-gradcredit .eep-gradcredit-label {
+		font-size: 0.8125rem;
+		line-height: 1.4;
+	}
+	/* Narrow: both connectors run down at the same left offset. */
+	.eep-gradcredit-link {
+		grid-area: link;
+		display: grid;
+		grid-template-columns: auto 1fr;
+		column-gap: 0.75rem;
+		align-items: center;
+		min-height: 3rem;
+		margin-left: 1.5rem;
+	}
+	.eep-gradcredit-link .eep-gradcredit-label {
+		grid-column: 2;
+		grid-row: 1;
+	}
+	.eep-gradcredit-line {
+		grid-column: 1;
+		grid-row: 1;
+		align-self: stretch;
+		width: 0;
+		border-left: var(--line);
+	}
+	.eep-gradcredit-dash {
+		grid-area: dash;
+		height: 1.5rem;
+		margin-left: 1.5rem;
+		width: 0;
+		border-left: 1.5px dashed var(--eep-dg-ink);
+	}
+	@container (min-width: 40rem) {
+		.eep-gradcredit {
+			grid-template-columns: 1fr 12rem 1fr;
+			grid-template-areas:
+				'a link b'
+				'. . dash'
+				'. . aside';
+		}
+		.eep-gradcredit-link {
+			grid-template-columns: 1fr;
+			grid-template-rows: auto auto;
+			row-gap: 0.25rem;
+			align-content: center;
+			margin-left: 0;
+			min-height: 0;
+			padding: 0 0.5rem;
+		}
+		.eep-gradcredit-link .eep-gradcredit-label {
+			grid-column: 1;
+			grid-row: 1;
+			text-align: center;
+		}
+		.eep-gradcredit-line {
+			grid-column: 1;
+			grid-row: 2;
+			align-self: auto;
+			/* Run edge to edge of the cell so both ends touch a box. */
+			margin: 0 -0.5rem;
+			width: auto;
+			height: 0;
+			border-left: 0;
+			border-top: var(--line);
+		}
+		.eep-gradcredit-dash {
+			margin-left: 50%;
+		}
+	}
+</style>
