@@ -487,10 +487,10 @@
     "pages": ["advice/resume"]
   },
   {
-    "url": "https://www.askamanager.org/?p=23426",
-    "title": "Ask a Manager: Trainings and certificates on a resume",
+    "url": "https://www.askamanager.org/2022/04/open-thread-april-22-23-2022.html",
+    "title": "Ask a Manager: open thread, April 22-23, 2022",
     "category": "Resume feedback from reviewers and recruiters",
-    "summary": "Alison Green on keeping small trainings and certificates off the resume.",
+    "summary": "A reader comment suggesting a resume not carry a long list of little trainings and certificates.",
     "pages": ["advice/forever-learning"]
   },
   {
@@ -1155,7 +1155,7 @@
     "url": "https://allwork.space/2021/11/what-happened-to-entry-level-jobs-job-seekers-baffled-by-requirements/",
     "title": "Allwork: What happened to entry-level jobs",
     "category": "Job search and referrals",
-    "summary": "LinkedIn analysis, 3.8 million postings: 35% of entry-level roles wanted 3-plus years.",
+    "summary": "LinkedIn analysis, close to 4 million postings: 35% of entry-level roles asked for years of experience.",
     "pages": ["help/job-boards"]
   },
   {
@@ -1809,7 +1809,7 @@
     "title": "Hardware FYI: Top electrical engineering interview questions",
     "category": "Interview prep",
     "summary": "Common electrical engineering interview questions collected by Hardware FYI.",
-    "pages": ["advice/getting-hired/how-to-interview", "advice/resume/cleanup"]
+    "pages": ["advice/getting-hired/how-to-interview"]
   },
   {
     "url": "https://ecs.grainger.illinois.edu/student-resources/interviewing/fundamentals",
@@ -2224,8 +2224,8 @@
     "pages": ["advice/forever-learning/graduate-study"]
   },
   {
-    "url": "https://yp.ieee.org/blog/2023/11/15/check-out-the-career-programs-of-ieee-usa-part-2",
-    "title": "IEEE Young Professionals: The career programs of IEEE-USA",
+    "url": "https://insight.ieeeusa.org/articles/more-ieee-usa-career-and-membership-services-programs-part-2/",
+    "title": "IEEE-USA InSight: More career and membership services programs, part 2",
     "category": "Pay and career data",
     "summary": "IEEE-USA member job-hunt tools: salary calculator, Job Site, Employment Navigator.",
     "pages": ["advice/forever-learning/societies"]
@@ -2430,10 +2430,10 @@
     "pages": ["advice/forever-learning/getting-into-graduate-study"]
   },
   {
-    "url": "https://www.ieee.org/membership/students",
-    "title": "IEEE: Student membership",
+    "url": "https://students.ieee.org/",
+    "title": "IEEE Students",
     "category": "Communities",
-    "summary": "IEEE's student membership page.",
+    "summary": "IEEE's home for student members, with benefits and student branches.",
     "pages": ["advice/forever-learning"]
   },
   {
