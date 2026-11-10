@@ -104,6 +104,7 @@
       "advice/resume/cleanup",
       "advice/resume/walkthrough",
       "advice/resume/workshop",
+      "help",
       "help/resources"
     ]
   },
@@ -811,7 +812,7 @@
     "title": "Handshake",
     "category": "Job search and referrals",
     "summary": "Job and internship platform that many universities use for student recruiting.",
-    "pages": ["advice/getting-hired", "help/job-boards"]
+    "pages": ["advice/getting-hired", "help", "help/job-boards"]
   },
   {
     "url": "https://jobs.ieee.org/",
@@ -846,7 +847,7 @@
     "title": "LinkedIn Jobs",
     "category": "Job search and referrals",
     "summary": "LinkedIn's job search, with filters for internships and entry-level roles.",
-    "pages": ["help/job-boards"]
+    "pages": ["help", "help/job-boards"]
   },
   {
     "url": "https://career.engin.umich.edu/students/job-search-policies/",
@@ -1006,7 +1007,7 @@
     "title": "USAJOBS",
     "category": "Job search and referrals",
     "summary": "The US federal government's official job listings site.",
-    "pages": ["help/job-boards"]
+    "pages": ["help", "help/job-boards"]
   },
   {
     "url": "https://www.nasa.gov/learning-resources/internship-programs/",
@@ -1034,7 +1035,7 @@
     "title": "USAJOBS: Pathways internships for students",
     "category": "Job search and referrals",
     "summary": "The federal Pathways internship program for students currently enrolled in school.",
-    "pages": ["help/job-boards"]
+    "pages": ["help", "help/job-boards"]
   },
   {
     "url": "https://ocs.yale.edu/industry-hiring-timelines/",
@@ -1965,6 +1966,7 @@
       "advice/getting-hired/job-market",
       "advice/projects",
       "advice/projects/career-paths",
+      "help",
       "help/resources"
     ]
   },
@@ -1983,14 +1985,22 @@
     "title": "Levels.fyi",
     "category": "Pay and career data",
     "summary": "Self-reported salary and total compensation data by company and level.",
-    "pages": ["advice/getting-hired/first-full-time-role", "help/resources"]
+    "pages": [
+      "advice/getting-hired/first-full-time-role",
+      "help",
+      "help/resources"
+    ]
   },
   {
     "url": "https://www.naceweb.org/job-market/compensation/",
     "title": "NACE: Compensation",
     "category": "Pay and career data",
     "summary": "NACE data and reports on starting salaries for new college graduates.",
-    "pages": ["advice/getting-hired/first-full-time-role", "help/resources"]
+    "pages": [
+      "advice/getting-hired/first-full-time-role",
+      "help",
+      "help/resources"
+    ]
   },
   {
     "url": "https://www.naceweb.org/talent-acquisition/internships/intern-conversion-rate-hits-highest-mark-in-five-years",
