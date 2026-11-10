@@ -54,7 +54,6 @@ const alt =
 
 <style>
 	.home-cover {
-		--line: 1.5px;
 		--node: 0.8rem;
 		--eep-dg-fill: var(--eep-paper);
 		container-type: inline-size;
@@ -86,8 +85,8 @@ const alt =
 		position: absolute;
 		top: 0.5rem;
 		bottom: 1.6rem;
-		left: calc(var(--node) / 2 - var(--line) / 2);
-		border-left: var(--line) solid var(--eep-dg-ink);
+		left: calc(var(--node) / 2 - var(--eep-dg-line) / 2);
+		border-left: var(--eep-dg-line) solid var(--eep-dg-ink);
 	}
 	.home-cover-steps li {
 		position: relative;
@@ -103,7 +102,7 @@ const alt =
 		box-sizing: border-box;
 		width: var(--node);
 		height: var(--node);
-		border: var(--line) solid var(--eep-dg-ink);
+		border: var(--eep-dg-line) solid var(--eep-dg-ink);
 		border-radius: 50%;
 		background: var(--eep-dg-fill);
 	}

@@ -117,9 +117,9 @@ jobs:
       - name: Link index checker tests
         if: ${{ !cancelled() && steps.install.outcome == 'success' && steps.scope.outputs.code == 'true' }}
         run: npm run test:link-index
-      - name: Worker tests
+      - name: Link case checker tests
         if: ${{ !cancelled() && steps.install.outcome == 'success' && steps.scope.outputs.code == 'true' }}
-        run: npm run test:worker
+        run: npm run test:link-case
       - name: Figure rules
         if: ${{ !cancelled() && steps.install.outcome == 'success' && steps.scope.outputs.code == 'true' }}
         run: npm run check:figures
@@ -150,12 +150,12 @@ jobs:
       - name: Link index
         if: ${{ !cancelled() && steps.build.outcome == 'success' }}
         run: npm run check:link-index
+      - name: Link case
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: npm run check:link-case
       - name: Robots meta tag
         if: ${{ !cancelled() && steps.build.outcome == 'success' }}
         run: npm run check:robots
       - name: Wrangler dry run (eeprep.com)
         if: ${{ !cancelled() && steps.build.outcome == 'success' }}
         run: npm run check:deploy
-      - name: Wrangler dry run (dev)
-        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
-        run: npm run check:deploy:dev
