@@ -19,7 +19,9 @@ for (const file of listHtml(dist)) {
 	const rel = path.relative(dist, file);
 	const expected = dev || rel === '404.html';
 	if (expected !== noindex.test(html)) {
-		problems.push(`${rel}: ${expected ? 'missing' : 'has'} the noindex meta tag`);
+		problems.push(
+			`${rel}: ${expected ? 'missing' : 'has'} the noindex meta tag`,
+		);
 	}
 	const canonical = /<link rel="canonical" href="([^"]+)"/.exec(html);
 	if (canonical && !canonical[1].startsWith('https://eeprep.com/')) {
@@ -30,7 +32,7 @@ for (const file of listHtml(dist)) {
 for (const problem of problems) console.error(problem);
 if (problems.length) process.exit(1);
 console.log(
-	`${pages} pages have the expected noindex meta tag (${dev ? 'dev' : 'production'} build).`,
+	`${pages} pages pass the noindex check (${dev ? 'dev' : 'production'} build).`,
 );
 
 /** @param {string} dir @returns {string[]} */
