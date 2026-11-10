@@ -129,9 +129,12 @@ const blocks = new Set([
 	'p',
 	'section',
 	'summary',
+	// Each SVG text element is a standalone label, as in the home chip figure.
+	'svg',
 	'table',
 	'tbody',
 	'td',
+	'text',
 	'tfoot',
 	'th',
 	'thead',
