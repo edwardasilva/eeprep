@@ -151,6 +151,7 @@ const rows = [
 	/* Hover and focus use ink, not the crimson link color, because figures keep
 	   crimson off. A darker border and an underline mark the chip as a link. */
 	.eep-sites li > :global(a:focus-visible) {
+		color: var(--eep-dg-ink);
 		border-color: var(--eep-dg-ink);
 		text-decoration: underline;
 		text-underline-offset: 0.15em;
@@ -159,6 +160,7 @@ const rows = [
 	}
 	@media (hover: hover) {
 		.eep-sites li > :global(a:hover) {
+			color: var(--eep-dg-ink);
 			border-color: var(--eep-dg-ink);
 			text-decoration: underline;
 			text-underline-offset: 0.15em;
