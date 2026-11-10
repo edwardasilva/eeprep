@@ -383,6 +383,10 @@ export default defineConfig({
 							items: [
 								{ label: 'Forever learning', slug: 'advice/forever-learning' },
 								{
+									label: 'Getting into graduate study',
+									slug: 'advice/forever-learning/getting-into-graduate-study',
+								},
+								{
 									label: 'Graduate study',
 									slug: 'advice/forever-learning/graduate-study',
 								},
