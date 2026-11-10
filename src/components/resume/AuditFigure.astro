@@ -2,8 +2,18 @@
 import { externalLinks } from './caption';
 // Figure 13.1 as HTML and CSS. A schematic page with its regions outlined,
 // and one check per region beside it. The regions are the sections of Alex's
-// finished page in Figure 4.4, plus the file itself.
-const zones = [
+// finished page in Figure 4.4, plus the file itself. The sheet follows the same
+// formatting: a centered header with a name, one contact line, and relocation,
+// then Education, Skills, Projects, and Experience, left-aligned, with a date
+// tick at the right margin and an equal gap between sections.
+// Each row is a bar. w is its width as a percent of the line, bold marks a
+// title or a name, and d adds a date tick at the right margin.
+interface Row {
+	w: number;
+	d?: boolean;
+	bold?: boolean;
+}
+const zones: { label: string; check: string; rows?: Row[] }[] = [
 	{
 		label: 'File',
 		check:
@@ -12,29 +22,41 @@ const zones = [
 	{
 		label: 'Header',
 		check: 'Every link clicked. Plain text, no icons. Location and relocation.',
+		rows: [{ w: 36, bold: true }, { w: 90 }, { w: 40 }],
 	},
 	{
 		label: 'Education',
 		check:
 			'GPA at 3.50 or higher, a judgment call to 3.0, off below that. One line of coursework.',
-	},
-	{
-		label: 'Projects',
-		check: 'Each bullet: a past-tense verb, a tool, a number you can explain.',
-	},
-	{
-		label: 'Experience',
-		check:
-			'Unrelated jobs on one line once you have engineering work. Engineering roles get bullets.',
+		rows: [{ w: 62, bold: true }, { w: 40, d: true }, { w: 70 }],
 	},
 	{
 		label: 'Skills',
 		check:
 			'Every tool appears in a bullet. No soft skills. C, C++ as two items.',
+		rows: [{ w: 66 }, { w: 80 }],
+	},
+	{
+		label: 'Projects',
+		check: 'Each bullet: a past-tense verb, a tool, a number you can explain.',
+		rows: [
+			{ w: 52, bold: true, d: true },
+			{ w: 88 },
+			{ w: 76 },
+			{ w: 46, bold: true, d: true },
+			{ w: 88 },
+			{ w: 70 },
+		],
+	},
+	{
+		label: 'Experience',
+		check:
+			'Unrelated jobs on one line once you have engineering work. Engineering roles get bullets.',
+		rows: [{ w: 50, bold: true, d: true }, { w: 24 }],
 	},
 ];
 const alt =
-	'A schematic one-page resume with six regions outlined, and one check beside each. File: extract the text and read it in order, one page, title and author set. Header: every link clicked, plain text, no icons, location and relocation. Education: GPA at 3.50 or higher, a judgment call from 3.0 to 3.49, off below 3.0, one line of coursework. Projects: each bullet has a past-tense verb, a tool, and a number you can explain. Experience: unrelated jobs on one line once you have engineering work, engineering roles get bullets. Skills: every tool appears in a bullet, no soft skills, C and C++ as two items.';
+	"A schematic one-page resume with six regions outlined, and one check beside each. File: extract the text and read it in order, one page, title and author set. Header: every link clicked, plain text, no icons, location and relocation. Education: GPA at 3.50 or higher, a judgment call from 3.0 to 3.49, off below 3.0, one line of coursework. Skills: every tool appears in a bullet, no soft skills, C and C++ as two items. Projects: each bullet has a past-tense verb, a tool, and a number you can explain. Experience: unrelated jobs on one line once you have engineering work, engineering roles get bullets. The page is drawn the way Alex's finished page is formatted: a centered header with a name, one contact line, and relocation, then Education, Skills, Projects, and Experience in that order, left-aligned, with a date at the right margin of each entry and an equal gap between sections.";
 const caption = externalLinks(
 	`One check per region, in reading order. Sources: the <a href="https://www.reddit.com/r/EngineeringResumes/wiki/index/">r/EngineeringResumes wiki</a>, <a href="https://capd.mit.edu/resources/make-your-resume-ats-friendly/">MIT's career office on ATS-friendly resumes</a>, and <a href="https://ecs.grainger.illinois.edu/student-resources/resumes-letters/resumes">Illinois Engineering Career Services</a>.`,
 );
@@ -48,11 +70,17 @@ const caption = externalLinks(
 			{zones.slice(1).map((zone, i) => (
 				<div class:list={['eep-audit-zone', { 'eep-audit-header': i === 0 }]}>
 					<span class="eep-audit-num">{i + 2}</span>
-					<span class="eep-audit-zone-label">{zone.label}</span>
+					{i > 0 && <span class="eep-audit-zone-label">{zone.label}</span>}
 					<span class="eep-audit-lines">
-						<span />
-						<span />
-						{i > 0 && <span />}
+						{zone.rows?.map((row) => (
+							<span class="eep-audit-row">
+								<span
+									class:list={['eep-audit-bar', { bold: row.bold }]}
+									style={`width: ${row.w}%`}
+								/>
+								{row.d && <span class="eep-audit-date" />}
+							</span>
+						))}
 					</span>
 				</div>
 			))}
@@ -144,16 +172,34 @@ const caption = externalLinks(
 		gap: 0.2rem;
 		margin-top: 0.3rem;
 	}
-	.eep-audit-lines span {
+	.eep-audit-row {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 0.5rem;
+	}
+	.eep-audit-bar,
+	.eep-audit-date {
 		display: block;
 		height: 0.4rem;
 		border-radius: var(--eep-radius-sm);
 		background: var(--eep-dg-tint);
 		border: 1px solid var(--eep-dg-mute);
 	}
-	.eep-audit-header .eep-audit-lines span {
-		width: 60%;
-		margin: 0 auto;
+	.eep-audit-bar {
+		min-width: 0;
+	}
+	/* A title or a name is bold on the page, so its bar is darker. */
+	.eep-audit-bar.bold {
+		background: var(--eep-dg-mute);
+	}
+	.eep-audit-date {
+		flex: none;
+		width: 22%;
+	}
+	/* The header is centered, with one contact line and relocation. */
+	.eep-audit-header .eep-audit-row {
+		justify-content: center;
 	}
 	.eep-audit-checks {
 		margin: 0;
