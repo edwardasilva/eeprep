@@ -55,6 +55,12 @@ for (const file of listHtml(dist)) {
 	pageCount++;
 	// The footer's license notice (CC BY 4.0 and MIT) is on every page.
 	html = html.replace(/<p\b[^>]*class="[^"]*\beep-license\b[\s\S]*?<\/p>/g, '');
+	// Company websites in the company list table are a directory, not sources
+	// cited in the guide, and the list grows with the company-lists submodule.
+	html = html.replace(
+		/<table\b[^>]*class="[^"]*\beep-company-list\b[\s\S]*?<\/table>/g,
+		'',
+	);
 	for (const match of html.matchAll(/<a\b[^>]*?\shref="([^"]*)"/g)) {
 		const href = decode(match[1] ?? '');
 		const key = normalize(href);

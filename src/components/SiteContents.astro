@@ -7,6 +7,7 @@ import path from 'node:path';
 import { getCollection } from 'astro:content';
 import type { StarlightRouteData } from '@astrojs/starlight/route-data';
 import { headingsOf, itemsOf } from '../lib/site-index.mjs';
+import { figureStarts } from '../lib/figure-numbers';
 
 interface Props {
 	kind: 'contents' | 'figures' | 'tables';
@@ -49,6 +50,7 @@ const walk = (entries: Entry[]) => {
 	}
 };
 walk(Astro.locals.starlightRoute.sidebar);
+const starts = await figureStarts(Astro.locals.starlightRoute.sidebar);
 
 const rows = pages.flatMap((page) => {
 	if (kind === 'figures') {
@@ -57,7 +59,7 @@ const rows = pages.flatMap((page) => {
 			href: `${page.href}#${f.id}`,
 			page: page.label,
 			pageHref: page.href,
-			detail: `Figure ${i + 1}`,
+			detail: `Figure ${(starts.get(page.href) ?? 0) + i + 1}`,
 		}));
 	}
 	return page.tables.map((t) => ({
@@ -95,7 +97,7 @@ const rows = pages.flatMap((page) => {
 			<tr>
 				<th scope="col">{kind === 'figures' ? 'Figure' : 'Table'}</th>
 				<th scope="col">Page</th>
-				{kind === 'figures' && <th scope="col">Number on the page</th>}
+				{kind === 'figures' && <th scope="col">Number</th>}
 			</tr>
 		</thead>
 		<tbody>
@@ -107,9 +109,7 @@ const rows = pages.flatMap((page) => {
 					<td data-label="Page">
 						<a href={row.pageHref}>{row.page}</a>
 					</td>
-					{kind === 'figures' && (
-						<td data-label="Number on the page">{row.detail}</td>
-					)}
+					{kind === 'figures' && <td data-label="Number">{row.detail}</td>}
 				</tr>
 			))}
 		</tbody>
