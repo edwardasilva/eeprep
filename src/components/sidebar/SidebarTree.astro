@@ -201,14 +201,9 @@ const { sublist, nested } = Astro.props;
 	.eep-parent-toggle:hover {
 		color: var(--sl-color-white);
 	}
-	/*
-	 * A current parent link keeps the site's current-page look, not the
-	 * group-label colour above, and its toggle stays readable beside it.
-	 */
-	.top-level > .eep-parent > .eep-parent-link[aria-current='page'],
+	/* The current parent link takes its look from theme.css. Its toggle stays readable beside it. */
 	.eep-parent-link[aria-current='page'] + details > .eep-parent-toggle {
 		color: var(--eep-ink, var(--sl-color-white));
-		background-color: transparent;
 	}
 	/* The toggle matches the font size of the link it sits beside. */
 	.eep-parent-toggle:not(.large) {

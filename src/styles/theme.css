@@ -399,7 +399,7 @@ figure.eep-fig {
 /* ---------- 11. Sidebar / chapter TOC ---------- */
 .sidebar-content a[aria-current='page'] {
 	background: transparent;
-	color: var(--eep-accent);
+	color: var(--eep-ink);
 	font-weight: 550;
 	box-shadow: inset var(--eep-toc-bar) 0 0 var(--eep-accent);
 	border-radius: 0;
@@ -412,12 +412,13 @@ figure.eep-fig {
 .sidebar-content a:not(.large) {
 	font-size: var(--eep-text-sm);
 }
-/* Inactive TOC entries are secondary; the current one is the accent. */
+/* Inactive TOC entries are secondary. The current one is ink with the crimson bar. */
 starlight-toc a {
 	color: var(--eep-ink-2);
 }
 starlight-toc a[aria-current='true'] {
-	color: var(--eep-accent);
+	color: var(--eep-ink);
+	box-shadow: inset var(--eep-toc-bar) 0 0 var(--eep-accent);
 }
 @media (hover: hover) {
 	:is(.sidebar-content, starlight-toc) a:hover {
