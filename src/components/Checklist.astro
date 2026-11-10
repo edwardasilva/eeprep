@@ -1,0 +1,133 @@
+---
+interface Field {
+	/** Prompt text, shown as written. */
+	label: string;
+	/** Draw a blank line to write on, under the label. */
+	blank?: boolean;
+}
+interface Group {
+	heading: string;
+	/** Items with a tick box. */
+	items?: string[];
+	/** Fill-in prompts, shown after the items. */
+	fields?: Field[];
+	/** Number the fields 1, 2, 3. */
+	numbered?: boolean;
+}
+interface Props {
+	title?: string;
+	groups: Group[];
+}
+const { title, groups } = Astro.props;
+---
+
+<div class="eep-list" role="group" aria-label={title}>
+	{title && <p class="eep-list-title">{title}</p>}
+	{groups.map((group) => (
+		<section class="eep-list-group">
+			<p class="eep-list-heading">{group.heading}</p>
+			{group.items && (
+				<ul class="eep-list-items">
+					{group.items.map((item) => (
+						<li>
+							<span class="eep-box" aria-hidden="true" />
+							<span>{item}</span>
+						</li>
+					))}
+				</ul>
+			)}
+			{group.fields &&
+				(group.numbered ? (
+					<ol class="eep-list-fields">
+						{group.fields.map((f) => (
+							<li class:list={{ blank: f.blank }}>{f.label}</li>
+						))}
+					</ol>
+				) : (
+					<ul class="eep-list-fields">
+						{group.fields.map((f) => (
+							<li class:list={{ blank: f.blank }}>{f.label}</li>
+						))}
+					</ul>
+				))}
+		</section>
+	))}
+</div>
+
+<style>
+	.eep-list {
+		margin: 1.25rem 0;
+		padding: 0.9rem 1.1rem 0.4rem;
+		border: 1px solid var(--eep-dg-mute);
+		border-radius: var(--eep-radius);
+		background: color-mix(in srgb, var(--eep-dg-ink) 6%, var(--eep-dg-fill));
+		color: var(--eep-ink);
+		font-family: var(--eep-font-serif);
+	}
+	.eep-list p {
+		margin: 0;
+	}
+	.eep-list-title {
+		font: 600 1.125rem/1.2 var(--eep-font-serif);
+		margin-bottom: 0.6rem;
+	}
+	.eep-list-group {
+		margin: 0 0 0.9rem;
+		break-inside: avoid;
+	}
+	.eep-list-heading {
+		font: 600 1rem/1.3 var(--eep-font-serif);
+		margin-bottom: 0.3rem;
+	}
+	.eep-list ul,
+	.eep-list ol {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.eep-list-items li {
+		display: flex;
+		gap: 0.6rem;
+		margin: 0.3rem 0;
+		max-width: none;
+		font-size: 0.9375rem;
+		line-height: 1.45;
+		overflow-wrap: anywhere;
+	}
+	.eep-box {
+		flex: none;
+		width: 0.85rem;
+		height: 0.85rem;
+		margin-top: 0.25rem;
+		border: 1.2px solid var(--eep-ink);
+		border-radius: var(--eep-radius-sm);
+	}
+	.eep-list-fields {
+		counter-reset: field;
+	}
+	.eep-list-fields li {
+		margin: 0.3rem 0;
+		max-width: none;
+		font-size: 0.9375rem;
+		line-height: 1.45;
+		overflow-wrap: anywhere;
+	}
+	ol.eep-list-fields li::before {
+		counter-increment: field;
+		content: counter(field) '. ';
+	}
+	.eep-list-fields li.blank {
+		min-height: 2.1rem;
+		border-bottom: 1px solid var(--eep-dg-mute);
+	}
+	@media print {
+		.eep-list {
+			background: none;
+			border-color: #000;
+		}
+		.eep-box,
+		.eep-list-fields li.blank {
+			border-color: #000;
+		}
+	}
+</style>

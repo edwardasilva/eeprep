@@ -39,7 +39,7 @@ const caption = externalLinks(
 	<div class="eep-example-wrap">
 		<div class="eep-example-sheet">
 			<header class="eep-example-head eep-example-mark">
-				<span class="eep-pin" data-pin="1"></span>
+				<span class="eep-num eep-pin" data-pin="1"></span>
 				<p class="eep-example-name">Alex Doe</p>
 				<p>
 					[phone] | alex.doe@[school].edu | linkedin.com/in/alex-doe-example |
@@ -53,13 +53,13 @@ const caption = externalLinks(
 					<strong>B.S. Electrical Engineering</strong>, GPA [X.XX]/4.00
 				</p>
 				<p class="eep-example-date eep-example-mark">
-					<span class="eep-pin eep-pin-right" data-pin="2"></span>
+					<span class="eep-num eep-pin eep-pin-right" data-pin="2"></span>
 					Expected Spring 2027
 				</p>
 			</div>
 			<p>[University]</p>
 			<p class="eep-example-mark">
-				<span class="eep-pin" data-pin="3"></span>
+				<span class="eep-num eep-pin" data-pin="3"></span>
 				<strong>Relevant coursework:</strong> Embedded Systems, Power
 				Electronics, Digital Design
 			</p>
@@ -68,7 +68,7 @@ const caption = externalLinks(
 			</p>
 			<p class="eep-example-sec">Skills</p>
 			<div class="eep-example-mark">
-				<span class="eep-pin" data-pin="4"></span>
+				<span class="eep-num eep-pin" data-pin="4"></span>
 				<p>
 					<strong>Software:</strong> KiCad, LTspice, C, Python
 				</p>
@@ -78,7 +78,7 @@ const caption = externalLinks(
 				</p>
 			</div>
 			<div class="eep-example-mark">
-				<span class="eep-pin" data-pin="5"></span>
+				<span class="eep-num eep-pin" data-pin="5"></span>
 				<p class="eep-example-sec">Projects</p>
 				<div class="eep-example-row">
 					<p>
@@ -121,7 +121,7 @@ const caption = externalLinks(
 				<p class="eep-example-date">Summer 2023 – Summer 2024</p>
 			</div>
 		</div>
-		<ol class="eep-example-notes">
+		<ol class="eep-example-notes eep-num-list">
 			{notes.map((note) => (
 				<li>
 					<span>
@@ -235,14 +235,7 @@ const caption = externalLinks(
 		position: absolute;
 		z-index: 1;
 		top: 0.05rem;
-		left: -1.45rem;
-		width: 1.35rem;
-		height: 1.35rem;
-		border-radius: 50%;
-		background: var(--eep-ink);
-		color: var(--eep-dg-fill);
-		font: 700 0.75rem/1.35rem var(--eep-font-sans);
-		text-align: center;
+		left: -1.6rem;
 	}
 	.eep-pin::before {
 		content: attr(data-pin);
@@ -250,7 +243,7 @@ const caption = externalLinks(
 	}
 	.eep-pin-right {
 		left: auto;
-		right: -1.45rem;
+		right: -1.6rem;
 	}
 	.eep-example-notes {
 		margin: 0;
@@ -274,14 +267,6 @@ const caption = externalLinks(
 	.eep-example-notes li::before {
 		counter-increment: example;
 		content: counter(example);
-		flex: none;
-		width: 1.35rem;
-		height: 1.35rem;
-		border-radius: 50%;
-		background: var(--eep-ink);
-		color: var(--eep-dg-fill);
-		font: 700 0.75rem/1.35rem var(--eep-font-sans);
-		text-align: center;
 	}
 	.eep-example-notes strong {
 		font-weight: 700;
