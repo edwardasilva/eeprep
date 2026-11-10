@@ -7,6 +7,7 @@ head:
     content: "How to prepare for EE and embedded interviews | eeprep"
 ---
 
+import Checklist from '../../../../components/Checklist.astro';
 import ProcessFigure from '../../../../components/interview/ProcessFigure.astro';
 import LayersFigure from '../../../../components/interview/LayersFigure.astro';
 import StarFigure from '../../../../components/interview/StarFigure.astro';
@@ -156,50 +157,86 @@ Start with these guides: [MIT's STAR worksheet](https://capd.mit.edu/resources/t
 
 ## Prep sheet
 
-Copy this, fill in the brackets, and finish it before the first phone screen.
+Fill in the brackets and finish this sheet before the first phone screen.
 
-```text wrap preserveIndent
-INTERVIEW PREP SHEET
-Company and role: [Company], [Job title], job ID [12345]
-How I applied: referral from [Name] / applied cold on [date], day [N] of the posting
-Format from the recruiter: [N] rounds, take-home [yes/no], in-person day [N] hours
-
-PROJECTS (one block per project on the resume)
-Project: [Name]
-What it does, in two sentences:
-My part:
-Each major part or tool, and why I picked it:
-What broke, and how I found it:
-What I measured, and with what instrument:
-What I would change on the next revision:
-
-FUNDAMENTALS (check off after you can explain it at a whiteboard)
-[ ] What happens from an interrupt to the return
-[ ] volatile: registers, ISR flags, shared globals
-[ ] Stack, heap, and where each variable lives
-[ ] How a CPU fetches and executes, and what pipelining does
-[ ] I2C, SPI, UART
-[ ] Op-amp gain, RC filters, buck versus LDO
-[ ] Anything else the posting names: [topic]
-
-CODING
-Problems solved out loud at a whiteboard this week: [N]
-Practiced with someone watching: [Name], [date]
-
-STORIES (STAR, 5 to 10)
-1. A failure:
-2. A conflict on a team:
-3. A hard bug:
-4. A deadline:
-5. Something I learned on my own:
-
-QUESTIONS I WILL ASK (at least one per interviewer)
-1.
-2.
-3.
-
-AFTER EACH ROUND
-How it went, for the recruiter call (went well / went poorly):
-Questions I struggled with, to study tonight:
-Thank-you emails sent within 24 hours to:
-```
+<Checklist
+	title="Interview prep sheet"
+	groups={[
+		{
+			heading: 'Company and recruiter',
+			fields: [
+				{ label: 'Company and role: [Company], [Job title], job ID [12345]' },
+				{
+					label:
+						'How I applied: referral from [Name] / applied cold on [date], day [N] of the posting',
+				},
+				{
+					label:
+						'Format from the recruiter: [N] rounds, take-home [yes/no], in-person day [N] hours',
+				},
+			],
+		},
+		{
+			heading: 'Projects (one block per project on the resume)',
+			fields: [
+				{ label: 'Project: [Name]' },
+				{ label: 'What it does, in two sentences:', blank: true },
+				{ label: 'My part:', blank: true },
+				{ label: 'Each major part or tool, and why I picked it:', blank: true },
+				{ label: 'What broke, and how I found it:', blank: true },
+				{ label: 'What I measured, and with what instrument:', blank: true },
+				{ label: 'What I would change on the next revision:', blank: true },
+			],
+		},
+		{
+			heading: 'Fundamentals (check off after you can explain it at a whiteboard)',
+			items: [
+				'What happens from an interrupt to the return',
+				'volatile: registers, ISR flags, shared globals',
+				'Stack, heap, and where each variable lives',
+				'How a CPU fetches and executes, and what pipelining does',
+				'I2C, SPI, UART',
+				'Op-amp gain, RC filters, buck versus LDO',
+				'Anything else the posting names: [topic]',
+			],
+		},
+		{
+			heading: 'Coding',
+			fields: [
+				{ label: 'Problems solved out loud at a whiteboard this week: [N]' },
+				{ label: 'Practiced with someone watching: [Name], [date]' },
+			],
+		},
+		{
+			heading: 'Stories (STAR, 5 to 10)',
+			numbered: true,
+			fields: [
+				{ label: 'A failure:', blank: true },
+				{ label: 'A conflict on a team:', blank: true },
+				{ label: 'A hard bug:', blank: true },
+				{ label: 'A deadline:', blank: true },
+				{ label: 'Something I learned on my own:', blank: true },
+			],
+		},
+		{
+			heading: 'Questions I will ask (at least one per interviewer)',
+			numbered: true,
+			fields: [
+				{ label: '', blank: true },
+				{ label: '', blank: true },
+				{ label: '', blank: true },
+			],
+		},
+		{
+			heading: 'After each round',
+			fields: [
+				{
+					label: 'How it went, for the recruiter call (went well / went poorly):',
+					blank: true,
+				},
+				{ label: 'Questions I struggled with, to study tonight:', blank: true },
+				{ label: 'Thank-you emails sent within 24 hours to:', blank: true },
+			],
+		},
+	]}
+/>
