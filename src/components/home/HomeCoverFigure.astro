@@ -1,0 +1,156 @@
+---
+// The home cover: the guide's path as one line of five steps, each linking to
+// its page. The steps hang off a line down the left side at every width, so
+// the line always touches the first and last dot.
+const steps = [
+	{
+		title: 'Resume',
+		body: 'One page, with a number in each bullet.',
+		href: '/advice/resume/',
+	},
+	{
+		title: 'First project',
+		body: 'Build something, measure it, and know every part.',
+		href: '/advice/projects/',
+	},
+	{
+		title: 'Job market',
+		body: 'Find openings, ask for referrals, and apply.',
+		href: '/advice/getting-hired/job-market/',
+	},
+	{
+		title: 'Interviews',
+		body: 'Your projects, fundamentals, and coding out loud.',
+		href: '/advice/getting-hired/how-to-interview/',
+	},
+	{
+		title: 'Offer',
+		body: 'Read it, compare it, and decide.',
+		href: '/advice/getting-hired/first-full-time-role/#evaluating-an-offer',
+	},
+];
+const alt =
+	'The guide as five steps in order: resume, first project, job market, interviews, and offer. Each step links to its page.';
+---
+
+<figure class="home-cover not-content" id="fig-home-cover">
+	<p class="home-cover-kicker">The guide in order</p>
+	<p class="sr-only">{alt}</p>
+	<ol class="home-cover-steps">
+		{steps.map((s) => (
+			<li>
+				<a href={s.href}>
+					<span class="home-cover-title">{s.title}</span>
+					<span class="home-cover-body">{s.body}</span>
+				</a>
+			</li>
+		))}
+	</ol>
+	<figcaption>
+		<span class="home-cover-fignum"></span>
+		<span>The steps of the guide, in the order a reader follows them.</span>
+	</figcaption>
+</figure>
+
+<style>
+	.home-cover {
+		--line: 1.5px;
+		--node: 0.8rem;
+		--eep-dg-fill: var(--eep-paper);
+		container-type: inline-size;
+		counter-increment: eep-fig;
+		width: 100%;
+		max-width: 40rem;
+		margin: 0;
+		font-family: var(--eep-font-sans);
+	}
+	.home-cover p {
+		margin: 0;
+	}
+	.home-cover .home-cover-kicker {
+		margin-bottom: 1rem;
+		font: 600 var(--eep-text-eyebrow) / 1.35 var(--eep-font-serif);
+		color: var(--eep-mute);
+	}
+	.home-cover-steps {
+		position: relative;
+		display: grid;
+		gap: 1rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	/* One line from the first dot to the last. */
+	.home-cover-steps::before {
+		content: '';
+		position: absolute;
+		top: 0.5rem;
+		bottom: 1.6rem;
+		left: calc(var(--node) / 2 - var(--line) / 2);
+		border-left: var(--line) solid var(--eep-dg-ink);
+	}
+	.home-cover-steps li {
+		position: relative;
+		margin: 0;
+		padding-left: 1.6rem;
+	}
+	.home-cover-steps li::before {
+		content: '';
+		position: absolute;
+		z-index: 1;
+		top: 0.3rem;
+		left: 0;
+		box-sizing: border-box;
+		width: var(--node);
+		height: var(--node);
+		border: var(--line) solid var(--eep-dg-ink);
+		border-radius: 50%;
+		background: var(--eep-dg-fill);
+	}
+	.home-cover-steps a {
+		display: block;
+		color: var(--eep-ink);
+		text-decoration: none;
+	}
+	.home-cover-title {
+		display: block;
+		font-size: 0.9375rem;
+		font-weight: 600;
+		line-height: 1.3;
+	}
+	.home-cover-steps a:hover .home-cover-title,
+	.home-cover-steps a:focus-visible .home-cover-title {
+		text-decoration: underline;
+	}
+	.home-cover-body {
+		display: block;
+		margin-top: 0.2rem;
+		font-size: 0.8125rem;
+		line-height: 1.45;
+		color: var(--eep-ink-2);
+	}
+	.home-cover figcaption {
+		display: flex;
+		gap: var(--eep-space-3);
+		margin-top: 1.25rem;
+		padding-top: 0.75rem;
+		border-top: var(--eep-border);
+		font-size: var(--eep-text-caption);
+		line-height: 1.55;
+		color: var(--eep-ink-2);
+	}
+	.home-cover-fignum {
+		font: 600 var(--eep-text-eyebrow) / 1.9 var(--eep-font-serif);
+		color: var(--eep-mute);
+		white-space: nowrap;
+	}
+	.home-cover-fignum::before {
+		content: 'Figure ' counter(eep-fig);
+	}
+	@container (max-width: 25rem) {
+		.home-cover figcaption {
+			flex-direction: column;
+			gap: 0.25rem;
+		}
+	}
+</style>

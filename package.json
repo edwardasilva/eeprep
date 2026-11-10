@@ -28,7 +28,6 @@
     "test:worker": "node --test worker/*.test.mjs",
     "test:sidebar": "node .github/scripts/test-sidebar.mjs",
     "brand": "node .github/scripts/render-brand.mjs",
-    "figures:cover": "bash .github/scripts/build-cover.sh",
     "check:pr-body": "node .github/scripts/check-pr-body.mjs",
     "lint": "eslint . && markdownlint-cli2 && prettier --check .",
     "format": "prettier --write . && eslint . --fix"
