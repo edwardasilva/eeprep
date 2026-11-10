@@ -12,5 +12,6 @@ package-lock.json
 # Generated figures
 *.svg
 
-# Submodule with its own formatting rules
+# Submodules with their own formatting rules
 resume-generator
+company-lists

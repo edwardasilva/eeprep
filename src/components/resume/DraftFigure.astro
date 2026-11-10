@@ -26,7 +26,7 @@ const notes = [
 	},
 ];
 const caption = externalLinks(
-	`Alex Doe is a made-up student. The rules come from the <a href="https://www.reddit.com/r/EngineeringResumes/wiki/index/">r/EngineeringResumes wiki</a> and <a href="https://ecs.grainger.illinois.edu/student-resources/resumes-letters/resumes">Illinois Engineering Career Services</a>. The finished page is the Alex's finished page figure on the <a href="/advice/resume/#fig-finished-page">Resume page</a>.`,
+	`Alex Doe is a made-up student. The rules come from the <a href="https://www.reddit.com/r/EngineeringResumes/wiki/index/">r/EngineeringResumes wiki</a> and <a href="https://ecs.grainger.illinois.edu/student-resources/resumes-letters/resumes">Illinois Engineering Career Services</a>. The finished page is the Alex's finished page figure on the <a href="/advice/resume/#fig-finished-page">resume page</a>.`,
 );
 ---
 
@@ -131,7 +131,7 @@ const caption = externalLinks(
 		margin-right: 0.5rem;
 		padding: 0.15rem 0.45rem;
 		border: 1px solid var(--eep-ink-2);
-		border-radius: 3px;
+		border-radius: var(--eep-radius-sm);
 		color: var(--eep-ink-2);
 		font: 600 0.75rem/1.2 var(--eep-font-sans);
 		vertical-align: 0.05em;
@@ -181,13 +181,13 @@ const caption = externalLinks(
 	}
 	.eep-draft-mark {
 		position: relative;
-		outline: 1.5px dashed var(--eep-ink);
+		outline: var(--eep-dg-dash);
 		outline-offset: 2px;
 	}
 	.eep-draft-mark-inline {
 		position: relative;
 		margin-left: 0.25rem;
-		outline: 1.5px dashed var(--eep-ink);
+		outline: var(--eep-dg-dash);
 		outline-offset: 2px;
 	}
 	.eep-draft-refs {
