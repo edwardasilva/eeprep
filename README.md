@@ -22,6 +22,11 @@ Claims link to the sources behind them, so you can check them yourself. If a cla
 
 The site is live at [eeprep.com](https://eeprep.com).
 
+## Related projects
+
+- [resume-generator](https://github.com/edwardasilva/resume-generator): turns one JSON file into the one-page resume the resume pages describe.
+- [company-lists](https://github.com/edwardasilva/company-lists): a plain list of companies by region, starting with the Denver metro.
+
 ## Get the code
 
 The repo includes [resume-generator](https://github.com/edwardasilva/resume-generator) and [company-lists](https://github.com/edwardasilva/company-lists) as submodules. Clone them all at once:
