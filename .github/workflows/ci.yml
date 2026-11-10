@@ -117,6 +117,9 @@ jobs:
       - name: Link index checker tests
         if: ${{ !cancelled() && steps.install.outcome == 'success' && steps.scope.outputs.code == 'true' }}
         run: npm run test:link-index
+      - name: Link case checker tests
+        if: ${{ !cancelled() && steps.install.outcome == 'success' && steps.scope.outputs.code == 'true' }}
+        run: npm run test:link-case
       - name: Worker tests
         if: ${{ !cancelled() && steps.install.outcome == 'success' && steps.scope.outputs.code == 'true' }}
         run: npm run test:worker
@@ -150,6 +153,9 @@ jobs:
       - name: Link index
         if: ${{ !cancelled() && steps.build.outcome == 'success' }}
         run: npm run check:link-index
+      - name: Link case
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: npm run check:link-case
       - name: Robots meta tag
         if: ${{ !cancelled() && steps.build.outcome == 'success' }}
         run: npm run check:robots

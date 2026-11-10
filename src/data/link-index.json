@@ -888,6 +888,13 @@
     ]
   },
   {
+    "url": "https://github.com/edwardasilva/company-lists",
+    "title": "company-lists on GitHub",
+    "category": "Job search and referrals",
+    "summary": "Open list of companies by region, starting with the Denver metro, with a public source for every row.",
+    "pages": ["help/job-boards", "help/resources", "roadmap"]
+  },
+  {
     "url": "https://github.com/SimplifyJobs/Summer2027-Internships",
     "title": "SimplifyJobs: Summer2027-Internships",
     "category": "Job search and referrals",
@@ -970,13 +977,6 @@
     "category": "Job search and referrals",
     "summary": "The federal Pathways internship program for students currently enrolled in school.",
     "pages": ["help"]
-  },
-  {
-    "url": "https://www.uscis.gov/",
-    "title": "USCIS",
-    "category": "Job search and referrals",
-    "summary": "US Citizenship and Immigration Services, the agency for immigration and work authorization.",
-    "pages": ["advice"]
   },
   {
     "url": "https://ocs.yale.edu/industry-hiring-timelines/",
