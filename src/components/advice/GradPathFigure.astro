@@ -171,7 +171,14 @@ const caption = externalLinks(
 		border-left: var(--line);
 		border-bottom: var(--line);
 	}
-	@container (min-width: 48rem) {
+	@container (min-width: 36rem) {
+		.eep-gradpath-steps p {
+			overflow-wrap: normal;
+			hyphens: auto;
+		}
+		.eep-gradpath-steps li {
+			padding-inline: 0.5rem;
+		}
 		.eep-gradpath ol,
 		.eep-gradpath ul {
 			gap: 0;
