@@ -2410,6 +2410,13 @@
     "pages": ["advice/forever-learning/graduate-study"]
   },
   {
+    "url": "https://github.com/edwardasilva/eeprep",
+    "title": "eeprep on GitHub",
+    "category": "Site",
+    "summary": "Source repository for the eeprep site.",
+    "pages": ["roadmap/contributing"]
+  },
+  {
     "url": "https://github.com/edwardasilva/eeprep/blob/main/.github/CONTRIBUTING.md",
     "title": "Contributing",
     "category": "Site",
