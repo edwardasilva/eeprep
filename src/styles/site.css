@@ -546,3 +546,247 @@ a.external-link .eep-ext-last::after {
 		content: none;
 	}
 }
+
+/* Company list: same stacked-row treatment as the roadmap table on
+   narrow screens, with a labeled filter bar above it. */
+.eep-companies {
+	margin: var(--eep-space-5) 0 var(--eep-space-6);
+	color: var(--eep-ink);
+}
+.eep-companies-form {
+	margin: 0 0 var(--eep-space-5);
+}
+.eep-companies-search,
+.eep-companies-field {
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	gap: 0.25rem;
+}
+.eep-companies-search {
+	margin-bottom: var(--eep-space-4);
+}
+.eep-companies-search label,
+.eep-companies-field label {
+	font-size: var(--eep-text-sm);
+	line-height: 1.4;
+	color: var(--eep-ink-2);
+}
+.eep-companies-filters {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	gap: var(--eep-space-4);
+}
+.eep-companies :is(input, select, button) {
+	min-height: 2.5rem;
+	padding: 0.35rem 0.65rem;
+	border: var(--eep-border);
+	border-radius: var(--eep-radius);
+	background: var(--eep-surface);
+	color: var(--eep-ink);
+	font: inherit;
+	font-size: max(1rem, 16px);
+}
+.eep-companies :is(input, select) {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 100%;
+	min-width: 0;
+}
+.eep-companies button {
+	cursor: pointer;
+}
+.eep-companies :is(input, select, button):focus-visible {
+	outline: 2px solid var(--eep-accent);
+	outline-offset: 2px;
+}
+.eep-companies-tools {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: var(--eep-space-3) var(--eep-space-4);
+	margin-top: var(--eep-space-4);
+}
+.eep-companies-count {
+	margin: 0;
+	font-size: var(--eep-text-sm);
+	line-height: 1.4;
+	color: var(--eep-ink-2);
+}
+.eep-companies-form noscript p {
+	margin: var(--eep-space-3) 0 0;
+	font-size: var(--eep-text-sm);
+	color: var(--eep-ink-2);
+}
+.eep-companies table.eep-company-list {
+	display: block;
+	width: 100%;
+	margin: 0;
+	border: 0;
+	border-collapse: collapse;
+	font-size: 0.9375rem;
+	line-height: 1.5;
+}
+.eep-companies .eep-company-list caption {
+	caption-side: top;
+	margin: 0 0 var(--eep-space-3);
+	text-align: left;
+	font-size: var(--eep-text-caption);
+	line-height: 1.45;
+	color: var(--eep-ink-2);
+}
+.eep-companies .eep-company-list :is(thead, tbody, tr, th, td) {
+	display: block;
+	border: 0;
+	background: none;
+}
+.eep-companies .eep-company-list thead {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+.eep-companies .eep-company-list tbody tr {
+	padding: 0.75rem 0;
+	border-top: 1px solid var(--eep-silver);
+}
+.eep-companies .eep-company-list tbody tr[hidden] {
+	display: none;
+}
+.eep-companies .eep-company-list td {
+	padding: 0;
+	text-align: left;
+	vertical-align: top;
+	overflow-wrap: break-word;
+}
+.eep-companies .eep-company-list td + td {
+	margin-top: 0.5rem;
+}
+.eep-companies .eep-company-list td a {
+	display: inline-block;
+	min-height: 1.5rem;
+	line-height: 1.5rem;
+}
+.eep-companies .eep-company-list td[data-label]::before {
+	content: attr(data-label);
+	display: block;
+	margin-bottom: 0.15rem;
+	font-size: 0.8125rem;
+	line-height: 1.45;
+	color: var(--eep-ink-2);
+}
+.eep-companies-note {
+	margin: var(--eep-space-4) 0 0;
+	font-size: var(--eep-text-sm);
+	line-height: 1.5;
+	color: var(--eep-ink-2);
+}
+
+@media (min-width: 34rem) {
+	.eep-companies-filters {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+	.eep-companies table.eep-company-list {
+		display: table;
+		table-layout: auto;
+	}
+	.eep-companies .eep-company-list thead {
+		position: static;
+		display: table-header-group;
+		width: auto;
+		height: auto;
+		overflow: visible;
+		clip-path: none;
+		white-space: normal;
+	}
+	.eep-companies .eep-company-list tbody {
+		display: table-row-group;
+	}
+	.eep-companies .eep-company-list tr,
+	.eep-companies .eep-company-list tbody tr {
+		display: table-row;
+		padding: 0;
+	}
+	.eep-companies .eep-company-list tbody tr[hidden] {
+		display: none;
+	}
+	.eep-companies .eep-company-list :is(th, td),
+	.eep-companies .eep-company-list td + td {
+		display: table-cell;
+		margin: 0;
+		padding: 0.55rem 0.65rem 0.6rem;
+		text-align: left;
+		vertical-align: top;
+	}
+	.eep-companies .eep-company-list :is(th, td):first-child {
+		padding-left: 0;
+	}
+	.eep-companies .eep-company-list :is(th, td):last-child {
+		padding-right: 0;
+	}
+	.eep-companies .eep-company-list thead th {
+		font-size: 0.8125rem;
+		font-weight: 400;
+		line-height: 1.3;
+		color: var(--eep-ink-2);
+		white-space: nowrap;
+	}
+	.eep-companies .eep-company-list thead th button {
+		min-height: 1.5rem;
+		padding: 0;
+		border: 0;
+		background: none;
+		color: inherit;
+		font: inherit;
+		text-align: left;
+		text-decoration: underline;
+		text-decoration-thickness: 1px;
+		text-underline-offset: 0.15em;
+		cursor: pointer;
+	}
+	.eep-companies .eep-company-list thead th button:focus-visible {
+		outline: 2px solid var(--eep-accent);
+		outline-offset: 2px;
+	}
+	.eep-companies
+		.eep-company-list
+		thead
+		th[aria-sort='ascending']
+		button::after,
+	.eep-companies
+		.eep-company-list
+		thead
+		th[aria-sort='descending']
+		button::after {
+		content: ' \2191';
+		text-decoration: none;
+	}
+	.eep-companies
+		.eep-company-list
+		thead
+		th[aria-sort='descending']
+		button::after {
+		content: ' \2193';
+	}
+	.eep-companies .eep-company-list tbody tr {
+		border-top: 1px solid var(--eep-silver);
+	}
+	.eep-companies .eep-company-list td[data-label]::before {
+		content: none;
+	}
+	.eep-companies .eep-company-list td {
+		overflow-wrap: break-word;
+	}
+	.eep-companies .eep-company-list :is(th, td):nth-child(n + 4) {
+		white-space: nowrap;
+		overflow-wrap: normal;
+	}
+}
+
+@media (min-width: 50rem) {
+	.eep-companies-filters {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+	}
+}

@@ -955,7 +955,12 @@
     "title": "company-lists on GitHub",
     "category": "Job search and referrals",
     "summary": "Open list of companies by region, starting with the Denver metro, with a public source for every row.",
-    "pages": ["help/job-boards", "help/resources", "roadmap"]
+    "pages": [
+      "help/company-list",
+      "help/job-boards",
+      "help/resources",
+      "roadmap"
+    ]
   },
   {
     "url": "https://github.com/SimplifyJobs/Summer2027-Internships",

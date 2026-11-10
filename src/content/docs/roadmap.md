@@ -1,12 +1,12 @@
 ---
 title: Roadmap
-description: "Updates planned for eeprep: a resume builder, resume examples, a full system project guide, study guides, a company list, and better graphics."
+description: "Updates planned for eeprep: a resume builder, resume examples, a full system project guide, study guides, and better graphics."
 head:
   - tag: title
     content: "Roadmap | eeprep"
 ---
 
-These are the updates planned for eeprep, and the plan may change. Each row lists links to use until the update ships. To help with one, see the [[Contributing|contributing page]].
+These are the updates planned for eeprep, and the plan may change. Each row lists links to use until the update ships. To help with one, see the [[Contributing|contributing page]]. The [[Company list|company list page]] is up; it is built from [company-lists](https://github.com/edwardasilva/company-lists) and starts with the Denver, Colorado metro.
 
 | What's coming                                                                                     | Use in the meantime                                                                                                                                                                                                                                                                                                                 |
 | ------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -14,5 +14,4 @@ These are the updates planned for eeprep, and the plan may change. Each row list
 | Resume examples. Finished resumes for more fields, each built from the same rules.                | [[Walkthrough#When experience takes over]]                                                                                                                                                                                                                                                                                          |
 | Full system project. A guide to one project that covers hardware, firmware and software together. | [[Projects]]                                                                                                                                                                                                                                                                                                                        |
 | Study guides. Short guides to the core courses in an electrical engineering degree.               | [MIT 6.002 Circuits and Electronics](https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/)<br />[MIT 6.003 Signals and Systems](https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/)<br />[MIT 6.004 Computation Structures](https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/) |
-| Company list on the site. A sortable page built from company-lists.                               | [company-lists](https://github.com/edwardasilva/company-lists)<br />[[Job boards]]                                                                                                                                                                                                                                                  |
 | Better graphics. Clearer figures and diagrams will appear across the site.                        | [[Resume]]<br />[[How to interview]]                                                                                                                                                                                                                                                                                                |
