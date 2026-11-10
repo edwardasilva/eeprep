@@ -30,7 +30,7 @@ Cut the objective or summary. The wiki keeps one only for senior engineers, care
 
 ## Header
 
-Name centered in large type, one contact line under it, no rule line between them. Separate items with a vertical bar. No icons and no labels such as "Phone:". Links as plain text, such as linkedin.com/in/alex-doe-example. The wiki calls a phone number and LinkedIn unnecessary; the author lists both. Every link must work on the day the page goes out.
+Name centered in large type, one contact line under it, no rule line between them. Separate items with a vertical bar. No icons and no labels such as "Phone:". Links as plain text, such as linkedin.com/in/alex-doe-example. The wiki calls a phone number and LinkedIn unnecessary, but the author lists both. Every link must work on the day the page goes out.
 
 Put "Willing to relocate" next to the location if it is true. A city far from the job can count against the candidate.
 
@@ -69,4 +69,4 @@ One style inside each section. "Present" for an ongoing role. Spell month names:
 - Missing some requirements? Apply anyway for tools and years. The degree is different: a required degree is usually a hard filter.
 - A senior design project that did not work? List it. Describe the user's part with verbs such as designed and tested, and give the numbers they did reach.
 - Interests? Only specific ones. If the user cannot name specifics, delete the section.
-- Cover letter? Depends on the employer. Big tech recruiters often skip them; defense contractors and smaller firms tend to read them. Two short paragraphs on why the user meets the posting.
+- Cover letter? Depends on the employer. Big tech recruiters often skip them, but defense contractors and smaller firms tend to read them. Two short paragraphs on why the user meets the posting.

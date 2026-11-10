@@ -11,7 +11,7 @@ const after = [
 	' in ',
 	{ tag: 'Y · tool', text: 'KiCad' },
 	' and LTspice, ',
-	{ tag: 'Z · measured result', text: 'measured at [X]%' },
+	{ tag: 'Z · measured result', text: 'measured at [X]% efficiency' },
 	' on an electronic load',
 ];
 const caption = externalLinks('Alex Doe is a made-up student.');
@@ -101,7 +101,7 @@ const caption = externalLinks('Alex Doe is a made-up student.');
 	.eep-bullet-box {
 		padding: 0.8rem 1rem;
 		border: 1px solid var(--eep-dg-mute);
-		border-radius: 4px;
+		border-radius: var(--eep-radius);
 		background: color-mix(in srgb, var(--eep-dg-ink) 6%, var(--eep-dg-fill));
 		font-size: 1rem;
 		line-height: 1.55;
@@ -125,7 +125,7 @@ const caption = externalLinks('Alex Doe is a made-up student.');
 		display: inline-block;
 		margin-right: 0.35rem;
 		padding: 0.1rem 0.3rem;
-		border-radius: 3px;
+		border-radius: var(--eep-radius-sm);
 		font-size: 0.75rem;
 		font-weight: 600;
 		line-height: 1.3;

@@ -15,10 +15,10 @@ Audit the finished PDF, not the source file, because the PDF is what the screene
 
 ## The file
 
-Save the PDF as plain text and read it. [Michigan Engineering](https://career.engin.umich.edu/resumes-cvs-cover-letters/) and [MIT CAPD](https://capd.mit.edu/resources/make-your-resume-ats-friendly/) both warn that LaTeX output can confuse an ATS, and the text layer is where it goes wrong. Every heading, entry, and bullet has to come out whole and in reading order. Watch for "fi" and "fl" that come out as blank or as odd symbols, which [the pdfTeX manual](https://texdoc.org/serve/pdftex-a.pdf/0) says happens without a Unicode map. If you use [resume-generator](https://github.com/edwardasilva/resume-generator), each build runs this check for you when `pdftotext` is installed.
+Save the PDF as plain text and read it. [Michigan Engineering](https://career.engin.umich.edu/resumes-cvs-cover-letters/) and [MIT's career office](https://capd.mit.edu/resources/make-your-resume-ats-friendly/) both warn that LaTeX output can confuse an ATS, and the text layer is where it goes wrong. Every heading, entry, and bullet has to come out whole and in reading order. Watch for "fi" and "fl" that come out as blank or as odd symbols, which [the pdfTeX manual](https://texdoc.org/serve/pdftex-a.pdf/0) says happens without a Unicode map. If you use [resume-generator](https://github.com/edwardasilva/resume-generator), each build runs this check for you when `pdftotext` is installed.
 
 ```bash
-pdftotext resume.pdf - | less
+pdftotext Alex-Doe-Resume.pdf - | less
 ```
 
 Open the PDF's properties. The title reads "Alex Doe Resume" and the author is Alex Doe, set with [hyperref](https://latex.us/macros/latex/contrib/hyperref/doc/hyperref-doc.html). A title left over from a template is a tell. A simple rule: name the file after yourself, such as `Alex-Doe-Resume.pdf`, so it is findable in a recruiter's downloads folder.
@@ -31,11 +31,11 @@ Click every link. [One hiring manager sees dead GitHub and LinkedIn links all th
 
 ## Education
 
-List a GPA of 3.50 or higher. From 3.0 to 3.49, list it only when the posting sets a minimum you meet, the rule from the [[Getting hired|getting hired page]]. Below 3.0, leave it off. If it is there, [match the decimals](https://www.reddit.com/r/EngineeringResumes/comments/15i3d8v/my_boss_said_my_resume_could_use_a_lot_of_work/), as in 3.30/4.00. The graduation date sits at the right margin with "Expected" in front of it if you have not graduated. Coursework is one line of upper-level courses that match the posting, and high school is gone after your first year.
+These GPA cutoffs are one engineer's rule of thumb, not a measured cutoff. List a GPA of 3.50 or higher. From 3.0 to 3.49, list it only when the posting sets a minimum you meet, the rule from the [[Getting hired|getting hired page]]. Below 3.0, leave it off. If it is there, [match the decimals](https://www.reddit.com/r/EngineeringResumes/comments/15i3d8v/my_boss_said_my_resume_could_use_a_lot_of_work/), as in 3.30/4.00. The graduation date sits at the right margin with "Expected" in front of it if you have not graduated. Coursework is one line of upper-level courses that match the posting, and high school is gone after your first year.
 
 ## Projects and experience
 
-Read each bullet against three questions. Does it start with a past-tense verb that is not helped, assisted, worked on, or utilized? Does it name the tool? Does it end in a number you measured and can explain? [If you cannot explain a number, it comes off the resume](https://www.hardwareinterviews.fyi/t/top-electrical-engineering-interview-questions/807), because the interviewer will ask. [Hiring managers go 3 to 5 layers deep](https://x.com/randomrecruiter/status/2081829972415578607) on whatever you list.
+Read each bullet against three questions. Does it start with a past-tense verb that is not helped, assisted, worked on, or utilized? Does it name the tool? Does it end in a number you measured and can explain? If you cannot explain a number, it comes off the resume, because the interviewer will ask. [Hiring managers go 3 to 5 layers deep](https://x.com/randomrecruiter/status/2081829972415578607) on whatever you list.
 
 Check the shape of each bullet too. It fills one line or most of a second. [One sophomore cut most bullets from 2 lines to 1](https://www.reddit.com/r/EngineeringResumes/comments/1sj2rgt/student_landed_nvidia_offer_sophomore_cs_major_at/) before an NVIDIA offer. Two words alone on a second line are wasted space.
 

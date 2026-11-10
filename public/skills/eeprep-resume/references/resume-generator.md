@@ -1,6 +1,6 @@
 # Filling in resume.json for resume-generator
 
-[resume-generator](https://github.com/edwardasilva/resume-generator) turns one JSON file into a one-page PDF with the layout from eeprep's resume page. It does the layout and the one-page fit. You write the content. Its README has the full field guide; this is the short version, so you can fill the file from an inventory.
+[resume-generator](https://github.com/edwardasilva/resume-generator) turns one JSON file into a one-page PDF with the layout from eeprep's resume page. It does the layout and the one-page fit. You write the content. Its README has the full field guide. This is the short version, so you can fill the file from an inventory.
 
 ## Shape
 
@@ -38,7 +38,7 @@
       "start": "Fall 2025",
       "end": "Spring 2026",
       "bullets": [
-        "Designed a [X] W CubeSat buck converter in KiCad and LTspice, measured at [X]% on an electronic load"
+        "Designed a [X] W CubeSat buck converter in KiCad and LTspice, measured at [X]% efficiency on an electronic load"
       ]
     }
   ],
@@ -69,6 +69,7 @@
 - `hide: true` leaves an entry out without deleting it. Use it for a version aimed at one niche.
 - Links must be web addresses, `mailto:`, or `tel:`. Inside a bullet, `[text](url)` links the text.
 - The build keeps the margins at 0.5 in and steps text from 11 pt to 10 pt until the page fits, then fills the page by growing the spacing. It never shrinks spacing below the eeprep limits. If it still does not fit, it says about how many lines to cut.
+- The PDF is named after the header name, so Alex Doe gives `Alex-Doe-Resume.pdf`.
 - When `pdftotext` is installed, each build extracts the text and checks that every heading, entry, and bullet comes out whole.
 
 ## Versions

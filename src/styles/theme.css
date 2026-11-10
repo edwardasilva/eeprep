@@ -19,12 +19,10 @@
 		Menlo, monospace;
 
 	/* Type scale (rem @ 16px root) */
-	--eep-text-display: 4rem; /* 64  landing hero */
 	--eep-text-h1: 3.5rem; /* 56  chapter title (2.5rem < 50em) */
 	--eep-text-h2: 2.125rem; /* 34  section */
 	--eep-text-h3: 1.5rem; /* 24  subsection */
 	--eep-text-h4: 1.1875rem; /* 19 */
-	--eep-text-lede: 1.4375rem; /* 23  serif standfirst */
 	--eep-text-body: 1.0625rem; /* 17 */
 	--eep-text-sm: 0.875rem; /* 14  sidebar, UI */
 	--eep-text-caption: 0.84375rem; /* 13.5 figure captions, margin column */
@@ -33,7 +31,6 @@
 	--eep-text-eq: 1.12em; /* KaTeX relative to body */
 	--eep-lh-body: 1.7;
 	--eep-lh-heading: 1.08;
-	--eep-track-eyebrow: 0.12em;
 	--eep-track-h1: -0.025em;
 
 	/* Spacing (4px base) */
@@ -50,10 +47,6 @@
 
 	/* Measure & layout */
 	--eep-measure: 40em; /* ≈ 68ch prose max */
-	--eep-col-nav: 14.375rem; /* 230px left chapter TOC */
-	--eep-col-margin: 11.875rem; /* 190px right key-terms column */
-	--eep-col-gap: 4rem; /* 64px */
-	--eep-page-max: 75rem; /* 1200px */
 
 	/* Radii & borders */
 	--eep-radius-sm: 2px; /* inline code, kbd */
@@ -72,12 +65,11 @@
 	--eep-rule-2: #c4c8cf; /* breadcrumb separators, stronger rules */
 	--eep-ink: #16233a; /* headings, diagram strokes */
 	/* Three text roles: ink, ink-2 (secondary) and accent (current item and
-	   figures only). Silver is never text. Older names alias onto them. */
+	   site chrome only; never figures). Silver is never text. Older names alias onto them. */
 	--eep-text: var(--eep-ink);
 	--eep-ink-2: #424d63; /* secondary text, lede */
 	--eep-mute: var(--eep-ink-2);
 	--eep-silver: #838c9a; /* lines, icons, chart mute series: never text (3.3:1) */
-	--eep-wash: #e7ecf3; /* steel wash: optional secondary fill, never text or lines */
 	--eep-accent: #a3201d; /* the ONE accent: crimson */
 	--eep-accent-hover: #7d1714;
 	--eep-accent-soft: #f8ecea; /* tip bg */
@@ -89,7 +81,6 @@
 	--eep-check-soft: #eff4ea;
 	/* diagram palette (inline SVG reads these) */
 	--eep-dg-ink: var(--eep-ink);
-	--eep-dg-accent: var(--eep-accent);
 	--eep-dg-mute: var(--eep-silver);
 	--eep-dg-fill: var(--eep-surface);
 	/* The 6% tint behind a figure box, from STYLE.md section 7. */
@@ -98,8 +89,6 @@
 	--eep-dg-line: 1.5px;
 	--eep-dg-dash: var(--eep-dg-line) dashed var(--eep-dg-ink);
 	--eep-dg-dasharray: 3 3;
-	--eep-dg-s2: #1d5f8a;
-	--eep-dg-s3: #4f7a28;
 	--eep-dg-grid: #e9ecf0;
 }
 
@@ -115,7 +104,6 @@
 	--eep-ink-2: #a6afbf;
 	--eep-mute: var(--eep-ink-2);
 	--eep-silver: #76808f;
-	--eep-wash: #17243a;
 	--eep-accent: #e06a5f; /* crimson lifted to 5.6:1 on navy paper */
 	--eep-accent-hover: #f08b81;
 	--eep-accent-soft: #2a1a24;
@@ -125,7 +113,6 @@
 	--eep-check: #9cc77a;
 	--eep-check-soft: #16241f;
 	--eep-dg-ink: var(--eep-ink);
-	--eep-dg-accent: var(--eep-accent);
 	--eep-dg-mute: var(--eep-silver);
 	--eep-dg-fill: var(--eep-surface);
 	/* The 6% tint behind a figure box, from STYLE.md section 7. */
@@ -134,8 +121,6 @@
 	--eep-dg-line: 1.5px;
 	--eep-dg-dash: var(--eep-dg-line) dashed var(--eep-dg-ink);
 	--eep-dg-dasharray: 3 3;
-	--eep-dg-s2: #8cc0e6;
-	--eep-dg-s3: #a9cf86;
 	--eep-dg-grid: #1c2537;
 }
 
@@ -263,7 +248,7 @@ h1#_top {
 	background: var(--eep-sunken);
 	border: 0;
 	border-radius: var(--eep-radius-sm);
-	box-shadow: inset 2px 0 0 var(--c);
+	box-shadow: inset var(--eep-toc-bar) 0 0 var(--c);
 	padding: var(--eep-space-5) var(--eep-space-6);
 	margin: var(--eep-space-7) 0;
 	max-width: calc(var(--eep-measure) + 4rem);

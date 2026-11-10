@@ -487,10 +487,10 @@
     "pages": ["advice/resume"]
   },
   {
-    "url": "https://www.askamanager.org/?p=23426",
-    "title": "Ask a Manager: Trainings and certificates on a resume",
+    "url": "https://www.askamanager.org/2022/04/open-thread-april-22-23-2022.html",
+    "title": "Ask a Manager: open thread, April 22-23, 2022",
     "category": "Resume feedback from reviewers and recruiters",
-    "summary": "Alison Green on keeping small trainings and certificates off the resume.",
+    "summary": "A reader comment suggesting a resume not carry a long list of little trainings and certificates.",
     "pages": ["advice/forever-learning"]
   },
   {
@@ -1155,12 +1155,12 @@
     "url": "https://allwork.space/2021/11/what-happened-to-entry-level-jobs-job-seekers-baffled-by-requirements/",
     "title": "Allwork: What happened to entry-level jobs",
     "category": "Job search and referrals",
-    "summary": "LinkedIn analysis, 3.8 million postings: 35% of entry-level roles wanted 3-plus years.",
+    "summary": "LinkedIn analysis, close to 4 million postings: 35% of entry-level roles asked for years of experience.",
     "pages": ["help/job-boards"]
   },
   {
-    "url": "https://www.ftc.gov/news-events/news/press-releases/2024/12/new-ftc-data-show-skyrocketing-consumer-reports-about-game-online-job-scams",
-    "title": "FTC: Consumer reports about online job scams",
+    "url": "https://search.ftc.gov/system/files/ftc_gov/pdf/task-scams-spotlight-2024.pdf",
+    "title": "FTC: Paying to get paid, gamified job scams",
     "category": "Job search and referrals",
     "summary": "FTC: job-scam losses over $220 million in the first half of 2024.",
     "pages": ["help/job-boards"]
@@ -1809,7 +1809,7 @@
     "title": "Hardware FYI: Top electrical engineering interview questions",
     "category": "Interview prep",
     "summary": "Common electrical engineering interview questions collected by Hardware FYI.",
-    "pages": ["advice/getting-hired/how-to-interview", "advice/resume/cleanup"]
+    "pages": ["advice/getting-hired/how-to-interview"]
   },
   {
     "url": "https://ecs.grainger.illinois.edu/student-resources/interviewing/fundamentals",
@@ -2067,10 +2067,10 @@
     "pages": ["advice/projects/career-paths"]
   },
   {
-    "url": "https://www.nbcsandiego.com/news/business/money-report/college-grads-face-a-tough-and-competitive-job-market-this-year-expert-says/3827152/",
-    "title": "CNBC: College grads face a tough and competitive job market",
+    "url": "https://joinhandshake.com/network-trends/class-of-2025-graduation/",
+    "title": "Handshake: Class of 2025 graduation trends",
     "category": "Pay and career data",
-    "summary": "May 2025: Handshake postings down 15% in a year, applications up 30%.",
+    "summary": "Spring 2025: Handshake postings down 15% in a year, applications per job up 30%.",
     "pages": ["advice/getting-hired/job-market", "help/job-boards"]
   },
   {
@@ -2224,8 +2224,8 @@
     "pages": ["advice/forever-learning/graduate-study"]
   },
   {
-    "url": "https://yp.ieee.org/blog/2023/11/15/check-out-the-career-programs-of-ieee-usa-part-2",
-    "title": "IEEE Young Professionals: The career programs of IEEE-USA",
+    "url": "https://insight.ieeeusa.org/articles/more-ieee-usa-career-and-membership-services-programs-part-2/",
+    "title": "IEEE-USA InSight: More career and membership services programs, part 2",
     "category": "Pay and career data",
     "summary": "IEEE-USA member job-hunt tools: salary calculator, Job Site, Employment Navigator.",
     "pages": ["advice/forever-learning/societies"]
@@ -2430,10 +2430,10 @@
     "pages": ["advice/forever-learning/getting-into-graduate-study"]
   },
   {
-    "url": "https://www.ieee.org/membership/students",
-    "title": "IEEE: Student membership",
+    "url": "https://students.ieee.org/",
+    "title": "IEEE Students",
     "category": "Communities",
-    "summary": "IEEE's student membership page.",
+    "summary": "IEEE's home for student members, with benefits and student branches.",
     "pages": ["advice/forever-learning"]
   },
   {
@@ -2553,6 +2553,13 @@
     "title": "eeprep issue forms",
     "category": "Site",
     "summary": "Forms to suggest an idea or report something to fix.",
+    "pages": ["roadmap/contributing"]
+  },
+  {
+    "url": "https://github.com/edwardasilva/eeprep/releases",
+    "title": "eeprep release notes",
+    "category": "Site",
+    "summary": "What changed in each release, including corrections.",
     "pages": ["roadmap/contributing"]
   },
   {
