@@ -2,6 +2,26 @@
 // Figure 16.1 as HTML and CSS. The question a student has on the left, and
 // the sites on this page that answer it on the right. Every box gets the same
 // treatment, and the page text says what each site is good for.
+import { externalLinks } from '../resume/caption';
+
+// Each site links to the same URL help.mdx uses for it. Company career pages
+// have no single URL there, so that chip stays plain text.
+const url: Record<string, string> = {
+	BLS: 'https://www.bls.gov/ooh/architecture-and-engineering/electrical-and-electronics-engineers.htm',
+	'Levels.fyi': 'https://www.levels.fyi/',
+	NACE: 'https://www.naceweb.org/job-market/compensation/',
+	'The r/EngineeringResumes wiki':
+		'https://www.reddit.com/r/EngineeringResumes/wiki/index/',
+	'The r/EngineeringResumes forum':
+		'https://www.reddit.com/r/EngineeringResumes/',
+	'LinkedIn Jobs': 'https://www.linkedin.com/jobs/',
+	Handshake: 'https://joinhandshake.com/students/',
+	USAJOBS: 'https://www.usajobs.gov/',
+	Pathways: 'https://opm.usajobs.gov/hiringpath/students/',
+	'r/ElectricalEngineering': 'https://www.reddit.com/r/ElectricalEngineering/',
+	'r/ECE': 'https://www.reddit.com/r/ECE/',
+	'r/EngineeringStudents': 'https://www.reddit.com/r/EngineeringStudents/',
+};
 const rows = [
 	{ question: 'What does the job pay?', sites: ['BLS', 'Levels.fyi', 'NACE'] },
 	{
@@ -14,29 +34,32 @@ const rows = [
 			'Company career pages',
 			'LinkedIn Jobs',
 			'Handshake',
-			'USAJOBS and Pathways',
+			'USAJOBS',
+			'Pathways',
 		],
 	},
 	{
 		question: 'Who can I ask?',
 		sites: ['r/ElectricalEngineering', 'r/ECE', 'r/EngineeringStudents'],
 	},
-];
-const alt =
-	'Four questions, each with the sites that answer it. What does the job pay: BLS, Levels.fyi, and NACE. Is my resume right: the r/EngineeringResumes wiki and forum. Where are the openings: company career pages, LinkedIn Jobs, Handshake, and USAJOBS and Pathways. Who can I ask: r/ElectricalEngineering, r/ECE, and r/EngineeringStudents.';
+].map((row) => ({
+	...row,
+	sites: row.sites.map((name) =>
+		url[name] ? externalLinks(`<a href="${url[name]}">${name}</a>`) : name,
+	),
+}));
 ---
 
 <figure class="eep-fig wide eep-sites-fig" id="fig-16-1">
 	<p class="eep-kicker">Which site answers which question</p>
-	<p class="sr-only">{alt}</p>
-	<div class="eep-sites not-content" aria-hidden="true">
+	<div class="eep-sites not-content">
 		{rows.map((row) => (
 			<div class="eep-sites-row">
 				<p class="eep-sites-q">{row.question}</p>
 				<span class="eep-sites-line" />
 				<ul>
 					{row.sites.map((site) => (
-						<li>{site}</li>
+						<li set:html={site} />
 					))}
 				</ul>
 			</div>
@@ -93,12 +116,34 @@ const alt =
 	.eep-sites li {
 		margin: 0;
 		max-width: none;
-		padding: 0.35rem 0.6rem;
 		border: 1px solid var(--eep-dg-mute);
 		border-radius: 4px;
 		background: var(--eep-dg-tint);
 		font-size: 0.8125rem;
 		line-height: 1.35;
+	}
+	.eep-sites li:not(:has(a)) {
+		padding: 0.35rem 0.6rem;
+	}
+	/* A linked chip keeps the chip look. The link fills the chip, so the whole
+	   chip is the target. Ink, not crimson, marks hover and focus. */
+	.eep-sites li a {
+		display: block;
+		padding: 0.35rem 0.6rem;
+		border-radius: 3px;
+		color: var(--eep-ink);
+		text-decoration: none;
+	}
+	.eep-sites li:has(a:hover) {
+		border-color: var(--eep-dg-ink);
+	}
+	.eep-sites li a:hover {
+		text-decoration: underline;
+		text-underline-offset: 0.15em;
+	}
+	.eep-sites li a:focus-visible {
+		outline: 2px solid var(--eep-ink);
+		outline-offset: 2px;
 	}
 	/* Narrow: a short line drops from the question to its sites. */
 	.eep-sites-line {
