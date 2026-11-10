@@ -698,6 +698,34 @@
     "pages": ["advice/projects/portfolio"]
   },
   {
+    "url": "https://byronbradley.me/",
+    "title": "Byron Bradley: student portfolio",
+    "category": "Tools and project resources",
+    "summary": "A junior's portfolio with four projects on one page.",
+    "pages": ["advice/projects/portfolio"]
+  },
+  {
+    "url": "https://yasamankhe.github.io/",
+    "title": "Yasaman Kheradmand: student portfolio",
+    "category": "Tools and project resources",
+    "summary": "A portfolio with a page for each of six projects.",
+    "pages": ["advice/projects/portfolio"]
+  },
+  {
+    "url": "https://panosdimts.github.io/EE-portfolio/",
+    "title": "Panos Dimtsoudis: student portfolio",
+    "category": "Tools and project resources",
+    "summary": "A portfolio with a predictions-against-results table.",
+    "pages": ["advice/projects/portfolio"]
+  },
+  {
+    "url": "https://zaidsaifan-star.github.io/",
+    "title": "Zaid Saifan: student portfolio",
+    "category": "Tools and project resources",
+    "summary": "A portfolio with a fixed section order for each project.",
+    "pages": ["advice/projects/portfolio"]
+  },
+  {
     "url": "https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/",
     "title": "Cornell ECE 4760: Final project archive",
     "category": "Tools and project resources",
