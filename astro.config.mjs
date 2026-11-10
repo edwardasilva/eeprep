@@ -180,6 +180,7 @@ export default defineConfig({
 		starlight({
 			disable404Route: true,
 			title: 'eeprep',
+			lastUpdated: true,
 			description: 'A prep guide for electrical engineering students.',
 			credits: false,
 			routeMiddleware: './src/route-data.ts',
