@@ -24,13 +24,13 @@ The site is live at [eeprep.com](https://eeprep.com).
 
 ## Get the code
 
-The repo includes [resume-generator](https://github.com/edwardasilva/resume-generator) as a submodule. Clone both at once:
+The repo includes [resume-generator](https://github.com/edwardasilva/resume-generator) and [company-lists](https://github.com/edwardasilva/company-lists) as submodules. Clone them all at once:
 
 ```sh
 git clone --recurse-submodules https://github.com/edwardasilva/eeprep.git
 ```
 
-The site builds without the submodule, so a plain clone also works.
+The site builds without the submodules, so a plain clone also works.
 
 To help with the guide, see [CONTRIBUTING](.github/CONTRIBUTING.md).
 
@@ -44,7 +44,7 @@ Content is licensed under [CC BY 4.0](LICENSE-CONTENT). You may share and adapt 
 - the words and drawings shown by the figures in `src/components/advice/`, `src/components/guide/`, `src/components/home/`, `src/components/hired/`, `src/components/interview/`, `src/components/links/`, `src/components/projects/`, `src/components/resume/`, `src/components/simple/`, and `src/components/story/`
 - the resume skill in `public/skills/eeprep-resume/`
 
-Code is licensed under the [MIT License](LICENSE). Code means everything else, including the components, plugins, styles, scripts, worker, and config files. The resume-generator submodule has its own licenses: MIT for code and CC BY 4.0 for its examples and docs.
+Code is licensed under the [MIT License](LICENSE). Code means everything else, including the components, plugins, styles, scripts, worker, and config files. The resume-generator submodule has its own licenses: MIT for code and CC BY 4.0 for its examples and docs. The company-lists submodule is licensed under MIT.
 
 The eeprep name and logo files in `src/brand/` and `public/brand/` are not covered by either license.
 
