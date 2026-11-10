@@ -1,0 +1,149 @@
+---
+// Figure 5.1 as HTML and CSS, in place of the agenda table. Each block has one
+// bar per session length, scaled so the longest block fills the row. The
+// numbers are from the facilitator script, and each session sums to its length.
+const blocks = [
+	{
+		title: '1. How a resume gets read',
+		long: 10,
+		short: 5,
+		show: 'the how a resume gets read figure',
+	},
+	{
+		title: '2. Layout and template setup',
+		long: 15,
+		short: 8,
+		show: "the layout do's and don'ts figure",
+	},
+	{
+		title: '3. Bullet rewrite drill',
+		long: 25,
+		short: 20,
+		show: 'the bullet before and after figure',
+	},
+	{
+		title: '4. Section order and header',
+		long: 10,
+		short: 5,
+		show: 'the finished page figure',
+	},
+	{
+		title: '5. Peer review in pairs',
+		long: 20,
+		short: 15,
+		show: 'the two-pass checklist figure',
+	},
+	{
+		title: '6. Wrap-up, one change this week',
+		long: 10,
+		short: 7,
+		show: 'None',
+	},
+];
+const longest = Math.max(...blocks.map((b) => b.long));
+const alt = blocks
+	.map(
+		(b) =>
+			`${b.title}: ${b.long} minutes in the 90-minute session, ${b.short} minutes in the 60-minute session. Figure on screen: ${b.show}.`,
+	)
+	.join(' ');
+---
+
+<figure class="eep-fig wide eep-agenda-fig" id="fig-5-1">
+	<p class="eep-kicker">Agenda for the 90-minute and 60-minute sessions</p>
+	<p class="sr-only">{alt}</p>
+	<ol class="eep-agenda not-content" aria-hidden="true">
+		{blocks.map((b) => (
+			<li>
+				<p class="eep-agenda-title">{b.title}</p>
+				<p class="eep-agenda-show">Figure on screen: {b.show}</p>
+				{[
+					{ label: '90', min: b.long, cls: 'eep-agenda-long' },
+					{ label: '60', min: b.short, cls: 'eep-agenda-short' },
+				].map((r) => (
+					<div class="eep-agenda-row">
+						<span class="eep-agenda-label">{r.label}</span>
+						<span class="eep-agenda-track">
+							<span
+								class:list={['eep-agenda-bar', r.cls]}
+								style={`--share: ${r.min / longest}`}
+							/>
+							<span class="eep-agenda-min">{r.min} min</span>
+						</span>
+					</div>
+				))}
+			</li>
+		))}
+	</ol>
+	<figcaption>
+		<span class="eep-fignum"></span> Minutes per block in each session.
+	</figcaption>
+</figure>
+
+<style>
+	.eep-agenda {
+		display: grid;
+		gap: 0.75rem;
+		margin: 1rem 0 0;
+		padding: 0;
+		list-style: none;
+		font-family: var(--eep-font-sans);
+		color: var(--eep-ink);
+	}
+	.eep-agenda li {
+		margin: 0;
+		max-width: none;
+		padding: 0.5rem 0.65rem 0.6rem;
+		border: 1px solid var(--eep-dg-mute);
+		border-radius: 4px;
+		background: color-mix(in srgb, var(--eep-dg-ink) 6%, var(--eep-dg-fill));
+	}
+	.eep-agenda p {
+		margin: 0;
+		max-width: none;
+		overflow-wrap: anywhere;
+	}
+	.eep-agenda .eep-agenda-title {
+		font-size: 0.9375rem;
+		font-weight: 600;
+		line-height: 1.3;
+	}
+	.eep-agenda .eep-agenda-show {
+		margin-bottom: 0.35rem;
+		font-size: 0.75rem;
+		line-height: 1.4;
+		color: var(--eep-ink-2);
+	}
+	.eep-agenda-row {
+		display: grid;
+		grid-template-columns: 1.5rem 1fr;
+		align-items: center;
+		margin-top: 0.2rem;
+		font-size: 0.75rem;
+		line-height: 1.4;
+	}
+	.eep-agenda-label {
+		color: var(--eep-ink-2);
+	}
+	.eep-agenda-track {
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+	}
+	/* The bar leaves 3.5rem of the row free for its minute label. */
+	.eep-agenda-bar {
+		flex: none;
+		width: calc((100% - 3.5rem) * var(--share));
+		height: 0.6rem;
+		border-radius: 2px;
+	}
+	.eep-agenda-long {
+		background: var(--eep-dg-ink);
+	}
+	.eep-agenda-short {
+		background: var(--eep-dg-mute);
+	}
+	.eep-agenda-min {
+		white-space: nowrap;
+	}
+</style>

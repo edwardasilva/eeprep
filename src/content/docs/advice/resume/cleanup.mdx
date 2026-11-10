@@ -1,0 +1,98 @@
+---
+title: Cleanup
+description: "An audit to run on a finished resume PDF before you send it: the text an ATS reads, every link, every bullet, every skill, the dates, the GPA rule, and the file itself."
+pageType: guide
+head:
+  - tag: title
+    content: "How to audit a resume before you send it | eeprep"
+---
+
+import AuditFigure from '../../../../components/resume/AuditFigure.astro';
+
+Audit the finished PDF, not the source file, because the PDF is what the screener and the applicant tracking system get. Work top to bottom: the file, the header, each section, then the whole page. Fix what you find, rebuild, and run the audit again. It takes less time than one application.
+
+<AuditFigure />
+
+## The file
+
+Save the PDF as plain text and read it. [Michigan Engineering](https://career.engin.umich.edu/resumes-cvs-cover-letters/) and [MIT CAPD](https://capd.mit.edu/resources/make-your-resume-ats-friendly/) both warn that LaTeX output can confuse an ATS, and the text layer is where it goes wrong. Every heading, entry, and bullet has to come out whole and in reading order. Watch for "fi" and "fl" that come out as blank or as odd symbols, which [the pdfTeX manual](https://texdoc.org/serve/pdftex-a.pdf/0) says happens without a Unicode map. If you use [resume-generator](https://github.com/edwardasilva/resume-generator), each build runs this check for you when `pdftotext` is installed.
+
+```bash
+pdftotext resume.pdf - | less
+```
+
+Open the PDF's properties. The title reads "Alex Doe Resume" and the author is Alex Doe, set with [hyperref](https://latex.us/macros/latex/contrib/hyperref/doc/hyperref-doc.html). A title left over from a template is a tell. A simple rule: name the file after yourself, such as `Alex-Doe-Resume.pdf`, so it is findable in a recruiter's downloads folder.
+
+Count the pages, and expect one. [The wiki allows a second page at about 10 years of experience](https://www.reddit.com/r/EngineeringResumes/wiki/index/), and you are not there yet.
+
+## The header
+
+Click every link. [One hiring manager sees dead GitHub and LinkedIn links all the time](https://www.reddit.com/r/EngineeringResumes/comments/1hw10ms/12_yoe_some_long_direct_advice_in_tech_from_a/). Links are plain text, such as linkedin.com/in/alex-doe-example, with no icons and no labels such as "Phone:". Your location and "Willing to relocate" are there, because [the wiki warns that a city far from the job can count against you](https://www.reddit.com/r/EngineeringResumes/wiki/index/). List one email, and make it one you check every day.
+
+## Education
+
+List a GPA of 3.50 or higher. From 3.0 to 3.49, list it only when the posting sets a minimum you meet, the rule from the [[Getting hired|Getting hired page]]. Below 3.0, leave it off. If it is there, [match the decimals](https://www.reddit.com/r/EngineeringResumes/comments/15i3d8v/my_boss_said_my_resume_could_use_a_lot_of_work/), as in 3.30/4.00. The graduation date sits at the right margin with "Expected" in front of it if you have not graduated. Coursework is one line of upper-level courses that match the posting, and high school is gone after your first year.
+
+## Projects and experience
+
+Read each bullet against three questions. Does it start with a past-tense verb that is not helped, assisted, worked on, or utilized? Does it name the tool? Does it end in a number you measured and can explain? [If you cannot explain a number, it comes off the resume](https://www.hardwareinterviews.fyi/t/top-electrical-engineering-interview-questions/807), because the interviewer will ask. [Hiring managers go 3 to 5 layers deep](https://x.com/randomrecruiter/status/2081829972415578607) on whatever you list.
+
+Check the shape of each bullet too. It fills one line or most of a second. [One sophomore cut most bullets from 2 lines to 1](https://www.reddit.com/r/EngineeringResumes/comments/1sj2rgt/student_landed_nvidia_offer_sophomore_cs_major_at/) before an NVIDIA offer. Two words alone on a second line are wasted space.
+
+Check for inflation. [One manager said an intern who claims $2 million in yearly savings will be asked to justify it](https://www.reddit.com/r/EngineeringResumes/comments/192hkg8/how_atss_actually_work_from_an_engineering_hiring/). A smaller number you can defend beats a larger one you cannot.
+
+Once you have engineering work, unrelated jobs get one line, with no bullets. Before that, they can keep bullets. Engineering roles get bullets, and each one still passes the three questions.
+
+## Skills
+
+Trace every tool in Skills to a bullet. [Every skill needs a bullet behind it](https://ecs.grainger.illinois.edu/student-resources/resumes-letters/resumes), and [a recruiter on X quotes hiring managers](https://x.com/randomrecruiter/status/2007074490233053671): "If it's not in the work experience, it didn't happen." Cut what has no bullet. Cut soft skills. [Use the exact product names](https://www.reddit.com/r/EngineeringResumes/wiki/typo/), C and C++ as two items and Ansys HFSS with the company's name, and spell them the way the vendor does.
+
+## The whole page
+
+Hold the page at arm's length. It has one column, with no photo, no icons, and no tables. Every date sits at the right margin, in one style per section, semesters or months. The gap between every pair of sections is the same, because [the wiki asks for consistent white space](https://www.reddit.com/r/EngineeringResumes/wiki/index/). Bold appears only on section titles, entry titles, and the coursework, activities, and skills labels.
+
+Then hand it to someone else. [MIT's career office says your best proofreader is a career advisor](https://capd.mit.edu/resources/resumes/). After that, post it to [the r/EngineeringResumes forum](https://www.reddit.com/r/EngineeringResumes/) with your name, phone number, address, and email removed, and give more weight to the reviewers who work in the industry.
+
+## The checklist
+
+Copy this into a note and tick it for every version you send.
+
+```text wrap preserveIndent
+RESUME AUDIT
+File
+[ ] pdftotext output has every heading, entry, and bullet, whole and in order
+[ ] No broken fi or fl ligatures in the text
+[ ] PDF title is "[Name] Resume", author is [Name]
+[ ] File is named [Name]-Resume.pdf
+[ ] One page
+
+Header
+[ ] Every link clicked today
+[ ] Links are plain text, no icons, no "Phone:" or "Email:" labels
+[ ] Location and "Willing to relocate" present
+[ ] One email, checked daily
+
+Education
+[ ] GPA listed at 3.50 or higher, judged at 3.0 to 3.49, off below 3.0, decimals matching
+[ ] Graduation date at the right margin, "Expected" if not yet graduated
+[ ] One line of coursework that matches the posting
+[ ] No high school after the first year
+
+Projects and experience
+[ ] Every bullet: past-tense verb, a tool, a number I can explain
+[ ] No helped, assisted, worked on, or utilized
+[ ] Every bullet fills one line or most of two
+[ ] Unrelated jobs on one line, once there is engineering work
+
+Skills
+[ ] Every tool appears in a bullet
+[ ] No soft skills
+[ ] Exact product names, C and C++ as two items
+
+Whole page
+[ ] One column, no photo, no icons, no tables
+[ ] Dates right-aligned, one date style per section
+[ ] Same gap between every pair of sections
+[ ] Bold only on titles and labels
+[ ] Read by one other person
+```

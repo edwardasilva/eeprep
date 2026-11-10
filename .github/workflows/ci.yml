@@ -1,0 +1,161 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+env:
+  VALE_VERSION: '3.25.1'
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+# The PR body step checks the "Part of #" line. Editing the body alone doesn't
+# start a new run, so fix the body before the last push.
+#
+# One job runs every check, so npm ci runs once. A failed check doesn't stop the
+# others. Each check runs once what it needs is ready: node_modules, or dist/ for
+# the checks that read the build. One run lists every problem.
+#
+# The protect-main ruleset requires this job by its name, Checks. Keep the name.
+# The Playwright mobile audit runs from audit.yml on release tags and by hand, not
+# on every pull request.
+jobs:
+  checks:
+    name: Checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      # Depth 2 fetches the merge commit and its first parent, the base branch,
+      # so the scope step can see which files the pull request changes.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 2
+          persist-credentials: false
+
+      # A pull request that changes only repo docs, such as README.md, CLAUDE.md or
+      # .github/ISSUE_TEMPLATE, skips the tests and the build. Lint and Vale still run, and
+      # the Checks job still reports, so the protect-main ruleset is satisfied.
+      - name: Find what the pull request changes
+        id: scope
+        run: |
+          set -euo pipefail
+          files="$(git diff --name-only HEAD^1 HEAD)"
+          printf '%s\n' "$files"
+          if [ -n "$files" ] && ! printf '%s\n' "$files" | grep -Evq \
+            '^([^/]+\.md|LICENSE[^/]*|\.github/(ISSUE_TEMPLATE/.*|pull_request_template\.md|[A-Z]+\.md))$'; then
+            echo "code=false" >> "$GITHUB_OUTPUT"
+            echo "Only repo docs changed, so the tests and the build are skipped." | tee -a "$GITHUB_STEP_SUMMARY"
+          else
+            echo "code=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Cache Vale
+        id: vale-cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/vale-${{ env.VALE_VERSION }}
+          key: vale-${{ env.VALE_VERSION }}-linux-x64
+      - name: Install Vale
+        if: steps.vale-cache.outputs.cache-hit != 'true'
+        run: |
+          set -euo pipefail
+          base="https://github.com/vale-cli/vale/releases/download/v$VALE_VERSION"
+          curl -fsSL --retry 3 -o /tmp/vale.tar.gz "$base/vale_${VALE_VERSION}_Linux_64-bit.tar.gz"
+          echo "4bf5c5176b682b1da0830f471584d3494f1c2e27ee3029e1ad6f6661d4962182  /tmp/vale.tar.gz" | sha256sum -c -
+          mkdir -p "$HOME/vale-$VALE_VERSION"
+          tar -xzf /tmp/vale.tar.gz -C "$HOME/vale-$VALE_VERSION" vale
+      - name: Vale (guide prose)
+        run: '"$HOME/vale-$VALE_VERSION/vale" --config .github/vale/.vale.ini src/content/docs'
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        if: ${{ !cancelled() }}
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: npm ci
+        id: install
+        if: ${{ !cancelled() }}
+        run: npm ci
+
+      # The body names its issue on a line of its own. Outside contributors,
+      # Dependabot and no-epic pull requests are exempt.
+      - name: PR body
+        if: ${{ !cancelled() && github.event_name == 'pull_request' }}
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+          PR_LABELS: ${{ toJSON(github.event.pull_request.labels.*.name) }}
+          PR_ACTOR: ${{ github.event.pull_request.user.login }}
+          PR_SENDER: ${{ github.actor }}
+          PR_AUTHOR_ASSOCIATION: ${{ github.event.pull_request.author_association }}
+        run: node .github/scripts/check-pr-body.mjs
+
+      # Checks that read the source.
+      - name: Lint (ESLint, markdownlint, Prettier)
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: npm run lint
+      - name: Wikilink checker tests
+        if: ${{ !cancelled() && steps.install.outcome == 'success' && steps.scope.outputs.code == 'true' }}
+        run: npm run test:wikilinks
+      - name: Wikilinks
+        if: ${{ !cancelled() && steps.install.outcome == 'success' && steps.scope.outputs.code == 'true' }}
+        run: npm run check:wikilinks
+      - name: Citation checker tests
+        if: ${{ !cancelled() && steps.install.outcome == 'success' && steps.scope.outputs.code == 'true' }}
+        run: npm run test:citations
+      - name: Citations
+        if: ${{ !cancelled() && steps.install.outcome == 'success' && steps.scope.outputs.code == 'true' }}
+        run: npm run check:citations
+      - name: Sidebar tests
+        if: ${{ !cancelled() && steps.install.outcome == 'success' && steps.scope.outputs.code == 'true' }}
+        run: npm run test:sidebar
+      - name: Link index checker tests
+        if: ${{ !cancelled() && steps.install.outcome == 'success' && steps.scope.outputs.code == 'true' }}
+        run: npm run test:link-index
+      - name: Worker tests
+        if: ${{ !cancelled() && steps.install.outcome == 'success' && steps.scope.outputs.code == 'true' }}
+        run: npm run test:worker
+      - name: Figure rules
+        if: ${{ !cancelled() && steps.install.outcome == 'success' && steps.scope.outputs.code == 'true' }}
+        run: npm run check:figures
+      - name: Dev server serves pages
+        if: ${{ !cancelled() && steps.install.outcome == 'success' && steps.scope.outputs.code == 'true' }}
+        run: npm run check:dev
+      - name: Deploy pins the same Wrangler as package.json
+        if: ${{ !cancelled() }}
+        run: |
+          set -euo pipefail
+          want="$(node -p "require('./package.json').devDependencies.wrangler")"
+          if ! grep -Eq "^ +wranglerVersion: ${want//./\\.}$" .github/workflows/deploy.yml; then
+            echo "::error file=.github/workflows/deploy.yml::wranglerVersion must be $want, the wrangler version in package.json."
+            exit 1
+          fi
+
+      # The build, then the checks that read dist/.
+      - name: Build
+        id: build
+        if: ${{ !cancelled() && steps.install.outcome == 'success' && steps.scope.outputs.code == 'true' }}
+        run: npm run build
+      - name: Links in the build
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: npm run check:links
+      - name: Link text
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: npm run check:link-text
+      - name: Link index
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: npm run check:link-index
+      - name: Robots meta tag
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: npm run check:robots
+      - name: Wrangler dry run (eeprep.com)
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: npm run check:deploy
+      - name: Wrangler dry run (dev)
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: npm run check:deploy:dev

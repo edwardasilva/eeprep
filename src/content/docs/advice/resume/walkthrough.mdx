@@ -1,0 +1,85 @@
+---
+title: Walkthrough
+description: "Alex Doe's resume from a first draft to a finished one-page PDF: the five edits, the data file that builds the page, and how the page changes once experience takes over from projects."
+pageType: guide
+head:
+  - tag: title
+    content: "Resume walkthrough: first draft to finished PDF | eeprep"
+---
+
+import DraftFigure from '../../../../components/resume/DraftFigure.astro';
+import StagesFigure from '../../../../components/resume/StagesFigure.astro';
+import DoorFigure from '../../../../components/resume/DoorFigure.astro';
+
+This page takes one made-up student, Alex Doe, from a first draft a screener would skip to the page in the [[Resume#Alex's finished page|Alex's finished page]] section on the Resume page. Each step names what to edit and why. The end product is a PDF you can download, built from a data file you can copy and fill in.
+
+One thing to hold onto the whole way through. Projects earn the first interview, because they are what a student has before anyone has paid them to do engineering. Once you have an internship or a co-op, paid work takes over the page. A reader wants to know what value you added somewhere, and a paid role answers that in a way a class project cannot. Alex's page below is a projects page because Alex has no engineering job yet, and the section at the end shows what happens once that changes.
+
+<DoorFigure />
+
+## Start with an inventory
+
+Before you touch a template, list everything: class labs where you built or measured something, club builds, repairs, and every job. The [[Workshop#Project inventory for students with no experience|Project inventory for students with no experience]] section on the Workshop page has the form. Alex's list came to two builds, a CubeSat power board and a bench data logger, a retail job, three upper-level courses, and two clubs. That is enough for one page.
+
+## The first draft
+
+Alex's first draft reads like most first drafts. It opens with an objective, leads with the retail job, says "worked on" and "utilized", and lists teamwork as a skill. Five edits fix it.
+
+<DraftFigure />
+
+1. Cut the objective. [The wiki keeps a summary only for senior engineers, career changers, and people returning from a gap](https://www.reddit.com/r/EngineeringResumes/wiki/index/). If you keep one, make it one line that names the role you want.
+2. Move Projects above Experience. Alex has no engineering job yet, so the order is Education, Skills, Projects, Experience. That is [the wiki's student default](https://www.reddit.com/r/EngineeringResumes/wiki/index/), with Skills moved up under Education. The retail job stays, on one line.
+3. Rewrite every bullet as did X with Y to get Z. "Worked on a buck converter for a CubeSat using LTspice and KiCad" becomes "Designed a [X] W CubeSat buck converter in KiCad and LTspice, measured at [X]% on an electronic load". The [[Resume#Bullets|Bullets]] section on the Resume page shows the pattern, and the [[Hardware#Hardware builds that count|Hardware builds that count]] section on the Hardware page has longer lines for the same kind of build.
+4. Put the dates at the right margin, in one style. Alex uses semesters on every line. [The wiki prefers months and says not to mix the two](https://www.reddit.com/r/EngineeringResumes/wiki/index/).
+5. Cut the soft skills and the references line. Teamwork shows up in an interview, not in a list, and [every skill that stays needs a bullet behind it](https://ecs.grainger.illinois.edu/student-resources/resumes-letters/resumes). Microsoft Office goes too.
+
+Every [X] is a number Alex measures on the bench. If you do not have the number yet, go measure it. Do not guess it.
+
+## The finished page
+
+The result is the finished page figure in the [[Resume#Alex's finished page|Alex's finished page]] section on the Resume page: one column, a centered header, Projects above Experience, and two labeled skill lines where every tool appears in a bullet. Download [the finished PDF](https://github.com/edwardasilva/resume-generator/blob/main/examples/Alex-Doe-Resume.pdf) to see the real page.
+
+The page is built from one data file. [resume-generator](https://github.com/edwardasilva/resume-generator) reads it and does the layout, so the content is all you write. Here is the projects block from [Alex's data file](https://github.com/edwardasilva/resume-generator/blob/main/examples/alex.json):
+
+```json title="examples/alex.json" wrap
+"projects": [
+  {
+    "title": "CubeSat Power Board",
+    "tools": ["KiCad", "LTspice"],
+    "start": "Fall 2025",
+    "end": "Spring 2026",
+    "bullets": [
+      "Designed a [X] W CubeSat buck converter in KiCad and LTspice, measured at [X]% on an electronic load",
+      "Cut output ripple from [X] mV to [X] mV by shrinking the switching loop, verified on an oscilloscope"
+    ]
+  }
+]
+```
+
+Copy the file, replace Alex's details with yours, and run `./run`. It writes `resume.pdf`, fits it onto one page, and checks that the text extracts cleanly. The [[Resume#Build your resume|Build your resume]] section on the Resume page has the download steps. If a bullet spills a word or two onto a second line, cut it or add a detail that fills the line, then run it again.
+
+## When experience takes over
+
+Alex is a junior with no engineering job, so Projects carries the page. The same rules produce a different page in your first year and a different one at graduation, and the difference is mostly how much paid work there is to show. resume-generator ships five finished examples, and each one is a made-up student.
+
+<StagesFigure />
+
+| Page, linked to its PDF                                                                                   | What is on it                                                                                                                   |
+| --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| [First year](https://github.com/edwardasilva/resume-generator/blob/main/examples/Jordan-Doe-Resume.pdf)   | One class project, a one-line retail job, and a few skills. The page has room left at the bottom.                               |
+| [Sophomore](https://github.com/edwardasilva/resume-generator/blob/main/examples/Sam-Doe-Resume.pdf)       | Two projects, an electrical lead role in a robotics club, and a one-line job.                                                   |
+| [Alex, junior](https://github.com/edwardasilva/resume-generator/blob/main/examples/Alex-Doe-Resume.pdf)   | Two projects, a one-line job, and two skill lines. This is the finished page figure.                                            |
+| [New graduate](https://github.com/edwardasilva/resume-generator/blob/main/examples/Taylor-Doe-Resume.pdf) | Two internships, two projects, and certifications. Experience leads.                                                            |
+| [Packed](https://github.com/edwardasilva/resume-generator/blob/main/examples/Casey-Doe-Resume.pdf)        | Three engineering roles, a one-line job, three projects, and long skill lists. The script tightens the text to 10.25 pt to fit. |
+
+Three things change as you go. Education stays at the top until you have an engineering job, and then Experience moves up, as on the new-graduate page. Each internship pushes the oldest class project down the list, and eventually off the page. The skill lines grow, but every tool on them still needs a bullet.
+
+That is the shape of a career on one page. The projects were the way in. Once there is an internship, its bullets say what you built for someone who was paying for it, and a reader weighs that more than the best class project. Do not fight the move. Give the internship the bullets with the biggest numbers, keep the one or two projects you can still defend line by line, and let the rest go. When employers choose between two equal candidates, [an internship in their industry weighs most](https://www.naceweb.org/talent-acquisition/candidate-selection/internship-experience-often-the-deciding-factor-between-equal-candidates), and that is the result the page is built to show.
+
+The projects open the door, and the internship work is what an interview asks you to explain.
+
+The first-year page has empty space at the bottom. That is fine in your first year. The fix is content, a lab or a club build, and never tighter spacing. The [[Resume#Layout|Layout]] section on the Resume page has the limits.
+
+## What to do this week
+
+Fill in the inventory. Pick the two builds you can defend best, and write one did X with Y to get Z bullet for each. Measure anything that still reads [X]. Then run the [[Cleanup|Cleanup page]] on the PDF before you send it anywhere. If you have an internship, start with its bullets instead, and give them the room.

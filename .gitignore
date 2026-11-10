@@ -1,0 +1,48 @@
+# Dependencies and build output
+node_modules/
+dist/
+.astro/
+
+# Secrets
+.env*
+!.env.example
+
+# Logs and test coverage
+*.log
+logs/
+coverage/
+.nyc_output/
+
+# OS files
+.DS_Store
+
+# Editors. Shared VS Code settings can still be committed.
+.idea/
+.vscode/*
+.gemini/*
+.claude/
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+
+# Obsidian vault UI state.
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+src/content/docs/.obsidian/
+
+# LaTeX build artifacts. Keep .tex sources and PDFs, including a public resume.
+*.aux
+*.fdb_latexmk
+*.fls
+*.out
+*.synctex.gz
+
+# Cover figure build: downloaded fonts and TeX intermediates
+.cache/
+src/figures/**/*.aux
+src/figures/**/*.log
+src/figures/**/*.xdv
+src/figures/**/*.raw.svg
+
+# Local Wrangler state
+.wrangler/

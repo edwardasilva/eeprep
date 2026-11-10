@@ -1,0 +1,94 @@
+---
+import { externalLinks } from '../resume/caption';
+// Figure 17.1 as HTML and CSS. One firm's hiring funnel, from a study of its
+// applicant data: the share of people at each stage who came in by referral.
+// Four bars in one ink, lengths by the numbers, so no stage is highlighted.
+const stages = [
+	{ label: 'Applicants', share: 6 },
+	{ label: 'Interviewed', share: 21 },
+	{ label: 'Got an offer', share: 27 },
+	{ label: 'Hired', share: 29 },
+];
+const alt =
+	'Four bars showing the share of people at each hiring stage who were referred, at one large firm. Applicants, 6 percent. Interviewed, 21 percent. Got an offer, 27 percent. Hired, 29 percent.';
+const caption = externalLinks(
+	`Referred people were 6% of applicants and 29% of hires at one large US firm. Source: <a href="https://www.newyorkfed.org/research/staff_reports/sr568">the New York Fed staff report by Brown, Setren, and Topa</a>.`,
+);
+---
+
+<figure class="eep-fig wide eep-funnel-fig" id="fig-17-1">
+	<p class="eep-kicker">Share of each stage that came in by referral</p>
+	<p class="sr-only">{alt}</p>
+	<div class="eep-funnel not-content" aria-hidden="true">
+		<ol>
+			{stages.map((s) => (
+				<li>
+					<span class="eep-funnel-label">{s.label}</span>
+					<span class="eep-funnel-track">
+						<span class="eep-funnel-bar" style={`width: ${s.share}%`} />
+					</span>
+					<span class="eep-funnel-value">{s.share}%</span>
+				</li>
+			))}
+		</ol>
+	</div>
+	<figcaption>
+		<span class="eep-fignum"></span> <span set:html={caption} />
+	</figcaption>
+</figure>
+
+<style>
+	.eep-funnel {
+		margin-top: 1rem;
+		font-family: var(--eep-font-sans);
+		color: var(--eep-ink);
+	}
+	.eep-funnel ol {
+		display: grid;
+		gap: 0.6rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.eep-funnel li {
+		display: grid;
+		grid-template-columns: 6.5rem minmax(0, 1fr) 3rem;
+		gap: 0.75rem;
+		align-items: center;
+		margin: 0;
+		max-width: none;
+	}
+	.eep-funnel-label {
+		font-size: 0.8125rem;
+		line-height: 1.3;
+	}
+	.eep-funnel-track {
+		display: block;
+		height: 1.1rem;
+		border: 1px solid var(--eep-dg-mute);
+		border-radius: 4px;
+		background: var(--eep-dg-tint);
+		overflow: hidden;
+	}
+	.eep-funnel-bar {
+		display: block;
+		height: 100%;
+		background: var(--eep-dg-ink);
+		border-radius: 3px 0 0 3px;
+	}
+	.eep-funnel-value {
+		font-size: 0.8125rem;
+		font-variant-numeric: tabular-nums;
+		text-align: right;
+	}
+	@media (max-width: 24rem) {
+		.eep-funnel li {
+			grid-template-columns: 5.25rem minmax(0, 1fr) 2.5rem;
+			gap: 0.5rem;
+		}
+		.eep-funnel-label,
+		.eep-funnel-value {
+			font-size: 0.75rem;
+		}
+	}
+</style>

@@ -1,0 +1,268 @@
+---
+import { getCollection } from 'astro:content';
+import { externalLinks } from './resume/caption';
+import { linkGroups } from '../lib/link-index';
+
+// The home page is src/pages/index.astro, not a docs entry.
+const titles = new Map([
+	[
+		'index',
+		{
+			href: '/',
+			title:
+				'A guide to job searching for electrical engineers & computer scientists',
+		},
+	],
+]);
+for (const doc of await getCollection('docs')) {
+	titles.set(doc.id, { href: `/${doc.id}/`, title: doc.data.title });
+}
+const pageFor = (slug: string) => {
+	const page = titles.get(slug);
+	if (!page)
+		throw new Error(`src/data/link-index.json: unknown page "${slug}"`);
+	return page;
+};
+
+const escape = (value: string) =>
+	value
+		.replace(/&/g, '&amp;')
+		.replace(/</g, '&lt;')
+		.replace(/>/g, '&gt;')
+		.replace(/"/g, '&quot;');
+
+const groups = linkGroups.map((group) => ({
+	id: group.id,
+	name: group.name,
+	rows: group.entries.map((entry) => ({
+		link: externalLinks(
+			`<a href="${escape(entry.url)}">${escape(entry.title)}</a>`,
+		),
+		summary: entry.summary,
+		pages: entry.pages.map(pageFor),
+	})),
+}));
+---
+
+<div class="eep-links not-content">
+	<nav class="eep-links-jump" aria-label="Source groups">
+		<ul>
+			{groups.map((group) => (
+				<li>
+					<a href={`#${group.id}`}>{group.name}</a>
+					<span class="eep-links-count">{group.rows.length}</span>
+				</li>
+			))}
+		</ul>
+	</nav>
+	{groups.map((group) => (
+		<details class="eep-links-group" open data-group={group.id}>
+			<summary>
+				<h2 id={group.id}>{group.name}</h2>
+			</summary>
+			<table aria-labelledby={group.id}>
+				<thead data-pagefind-ignore>
+					<tr>
+						<th scope="col">Link</th>
+						<th scope="col">What it is</th>
+						<th scope="col">Used on</th>
+					</tr>
+				</thead>
+				<tbody>
+					{group.rows.map((row) => (
+						<tr>
+							<th scope="row" class="eep-links-name">
+								<span set:html={row.link} />{' '}
+							</th>
+							<td data-label="What it is">{row.summary} </td>
+							<td data-label="Used on">
+								<ul>
+									{row.pages.map((page) => (
+										<li>
+											<a href={page.href}>{page.title}</a>
+										</li>
+									))}
+								</ul>{' '}
+							</td>
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</details>
+	))}
+</div>
+
+<script>
+	// Without script, every group stays open. With script, groups start closed
+	// at phone width and open at desktop width, and a jump link or a URL hash
+	// opens the group it points to.
+	const groups = document.querySelectorAll<HTMLDetailsElement>(
+		'details.eep-links-group',
+	);
+	const narrow = window.matchMedia('(max-width: 50rem)');
+	const setDefault = () => {
+		for (const group of groups) group.open = !narrow.matches;
+		openFromHash();
+	};
+	function openFromHash() {
+		const id = decodeURIComponent(location.hash.slice(1));
+		if (!id) return;
+		const group = document.querySelector<HTMLDetailsElement>(
+			`details.eep-links-group[data-group="${CSS.escape(id)}"]`,
+		);
+		if (group) {
+			group.open = true;
+			group.scrollIntoView();
+		}
+	}
+	setDefault();
+	narrow.addEventListener('change', setDefault);
+	window.addEventListener('hashchange', openFromHash);
+</script>
+
+<style>
+	.eep-links {
+		container-type: inline-size;
+		margin-top: 2rem;
+		font-family: var(--eep-font-sans);
+		color: var(--eep-ink);
+	}
+	.eep-links .eep-links-jump ul {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.375rem 1.25rem;
+		margin: 0 0 2rem;
+		font-size: 0.875rem;
+	}
+	.eep-links .eep-links-jump li + li {
+		margin-top: 0;
+	}
+	.eep-links-count {
+		margin-inline-start: 0.25rem;
+		color: var(--eep-ink-2);
+	}
+	.eep-links-group + .eep-links-group {
+		margin-top: 1.5rem;
+	}
+	.eep-links-group > summary {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.5rem 0;
+		border-bottom: 1px solid var(--eep-border-strong, var(--eep-rule));
+		cursor: pointer;
+		list-style: none;
+	}
+	.eep-links-group > summary::-webkit-details-marker {
+		display: none;
+	}
+	.eep-links-group > summary::before {
+		content: '+';
+		inline-size: 1rem;
+		color: var(--eep-ink-2);
+		font: 500 1rem/1 var(--eep-font-sans);
+	}
+	.eep-links-group[open] > summary::before {
+		content: '\2212';
+	}
+	.eep-links-group > summary:focus-visible {
+		outline: 2px solid var(--eep-ink);
+		outline-offset: 2px;
+	}
+	.eep-links-group table {
+		margin-top: 0.75rem;
+	}
+	.eep-links h2 {
+		margin: 0;
+		font: 600 var(--eep-text-h3, 1.25rem) / var(--eep-lh-heading, 1.25)
+			var(--eep-font-serif);
+		color: var(--eep-ink);
+	}
+	.eep-links table {
+		width: 100%;
+		border-collapse: collapse;
+		table-layout: fixed;
+		font-size: 0.875rem;
+		line-height: 1.5;
+	}
+	.eep-links th,
+	.eep-links td {
+		padding: 0.625rem 0.75rem 0.625rem 0;
+		border-bottom: 1px solid var(--eep-rule);
+		text-align: start;
+		vertical-align: top;
+		overflow-wrap: anywhere;
+	}
+	.eep-links thead th {
+		padding-block: 0 0.5rem;
+		border-bottom-color: var(--eep-rule);
+		font: 500 0.75rem/1.4 var(--eep-font-sans);
+		color: var(--eep-ink-2);
+	}
+	.eep-links thead th:nth-child(1) {
+		width: 32%;
+	}
+	.eep-links thead th:nth-child(3) {
+		width: 26%;
+	}
+	.eep-links tbody th {
+		font-weight: 600;
+	}
+	.eep-links td {
+		color: var(--eep-ink-2);
+	}
+	.eep-links ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.eep-links li + li {
+		margin-top: 0.25rem;
+	}
+	/* Narrow columns: each row becomes a block, with each cell's header shown
+	   above it. The column headers stay in the markup for screen readers. */
+	@container (max-width: 36rem) {
+		.eep-links table,
+		.eep-links tbody,
+		.eep-links tr,
+		.eep-links th,
+		.eep-links td {
+			display: block;
+			width: auto;
+		}
+		.eep-links thead {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+			clip-path: inset(50%);
+			white-space: nowrap;
+		}
+		.eep-links tbody tr {
+			padding: 0.75rem 0;
+			border-bottom: 1px solid var(--eep-rule);
+		}
+		.eep-links tbody tr:first-child {
+			border-top: 1px solid var(--eep-rule);
+		}
+		.eep-links th,
+		.eep-links td {
+			padding: 0;
+			border: 0;
+		}
+		.eep-links td {
+			margin-top: 0.5rem;
+		}
+		/* The column name comes from CSS, not the markup, so reader views
+		   and copy-paste don't run it into the cell text. The empty alt text
+		   keeps screen readers from reading it on top of the column header. */
+		.eep-links td::before {
+			content: attr(data-label);
+			content: attr(data-label) / '';
+			display: block;
+			margin-bottom: 0.125rem;
+			font: 500 0.75rem/1.4 var(--eep-font-sans);
+			color: var(--eep-ink-2);
+		}
+	}
+</style>

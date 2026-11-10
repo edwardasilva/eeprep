@@ -1,0 +1,124 @@
+---
+// Figure 24.1 as HTML and CSS. The reading order of the Advice section as
+// one row of five stops, each with the question it answers. Every stop gets
+// the same box, and the page text says which one to open first.
+const stops = [
+	{
+		title: "Author's story",
+		body: 'Where the advice comes from: one path from a failed semester to an embedded job.',
+	},
+	{
+		title: 'Projects',
+		body: 'What to build so the resume has something to show, and how to present it.',
+	},
+	{
+		title: 'Resume',
+		body: 'One page a screener reads in seconds, with a measured result in each bullet.',
+	},
+	{
+		title: 'Getting hired',
+		body: 'The referral, the rule of 20, the fair, and the interview.',
+	},
+	{
+		title: 'Forever learning',
+		body: 'Datasheets, free courses, societies, the FE exam, and graduate study.',
+	},
+];
+const alt =
+	"Five stops in reading order. Author's story: where the advice comes from, one path from a failed semester to an embedded job. Projects: what to build so the resume has something to show, and how to present it. Resume: one page a screener reads in seconds, with a measured result in each bullet. Getting hired: the referral, the rule of 20, the fair, and the interview. Forever learning: datasheets, free courses, societies, the FE exam, and graduate study.";
+const arrow = 'M1 1.5L9 5L1 8.5Z';
+---
+
+<figure class="eep-fig wide eep-map-fig" id="fig-24-1">
+	<p class="eep-kicker">The Advice section in reading order</p>
+	<p class="sr-only">{alt}</p>
+	<div class="eep-map not-content" aria-hidden="true">
+		<ol>
+			{stops.map((s, i) => (
+				<li>
+					<p class="eep-map-title">{s.title}</p>
+					<p class="eep-map-body">{s.body}</p>
+					{i !== stops.length - 1 && (
+						<svg class="eep-map-arrow" viewBox="0 0 10 10" focusable="false">
+							<path d={arrow} />
+						</svg>
+					)}
+				</li>
+			))}
+		</ol>
+	</div>
+	<figcaption>
+		<span class="eep-fignum"></span>{' '}
+		<span>
+			Read left to right the first time. After that, open the page for the step
+			you are on.
+		</span>
+	</figcaption>
+</figure>
+
+<style>
+	.eep-map-fig .eep-kicker {
+		line-height: 1.35;
+	}
+	.eep-map {
+		margin-top: 1rem;
+		container-type: inline-size;
+		font-family: var(--eep-font-sans);
+		color: var(--eep-ink);
+	}
+	.eep-map p {
+		margin: 0;
+		max-width: none;
+	}
+	.eep-map ol {
+		display: grid;
+		gap: 0.75rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.eep-map li {
+		position: relative;
+		margin: 0;
+		max-width: none;
+		padding: 0.6rem 0.75rem;
+		border: 1px solid var(--eep-dg-mute);
+		border-radius: 4px;
+		background: var(--eep-dg-tint);
+	}
+	.eep-map-title {
+		font-size: 0.9375rem;
+		font-weight: 600;
+		line-height: 1.3;
+	}
+	.eep-map-body {
+		margin-top: 0.2rem;
+		font-size: 0.8125rem;
+		line-height: 1.45;
+		color: var(--eep-ink-2);
+	}
+	/* Narrow: the arrow points down to the next box. */
+	.eep-map-arrow {
+		position: absolute;
+		left: 50%;
+		bottom: -0.7rem;
+		width: 0.6rem;
+		height: 0.6rem;
+		fill: var(--eep-dg-ink);
+		transform: translateX(-50%) rotate(90deg);
+	}
+	/* Wide: one row, arrows pointing right across the gap. */
+	@container (min-width: 44rem) {
+		.eep-map ol {
+			grid-template-columns: repeat(5, minmax(0, 1fr));
+			gap: 0 0.75rem;
+		}
+		.eep-map-arrow {
+			left: auto;
+			right: -0.7rem;
+			bottom: auto;
+			top: 0.85rem;
+			transform: none;
+		}
+	}
+</style>

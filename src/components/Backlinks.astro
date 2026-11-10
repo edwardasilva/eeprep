@@ -1,0 +1,29 @@
+---
+import { buildPageLinks, loadWikiIndex } from '../lib/wiki-index.mjs';
+
+// "Linked from" list for the current page. PageSidebar shows it in the right
+// sidebar on wide screens; Footer shows it after the content below 72rem,
+// where Starlight would otherwise stack the sidebar above the page title.
+interface Props {
+	class: string;
+}
+
+const links = buildPageLinks(loadWikiIndex());
+const here = links[Astro.url.pathname.replace(/^\/+/, '')];
+const backlinks = (here?.backlinks ?? [])
+	.map((key) => ({ href: `/${key}`, title: links[key]?.title ?? key }))
+	.sort((a, b) => a.title.localeCompare(b.title));
+---
+
+{backlinks.length > 0 && (
+	<div class:list={['eep-backlinks', Astro.props.class]}>
+		<h2>Linked from</h2>
+		<ul>
+			{backlinks.map((link) => (
+				<li>
+					<a href={link.href}>{link.title}</a>
+				</li>
+			))}
+		</ul>
+	</div>
+)}
