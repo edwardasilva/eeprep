@@ -19,7 +19,7 @@ npm ci
 npm run build
 ```
 
-Vale checks the writing style. To run it locally, [install Vale](https://vale.sh/docs/install), then run `vale --config .github/vale/.vale.ini src/content/docs`. If you skip either step, maintainers run the checks before merging. Merges are squash merges.
+Vale checks the writing style. To run it locally, [install Vale](https://vale.sh/docs/install), then run `vale --config .github/vale/.vale.ini src/content/docs public/skills README.md`. If you skip either step, maintainers run the checks before merging. Merges are squash merges.
 
 ## Coding agents
 
