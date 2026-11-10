@@ -662,14 +662,14 @@
   },
   {
     "url": "https://ece4760.github.io/Projects/Projects.html",
-    "title": "Cornell ECE 4760: final project archive",
+    "title": "Cornell ECE 4760: current project archive",
     "category": "Tools and project resources",
     "summary": "Semester of student project sites, each with design, hardware, software, results.",
     "pages": ["advice/projects/portfolio"]
   },
   {
     "url": "https://ece4760.github.io/Projects/Fall2025/hw578/index.html",
-    "title": "Cornell ECE 5730: Julia set on eight RP2040s",
+    "title": "Cornell ECE 4760 and 5730: Julia set on eight RP2040s",
     "category": "Tools and project resources",
     "summary": "A student project page whose design section covers an SPI bus bug.",
     "pages": ["advice/projects/portfolio"]
@@ -697,7 +697,7 @@
   },
   {
     "url": "https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/",
-    "title": "Cornell ECE 4760: Final project archive",
+    "title": "Cornell ECE 4760: older final project archive",
     "category": "Tools and project resources",
     "summary": "The Cornell microcontroller course project sites whose section order the Portfolio page follows.",
     "pages": ["advice/projects/portfolio"]
