@@ -36,4 +36,4 @@ Ask these for each project or role. Never answer them yourself.
 
 ## Alex Doe
 
-eeprep's running example is Alex Doe, a made-up third-year EE student. Alex's inventory came to two builds (a CubeSat power board and a bench data logger), a retail job, three upper-level courses, and two clubs. That is enough for one page. If the user has less, the page has room at the bottom, and the fix is content, never tighter spacing.
+eeprep's running example is Alex Doe, a made-up fourth-year EE student. Alex's inventory came to two builds (a CubeSat power board and a bench data logger), a retail job, three upper-level courses, and two clubs. That is enough for one page. If the user has less, the page has room at the bottom, and the fix is content, never tighter spacing.
