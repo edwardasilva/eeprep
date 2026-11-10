@@ -306,7 +306,7 @@ export default defineConfig({
 					label: 'Advice',
 					items: [
 						{ label: 'Advice', slug: 'advice' },
-						{ label: "Author's story", slug: 'advice/authors-story' },
+						{ label: 'Quick setup', slug: 'advice/resume/quick-setup' },
 						{
 							label: 'Projects',
 							items: [
@@ -321,7 +321,6 @@ export default defineConfig({
 							label: 'Resume',
 							items: [
 								{ label: 'Resume', slug: 'advice/resume' },
-								{ label: 'Quick setup', slug: 'advice/resume/quick-setup' },
 								{ label: 'Walkthrough', slug: 'advice/resume/walkthrough' },
 								{ label: 'Cleanup', slug: 'advice/resume/cleanup' },
 								{ label: 'Workshop', slug: 'advice/resume/workshop' },
@@ -367,6 +366,7 @@ export default defineConfig({
 								},
 							],
 						},
+						{ label: "Author's story", slug: 'advice/authors-story' },
 					],
 				},
 				{
