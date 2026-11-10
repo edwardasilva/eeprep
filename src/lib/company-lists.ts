@@ -1,7 +1,8 @@
 // Build-time loader for the company list page. Reads every
 // company-lists/data/<country>/<state>/<region>.csv file in the submodule,
 // drops staffing-eligibility columns, and returns the rows plus the labels
-// and filter values the page needs. New state files show up with no code
+// and filter values the page needs. Country, state, and region come from the
+// file path, not from CSV cells. New state files show up with no code
 // change. There is no runtime fetch.
 
 import fs from 'node:fs';
@@ -173,6 +174,19 @@ function industryLabel(slug: string): string {
 			}
 			return part;
 		})
+		.join(' ');
+}
+
+/** "us" -> "US", "co" -> "CO". Country and state folders are codes. */
+function codeFromSlug(slug: string): string {
+	return slug.toUpperCase();
+}
+
+/** "northern-virginia" -> "Northern Virginia". */
+function regionFromSlug(slug: string): string {
+	return slug
+		.split('-')
+		.map((part) => part.charAt(0).toUpperCase() + part.slice(1))
 		.join(' ');
 }
 
@@ -376,6 +390,9 @@ export function loadCompanyList(): CompanyListData {
 		if (parts.length !== 3 || !parts[2].endsWith('.csv')) {
 			continue;
 		}
+		const country = codeFromSlug(parts[0]);
+		const state = codeFromSlug(parts[1]);
+		const region = regionFromSlug(parts[2].replace(/\.csv$/, ''));
 		const table = parseCsv(fs.readFileSync(file, 'utf8'));
 		if (table.length === 0) {
 			throw new Error(`${rel} is empty.`);
@@ -409,9 +426,9 @@ export function loadCompanyList(): CompanyListData {
 			const search = [
 				raw.name,
 				raw.city,
-				raw.state,
-				raw.region,
-				raw.country,
+				state,
+				region,
+				country,
 				industry,
 				industryLabelText,
 				field,
@@ -431,17 +448,17 @@ export function loadCompanyList(): CompanyListData {
 				field,
 				fieldLabel,
 				city: raw.city ?? '',
-				state: raw.state ?? '',
-				region: raw.region ?? '',
-				country: raw.country ?? '',
+				state,
+				region,
+				country,
 				sourceUrl: raw.source_url ?? '',
 				notes: raw.notes ?? '',
 				search,
 				locations: [
 					{
 						city: raw.city ?? '',
-						state: raw.state ?? '',
-						region: raw.region ?? '',
+						state,
+						region,
 					},
 				],
 			});
@@ -450,6 +467,14 @@ export function loadCompanyList(): CompanyListData {
 
 	if (rows.length === 0) {
 		throw new Error('company-lists/data has no company rows.');
+	}
+	const missing = rows.filter((row) => !row.state || !row.region);
+	if (missing.length > 0) {
+		throw new Error(
+			`Company list rows with an empty state or region: ${missing
+				.map((row) => row.id)
+				.join(', ')}.`,
+		);
 	}
 
 	rows.sort((a, b) => {
