@@ -235,7 +235,8 @@
       "advice/resume/cleanup",
       "advice/resume/walkthrough",
       "help/resources",
-      "index"
+      "index",
+      "roadmap/contributing"
     ]
   },
   {
@@ -959,7 +960,8 @@
       "help/company-list",
       "help/job-boards",
       "help/resources",
-      "roadmap"
+      "roadmap",
+      "roadmap/contributing"
     ]
   },
   {
@@ -2551,7 +2553,7 @@
     "title": "Contributing",
     "category": "Site",
     "summary": "How an eeprep change goes from idea to live site.",
-    "pages": ["roadmap/contributing"]
+    "pages": ["roadmap", "roadmap/contributing"]
   },
   {
     "url": "https://github.com/edwardasilva/eeprep/issues/new/choose",
