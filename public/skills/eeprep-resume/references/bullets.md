@@ -6,7 +6,7 @@ Write results, not duties. X is the action, Y is the tool or method, Z is the me
 
 Before: "Worked on a buck converter for a CubeSat using LTspice and KiCad"
 
-After: "Designed a [X] W CubeSat buck converter in KiCad and LTspice, measured at [X]% on an electronic load"
+After: "Designed a [X] W CubeSat buck converter in KiCad and LTspice, measured at [X]% efficiency on an electronic load"
 
 The rewrite names the action, the tools, one spec that shows difficulty, and a check against the real board. Every `[X]` is a number the user measures. Never fill one in yourself.
 
