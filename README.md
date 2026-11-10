@@ -44,8 +44,8 @@ Content is licensed under [CC BY 4.0](LICENSE-CONTENT). You may share and adapt 
 - the words and drawings shown by the figures in `src/components/advice/`, `src/components/guide/`, `src/components/hired/`, `src/components/interview/`, `src/components/links/`, `src/components/projects/`, `src/components/resume/`, `src/components/roadmap/`, `src/components/simple/`, and `src/components/story/`
 - the resume skill in `public/skills/eeprep-resume/`
 
-Code is licensed under the [MIT License](LICENSE). Code means everything else, including the components, plugins, styles, scripts, worker, and config files. The resume-generator submodule has its own MIT license.
+Code is licensed under the [MIT License](LICENSE). Code means everything else, including the components, plugins, styles, scripts, worker, and config files. The resume-generator submodule has its own licenses: MIT for code and CC BY 4.0 for its examples and docs.
 
 The eeprep name and logo files in `src/brand/` and `public/brand/` are not covered by either license.
 
-The owner's other projects and repos are not covered by either license. All rights are reserved.
+Other repos carry their own licenses.

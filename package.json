@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "version": "0.0.2",
+  "license": "(MIT AND CC-BY-4.0)",
   "engines": {
     "node": ">=22.23.4 <23"
   },
@@ -16,6 +17,8 @@
     "test:citations": "node .github/scripts/test-citations.mjs",
     "check:links": "node .github/scripts/check-links.mjs",
     "check:link-text": "node .github/scripts/check-link-text.mjs",
+    "check:link-case": "node .github/scripts/check-link-case.mjs",
+    "test:link-case": "node .github/scripts/test-link-case.mjs",
     "check:link-index": "node .github/scripts/check-link-index.mjs",
     "test:link-index": "node .github/scripts/test-link-index.mjs",
     "check:dev": "node .github/scripts/check-dev.mjs",
