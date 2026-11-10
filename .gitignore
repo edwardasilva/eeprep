@@ -20,6 +20,7 @@ coverage/
 .idea/
 .vscode/*
 .gemini/*
+.claude/
 !.vscode/settings.json
 !.vscode/extensions.json
 !.vscode/launch.json
@@ -35,6 +36,13 @@ src/content/docs/.obsidian/
 *.fls
 *.out
 *.synctex.gz
+
+# Cover figure build: downloaded fonts and TeX intermediates
+.cache/
+src/figures/**/*.aux
+src/figures/**/*.log
+src/figures/**/*.xdv
+src/figures/**/*.raw.svg
 
 # Local Wrangler state
 .wrangler/

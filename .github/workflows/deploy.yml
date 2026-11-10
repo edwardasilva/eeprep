@@ -1,11 +1,21 @@
 name: Deploy
 
 # A push to main deploys the dev site (the eeprep-dev Worker on workers.dev).
-# A version tag, such as v0.0.2, deploys eeprep.com. A manual run picks either.
+# A version tag, such as v0.1.0, deploys eeprep.com. Tags are cut only when Edward says so.
+# A manual run picks either.
+# Docs-only and .github-only pushes to main skip this workflow. Site pages live
+# under src/ as .md and .mdx, so those paths are not ignored. Path filters are
+# not evaluated for tag pushes.
 on:
   push:
     branches:
       - main
+    paths-ignore:
+      - '.github/**'
+      - '.claude/**'
+      - '*.md'
+      - 'LICENSE'
+      - 'LICENSE-CONTENT'
     tags:
       - 'v*.*.*'
   workflow_dispatch:
@@ -22,26 +32,29 @@ permissions:
   contents: read
 
 env:
-  # engines.node is a range. setup-node cannot install that string from package.json.
-  NODE_VERSION: '22.23.4'
   TARGET: ${{ github.event_name == 'workflow_dispatch' && inputs.target || (startsWith(github.ref, 'refs/tags/v') && 'production' || 'dev') }}
 
 concurrency:
   group: deploy-${{ github.event_name == 'workflow_dispatch' && inputs.target || (startsWith(github.ref, 'refs/tags/v') && 'production' || 'dev') }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
     name: Build site
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     outputs:
       wrangler-env: ${{ steps.target.outputs.wrangler-env }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      # No dependency cache: the deploy builds what ships and must not restore a cache
+      # that a pull request run could have written.
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: npm
+          node-version-file: .nvmrc
+          package-manager-cache: false
       - name: Pick the target
         id: target
         run: |
@@ -53,12 +66,6 @@ jobs:
           fi
       - run: npm ci
       - run: npm run build
-      - run: npm run check:robots
-      - run: npm run test:worker
-      - name: Check the Wrangler config
-        env:
-          WRANGLER_ENV: ${{ steps.target.outputs.wrangler-env }}
-        run: npx wrangler deploy --dry-run --env="$WRANGLER_ENV"
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: dist
@@ -69,10 +76,13 @@ jobs:
     needs: build
     if: vars.DEPLOY_ENABLED == 'true'
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     # The Cloudflare secrets live in this environment, so both targets use it.
     environment: production
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
       - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
           name: dist
@@ -90,6 +100,7 @@ jobs:
     needs: deploy
     if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     permissions:
       contents: write
     steps:

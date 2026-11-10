@@ -5,17 +5,16 @@
 const columns = [
 	{
 		title: 'Projects',
-		role: 'Get your foot in the door',
+		role: 'Earn the first interview',
 		items: [
 			'What a student has before anyone pays them to engineer',
-			'Enough to earn the first interview',
 			'Proof you can build, measure, and finish',
 			'The questions in the first interviews',
 		],
 	},
 	{
 		title: 'Experience',
-		role: 'The meat of the page',
+		role: 'Takes over the page',
 		items: [
 			'Value added for someone who was paying for it',
 			'Takes the top of the page with the first internship',
@@ -25,12 +24,12 @@ const columns = [
 	},
 ];
 const alt =
-	'Two columns. Projects get your foot in the door: what a student has before anyone pays them to engineer, enough to earn the first interview, proof you can build, measure, and finish, and the questions in the first interviews. Experience is the meat of the page: value added for someone who was paying for it, it takes the top of the page with the first internship, it pushes the oldest class project down and then off, and it is the questions in every interview after. An arrow from Projects to Experience is labeled: the first internship.';
+	'Two columns. Projects earn the first interview: what a student has before anyone pays them to engineer, proof you can build, measure, and finish, and the questions in the first interviews. Experience takes over the page: value added for someone who was paying for it, it takes the top of the page with the first internship, it pushes the oldest class project down and then off, and it is the questions in every interview after. An arrow from Projects to Experience is labeled: the first internship.';
 const arrow = 'M1 1.5L9 5L1 8.5Z';
 ---
 
 <figure class="eep-fig wide eep-door-fig" id="fig-12-3">
-	<p class="eep-kicker">Projects open the door, experience is the meat</p>
+	<p class="eep-kicker">Projects first, then paid work</p>
 	<p class="sr-only">{alt}</p>
 	<div class="eep-door not-content" aria-hidden="true">
 		{columns.map((c, i) => (
@@ -59,8 +58,8 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 	<figcaption>
 		<span class="eep-fignum"></span>{' '}
 		<span>
-			Value added is king and experience is the queen. Projects earn the first
-			interview, and the first paid role takes over the page from then on.
+			Projects earn the first interview, and the first paid role takes over the
+			page from then on.
 		</span>
 	</figcaption>
 </figure>

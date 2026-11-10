@@ -6,6 +6,10 @@ Thanks for helping with eeprep. This page covers how a change gets from an idea 
 
 Every change starts as a GitHub issue. Open one with an issue form, or comment on an existing issue to say you are working on it. Status lives on the project board, not in a comment thread.
 
+## Conduct
+
+Be kind and assume good intent. To report a behavior problem, use GitHub's Report content feature, or write to the owner in private.
+
 ## Branches and pull requests
 
 Cut a short branch from `main` and open a pull request back into `main`. Keep each pull request small: one page or one fix, about 50 to 300 changed lines.
@@ -111,7 +115,7 @@ Build the static site and serve `dist/`:
 npm run build && npm run preview
 ```
 
-`npm ci` is the only step that needs the network. The other three commands need no secrets and no network.
+`npm ci` is the only step that needs the network. The other commands need no secrets and no network.
 
 Check out pull request number `<n>` with either of these:
 
