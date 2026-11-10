@@ -259,29 +259,29 @@
     "pages": ["advice/resume/walkthrough"]
   },
   {
-    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Jordan-Doe-Resume.pdf",
-    "title": "resume-generator: Jordan-Doe-Resume.pdf",
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Alex-Doe-Resume-first-year.pdf",
+    "title": "resume-generator: Alex-Doe-Resume-first-year.pdf",
     "category": "Sample resumes and templates",
     "summary": "A first-year student's page: one class project, a one-line job, and a few skills.",
     "pages": ["advice/resume/walkthrough"]
   },
   {
-    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Sam-Doe-Resume.pdf",
-    "title": "resume-generator: Sam-Doe-Resume.pdf",
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Alex-Doe-Resume-sophomore.pdf",
+    "title": "resume-generator: Alex-Doe-Resume-sophomore.pdf",
     "category": "Sample resumes and templates",
     "summary": "A second-year student's page: two projects, a club lead role, and a one-line job.",
     "pages": ["advice/resume/walkthrough"]
   },
   {
-    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Taylor-Doe-Resume.pdf",
-    "title": "resume-generator: Taylor-Doe-Resume.pdf",
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Alex-Doe-Resume-new-grad.pdf",
+    "title": "resume-generator: Alex-Doe-Resume-new-grad.pdf",
     "category": "Sample resumes and templates",
     "summary": "A new graduate's page with two internships, experience first.",
     "pages": ["advice/resume/walkthrough"]
   },
   {
-    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Casey-Doe-Resume.pdf",
-    "title": "resume-generator: Casey-Doe-Resume.pdf",
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Alex-Doe-Resume-packed.pdf",
+    "title": "resume-generator: Alex-Doe-Resume-packed.pdf",
     "category": "Sample resumes and templates",
     "summary": "A full page with three engineering roles and three projects, tightened to fit.",
     "pages": ["advice/resume/walkthrough"]
@@ -1561,13 +1561,6 @@
     "pages": ["advice/projects/hardware"]
   },
   {
-    "url": "https://x.com/Faceofboe5/status/2050228727410311464",
-    "title": "X: @Faceofboe5 on 10-year entry-level ads",
-    "category": "Job search stories from students",
-    "summary": "A post on entry-level EE ads asking for 10-plus years.",
-    "pages": ["advice/projects/hardware"]
-  },
-  {
     "url": "https://x.com/gm16108/status/1989798011690783186",
     "title": "X: @gm16108 on entry-level jobs",
     "category": "Job search stories from students",
@@ -2309,14 +2302,115 @@
     "title": "Purdue ECE: Why get a master's",
     "category": "Pay and career data",
     "summary": "Purdue's case for an ECE master's as a way to specialize.",
-    "pages": ["advice/forever-learning/graduate-study"]
+    "pages": [
+      "advice/forever-learning/getting-into-graduate-study",
+      "advice/forever-learning/graduate-study"
+    ]
+  },
+  {
+    "url": "https://catalog.cornell.edu/programs/electrical-computer-engineering-meng/",
+    "title": "Cornell: Electrical and Computer Engineering M.Eng.",
+    "category": "Pay and career data",
+    "summary": "Cornell's course-based M.Eng.: 30 credits over two semesters and a design project.",
+    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+  },
+  {
+    "url": "https://engineering.purdue.edu/ECE/Academics/Graduates/MASTERS/MSECE_Handbook_Print_Fall2025.pdf",
+    "title": "Purdue ECE: MSECE program handbook",
+    "category": "Pay and career data",
+    "summary": "Purdue's master's tracks: thesis, professional, course-only, online, and a 4+1 BS/MS.",
+    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+  },
+  {
+    "url": "https://ece.rutgers.edu/graduate-faqs",
+    "title": "Rutgers ECE: Graduate admissions FAQs",
+    "category": "Pay and career data",
+    "summary": "Rutgers on PhD entry without a master's, advisors, and assistantships.",
+    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+  },
+  {
+    "url": "https://engineering.purdue.edu/ECE/Academics/Graduates/MASTERS/online-track-degree-requirements",
+    "title": "Purdue ECE: Online track degree requirements",
+    "category": "Pay and career data",
+    "summary": "Graduate math credits, pacing, and time limit for Purdue's online MSECE.",
+    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+  },
+  {
+    "url": "https://www.eecs.mit.edu/academics/graduate-programs/admission-process/graduate-admissions-faqs/",
+    "title": "MIT EECS: Graduate admissions FAQs",
+    "category": "Pay and career data",
+    "summary": "MIT EECS on essays, letters, deadline, GRE, and full-time on-campus study.",
+    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+  },
+  {
+    "url": "https://catalog.gatech.edu/academics/undergraduate/undergraduate-students-taking-graduate-courses/",
+    "title": "Georgia Tech catalog: Undergraduates taking graduate courses",
+    "category": "Pay and career data",
+    "summary": "Georgia Tech's rules for seniors who take graduate courses and count them later.",
+    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+  },
+  {
+    "url": "https://ece.gatech.edu/academics/joint-bs-ms",
+    "title": "Georgia Tech ECE: Joint BS/MS",
+    "category": "Pay and career data",
+    "summary": "Georgia Tech ECE's joint BS/MS: early application, waivers, and double-counted hours.",
+    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+  },
+  {
+    "url": "https://ece.gatech.edu/graduate/handbook/Information-for-Undergraduate-and-Non-ECE-Students",
+    "title": "Georgia Tech ECE: Information for undergraduate students",
+    "category": "Pay and career data",
+    "summary": "Georgia Tech ECE's BS/MS application steps and statement of purpose.",
+    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+  },
+  {
+    "url": "https://cse.umn.edu/ece/program-and-admission-faqs",
+    "title": "Minnesota ECE: Program and admission FAQs",
+    "category": "Pay and career data",
+    "summary": "Minnesota ECE on contacting faculty and advisor funding in PhD admissions.",
+    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+  },
+  {
+    "url": "https://www.nsf.gov/funding/opportunities/grfp-nsf-graduate-research-fellowship-program/nsf26-526/solicitation",
+    "title": "NSF: Graduate Research Fellowship Program solicitation",
+    "category": "Pay and career data",
+    "summary": "The official GRFP solicitation: support, duration, and eligibility.",
+    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+  },
+  {
+    "url": "https://www.nsf.gov/funding/information/faq-additional-faq-nsf-graduate-research-fellowship-program",
+    "title": "NSF: Additional GRFP FAQ",
+    "category": "Pay and career data",
+    "summary": "NSF's extra answers on the Graduate Research Fellowship Program.",
+    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+  },
+  {
+    "url": "https://engineering.purdue.edu/ECE/Academics/Online",
+    "title": "Purdue ECE: Online MSECE",
+    "category": "Pay and career data",
+    "summary": "Purdue's online master's: same degree as on campus, 30 credits.",
+    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+  },
+  {
+    "url": "https://engineering.purdue.edu/ECE/Academics/Online/questions",
+    "title": "Purdue ECE: Online MSECE FAQ",
+    "category": "Pay and career data",
+    "summary": "Purdue's answers on the online MSECE and who takes it.",
+    "pages": ["advice/forever-learning/getting-into-graduate-study"]
   },
   {
     "url": "https://www.ieee.org/membership/students",
     "title": "IEEE: Student membership",
     "category": "Communities",
     "summary": "IEEE's student membership page.",
-    "pages": ["advice/forever-learning", "advice/forever-learning/societies"]
+    "pages": ["advice/forever-learning"]
+  },
+  {
+    "url": "https://www.ieee.org/membership/qualifications",
+    "title": "IEEE: Membership qualifications",
+    "category": "Communities",
+    "summary": "IEEE's rules for who qualifies as a student member.",
+    "pages": ["advice/forever-learning/societies"]
   },
   {
     "url": "https://www.reddit.com/r/ECE/",
@@ -2408,6 +2502,13 @@
     "category": "Communities",
     "summary": "Illinois students' advice on deciding on and applying to grad school.",
     "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
+    "url": "https://github.com/edwardasilva/eeprep",
+    "title": "eeprep on GitHub",
+    "category": "Site",
+    "summary": "Source repository for the eeprep site.",
+    "pages": ["roadmap/contributing"]
   },
   {
     "url": "https://github.com/edwardasilva/eeprep/blob/main/.github/CONTRIBUTING.md",

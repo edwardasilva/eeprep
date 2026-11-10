@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping with eeprep. Ideas and fixes from anyone who hires electrical engineers, or works as one, are welcome.
+Thanks for helping with [eeprep](https://github.com/edwardasilva/eeprep). Fixes and ideas are welcome from students who used the guide, and from anyone who hires or works as an electrical engineer or computer scientist.
 
 ## Suggest an idea or a fix
 
@@ -17,8 +17,9 @@ Before you push, from the repo root:
 ```bash
 npm ci
 npm run build
-vale --config .github/vale/.vale.ini src/content/docs
 ```
+
+Vale checks the writing style. To run it locally, [install Vale](https://vale.sh/docs/install), then run `vale --config .github/vale/.vale.ini src/content/docs`. If you skip it, CI runs it on your pull request.
 
 CI runs the same checks on the pull request. Merges are squash merges.
 
@@ -38,7 +39,7 @@ For a security problem, follow the [security policy](SECURITY.md). Do not open a
 
 ## Releases
 
-Only the repository owner cuts releases. Before a release, run the release-cut workflow and land or close every `release-sweep` issue.
+Only the repository owner cuts releases.
 
 ## License
 
