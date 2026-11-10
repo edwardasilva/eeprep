@@ -38,15 +38,79 @@ If you have one finished build and no photos of it, skip the site until you do. 
 
 ## Five student portfolios
 
-These are portfolios by EECS students and new graduates, read from their public repositories in November 2026. The first four are linked and credited with their authors' names. None of them is perfect, and the gaps are as useful as the strengths.
+These are portfolios by EECS students and new graduates, read from their public repositories in November 2026. The first four are linked and credited with their authors' names. Each entry lists what works and what does not. The gaps are as useful as the strengths.
 
-- [Byron Bradley](https://byronbradley.me/), a junior at Buffalo, has four projects on one page, each with a measured number and a paragraph on what is not done yet. One robot entry says the firmware compiles and that assembly, calibration, and trials are still ahead. That honesty is the strongest thing on the site. It has no schematics and no scope captures.
-- [Yasaman Kheradmand](https://yasamankhe.github.io/), at UBC, gives each of six projects its own page. A lighting controller page has PCB renders, a schematic PDF, a GitHub link, a bring-up video, and the input range and current it runs at. An oscilloscope appears in the tool list and nowhere in the pages. A scope capture would close that gap.
+- [Byron Bradley](https://byronbradley.me/), a junior at Buffalo, has four projects on one page, each with a measured number and a paragraph on what is not done yet. One robot entry says the firmware compiles and that assembly, calibration, and trials are still ahead. That honesty is the strongest thing on the site.
+
+  **Pros**
+
+  - The Xbox 360 write-up walks from a power-fault code to a shorted MOSFET and a 12.1 V check on the 12 V rail after the repair.
+  - The maze and barcode entries label simulation and generated-image results as such, and say physical trials are still ahead.
+  - Repair records, firmware, and experiment notes link out to public GitHub repositories.
+
+  **Cons**
+
+  - There are no schematics and no oscilloscope captures, even though the circuit-lab entry says gain, cutoff, and phase were measured on a scope.
+  - The maze-robot source and simulation links on the site now lead to 404 pages.
+  - All four projects sit on one long homepage, so a reviewer cannot open a single project and stay there.
+
+- [Yasaman Kheradmand](https://yasamankhe.github.io/), at UBC, gives each of six projects its own page. A lighting controller page has PCB renders, a schematic PDF, a GitHub link, a bring-up video, and the input range and current it runs at.
+
+  **Pros**
+
+  - The lighting-controller page shows PCB renders, a schematic PDF, photos of five assembled boards on the rover, a bring-up video, and an input current of about 0.75 A at full PWM, recorded during testing.
+  - The robotic-piano page shows machined solenoid parts, wound coils, and several mechanical iterations.
+  - Each project has its own page, so a reviewer can sit with one piece of work.
+
+  **Cons**
+
+  - An oscilloscope appears in the tool list and nowhere as a capture of a rail, a CAN edge, or an LED-drive waveform.
+  - The homepage and several project pages repeat generic filler, including the line about going "from the circuit and PCB design all the way to programming, bring-up, testing," and long stacks of tool chips that do not add evidence.
+  - The Smart Thermometer GitHub repository is empty, and the piano and smart-shoe pages have no source repository at all.
+
 - [Panos Dimtsoudis](https://panosdimts.github.io/EE-portfolio/), at Penn, opens with a predictions-against-results table on a chip design project and keeps a What broke note on another project, a power-reset problem and its fix. The repository README says an AI coding tool built the site itself and that every word about the engineering is the student's. That is the split this page recommends.
-- [Zaid Saifan](https://zaidsaifan-star.github.io/), at Western, has the cleanest structure of the five, with sections named The brief, On the board, Protection, Validation, and Next step. It also shows the trap. A power board page gives a current range as a design target with no bench number next to it, and the waveforms on another page are drawings. A design value is not a result. The repository holds the rules the student wrote for an AI coding tool, including one against inventing numbers.
+
+  **Pros**
+
+  - The SRAM MAC page puts predicted numbers next to simulated results and publishes the misses, including a 760 ps delay estimate that simulated at 890 ps and a run that fails at 0.80 ns.
+  - The Guitar Hero page states what went wrong: the board reset whenever the speaker drew current, and a 12 V pack with two 5 V regulators fixed it.
+  - The metal-detector write-up reports 50.2 kHz measured against 50.27 kHz in LTspice.
+
+  **Cons**
+
+  - No page shows an oscilloscope capture. The MAC waveforms are simulation and layout plots, and the ECG page has a schematic and a breadboard photo.
+  - Source code is not linked from every project; the Guitar Hero page is the one that clearly points to a repository.
+
+- [Zaid Saifan](https://zaidsaifan-star.github.io/), at Western, has the cleanest structure of the five, with sections named The brief, On the board, Protection, Validation, and Next step. The repository holds the rules the student wrote for an AI coding tool, including one against inventing numbers.
+
+  **Pros**
+
+  - Every project page follows the same datasheet shape, so a reviewer always knows where to find the brief, the board, the protection, the results, and the next step.
+  - The golf-cart page shows Altium renders, a schematic, and the co-designer's name on the silkscreen.
+  - The hospital-robot and RC-car pages include photos of the assembled hardware, and the RC-car page has a demo video.
+
+  **Cons**
+
+  - The home page leans on decorative effects (animated traces, 3D card tilt, magnetic buttons, a typed role line) that do not help a reviewer judge the engineering.
+  - The golf-cart Validation section lists "15–20 A continuous current target" with no measured current beside it.
+  - The function-generator page says the outputs were captured on an oscilloscope, but the only waveforms on the page are an SVG drawing, with no scope screenshot.
+  - The Roboracer page has no hardware photos, only a drawn diagram, and none of the project pages links the design files or firmware.
+
 - [The Cornell ECE 4760 archive](https://ece4760.github.io/Projects/Projects.html) holds a semester of these pages at a time, 45 in fall 2025 alone. [One of them](https://ece4760.github.io/Projects/Fall2025/hw578/index.html) runs a Julia set on eight RP2040s over a custom multi-slave SPI bus and spends its Program Design section on the bug: the slave kept driving MISO low when idle, which jammed the bus until the pin was switched to a null function. That is the paragraph an interviewer reads twice.
 
-Across the five, every site has photos and headline numbers, three link the code for each project, two show a schematic, three say what broke or what is unfinished, and none shows a scope capture. If you build one, the scope capture and the What broke section are where you pull ahead.
+  **Pros**
+
+  - The Program Design section explains a real bus bug in enough detail that a reader can see the failure, the SDK limitation, and the pin-function fix.
+  - The report includes a system diagram, a hardware schematic, timing plots as the node count grows, a demo video, and a download of the project code.
+  - The archive publishes a full semester of project sites at a time, so a reader can compare how different students write up similar work.
+
+  **Cons**
+
+  - The report title and opening overview stack buzzwords ("leveraging", "tightly integrated system", "push interactive graphics performance") before the evidence.
+  - The write-up never shows a scope or logic-analyzer capture of the stuck MISO line, even though that is the central hardware bug.
+  - Typos in the nav and body ("Hardware Deisgn", "mulitprocessing", "cooridinate") make a careful report look rushed.
+
+Across the five, every site has photos or figures and headline numbers, and none shows an oscilloscope capture. Four of the sites show a schematic. If you build one, the scope capture and a plain note on what broke are where you pull ahead.
 
 <TallyFigure />
 
