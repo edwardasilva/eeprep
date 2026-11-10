@@ -260,29 +260,29 @@
     "pages": ["advice/resume/walkthrough"]
   },
   {
-    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Jordan-Doe-Resume.pdf",
-    "title": "resume-generator: Jordan-Doe-Resume.pdf",
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Alex-Doe-Resume-first-year.pdf",
+    "title": "resume-generator: Alex-Doe-Resume-first-year.pdf",
     "category": "Sample resumes and templates",
     "summary": "A first-year student's page: one class project, a one-line job, and a few skills.",
     "pages": ["advice/resume/walkthrough"]
   },
   {
-    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Sam-Doe-Resume.pdf",
-    "title": "resume-generator: Sam-Doe-Resume.pdf",
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Alex-Doe-Resume-sophomore.pdf",
+    "title": "resume-generator: Alex-Doe-Resume-sophomore.pdf",
     "category": "Sample resumes and templates",
     "summary": "A second-year student's page: two projects, a club lead role, and a one-line job.",
     "pages": ["advice/resume/walkthrough"]
   },
   {
-    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Taylor-Doe-Resume.pdf",
-    "title": "resume-generator: Taylor-Doe-Resume.pdf",
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Alex-Doe-Resume-new-grad.pdf",
+    "title": "resume-generator: Alex-Doe-Resume-new-grad.pdf",
     "category": "Sample resumes and templates",
     "summary": "A new graduate's page with two internships, experience first.",
     "pages": ["advice/resume/walkthrough"]
   },
   {
-    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Casey-Doe-Resume.pdf",
-    "title": "resume-generator: Casey-Doe-Resume.pdf",
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Alex-Doe-Resume-packed.pdf",
+    "title": "resume-generator: Alex-Doe-Resume-packed.pdf",
     "category": "Sample resumes and templates",
     "summary": "A full page with three engineering roles and three projects, tightened to fit.",
     "pages": ["advice/resume/walkthrough"]
@@ -487,10 +487,10 @@
     "pages": ["advice/resume"]
   },
   {
-    "url": "https://www.askamanager.org/?p=23426",
-    "title": "Ask a Manager: Trainings and certificates on a resume",
+    "url": "https://www.askamanager.org/2022/04/open-thread-april-22-23-2022.html",
+    "title": "Ask a Manager: open thread, April 22-23, 2022",
     "category": "Resume feedback from reviewers and recruiters",
-    "summary": "Alison Green on keeping small trainings and certificates off the resume.",
+    "summary": "A reader comment suggesting a resume not carry a long list of little trainings and certificates.",
     "pages": ["advice/forever-learning"]
   },
   {
@@ -592,6 +592,13 @@
     "pages": ["advice/forever-learning", "roadmap"]
   },
   {
+    "url": "https://www.eecs.mit.edu/academics/subject-numbering/",
+    "title": "MIT EECS: Subject numbering",
+    "category": "Tools and project resources",
+    "summary": "MIT's table of old and new course numbers, such as 6.003 and 6.3000.",
+    "pages": ["advice/forever-learning"]
+  },
+  {
     "url": "https://ocw.mit.edu/about/",
     "title": "MIT OpenCourseWare: About",
     "category": "Tools and project resources",
@@ -663,14 +670,14 @@
   },
   {
     "url": "https://ece4760.github.io/Projects/Projects.html",
-    "title": "Cornell ECE 4760: final project archive",
+    "title": "Cornell ECE 4760: current project archive",
     "category": "Tools and project resources",
     "summary": "Semester of student project sites, each with design, hardware, software, results.",
     "pages": ["advice/projects/portfolio"]
   },
   {
     "url": "https://ece4760.github.io/Projects/Fall2025/hw578/index.html",
-    "title": "Cornell ECE 5730: Julia set on eight RP2040s",
+    "title": "Cornell ECE 4760 and 5730: Julia set on eight RP2040s",
     "category": "Tools and project resources",
     "summary": "A student project page whose design section covers an SPI bus bug.",
     "pages": ["advice/projects/portfolio"]
@@ -697,8 +704,36 @@
     "pages": ["advice/projects/portfolio"]
   },
   {
+    "url": "https://byronbradley.me/",
+    "title": "Byron Bradley: student portfolio",
+    "category": "Tools and project resources",
+    "summary": "A junior's portfolio with four projects on one page.",
+    "pages": ["advice/projects/portfolio"]
+  },
+  {
+    "url": "https://yasamankhe.github.io/",
+    "title": "Yasaman Kheradmand: student portfolio",
+    "category": "Tools and project resources",
+    "summary": "A portfolio with a page for each of six projects.",
+    "pages": ["advice/projects/portfolio"]
+  },
+  {
+    "url": "https://panosdimts.github.io/EE-portfolio/",
+    "title": "Panos Dimtsoudis: student portfolio",
+    "category": "Tools and project resources",
+    "summary": "A portfolio with a predictions-against-results table.",
+    "pages": ["advice/projects/portfolio"]
+  },
+  {
+    "url": "https://zaidsaifan-star.github.io/",
+    "title": "Zaid Saifan: student portfolio",
+    "category": "Tools and project resources",
+    "summary": "A portfolio with a fixed section order for each project.",
+    "pages": ["advice/projects/portfolio"]
+  },
+  {
     "url": "https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/",
-    "title": "Cornell ECE 4760: Final project archive",
+    "title": "Cornell ECE 4760: older final project archive",
     "category": "Tools and project resources",
     "summary": "The Cornell microcontroller course project sites whose section order the Portfolio page follows.",
     "pages": ["advice/projects/portfolio"]
@@ -784,7 +819,7 @@
     "title": "IEEE Job Site",
     "category": "Job search and referrals",
     "summary": "IEEE's job board for electrical, electronics and computer engineering roles.",
-    "pages": ["help", "help/job-boards"]
+    "pages": ["help/job-boards"]
   },
   {
     "url": "https://ecs.grainger.illinois.edu/student-resources/network-fairs/career-fairs",
@@ -864,7 +899,35 @@
     "title": "OPM: Students and recent graduates",
     "category": "Job search and referrals",
     "summary": "OPM policy page with the rules behind the federal Pathways programs.",
-    "pages": ["help", "help/job-boards"]
+    "pages": ["advice/getting-hired/first-internship", "help/job-boards"]
+  },
+  {
+    "url": "https://www.federalhiringdata.com/articles/federal-student-pathways-hiring-2026",
+    "title": "Federal Hiring Data: Pathways hiring in 2026",
+    "category": "Job search and referrals",
+    "summary": "OPM workforce records on Pathways hires in 2026 compared with 2024 and 2025.",
+    "pages": ["advice/getting-hired/first-full-time-role", "help/job-boards"]
+  },
+  {
+    "url": "https://mse.nd.edu/research/smash-engineering-reu/",
+    "title": "Notre Dame: SMASH Engineering REU",
+    "category": "Job search and referrals",
+    "summary": "Notre Dame's NSF REU site page, cited as a site that did not run in summer 2026.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://www.paradim.org/REU_landing_page",
+    "title": "Cornell: PARADIM REU",
+    "category": "Job search and referrals",
+    "summary": "Cornell's PARADIM REU page, cited as a site that did not run in summer 2026.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
+    "url": "https://www.hmc.edu/cs/research/reu/",
+    "title": "Harvey Mudd: CS REU",
+    "category": "Job search and referrals",
+    "summary": "Harvey Mudd's CS REU page, cited as a site that did not run in summer 2026.",
+    "pages": ["advice/getting-hired/first-internship"]
   },
   {
     "url": "https://careerdevelopment.princeton.edu/internships-jobs/recruiting-timelines",
@@ -886,6 +949,13 @@
       "help/job-boards",
       "help/resources"
     ]
+  },
+  {
+    "url": "https://github.com/edwardasilva/company-lists",
+    "title": "company-lists on GitHub",
+    "category": "Job search and referrals",
+    "summary": "Open list of companies by region, starting with the Denver metro, with a public source for every row.",
+    "pages": ["help/job-boards", "help/resources", "roadmap"]
   },
   {
     "url": "https://github.com/SimplifyJobs/Summer2027-Internships",
@@ -951,32 +1021,21 @@
     "title": "USAJOBS Help: What are hiring paths?",
     "category": "Job search and referrals",
     "summary": "Explains the federal hiring paths that limit who can apply.",
-    "pages": ["help"]
+    "pages": ["help/job-boards"]
   },
   {
     "url": "https://opm.usajobs.gov/hiringpath/recentgraduates/",
     "title": "USAJOBS: Pathways for recent graduates",
     "category": "Job search and referrals",
     "summary": "Federal Pathways program for people who recently finished a degree.",
-    "pages": [
-      "advice/getting-hired/first-full-time-role",
-      "help",
-      "help/job-boards"
-    ]
+    "pages": ["advice/getting-hired/first-full-time-role", "help/job-boards"]
   },
   {
     "url": "https://opm.usajobs.gov/hiringpath/students/",
     "title": "USAJOBS: Pathways internships for students",
     "category": "Job search and referrals",
     "summary": "The federal Pathways internship program for students currently enrolled in school.",
-    "pages": ["help"]
-  },
-  {
-    "url": "https://www.uscis.gov/",
-    "title": "USCIS",
-    "category": "Job search and referrals",
-    "summary": "US Citizenship and Immigration Services, the agency for immigration and work authorization.",
-    "pages": ["advice"]
+    "pages": ["help", "help/job-boards"]
   },
   {
     "url": "https://ocs.yale.edu/industry-hiring-timelines/",
@@ -1014,13 +1073,6 @@
     "title": "Georgia Tech: Informational interview handout",
     "category": "Job search and referrals",
     "summary": "Georgia Tech handout: never ask for a job in an informational interview.",
-    "pages": ["advice/getting-hired/networking"]
-  },
-  {
-    "url": "https://careerhub.students.duke.edu/blog/2025/01/28/informational-interviews-connecting-to-learn-and-build-relationships/",
-    "title": "Duke: Informational interviews, connecting to learn",
-    "category": "Job search and referrals",
-    "summary": "Duke's career hub on why mutual-contact requests get more replies.",
     "pages": ["advice/getting-hired/networking"]
   },
   {
@@ -1103,7 +1155,7 @@
     "url": "https://allwork.space/2021/11/what-happened-to-entry-level-jobs-job-seekers-baffled-by-requirements/",
     "title": "Allwork: What happened to entry-level jobs",
     "category": "Job search and referrals",
-    "summary": "LinkedIn analysis, 3.8 million postings: 35% of entry-level roles wanted 3-plus years.",
+    "summary": "LinkedIn analysis, close to 4 million postings: 35% of entry-level roles asked for years of experience.",
     "pages": ["help/job-boards"]
   },
   {
@@ -1538,13 +1590,6 @@
     "pages": ["advice/projects/hardware"]
   },
   {
-    "url": "https://x.com/Faceofboe5/status/2050228727410311464",
-    "title": "X: @Faceofboe5 on 10-year entry-level ads",
-    "category": "Job search stories from students",
-    "summary": "A post on entry-level EE ads asking for 10-plus years.",
-    "pages": ["advice/projects/hardware"]
-  },
-  {
     "url": "https://x.com/gm16108/status/1989798011690783186",
     "title": "X: @gm16108 on entry-level jobs",
     "category": "Job search stories from students",
@@ -1764,7 +1809,7 @@
     "title": "Hardware FYI: Top electrical engineering interview questions",
     "category": "Interview prep",
     "summary": "Common electrical engineering interview questions collected by Hardware FYI.",
-    "pages": ["advice/getting-hired/how-to-interview", "advice/resume/cleanup"]
+    "pages": ["advice/getting-hired/how-to-interview"]
   },
   {
     "url": "https://ecs.grainger.illinois.edu/student-resources/interviewing/fundamentals",
@@ -1961,7 +2006,7 @@
     "url": "https://www.naceweb.org/talent-acquisition/internships/intern-conversion-rate-hits-highest-mark-in-five-years",
     "title": "NACE: Intern conversion rate hits five-year high",
     "category": "Pay and career data",
-    "summary": "NACE data on how many interns received and accepted full-time offers, 2024-25.",
+    "summary": "NACE data on how many interns received and accepted full-time offers, 2024–25.",
     "pages": ["advice/getting-hired/first-full-time-role"]
   },
   {
@@ -2001,7 +2046,11 @@
     "title": "O*NET: Electrical engineers",
     "category": "Pay and career data",
     "summary": "Occupation profile listing tasks, skills, tools and pay for electrical engineers.",
-    "pages": ["advice/projects/career-paths", "help", "help/resources"]
+    "pages": [
+      "advice/projects/career-paths",
+      "help/job-boards",
+      "help/resources"
+    ]
   },
   {
     "url": "https://www.onetonline.org/link/summary/17-2072.00",
@@ -2175,8 +2224,8 @@
     "pages": ["advice/forever-learning/graduate-study"]
   },
   {
-    "url": "https://yp.ieee.org/blog/2023/11/15/check-out-the-career-programs-of-ieee-usa-part-2",
-    "title": "IEEE Young Professionals: The career programs of IEEE-USA",
+    "url": "https://insight.ieeeusa.org/articles/more-ieee-usa-career-and-membership-services-programs-part-2/",
+    "title": "IEEE-USA InSight: More career and membership services programs, part 2",
     "category": "Pay and career data",
     "summary": "IEEE-USA member job-hunt tools: salary calculator, Job Site, Employment Navigator.",
     "pages": ["advice/forever-learning/societies"]
@@ -2193,13 +2242,6 @@
     "title": "Indeed Hiring Lab: Tech talent report 2025",
     "category": "Pay and career data",
     "summary": "Indeed's 2025 report on US tech postings against the 2020 baseline.",
-    "pages": ["advice/getting-hired/job-market"]
-  },
-  {
-    "url": "https://www.dice.com/recruiting/ebooks/dice-tech-job-report",
-    "title": "Dice: Tech job report",
-    "category": "Pay and career data",
-    "summary": "Dice's end-of-2025 figures on entry-level tech postings.",
     "pages": ["advice/getting-hired/job-market"]
   },
   {
@@ -2291,14 +2333,115 @@
     "title": "Purdue ECE: Why get a master's",
     "category": "Pay and career data",
     "summary": "Purdue's case for an ECE master's as a way to specialize.",
-    "pages": ["advice/forever-learning/graduate-study"]
+    "pages": [
+      "advice/forever-learning/getting-into-graduate-study",
+      "advice/forever-learning/graduate-study"
+    ]
   },
   {
-    "url": "https://www.ieee.org/membership/students",
-    "title": "IEEE: Student membership",
+    "url": "https://catalog.cornell.edu/programs/electrical-computer-engineering-meng/",
+    "title": "Cornell: Electrical and Computer Engineering M.Eng.",
+    "category": "Pay and career data",
+    "summary": "Cornell's course-based M.Eng.: 30 credits over two semesters and a design project.",
+    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+  },
+  {
+    "url": "https://engineering.purdue.edu/ECE/Academics/Graduates/MASTERS/MSECE_Handbook_Print_Fall2025.pdf",
+    "title": "Purdue ECE: MSECE program handbook",
+    "category": "Pay and career data",
+    "summary": "Purdue's master's tracks: thesis, professional, course-only, online, and a 4+1 BS/MS.",
+    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+  },
+  {
+    "url": "https://ece.rutgers.edu/graduate-faqs",
+    "title": "Rutgers ECE: Graduate admissions FAQs",
+    "category": "Pay and career data",
+    "summary": "Rutgers on PhD entry without a master's, advisors, and assistantships.",
+    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+  },
+  {
+    "url": "https://engineering.purdue.edu/ECE/Academics/Graduates/MASTERS/online-track-degree-requirements",
+    "title": "Purdue ECE: Online track degree requirements",
+    "category": "Pay and career data",
+    "summary": "Graduate math credits, pacing, and time limit for Purdue's online MSECE.",
+    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+  },
+  {
+    "url": "https://www.eecs.mit.edu/academics/graduate-programs/admission-process/graduate-admissions-faqs/",
+    "title": "MIT EECS: Graduate admissions FAQs",
+    "category": "Pay and career data",
+    "summary": "MIT EECS on essays, letters, deadline, GRE, and full-time on-campus study.",
+    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+  },
+  {
+    "url": "https://catalog.gatech.edu/academics/undergraduate/undergraduate-students-taking-graduate-courses/",
+    "title": "Georgia Tech catalog: Undergraduates taking graduate courses",
+    "category": "Pay and career data",
+    "summary": "Georgia Tech's rules for seniors who take graduate courses and count them later.",
+    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+  },
+  {
+    "url": "https://ece.gatech.edu/academics/joint-bs-ms",
+    "title": "Georgia Tech ECE: Joint BS/MS",
+    "category": "Pay and career data",
+    "summary": "Georgia Tech ECE's joint BS/MS: early application, waivers, and double-counted hours.",
+    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+  },
+  {
+    "url": "https://ece.gatech.edu/graduate/handbook/Information-for-Undergraduate-and-Non-ECE-Students",
+    "title": "Georgia Tech ECE: Information for undergraduate students",
+    "category": "Pay and career data",
+    "summary": "Georgia Tech ECE's BS/MS application steps and statement of purpose.",
+    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+  },
+  {
+    "url": "https://cse.umn.edu/ece/program-and-admission-faqs",
+    "title": "Minnesota ECE: Program and admission FAQs",
+    "category": "Pay and career data",
+    "summary": "Minnesota ECE on contacting faculty and advisor funding in PhD admissions.",
+    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+  },
+  {
+    "url": "https://www.nsf.gov/funding/opportunities/grfp-nsf-graduate-research-fellowship-program/nsf26-526/solicitation",
+    "title": "NSF: Graduate Research Fellowship Program solicitation",
+    "category": "Pay and career data",
+    "summary": "The official GRFP solicitation: support, duration, and eligibility.",
+    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+  },
+  {
+    "url": "https://www.nsf.gov/funding/information/faq-additional-faq-nsf-graduate-research-fellowship-program",
+    "title": "NSF: Additional GRFP FAQ",
+    "category": "Pay and career data",
+    "summary": "NSF's extra answers on the Graduate Research Fellowship Program.",
+    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+  },
+  {
+    "url": "https://engineering.purdue.edu/ECE/Academics/Online",
+    "title": "Purdue ECE: Online MSECE",
+    "category": "Pay and career data",
+    "summary": "Purdue's online master's: same degree as on campus, 30 credits.",
+    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+  },
+  {
+    "url": "https://engineering.purdue.edu/ECE/Academics/Online/questions",
+    "title": "Purdue ECE: Online MSECE FAQ",
+    "category": "Pay and career data",
+    "summary": "Purdue's answers on the online MSECE and who takes it.",
+    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+  },
+  {
+    "url": "https://students.ieee.org/",
+    "title": "IEEE Students",
     "category": "Communities",
-    "summary": "IEEE's student membership page.",
-    "pages": ["advice/forever-learning", "advice/forever-learning/societies"]
+    "summary": "IEEE's home for student members, with benefits and student branches.",
+    "pages": ["advice/forever-learning"]
+  },
+  {
+    "url": "https://www.ieee.org/membership/qualifications",
+    "title": "IEEE: Membership qualifications",
+    "category": "Communities",
+    "summary": "IEEE's rules for who qualifies as a student member.",
+    "pages": ["advice/forever-learning/societies"]
   },
   {
     "url": "https://www.reddit.com/r/ECE/",
@@ -2390,6 +2533,13 @@
     "category": "Communities",
     "summary": "Illinois students' advice on deciding on and applying to grad school.",
     "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
+    "url": "https://github.com/edwardasilva/eeprep",
+    "title": "eeprep on GitHub",
+    "category": "Site",
+    "summary": "Source repository for the eeprep site.",
+    "pages": ["roadmap/contributing"]
   },
   {
     "url": "https://github.com/edwardasilva/eeprep/blob/main/.github/CONTRIBUTING.md",

@@ -1,26 +1,25 @@
 # Contributing
 
-Thanks for helping with eeprep. Ideas and fixes from anyone who hires electrical engineers, or works as one, are welcome.
+Thanks for helping with [eeprep](https://github.com/edwardasilva/eeprep). Fixes and ideas are welcome from students who used the guide, and from anyone who hires or works as an electrical engineer or computer scientist.
 
 ## Suggest an idea or a fix
 
-Open an [issue](https://github.com/edwardasilva/eeprep/issues/new/choose) and pick a template. Name the page, say what you would change, and say why. Link a public source when you can. Every claim on the site needs a real public source, and a claim that can't be backed up stays off the site.
+Open an [issue](https://github.com/edwardasilva/eeprep/issues/new/choose) and describe what you would change. A short description is all it needs. Naming the page and linking a public source help when you can. Every claim needs a real public source before it goes on the site, and maintainers check that during review.
 
 ## Edit a page
 
 1. Fork the repo (or cut a short branch if you have write access).
-2. Edit one page or one fix. Guide pages live in `src/content/docs`. Outside links also need an entry in `src/content/references.bib`.
-3. Open a pull request into `main`. Keep it small.
+2. Edit one page or one fix. Guide pages live in `src/content/docs`. Outside links go in `src/content/references.bib` too, and maintainers can add that entry during review.
+3. Open a pull request into `main` with a short description of what changed and why. That is all a pull request needs. An issue link is optional. Maintainers review the change.
 
-Before you push, from the repo root:
+If you can, build it before you push, from the repo root:
 
 ```bash
 npm ci
 npm run build
-vale --config .github/vale/.vale.ini src/content/docs
 ```
 
-CI runs the same checks on the pull request. Merges are squash merges.
+Vale checks the writing style. To run it locally, [install Vale](https://vale.sh/docs/install), then run `vale --config .github/vale/.vale.ini src/content/docs`. If you skip either step, maintainers run the checks before merging. Merges are squash merges.
 
 ## Coding agents
 
@@ -38,8 +37,8 @@ For a security problem, follow the [security policy](SECURITY.md). Do not open a
 
 ## Releases
 
-Only the repository owner cuts releases. Before a release, run the release-cut workflow and land or close every `release-sweep` issue.
+Only the repository owner cuts releases.
 
 ## License
 
-By contributing, you agree that content is licensed under [CC BY 4.0](../LICENSE-CONTENT) and code under the [MIT License](../LICENSE).
+By contributing, you agree that content is licensed under [CC BY 4.0](../LICENSE-CONTENT) and code under the [MIT License](../LICENSE). Reuse of content is credited to [eeprep contributors](https://github.com/edwardasilva/eeprep).
