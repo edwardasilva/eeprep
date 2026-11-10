@@ -155,8 +155,8 @@ function isOwn(key) {
 	return (
 		host === 'eeprep.com' ||
 		host.endsWith('.eeprep.com') ||
-		host === 'workers.dev' ||
-		host.endsWith('.workers.dev')
+		host === 'eeprep.pages.dev' ||
+		host.endsWith('.eeprep.pages.dev')
 	);
 }
 
