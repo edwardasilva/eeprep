@@ -7,7 +7,7 @@
 ```json
 {
   "settings": {
-    "sectionOrder": ["education", "projects", "experience", "skills"],
+    "sectionOrder": ["education", "skills", "projects", "experience"],
     "font": "libertinus",
     "dateStyle": { "education": "semester", "projects": "semester", "experience": "semester" }
   },
