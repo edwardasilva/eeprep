@@ -34,6 +34,7 @@ jobs:
         with:
           fetch-depth: 2
           persist-credentials: false
+          submodules: true
 
       # A pull request that changes only repo docs, such as README.md, CLAUDE.md or
       # .github/ISSUE_TEMPLATE, skips the tests and the build. Lint and Vale still run, and
