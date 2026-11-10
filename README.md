@@ -10,7 +10,7 @@ Courses teach circuits and signals, but they rarely teach how to turn coursework
 
 ## What you'll find
 
-- Advice covers projects and a portfolio, resumes, networking and getting hired for an internship or a first full-time role, interviews, graduate study, and professional societies. Quick setup is the whole guide on one page, and Author's story is how the author got from school to a first embedded software job.
+- Advice covers projects and a portfolio, resumes, networking and getting hired for an internship or a first full-time role, interviews, graduate study, and professional societies. Quick setup is the whole guide on one page, and Author's story is a short note on where the advice comes from.
 - Help has the job boards and where each one misleads, the repos and lists behind the site, pay data and forums, and where an AI tool helps in the search.
 - Roadmap lists what is coming next and how to contribute.
 
