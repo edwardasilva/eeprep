@@ -22,6 +22,14 @@ vale --config .github/vale/.vale.ini src/content/docs
 
 CI runs the same checks on the pull request. Merges are squash merges.
 
+## Coding agents
+
+Use the `gemini` label, or comment `@gemini-cli`, for easy tasks: low severity, small, one or two files, docs, wording, config, tests, or polish.
+
+Use the `claude` label, or comment `@claude`, for harder work: medium or high severity, multi-file changes, design, security, workflows, or anything that needs judgment.
+
+Only the repository owner can start either workflow. Both work on a branch and open a pull request. Neither pushes to `main`, merges, tags, or cuts a release.
+
 ## Conduct
 
 Be kind and assume good intent. To report a problem with someone's behavior, use GitHub's Report content feature or message the repository owner in private.
