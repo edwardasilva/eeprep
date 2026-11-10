@@ -10,7 +10,7 @@ const notes = [
 	},
 	{
 		title: 'Move Projects above Experience.',
-		body: 'Alex has no engineering job yet, so a retail job at the top wastes the first scan. Education, then Projects, then Experience.',
+		body: 'Alex has no engineering job yet, so a retail job at the top wastes the first scan. Education, then Skills, then Projects, then Experience.',
 	},
 	{
 		title: 'Rewrite every bullet as did X with Y to get Z.',
@@ -44,7 +44,7 @@ const caption = externalLinks(
 				<p>Phone: [phone] | Email: alex.doe@[school].edu</p>
 			</header>
 			<div class="eep-draft-mark">
-				<span class="eep-pin" data-pin="1"></span>
+				<span class="eep-num eep-pin" data-pin="1"></span>
 				<p class="eep-draft-sec">Objective</p>
 				<p>
 					Seeking a challenging engineering position where I can apply my skills
@@ -52,7 +52,7 @@ const caption = externalLinks(
 				</p>
 			</div>
 			<div class="eep-draft-mark">
-				<span class="eep-pin" data-pin="2"></span>
+				<span class="eep-num eep-pin" data-pin="2"></span>
 				<p class="eep-draft-sec">Work history</p>
 				<p>
 					<strong>Sales Associate, [Retail store]</strong> (2023 to 2024)
@@ -67,12 +67,12 @@ const caption = externalLinks(
 				[University], B.S. Electrical Engineering, GPA [X.XX], graduating 2027
 			</p>
 			<div class="eep-draft-mark">
-				<span class="eep-pin" data-pin="3"></span>
+				<span class="eep-num eep-pin" data-pin="3"></span>
 				<p class="eep-draft-sec">Projects</p>
 				<p>
 					<strong>CubeSat Power Board Project</strong>
 					<span class="eep-draft-mark-inline">
-						<span class="eep-pin eep-pin-inline" data-pin="4"></span>
+						<span class="eep-num eep-pin eep-pin-inline" data-pin="4"></span>
 						(Fall 2025 - 2026)
 					</span>
 				</p>
@@ -90,7 +90,7 @@ const caption = externalLinks(
 				</ul>
 			</div>
 			<div class="eep-draft-mark">
-				<span class="eep-pin" data-pin="5"></span>
+				<span class="eep-num eep-pin" data-pin="5"></span>
 				<p class="eep-draft-sec">Skills</p>
 				<p>
 					Teamwork, Communication, Leadership, Problem Solving, MATLAB, Python,
@@ -99,7 +99,7 @@ const caption = externalLinks(
 				<p class="eep-draft-refs">References available upon request</p>
 			</div>
 		</div>
-		<ol class="eep-draft-notes">
+		<ol class="eep-draft-notes eep-num-list">
 			{notes.map((note) => (
 				<li>
 					<span>
@@ -197,14 +197,7 @@ const caption = externalLinks(
 		position: absolute;
 		z-index: 1;
 		top: 0.05rem;
-		left: -1.45rem;
-		width: 1.35rem;
-		height: 1.35rem;
-		border-radius: 50%;
-		background: var(--eep-ink);
-		color: var(--eep-dg-fill);
-		font: 700 0.75rem/1.35rem var(--eep-font-sans);
-		text-align: center;
+		left: -1.6rem;
 	}
 	.eep-pin::before {
 		content: attr(data-pin);
@@ -213,7 +206,7 @@ const caption = externalLinks(
 	.eep-pin-inline {
 		top: -0.25rem;
 		left: auto;
-		right: -1.55rem;
+		right: -1.7rem;
 	}
 	.eep-draft-notes {
 		margin: 0;
@@ -237,14 +230,6 @@ const caption = externalLinks(
 	.eep-draft-notes li::before {
 		counter-increment: draft;
 		content: counter(draft);
-		flex: none;
-		width: 1.35rem;
-		height: 1.35rem;
-		border-radius: 50%;
-		background: var(--eep-ink);
-		color: var(--eep-dg-fill);
-		font: 700 0.75rem/1.35rem var(--eep-font-sans);
-		text-align: center;
 	}
 	.eep-draft-notes strong {
 		font-weight: 700;
@@ -267,7 +252,7 @@ const caption = externalLinks(
 		.eep-pin-inline {
 			top: 0.05rem;
 			right: auto;
-			left: -1.45rem;
+			left: -1.6rem;
 		}
 	}
 </style>

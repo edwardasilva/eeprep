@@ -7,13 +7,14 @@ head:
     content: "How to prepare for EE and embedded interviews | eeprep"
 ---
 
+import Checklist from '../../../../components/Checklist.astro';
 import ProcessFigure from '../../../../components/interview/ProcessFigure.astro';
 import LayersFigure from '../../../../components/interview/LayersFigure.astro';
 import StarFigure from '../../../../components/interview/StarFigure.astro';
 
 Expect a long, tiring process, and know everything you put on your resume in full detail. Interviewers keep asking until they find the edge of what you know. Prepare in this order: your projects, then fundamentals, then coding, then behavioral stories. Before you apply, try to [[Getting hired#Get a referral first|get a referral]].
 
-The advice here comes from career center guides, hiring research, and posts from engineers.
+The advice here comes from career center guides, hiring research, posts from engineers, and my own interviews.
 
 ## What the process looks like now
 
@@ -54,7 +55,7 @@ Take Alex's CubeSat buck converter. Expect "Why a buck converter and not an LDO?
 
 ### Fundamentals from the ground up
 
-A system design question can be as broad as how to build a computer from the ground up. The answer can go down to interrupts, how the CPU executes code, and pipelining. [MIT's free Computation Structures course](https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/) covers that path, from CMOS gates to a pipelined processor, devices, and interrupts.
+In my experience, a system design question can be as broad as how to build a computer from the ground up. The answer can go down to interrupts, how the CPU executes code, and pipelining. [MIT's free Computation Structures course](https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/) covers that path, from CMOS gates to a pipelined processor, devices, and interrupts.
 
 Review the topics your resume and the posting touch first:
 
@@ -100,17 +101,17 @@ Behavioral questions ask about something you did. "Tell me about a time you fail
 >
 > Result: Efficiency went from [X]% to [Y]%, and the board passed integration on [date].
 
-Say your stories out loud before the day. [The Colorado School of Mines career center tells students to write their answers down, then practice saying them out loud](https://careers.mines.edu/interview-preparation/). Expect fit questions too, such as expected daily hours and work-life balance. A last call with a senior leader can work as a final test of confidence.
+Say your stories out loud before the day. [The Colorado School of Mines career center tells students to write their answers down, then practice saying them out loud](https://careers.mines.edu/interview-preparation/). Expect fit questions too, such as expected daily hours and work-life balance. In my interviews, a last call with a senior leader worked as a final test of confidence.
 
 ### The project talk
 
-Some loops ask you to present your own work, and the engineers listening may interrupt often to push for detail.
+Some loops I have been in asked me to present my own work, and the engineers listening interrupted often to push for detail.
 
 [Michigan Engineering describes interview talks of 30 to 60 minutes](https://career.engin.umich.edu/phd-industry-job-search/), with probing questions to test whether you understand the details. Its advice is written for PhD candidates, and it fits any talk. Cover the problem, your approach, the trade-offs, and the outcome. Rehearse in front of friends, and ask them to interrupt you.
 
 ### Take-home tests
 
-A take-home can ban AI tools. Expect an open-ended problem with no perfect answer, judged on what you choose to optimize.
+From what I have seen, a take-home can ban AI tools. Expect an open-ended problem with no perfect answer, judged on what you choose to optimize.
 
 Follow the rules exactly, including the AI rule. Decide early what you will optimize, such as speed, memory, or readability, and write that choice down with your reasons. [Georgia Tech's career center says your reasoning matters as much as the final answer](https://career.gatech.edu/graduate-job/interviewing/), so explain the trade-offs you made.
 
@@ -128,9 +129,9 @@ Prepare and practice out loud, as the sections above describe, and then stop, be
 
 ## On the day
 
-Every part of the visit counts. A tour or a lunch can be part of the evaluation, and an engineer may ask how you think a piece of equipment works. Give your best guess and your reasoning, with a positive attitude and a willingness to learn. [Illinois Engineering Career Services says to be at your best during the entire experience](https://ecs.grainger.illinois.edu/student-resources/interviewing/tips), because anyone could have a say in hiring.
+Every part of the visit counts. On visits I have made, a tour or a lunch was part of the evaluation, and an engineer asked me how I thought a piece of equipment worked. Give your best guess and your reasoning, with a positive attitude and a willingness to learn. [Illinois Engineering Career Services says to be at your best during the entire experience](https://ecs.grainger.illinois.edu/student-resources/interviewing/tips), because anyone could have a say in hiring.
 
-The sessions may run back to back, mostly at a whiteboard, so expect a lot of standing. Explain your thinking out loud in every one. The same skill matters on the job, where you explain your reasoning and defend your work.
+The sessions I sat through ran back to back, mostly at a whiteboard, so expect a lot of standing. Explain your thinking out loud in every one. The same skill matters on the job, where you explain your reasoning and defend your work.
 
 If you do not know, say so. Be confident, not arrogant, and never bluff. Interviewers can tell. [MIT's career office warns that bending the truth can come across as disingenuous](https://capd.mit.edu/resources/the-star-method-for-behavioral-interviews/). It may also contradict your resume or what a referral said about you. Say what you do know, then reason toward the rest.
 
@@ -144,7 +145,7 @@ Bring questions for each interviewer. An in-person day with several sessions nee
 
 ## After each round
 
-A recruiter may call after every round to set up the next step and ask whether you expect to move on. Have an answer ready: say it with confidence, and name what went well and what went poorly.
+I have had a recruiter call after every round to set up the next step and ask whether I expected to move on. Have an answer ready: say it with confidence, and name what went well and what went poorly.
 
 Write notes the same day. [Michigan Engineering suggests noting the questions you struggled with](https://career.engin.umich.edu/interviews/), so you can study them before the next round. [The embedded new graduate above wrote notes after every interview](https://www.reddit.com/r/EngineeringResumes/comments/1v9440p/0_yoe_finally_landed_an_embedded_systems_engineer/).
 
@@ -156,50 +157,86 @@ Start with these guides: [MIT's STAR worksheet](https://capd.mit.edu/resources/t
 
 ## Prep sheet
 
-Copy this, fill in the brackets, and finish it before the first phone screen.
+Fill in the brackets and finish this sheet before the first phone screen.
 
-```text wrap preserveIndent
-INTERVIEW PREP SHEET
-Company and role: [Company], [Job title], job ID [12345]
-How I applied: referral from [Name] / applied cold on [date], day [N] of the posting
-Format from the recruiter: [N] rounds, take-home [yes/no], in-person day [N] hours
-
-PROJECTS (one block per project on the resume)
-Project: [Name]
-What it does, in two sentences:
-My part:
-Each major part or tool, and why I picked it:
-What broke, and how I found it:
-What I measured, and with what instrument:
-What I would change on the next revision:
-
-FUNDAMENTALS (check off after you can explain it at a whiteboard)
-[ ] What happens from an interrupt to the return
-[ ] volatile: registers, ISR flags, shared globals
-[ ] Stack, heap, and where each variable lives
-[ ] How a CPU fetches and executes, and what pipelining does
-[ ] I2C, SPI, UART
-[ ] Op-amp gain, RC filters, buck versus LDO
-[ ] Anything else the posting names: [topic]
-
-CODING
-Problems solved out loud at a whiteboard this week: [N]
-Practiced with someone watching: [Name], [date]
-
-STORIES (STAR, 5 to 10)
-1. A failure:
-2. A conflict on a team:
-3. A hard bug:
-4. A deadline:
-5. Something I learned on my own:
-
-QUESTIONS I WILL ASK (at least one per interviewer)
-1.
-2.
-3.
-
-AFTER EACH ROUND
-How it went, for the recruiter call (went well / went poorly):
-Questions I struggled with, to study tonight:
-Thank-you emails sent within 24 hours to:
-```
+<Checklist
+	title="Interview prep sheet"
+	groups={[
+		{
+			heading: 'Company and recruiter',
+			fields: [
+				{ label: 'Company and role: [Company], [Job title], job ID [12345]' },
+				{
+					label:
+						'How I applied: referral from [Name] / applied cold on [date], day [N] of the posting',
+				},
+				{
+					label:
+						'Format from the recruiter: [N] rounds, take-home [yes/no], in-person day [N] hours',
+				},
+			],
+		},
+		{
+			heading: 'Projects (one block per project on the resume)',
+			fields: [
+				{ label: 'Project: [Name]' },
+				{ label: 'What it does, in two sentences:', blank: true },
+				{ label: 'My part:', blank: true },
+				{ label: 'Each major part or tool, and why I picked it:', blank: true },
+				{ label: 'What broke, and how I found it:', blank: true },
+				{ label: 'What I measured, and with what instrument:', blank: true },
+				{ label: 'What I would change on the next revision:', blank: true },
+			],
+		},
+		{
+			heading: 'Fundamentals (check off after you can explain it at a whiteboard)',
+			items: [
+				'What happens from an interrupt to the return',
+				'volatile: registers, ISR flags, shared globals',
+				'Stack, heap, and where each variable lives',
+				'How a CPU fetches and executes, and what pipelining does',
+				'I2C, SPI, UART',
+				'Op-amp gain, RC filters, buck versus LDO',
+				'Anything else the posting names: [topic]',
+			],
+		},
+		{
+			heading: 'Coding',
+			fields: [
+				{ label: 'Problems solved out loud at a whiteboard this week: [N]' },
+				{ label: 'Practiced with someone watching: [Name], [date]' },
+			],
+		},
+		{
+			heading: 'Stories (STAR, 5 to 10)',
+			numbered: true,
+			fields: [
+				{ label: 'A failure:', blank: true },
+				{ label: 'A conflict on a team:', blank: true },
+				{ label: 'A hard bug:', blank: true },
+				{ label: 'A deadline:', blank: true },
+				{ label: 'Something I learned on my own:', blank: true },
+			],
+		},
+		{
+			heading: 'Questions I will ask (at least one per interviewer)',
+			numbered: true,
+			fields: [
+				{ label: '', blank: true },
+				{ label: '', blank: true },
+				{ label: '', blank: true },
+			],
+		},
+		{
+			heading: 'After each round',
+			fields: [
+				{
+					label: 'How it went, for the recruiter call (went well / went poorly):',
+					blank: true,
+				},
+				{ label: 'Questions I struggled with, to study tonight:', blank: true },
+				{ label: 'Thank-you emails sent within 24 hours to:', blank: true },
+			],
+		},
+	]}
+/>

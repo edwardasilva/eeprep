@@ -397,7 +397,15 @@ export default defineConfig({
 						{ label: 'Contributing', slug: 'roadmap/contributing' },
 					],
 				},
-				{ label: 'Sitemap', slug: 'sitemap' },
+				{
+					label: 'Sitemap',
+					items: [
+						{ label: 'Sitemap', slug: 'sitemap' },
+						{ label: 'Table of contents', slug: 'sitemap/contents' },
+						{ label: 'Table of figures', slug: 'sitemap/figures' },
+						{ label: 'Table of tables', slug: 'sitemap/tables' },
+					],
+				},
 			],
 		}),
 		flatNotFoundPage,
