@@ -7,20 +7,6 @@
     "pages": ["advice/resume", "advice/resume/workshop"]
   },
   {
-    "url": "https://bizcareers.colostate.edu/resources/what-is-an-applicant-tracking-system-ats/",
-    "title": "Colorado State: What is an applicant tracking system?",
-    "category": "Resume guides",
-    "summary": "A university career center explains what an ATS does with your application.",
-    "pages": ["advice/resume"]
-  },
-  {
-    "url": "https://grad.gatech.edu/news/8-ways-revamp-your-resume",
-    "title": "Georgia Tech: 8 ways to revamp your resume",
-    "category": "Resume guides",
-    "summary": "Georgia Tech graduate education tips, including a formula for writing resume bullets.",
-    "pages": ["advice/resume"]
-  },
-  {
     "url": "https://bpb-us-e1.wpmucdn.com/sites.gatech.edu/dist/7/2441/files/2026/01/Career-Fair-Prep-PDF.pdf",
     "title": "Georgia Tech: How to prep for a career fair",
     "category": "Resume guides",
@@ -85,13 +71,6 @@
     "category": "Resume guides",
     "summary": "Michigan engineering career center guide to resumes, CVs and cover letters.",
     "pages": ["advice/resume", "advice/resume/cleanup"]
-  },
-  {
-    "url": "https://career.engin.umich.edu/sample-impact-statements/",
-    "title": "Michigan Engineering: Sample impact statements",
-    "category": "Resume guides",
-    "summary": "Example resume bullets that state an action and a measurable result.",
-    "pages": ["advice/resume"]
   },
   {
     "url": "https://capd.mit.edu/resources/make-your-resume-ats-friendly/",
@@ -186,24 +165,10 @@
     "pages": ["advice/forever-learning/graduate-study"]
   },
   {
-    "url": "https://drexel.edu/scdc/~/media/Drexel/EMSS-Site-Group/SCDC/Documents/best-practices/resumes/Electrical-and-Computer-Engineering.pdf",
-    "title": "Drexel: Electrical and computer engineering sample resume",
-    "category": "Sample resumes and templates",
-    "summary": "Drexel career center sample resume for electrical and computer engineering, as PDF.",
-    "pages": ["advice/resume"]
-  },
-  {
     "url": "https://career.gatech.edu/files/2026/06/JackieJacketResume.docx",
     "title": "Georgia Tech: Computer engineering sample resume",
     "category": "Sample resumes and templates",
     "summary": "Word file of a sample resume for a B.S. computer engineering student.",
-    "pages": ["advice/resume"]
-  },
-  {
-    "url": "https://career.gatech.edu/files/2026/06/CS-Sample-Resume.docx",
-    "title": "Georgia Tech: Computer science sample resume",
-    "category": "Sample resumes and templates",
-    "summary": "Word file of a sample resume for a computer science student.",
     "pages": ["advice/resume"]
   },
   {
@@ -270,7 +235,6 @@
       "advice/resume",
       "advice/resume/cleanup",
       "advice/resume/walkthrough",
-      "roadmap/contributing",
       "help/resources",
       "index"
     ]
@@ -325,13 +289,6 @@
     "pages": ["advice/resume/walkthrough"]
   },
   {
-    "url": "https://ecc.uic.edu/wp-content/uploads/sites/78/2026/06/Computer-Science-Updated-Summer-2026.docx.pdf",
-    "title": "UIC: Computer science example resume",
-    "category": "Sample resumes and templates",
-    "summary": "PDF of a computer science example resume from UIC's engineering career center.",
-    "pages": ["advice/resume"]
-  },
-  {
     "url": "https://ecc.uic.edu/wp-content/uploads/sites/78/2026/06/Electrical-Engineering-Example-Resume-Updated-Summer-2026.docx.pdf",
     "title": "UIC: Electrical engineering example resume",
     "category": "Sample resumes and templates",
@@ -339,24 +296,10 @@
     "pages": ["advice/resume"]
   },
   {
-    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1q7vpap/student_100_applications_4_interviews_2_offers_my/",
-    "title": "r/EngineeringResumes: 100 applications, 2 offers at BAE",
-    "category": "Resume feedback from reviewers and recruiters",
-    "summary": "A student describes landing an embedded internship at BAE after 100 applications.",
-    "pages": ["advice/resume"]
-  },
-  {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/1w1e5dp/student_100_embeddedhardware_intern_applications/",
     "title": "r/EngineeringResumes: 100 embedded applications, nothing yet",
     "category": "Resume feedback from reviewers and recruiters",
     "summary": "Resume review for an embedded student with 100-plus applications, no offers.",
-    "pages": ["advice/resume"]
-  },
-  {
-    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1xa7k5e/student_submitted_150_internship_applications_and/",
-    "title": "r/EngineeringResumes: 150 applications, 0 interviews",
-    "category": "Resume feedback from reviewers and recruiters",
-    "summary": "Resume review for a student with 150 internship applications, no interviews.",
     "pages": ["advice/resume"]
   },
   {
@@ -394,17 +337,6 @@
     "pages": ["advice/resume", "advice/resume/workshop"]
   },
   {
-    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1i6v8x8/student_success_story_landed_3_interviews_and_an/",
-    "title": "r/EngineeringResumes: Embedded internship success story",
-    "category": "Resume feedback from reviewers and recruiters",
-    "summary": "A student shares the resume behind 3 interviews and an embedded offer.",
-    "pages": [
-      "advice/getting-hired/how-to-interview",
-      "advice/resume",
-      "advice/resume/workshop"
-    ]
-  },
-  {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/1wxcvrq/student_how_do_you_find_good_project_ideas/",
     "title": "r/EngineeringResumes: Finding good project ideas",
     "category": "Resume feedback from reviewers and recruiters",
@@ -412,25 +344,25 @@
     "pages": ["advice/resume"]
   },
   {
-    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1bz7gud/student_rewrote_resume_using_the_wiki_template/",
-    "title": "r/EngineeringResumes: Half-page resume on the wiki template",
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1i6v8x8/student_success_story_landed_3_interviews_and_an/",
+    "title": "r/EngineeringResumes: Embedded internship success story",
     "category": "Resume feedback from reviewers and recruiters",
-    "summary": "An EE student asks how to fill a half-page resume.",
-    "pages": ["advice/resume"]
+    "summary": "A student shares the resume behind 3 interviews and an embedded offer.",
+    "pages": ["advice/getting-hired/how-to-interview", "advice/resume/workshop"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/1e3yimi/ama_hardware_engineers_founders_of_hardware_fyi/",
     "title": "r/EngineeringResumes: Hardware FYI AMA (July 2024)",
     "category": "Resume feedback from reviewers and recruiters",
     "summary": "Hardware FYI founders answer questions on hardware resumes and projects.",
-    "pages": ["advice/resume", "advice/resume/workshop"]
+    "pages": ["advice/resume/workshop"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/1bmtjgj/ama_hardware_engineers_founders_of_hardware_fyi/",
     "title": "r/EngineeringResumes: Hardware FYI AMA (March 2024)",
     "category": "Resume feedback from reviewers and recruiters",
     "summary": "Hardware FYI founders answer questions on hardware recruiting and resumes.",
-    "pages": ["advice/resume", "advice/resume/workshop"]
+    "pages": ["advice/resume/workshop"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/192hkg8/how_atss_actually_work_from_an_engineering_hiring/",
@@ -448,7 +380,7 @@
     "title": "r/EngineeringResumes: Landed an embedded systems role",
     "category": "Resume feedback from reviewers and recruiters",
     "summary": "A new graduate compares old and new resumes and charts their applications.",
-    "pages": ["advice/getting-hired/how-to-interview", "advice/resume"]
+    "pages": ["advice/getting-hired/how-to-interview"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/15i3d8v/my_boss_said_my_resume_could_use_a_lot_of_work/",
@@ -460,20 +392,6 @@
       "advice/resume/cleanup",
       "advice/resume/workshop"
     ]
-  },
-  {
-    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1crjxzf/0_yoe_new_grad_looking_for_fpga/",
-    "title": "r/EngineeringResumes: New grad seeking FPGA roles",
-    "category": "Resume feedback from reviewers and recruiters",
-    "summary": "Resume review for a new graduate seeking FPGA, firmware and embedded roles.",
-    "pages": ["advice/resume"]
-  },
-  {
-    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1nwhs53/student_i_kept_getting_your_experience_looks/",
-    "title": "r/EngineeringResumes: Praise at career fairs, no interviews",
-    "category": "Resume feedback from reviewers and recruiters",
-    "summary": "A student hears good things at career fairs but gets no interviews.",
-    "pages": ["advice/resume"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/1m6nzkm/8_yoe_readable_resumes_a_guide_to_allowing_anyone/",
@@ -490,20 +408,6 @@
     "pages": ["advice/resume"]
   },
   {
-    "url": "https://www.reddit.com/r/EngineeringResumes/comments/pf7v54/saw_this_on_a_engineering_resume_website_the_one/",
-    "title": "r/EngineeringResumes: Resume rules debate",
-    "category": "Resume feedback from reviewers and recruiters",
-    "summary": "Commenters debate a sample resume that breaks the subreddit's wiki guidelines.",
-    "pages": ["advice/resume"]
-  },
-  {
-    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1sltoyk/student_entering_senior_year_with_no_internship/",
-    "title": "r/EngineeringResumes: Senior year with no internship",
-    "category": "Resume feedback from reviewers and recruiters",
-    "summary": "Resume review for a student entering senior year without an internship.",
-    "pages": ["advice/resume"]
-  },
-  {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/1sj2rgt/student_landed_nvidia_offer_sophomore_cs_major_at/",
     "title": "r/EngineeringResumes: Sophomore lands NVIDIA offer",
     "category": "Resume feedback from reviewers and recruiters",
@@ -512,7 +416,6 @@
       "advice/projects",
       "advice/projects/career-paths",
       "advice/projects/software",
-      "advice/resume",
       "advice/resume/cleanup"
     ]
   },
@@ -551,7 +454,6 @@
     "summary": "A recruiter says managers probe resume items 3 to 5 layers deep.",
     "pages": [
       "advice/getting-hired/how-to-interview",
-      "advice/resume",
       "advice/resume/cleanup",
       "advice/resume/quick-setup",
       "help/ai-use"
@@ -565,22 +467,11 @@
     "pages": ["advice/resume"]
   },
   {
-    "url": "https://x.com/randomrecruiter/status/1759685173044498630",
-    "title": "X: @randomrecruiter on quantifying results",
-    "category": "Resume feedback from reviewers and recruiters",
-    "summary": "A recruiter urges job seekers to add numbers to their resume bullets.",
-    "pages": ["advice/resume"]
-  },
-  {
     "url": "https://x.com/randomrecruiter/status/2007074490233053671",
     "title": "X: @randomrecruiter on skills missing from experience",
     "category": "Resume feedback from reviewers and recruiters",
     "summary": "A recruiter quotes managers on skills listed but not shown in experience.",
-    "pages": [
-      "advice/resume",
-      "advice/resume/cleanup",
-      "advice/resume/workshop"
-    ]
+    "pages": ["advice/resume/cleanup", "advice/resume/workshop"]
   },
   {
     "url": "https://x.com/randomrecruiter/status/1846631030918189213",
@@ -597,32 +488,11 @@
     "pages": ["advice/resume"]
   },
   {
-    "url": "https://x.com/TheJobfather__/status/1576932082403647489",
-    "title": "X: @TheJobfather__ on white space",
-    "category": "Resume feedback from reviewers and recruiters",
-    "summary": "A recruiter says resumes must be skimmable and keep white space.",
-    "pages": ["advice/resume"]
-  },
-  {
     "url": "https://www.askamanager.org/?p=23426",
     "title": "Ask a Manager: Trainings and certificates on a resume",
     "category": "Resume feedback from reviewers and recruiters",
     "summary": "Alison Green on keeping small trainings and certificates off the resume.",
     "pages": ["advice/forever-learning"]
-  },
-  {
-    "url": "https://careerhub.students.duke.edu/blog/2021/07/29/help-ive-heard-different-opinions-on-my-resume-and-or-search-plan-and-i-dont-know-what-to-do/",
-    "title": "Duke: Conflicting feedback on your resume",
-    "category": "Resume feedback from reviewers and recruiters",
-    "summary": "Duke's career hub on why five reviewers give five opinions and why you will not use all of the feedback.",
-    "pages": ["advice/resume"]
-  },
-  {
-    "url": "https://www.accellera.org/downloads/standards/uvm",
-    "title": "Accellera: Universal Verification Methodology (UVM)",
-    "category": "Tools and project resources",
-    "summary": "Standard downloads and documentation for UVM, the common SystemVerilog verification methodology.",
-    "pages": ["advice/resume"]
   },
   {
     "url": "https://www.altium.com/education/students",
