@@ -979,13 +979,6 @@
     "pages": ["help"]
   },
   {
-    "url": "https://www.uscis.gov/",
-    "title": "USCIS",
-    "category": "Job search and referrals",
-    "summary": "US Citizenship and Immigration Services, the agency for immigration and work authorization.",
-    "pages": ["advice"]
-  },
-  {
     "url": "https://ocs.yale.edu/industry-hiring-timelines/",
     "title": "Yale: Industry hiring timelines",
     "category": "Job search and referrals",
