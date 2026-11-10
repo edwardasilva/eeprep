@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping with eeprep. Ideas and fixes from anyone who hires electrical engineers, or works as one, are welcome.
+Thanks for helping with eeprep. Fixes and ideas are welcome from students who used the guide, and from anyone who hires or works as an electrical engineer or computer scientist.
 
 ## Suggest an idea or a fix
 
