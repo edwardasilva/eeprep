@@ -162,7 +162,7 @@ Following sections 1 to 4 too literally makes a second kind of tell: copy that i
 
 1. The only private individuals linked by name are the credited student portfolios on the portfolio page. Do not name or link any other private person.
 
-2. This rule does not cover cited public sources. A published author, a CEO quoted in the press, or a recruiter's public post on X may be named, and the link to the source may stay. Edward Silva decided this on 2026-11-10 in issue 548.
+2. This rule does not cover cited public sources. A published author, a CEO quoted in the press, or a recruiter's public post on X may be named, and the link to the source may stay.
 
 3. A cited source still needs a real, reachable link that supports the claim, per section 1. Name the person only when the name helps the reader find or judge the source.
 
