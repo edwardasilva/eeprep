@@ -109,9 +109,7 @@ const rows = pages.flatMap((page) => {
 					<td data-label="Page">
 						<a href={row.pageHref}>{row.page}</a>
 					</td>
-					{kind === 'figures' && (
-						<td data-label="Number">{row.detail}</td>
-					)}
+					{kind === 'figures' && <td data-label="Number">{row.detail}</td>}
 				</tr>
 			))}
 		</tbody>
