@@ -15,7 +15,7 @@
 }
 .eep-nav a[aria-current='page'] {
 	color: var(--eep-ink);
-	box-shadow: inset 0 -1.5px 0 var(--eep-accent);
+	box-shadow: inset 0 calc(-1 * var(--eep-toc-bar)) 0 var(--eep-accent);
 }
 @media (hover: hover) {
 	.eep-nav a:hover {
@@ -287,7 +287,7 @@ button[data-open-modal] kbd {
 		padding-inline: 0.25rem;
 	}
 	.eep-nav a[aria-current='page'] {
-		box-shadow: inset 0 -2px 0 var(--eep-accent);
+		box-shadow: inset 0 calc(-1 * var(--eep-toc-bar)) 0 var(--eep-accent);
 	}
 	.eep-theme,
 	.header button[data-open-modal] {
