@@ -92,13 +92,12 @@ const groups = linkGroups.map((group) => ({
 	))}
 </div>
 
-<script>
+<script is:inline>
 	// Without script, every group stays open. With script, groups start closed
 	// at phone width and open at desktop width, and a jump link or a URL hash
-	// opens the group it points to.
-	const groups = document.querySelectorAll<HTMLDetailsElement>(
-		'details.eep-links-group',
-	);
+	// opens the group it points to. The script is inline and sits right after
+	// the groups, so it runs before first paint and the page does not shift.
+	const groups = document.querySelectorAll('details.eep-links-group');
 	const narrow = window.matchMedia('(max-width: 50rem)');
 	const setDefault = () => {
 		for (const group of groups) group.open = !narrow.matches;
@@ -107,7 +106,7 @@ const groups = linkGroups.map((group) => ({
 	function openFromHash() {
 		const id = decodeURIComponent(location.hash.slice(1));
 		if (!id) return;
-		const group = document.querySelector<HTMLDetailsElement>(
+		const group = document.querySelector(
 			`details.eep-links-group[data-group="${CSS.escape(id)}"]`,
 		);
 		if (group) {
