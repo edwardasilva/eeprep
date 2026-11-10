@@ -50,14 +50,13 @@ export type CompanyRow = {
 	state: string;
 	region: string;
 	country: string;
-	hq: boolean;
 	sourceUrl: string;
 	notes: string;
 	search: string;
 };
 
 export type CompanyFilter = {
-	name: 'state' | 'region' | 'industry' | 'field' | 'city' | 'hq';
+	name: 'state' | 'region' | 'industry' | 'field' | 'city';
 	label: string;
 	options: { value: string; label: string }[];
 };
@@ -327,7 +326,6 @@ export function loadCompanyList(): CompanyListData {
 			const fieldLabel = field
 				? (fieldLabels.get(field) ?? industryLabel(field))
 				: '';
-			const hq = raw.hq === 'true';
 			const search = [
 				raw.name,
 				raw.city,
@@ -356,7 +354,6 @@ export function loadCompanyList(): CompanyListData {
 				state: raw.state ?? '',
 				region: raw.region ?? '',
 				country: raw.country ?? '',
-				hq,
 				sourceUrl: raw.source_url ?? '',
 				notes: raw.notes ?? '',
 				search,
@@ -421,14 +418,6 @@ export function loadCompanyList(): CompanyListData {
 				(row) => row.city,
 				(value) => value,
 			),
-		},
-		{
-			name: 'hq',
-			label: 'Headquarters',
-			options: [
-				{ value: 'true', label: 'Headquarters' },
-				{ value: 'false', label: 'Other location' },
-			],
 		},
 	];
 

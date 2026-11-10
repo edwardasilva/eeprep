@@ -40,7 +40,6 @@ const sortOptions = [
 	{ value: 'city', label: 'City' },
 	{ value: 'state', label: 'State' },
 	{ value: 'region', label: 'Region' },
-	{ value: 'hq', label: 'Headquarters' },
 ];
 
 const columns = [
@@ -50,7 +49,6 @@ const columns = [
 	{ key: 'city', label: 'City' },
 	{ key: 'state', label: 'State' },
 	{ key: 'region', label: 'Region' },
-	{ key: 'hq', label: 'Headquarters' },
 ] as const;
 
 const repo = 'https://github.com/edwardasilva/company-lists';
@@ -133,46 +131,51 @@ function companyCell(row: (typeof rows)[number]): string {
 		</noscript>
 	</form>
 
-	<table class="eep-company-list" id="eep-company-list">
-		<caption>{caption}</caption>
-		<thead>
-			<tr>
-				{columns.map((column, index) => (
-					<th
-						scope="col"
-						data-sort={column.key}
-						aria-sort={index === 0 ? 'ascending' : 'none'}
-					>
-						<button type="button">{column.label}</button>
-					</th>
-				))}
-			</tr>
-		</thead>
-		<tbody>
-			{rows.map((row) => (
-				<tr
-					data-name={row.name}
-					data-industry={row.industry}
-					data-industry-label={row.industryLabel}
-					data-field={row.field}
-					data-field-label={row.fieldLabel}
-					data-city={row.city}
-					data-state={row.state}
-					data-region={row.region}
-					data-hq={row.hq ? 'true' : 'false'}
-					data-search={row.search}
-				>
-					<td data-label="Company" set:html={companyCell(row)} />
-					<td data-label="Industry">{row.industryLabel}</td>
-					<td data-label="Field">{row.fieldLabel || '–'}</td>
-					<td data-label="City">{row.city}</td>
-					<td data-label="State">{row.state}</td>
-					<td data-label="Region">{row.region}</td>
-					<td data-label="Headquarters">{row.hq ? 'Yes' : 'No'}</td>
+	<div
+		class="eep-company-scroll"
+		role="region"
+		aria-label="Company list table"
+		tabindex="0"
+	>
+		<table class="eep-company-list" id="eep-company-list">
+			<caption>{caption}</caption>
+			<thead>
+				<tr>
+					{columns.map((column, index) => (
+						<th
+							scope="col"
+							data-sort={column.key}
+							aria-sort={index === 0 ? 'ascending' : 'none'}
+						>
+							<button type="button">{column.label}</button>
+						</th>
+					))}
 				</tr>
-			))}
-		</tbody>
-	</table>
+			</thead>
+			<tbody>
+				{rows.map((row) => (
+					<tr
+						data-name={row.name}
+						data-industry={row.industry}
+						data-industry-label={row.industryLabel}
+						data-field={row.field}
+						data-field-label={row.fieldLabel}
+						data-city={row.city}
+						data-state={row.state}
+						data-region={row.region}
+						data-search={row.search}
+					>
+						<td data-label="Company" set:html={companyCell(row)} />
+						<td data-label="Industry">{row.industryLabel}</td>
+						<td data-label="Field">{row.fieldLabel || '–'}</td>
+						<td data-label="City">{row.city}</td>
+						<td data-label="State">{row.state}</td>
+						<td data-label="Region">{row.region}</td>
+					</tr>
+				))}
+			</tbody>
+		</table>
+	</div>
 
 	<p class="eep-companies-note" set:html={note} />
 </div>
@@ -215,9 +218,6 @@ function companyCell(row: (typeof rows)[number]): string {
 			}
 			if (key === 'field') {
 				return row.dataset.fieldLabel ?? '';
-			}
-			if (key === 'hq') {
-				return row.dataset.hq === 'true' ? '0' : '1';
 			}
 			return row.dataset[key] ?? '';
 		};
@@ -267,7 +267,6 @@ function companyCell(row: (typeof rows)[number]): string {
 			const industry = inputValue('industry');
 			const field = inputValue('field');
 			const city = inputValue('city');
-			const hq = inputValue('hq');
 			let shown = 0;
 			for (const row of rows) {
 				const hay = row.dataset.search ?? '';
@@ -277,8 +276,7 @@ function companyCell(row: (typeof rows)[number]): string {
 					(!region || row.dataset.region === region) &&
 					(!industry || row.dataset.industry === industry) &&
 					(!field || row.dataset.field === field) &&
-					(!city || row.dataset.city === city) &&
-					(!hq || row.dataset.hq === hq);
+					(!city || row.dataset.city === city);
 				row.hidden = !match;
 				if (match) {
 					shown += 1;
