@@ -1,5 +1,7 @@
 <!-- vale Eeprep.SentenceCase = NO -->
+
 # eeprep
+
 <!-- vale Eeprep.SentenceCase = YES -->
 
 eeprep is a free guide for EECS students and new grads. It shows how to build a resume that works, find real experience, and land a first internship or full-time role.

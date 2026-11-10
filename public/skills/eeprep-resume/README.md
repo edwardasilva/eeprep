@@ -1,5 +1,7 @@
 <!-- vale Eeprep.SentenceCase = NO -->
+
 # eeprep-resume
+
 <!-- vale Eeprep.SentenceCase = YES -->
 
 A skill for Claude Code, Cursor, Codex, and other coding agents that teaches the agent how to write, review, and tailor a one-page engineering resume to the rules on [eeprep.com](https://eeprep.com), without inventing a single fact.
