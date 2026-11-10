@@ -5,7 +5,6 @@ import { unified } from '@astrojs/markdown-remark';
 import wikiLinkPlugin from 'remark-wiki-link';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
-import rehypeCallouts from 'rehype-callouts';
 import rehypeEqIds from './src/plugins/rehype-eq-ids.mjs';
 import rehypeExternalLinks from './src/plugins/rehype-external-links.mjs';
 import rehypeTableLabels from './src/plugins/rehype-table-labels.mjs';
@@ -131,21 +130,12 @@ export default defineConfig({
 					rehypeTableLabels,
 					{ files: ['src/content/docs/roadmap.md'], className: 'eep-roadmap' },
 				],
-				[
-					rehypeCallouts,
-					{
-						theme: 'obsidian',
-						callouts: {
-							definition: { title: 'Definition' },
-							question: { title: 'Check yourself' },
-						},
-					},
-				],
 			],
 		}),
 	},
 	integrations: [
 		starlight({
+			disable404Route: true,
 			title: 'eeprep',
 			description: 'A prep guide for electrical engineering students.',
 			credits: false,
@@ -306,6 +296,7 @@ export default defineConfig({
 								{ label: 'Projects', slug: 'advice/projects' },
 								{ label: 'Software', slug: 'advice/projects/software' },
 								{ label: 'Hardware', slug: 'advice/projects/hardware' },
+								{ label: 'Career paths', slug: 'advice/projects/career-paths' },
 								{ label: 'Portfolio', slug: 'advice/projects/portfolio' },
 							],
 						},
