@@ -54,6 +54,14 @@ The goal is good writing, not beating a detector. Detectors are unreliable and f
 
 10. Define a technical term in a few words the first time you use it, e.g. "idempotent (safe to run twice)". Do not define product names or standard names.
 
+11. Write a year range with an en dash: 2024–25, not 2024-25. Vale rule Eeprep.YearRange checks it. Dates inside URLs are not linted.
+
+12. Do not use he, she, his, her, hers, or him for an unnamed person. Use "they" or name the role. For a quote, wrap it in Vale off and on comments. Vale rule Eeprep.Pronouns checks it.
+
+13. The example person is Alex Doe, with they and them. Do not give another first name to Doe. Vale rule Eeprep.ExampleName checks it.
+
+14. The site name is eeprep. Do not shorten it to EEP. Vale rule Eeprep.BareEEP checks it, and Eeprep.BrandName checks the other spellings.
+
 ## 3. Words to cut
 
 Cut these on sight. One may be a coincidence, but several together read as AI:
