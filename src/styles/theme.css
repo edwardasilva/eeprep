@@ -92,6 +92,11 @@
 	--eep-dg-accent: var(--eep-accent);
 	--eep-dg-mute: var(--eep-silver);
 	--eep-dg-fill: var(--eep-surface);
+	/* One figure stroke: this width for every line, box edge and outline, and
+	   one dashed style for fallbacks and callouts. */
+	--eep-dg-line: 1.5px;
+	--eep-dg-dash: var(--eep-dg-line) dashed var(--eep-dg-ink);
+	--eep-dg-dasharray: 3 3;
 	/* The 6% tint behind a figure box, from STYLE.md section 7. */
 	--eep-dg-tint: color-mix(in srgb, var(--eep-dg-ink) 6%, var(--eep-dg-fill));
 	--eep-dg-s2: #1d5f8a;
@@ -124,6 +129,11 @@
 	--eep-dg-accent: var(--eep-accent);
 	--eep-dg-mute: var(--eep-silver);
 	--eep-dg-fill: var(--eep-surface);
+	/* One figure stroke: this width for every line, box edge and outline, and
+	   one dashed style for fallbacks and callouts. */
+	--eep-dg-line: 1.5px;
+	--eep-dg-dash: var(--eep-dg-line) dashed var(--eep-dg-ink);
+	--eep-dg-dasharray: 3 3;
 	/* The 6% tint behind a figure box, from STYLE.md section 7. */
 	--eep-dg-tint: color-mix(in srgb, var(--eep-dg-ink) 6%, var(--eep-dg-fill));
 	--eep-dg-s2: #8cc0e6;
