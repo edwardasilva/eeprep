@@ -1,7 +1,7 @@
 ---
 import { externalLinks } from '../resume/caption';
-// Figure 7.3 as HTML and CSS. One bar in STAR order. Action takes about 60%.
-// The source gives no split for the other three, so they are drawn equal.
+// Figure 7.3 as HTML and CSS. One bar in STAR order, drawn to the MIT CAPD
+// shares: Situation 20%, Task 10%, Action 60%, Result 10%.
 const parts = [
 	{ key: 's', label: 'Situation' },
 	{ key: 't', label: 'Task' },
@@ -9,9 +9,9 @@ const parts = [
 	{ key: 'r', label: 'Result' },
 ];
 const alt =
-	'A bar split into Situation, Task, Action and Result. Action takes about 60% of the bar.';
+	'A bar split into Situation (20 percent), Task (10 percent), Action (60 percent) and Result (10 percent).';
 const caption = externalLinks(
-	`Spend most of a behavioral answer on what you did, and use "I", not "we". Source: <a href="https://capd.mit.edu/resources/the-star-method-for-behavioral-interviews/">MIT CAPD's STAR method guide</a>.`,
+	`Spend most of a behavioral answer on what you did, and use "I", not "we". Source: <a href="https://capd.mit.edu/resources/the-star-method-for-behavioral-interviews/">MIT's career office guide to the STAR method</a>.`,
 );
 ---
 
@@ -66,8 +66,13 @@ const caption = externalLinks(
 	.eep-star .eep-star-a {
 		flex: 0 0 60%;
 	}
+	.eep-star .eep-star-s {
+		flex: 0 0 20%;
+	}
+	.eep-star :is(.eep-star-t, .eep-star-r) {
+		flex: 0 0 10%;
+	}
 	.eep-star :is(.eep-star-s, .eep-star-t, .eep-star-r) {
-		flex: 1 1 0;
 		min-width: 0;
 	}
 	.eep-star-seg.eep-star-a,
@@ -117,7 +122,7 @@ const caption = externalLinks(
 			flex: none;
 			width: 0.75rem;
 			height: 0.75rem;
-			border-radius: 2px;
+			border-radius: var(--eep-radius-sm);
 		}
 	}
 </style>

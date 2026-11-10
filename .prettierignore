@@ -12,8 +12,6 @@ package-lock.json
 # Generated figures
 *.svg
 
-# Approved figure label sheet. Wording stays as written.
-
 # Submodules with their own formatting rules
 resume-generator
 company-lists

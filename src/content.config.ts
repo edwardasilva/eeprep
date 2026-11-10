@@ -7,8 +7,7 @@ export const collections = {
 		loader: docsLoader(),
 		schema: docsSchema({
 			extend: z.object({
-				pageType: z.enum(['guide', 'study', 'resources']).optional(),
-				placeholder: z.boolean().optional(),
+				pageType: z.enum(['guide', 'resources']).optional(),
 			}),
 		}),
 	}),

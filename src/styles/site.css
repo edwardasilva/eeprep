@@ -15,7 +15,7 @@
 }
 .eep-nav a[aria-current='page'] {
 	color: var(--eep-ink);
-	box-shadow: inset 0 -1.5px 0 var(--eep-accent);
+	box-shadow: inset 0 calc(-1 * var(--eep-toc-bar)) 0 var(--eep-accent);
 }
 @media (hover: hover) {
 	.eep-nav a:hover {
@@ -98,7 +98,12 @@
 
 .eep-hero {
 	padding: 2.5rem 0 1rem;
-	max-width: 46rem;
+}
+/* The heading uses the full splash column, the same width as the
+   two-column grid below, so the block is one centered measure. The
+   lead keeps the prose measure and the same left edge. */
+.eep-hero p {
+	max-width: var(--eep-measure);
 }
 .eep-hero h1 {
 	font-family: var(--eep-font-serif);
@@ -287,7 +292,7 @@ button[data-open-modal] kbd {
 		padding-inline: 0.25rem;
 	}
 	.eep-nav a[aria-current='page'] {
-		box-shadow: inset 0 -2px 0 var(--eep-accent);
+		box-shadow: inset 0 calc(-1 * var(--eep-toc-bar)) 0 var(--eep-accent);
 	}
 	.eep-theme,
 	.header button[data-open-modal] {
