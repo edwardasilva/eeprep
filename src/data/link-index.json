@@ -28,7 +28,7 @@
     "pages": [
       "advice/getting-hired",
       "advice/resume",
-      "advice/resume/quick-setup",
+      "advice/quick-setup",
       "help/ai-use",
       "help/job-boards"
     ]
@@ -324,7 +324,7 @@
       "advice/resume",
       "advice/resume/cleanup",
       "advice/projects/portfolio",
-      "advice/resume/quick-setup",
+      "advice/quick-setup",
       "advice/resume/workshop"
     ]
   },
@@ -454,7 +454,7 @@
     "pages": [
       "advice/getting-hired/how-to-interview",
       "advice/resume/cleanup",
-      "advice/resume/quick-setup",
+      "advice/quick-setup",
       "help/ai-use"
     ]
   },
@@ -741,7 +741,7 @@
       "advice/getting-hired/first-internship",
       "advice/getting-hired/job-market",
       "advice/getting-hired/networking",
-      "advice/resume/quick-setup"
+      "advice/quick-setup"
     ]
   },
   {
@@ -840,10 +840,7 @@
     "title": "MIT CAPD: Negotiate job offers",
     "category": "Job search and referrals",
     "summary": "MIT's steps for negotiating a job offer and which terms usually move.",
-    "pages": [
-      "advice/getting-hired/first-full-time-role",
-      "advice/resume/quick-setup"
-    ]
+    "pages": ["advice/getting-hired/first-full-time-role", "advice/quick-setup"]
   },
   {
     "url": "https://ecs.osu.edu/employers/recruiting-guidelines-policies/hiring-students",
@@ -983,10 +980,7 @@
     "title": "Yale: Industry hiring timelines",
     "category": "Job search and referrals",
     "summary": "Hiring seasons by industry, including fall and winter peaks for engineering.",
-    "pages": [
-      "advice/getting-hired/first-full-time-role",
-      "advice/resume/quick-setup"
-    ]
+    "pages": ["advice/getting-hired/first-full-time-role", "advice/quick-setup"]
   },
   {
     "url": "https://www.newyorkfed.org/research/staff_reports/sr568",
@@ -1486,7 +1480,7 @@
     "title": "r/EngineeringStudents: Projects that got you hired",
     "category": "Job search stories from students",
     "summary": "Students list the personal projects that helped them get internships.",
-    "pages": ["advice/projects", "advice/resume/quick-setup"]
+    "pages": ["advice/projects", "advice/quick-setup"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringStudents/comments/1ridrqh/im_a_sophomore_right_now_will_i_ever_get_a_job_if/",
