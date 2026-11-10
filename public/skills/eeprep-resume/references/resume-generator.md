@@ -63,7 +63,7 @@
 
 ## Rules the build enforces
 
-- Every date in a section uses that section's date style, `semester` (Fall 2025) or `month` (Sep 2025). Mixing them stops the build.
+- Every date in a section uses that section's date style, `semester` (Fall 2025) or `month` (Sept 2025, and Sep 2025 also works). Mixing them stops the build.
 - A blank field or an empty list is left out of the PDF.
 - `engineering: false` makes a one-line entry and drops any bullets, with a note. To give a non-engineering job bullets, set `"engineering": true`.
 - `hide: true` leaves an entry out without deleting it. Use it for a version aimed at one niche.

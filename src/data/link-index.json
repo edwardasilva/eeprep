@@ -104,6 +104,7 @@
       "advice/resume/cleanup",
       "advice/resume/walkthrough",
       "advice/resume/workshop",
+      "help",
       "help/resources"
     ]
   },
@@ -486,10 +487,10 @@
     "pages": ["advice/resume"]
   },
   {
-    "url": "https://www.askamanager.org/?p=23426",
-    "title": "Ask a Manager: Trainings and certificates on a resume",
+    "url": "https://www.askamanager.org/2022/04/open-thread-april-22-23-2022.html",
+    "title": "Ask a Manager: open thread, April 22-23, 2022",
     "category": "Resume feedback from reviewers and recruiters",
-    "summary": "Alison Green on keeping small trainings and certificates off the resume.",
+    "summary": "A reader comment suggesting a resume not carry a long list of little trainings and certificates.",
     "pages": ["advice/forever-learning"]
   },
   {
@@ -591,6 +592,13 @@
     "pages": ["advice/forever-learning", "roadmap"]
   },
   {
+    "url": "https://www.eecs.mit.edu/academics/subject-numbering/",
+    "title": "MIT EECS: Subject numbering",
+    "category": "Tools and project resources",
+    "summary": "MIT's table of old and new course numbers, such as 6.003 and 6.3000.",
+    "pages": ["advice/forever-learning"]
+  },
+  {
     "url": "https://ocw.mit.edu/about/",
     "title": "MIT OpenCourseWare: About",
     "category": "Tools and project resources",
@@ -662,14 +670,14 @@
   },
   {
     "url": "https://ece4760.github.io/Projects/Projects.html",
-    "title": "Cornell ECE 4760: final project archive",
+    "title": "Cornell ECE 4760: current project archive",
     "category": "Tools and project resources",
     "summary": "Semester of student project sites, each with design, hardware, software, results.",
     "pages": ["advice/projects/portfolio"]
   },
   {
     "url": "https://ece4760.github.io/Projects/Fall2025/hw578/index.html",
-    "title": "Cornell ECE 5730: Julia set on eight RP2040s",
+    "title": "Cornell ECE 4760 and 5730: Julia set on eight RP2040s",
     "category": "Tools and project resources",
     "summary": "A student project page whose design section covers an SPI bus bug.",
     "pages": ["advice/projects/portfolio"]
@@ -696,8 +704,36 @@
     "pages": ["advice/projects/portfolio"]
   },
   {
+    "url": "https://byronbradley.me/",
+    "title": "Byron Bradley: student portfolio",
+    "category": "Tools and project resources",
+    "summary": "A junior's portfolio with four projects on one page.",
+    "pages": ["advice/projects/portfolio"]
+  },
+  {
+    "url": "https://yasamankhe.github.io/",
+    "title": "Yasaman Kheradmand: student portfolio",
+    "category": "Tools and project resources",
+    "summary": "A portfolio with a page for each of six projects.",
+    "pages": ["advice/projects/portfolio"]
+  },
+  {
+    "url": "https://panosdimts.github.io/EE-portfolio/",
+    "title": "Panos Dimtsoudis: student portfolio",
+    "category": "Tools and project resources",
+    "summary": "A portfolio with a predictions-against-results table.",
+    "pages": ["advice/projects/portfolio"]
+  },
+  {
+    "url": "https://zaidsaifan-star.github.io/",
+    "title": "Zaid Saifan: student portfolio",
+    "category": "Tools and project resources",
+    "summary": "A portfolio with a fixed section order for each project.",
+    "pages": ["advice/projects/portfolio"]
+  },
+  {
     "url": "https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/",
-    "title": "Cornell ECE 4760: Final project archive",
+    "title": "Cornell ECE 4760: older final project archive",
     "category": "Tools and project resources",
     "summary": "The Cornell microcontroller course project sites whose section order the Portfolio page follows.",
     "pages": ["advice/projects/portfolio"]
@@ -776,7 +812,7 @@
     "title": "Handshake",
     "category": "Job search and referrals",
     "summary": "Job and internship platform that many universities use for student recruiting.",
-    "pages": ["advice/getting-hired", "help/job-boards"]
+    "pages": ["advice/getting-hired", "help", "help/job-boards"]
   },
   {
     "url": "https://jobs.ieee.org/",
@@ -811,7 +847,7 @@
     "title": "LinkedIn Jobs",
     "category": "Job search and referrals",
     "summary": "LinkedIn's job search, with filters for internships and entry-level roles.",
-    "pages": ["help/job-boards"]
+    "pages": ["help", "help/job-boards"]
   },
   {
     "url": "https://career.engin.umich.edu/students/job-search-policies/",
@@ -971,7 +1007,7 @@
     "title": "USAJOBS",
     "category": "Job search and referrals",
     "summary": "The US federal government's official job listings site.",
-    "pages": ["help/job-boards"]
+    "pages": ["help", "help/job-boards"]
   },
   {
     "url": "https://www.nasa.gov/learning-resources/internship-programs/",
@@ -999,7 +1035,7 @@
     "title": "USAJOBS: Pathways internships for students",
     "category": "Job search and referrals",
     "summary": "The federal Pathways internship program for students currently enrolled in school.",
-    "pages": ["help/job-boards"]
+    "pages": ["help", "help/job-boards"]
   },
   {
     "url": "https://ocs.yale.edu/industry-hiring-timelines/",
@@ -1037,13 +1073,6 @@
     "title": "Georgia Tech: Informational interview handout",
     "category": "Job search and referrals",
     "summary": "Georgia Tech handout: never ask for a job in an informational interview.",
-    "pages": ["advice/getting-hired/networking"]
-  },
-  {
-    "url": "https://careerhub.students.duke.edu/blog/2025/01/28/informational-interviews-connecting-to-learn-and-build-relationships/",
-    "title": "Duke: Informational interviews, connecting to learn",
-    "category": "Job search and referrals",
-    "summary": "Duke's career hub on why mutual-contact requests get more replies.",
     "pages": ["advice/getting-hired/networking"]
   },
   {
@@ -1126,7 +1155,7 @@
     "url": "https://allwork.space/2021/11/what-happened-to-entry-level-jobs-job-seekers-baffled-by-requirements/",
     "title": "Allwork: What happened to entry-level jobs",
     "category": "Job search and referrals",
-    "summary": "LinkedIn analysis, 3.8 million postings: 35% of entry-level roles wanted 3-plus years.",
+    "summary": "LinkedIn analysis, close to 4 million postings: 35% of entry-level roles asked for years of experience.",
     "pages": ["help/job-boards"]
   },
   {
@@ -1780,7 +1809,7 @@
     "title": "Hardware FYI: Top electrical engineering interview questions",
     "category": "Interview prep",
     "summary": "Common electrical engineering interview questions collected by Hardware FYI.",
-    "pages": ["advice/getting-hired/how-to-interview", "advice/resume/cleanup"]
+    "pages": ["advice/getting-hired/how-to-interview"]
   },
   {
     "url": "https://ecs.grainger.illinois.edu/student-resources/interviewing/fundamentals",
@@ -1937,6 +1966,7 @@
       "advice/getting-hired/job-market",
       "advice/projects",
       "advice/projects/career-paths",
+      "help",
       "help/resources"
     ]
   },
@@ -1955,20 +1985,28 @@
     "title": "Levels.fyi",
     "category": "Pay and career data",
     "summary": "Self-reported salary and total compensation data by company and level.",
-    "pages": ["advice/getting-hired/first-full-time-role", "help/resources"]
+    "pages": [
+      "advice/getting-hired/first-full-time-role",
+      "help",
+      "help/resources"
+    ]
   },
   {
     "url": "https://www.naceweb.org/job-market/compensation/",
     "title": "NACE: Compensation",
     "category": "Pay and career data",
     "summary": "NACE data and reports on starting salaries for new college graduates.",
-    "pages": ["advice/getting-hired/first-full-time-role", "help/resources"]
+    "pages": [
+      "advice/getting-hired/first-full-time-role",
+      "help",
+      "help/resources"
+    ]
   },
   {
     "url": "https://www.naceweb.org/talent-acquisition/internships/intern-conversion-rate-hits-highest-mark-in-five-years",
     "title": "NACE: Intern conversion rate hits five-year high",
     "category": "Pay and career data",
-    "summary": "NACE data on how many interns received and accepted full-time offers, 2024-25.",
+    "summary": "NACE data on how many interns received and accepted full-time offers, 2024–25.",
     "pages": ["advice/getting-hired/first-full-time-role"]
   },
   {
@@ -2186,8 +2224,8 @@
     "pages": ["advice/forever-learning/graduate-study"]
   },
   {
-    "url": "https://yp.ieee.org/blog/2023/11/15/check-out-the-career-programs-of-ieee-usa-part-2",
-    "title": "IEEE Young Professionals: The career programs of IEEE-USA",
+    "url": "https://insight.ieeeusa.org/articles/more-ieee-usa-career-and-membership-services-programs-part-2/",
+    "title": "IEEE-USA InSight: More career and membership services programs, part 2",
     "category": "Pay and career data",
     "summary": "IEEE-USA member job-hunt tools: salary calculator, Job Site, Employment Navigator.",
     "pages": ["advice/forever-learning/societies"]
@@ -2204,13 +2242,6 @@
     "title": "Indeed Hiring Lab: Tech talent report 2025",
     "category": "Pay and career data",
     "summary": "Indeed's 2025 report on US tech postings against the 2020 baseline.",
-    "pages": ["advice/getting-hired/job-market"]
-  },
-  {
-    "url": "https://www.dice.com/recruiting/ebooks/dice-tech-job-report",
-    "title": "Dice: Tech job report",
-    "category": "Pay and career data",
-    "summary": "Dice's end-of-2025 figures on entry-level tech postings.",
     "pages": ["advice/getting-hired/job-market"]
   },
   {
@@ -2399,10 +2430,10 @@
     "pages": ["advice/forever-learning/getting-into-graduate-study"]
   },
   {
-    "url": "https://www.ieee.org/membership/students",
-    "title": "IEEE: Student membership",
+    "url": "https://students.ieee.org/",
+    "title": "IEEE Students",
     "category": "Communities",
-    "summary": "IEEE's student membership page.",
+    "summary": "IEEE's home for student members, with benefits and student branches.",
     "pages": ["advice/forever-learning"]
   },
   {

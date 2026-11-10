@@ -21,6 +21,8 @@ const skipHosts = new Set([
 	'linkedin.com',
 	// Drops every scripted connection without answering, as of November 2026.
 	'www.solidworks.com',
+	// Drops every scripted connection without answering, as of November 2026.
+	'www.analog.com',
 ]);
 const timeoutMs = 20_000;
 const headers = {
