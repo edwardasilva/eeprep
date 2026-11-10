@@ -8,6 +8,10 @@ import path from 'node:path';
 const dev = process.env.SITE_ENV === 'dev';
 const dist = path.resolve('dist');
 const noindex = /<meta name="robots" content="noindex"\s*\/?>/;
+if (!fs.existsSync(dist)) {
+	console.error('dist/ is missing. Run npm run build first.');
+	process.exit(1);
+}
 const problems = [];
 let pages = 0;
 
@@ -27,6 +31,10 @@ for (const file of listHtml(dist)) {
 
 for (const problem of problems) console.error(problem);
 if (problems.length) process.exit(1);
+if (pages === 0) {
+	console.error('dist/ has no pages. Run npm run build first.');
+	process.exit(1);
+}
 console.log(
 	`${pages} pages ${dev ? 'have' : 'do not have'} the noindex meta tag (${dev ? 'dev' : 'production'} build).`,
 );
