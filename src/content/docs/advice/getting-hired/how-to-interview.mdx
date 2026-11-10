@@ -66,6 +66,14 @@ Review the topics your resume and the posting touch first:
 
 Hardware interviews mix these. [One student's Microsoft hardware internship loop had 3 interviews](https://www.reddit.com/r/ECE/comments/1gmt5fg/microsoft_hardware_engineering_intern_interview/), each half behavioral and half technical. The technical half covered analog filters, timing analysis, signal integrity, and their projects.
 
+### A note on embedded interviews
+
+Embedded questions cross the line between hardware and software. An EE degree can land on a hardware or a software team, so be ready to talk about both sides of each project.
+
+Pick one project and trace it from the pin to the code. Say Alex reads a sensor over I2C. Alex needs to explain what the bus does, what the interrupt handler does, where each variable lives, and why a flag set in the handler is `volatile`. [Nigel Jones of Barr Group names that case](https://barrgroup.com/embedded-systems/how-to/c-volatile-keyword) among the three where the keyword is needed. If you cannot walk the whole path, that gap is what to study next.
+
+Then name which of [I2C, SPI, and UART](https://www.hardwareinterviews.fyi/t/top-electrical-engineering-interview-questions/807) you have used, and what went wrong with it. A real bug is a better answer than a definition.
+
 ### Coding problems out loud
 
 Expect a LeetCode-style problem on a whiteboard in some hardware loops. [Hardware FYI says many hardware roles at big tech companies expect you to code](https://www.hardwareinterviews.fyi/t/top-electrical-engineering-interview-questions/807), with problems such as merging two sorted linked lists.
