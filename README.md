@@ -1,6 +1,6 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="public/brand/eeprep-lockup-stacked-dark.png">
-  <img src="public/brand/eeprep-lockup-stacked.png" alt="eeprep" width="240">
+  <source media="(prefers-color-scheme: dark)" srcset="public/brand/eeprep-lockup-dark-outlined.svg">
+  <img src="public/brand/eeprep-lockup-outlined.svg" alt="eeprep" width="320">
 </picture>
 
 <!-- vale Eeprep.SentenceCase = NO -->
