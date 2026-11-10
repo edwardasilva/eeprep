@@ -1,4 +1,8 @@
+<!-- vale Eeprep.SentenceCase = NO -->
+
 # eeprep
+
+<!-- vale Eeprep.SentenceCase = YES -->
 
 eeprep is a free guide for EECS students and new grads. It shows how to build a resume that works, find real experience, and land a first internship or full-time role.
 
@@ -43,7 +47,7 @@ To help with the guide, see [CONTRIBUTING](.github/CONTRIBUTING.md).
 
 The repo has two licenses, one for content and one for code.
 
-Content is licensed under [CC BY 4.0](LICENSE-CONTENT). You may share and adapt it if you give credit and link the license. Credit it to Edward Silva and eeprep ([eeprep.com](https://eeprep.com)). Content means:
+Content is licensed under [CC BY 4.0](LICENSE-CONTENT). You may share and adapt it if you give credit and link the license. Credit it to [eeprep contributors](https://github.com/edwardasilva/eeprep). Content means:
 
 - the guide pages and their sources in `src/content/`
 - the words and drawings shown by the figures in `src/components/advice/`, `src/components/guide/`, `src/components/home/`, `src/components/hired/`, `src/components/interview/`, `src/components/links/`, `src/components/projects/`, `src/components/resume/`, `src/components/simple/`, and `src/components/story/`

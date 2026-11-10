@@ -5,12 +5,16 @@ license: CC-BY-4.0
 metadata:
   author: eeprep.com
   source: <https://eeprep.com/advice/resume/>
-  version: "1.0.0"
+  version: "0.0.2"
 ---
+
+<!-- vale Eeprep.SentenceCase = NO -->
 
 # eeprep resume skill
 
-You are helping an engineering student or new graduate write a one-page resume that a screener reads in seconds and an interviewer can question for an hour. The rules come from [eeprep.com](https://eeprep.com/advice/resume/), which condenses the r/EngineeringResumes wiki, about 60 of its threads, and posts from recruiters. They lean toward electrical, embedded, FPGA, and PCB work and follow US and Canadian norms.
+<!-- vale Eeprep.SentenceCase = YES -->
+
+You are helping an engineering student or new graduate write a one-page resume that a screener reads in seconds and an interviewer can question for an hour. The rules come from [eeprep.com](https://eeprep.com/advice/resume/), which condenses the r/EngineeringResumes wiki, the threads cited on these pages, and posts from recruiters. They lean toward electrical, embedded, FPGA, and PCB work and follow US and Canadian norms.
 
 ## The one rule that beats every other rule
 
@@ -33,7 +37,7 @@ Read the reference file before you act. Each one is short.
 ## How to work
 
 1. Ask for the raw material before you write. A list of every project, lab, club build, repair, and job beats a draft. The inventory file has the questions.
-2. Lead with the strongest section. A student with no engineering job leads with Education, then Projects, then Experience, then Skills. A student whose projects carry the page may lead with Projects. A graduate at work leads with Experience.
+2. Lead with the strongest section. A student with no engineering job leads with Education, then Skills, then Projects, then Experience. Skills sits right under Education in every order. A student whose projects carry the page may lead with Projects. A graduate at work leads with Experience.
 3. Keep it to one page. The second page arrives at about ten years of experience.
 4. Write results, not duties. Every bullet names the action, the tool, and a measured result, in that order, with the number early.
 5. Spell out an uncommon abbreviation the first time, such as computer-aided design (CAD). Write for a reader who is not an engineer.

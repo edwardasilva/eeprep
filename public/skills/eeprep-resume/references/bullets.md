@@ -6,7 +6,7 @@ Write results, not duties. X is the action, Y is the tool or method, Z is the me
 
 Before: "Worked on a buck converter for a CubeSat using LTspice and KiCad"
 
-After: "Designed a [X] W CubeSat buck converter in KiCad and LTspice, measured at [X]% on an electronic load"
+After: "Designed a [X] W CubeSat buck converter in KiCad and LTspice, measured at [X]% efficiency on an electronic load"
 
 The rewrite names the action, the tools, one spec that shows difficulty, and a check against the real board. Every `[X]` is a number the user measures. Never fill one in yourself.
 
@@ -20,7 +20,7 @@ The rewrite names the action, the tools, one spec that shows difficulty, and a c
 - Do not inflate. An intern who claims two million dollars in savings will be asked to justify it. A smaller number the user can defend beats a larger one they cannot.
 - Do not force a number. "Designed a PCB in KiCad" says more than trivia such as an exact step-down voltage. A spec belongs in the bullet when it shows difficulty, such as register-level setup of an SPI peripheral.
 - Use digits, not words, for numbers. No personal pronouns. No trailing period.
-- Avoid the puffed-up verbs: spearheaded, revolutionized, orchestrated, pioneered, leveraged, transformed, honed, crafted, elevated.
+- Avoid the puffed-up verbs: spearheaded, revolutionized, orchestrated, pioneered, `leveraged`, transformed, honed, crafted, elevated.
 
 ## Examples written the eeprep way
 

@@ -1,5 +1,5 @@
 ---
-// Figure 12.2 as HTML and CSS. Five finished pages from resume-generator,
+// Five finished pages from resume-generator,
 // first year to graduation, as stacks of sections. Each box is one entry on
 // that page, so a reader sees what grows and what moves. The Education box
 // drops to the bottom once Experience leads.
@@ -8,9 +8,9 @@ const pages = [
 		name: 'First year',
 		sections: [
 			{ label: 'Education', count: 1 },
+			{ label: 'Skills', count: 2 },
 			{ label: 'Projects', count: 1 },
 			{ label: 'Experience', count: 1, note: 'one line' },
-			{ label: 'Skills', count: 2 },
 		],
 		note: 'Room left at the bottom',
 	},
@@ -18,20 +18,20 @@ const pages = [
 		name: 'Sophomore',
 		sections: [
 			{ label: 'Education', count: 1 },
+			{ label: 'Skills', count: 2 },
 			{ label: 'Projects', count: 2 },
 			{ label: 'Experience', count: 2, note: 'club lead, one-line job' },
-			{ label: 'Skills', count: 2 },
 		],
 	},
 	{
 		name: 'Senior',
 		sections: [
 			{ label: 'Education', count: 1 },
+			{ label: 'Skills', count: 2 },
 			{ label: 'Projects', count: 2 },
 			{ label: 'Experience', count: 1, note: 'one line' },
-			{ label: 'Skills', count: 2 },
 		],
-		note: 'The finished page above',
+		note: 'The finished page on the Resume page',
 	},
 	{
 		name: 'New graduate',
@@ -55,7 +55,7 @@ const pages = [
 	},
 ];
 const alt =
-	'Five resume pages side by side. First year: education, one project, a one-line job, two skill lines, with room left at the bottom. Sophomore: education, two projects, a club lead role and a one-line job, two skill lines. Alex, a senior: education, two projects, a one-line job, two skill lines. New graduate: experience with two internships leads, then two projects, education, and three skill lines including certifications. Packed: three engineering roles and a one-line job lead, then three projects, education, and three skill lines, tightened to 10.25 point text to fit.';
+	'Five resume pages side by side. First year: education, two skill lines, one project, a one-line job, with room left at the bottom. Sophomore: education, two skill lines, two projects, a club lead role and a one-line job. Alex, a senior: education, two skill lines, two projects, a one-line job. New graduate: experience with two internships leads, then two projects, education, and three skill lines including certifications. Packed: three engineering roles and a one-line job lead, then three projects, education, and three skill lines, tightened to 10.25 point text to fit.';
 ---
 
 <figure class="eep-fig wide eep-stages-fig" id="fig-12-2">
@@ -124,7 +124,7 @@ const alt =
 		gap: 0.45rem;
 		padding: 0.6rem 0.55rem 0.7rem;
 		border: 1px solid var(--eep-dg-mute);
-		border-radius: 4px;
+		border-radius: var(--eep-radius);
 		background: var(--eep-dg-fill);
 	}
 	.eep-stage .eep-stage-label {
@@ -143,7 +143,7 @@ const alt =
 		display: block;
 		height: 0.55rem;
 		border: 1px solid var(--eep-dg-mute);
-		border-radius: 2px;
+		border-radius: var(--eep-radius-sm);
 		background: var(--eep-dg-tint);
 	}
 	.eep-stage .eep-stage-note {

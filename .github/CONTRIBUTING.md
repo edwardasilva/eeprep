@@ -19,7 +19,7 @@ npm ci
 npm run build
 ```
 
-Vale checks the writing style. To run it locally, [install Vale](https://vale.sh/docs/install), then run `vale --config .github/vale/.vale.ini src/content/docs`. If you skip either step, maintainers run the checks before merging. Merges are squash merges.
+Vale checks the writing style. To run it locally, [install Vale](https://vale.sh/docs/install), then run `vale --config .github/vale/.vale.ini src/content/docs public/skills README.md`. If you skip either step, maintainers run the checks before merging. Merges are squash merges.
 
 ## Coding agents
 
@@ -37,8 +37,17 @@ For a security problem, follow the [security policy](SECURITY.md). Do not open a
 
 ## Releases
 
-Only the repository owner cuts releases.
+Only the repository owner cuts releases. The resume skill version in `public/skills/eeprep-resume/SKILL.md` follows the version in `package.json`. Set both to the release version in the release commit.
+
+## Changelog
+
+Major changes in the companion repositories, [resume-generator](https://github.com/edwardasilva/resume-generator) and [company-lists](https://github.com/edwardasilva/company-lists), are listed here. eeprep release notes stay on the [Releases](https://github.com/edwardasilva/eeprep/releases) page.
+
+| Project          | Change                                                                                                                                                                                                                                                                          |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| resume-generator | After v0.0.2, each JSON file writes its own PDF. The file is named `[Name]-Resume.pdf`, and extra inputs add the JSON file name, so `examples/new-grad.json` writes `Alex-Doe-Resume-new-grad.pdf`. In v0.0.1 the PDF used the JSON file's name (`resume.pdf`, `new-grad.pdf`). |
+| company-lists    | The list now covers the Denver and Boulder metros in Colorado, the Austin and Houston metros in Texas, the Los Angeles and San Francisco Bay Area metros in California, and Northern Virginia.                                                                                  |
 
 ## License
 
-By contributing, you agree that content is licensed under [CC BY 4.0](../LICENSE-CONTENT) and code under the [MIT License](../LICENSE).
+By contributing, you agree that content is licensed under [CC BY 4.0](../LICENSE-CONTENT) and code under the [MIT License](../LICENSE). Reuse of content is credited to [eeprep contributors](https://github.com/edwardasilva/eeprep).

@@ -29,7 +29,7 @@ Alex's first draft reads like most first drafts. It opens with an objective, lea
 
 1. Cut the objective. [The wiki keeps a summary only for senior engineers, career changers, and people returning from a gap](https://www.reddit.com/r/EngineeringResumes/wiki/index/). If you keep one, make it one line that names the role you want.
 2. Move Projects above Experience. Alex has no engineering job yet, so the order is Education, Skills, Projects, Experience. That is [the wiki's student default](https://www.reddit.com/r/EngineeringResumes/wiki/index/), with Skills moved up under Education. The retail job stays, on one line.
-3. Rewrite every bullet as did X with Y to get Z. "Worked on a buck converter for a CubeSat using LTspice and KiCad" becomes "Designed a [X] W CubeSat buck converter in KiCad and LTspice, measured at [X]% on an electronic load". The [[Resume#Bullets|bullets]] section on the Resume page shows the pattern, and the [[Hardware#Hardware builds that count|hardware builds that count]] section on the Hardware page has longer lines for the same kind of build.
+3. Rewrite every bullet as did X with Y to get Z. "Worked on a buck converter for a CubeSat using LTspice and KiCad" becomes "Designed a [X] W CubeSat buck converter in KiCad and LTspice, measured at [X]% efficiency on an electronic load". The [[Resume#Bullets|bullets]] section on the Resume page shows the pattern, and the [[Hardware#Hardware builds that count|hardware builds that count]] section on the Hardware page has longer lines for the same kind of build.
 4. Put the dates at the right margin, in one style. Alex uses semesters on every line. [The wiki prefers months and says not to mix the two](https://www.reddit.com/r/EngineeringResumes/wiki/index/).
 5. Cut the soft skills and the references line. Teamwork shows up in an interview, not in a list, and [every skill that stays needs a bullet behind it](https://ecs.grainger.illinois.edu/student-resources/resumes-letters/resumes). Microsoft Office goes too.
 
@@ -49,14 +49,14 @@ The page is built from one data file. [resume-generator](https://github.com/edwa
     "start": "Fall 2025",
     "end": "Spring 2026",
     "bullets": [
-      "Designed a [X] W CubeSat buck converter in KiCad and LTspice, measured at [X]% on an electronic load",
+      "Designed a [X] W CubeSat buck converter in KiCad and LTspice, measured at [X]% efficiency on an electronic load",
       "Cut output ripple from [X] mV to [X] mV by shrinking the switching loop, verified on an oscilloscope"
     ]
   }
 ]
 ```
 
-Copy the file, replace Alex's details with yours, and run `./run`. It writes `resume.pdf`, fits it onto one page, and checks that the text extracts cleanly. The [[Resume#Build your resume|section on building your resume]] on the Resume page has the download steps. If a bullet spills a word or two onto a second line, cut it or add a detail that fills the line, then run it again.
+Copy the file, replace Alex's details with yours, and run `./run`. It writes `[Name]-Resume.pdf`, fits it onto one page, and checks that the text extracts cleanly. The [[Resume#Build your resume|section on building your resume]] on the Resume page has the download steps. If a bullet spills a word or two onto a second line, cut it or add a detail that fills the line, then run it again.
 
 ## When experience takes over
 

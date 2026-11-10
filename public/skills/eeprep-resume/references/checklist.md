@@ -6,7 +6,7 @@ Audit the finished PDF, not the source file. Work top to bottom. Fix what fails,
 
 ## The file
 
-- Extract the text (`pdftotext resume.pdf -`) and read it. Every heading, entry, and bullet comes out whole and in reading order. Watch for "fi" and "fl" ligatures that come out blank or as odd symbols. In pdfLaTeX, `\input{glyphtounicode}` and `\pdfgentounicode=1` fix that. LuaLaTeX and XeLaTeX do not need them.
+- Extract the text (`pdftotext Alex-Doe-Resume.pdf -`) and read it. Every heading, entry, and bullet comes out whole and in reading order. Watch for "fi" and "fl" ligatures that come out blank or as odd symbols. In pdfLaTeX, `\input{glyphtounicode}` and `\pdfgentounicode=1` fix that. LuaLaTeX and XeLaTeX do not need them.
 - Open the PDF properties. The title reads "[Name] Resume" and the author is the user's name. A title left over from a template is a tell.
 - Name the file after the person, such as Alex-Doe-Resume.pdf.
 - One page.
