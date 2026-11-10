@@ -10,22 +10,4 @@
 		{ "pattern": "eeprep.com", "custom_domain": true },
 		{ "pattern": "www.eeprep.com", "custom_domain": true },
 	],
-	"env": {
-		// Dev site: same build, served on the account's workers.dev subdomain.
-		// worker/dev.mjs adds a noindex header to every response.
-		"dev": {
-			"name": "eeprep-dev",
-			"main": "./worker/dev.mjs",
-			"assets": {
-				"directory": "./dist",
-				"binding": "ASSETS",
-				"not_found_handling": "404-page",
-				"run_worker_first": true,
-			},
-			"workers_dev": true,
-			"preview_urls": false,
-			"routes": [],
-			"vars": { "SITE_ENV": "dev" },
-		},
-	},
 }
