@@ -1,0 +1,361 @@
+---
+import { loadCompanyList } from '../../lib/company-lists';
+import { externalLinks } from '../resume/caption';
+
+function escapeHtml(value: string): string {
+	return value
+		.replaceAll('&', '&amp;')
+		.replaceAll('<', '&lt;')
+		.replaceAll('>', '&gt;')
+		.replaceAll('"', '&quot;');
+}
+
+function extLink(href: string, text: string): string {
+	return externalLinks(`<a href="${escapeHtml(href)}">${escapeHtml(text)}</a>`);
+}
+
+const { rows, filters, coverage } = loadCompanyList();
+const total = rows.length;
+const countText = `${total} ${total === 1 ? 'company' : 'companies'}`;
+const caption = coverage
+	? `Companies from company-lists in ${coverage}.`
+	: 'Companies from company-lists.';
+
+const fieldIndustries = new Map<string, string[]>();
+for (const row of rows) {
+	if (!row.field) {
+		continue;
+	}
+	const list = fieldIndustries.get(row.field) ?? [];
+	if (!list.includes(row.industry)) {
+		list.push(row.industry);
+	}
+	fieldIndustries.set(row.field, list);
+}
+
+const sortOptions = [
+	{ value: 'name', label: 'Company' },
+	{ value: 'industry', label: 'Industry' },
+	{ value: 'field', label: 'Field' },
+	{ value: 'city', label: 'City' },
+	{ value: 'state', label: 'State' },
+	{ value: 'region', label: 'Region' },
+];
+
+const columns = [
+	{ key: 'name', label: 'Company' },
+	{ key: 'industry', label: 'Industry' },
+	{ key: 'field', label: 'Field' },
+	{ key: 'city', label: 'City' },
+	{ key: 'state', label: 'State' },
+	{ key: 'region', label: 'Region' },
+] as const;
+
+const repo = 'https://github.com/edwardasilva/company-lists';
+const note = externalLinks(
+	`Data from <a href="${repo}">company-lists</a>, credited to <a href="${repo}">company-lists contributors</a>. If a row is wrong or a company is missing, open an issue or a pull request in that repository.`,
+);
+
+function companyCell(row: (typeof rows)[number]): string {
+	const name = extLink(row.website, row.name);
+	if (!row.careersUrl) {
+		return name;
+	}
+	return `${name} ${extLink(row.careersUrl, 'Careers')}`;
+}
+---
+
+<div class="eep-companies not-content" data-company-list>
+	<form class="eep-companies-form" aria-label="Filter the company list">
+		<div class="eep-companies-search">
+			<label for="eep-companies-q">Search</label>
+			<input
+				id="eep-companies-q"
+				type="search"
+				name="q"
+				autocomplete="off"
+				spellcheck="false"
+			/>
+		</div>
+		<div class="eep-companies-filters">
+			{filters.map((filter) => (
+				<div class="eep-companies-field">
+					<label for={`eep-companies-${filter.name}`}>{filter.label}</label>
+					<select id={`eep-companies-${filter.name}`} name={filter.name}>
+						<option value="">All</option>
+						{filter.options.map((option) => (
+							<option
+								value={option.value}
+								data-industries={
+									filter.name === 'field'
+										? fieldIndustries.get(option.value)?.join(' ')
+										: undefined
+								}
+							>
+								{option.label}
+							</option>
+						))}
+					</select>
+				</div>
+			))}
+			<div class="eep-companies-field">
+				<label for="eep-companies-sort">Sort by</label>
+				<select id="eep-companies-sort" name="sort">
+					{sortOptions.map((option) => (
+						<option value={option.value} selected={option.value === 'name'}>
+							{option.label}
+						</option>
+					))}
+				</select>
+			</div>
+			<div class="eep-companies-field">
+				<label for="eep-companies-dir">Order</label>
+				<select id="eep-companies-dir" name="dir">
+					<option value="asc" selected>
+						A to Z
+					</option>
+					<option value="desc">Z to A</option>
+				</select>
+			</div>
+		</div>
+		<div class="eep-companies-tools">
+			<p class="eep-companies-count" data-result-count aria-live="polite">
+				{countText}
+			</p>
+			<button type="reset">Clear filters</button>
+		</div>
+		<noscript>
+			<p>
+				Search, filters, and sorting need JavaScript. The full list is below.
+			</p>
+		</noscript>
+	</form>
+
+	<div
+		class="eep-company-scroll"
+		role="region"
+		aria-label="Company list table"
+		tabindex="0"
+	>
+		<table class="eep-company-list" id="eep-company-list">
+			<caption>{caption}</caption>
+			<thead>
+				<tr>
+					{columns.map((column, index) => (
+						<th
+							scope="col"
+							data-sort={column.key}
+							aria-sort={index === 0 ? 'ascending' : 'none'}
+						>
+							<button type="button">{column.label}</button>
+						</th>
+					))}
+				</tr>
+			</thead>
+			<tbody>
+				{rows.map((row) => (
+					<tr
+						data-name={row.name}
+						data-industry={row.industry}
+						data-industry-label={row.industryLabel}
+						data-field={row.field}
+						data-field-label={row.fieldLabel}
+						data-city={row.city}
+						data-state={row.state}
+						data-region={row.region}
+						data-search={row.search}
+					>
+						<td data-label="Company" set:html={companyCell(row)} />
+						<td data-label="Industry">{row.industryLabel}</td>
+						<td data-label="Field">{row.fieldLabel || '–'}</td>
+						<td data-label="City">{row.city}</td>
+						<td data-label="State">{row.state}</td>
+						<td data-label="Region">{row.region}</td>
+					</tr>
+				))}
+			</tbody>
+		</table>
+	</div>
+
+	<p class="eep-companies-note" set:html={note} />
+</div>
+
+<script>
+	const root = document.querySelector('[data-company-list]');
+
+	if (root instanceof HTMLElement) {
+		const form = root.querySelector('form');
+		const sortSelect = root.querySelector('#eep-companies-sort');
+		const dirSelect = root.querySelector('#eep-companies-dir');
+		const industrySelect = root.querySelector('#eep-companies-industry');
+		const fieldSelect = root.querySelector('#eep-companies-field');
+		const count = root.querySelector('[data-result-count]');
+		const table = root.querySelector('#eep-company-list');
+		const tbody = table instanceof HTMLTableElement ? table.tBodies[0] : null;
+		const headers = table
+			? [...table.querySelectorAll('thead th[data-sort]')]
+			: [];
+		const rows = tbody ? [...tbody.rows] : [];
+		const total = rows.length;
+
+		const inputValue = (name: string) => {
+			const field = form?.elements.namedItem(name);
+			if (
+				field instanceof HTMLInputElement ||
+				field instanceof HTMLSelectElement
+			) {
+				return field.value;
+			}
+			return '';
+		};
+
+		const compare = (a: string, b: string) =>
+			a.localeCompare(b, 'en', { sensitivity: 'base', numeric: true });
+
+		const sortKey = (row: HTMLTableRowElement, key: string) => {
+			if (key === 'industry') {
+				return row.dataset.industryLabel ?? '';
+			}
+			if (key === 'field') {
+				return row.dataset.fieldLabel ?? '';
+			}
+			return row.dataset[key] ?? '';
+		};
+
+		const updateCount = (shown: number) => {
+			if (!(count instanceof HTMLElement)) {
+				return;
+			}
+			const noun = shown === 1 ? 'company' : 'companies';
+			count.textContent =
+				shown === total ? `${shown} ${noun}` : `${shown} of ${total} companies`;
+		};
+
+		const updateFieldOptions = () => {
+			if (!(fieldSelect instanceof HTMLSelectElement)) {
+				return;
+			}
+			const industry =
+				industrySelect instanceof HTMLSelectElement ? industrySelect.value : '';
+			let stillValid = true;
+			for (const option of fieldSelect.options) {
+				if (!option.value) {
+					option.hidden = false;
+					continue;
+				}
+				const industries =
+					option.dataset.industries?.split(' ').filter(Boolean) ?? [];
+				const visible = !industry || industries.includes(industry);
+				option.hidden = !visible;
+				if (option.selected && !visible) {
+					stillValid = false;
+				}
+			}
+			if (!stillValid) {
+				fieldSelect.value = '';
+			}
+		};
+
+		const applyFilters = () => {
+			const query = inputValue('q')
+				.trim()
+				.toLowerCase()
+				.split(/\s+/)
+				.filter(Boolean);
+			const state = inputValue('state');
+			const region = inputValue('region');
+			const industry = inputValue('industry');
+			const field = inputValue('field');
+			const city = inputValue('city');
+			let shown = 0;
+			for (const row of rows) {
+				const hay = row.dataset.search ?? '';
+				const match =
+					query.every((word) => hay.includes(word)) &&
+					(!state || row.dataset.state === state) &&
+					(!region || row.dataset.region === region) &&
+					(!industry || row.dataset.industry === industry) &&
+					(!field || row.dataset.field === field) &&
+					(!city || row.dataset.city === city);
+				row.hidden = !match;
+				if (match) {
+					shown += 1;
+				}
+			}
+			updateCount(shown);
+		};
+
+		const applySort = () => {
+			const key =
+				sortSelect instanceof HTMLSelectElement ? sortSelect.value : 'name';
+			const dir =
+				dirSelect instanceof HTMLSelectElement ? dirSelect.value : 'asc';
+			const factor = dir === 'desc' ? -1 : 1;
+			rows.sort((a, b) => {
+				const primary = compare(sortKey(a, key), sortKey(b, key));
+				if (primary !== 0) {
+					return factor * primary;
+				}
+				const byName = compare(sortKey(a, 'name'), sortKey(b, 'name'));
+				if (byName !== 0) {
+					return byName;
+				}
+				return compare(sortKey(a, 'city'), sortKey(b, 'city'));
+			});
+			if (tbody) {
+				for (const row of rows) {
+					tbody.append(row);
+				}
+			}
+			for (const header of headers) {
+				const headerKey = header.getAttribute('data-sort');
+				if (headerKey === key) {
+					header.setAttribute(
+						'aria-sort',
+						dir === 'desc' ? 'descending' : 'ascending',
+					);
+				} else {
+					header.setAttribute('aria-sort', 'none');
+				}
+			}
+		};
+
+		const refresh = () => {
+			updateFieldOptions();
+			applyFilters();
+			applySort();
+		};
+
+		form?.addEventListener('input', refresh);
+		form?.addEventListener('change', refresh);
+		form?.addEventListener('submit', (event) => {
+			event.preventDefault();
+			refresh();
+		});
+		form?.addEventListener('reset', () => {
+			queueMicrotask(refresh);
+		});
+
+		for (const header of headers) {
+			const button = header.querySelector('button');
+			button?.addEventListener('click', () => {
+				const key = header.getAttribute('data-sort') ?? 'name';
+				if (
+					!(sortSelect instanceof HTMLSelectElement) ||
+					!(dirSelect instanceof HTMLSelectElement)
+				) {
+					return;
+				}
+				if (sortSelect.value === key) {
+					dirSelect.value = dirSelect.value === 'asc' ? 'desc' : 'asc';
+				} else {
+					sortSelect.value = key;
+					dirSelect.value = 'asc';
+				}
+				refresh();
+			});
+		}
+
+		refresh();
+	}
+</script>
