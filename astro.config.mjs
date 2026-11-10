@@ -109,28 +109,6 @@ export default defineConfig({
 	site: 'https://eeprep.com',
 	redirects,
 	trailingSlash: 'always',
-	vite: {
-		plugins: [
-			{
-				// The site graph's client script imports micromatch 4, whose picomatch 2 reads
-				// process.platform and process.version, and those throw in the browser.
-				// picomatch 4's posix build has the same isMatch and no Node globals.
-				// Swap it only for the browser build. On the server, picomatch/posix is
-				// CommonJS and Vite's SSR runner can't evaluate it inline.
-				name: 'eeprep:micromatch-browser',
-				enforce: 'pre',
-				applyToEnvironment: (env) => env.config.consumer === 'client',
-				resolveId(id, importer, options) {
-					if (id !== 'micromatch') return null;
-					return this.resolve('picomatch/posix', importer, {
-						...options,
-						skipSelf: true,
-					});
-				},
-			},
-		],
-		optimizeDeps: { include: ['picomatch/posix'] },
-	},
 	markdown: {
 		processor: unified({
 			gfm: true,
