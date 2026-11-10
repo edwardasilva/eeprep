@@ -5,7 +5,7 @@ body:
     id: where
     attributes:
       label: Page URL or file
-      description: For example, https://eeprep.com/advice/resume/ or src/content/docs/advice/resume/index.mdx.
+      description: For example, https://eeprep.com/advice/resume/ or src/content/docs/advice/resume.mdx.
     validations:
       required: true
   - type: textarea
