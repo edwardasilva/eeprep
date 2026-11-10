@@ -104,7 +104,6 @@
       "advice/resume/cleanup",
       "advice/resume/walkthrough",
       "advice/resume/workshop",
-      "help",
       "help/resources"
     ]
   },
@@ -777,14 +776,14 @@
     "title": "Handshake",
     "category": "Job search and referrals",
     "summary": "Job and internship platform that many universities use for student recruiting.",
-    "pages": ["advice/getting-hired", "help", "help/job-boards"]
+    "pages": ["advice/getting-hired", "help/job-boards"]
   },
   {
     "url": "https://jobs.ieee.org/",
     "title": "IEEE Job Site",
     "category": "Job search and referrals",
     "summary": "IEEE's job board for electrical, electronics and computer engineering roles.",
-    "pages": ["help", "help/job-boards"]
+    "pages": ["help/job-boards"]
   },
   {
     "url": "https://ecs.grainger.illinois.edu/student-resources/network-fairs/career-fairs",
@@ -812,7 +811,7 @@
     "title": "LinkedIn Jobs",
     "category": "Job search and referrals",
     "summary": "LinkedIn's job search, with filters for internships and entry-level roles.",
-    "pages": ["help", "help/job-boards"]
+    "pages": ["help/job-boards"]
   },
   {
     "url": "https://career.engin.umich.edu/students/job-search-policies/",
@@ -864,7 +863,7 @@
     "title": "OPM: Students and recent graduates",
     "category": "Job search and referrals",
     "summary": "OPM policy page with the rules behind the federal Pathways programs.",
-    "pages": ["help", "help/job-boards"]
+    "pages": ["help/job-boards"]
   },
   {
     "url": "https://careerdevelopment.princeton.edu/internships-jobs/recruiting-timelines",
@@ -886,6 +885,13 @@
       "help/job-boards",
       "help/resources"
     ]
+  },
+  {
+    "url": "https://github.com/edwardasilva/company-lists",
+    "title": "company-lists on GitHub",
+    "category": "Job search and referrals",
+    "summary": "Open list of companies by region, starting with the Denver metro, with a public source for every row.",
+    "pages": ["help/job-boards", "help/resources", "roadmap"]
   },
   {
     "url": "https://github.com/SimplifyJobs/Summer2027-Internships",
@@ -937,7 +943,7 @@
     "title": "USAJOBS",
     "category": "Job search and referrals",
     "summary": "The US federal government's official job listings site.",
-    "pages": ["help", "help/job-boards"]
+    "pages": ["help/job-boards"]
   },
   {
     "url": "https://www.nasa.gov/learning-resources/internship-programs/",
@@ -951,32 +957,21 @@
     "title": "USAJOBS Help: What are hiring paths?",
     "category": "Job search and referrals",
     "summary": "Explains the federal hiring paths that limit who can apply.",
-    "pages": ["help"]
+    "pages": ["help/job-boards"]
   },
   {
     "url": "https://opm.usajobs.gov/hiringpath/recentgraduates/",
     "title": "USAJOBS: Pathways for recent graduates",
     "category": "Job search and referrals",
     "summary": "Federal Pathways program for people who recently finished a degree.",
-    "pages": [
-      "advice/getting-hired/first-full-time-role",
-      "help",
-      "help/job-boards"
-    ]
+    "pages": ["advice/getting-hired/first-full-time-role", "help/job-boards"]
   },
   {
     "url": "https://opm.usajobs.gov/hiringpath/students/",
     "title": "USAJOBS: Pathways internships for students",
     "category": "Job search and referrals",
     "summary": "The federal Pathways internship program for students currently enrolled in school.",
-    "pages": ["help"]
-  },
-  {
-    "url": "https://www.uscis.gov/",
-    "title": "USCIS",
-    "category": "Job search and referrals",
-    "summary": "US Citizenship and Immigration Services, the agency for immigration and work authorization.",
-    "pages": ["advice"]
+    "pages": ["help/job-boards"]
   },
   {
     "url": "https://ocs.yale.edu/industry-hiring-timelines/",
@@ -1921,7 +1916,6 @@
       "advice/getting-hired/job-market",
       "advice/projects",
       "advice/projects/career-paths",
-      "help",
       "help/resources"
     ]
   },
@@ -1940,22 +1934,14 @@
     "title": "Levels.fyi",
     "category": "Pay and career data",
     "summary": "Self-reported salary and total compensation data by company and level.",
-    "pages": [
-      "advice/getting-hired/first-full-time-role",
-      "help",
-      "help/resources"
-    ]
+    "pages": ["advice/getting-hired/first-full-time-role", "help/resources"]
   },
   {
     "url": "https://www.naceweb.org/job-market/compensation/",
     "title": "NACE: Compensation",
     "category": "Pay and career data",
     "summary": "NACE data and reports on starting salaries for new college graduates.",
-    "pages": [
-      "advice/getting-hired/first-full-time-role",
-      "help",
-      "help/resources"
-    ]
+    "pages": ["advice/getting-hired/first-full-time-role", "help/resources"]
   },
   {
     "url": "https://www.naceweb.org/talent-acquisition/internships/intern-conversion-rate-hits-highest-mark-in-five-years",
@@ -2001,7 +1987,11 @@
     "title": "O*NET: Electrical engineers",
     "category": "Pay and career data",
     "summary": "Occupation profile listing tasks, skills, tools and pay for electrical engineers.",
-    "pages": ["advice/projects/career-paths", "help", "help/resources"]
+    "pages": [
+      "advice/projects/career-paths",
+      "help/job-boards",
+      "help/resources"
+    ]
   },
   {
     "url": "https://www.onetonline.org/link/summary/17-2072.00",
