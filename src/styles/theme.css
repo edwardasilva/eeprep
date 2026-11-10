@@ -324,8 +324,9 @@ figure.eep-fig figcaption {
 	line-height: 1.55;
 	color: var(--eep-ink-2);
 }
-/* Figures are numbered by position on the page: 1, 2, 3 in page order. Each
-   page restarts at 1, so adding or moving a figure never needs a manual fix. */
+/* Figures are numbered through the whole site in sidebar order. Each page sets
+   its starting count in route-data.ts, so adding or moving a figure never needs
+   a manual fix. */
 .sl-markdown-content {
 	counter-reset: eep-fig;
 }
