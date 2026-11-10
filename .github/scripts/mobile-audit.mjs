@@ -359,6 +359,9 @@ function listPages(dir, prefix = '/') {
 			if (!/http-equiv="refresh"/i.test(html)) routes.push(prefix);
 		}
 	}
+	// The 404 page is dist/404.html, not a folder with an index.html.
+	if (prefix === '/' && fs.existsSync(path.join(dir, '404.html')))
+		routes.push('/404.html');
 	return routes.sort();
 }
 
