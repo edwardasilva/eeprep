@@ -1,4 +1,10 @@
-import { existsSync, readFileSync, renameSync, rmdirSync } from 'node:fs';
+import {
+	existsSync,
+	readFileSync,
+	renameSync,
+	rmdirSync,
+	writeFileSync,
+} from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
@@ -65,6 +71,26 @@ const redirects = {
 	'/reference/': '/help/',
 	'/reference/job-links/': '/help/',
 	'/reference/signals-and-dsp/': '/help/',
+};
+
+// Astro builds each redirect as a 200 page with a meta refresh. Cloudflare
+// reads dist/_redirects and answers with a real 301 before it serves that page.
+// Both slash forms get a rule, because a rule matches the literal path.
+// Write the file from the list above so the two cannot drift apart.
+const permanentRedirects = {
+	name: 'permanent-redirects',
+	hooks: {
+		'astro:build:done': ({ dir }) => {
+			const lines = Object.entries(redirects).flatMap(([from, to]) => [
+				`${from} ${to} 301`,
+				`${from.replace(/\/$/, '')} ${to} 301`,
+			]);
+			writeFileSync(
+				fileURLToPath(new URL('_redirects', dir)),
+				`${lines.join('\n')}\n`,
+			);
+		},
+	},
 };
 const lightCodeTheme = JSON.parse(
 	readFileSync(
@@ -395,5 +421,6 @@ export default defineConfig({
 			],
 		}),
 		flatNotFoundPage,
+		permanentRedirects,
 	],
 });

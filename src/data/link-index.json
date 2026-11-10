@@ -259,29 +259,29 @@
     "pages": ["advice/resume/walkthrough"]
   },
   {
-    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Jordan-Doe-Resume.pdf",
-    "title": "resume-generator: Jordan-Doe-Resume.pdf",
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Alex-Doe-Resume-first-year.pdf",
+    "title": "resume-generator: Alex-Doe-Resume-first-year.pdf",
     "category": "Sample resumes and templates",
     "summary": "A first-year student's page: one class project, a one-line job, and a few skills.",
     "pages": ["advice/resume/walkthrough"]
   },
   {
-    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Sam-Doe-Resume.pdf",
-    "title": "resume-generator: Sam-Doe-Resume.pdf",
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Alex-Doe-Resume-sophomore.pdf",
+    "title": "resume-generator: Alex-Doe-Resume-sophomore.pdf",
     "category": "Sample resumes and templates",
     "summary": "A second-year student's page: two projects, a club lead role, and a one-line job.",
     "pages": ["advice/resume/walkthrough"]
   },
   {
-    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Taylor-Doe-Resume.pdf",
-    "title": "resume-generator: Taylor-Doe-Resume.pdf",
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Alex-Doe-Resume-new-grad.pdf",
+    "title": "resume-generator: Alex-Doe-Resume-new-grad.pdf",
     "category": "Sample resumes and templates",
     "summary": "A new graduate's page with two internships, experience first.",
     "pages": ["advice/resume/walkthrough"]
   },
   {
-    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Casey-Doe-Resume.pdf",
-    "title": "resume-generator: Casey-Doe-Resume.pdf",
+    "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Alex-Doe-Resume-packed.pdf",
+    "title": "resume-generator: Alex-Doe-Resume-packed.pdf",
     "category": "Sample resumes and templates",
     "summary": "A full page with three engineering roles and three projects, tightened to fit.",
     "pages": ["advice/resume/walkthrough"]
@@ -1561,13 +1561,6 @@
     "pages": ["advice/projects/hardware"]
   },
   {
-    "url": "https://x.com/Faceofboe5/status/2050228727410311464",
-    "title": "X: @Faceofboe5 on 10-year entry-level ads",
-    "category": "Job search stories from students",
-    "summary": "A post on entry-level EE ads asking for 10-plus years.",
-    "pages": ["advice/projects/hardware"]
-  },
-  {
     "url": "https://x.com/gm16108/status/1989798011690783186",
     "title": "X: @gm16108 on entry-level jobs",
     "category": "Job search stories from students",
@@ -2410,7 +2403,14 @@
     "title": "IEEE: Student membership",
     "category": "Communities",
     "summary": "IEEE's student membership page.",
-    "pages": ["advice/forever-learning", "advice/forever-learning/societies"]
+    "pages": ["advice/forever-learning"]
+  },
+  {
+    "url": "https://www.ieee.org/membership/qualifications",
+    "title": "IEEE: Membership qualifications",
+    "category": "Communities",
+    "summary": "IEEE's rules for who qualifies as a student member.",
+    "pages": ["advice/forever-learning/societies"]
   },
   {
     "url": "https://www.reddit.com/r/ECE/",
