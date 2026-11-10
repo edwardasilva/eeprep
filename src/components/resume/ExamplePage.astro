@@ -42,10 +42,10 @@ const caption = externalLinks(
 				<span class="eep-num eep-pin" data-pin="1"></span>
 				<p class="eep-example-name">Alex Doe</p>
 				<p class="eep-example-contact">
-					[phone] | alex@[school].edu | linkedin.com/in/alex-doe-example |
+					alex@[school].edu | linkedin.com/in/alex-doe-example |
 					github.com/alex-doe-example
 				</p>
-				<p>City, ST | Willing to relocate</p>
+				<p>[phone] | City, ST | Willing to relocate</p>
 			</header>
 			<p class="eep-example-sec">Education</p>
 			<p>
@@ -187,7 +187,7 @@ const caption = externalLinks(
 	}
 	/* The contact line stays on one line whenever the sheet is wide enough
 	   for it. On phones the sheet is narrower, so it may wrap. */
-	@container (min-width: 40rem) {
+	@container (min-width: 36rem) {
 		.eep-example-contact {
 			white-space: nowrap;
 		}
