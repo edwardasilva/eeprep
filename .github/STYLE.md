@@ -56,7 +56,7 @@ The goal is good writing, not beating a detector. Detectors are unreliable and f
 
 11. Write a year range with an en dash: 2024–25, not 2024-25. Vale rule Eeprep.YearRange checks it. Dates inside URLs are not linted.
 
-12. Do not use he, she, his, her, hers, or him for an unnamed person. Use "they" or name the role. For a quote, wrap it in Vale off and on comments. Vale rule Eeprep.Pronouns checks it.
+12. Do not use he, she, his, her, hers, or him for an unnamed person. Use "they" or name the role. For a quote in an MDX file, wrap it in the comments `{/* vale Eeprep.Pronouns = NO */}` and `{/* vale Eeprep.Pronouns = YES */}`. Vale rule Eeprep.Pronouns checks it.
 
 13. The example person is Alex Doe, with they and them. Do not give another first name to Doe. Vale rule Eeprep.ExampleName checks it.
 
