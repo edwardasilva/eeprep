@@ -2,7 +2,7 @@
 
 ## Reporting a vulnerability
 
-Report a vulnerability in private to the repository owner, [@edwardasilva](https://github.com/edwardasilva).
+Use GitHub private vulnerability reporting on this repository: [report a vulnerability](https://github.com/edwardasilva/eeprep/security/advisories/new).
 
 Do not open a public issue. A public issue shows the problem to every reader.
 

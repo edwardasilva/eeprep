@@ -16,6 +16,3 @@ package-lock.json
 
 # Submodule with its own formatting rules
 resume-generator
-
-# Vendored agent skills keep their upstream formatting
-.claude/skills

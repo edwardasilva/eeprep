@@ -28,6 +28,10 @@ Be kind and assume good intent. To report a problem with someone's behavior, use
 
 For a security problem, follow the [security policy](SECURITY.md). Do not open a public issue.
 
+## Releases
+
+Only the repository owner cuts releases. Before a release, run the release-cut workflow and land or close every `release-sweep` issue.
+
 ## License
 
 By contributing, you agree that content is licensed under [CC BY 4.0](../LICENSE-CONTENT) and code under the [MIT License](../LICENSE).
