@@ -76,7 +76,9 @@ Also cut "not just X, but Y", "not X, but Y", "Y rather than X" used for drama, 
 
 5. Use no emoji, and straight quotes ' " rather than curly ones.
 
-6. Put the warning before the risk: "Do not run this against production. The command deletes rows."
+6. Spell out "percent" in running prose and in alt text: "40 percent of referred candidates". Use "%" only inside figures, tables, and resume bullets that use [X]%. Write a negative value with a real minus sign (−15%), not a hyphen.
+
+7. Put the warning before the risk: "Do not run this against production. The command deletes rows."
 
 ## 5. Voice and register
 
