@@ -158,7 +158,8 @@ export default defineConfig({
 		starlight({
 			disable404Route: true,
 			title: 'eeprep',
-			description: 'A guide to job searching for electrical engineers & computer scientists.',
+			description:
+				'A guide to job searching for electrical engineers & computer scientists.',
 			credits: false,
 			routeMiddleware: './src/route-data.ts',
 			favicon: '/favicon.svg',
