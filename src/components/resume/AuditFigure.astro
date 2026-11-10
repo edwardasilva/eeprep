@@ -47,7 +47,7 @@ const caption = externalLinks(
 		<div class="eep-audit-sheet">
 			{zones.slice(1).map((zone, i) => (
 				<div class:list={['eep-audit-zone', { 'eep-audit-header': i === 0 }]}>
-					<span class="eep-audit-num">{i + 2}</span>
+					<span class="eep-audit-num eep-num">{i + 2}</span>
 					<span class="eep-audit-zone-label">{zone.label}</span>
 					<span class="eep-audit-lines">
 						<span />
@@ -57,10 +57,10 @@ const caption = externalLinks(
 				</div>
 			))}
 			<span class="eep-audit-file">
-				<span class="eep-audit-num">1</span>
+				<span class="eep-audit-num eep-num">1</span>
 			</span>
 		</div>
-		<ol class="eep-audit-checks">
+		<ol class="eep-audit-checks eep-num-list">
 			{zones.map((zone) => (
 				<li>
 					<span>
@@ -121,17 +121,9 @@ const caption = externalLinks(
 		position: absolute;
 		top: 0.4rem;
 		left: 0.45rem;
-		width: 1.25rem;
-		height: 1.25rem;
-		border-radius: 50%;
-		background: var(--eep-ink);
-		color: var(--eep-dg-fill);
-		font: 700 0.75rem/1.25rem var(--eep-font-sans);
-		text-align: center;
 	}
 	.eep-audit-file .eep-audit-num {
 		position: static;
-		display: block;
 	}
 	.eep-audit-zone-label {
 		display: block;
@@ -176,14 +168,6 @@ const caption = externalLinks(
 	.eep-audit-checks li::before {
 		counter-increment: audit;
 		content: counter(audit);
-		flex: none;
-		width: 1.35rem;
-		height: 1.35rem;
-		border-radius: 50%;
-		background: var(--eep-ink);
-		color: var(--eep-dg-fill);
-		font: 700 0.75rem/1.35rem var(--eep-font-sans);
-		text-align: center;
 	}
 	@container (max-width: 34rem) {
 		.eep-audit {

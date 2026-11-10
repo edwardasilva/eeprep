@@ -124,6 +124,22 @@
 	--eep-dg-grid: #1c2537;
 }
 
+/* One numbered marker for every figure: a step, region or pin number in an outlined circle. Put .eep-num on a span, or .eep-num-list on an ol so its counter marker draws the circle. Position and spacing stay with the figure. */
+.eep-num,
+.eep-num-list > li::before {
+	display: grid;
+	flex: none;
+	place-items: center;
+	box-sizing: border-box;
+	width: 1.5rem;
+	height: 1.5rem;
+	border: var(--eep-dg-line) solid var(--eep-dg-ink);
+	border-radius: 50%;
+	background: var(--eep-dg-fill);
+	color: var(--eep-dg-ink);
+	font: 600 0.8125rem/1 var(--eep-font-sans);
+}
+
 /* ---------- 5. Map onto Starlight --sl-* (both modes; values resolve per mode) ---------- */
 :root,
 :root[data-theme='light'] {
