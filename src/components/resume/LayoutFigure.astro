@@ -297,7 +297,7 @@ const caption = externalLinks('Wireframes are schematic.');
 	/* Wireframe strokes. */
 	.eep-layout-frame :global(svg *) {
 		fill: none;
-		stroke-width: 1.3;
+		stroke-width: var(--eep-dg-line);
 		stroke-linecap: round;
 	}
 	.eep-layout-frame :global(.wf-frame) {
@@ -317,16 +317,16 @@ const caption = externalLinks('Wireframes are schematic.');
 	}
 	.eep-layout-frame :global(.wf-accent) {
 		stroke: var(--eep-dg-ink);
-		stroke-width: 1.6;
+		stroke-width: var(--eep-dg-line);
 	}
 	.eep-layout-frame :global(.wf-guide) {
 		stroke: var(--eep-dg-ink);
-		stroke-dasharray: 2 3;
+		stroke-dasharray: var(--eep-dg-dasharray);
 		stroke-linecap: butt;
 	}
 	.eep-layout-frame :global(.wf-mute) {
 		stroke: var(--eep-mute);
-		stroke-width: 1.6;
+		stroke-width: var(--eep-dg-line);
 	}
 
 	/* Narrow: a little more room for the labels under each wireframe. */

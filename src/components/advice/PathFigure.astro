@@ -151,7 +151,6 @@ const caption = externalLinks(
 	}
 	.eep-paths {
 		margin-top: 1rem;
-		--line: 1.5px;
 		--node: 0.8rem;
 		container-type: inline-size;
 		position: relative;
@@ -207,7 +206,7 @@ const caption = externalLinks(
 		box-sizing: border-box;
 		width: var(--node);
 		height: var(--node);
-		border: var(--line) solid var(--eep-dg-ink);
+		border: var(--eep-dg-line) solid var(--eep-dg-ink);
 		border-radius: 50%;
 		background: var(--eep-dg-fill);
 	}
@@ -223,7 +222,7 @@ const caption = externalLinks(
 		align-items: flex-start;
 		box-sizing: border-box;
 		padding: 0.6rem 0.75rem 0.7rem;
-		border: var(--line) dashed var(--eep-dg-ink);
+		border: var(--eep-dg-dash);
 		border-radius: var(--eep-radius);
 	}
 	.eep-paths-loop > svg {
@@ -233,7 +232,7 @@ const caption = externalLinks(
 		margin-top: 0.1rem;
 		fill: none;
 		stroke: var(--eep-dg-ink);
-		stroke-width: 1.4;
+		stroke-width: var(--eep-dg-line);
 		stroke-linecap: round;
 		stroke-linejoin: round;
 	}
@@ -254,8 +253,8 @@ const caption = externalLinks(
 		position: absolute;
 		top: 0.5rem;
 		bottom: 2rem;
-		left: calc(var(--node) / 2 - var(--line) / 2);
-		border-left: var(--line) solid var(--eep-dg-ink);
+		left: calc(var(--node) / 2 - var(--eep-dg-line) / 2);
+		border-left: var(--eep-dg-line) solid var(--eep-dg-ink);
 	}
 	.eep-paths-start,
 	.eep-paths-pick,
@@ -323,13 +322,13 @@ const caption = externalLinks(
 		left: 0;
 	}
 	.eep-paths-fall::before {
-		top: calc(-1 * var(--line));
+		top: calc(-1 * var(--eep-dg-line));
 		bottom: 0;
-		left: calc(-1.6rem - var(--line));
+		left: calc(-1.6rem - var(--eep-dg-line));
 	}
 	@media (max-width: 19.75rem) {
 		.eep-paths-fall::before {
-			left: calc(-1.15rem - var(--line));
+			left: calc(-1.15rem - var(--eep-dg-line));
 		}
 	}
 
@@ -355,7 +354,7 @@ const caption = externalLinks(
 		}
 		.eep-paths-routes .eep-paths-item::before {
 			top: auto;
-			bottom: calc(var(--node) / -2 - var(--line) / 2);
+			bottom: calc(var(--node) / -2 - var(--eep-dg-line) / 2);
 			left: calc(50% - var(--node) / 2);
 		}
 		.eep-paths-merge {
@@ -366,7 +365,7 @@ const caption = externalLinks(
 			overflow: visible;
 			fill: none;
 			stroke: var(--eep-dg-ink);
-			stroke-width: var(--line);
+			stroke-width: var(--eep-dg-line);
 		}
 		.eep-paths-merge path {
 			vector-effect: non-scaling-stroke;
@@ -390,10 +389,10 @@ const caption = externalLinks(
 		.eep-paths-step:not(.eep-paths-offer)::after {
 			content: '';
 			position: absolute;
-			top: calc(var(--node) / 2 - var(--line) / 2);
+			top: calc(var(--node) / 2 - var(--eep-dg-line) / 2);
 			left: var(--node);
 			right: -0.4rem;
-			height: var(--line);
+			height: var(--eep-dg-line);
 			background: var(--eep-dg-ink);
 		}
 		.eep-paths-arrow {

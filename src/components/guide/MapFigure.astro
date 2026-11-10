@@ -1,12 +1,8 @@
 ---
 // Figure 24.1 as HTML and CSS. The reading order of the Advice section as
-// one row of five stops, each with the question it answers. Every stop gets
+// one row of four stops, each with the question it answers. Every stop gets
 // the same box, and the page text says which one to open first.
 const stops = [
-	{
-		title: "Author's story",
-		body: 'Where the advice comes from: one path from a failed semester to an embedded job.',
-	},
 	{
 		title: 'Projects',
 		body: 'What to build so the resume has something to show, and how to present it.',
@@ -25,7 +21,7 @@ const stops = [
 	},
 ];
 const alt =
-	"Five stops in reading order. Author's story: where the advice comes from, one path from a failed semester to an embedded job. Projects: what to build so the resume has something to show, and how to present it. Resume: one page a screener reads in seconds, with a measured result in each bullet. Getting hired: the referral, the rule of 20, the fair, and the interview. Forever learning: datasheets, free courses, societies, the FE exam, and graduate study.";
+	'Four stops in reading order. Projects: what to build so the resume has something to show, and how to present it. Resume: one page a screener reads in seconds, with a measured result in each bullet. Getting hired: the referral, the rule of 20, the fair, and the interview. Forever learning: datasheets, free courses, societies, the FE exam, and graduate study.';
 const arrow = 'M1 1.5L9 5L1 8.5Z';
 ---
 
@@ -110,7 +106,7 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 	/* Wide: one row, arrows pointing right across the gap. */
 	@container (min-width: 44rem) {
 		.eep-map ol {
-			grid-template-columns: repeat(5, minmax(0, 1fr));
+			grid-template-columns: repeat(4, minmax(0, 1fr));
 			gap: 0 0.75rem;
 		}
 		.eep-map-arrow {

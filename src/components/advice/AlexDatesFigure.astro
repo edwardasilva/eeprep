@@ -58,7 +58,6 @@ const rows = [
 		gap: 0.5rem;
 		margin: 1rem 0 0;
 		padding: 0;
-		--line: 1.5px;
 		--node: 0.8rem;
 		--rail: 1.6rem;
 		list-style: none;
@@ -88,7 +87,7 @@ const rows = [
 		box-sizing: border-box;
 		width: var(--node);
 		height: var(--node);
-		border: var(--line) solid var(--eep-dg-ink);
+		border: var(--eep-dg-line) solid var(--eep-dg-ink);
 		border-radius: 50%;
 		background: var(--eep-dg-fill);
 	}
@@ -97,9 +96,11 @@ const rows = [
 		content: '';
 		position: absolute;
 		top: calc(0.65rem + var(--node) / 2);
-		left: calc(-1 * var(--rail) - 1px + var(--node) / 2 - var(--line) / 2);
+		left: calc(
+			-1 * var(--rail) - 1px + var(--node) / 2 - var(--eep-dg-line) / 2
+		);
 		height: calc(100% + 2px + 0.5rem);
-		border-left: var(--line) solid var(--eep-dg-ink);
+		border-left: var(--eep-dg-line) solid var(--eep-dg-ink);
 	}
 	.eep-alex p {
 		margin: 0;
@@ -116,7 +117,7 @@ const rows = [
 		line-height: 1.3;
 	}
 	.eep-alex li.eep-alex-dashed {
-		border-style: dashed;
+		border: var(--eep-dg-dash);
 		background: none;
 	}
 	@container (max-width: 28rem) {
