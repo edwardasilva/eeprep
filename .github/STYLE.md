@@ -78,6 +78,10 @@ Also cut "not just X, but Y", "not X, but Y", "Y rather than X" used for drama, 
 
 6. Put the warning before the risk: "Do not run this against production. The command deletes rows."
 
+7. Write link text as if it were not a link. Capitalize it only at the start of a sentence, a list item, a table cell, or a heading, or when a word is a proper noun, an acronym, or a brand (IEEE, LinkedIn, Handshake, Alex Doe). Write "the resume page" and "the section on getting a referral first", not "the Resume page" or "the Get a referral first section". A colon does not start a sentence, so "Next: the resume page" stays lowercase. Headings, navigation, sidebar labels, card titles, and figure titles keep their own case.
+
+8. Give a wikilink an explicit alias when its label would be capitalized in the middle of a sentence, as in `[[Resume|resume]] page`. The link target stays as it is. `npm run check:link-case` reads the built pages after `npm run build` and fails on a capitalized link in running text. If the first word is a real proper noun, add it to the names list in `.github/scripts/check-link-case.mjs`.
+
 ## 5. Voice and register
 
 1. Write chat replies the way a knowledgeable friend talks. No openers like "Great question" or "Certainly". No closers like "I hope this helps", "Let me know if...", or "Feel free to...". No praise for the question.
