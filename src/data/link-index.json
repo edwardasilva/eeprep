@@ -2556,6 +2556,13 @@
     "pages": ["roadmap/contributing"]
   },
   {
+    "url": "https://github.com/edwardasilva/eeprep/releases",
+    "title": "eeprep release notes",
+    "category": "Site",
+    "summary": "What changed in each release, including corrections.",
+    "pages": ["roadmap/contributing"]
+  },
+  {
     "url": "https://github.com/edwardasilva/eeprep/blob/main/.github/SECURITY.md",
     "title": "eeprep security policy",
     "category": "Site",
