@@ -37,7 +37,7 @@ For a security problem, follow the [security policy](SECURITY.md). Do not open a
 
 ## Releases
 
-Only the repository owner cuts releases.
+Only the repository owner cuts releases. The resume skill version in `public/skills/eeprep-resume/SKILL.md` follows the version in `package.json`. Set both to the release version in the release commit.
 
 ## License
 
