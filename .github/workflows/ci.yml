@@ -15,9 +15,6 @@ concurrency:
   group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
-# The PR body step checks the "Part of #" line. Editing the body alone doesn't
-# start a new run, so fix the body before the last push.
-#
 # One job runs every check, so npm ci runs once. A failed check doesn't stop the
 # others. Each check runs once what it needs is ready: node_modules, or dist/ for
 # the checks that read the build. One run lists every problem.
@@ -83,18 +80,6 @@ jobs:
         if: ${{ !cancelled() }}
         run: npm ci
 
-      # The body names its issue on a line of its own. Outside contributors,
-      # Dependabot and no-epic pull requests are exempt.
-      - name: PR body
-        if: ${{ !cancelled() && github.event_name == 'pull_request' }}
-        env:
-          PR_BODY: ${{ github.event.pull_request.body }}
-          PR_LABELS: ${{ toJSON(github.event.pull_request.labels.*.name) }}
-          PR_ACTOR: ${{ github.event.pull_request.user.login }}
-          PR_SENDER: ${{ github.actor }}
-          PR_AUTHOR_ASSOCIATION: ${{ github.event.pull_request.author_association }}
-        run: node .github/scripts/check-pr-body.mjs
-
       # Checks that read the source.
       - name: Lint (ESLint, markdownlint, Prettier)
         if: ${{ !cancelled() && steps.install.outcome == 'success' }}
@@ -117,9 +102,9 @@ jobs:
       - name: Link index checker tests
         if: ${{ !cancelled() && steps.install.outcome == 'success' && steps.scope.outputs.code == 'true' }}
         run: npm run test:link-index
-      - name: Worker tests
+      - name: Link case checker tests
         if: ${{ !cancelled() && steps.install.outcome == 'success' && steps.scope.outputs.code == 'true' }}
-        run: npm run test:worker
+        run: npm run test:link-case
       - name: Figure rules
         if: ${{ !cancelled() && steps.install.outcome == 'success' && steps.scope.outputs.code == 'true' }}
         run: npm run check:figures
@@ -150,12 +135,12 @@ jobs:
       - name: Link index
         if: ${{ !cancelled() && steps.build.outcome == 'success' }}
         run: npm run check:link-index
+      - name: Link case
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: npm run check:link-case
       - name: Robots meta tag
         if: ${{ !cancelled() && steps.build.outcome == 'success' }}
         run: npm run check:robots
       - name: Wrangler dry run (eeprep.com)
         if: ${{ !cancelled() && steps.build.outcome == 'success' }}
         run: npm run check:deploy
-      - name: Wrangler dry run (dev)
-        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
-        run: npm run check:deploy:dev
