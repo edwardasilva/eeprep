@@ -2,6 +2,7 @@
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import { externalLinks } from '../components/resume/caption';
 import HomeCoverFigure from '../components/home/HomeCoverFigure.astro';
+import { homeDescription, homeTitle } from '../lib/home';
 
 // Like links in the guide text, the GitHub link opens in a new tab with the
 // external-link arrow.
@@ -13,13 +14,11 @@ const generatorLink = externalLinks(
 <StarlightPage
 	frontmatter={{
 		title: 'eeprep',
-		description:
-			'A guide to job searching for electrical engineers & computer scientists: a one-page resume, getting hired for an internship or a first full-time role, and help with the search.',
+		description: homeDescription,
 		head: [
 			{
 				tag: 'title',
-				content:
-					'A guide to job searching for electrical engineers & computer scientists | eeprep',
+				content: `${homeTitle} | eeprep`,
 			},
 		],
 		template: 'splash',
@@ -28,9 +27,7 @@ const generatorLink = externalLinks(
 	hasSidebar={false}
 >
 	<section class="eep-hero">
-		<h1>
-			A guide to job searching for electrical engineers & computer scientists
-		</h1>
+		<h1>{homeTitle}</h1>
 		<p>
 			For EECS students looking for a first job: a free guide written by a
 			working embedded engineer, with sources linked throughout.
