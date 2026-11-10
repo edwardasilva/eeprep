@@ -1,17 +1,17 @@
 name: Fix something
 description: Report a mistake, a broken link, or something that does not work.
 body:
-  - type: input
-    id: where
-    attributes:
-      label: Page URL or file
-      description: For example, https://eeprep.com/advice/resume/ or src/content/docs/advice/resume/index.mdx.
-    validations:
-      required: true
   - type: textarea
     id: what
     attributes:
-      label: What is wrong, and what should it say or do?
-      description: Link a public source if the fix changes a fact.
+      label: Description
+      description: What is wrong, and what should it say or do? A link to the page and a public source help, but are optional.
     validations:
-      required: true
+      required: false
+  - type: input
+    id: where
+    attributes:
+      label: Page URL or file (optional)
+      description: For example, https://eeprep.com/advice/resume/ or src/content/docs/advice/resume.mdx.
+    validations:
+      required: false
