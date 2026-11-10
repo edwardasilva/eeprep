@@ -240,6 +240,13 @@
     ]
   },
   {
+    "url": "https://github.com/edwardasilva/eeprep/blob/main/public/skills/eeprep-resume/README.md",
+    "title": "eeprep-resume skill on GitHub",
+    "category": "Sample resumes and templates",
+    "summary": "A skill that teaches a coding agent to write and review a resume to eeprep's rules.",
+    "pages": ["roadmap"]
+  },
+  {
     "url": "https://github.com/edwardasilva/resume-generator/releases/latest",
     "title": "resume-generator latest release",
     "category": "Sample resumes and templates",

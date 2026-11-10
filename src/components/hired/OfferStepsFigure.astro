@@ -43,7 +43,7 @@ const caption = externalLinks(
 		<ol>
 			{steps.map((s, i) => (
 				<li>
-					<span class="eep-steps-num">{i + 1}</span>
+					<span class="eep-steps-num eep-num">{i + 1}</span>
 					<p class="eep-steps-title">{s.title}</p>
 					<p class="eep-steps-body">{s.body}</p>
 				</li>
@@ -88,14 +88,7 @@ const caption = externalLinks(
 		background: var(--eep-dg-tint);
 	}
 	.eep-steps-num {
-		display: grid;
-		place-items: center;
-		width: 1.75rem;
-		height: 1.75rem;
 		margin-bottom: 0.45rem;
-		border: 1.5px solid var(--eep-dg-ink);
-		border-radius: 50%;
-		font: 600 0.8125rem/1 var(--eep-font-sans);
 	}
 	.eep-steps .eep-steps-title {
 		font-size: 0.9375rem;
