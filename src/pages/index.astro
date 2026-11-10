@@ -1,11 +1,7 @@
 ---
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import { externalLinks } from '../components/resume/caption';
-import coverFull from '../figures/home-cover/home-cover-full.svg?raw';
-import coverMobile from '../figures/home-cover/home-cover-mobile.svg?raw';
-
-const coverAlt =
-	'A datasheet front page for an imaginary part, EEP-101, a general-purpose intern. Its eight pins are labeled resume, first project, job market, ground, interviews, offer, help and supply. A table lists startup time 5 minutes with the one-page guide, supply 7 to 9 hours of sleep, inputs one resume and one hardware project, and output one internship.';
+import HomeCoverFigure from '../components/home/HomeCoverFigure.astro';
 
 // Like links in the guide text, the GitHub link opens in a new tab with the
 // external-link arrow.
@@ -60,28 +56,7 @@ const generatorLink = externalLinks(
 				</a>
 			</li>
 		</ul>
-		<figure class="eep-cover not-content" id="fig-home-cover">
-			<p class="sr-only">{coverAlt}</p>
-			<Fragment
-				set:html={coverFull.replace(
-					'class="eep-cover-svg"',
-					'class="eep-cover-svg eep-cover-full"',
-				)}
-			/>
-			<Fragment
-				set:html={coverMobile.replace(
-					'class="eep-cover-svg"',
-					'class="eep-cover-svg eep-cover-mobile"',
-				)}
-			/>
-			<figcaption>
-				<span class="eep-fignum"></span>
-				<span>
-					Datasheet for a first internship. The signal pins follow the guide, in
-					order.
-				</span>
-			</figcaption>
-		</figure>
+		<HomeCoverFigure />
 		<div class="eep-home-main">
 			<p>
 				New here?{' '}
