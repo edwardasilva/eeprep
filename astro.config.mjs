@@ -52,8 +52,9 @@ const redirects = {
 	'/advice/getting-hired/authors-story/': '/advice/authors-story/',
 	'/advice/about/': '/advice/authors-story/',
 	'/about/': '/advice/authors-story/',
-	'/advice/simple/': '/advice/resume/quick-setup/',
-	'/advice/resume/simple/': '/advice/resume/quick-setup/',
+	'/advice/simple/': '/advice/quick-setup/',
+	'/advice/resume/simple/': '/advice/quick-setup/',
+	'/advice/resume/quick-setup/': '/advice/quick-setup/',
 	'/advice/resume/portfolio/': '/advice/projects/portfolio/',
 	'/advice/ai-use/': '/help/ai-use/',
 	'/help-links/': '/help/',
@@ -306,7 +307,7 @@ export default defineConfig({
 					label: 'Advice',
 					items: [
 						{ label: 'Advice', slug: 'advice' },
-						{ label: "Author's story", slug: 'advice/authors-story' },
+						{ label: 'Quick setup', slug: 'advice/quick-setup' },
 						{
 							label: 'Projects',
 							items: [
@@ -321,7 +322,6 @@ export default defineConfig({
 							label: 'Resume',
 							items: [
 								{ label: 'Resume', slug: 'advice/resume' },
-								{ label: 'Quick setup', slug: 'advice/resume/quick-setup' },
 								{ label: 'Walkthrough', slug: 'advice/resume/walkthrough' },
 								{ label: 'Cleanup', slug: 'advice/resume/cleanup' },
 								{ label: 'Workshop', slug: 'advice/resume/workshop' },
@@ -367,6 +367,7 @@ export default defineConfig({
 								},
 							],
 						},
+						{ label: "Author's story", slug: 'advice/authors-story' },
 					],
 				},
 				{
