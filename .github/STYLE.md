@@ -78,6 +78,10 @@ Also cut "not just X, but Y", "not X, but Y", "Y rather than X" used for drama, 
 
 6. Put the warning before the risk: "Do not run this against production. The command deletes rows."
 
+7. Write link text as if it were not a link. Capitalize it only at the start of a sentence, a list item, a table cell, or a heading. Also capitalize a proper noun, an acronym, or a brand (IEEE, LinkedIn, Handshake, Alex Doe). Write "the resume page" and "the section on getting a referral first", not "the Resume page" or "the Get a referral first section". A colon does not start a sentence, so "Next: the resume page" stays lowercase. Headings, navigation, sidebar labels, card titles, and figure titles keep their own case.
+
+8. Give a wikilink an explicit alias when its label would be capitalized in the middle of a sentence, as in `[[Resume|resume]] page`. The link target stays as it is. `npm run check:link-case` reads the built pages after `npm run build` and fails on a capitalized link in running text. If the link starts with a real proper noun, add that name, or a phrase that starts with it, to the names list in `.github/scripts/check-link-case.mjs`.
+
 ## 5. Voice and register
 
 1. Write chat replies the way a knowledgeable friend talks. No openers like "Great question" or "Certainly". No closers like "I hope this helps", "Let me know if...", or "Feel free to...". No praise for the question.
@@ -153,3 +157,13 @@ Following sections 1 to 4 too literally makes a second kind of tell: copy that i
 9. Write about the subject, not the page. "This site has the long versions of my projects" and "My job history is on LinkedIn" describe the page, and the nav and footer already say both. Start with the fact: "I write embedded software for a large aerospace hardware company." A line about the page stays only when it tells the reader something the page cannot show, such as where its advice comes from.
 
 10. Give a summary one job. A card blurb or a page description says what the thing is in one sentence, plus one number or result if it has one. The page itself holds the rest.
+
+## 9. Naming people
+
+1. The only private individuals linked by name are the credited student portfolios on the portfolio page. Do not name or link any other private person.
+
+2. This rule does not cover cited public sources. A published author, a CEO quoted in the press, or a recruiter's public post on X may be named, and the link to the source may stay.
+
+3. A cited source still needs a real, reachable link that supports the claim, per section 1. Name the person only when the name helps the reader find or judge the source.
+
+4. To check the rule, look at each named person on a page. The person must be a credited student portfolio, or the author or speaker of a public source that the page cites.

@@ -4,14 +4,14 @@ body:
   - type: textarea
     id: idea
     attributes:
-      label: What would you like, and why?
-      description: Describe the change and the problem it solves.
+      label: Description
+      description: What would you like, and why?
     validations:
-      required: true
+      required: false
   - type: input
     id: page
     attributes:
-      label: Page or link
+      label: Page or link (optional)
       description: The page this is about, if there is one.
     validations:
       required: false
