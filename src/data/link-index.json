@@ -337,6 +337,13 @@
     "pages": ["advice/resume", "advice/resume/workshop"]
   },
   {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1wxcvrq/student_how_do_you_find_good_project_ideas/",
+    "title": "r/EngineeringResumes: Finding good project ideas",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "Thread on picking resume projects that solve a real problem.",
+    "pages": ["advice/resume"]
+  },
+  {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/1i6v8x8/student_success_story_landed_3_interviews_and_an/",
     "title": "r/EngineeringResumes: Embedded internship success story",
     "category": "Resume feedback from reviewers and recruiters",
@@ -348,14 +355,14 @@
     "title": "r/EngineeringResumes: Hardware FYI AMA (July 2024)",
     "category": "Resume feedback from reviewers and recruiters",
     "summary": "Hardware FYI founders answer questions on hardware resumes and projects.",
-    "pages": ["advice/resume", "advice/resume/workshop"]
+    "pages": ["advice/resume/workshop"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/1bmtjgj/ama_hardware_engineers_founders_of_hardware_fyi/",
     "title": "r/EngineeringResumes: Hardware FYI AMA (March 2024)",
     "category": "Resume feedback from reviewers and recruiters",
     "summary": "Hardware FYI founders answer questions on hardware recruiting and resumes.",
-    "pages": ["advice/resume", "advice/resume/workshop"]
+    "pages": ["advice/resume/workshop"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/192hkg8/how_atss_actually_work_from_an_engineering_hiring/",
@@ -385,13 +392,6 @@
       "advice/resume/cleanup",
       "advice/resume/workshop"
     ]
-  },
-  {
-    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1crjxzf/0_yoe_new_grad_looking_for_fpga/",
-    "title": "r/EngineeringResumes: New grad seeking FPGA roles",
-    "category": "Resume feedback from reviewers and recruiters",
-    "summary": "Resume review for a new graduate seeking FPGA, firmware and embedded roles.",
-    "pages": ["advice/resume"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/1m6nzkm/8_yoe_readable_resumes_a_guide_to_allowing_anyone/",
@@ -454,7 +454,6 @@
     "summary": "A recruiter says managers probe resume items 3 to 5 layers deep.",
     "pages": [
       "advice/getting-hired/how-to-interview",
-      "advice/resume",
       "advice/resume/cleanup",
       "advice/resume/quick-setup",
       "help/ai-use"
@@ -494,13 +493,6 @@
     "category": "Resume feedback from reviewers and recruiters",
     "summary": "Alison Green on keeping small trainings and certificates off the resume.",
     "pages": ["advice/forever-learning"]
-  },
-  {
-    "url": "https://careerhub.students.duke.edu/blog/2021/07/29/help-ive-heard-different-opinions-on-my-resume-and-or-search-plan-and-i-dont-know-what-to-do/",
-    "title": "Duke: Conflicting feedback on your resume",
-    "category": "Resume feedback from reviewers and recruiters",
-    "summary": "Duke's career hub on why five reviewers give five opinions and why you will not use all of the feedback.",
-    "pages": ["advice/resume"]
   },
   {
     "url": "https://www.altium.com/education/students",

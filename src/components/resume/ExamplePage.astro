@@ -5,7 +5,7 @@ import { externalLinks } from './caption';
 const notes = [
 	{
 		title: 'Centered header.',
-		body: 'Name, then one contact line, then location and relocation.',
+		body: 'One contact line.',
 	},
 	{
 		title: 'Dates at the right margin.',
@@ -13,7 +13,7 @@ const notes = [
 	},
 	{
 		title: 'One line of coursework.',
-		body: 'Three upper-level courses that match the posting.',
+		body: 'Courses that match the posting.',
 	},
 	{
 		title: 'Skills right under Education.',
@@ -21,11 +21,11 @@ const notes = [
 	},
 	{
 		title: 'Projects above Experience.',
-		body: 'Alex has no engineering job yet, so projects go first.',
+		body: 'Alex has no engineering job yet.',
 	},
 ].map((note) => ({ ...note, body: externalLinks(note.body) }));
 const caption = externalLinks(
-	`Layout from the <a href="https://www.reddit.com/r/EngineeringResumes/wiki/index/">r/EngineeringResumes wiki</a>, checked against nine career center samples.`,
+	`Layout from the <a href="https://www.reddit.com/r/EngineeringResumes/wiki/index/">r/EngineeringResumes wiki</a>, plus eeprep's centered header, checked against nine career center samples.`,
 );
 ---
 
@@ -34,10 +34,7 @@ const caption = externalLinks(
 	<p class="eep-figtitle">One page, one column, dates on the right</p>
 	<p class="eep-example-flag">
 		<span class="eep-tag">Made-up example</span>
-		<span>
-			Alex Doe is not a real student. Every [X] is a number you measure
-			yourself.
-		</span>
+		<span>Alex Doe is not a real student.</span>
 	</p>
 	<div class="eep-example-wrap">
 		<div class="eep-example-sheet">
