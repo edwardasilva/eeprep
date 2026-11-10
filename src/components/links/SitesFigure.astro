@@ -1,42 +1,83 @@
 ---
 // Figure 16.1 as HTML and CSS. The question a student has on the left, and
 // the sites on this page that answer it on the right. Every box gets the same
-// treatment, and the page text says what each site is good for.
+// treatment, and the page text says what each site is good for. Each site
+// links to the same address help.mdx uses. Company career pages have no single
+// address there, so that chip stays plain text.
+import { externalLinks } from '../resume/caption';
+
+const site = (name: string, href?: string) => ({
+	name,
+	html: href ? externalLinks(`<a href="${href}">${name}</a>`) : undefined,
+});
 const rows = [
-	{ question: 'What does the job pay?', sites: ['BLS', 'Levels.fyi', 'NACE'] },
+	{
+		question: 'What does the job pay?',
+		sites: [
+			site(
+				'BLS',
+				'https://www.bls.gov/ooh/architecture-and-engineering/electrical-and-electronics-engineers.htm',
+			),
+			site('Levels.fyi', 'https://www.levels.fyi/'),
+			site('NACE', 'https://www.naceweb.org/job-market/compensation/'),
+		],
+	},
 	{
 		question: 'Is my resume right?',
-		sites: ['The r/EngineeringResumes wiki', 'The r/EngineeringResumes forum'],
+		sites: [
+			site(
+				'The r/EngineeringResumes wiki',
+				'https://www.reddit.com/r/EngineeringResumes/wiki/index/',
+			),
+			site(
+				'The r/EngineeringResumes forum',
+				'https://www.reddit.com/r/EngineeringResumes/',
+			),
+		],
 	},
 	{
 		question: 'Where are the openings?',
 		sites: [
-			'Company career pages',
-			'LinkedIn Jobs',
-			'Handshake',
-			'USAJOBS and Pathways',
+			site('Company career pages'),
+			site('LinkedIn Jobs', 'https://www.linkedin.com/jobs/'),
+			site('Handshake', 'https://joinhandshake.com/students/'),
+			site('USAJOBS', 'https://www.usajobs.gov/'),
+			site('Pathways', 'https://opm.usajobs.gov/hiringpath/students/'),
 		],
 	},
 	{
 		question: 'Who can I ask?',
-		sites: ['r/ElectricalEngineering', 'r/ECE', 'r/EngineeringStudents'],
+		sites: [
+			site(
+				'r/ElectricalEngineering',
+				'https://www.reddit.com/r/ElectricalEngineering/',
+			),
+			site('r/ECE', 'https://www.reddit.com/r/ECE/'),
+			site(
+				'r/EngineeringStudents',
+				'https://www.reddit.com/r/EngineeringStudents/',
+			),
+		],
 	},
 ];
-const alt =
-	'Four questions, each with the sites that answer it. What does the job pay: BLS, Levels.fyi, and NACE. Is my resume right: the r/EngineeringResumes wiki and forum. Where are the openings: company career pages, LinkedIn Jobs, Handshake, and USAJOBS and Pathways. Who can I ask: r/ElectricalEngineering, r/ECE, and r/EngineeringStudents.';
 ---
 
 <figure class="eep-fig wide eep-sites-fig" id="fig-16-1">
 	<p class="eep-kicker">Which site answers which question</p>
-	<p class="sr-only">{alt}</p>
-	<div class="eep-sites not-content" aria-hidden="true">
+	<div class="eep-sites not-content">
 		{rows.map((row) => (
 			<div class="eep-sites-row">
 				<p class="eep-sites-q">{row.question}</p>
-				<span class="eep-sites-line" />
+				<span class="eep-sites-line" aria-hidden="true" />
 				<ul>
-					{row.sites.map((site) => (
-						<li>{site}</li>
+					{row.sites.map((s) => (
+						<li>
+							{s.html ? (
+								<Fragment set:html={s.html} />
+							) : (
+								<span class="eep-site-chip">{s.name}</span>
+							)}
+						</li>
 					))}
 				</ul>
 			</div>
@@ -93,12 +134,37 @@ const alt =
 	.eep-sites li {
 		margin: 0;
 		max-width: none;
+		font-size: 0.8125rem;
+		line-height: 1.35;
+	}
+	/* The links come from set:html, so Astro's scoped styles can't see them. */
+	.eep-sites li > :global(a),
+	.eep-sites li > .eep-site-chip {
+		display: block;
 		padding: 0.35rem 0.6rem;
 		border: 1px solid var(--eep-dg-mute);
 		border-radius: 4px;
 		background: var(--eep-dg-tint);
-		font-size: 0.8125rem;
-		line-height: 1.35;
+		color: var(--eep-dg-ink);
+		text-decoration: none;
+	}
+	/* Hover and focus use ink, not the crimson link color, because figures keep
+	   crimson off. A darker border and an underline mark the chip as a link. */
+	.eep-sites li > :global(a:focus-visible) {
+		color: var(--eep-dg-ink);
+		border-color: var(--eep-dg-ink);
+		text-decoration: underline;
+		text-underline-offset: 0.15em;
+		outline: 2px solid var(--eep-dg-ink);
+		outline-offset: 2px;
+	}
+	@media (hover: hover) {
+		.eep-sites li > :global(a:hover) {
+			color: var(--eep-dg-ink);
+			border-color: var(--eep-dg-ink);
+			text-decoration: underline;
+			text-underline-offset: 0.15em;
+		}
 	}
 	/* Narrow: a short line drops from the question to its sites. */
 	.eep-sites-line {
