@@ -391,7 +391,7 @@
     "title": "r/EngineeringResumes: Landed an embedded systems role",
     "category": "Resume feedback from reviewers and recruiters",
     "summary": "A new graduate compares old and new resumes and charts their applications.",
-    "pages": ["advice/getting-hired/how-to-interview", "advice/resume"]
+    "pages": ["advice/getting-hired/how-to-interview"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/15i3d8v/my_boss_said_my_resume_could_use_a_lot_of_work/",
@@ -426,13 +426,6 @@
     "pages": ["advice/resume"]
   },
   {
-    "url": "https://www.reddit.com/r/EngineeringResumes/comments/pf7v54/saw_this_on_a_engineering_resume_website_the_one/",
-    "title": "r/EngineeringResumes: Resume rules debate",
-    "category": "Resume feedback from reviewers and recruiters",
-    "summary": "Commenters debate a sample resume that breaks the subreddit's wiki guidelines.",
-    "pages": ["advice/resume"]
-  },
-  {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/1sj2rgt/student_landed_nvidia_offer_sophomore_cs_major_at/",
     "title": "r/EngineeringResumes: Sophomore lands NVIDIA offer",
     "category": "Resume feedback from reviewers and recruiters",
@@ -441,7 +434,6 @@
       "advice/projects",
       "advice/projects/career-paths",
       "advice/projects/software",
-      "advice/resume",
       "advice/resume/cleanup"
     ]
   },
