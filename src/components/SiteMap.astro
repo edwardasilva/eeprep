@@ -7,6 +7,7 @@
 // Each description is that page's frontmatter description.
 import { getCollection } from 'astro:content';
 import type { StarlightRouteData } from '@astrojs/starlight/route-data';
+import { homeDescription } from '../lib/home';
 import { splitParentGroup } from '../lib/sidebar-parents.mjs';
 
 type Entry = StarlightRouteData['sidebar'][number];
@@ -42,14 +43,13 @@ const sectionFor = (name: string, rows: Row[] = []): Section => ({
 });
 
 // The home page is src/pages/index.astro, not a docs entry or a sidebar link.
-// This description matches the one in that file.
+// Its description is in src/lib/home.ts.
 const general = sectionFor('General', [
 	{
 		label: 'Home',
 		href: '/',
 		isCurrent: false,
-		description:
-			'A guide to job searching for electrical engineers & computer scientists: a one-page resume, getting hired for an internship or a first full-time role, and help with the search.',
+		description: homeDescription,
 	},
 ]);
 const sections: Section[] = [general];

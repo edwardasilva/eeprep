@@ -59,7 +59,6 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 	}
 	.eep-proc {
 		margin-top: 1rem;
-		--line: 1.5px;
 		--node: 0.8rem;
 		--lane: 1rem;
 		container-type: inline-size;
@@ -109,7 +108,7 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 		box-sizing: border-box;
 		width: var(--node);
 		height: var(--node);
-		border: var(--line) solid var(--eep-dg-ink);
+		border: var(--eep-dg-line) solid var(--eep-dg-ink);
 		border-radius: 50%;
 		background: var(--eep-dg-fill);
 	}
@@ -123,8 +122,8 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 		position: absolute;
 		top: 0.5rem;
 		bottom: 1rem;
-		left: calc(var(--node) / 2 - var(--line) / 2);
-		border-left: var(--line) solid var(--eep-dg-ink);
+		left: calc(var(--node) / 2 - var(--eep-dg-line) / 2);
+		border-left: var(--eep-dg-line) solid var(--eep-dg-ink);
 	}
 	.eep-proc-arrow,
 	.eep-proc-turn {
@@ -158,10 +157,10 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 		.eep-proc-step:not(.eep-proc-s5, .eep-proc-end)::after {
 			content: '';
 			position: absolute;
-			top: calc(var(--node) / 2 - var(--line) / 2);
+			top: calc(var(--node) / 2 - var(--eep-dg-line) / 2);
 			left: var(--node);
 			right: -0.4rem;
-			height: var(--line);
+			height: var(--eep-dg-line);
 			background: var(--eep-dg-ink);
 		}
 		.eep-proc-step .eep-proc-arrow {
@@ -177,12 +176,12 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 		.eep-proc-s5::after {
 			content: '';
 			position: absolute;
-			top: calc(var(--node) / 2 - var(--line) / 2);
+			top: calc(var(--node) / 2 - var(--eep-dg-line) / 2);
 			left: var(--node);
 			right: calc(var(--lane) / -2);
 			bottom: 0;
-			border-top: var(--line) solid var(--eep-dg-ink);
-			border-right: var(--line) solid var(--eep-dg-ink);
+			border-top: var(--eep-dg-line) solid var(--eep-dg-ink);
+			border-right: var(--eep-dg-line) solid var(--eep-dg-ink);
 			border-top-right-radius: 4px;
 		}
 		/* The turn runs back left and drops onto step 6. */
@@ -197,20 +196,20 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 			content: '';
 			position: absolute;
 			top: 0;
-			left: calc(var(--node) / 2 - var(--line) / 2);
+			left: calc(var(--node) / 2 - var(--eep-dg-line) / 2);
 			right: calc(var(--lane) / -2);
 			height: 50%;
-			border-right: var(--line) solid var(--eep-dg-ink);
-			border-bottom: var(--line) solid var(--eep-dg-ink);
+			border-right: var(--eep-dg-line) solid var(--eep-dg-ink);
+			border-bottom: var(--eep-dg-line) solid var(--eep-dg-ink);
 			border-bottom-right-radius: 4px;
 		}
 		.eep-proc-turn::after {
 			content: '';
 			position: absolute;
-			top: calc(50% - var(--line));
+			top: calc(50% - var(--eep-dg-line));
 			bottom: 0.45rem;
-			left: calc(var(--node) / 2 - var(--line) / 2);
-			border-left: var(--line) solid var(--eep-dg-ink);
+			left: calc(var(--node) / 2 - var(--eep-dg-line) / 2);
+			border-left: var(--eep-dg-line) solid var(--eep-dg-ink);
 		}
 		.eep-proc-turn .eep-proc-arrow {
 			display: block;
