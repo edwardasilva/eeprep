@@ -50,6 +50,8 @@ The `protect-main` ruleset requires two checks by name: `Checks` (ci.yml) and `P
 
 ## Releases and deploys
 
+Before cutting a release, run release-cut and land or close every `release-sweep` issue.
+
 The site has two targets on Cloudflare Workers:
 
 | Trigger                        | Target                                  |
