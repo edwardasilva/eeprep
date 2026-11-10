@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping with eeprep. Ideas and fixes from anyone who hires electrical engineers, or works as one, are welcome.
+Thanks for helping with [eeprep](https://github.com/edwardasilva/eeprep). Ideas and fixes from anyone who hires electrical engineers, or works as one, are welcome.
 
 ## Suggest an idea or a fix
 
