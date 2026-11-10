@@ -94,13 +94,13 @@ const caption = externalLinks('Alex Doe is a made-up student.');
 		height: 0.7rem;
 		fill: none;
 		stroke: currentColor;
-		stroke-width: 1.6;
+		stroke-width: var(--eep-dg-line);
 		stroke-linecap: round;
 		stroke-linejoin: round;
 	}
 	.eep-bullet-box {
 		padding: 0.8rem 1rem;
-		border: 1px solid var(--eep-dg-mute);
+		border: var(--eep-dg-line) solid var(--eep-dg-mute);
 		border-radius: 4px;
 		background: color-mix(in srgb, var(--eep-dg-ink) 6%, var(--eep-dg-fill));
 		font-size: 1rem;
@@ -117,7 +117,7 @@ const caption = externalLinks('Alex Doe is a made-up student.');
 		color: var(--eep-mute);
 	}
 	.eep-bullet-mark {
-		text-decoration: underline 1.5px var(--eep-dg-ink);
+		text-decoration: underline var(--eep-dg-line) var(--eep-dg-ink);
 		text-underline-offset: 0.3em;
 		text-decoration-skip-ink: none;
 	}

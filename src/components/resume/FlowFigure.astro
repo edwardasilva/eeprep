@@ -107,7 +107,7 @@ const caption = externalLinks('Exact steps vary by company.');
 	.eep-flow-card {
 		box-sizing: border-box;
 		padding: 0.7rem 0.75rem 0.8rem;
-		border: 1px solid var(--eep-dg-mute);
+		border: var(--eep-dg-line) solid var(--eep-dg-mute);
 		border-radius: 4px;
 		background: color-mix(in srgb, var(--eep-dg-ink) 6%, var(--eep-dg-fill));
 	}
@@ -130,7 +130,7 @@ const caption = externalLinks('Exact steps vary by company.');
 		color: var(--eep-mute);
 	}
 	.eep-flow-knock {
-		border-style: dashed;
+		border: var(--eep-dg-dash);
 	}
 	.eep-flow-knock .eep-flow-title {
 		font-size: 0.875rem;
@@ -139,13 +139,16 @@ const caption = externalLinks('Exact steps vary by company.');
 		display: block;
 		fill: var(--eep-dg-ink);
 		stroke: var(--eep-dg-ink);
-		stroke-width: 1.3;
+		stroke-width: var(--eep-dg-line);
+	}
+	.eep-flow svg path {
+		vector-effect: non-scaling-stroke;
 	}
 	.eep-flow svg path:first-child {
 		fill: none;
 	}
 	.eep-flow-dash {
-		stroke-dasharray: 3 3;
+		stroke-dasharray: var(--eep-dg-dasharray);
 	}
 	.eep-flow-cut {
 		display: flex;

@@ -91,7 +91,6 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 	}
 	.eep-recruit {
 		margin-top: 1rem;
-		--line: 1.5px;
 		--node: 0.8rem;
 		--indent: 1.6rem;
 		--gap: 1rem;
@@ -135,7 +134,7 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 	/* Every band is the same card. */
 	.eep-recruit-band .eep-recruit-text {
 		padding: 0.5rem 0.6rem 0.55rem;
-		border: 1px solid var(--eep-dg-mute);
+		border: var(--eep-dg-line) solid var(--eep-dg-mute);
 		border-radius: 4px;
 		background: var(--eep-dg-tint);
 	}
@@ -144,7 +143,7 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 		position: relative;
 		margin-top: 0.75rem;
 		padding: 0.5rem 0.6rem 0.55rem;
-		border: var(--line) dashed var(--eep-dg-ink);
+		border: var(--eep-dg-dash);
 		border-radius: 4px;
 		font-size: 0.8125rem;
 		line-height: 1.45;
@@ -160,7 +159,7 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 		box-sizing: border-box;
 		width: var(--node);
 		height: var(--node);
-		border: var(--line) solid var(--eep-dg-ink);
+		border: var(--eep-dg-line) solid var(--eep-dg-ink);
 		border-radius: 50%;
 		background: var(--eep-dg-fill);
 	}
@@ -177,9 +176,9 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 		content: '';
 		position: absolute;
 		top: calc(0.1rem + var(--node) / 2);
-		left: calc(var(--node) / 2 - var(--line) / 2);
+		left: calc(var(--node) / 2 - var(--eep-dg-line) / 2);
 		height: calc(100% + var(--gap));
-		border-left: var(--line) solid var(--eep-dg-ink);
+		border-left: var(--eep-dg-line) solid var(--eep-dg-ink);
 	}
 	.eep-recruit .eep-recruit-text {
 		margin-top: 0.3rem;
@@ -189,9 +188,12 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 		content: '';
 		position: absolute;
 		top: 1rem;
-		left: calc(var(--node) / 2 - var(--line) / 2 - var(--indent) - var(--line));
-		width: calc(var(--indent) - var(--node) / 2 + var(--line) / 2);
-		border-top: var(--line) solid var(--eep-dg-ink);
+		left: calc(
+			var(--node) / 2 - var(--eep-dg-line) / 2 - var(--indent) -
+				var(--eep-dg-line)
+		);
+		width: calc(var(--indent) - var(--node) / 2 + var(--eep-dg-line) / 2);
+		border-top: var(--eep-dg-line) solid var(--eep-dg-ink);
 	}
 	.eep-recruit-nomark {
 		display: none;
@@ -229,10 +231,10 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 		.eep-recruit-band:not(:last-child) .eep-recruit-date::after {
 			content: '';
 			position: absolute;
-			top: calc(1.05rem + 0.35rem + var(--node) / 2 - var(--line) / 2);
+			top: calc(1.05rem + 0.35rem + var(--node) / 2 - var(--eep-dg-line) / 2);
 			left: var(--node);
 			right: -0.4rem;
-			height: var(--line);
+			height: var(--eep-dg-line);
 			background: var(--eep-dg-ink);
 		}
 		.eep-recruit-band:not(:last-child) .eep-recruit-arrow {

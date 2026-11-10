@@ -75,7 +75,7 @@ const notes = {
 	.eep-run-box {
 		margin: 0;
 		padding: 0.6rem 0.75rem;
-		border: 1px solid var(--eep-dg-mute);
+		border: var(--eep-dg-line) solid var(--eep-dg-mute);
 		border-radius: 4px;
 		background: var(--eep-dg-tint);
 	}
@@ -93,7 +93,7 @@ const notes = {
 	/* A short line joins each step to the next. */
 	.eep-run-line {
 		display: block;
-		width: 1.5px;
+		width: var(--eep-dg-line);
 		height: 0.75rem;
 		margin: 0 auto;
 		background: var(--eep-dg-ink);
@@ -117,9 +117,9 @@ const notes = {
 		.eep-run-merge {
 			position: relative;
 			box-sizing: border-box;
-			width: calc(50% + 0.375rem + 1.5px);
+			width: calc(50% + 0.375rem + var(--eep-dg-line));
 			height: 0.375rem;
-			border: 1.5px solid var(--eep-dg-ink);
+			border: var(--eep-dg-line) solid var(--eep-dg-ink);
 			background: none;
 		}
 		.eep-run-fork {
@@ -135,15 +135,15 @@ const notes = {
 			content: '';
 			position: absolute;
 			left: calc(50% - 0.75px);
-			width: 1.5px;
+			width: var(--eep-dg-line);
 			height: 0.375rem;
 			background: var(--eep-dg-ink);
 		}
 		.eep-run-fork::before {
-			top: calc(-0.375rem - 1.5px);
+			top: calc(-0.375rem - var(--eep-dg-line));
 		}
 		.eep-run-merge::before {
-			bottom: calc(-0.375rem - 1.5px);
+			bottom: calc(-0.375rem - var(--eep-dg-line));
 		}
 	}
 </style>

@@ -70,7 +70,6 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 	}
 	.eep-door {
 		margin-top: 1rem;
-		--line: 1.5px;
 		display: grid;
 		gap: 0.5rem;
 		container-type: inline-size;
@@ -84,7 +83,7 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 	}
 	.eep-door-col {
 		padding: 0.6rem 0.75rem;
-		border: 1px solid var(--eep-dg-mute);
+		border: var(--eep-dg-line) solid var(--eep-dg-mute);
 		border-radius: 4px;
 		background: var(--eep-dg-tint);
 	}
@@ -120,7 +119,7 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 		left: 0;
 		width: 0.4rem;
 		height: 0.4rem;
-		border: var(--line) solid var(--eep-dg-ink);
+		border: var(--eep-dg-line) solid var(--eep-dg-ink);
 		border-radius: 50%;
 	}
 	/* The move between the columns: a line, an arrow, and its label. */
@@ -131,7 +130,7 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 		padding: 0.1rem 0;
 	}
 	.eep-door-line {
-		width: var(--line);
+		width: var(--eep-dg-line);
 		height: 0.9rem;
 		background: var(--eep-dg-ink);
 	}
@@ -163,7 +162,7 @@ const arrow = 'M1 1.5L9 5L1 8.5Z';
 			grid-column: 1;
 			grid-row: 1;
 			width: 100%;
-			height: var(--line);
+			height: var(--eep-dg-line);
 		}
 		.eep-door-arrow {
 			grid-column: 2;

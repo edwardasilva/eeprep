@@ -283,7 +283,7 @@ const caption = externalLinks('Wireframes are schematic.');
 		vertical-align: 0;
 		fill: none;
 		stroke: currentColor;
-		stroke-width: 1.6;
+		stroke-width: var(--eep-dg-line);
 		stroke-linecap: round;
 		stroke-linejoin: round;
 	}
@@ -297,8 +297,9 @@ const caption = externalLinks('Wireframes are schematic.');
 	/* Wireframe strokes. */
 	.eep-layout-frame :global(svg *) {
 		fill: none;
-		stroke-width: 1.3;
+		stroke-width: var(--eep-dg-line);
 		stroke-linecap: round;
+		vector-effect: non-scaling-stroke;
 	}
 	.eep-layout-frame :global(.wf-frame) {
 		fill: var(--eep-dg-fill);
@@ -317,7 +318,7 @@ const caption = externalLinks('Wireframes are schematic.');
 	}
 	.eep-layout-frame :global(.wf-accent) {
 		stroke: var(--eep-dg-ink);
-		stroke-width: 1.6;
+		stroke-width: var(--eep-dg-line);
 	}
 	.eep-layout-frame :global(.wf-guide) {
 		stroke: var(--eep-dg-ink);
@@ -326,7 +327,7 @@ const caption = externalLinks('Wireframes are schematic.');
 	}
 	.eep-layout-frame :global(.wf-mute) {
 		stroke: var(--eep-mute);
-		stroke-width: 1.6;
+		stroke-width: var(--eep-dg-line);
 	}
 
 	/* Narrow: a little more room for the labels under each wireframe. */

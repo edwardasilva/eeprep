@@ -68,7 +68,6 @@ const alt =
 	}
 	.eep-ver {
 		margin-top: 1rem;
-		--line: 1.5px;
 		display: grid;
 		gap: 0.75rem;
 		container-type: inline-size;
@@ -90,7 +89,7 @@ const alt =
 	.eep-ver-changes,
 	.eep-ver-list li {
 		padding: 0.6rem 0.75rem;
-		border: 1px solid var(--eep-dg-mute);
+		border: var(--eep-dg-line) solid var(--eep-dg-mute);
 		border-radius: 4px;
 		background: var(--eep-dg-tint);
 	}
@@ -115,7 +114,7 @@ const alt =
 		left: 0;
 		width: 0.4rem;
 		height: 0.4rem;
-		border: var(--line) solid var(--eep-dg-ink);
+		border: var(--eep-dg-line) solid var(--eep-dg-ink);
 		border-radius: 50%;
 	}
 	.eep-ver-head {
@@ -133,7 +132,7 @@ const alt =
 	   sides, so it touches both boxes. */
 	.eep-ver-join {
 		height: 2.25rem;
-		width: var(--line);
+		width: var(--eep-dg-line);
 		margin: -0.75rem auto;
 		background: var(--eep-dg-ink);
 	}
@@ -172,7 +171,7 @@ const alt =
 			grid-row: 1;
 			align-self: center;
 			width: 100%;
-			height: var(--line);
+			height: var(--eep-dg-line);
 			margin: 0;
 		}
 		.eep-ver-list {
