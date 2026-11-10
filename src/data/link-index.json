@@ -2430,10 +2430,10 @@
     "pages": ["advice/forever-learning/getting-into-graduate-study"]
   },
   {
-    "url": "https://www.ieee.org/membership/students",
-    "title": "IEEE: Student membership",
+    "url": "https://students.ieee.org/",
+    "title": "IEEE Students",
     "category": "Communities",
-    "summary": "IEEE's student membership page.",
+    "summary": "IEEE's home for student members, with benefits and student branches.",
     "pages": ["advice/forever-learning"]
   },
   {
