@@ -1,36 +1,36 @@
 ---
 import { externalLinks } from '../resume/caption';
-// Figure 1.1 as a real table: row labels on the left, Hardware and Software
+// Figure 1.1 as a real table: row labels on the left, Software and Hardware
 // as columns. On narrow figures each row stacks, and the column name shows
 // above each cell so the pairs still read.
-const cols = ['Hardware', 'Software'];
+const cols = ['Software', 'Hardware'];
 const rows = [
 	{
 		label: 'What you need',
 		cells: [
-			'Instruments, parts, breadboards, and a computer for embedded work',
 			'A computer and an internet connection',
+			'Instruments, parts, breadboards, and a computer for embedded work',
 		],
 	},
 	{
 		label: 'Free ways to start',
 		cells: [
-			'The lab scope, KiCad, and Wokwi',
 			'cocotb, Verilator, and EDA Playground',
+			'The lab scope, KiCad, and Wokwi',
 		],
 	},
 	{
 		label: 'What a reviewer checks',
 		cells: [
-			'A measured number from the bench, a photo, and a write-up',
 			'A repository with a README, tests, and a measured result',
+			'A measured number from the bench, a photo, and a write-up',
 		],
 	},
 	{
 		label: "Alex's example",
 		cells: [
-			'Synchronous buck converter: peak efficiency from [W]% to [X]%',
 			'Python and PyVISA scope capture: test time from [X] to [Y] minutes',
+			'Synchronous buck converter: peak efficiency from [W]% to [X]%',
 		],
 	},
 ];
@@ -41,7 +41,7 @@ const caption = externalLinks(
 
 <figure class="eep-fig wide eep-hwsw-fig" id="fig-1-1">
 	<p class="eep-kicker" id="fig-1-1-title">
-		Hardware and software projects
+		Software and hardware projects
 	</p>
 	<div class="eep-hwsw not-content">
 		<table role="table" aria-labelledby="fig-1-1-title">
