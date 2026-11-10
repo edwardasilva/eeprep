@@ -98,7 +98,12 @@
 
 .eep-hero {
 	padding: 2.5rem 0 1rem;
-	max-width: 46rem;
+}
+/* The heading uses the full splash column, the same width as the
+   two-column grid below, so the block is one centered measure. The
+   lead keeps the prose measure and the same left edge. */
+.eep-hero p {
+	max-width: var(--eep-measure);
 }
 .eep-hero h1 {
 	font-family: var(--eep-font-serif);
