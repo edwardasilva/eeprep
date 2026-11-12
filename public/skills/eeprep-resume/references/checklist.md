@@ -43,7 +43,7 @@ Read each bullet against three questions. Does it start with a past-tense verb t
 ## The whole page
 
 - One column, no photo, no icons, no tables.
-- Dates right-aligned, one style per section.
+- Dates right-aligned, one style per section, months for jobs.
 - Same gap between every pair of sections.
 - Bold only on titles and labels.
 - Read by at least one other person, and better by several.
@@ -85,7 +85,7 @@ Skills
 
 Whole page
 [ ] One column, no photo, no icons, no tables
-[ ] Dates right-aligned, one date style per section
+[ ] Dates right-aligned, one date style per section, months for jobs
 [ ] Same gap between every pair of sections
 [ ] Bold only on titles and labels
 [ ] Read by other people, and the general reaction noted

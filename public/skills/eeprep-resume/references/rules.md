@@ -44,7 +44,7 @@ GPA, author's rule of thumb: list 3.50 or higher. Michigan's and Berkeley's care
 
 ## Projects
 
-Call the section Projects. Leave the word "project" out of each title. Tools in parentheses after the title, dates at the right margin. Pick one date style, semesters or months, and use it on every line of the section. Sections may differ, such as semesters for projects and months for jobs (author's advice). Give the best projects more bullets and cut weak ones. Give firmware its own bullets, and for FPGA work, the testbenches. Move real technical club work out of Activities and into its own Projects entry.
+Call the section Projects. Leave the word "project" out of each title. Tools in parentheses after the title, dates at the right margin. Date projects by semester or by month, and use one style on every line of the section. If any project runs longer than a year, use months for the whole section (author's advice). Give the best projects more bullets and cut weak ones. Give firmware its own bullets, and for FPGA work, the testbenches. Move real technical club work out of Activities and into its own Projects entry.
 
 ## Experience
 
@@ -75,7 +75,7 @@ When the user applies to a master's or PhD program, they may need a CV, not a re
 
 ## Dates
 
-One style inside each section. "Present" for an ongoing role. Spell month names: Jan, Feb, Mar, Apr, May, June, July, Aug, Sept, Oct, Nov, Dec. No days, no abbreviated years.
+One style inside each section. Jobs are always dated by month (author's advice). "Present" for an ongoing role. Spell month names: Jan, Feb, Mar, Apr, May, June, July, Aug, Sept, Oct, Nov, Dec. No days, no abbreviated years.
 
 ## Questions students ask
 
