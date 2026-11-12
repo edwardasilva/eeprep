@@ -73,6 +73,20 @@
     "pages": ["advice/resume", "advice/resume/cleanup"]
   },
   {
+    "url": "https://gradschool.uky.edu/sites/default/files/2024-12/stuckert-resume-guide-final-2024-2025-1.pdf",
+    "title": "University of Kentucky Stuckert Career Center: Resume Guide",
+    "category": "Resume guides",
+    "summary": "Kentucky resume guide with before-and-after bullets for service jobs, such as a lifeguard.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://www.cc.gatech.edu/sites/default/files/documents/2026/GT%20CS%20Resume%20Guide%20compressed_1.pdf",
+    "title": "Georgia Tech College of Computing: Resume Guide",
+    "category": "Resume guides",
+    "summary": "Georgia Tech CS resume guide: one to two bullets for a job of low relevance, four to six for high relevance.",
+    "pages": ["advice/resume"]
+  },
+  {
     "url": "https://capd.mit.edu/resources/make-your-resume-ats-friendly/",
     "title": "MIT CAPD: Make your resume ATS-friendly",
     "category": "Resume guides",
@@ -93,6 +107,13 @@
       "advice/resume/cleanup",
       "advice/resume/workshop"
     ]
+  },
+  {
+    "url": "https://capd.mit.edu/blog/2023/09/01/enhance-your-resume-a-guide-for-first-year-undergraduates/",
+    "title": "MIT CAPD: Enhance your resume, a guide for first-year undergraduates",
+    "category": "Resume guides",
+    "summary": "MIT CAPD guide for first-year students, including how to describe a part-time job.",
+    "pages": ["advice/resume"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringResumes/wiki/index/",
