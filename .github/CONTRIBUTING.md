@@ -41,10 +41,10 @@ Only the repository owner cuts releases. The resume skill version in `public/ski
 
 Major changes in the companion repositories, [resume-generator](https://github.com/edwardasilva/resume-generator) and [company-lists](https://github.com/edwardasilva/company-lists), are listed here. eeprep release notes stay on the [Releases](https://github.com/edwardasilva/eeprep/releases) page.
 
-| Project          | Change                                                                                                                                                                                                                                                                          |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| resume-generator | After v0.0.2, each JSON file writes its own PDF. The file is named `[Name]-Resume.pdf`, and extra inputs add the JSON file name, so `examples/new-grad.json` writes `Alex-Doe-Resume-new-grad.pdf`. In v0.0.1 the PDF used the JSON file's name (`resume.pdf`, `new-grad.pdf`). |
-| company-lists    | The list now covers the Denver and Boulder metros in Colorado, the Austin and Houston metros in Texas, the Los Angeles and San Francisco Bay Area metros in California, and Northern Virginia.                                                                                  |
+| Project          | Change                                                                                                                                                                                         |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| resume-generator | Each JSON file writes its own PDF. The file is named `[Name]-Resume.pdf`, and extra inputs add the JSON file name, so `examples/new-grad.json` writes `Alex-Doe-Resume-new-grad.pdf`.          |
+| company-lists    | The list now covers the Denver and Boulder metros in Colorado, the Austin and Houston metros in Texas, the Los Angeles and San Francisco Bay Area metros in California, and Northern Virginia. |
 
 ## License
 
