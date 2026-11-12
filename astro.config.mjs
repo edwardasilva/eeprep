@@ -64,6 +64,8 @@ const redirects = {
 	'/advice/ai-use/': '/help/ai-use/',
 	'/advice/non-technical/': '/advice/getting-hired/non-technical/',
 	'/advice/projects/career-paths/': '/advice/getting-hired/career-paths/',
+	'/sitemap/figures/': '/sitemap/contents/?show=figures',
+	'/sitemap/tables/': '/sitemap/contents/?show=tables',
 	'/help-links/': '/help/',
 	'/help-links/all-links/': '/help/all-links/',
 	'/help-links/contributing/': '/roadmap/contributing/',
@@ -412,8 +414,6 @@ export default defineConfig({
 					items: [
 						{ label: 'Sitemap', slug: 'sitemap' },
 						{ label: 'Table of contents', slug: 'sitemap/contents' },
-						{ label: 'Table of figures', slug: 'sitemap/figures' },
-						{ label: 'Table of tables', slug: 'sitemap/tables' },
 					],
 				},
 			],
