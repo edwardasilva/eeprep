@@ -31,6 +31,7 @@ Read each bullet against three questions. Does it start with a past-tense verb t
 
 - Every bullet fills one line or most of two.
 - Every bullet holds one idea.
+- Symbols written as words, such as 3-sigma and 48 degrees.
 - No inflation.
 - Unrelated jobs on one line, no bullets, once the page has engineering work. Before that, they can keep bullets.
 
@@ -76,6 +77,7 @@ Projects and experience
 [ ] No helped, assisted, worked on, or utilized
 [ ] Every bullet fills one line or most of two
 [ ] Every bullet holds one idea
+[ ] Symbols written as words, such as 3-sigma
 [ ] Unrelated jobs on one line, once there is engineering work
 
 Skills

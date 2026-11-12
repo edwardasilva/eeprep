@@ -19,6 +19,7 @@ The rewrite names the action, the tools, one spec that shows difficulty, and a c
 - Say what happened next. Did the design fix the problem?
 - Do not inflate. An intern who claims two million dollars in savings will be asked to justify it. A smaller number the user can defend beats a larger one they cannot.
 - One idea per bullet (author's advice). Keep the result that matters most, and do not join a second one with "and" or "plus". Give the second its own bullet, or cut it.
+- Symbols as words (author's advice). Write 3-sigma instead of the Greek letter, 48 degrees instead of the degree sign, and at most 1 m/s instead of the less-than-or-equal sign.
 - Do not force a number. "Designed a PCB in KiCad" says more than trivia such as an exact step-down voltage. A spec belongs in the bullet when it shows difficulty, such as register-level setup of an SPI peripheral.
 - Use digits, not words, for numbers. No personal pronouns. No trailing period.
 - Avoid the puffed-up verbs: spearheaded, revolutionized, orchestrated, pioneered, `leveraged`, transformed, honed, crafted, elevated.
@@ -29,7 +30,7 @@ These are from eeprep's made-up students. Brackets are numbers the student measu
 
 - Raised peak efficiency from [W]% to [X]% at [Y] A on an electronic load by replacing the catch diode with a synchronous MOSFET and tuning dead time to [Z] ns on an STM32 timer
 - Cut output ripple from [X] mV to [Y] mV peak to peak with a [Z]-layer KiCad layout that has a solid ground plane, a smaller switching loop, and an LC filter sized for [W] kHz
-- Kept the board alive through [Z] deliberate shorts at [W] V input with STM32 firmware in C that samples input current at [X] kHz and cuts the rail within [Y] µs of a fault
+- Kept the board alive through [Z] deliberate shorts at [W] V input with STM32 firmware in C that samples input current at [X] kHz and cuts the rail within [Y] microseconds of a fault
 - Tracked [X] Li-ion cells within [Y] mV each on an ESP32 that streams to a Python dashboard
 - Processed [X] kHz stereo audio at [Y] ms latency by pipelining [Z] [W]-tap FIR filters in Verilog
 - Found [X] battery protection faults before launch review with a Python script that runs [Y] overnight charge cycles and flags any cell that drifts over [Z] mV from the pack average
