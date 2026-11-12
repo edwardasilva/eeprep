@@ -58,7 +58,7 @@ Two or three comma-separated lines with a bold label, most important first:
 - Hardware/Lab: oscilloscope, electronic load, logic analyzer, soldering
 - Certifications: only ones the user can prove
 
-Cut soft skills. Cut a vague "Knowledge" line. Write exact product names: C, C++ as two items, Ansys HFSS with the company name. When a posting names a skill the user has, use the posting's word. Every skill needs a bullet behind it. No second column.
+Cut soft skills. Leave IDEs, editors, and notebook environments such as VS Code and Jupyter out of Skills, and name the tool in the bullet where it produced a result. Cut a vague "Knowledge" line. Write exact product names: C, C++ as two items, Ansys HFSS with the company name. When a posting names a skill the user has, use the posting's word. Every skill needs a bullet behind it. No second column.
 
 ## Dates
 
