@@ -358,6 +358,7 @@ export default defineConfig({
 								},
 							],
 						},
+						{ label: 'Non-technical skills', slug: 'advice/non-technical' },
 						{
 							label: 'Forever learning',
 							items: [

@@ -70,7 +70,7 @@
     "title": "Michigan Engineering: Resumes, CVs and cover letters",
     "category": "Resume guides",
     "summary": "Michigan engineering career center guide to resumes, CVs and cover letters.",
-    "pages": ["advice/resume", "advice/resume/cleanup"]
+    "pages": ["advice/non-technical", "advice/resume", "advice/resume/cleanup"]
   },
   {
     "url": "https://gradschool.uky.edu/sites/default/files/2024-12/stuckert-resume-guide-final-2024-2025-1.pdf",
@@ -184,6 +184,27 @@
     "category": "Resume guides",
     "summary": "MIT's guide to statements of purpose and personal statements, with examples.",
     "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
+    "url": "https://engineering.virginia.edu/offices-programs/center-engineering-career-development/students/resumes-and-cover-letters",
+    "title": "UVA Engineering: Resumes and cover letters",
+    "category": "Resume guides",
+    "summary": "UVA Engineering resume guide, with prompts for showing teamwork in a bullet.",
+    "pages": ["advice/non-technical"]
+  },
+  {
+    "url": "https://magazine.asme.org/issues/january-2026/career-focus-building-a-competitive-resume-that-gets-noticed",
+    "title": "ASME: Building a competitive resume",
+    "category": "Resume guides",
+    "summary": "ASME magazine column with an engineering manager on what a resume should show.",
+    "pages": ["advice/non-technical"]
+  },
+  {
+    "url": "https://career.colostate.edu/wp-content/uploads/2023/10/Translating-Serivce-Industry-Experience-on-Your-Resume-Fall-2023.pdf",
+    "title": "Colorado State: Service industry experience on a resume",
+    "category": "Resume guides",
+    "summary": "Colorado State slides on turning service jobs into resume bullets with numbers.",
+    "pages": ["advice/non-technical"]
   },
   {
     "url": "https://career.gatech.edu/files/2026/06/JackieJacketResume.docx",
@@ -794,6 +815,41 @@
     "category": "Tools and project resources",
     "summary": "A learning path for embedded systems, with curated resources on GitHub.",
     "pages": ["advice/projects"]
+  },
+  {
+    "url": "https://courses.grainger.illinois.edu/ece431/sp2021/lab/ECE431_lab_report_guide.pdf",
+    "title": "Illinois ECE 431: Lab report guide",
+    "category": "Tools and project resources",
+    "summary": "An EE lab report guide: units, percent error, numbered equations, and IEEE citations.",
+    "pages": ["advice/non-technical"]
+  },
+  {
+    "url": "https://insight.ieeeusa.org/articles/effective-communication-skills-vital-for-new-and-emerging-leaders/",
+    "title": "IEEE-USA InSight: Communication skills for new leaders",
+    "category": "Tools and project resources",
+    "summary": "An IEEE-USA column on writing design documents that stand alone.",
+    "pages": ["advice/non-technical"]
+  },
+  {
+    "url": "https://nuwrite.northwestern.edu/communities/design/docs/engineering-design-and-communication-principles-and-practice/chapter_09.pdf",
+    "title": "Northwestern: Conducting design reviews",
+    "category": "Tools and project resources",
+    "summary": "Northwestern chapter on running a design review and handling criticism.",
+    "pages": ["advice/non-technical"]
+  },
+  {
+    "url": "https://ece.engr.uky.edu/senior-capstone-design",
+    "title": "Kentucky ECE: Senior capstone design",
+    "category": "Tools and project resources",
+    "summary": "Kentucky ECE capstone: team size, hours, design reviews, and materials budgets.",
+    "pages": ["advice/non-technical"]
+  },
+  {
+    "url": "https://www.pmi.org/certifications/certified-associate-capm",
+    "title": "PMI: CAPM certification",
+    "category": "Tools and project resources",
+    "summary": "PMI entry-level project management certification: eligibility and exam fee.",
+    "pages": ["advice/non-technical"]
   },
   {
     "url": "https://www.ashbyhq.com/talent-trends-report/reports/referrals",
@@ -1426,6 +1482,13 @@
     "pages": ["advice/getting-hired/networking"]
   },
   {
+    "url": "https://www.mtu.edu/career/students/jobs-intern/coop-intern/co-ops/forms/co-op-handbook.pdf",
+    "title": "Michigan Tech: Student co-op guide",
+    "category": "Job search and referrals",
+    "summary": "Michigan Tech handbook on how co-op students are expected to work.",
+    "pages": ["advice/non-technical"]
+  },
+  {
     "url": "https://www.reddit.com/r/ECE/comments/1mojjy7/how_do_you_actually_get_referralsinterviews_for/",
     "title": "r/ECE: Getting referrals for hardware internships",
     "category": "Job search stories from students",
@@ -1866,7 +1929,7 @@
     "title": "Michigan Engineering: Interviews",
     "category": "Interview prep",
     "summary": "University of Michigan engineering career center guide to interview formats and preparation.",
-    "pages": ["advice/getting-hired/how-to-interview"]
+    "pages": ["advice/getting-hired/how-to-interview", "advice/non-technical"]
   },
   {
     "url": "https://career.engin.umich.edu/phd-industry-job-search/",
@@ -1983,6 +2046,20 @@
     "category": "Interview prep",
     "summary": "A community list of hardware interview questions by topic.",
     "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://mitcommlab.mit.edu/eecs/commkit/email/",
+    "title": "MIT EECS Communication Lab: Email",
+    "category": "Interview prep",
+    "summary": "MIT EECS guide to short, action-first email, with a subject line format.",
+    "pages": ["advice/non-technical"]
+  },
+  {
+    "url": "https://mitcommlab.mit.edu/eecs/commkit/elevator-pitch/",
+    "title": "MIT EECS Communication Lab: Elevator pitch",
+    "category": "Interview prep",
+    "summary": "MIT EECS guide to a 20 to 40 second pitch of your work.",
+    "pages": ["advice/non-technical"]
   },
   {
     "url": "https://www.bls.gov/ooh/architecture-and-engineering/electrical-and-electronics-engineers.htm",
@@ -2488,6 +2565,34 @@
     "category": "Pay and career data",
     "summary": "Purdue's answers on the online MSECE and who takes it.",
     "pages": ["advice/forever-learning/getting-into-graduate-study"]
+  },
+  {
+    "url": "https://www.naceweb.org/talent-acquisition/candidate-selection/the-key-skills-employers-seek-on-college-students-resumes",
+    "title": "NACE: Key skills employers seek on resumes",
+    "category": "Pay and career data",
+    "summary": "NACE Job Outlook 2026 Spring Update: the skills employers look for on student resumes.",
+    "pages": ["advice/non-technical"]
+  },
+  {
+    "url": "https://www.naceweb.org/career-readiness/competencies/the-gap-in-perceptions-of-new-grads-competency-proficiency-and-resources-to-shrink-it",
+    "title": "NACE: The gap in perceptions of new grads' proficiency",
+    "category": "Pay and career data",
+    "summary": "NACE compares how students and employers rate new graduates on eight career competencies.",
+    "pages": ["advice/non-technical"]
+  },
+  {
+    "url": "https://www.naceweb.org/career-readiness/competencies/career-readiness-defined",
+    "title": "NACE: Career readiness competencies",
+    "category": "Pay and career data",
+    "summary": "NACE defines eight career readiness competencies, with sample behaviors for each.",
+    "pages": ["advice/non-technical"]
+  },
+  {
+    "url": "https://www.abet.org/accreditation/accreditation-criteria/criteria-for-accrediting-engineering-programs-2026-2027/",
+    "title": "ABET: Criteria for accrediting engineering programs, 2026-27",
+    "category": "Pay and career data",
+    "summary": "ABET student outcomes every accredited engineering program must teach, including communication and teamwork.",
+    "pages": ["advice/non-technical"]
   },
   {
     "url": "https://students.ieee.org/",
