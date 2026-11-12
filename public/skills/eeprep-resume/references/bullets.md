@@ -18,6 +18,7 @@ The rewrite names the action, the tools, one spec that shows difficulty, and a c
 - Mention a hand calculation that checked a simulation. For EE, SPICE output checked against the user's own math.
 - Say what happened next. Did the design fix the problem?
 - Do not inflate. An intern who claims two million dollars in savings will be asked to justify it. A smaller number the user can defend beats a larger one they cannot.
+- One idea per bullet. Keep the result that matters most, and do not join a second one with "and" or "plus". Give the second its own bullet, or cut it.
 - Do not force a number. "Designed a PCB in KiCad" says more than trivia such as an exact step-down voltage. A spec belongs in the bullet when it shows difficulty, such as register-level setup of an SPI peripheral.
 - Use digits, not words, for numbers. No personal pronouns. No trailing period.
 - Avoid the puffed-up verbs: spearheaded, revolutionized, orchestrated, pioneered, `leveraged`, transformed, honed, crafted, elevated.
