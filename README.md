@@ -3,12 +3,6 @@
   <img src="public/brand/eeprep-lockup-outlined.svg" alt="eeprep" width="320">
 </picture>
 
-<!-- vale Eeprep.SentenceCase = NO -->
-
-# eeprep
-
-<!-- vale Eeprep.SentenceCase = YES -->
-
 eeprep is a free guide for EECS students and new grads. It shows how to build a resume that works, find real experience, and land a first internship or full-time role.
 
 Status: active development.
