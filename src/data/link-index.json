@@ -2437,6 +2437,13 @@
     "pages": ["advice/forever-learning/getting-into-graduate-study"]
   },
   {
+    "url": "https://ncees.org/exams/pe-exam/control-systems/",
+    "title": "NCEES: PE Control Systems exam",
+    "category": "Pay and career data",
+    "summary": "NCEES PE Control Systems exam: computer-based, given once a year.",
+    "pages": ["advice/projects/career-paths"]
+  },
+  {
     "url": "https://students.ieee.org/",
     "title": "IEEE Students",
     "category": "Communities",
