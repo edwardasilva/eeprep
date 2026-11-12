@@ -48,7 +48,7 @@ Call the section Projects. Leave the word "project" out of each title. Tools in 
 
 ## Experience
 
-Call it Experience. Engineering roles get a bold title and company with dates at the right margin, then the location, then bullets. A job outside engineering depends on volume. With good engineering experience, it gets one line with no bullets, or goes. Without that, it gets bullets, using what the user can.
+Call it Experience. Engineering roles get a bold title and company with dates at the right margin. The location goes on the next line, under the date at the right margin, then the bullets. A job outside engineering depends on volume. With good engineering experience, it gets one line with no bullets, or goes. Without that, it gets bullets, using what the user can.
 
 ## Skills
 

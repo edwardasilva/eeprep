@@ -120,7 +120,7 @@ const caption = externalLinks(
 				</p>
 				<p class="eep-example-date">Summer 2023–Summer 2024</p>
 			</div>
-			<p>City, ST</p>
+			<p class="eep-example-loc">City, ST</p>
 		</div>
 		<ol class="eep-example-notes eep-num-list">
 			{notes.map((note) => (
@@ -238,6 +238,10 @@ const caption = externalLinks(
 	.eep-example-date {
 		flex: none;
 		white-space: nowrap;
+	}
+	/* The location sits under the date, at the right margin. */
+	.eep-example-sheet p.eep-example-loc {
+		text-align: right;
 	}
 	.eep-pin {
 		position: absolute;
