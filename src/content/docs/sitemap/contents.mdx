@@ -1,6 +1,6 @@
 ---
 title: Table of contents
-description: 'Every page on eeprep in sidebar order, with the headings inside each page.'
+description: 'Every page on eeprep in sidebar order, with the headings, figures, and tables inside each page, and a filter to find one.'
 pageType: resources
 head:
   - tag: title
@@ -9,6 +9,6 @@ head:
 
 import SiteContents from '../../../components/SiteContents.astro';
 
-This table of contents lists each page in the order of the sidebar, with the headings inside it. It is built from the pages, so it always matches the site.
+This table of contents lists each page in the order of the sidebar, with its headings, numbered figures, and tables. Type a word to find a page, a section, a figure, or a table, and use the boxes to show only one kind. It is built from the pages, so it always matches the site.
 
-<SiteContents kind="contents" />
+<SiteContents />

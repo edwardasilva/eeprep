@@ -1,5 +1,5 @@
 // Figure numbers run through the whole site in sidebar order, so each figure
-// has one number. The table of figures and the page CSS both read the count
+// has one number. The table of contents and the page CSS both read the count
 // from here, so they cannot disagree.
 import path from 'node:path';
 import { getCollection } from 'astro:content';
