@@ -37,7 +37,7 @@ Read the reference file before you act. Each one is short.
 ## How to work
 
 1. Ask for the raw material before you write. A list of every project, lab, club build, repair, and job beats a draft. The inventory file has the questions.
-2. Lead with the strongest section. A student with no engineering job leads with Education, then Skills, then Projects, then Experience. Skills sits right under Education in every order. A student whose projects carry the page may lead with Projects. A graduate at work leads with Experience.
+2. Put the strongest material first, in the wiki's section order. A student or new graduate with no technical work goes Education, Projects, Experience, Skills. One with an internship or other technical work goes Education, Experience, Projects, Skills. A graduate in a full-time job goes Experience, Skills, Education. Inside each section, the most relevant or impressive entry and bullet go first.
 3. Keep it to one page. The second page arrives at about ten years of experience.
 4. Write results, not duties. Every bullet names the action, the tool, and a measured result where the user has one, in that order, with the number early. Do not force a number.
 5. Spell out an uncommon abbreviation the first time, such as computer-aided design (CAD). Write for a reader who is not an engineer.

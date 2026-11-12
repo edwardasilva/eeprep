@@ -16,12 +16,12 @@ const notes = [
 		body: 'Courses that match the posting.',
 	},
 	{
-		title: 'Skills right under Education.',
-		body: "Four of the six samples do this. Each of Alex's eight tools appears in a bullet.",
-	},
-	{
 		title: 'Projects above Experience.',
 		body: 'Alex has no engineering job yet.',
+	},
+	{
+		title: 'Skills last.',
+		body: "The wiki's order for a student with no technical work experience. Each of Alex's eight tools appears in a bullet.",
 	},
 ].map((note) => ({ ...note, body: externalLinks(note.body) }));
 const caption = externalLinks(
@@ -66,19 +66,8 @@ const caption = externalLinks(
 			<p>
 				<strong>Activities:</strong> IEEE student branch, Tau Beta Pi
 			</p>
-			<p class="eep-example-sec">Skills</p>
 			<div class="eep-example-mark">
 				<span class="eep-num eep-pin" data-pin="4"></span>
-				<p>
-					<strong>Software:</strong> KiCad, LTspice, C, Python
-				</p>
-				<p>
-					<strong>Hardware/Lab:</strong> STM32, oscilloscope, electronic load,
-					logic analyzer
-				</p>
-			</div>
-			<div class="eep-example-mark">
-				<span class="eep-num eep-pin" data-pin="5"></span>
 				<p class="eep-example-sec">Projects</p>
 				<div class="eep-example-row">
 					<p>
@@ -125,6 +114,17 @@ const caption = externalLinks(
 				<li>Processed about [X] sales and returns a shift at the register</li>
 				<li>Trained [X] new hires on the register and the closing checklist</li>
 			</ul>
+			<p class="eep-example-sec">Skills</p>
+			<div class="eep-example-mark">
+				<span class="eep-num eep-pin" data-pin="5"></span>
+				<p>
+					<strong>Software:</strong> KiCad, LTspice, C, Python
+				</p>
+				<p>
+					<strong>Hardware/Lab:</strong> STM32, oscilloscope, electronic load,
+					logic analyzer
+				</p>
+			</div>
 		</div>
 		<ol class="eep-example-notes eep-num-list">
 			{notes.map((note) => (
