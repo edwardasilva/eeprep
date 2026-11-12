@@ -36,7 +36,7 @@ Put "Willing to relocate" next to the location if it is true. A city far from th
 
 ## Education
 
-Degree on the first line with GPA on the same line. School under it with the graduation date at the right margin, "Expected" in front of it before graduation. One line each for "Relevant coursework:" and "Activities:", labels in bold. Drop high school after the first year. With a master's, keep the bachelor's line.
+Degree on the first line with GPA on the same line. School under it with the graduation date at the right margin, "Expected" in front of it before graduation. One line each for "Relevant coursework:" and "Activities:", labels in bold. If you have taken graduate courses, list them first on their own line, labeled "Graduate coursework:". Write course names, such as Digital Signal Processing, never course codes. A code means nothing to a reader from another school. Drop high school after the first year. With a master's, keep the bachelor's line.
 
 Coursework is where EE parts from the wiki. The wiki says to leave it off unless the courses are specialized. ECE interviewers say the courses show whether the student can pass the interview, and recruiters like it. List upper-level electives that match the posting.
 
