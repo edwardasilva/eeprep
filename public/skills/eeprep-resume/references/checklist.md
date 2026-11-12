@@ -30,6 +30,7 @@ Audit the finished PDF, not the source file. Work top to bottom. Fix what fails,
 Read each bullet against three questions. Does it start with a past-tense verb that is not helped, assisted, worked on, or utilized? Does it name the tool? Does it end in a number the user measured and can explain? If the user cannot explain a number, it comes off, because the interviewer will ask.
 
 - Every bullet fills one line or most of two.
+- Every bullet holds one idea.
 - No inflation.
 - Unrelated jobs on one line, no bullets, once the page has engineering work. Before that, they can keep bullets.
 
@@ -74,6 +75,7 @@ Projects and experience
 [ ] Every bullet: past-tense verb, a tool, a number I can explain
 [ ] No helped, assisted, worked on, or utilized
 [ ] Every bullet fills one line or most of two
+[ ] Every bullet holds one idea
 [ ] Unrelated jobs on one line, once there is engineering work
 
 Skills
