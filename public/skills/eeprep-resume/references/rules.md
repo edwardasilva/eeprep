@@ -60,6 +60,19 @@ Two or three comma-separated lines with a bold label, most important first:
 
 Cut soft skills. Cut a vague "Knowledge" line. Write exact product names: C, C++ as two items, Ansys HFSS with the company name. When a posting names a skill the user has, use the posting's word. Every skill needs a bullet behind it. No second column.
 
+## Graduate-application CV
+
+When the user applies to a master's or PhD program, they may need a CV, not a resume. The other rules still apply, with these differences:
+
+- Length: up to two pages.
+- Page break: do not split an entry's heading from its bullets across the page break.
+- Order: Education first, Skills right under it, then Experience.
+- Research: add research, papers, and talks.
+- GPA: list the overall GPA with its scale, such as 3.44/4.00, even below the 3.50 cutoff a job resume uses.
+- Graduate GPA: do not put a graduate-only GPA on the degree line in place of the overall GPA.
+- Teaching: grading, tutoring, or peer mentoring can sit under its own Teaching heading. Say how many students and how many classes.
+- Type: 10.75 pt text is a good size for a two-page CV, 10.5 pt the smallest, with 0.5 in margins. These numbers are for the CV only. A job resume stays one page.
+
 ## Dates
 
 One style inside each section. "Present" for an ongoing role. Spell month names: Jan, Feb, Mar, Apr, May, June, July, Aug, Sept, Oct, Nov, Dec. No days, no abbreviated years.
