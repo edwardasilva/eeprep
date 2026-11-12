@@ -9,7 +9,7 @@ Audit the finished PDF, not the source file. Work top to bottom. Fix what fails,
 - Extract the text (`pdftotext Alex-Doe-Resume.pdf -`) and read it. Every heading, entry, and bullet comes out whole and in reading order. Watch for "fi" and "fl" ligatures that come out blank or as odd symbols. In pdfLaTeX, `\input{glyphtounicode}` and `\pdfgentounicode=1` fix that. LuaLaTeX and XeLaTeX do not need them.
 - Open the PDF properties. The title reads "[Name] Resume" and the author is the user's name. A title left over from a template is a tell.
 - Name the file after the person, such as Alex-Doe-Resume.pdf.
-- One page.
+- One page, or two for a graduate-application CV.
 
 ## The header
 
@@ -20,9 +20,9 @@ Audit the finished PDF, not the source file. Work top to bottom. Fix what fails,
 
 ## Education
 
-- GPA listed at 3.50 or higher, judged at 3.0 to 3.49, left off below 3.0, with matching decimals.
+- GPA listed at 3.50 or higher, judged at 3.0 to 3.49, left off below 3.0, with matching decimals. A graduate-application CV lists the overall GPA with its scale.
 - Graduation date at the right margin, "Expected" if not yet graduated.
-- One line of coursework that matches the posting.
+- One line of coursework that matches the posting, with a "Graduate coursework:" line first if there is one.
 - No high school after the first year.
 
 ## Projects and experience
@@ -57,7 +57,7 @@ File
 [ ] No broken fi or fl ligatures in the text
 [ ] PDF title is "[Name] Resume", author is [Name]
 [ ] File is named [Name]-Resume.pdf
-[ ] One page
+[ ] One page, or two for a graduate-application CV
 
 Header
 [ ] Every link clicked today
@@ -66,9 +66,9 @@ Header
 [ ] One email, checked daily
 
 Education
-[ ] GPA listed at 3.50 or higher, judged at 3.0 to 3.49, off below 3.0, decimals matching
+[ ] GPA listed at 3.50 or higher, judged at 3.0 to 3.49, off below 3.0, decimals matching (a CV lists the overall GPA)
 [ ] Graduation date at the right margin, "Expected" if not yet graduated
-[ ] One line of coursework that matches the posting
+[ ] One line of coursework that matches the posting, graduate coursework first
 [ ] No high school after the first year
 
 Projects and experience
