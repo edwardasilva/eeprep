@@ -2049,6 +2049,13 @@
     "pages": ["advice/forever-learning", "advice/projects/career-paths"]
   },
   {
+    "url": "https://ncees.org/exams/pe-exam/control-systems/",
+    "title": "NCEES: PE Control Systems exam",
+    "category": "Pay and career data",
+    "summary": "NCEES PE Control Systems exam: computer-based, given once a year.",
+    "pages": ["advice/forever-learning", "advice/projects/career-paths"]
+  },
+  {
     "url": "https://www.onetonline.org/link/summary/17-2071.00",
     "title": "O*NET: Electrical engineers",
     "category": "Pay and career data",
@@ -2435,13 +2442,6 @@
     "category": "Pay and career data",
     "summary": "Purdue's answers on the online MSECE and who takes it.",
     "pages": ["advice/forever-learning/getting-into-graduate-study"]
-  },
-  {
-    "url": "https://ncees.org/exams/pe-exam/control-systems/",
-    "title": "NCEES: PE Control Systems exam",
-    "category": "Pay and career data",
-    "summary": "NCEES PE Control Systems exam: computer-based, given once a year.",
-    "pages": ["advice/projects/career-paths"]
   },
   {
     "url": "https://students.ieee.org/",
