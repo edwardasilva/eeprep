@@ -62,6 +62,7 @@ const redirects = {
 	'/advice/resume/simple/': '/advice/resume/quick-setup/',
 	'/advice/resume/portfolio/': '/advice/projects/portfolio/',
 	'/advice/ai-use/': '/help/ai-use/',
+	'/advice/non-technical/': '/advice/getting-hired/non-technical/',
 	'/help-links/': '/help/',
 	'/help-links/all-links/': '/help/all-links/',
 	'/help-links/contributing/': '/roadmap/contributing/',
@@ -349,6 +350,10 @@ export default defineConfig({
 									slug: 'advice/getting-hired/how-to-interview',
 								},
 								{
+									label: 'Non-technical skills',
+									slug: 'advice/getting-hired/non-technical',
+								},
+								{
 									label: 'First internship',
 									slug: 'advice/getting-hired/first-internship',
 								},
@@ -358,7 +363,6 @@ export default defineConfig({
 								},
 							],
 						},
-						{ label: 'Non-technical skills', slug: 'advice/non-technical' },
 						{
 							label: 'Forever learning',
 							items: [
