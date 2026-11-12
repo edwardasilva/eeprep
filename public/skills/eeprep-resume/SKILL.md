@@ -5,7 +5,7 @@ license: CC-BY-4.0
 metadata:
   author: eeprep.com
   source: <https://eeprep.com/advice/resume/>
-  version: "0.0.3"
+  version: "0.0.1"
 ---
 
 <!-- vale Eeprep.SentenceCase = NO -->
