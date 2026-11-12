@@ -22,7 +22,7 @@ From [eeprep's resume page](https://eeprep.com/advice/resume/), which condenses 
 | Student with no technical job yet             | Education, Skills, Projects, Experience                   |
 | Student whose projects are the strongest part | Projects, Experience, Education, Skills (author's advice) |
 | Graduate at work                              | Experience, Education, Skills                             |
-| Working engineer                              | Experience, Projects, Education, Skills                   |
+| Working engineer                              | Experience, Projects, Education, Skills (author's advice) |
 
 Skills goes right under Education in every order.
 
@@ -40,15 +40,15 @@ Degree on the first line with GPA on the same line. School under it with the gra
 
 Coursework is where EE parts from the wiki. The wiki says to leave it off unless the courses are specialized. ECE interviewers say the courses show whether the student can pass the interview, and recruiters like it. List upper-level electives that match the posting.
 
-GPA: list 3.50 or higher always. From 3.0 to 3.49, list it when the posting sets a minimum the user meets, and leave it off otherwise. Below 3.0, leave it off. If listed, match the decimals, as in 3.30/4.00.
+GPA, author's rule of thumb: list 3.50 or higher. Michigan's and Berkeley's career centers use 3.0, so say this rule is stricter. If the posting asks for a GPA, list it. From 3.0 to 3.49, list it when the posting sets a minimum the user meets, and leave it off otherwise. Below 3.0, leave it off. If listed, match the decimals, as in 3.30/4.00.
 
 ## Projects
 
-Call the section Projects. Leave the word "project" out of each title. Tools in parentheses after the title, dates at the right margin. Pick one date style, semesters or months, and use it on every line of the section. Sections may differ, such as semesters for projects and months for jobs. Give the best projects more bullets and cut weak ones. If the user targets firmware, give the firmware its own bullets. If they target FPGA work, give the testbenches their own bullets. Move real technical club work out of Activities and into its own Projects entry.
+Call the section Projects. Leave the word "project" out of each title. Tools in parentheses after the title, dates at the right margin. Date projects by semester or by month, and use one style on every line of the section. If any project runs longer than a year, use months for the whole section (author's advice). Give the best projects more bullets and cut weak ones. Give firmware its own bullets, and for FPGA work, the testbenches. Move real technical club work out of Activities and into its own Projects entry.
 
 ## Experience
 
-Call it Experience. Engineering roles get a bold title and company with dates at the right margin. The location goes on the next line, under the date at the right margin, then the bullets. A job outside engineering depends on volume. With good engineering experience, it gets one line with no bullets, or goes. Without that, it gets bullets, using what the user can.
+Call it Experience. Engineering roles get a bold title and company with dates at the right margin. The location goes on the next line, under the date at the right margin, then the bullets. A job outside engineering depends on volume. With good engineering experience, it gets one line with no bullets, or goes. Without that, it gets one or two bullets, using what the user can. Skip the duty a reader already knows. Count what the user can defend: money handled, customers or transactions in a shift, a safety rule kept, or people trained.
 
 ## Skills
 
@@ -58,7 +58,7 @@ Two or three comma-separated lines with a bold label, most important first:
 - Hardware/Lab: oscilloscope, electronic load, logic analyzer, soldering
 - Certifications: only ones the user can prove
 
-Cut soft skills. Leave IDEs, editors, and notebook environments such as VS Code and Jupyter out of Skills, and name the tool in the bullet where it produced a result. Cut a vague "Knowledge" line. Write exact product names: C, C++ as two items, Ansys HFSS with the company name. When a posting names a skill the user has, use the posting's word. Every skill needs a bullet behind it. No second column.
+Cut soft skills. Leave IDEs, editors, and notebook environments such as VS Code and Jupyter out of Skills, and name the tool in the bullet where it produced a result. Cut a vague "Knowledge" line unless it is certifiable. Write exact product names: C, C++ as two items, Ansys HFSS with the company name. When a posting names a skill the user has, use the posting's word. Every skill needs a bullet behind it. One line per group.
 
 ## A CV for a graduate application
 
@@ -75,11 +75,11 @@ When the user applies to a master's or PhD program, they may need a CV, not a re
 
 ## Dates
 
-One style inside each section. "Present" for an ongoing role. Spell month names: Jan, Feb, Mar, Apr, May, June, July, Aug, Sept, Oct, Nov, Dec. No days, no abbreviated years.
+One style inside each section. Jobs are always dated by month (author's advice). "Present" for an ongoing role. Spell month names: Jan, Feb, Mar, Apr, May, June, July, Aug, Sept, Oct, Nov, Dec. No days, no abbreviated years.
 
 ## Questions students ask
 
 - Missing some requirements? Apply anyway for tools and years. The degree is different: a required degree is usually a hard filter.
 - A senior design project that did not work? List it. Describe the user's part with verbs such as designed and tested, and give the numbers they did reach.
 - Interests? Only specific ones. If the user cannot name specifics, delete the section.
-- Cover letter? Depends on the employer. Big tech recruiters often skip them, but defense contractors and smaller firms tend to read them. Two short paragraphs on why the user meets the posting.
+- Cover letter? Write one when the resume is not an obvious fit. Big tech recruiters often skip them, but defense contractors and Midwest firms tend to read them. Two short paragraphs on why the user meets the posting.
