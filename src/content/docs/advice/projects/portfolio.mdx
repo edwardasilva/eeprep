@@ -38,20 +38,21 @@ If you have one finished build and no photos of it, skip the site until you do. 
 
 ## Five student portfolios
 
-These are portfolios by EECS students and new graduates, read from their public repositories in November 2026. The first four are linked and credited with their authors' names. Each entry lists what works and what does not. The gaps are as useful as the strengths.
+These are portfolios by EECS students and new graduates, read from their public sites and repositories in November 2026. The first four are linked and credited with their authors' names. Each entry lists what works and what does not. The gaps are as useful as the strengths.
 
-- [Byron Bradley](https://byronbradley.me/), a junior at Buffalo, has four projects on one page, each with a measured number and a paragraph on what is not done yet. One robot entry says the firmware compiles and that assembly, calibration, and trials are still ahead. That honesty is the strongest thing on the site.
+- [Byron Bradley](https://byronbradley.me/), a junior at Buffalo, has four projects on one page, and the maze and barcode entries each end with what is not done yet. One robot entry says the firmware compiles and that assembly, calibration, and trials are still ahead. That honesty is the strongest thing on the site.
 
   **Pros**
 
   - The Xbox 360 write-up walks from a power-fault code to a shorted MOSFET and the repair.
   - The maze and barcode entries label simulation and generated-image results as such, and say physical trials are still ahead.
-  - Repair records, firmware, and experiment notes link out to public GitHub repositories.
+  - The repair records and the barcode work link out to public GitHub repositories.
 
   **Cons**
 
   - There are no schematics and no oscilloscope captures, even though the circuit-lab entry says gain, cutoff, and phase were measured on a scope.
   - All four projects sit on one long homepage, so a reviewer cannot open a single project and stay there.
+  - The maze robot's GitHub links return a 404, so the one robot entry has no working source link.
 
 - [Yasaman Kheradmand](https://yasamankhe.github.io/), at UBC, gives each of six projects its own page. A lighting controller page has PCB renders, a schematic PDF, a GitHub link, a bring-up video, and the input range and current it runs at.
 
@@ -64,10 +65,10 @@ These are portfolios by EECS students and new graduates, read from their public 
   **Cons**
 
   - An oscilloscope appears in the tool list and nowhere as a capture of a rail, a CAN edge, or an LED-drive waveform.
-  - The homepage and several project pages repeat generic filler, including the line about going "from the circuit and PCB design all the way to programming, bring-up, testing," and long stacks of tool chips that do not add evidence.
-  - The Smart Thermometer GitHub repository is empty, and the piano and smart-shoe pages have no source repository at all.
+  - The homepage opens with generic filler, including the line about going "from the circuit and PCB design all the way to programming, bring-up, testing," and long stacks of tool chips that do not add evidence.
+  - The smart thermometer, piano, and smart-shoe pages link no source repository. They show code inline instead.
 
-- [Panos Dimtsoudis](https://panosdimts.github.io/EE-portfolio/), at Penn, opens with a predictions-against-results table on a chip design project and keeps a What broke note on another project, a power-reset problem and its fix. The repository README says an AI coding tool built the site itself and that every word about the engineering is the student's. That is the split this page recommends.
+- [Panos Dimtsoudis](https://panosdimts.github.io/EE-portfolio/), at Penn, opens with an annotated SRAM layout and a table of predicted against simulated or measured results, and keeps a What broke note on another project, a power-reset problem and its fix. The repository README says two AI coding tools helped build the site, that the student reviewed and directed all of it, and that the project content is the student's own. That is the split this page recommends.
 
   **Pros**
 
@@ -76,18 +77,19 @@ These are portfolios by EECS students and new graduates, read from their public 
 
   **Cons**
 
-  - No page shows an oscilloscope capture. The MAC waveforms are simulation and layout plots.
+  - No project page shows an oscilloscope capture, though the embedded ECG and metal-detector reports say they include scope measurements. The MAC waveforms are simulation and layout plots.
 
-- [Zaid Saifan](https://zaidsaifan-star.github.io/), at Western, has the cleanest structure of the five, with sections named The brief, On the board, Protection, Validation, and Next step. The repository holds the rules the student wrote for an AI coding tool, including one against inventing numbers.
+- [Zaid Saifan](https://zaidsaifan-star.github.io/), at Western, has the cleanest structure of the five on its golf-cart page, with sections named The brief, On the board, Protection, and Validation, which ends on a next step. The repository holds a rules file for an AI coding tool, including a rule against inventing numbers.
 
   **Pros**
 
-  - Every project page follows the same datasheet shape, so a reviewer always knows where to find the brief, the board, the protection, the results, and the next step.
+  - The golf-cart page follows a datasheet shape, so a reviewer knows where to find the brief, the board, the protection, and the results.
   - The hospital-robot and RC-car pages include photos of the assembled hardware, and the RC-car page has a demo video.
 
   **Cons**
 
   - The home page leans on decorative effects (animated traces, 3D card tilt, magnetic buttons, a typed role line) that do not help a reviewer judge the engineering.
+  - The other project pages use their own headings, so the datasheet shape does not carry across the site.
   - The golf-cart Validation section gives a current range as a design target with no measured current beside it.
   - The function-generator page says the outputs were captured on an oscilloscope, but the only waveforms on the page are an SVG drawing, with no scope screenshot.
 
@@ -104,7 +106,7 @@ These are portfolios by EECS students and new graduates, read from their public 
   - The report title and opening overview stack buzzwords ("leveraging", "tightly integrated system", "push interactive graphics performance") before the evidence.
   - The write-up never shows a scope or logic-analyzer capture of the stuck MISO line, even though that is the central hardware bug.
 
-Across the five, every site has photos and headline numbers, three link the code for each project, two show a schematic, three say what broke or what is unfinished, and none shows a scope capture. If you build one, the scope capture and the What broke section are where you pull ahead.
+Across the five, four sites have photos of the build, three give a headline number for every project, and one links code for every project. Three show a schematic, three say what broke or what is unfinished, and none shows a scope capture on its pages. If you build one, the scope capture and the What broke section are where you pull ahead.
 
 <TallyFigure />
 
