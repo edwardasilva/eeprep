@@ -36,7 +36,7 @@ Put "Willing to relocate" next to the location if it is true. A city far from th
 
 ## Education
 
-Degree on the first line with GPA on the same line. School under it with the graduation date at the right margin, "Expected" in front of it before graduation. One line each for "Relevant coursework:" and "Activities:", labels in bold. Drop high school after the first year. With a master's, keep the bachelor's line.
+Degree on the first line with GPA on the same line. School under it with the graduation date at the right margin, "Expected" in front of it before graduation. One line each for "Relevant coursework:" and "Activities:", labels in bold. If the user has graduate courses, list them first on their own line, labeled "Graduate coursework:". Write course names, such as Digital Signal Processing, never course codes. Drop high school after the first year. With a master's, keep the bachelor's line.
 
 Coursework is where EE parts from the wiki. The wiki says to leave it off unless the courses are specialized. ECE interviewers say the courses show whether the student can pass the interview, and recruiters like it. List upper-level electives that match the posting.
 
@@ -48,7 +48,7 @@ Call the section Projects. Leave the word "project" out of each title. Tools in 
 
 ## Experience
 
-Call it Experience. Engineering roles get a bold title and company with dates at the right margin, then the location, then bullets. A job outside engineering depends on volume. With good engineering experience, it gets one line with no bullets, or goes. Without that, it gets bullets, using what the user can.
+Call it Experience. Engineering roles get a bold title and company with dates at the right margin. Put the location on the next line, under the date and also at the right margin, never on the same line as the dates. Then the bullets. A job outside engineering depends on volume. With good engineering experience, it gets one line with no bullets, or goes. Without that, it gets bullets, using what the user can.
 
 ## Skills
 
@@ -58,7 +58,21 @@ Two or three comma-separated lines with a bold label, most important first:
 - Hardware/Lab: oscilloscope, electronic load, logic analyzer, soldering
 - Certifications: only ones the user can prove
 
-Cut soft skills. Cut a vague "Knowledge" line. Write exact product names: C, C++ as two items, Ansys HFSS with the company name. When a posting names a skill the user has, use the posting's word. Every skill needs a bullet behind it. No second column.
+Cut soft skills. Leave IDEs and editors such as VS Code and vim out of Skills, and treat notebook environments such as Jupyter the same way. Name the language or method in Skills, and the tool in the bullet where it produced a result. Cut a vague "Knowledge" line. Write exact product names: C, C++ as two items, Ansys HFSS with the company name. When a posting names a skill the user has, use the posting's word. Every skill needs a bullet behind it. No second column.
+
+## Bullet counts
+
+When a bullet counts sources, links, or pages, count unique items, and leave out links back to the user's own repositories or pages. This is eeprep's advice.
+
+## Graduate-application CV
+
+A master's or PhD application often asks for a CV. The rules above still apply, with these differences. They are eeprep's advice.
+
+- Up to two pages. Do not split an entry's heading from its bullets across the page break, and do not leave a word or two alone on a line.
+- Education first, Skills right under it, then Experience. Add research, papers, and talks.
+- List the overall GPA with its scale, such as 3.44/4.00, even below 3.50. Do not put a graduate-only GPA on the degree line in its place. Strong graduate courses go on the "Graduate coursework:" line.
+- Grading, tutoring, or peer mentoring can sit under a Teaching heading. Give the number of students and classes.
+- 10.75 pt text is a good size for a two-page CV, 10.5 pt the smallest, with 0.5 in margins. These numbers are for the CV only. The one-page job resume rule does not change.
 
 ## Dates
 
