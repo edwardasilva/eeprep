@@ -60,7 +60,7 @@ Two or three comma-separated lines with a bold label, most important first:
 
 Cut soft skills. Leave IDEs, editors, and notebook environments such as VS Code and Jupyter out of Skills, and name the tool in the bullet where it produced a result. Cut a vague "Knowledge" line. Write exact product names: C, C++ as two items, Ansys HFSS with the company name. When a posting names a skill the user has, use the posting's word. Every skill needs a bullet behind it. No second column.
 
-## Graduate-application CV
+## A CV for a graduate application
 
 When the user applies to a master's or PhD program, they may need a CV, not a resume. The other rules still apply, with these differences:
 
