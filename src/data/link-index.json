@@ -2211,6 +2211,16 @@
     "pages": ["advice/forever-learning/graduate-study"]
   },
   {
+    "url": "https://www.irs.gov/pub/irs-drop/rp-26-35.pdf",
+    "title": "IRS: Revenue Procedure 2026-35",
+    "category": "Pay and career data",
+    "summary": "IRS inflation adjustments for 2027, including the 5,400 dollar tax-free educational assistance limit.",
+    "pages": [
+      "advice/forever-learning",
+      "advice/forever-learning/graduate-study"
+    ]
+  },
+  {
     "url": "https://careers.rtx.com/global/en/lifeatrtx",
     "title": "RTX careers: Life at RTX",
     "category": "Pay and career data",
