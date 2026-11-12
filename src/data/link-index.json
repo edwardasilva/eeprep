@@ -70,7 +70,11 @@
     "title": "Michigan Engineering: Resumes, CVs and cover letters",
     "category": "Resume guides",
     "summary": "Michigan engineering career center guide to resumes, CVs and cover letters.",
-    "pages": ["advice/non-technical", "advice/resume", "advice/resume/cleanup"]
+    "pages": [
+      "advice/getting-hired/non-technical",
+      "advice/resume",
+      "advice/resume/cleanup"
+    ]
   },
   {
     "url": "https://gradschool.uky.edu/sites/default/files/2024-12/stuckert-resume-guide-final-2024-2025-1.pdf",
@@ -190,21 +194,21 @@
     "title": "UVA Engineering: Resumes and cover letters",
     "category": "Resume guides",
     "summary": "UVA Engineering resume guide, with prompts for showing teamwork in a bullet.",
-    "pages": ["advice/non-technical"]
+    "pages": ["advice/getting-hired/non-technical"]
   },
   {
     "url": "https://magazine.asme.org/issues/january-2026/career-focus-building-a-competitive-resume-that-gets-noticed",
     "title": "ASME: Building a competitive resume",
     "category": "Resume guides",
     "summary": "ASME magazine column with an engineering manager on what a resume should show.",
-    "pages": ["advice/non-technical"]
+    "pages": ["advice/getting-hired/non-technical"]
   },
   {
     "url": "https://career.colostate.edu/wp-content/uploads/2023/10/Translating-Serivce-Industry-Experience-on-Your-Resume-Fall-2023.pdf",
     "title": "Colorado State: Service industry experience on a resume",
     "category": "Resume guides",
     "summary": "Colorado State slides on turning service jobs into resume bullets with numbers.",
-    "pages": ["advice/non-technical"]
+    "pages": ["advice/getting-hired/non-technical"]
   },
   {
     "url": "https://career.gatech.edu/files/2026/06/JackieJacketResume.docx",
@@ -821,28 +825,28 @@
     "title": "Illinois ECE 431: Lab report guide",
     "category": "Tools and project resources",
     "summary": "An EE lab report guide: units, percent error, numbered equations, and IEEE citations.",
-    "pages": ["advice/non-technical"]
+    "pages": ["advice/getting-hired/non-technical"]
   },
   {
     "url": "https://insight.ieeeusa.org/articles/effective-communication-skills-vital-for-new-and-emerging-leaders/",
     "title": "IEEE-USA InSight: Communication skills for new leaders",
     "category": "Tools and project resources",
     "summary": "An IEEE-USA column on writing design documents that stand alone.",
-    "pages": ["advice/non-technical"]
+    "pages": ["advice/getting-hired/non-technical"]
   },
   {
     "url": "https://nuwrite.northwestern.edu/communities/design/docs/engineering-design-and-communication-principles-and-practice/chapter_09.pdf",
     "title": "Northwestern: Conducting design reviews",
     "category": "Tools and project resources",
     "summary": "Northwestern chapter on running a design review and handling criticism.",
-    "pages": ["advice/non-technical"]
+    "pages": ["advice/getting-hired/non-technical"]
   },
   {
     "url": "https://ece.engr.uky.edu/senior-capstone-design",
     "title": "Kentucky ECE: Senior capstone design",
     "category": "Tools and project resources",
     "summary": "Kentucky ECE capstone: team size, hours, design reviews, and materials budgets.",
-    "pages": ["advice/non-technical"]
+    "pages": ["advice/getting-hired/non-technical"]
   },
   {
     "url": "https://www.ashbyhq.com/talent-trends-report/reports/referrals",
@@ -1479,7 +1483,7 @@
     "title": "Michigan Tech: Student co-op guide",
     "category": "Job search and referrals",
     "summary": "Michigan Tech handbook on how co-op students are expected to work.",
-    "pages": ["advice/non-technical"]
+    "pages": ["advice/getting-hired/non-technical"]
   },
   {
     "url": "https://www.reddit.com/r/ECE/comments/1mojjy7/how_do_you_actually_get_referralsinterviews_for/",
@@ -1922,7 +1926,10 @@
     "title": "Michigan Engineering: Interviews",
     "category": "Interview prep",
     "summary": "University of Michigan engineering career center guide to interview formats and preparation.",
-    "pages": ["advice/getting-hired/how-to-interview", "advice/non-technical"]
+    "pages": [
+      "advice/getting-hired/how-to-interview",
+      "advice/getting-hired/non-technical"
+    ]
   },
   {
     "url": "https://career.engin.umich.edu/phd-industry-job-search/",
@@ -2045,14 +2052,14 @@
     "title": "MIT EECS Communication Lab: Email",
     "category": "Interview prep",
     "summary": "MIT EECS guide to short, action-first email, with a subject line format.",
-    "pages": ["advice/non-technical"]
+    "pages": ["advice/getting-hired/non-technical"]
   },
   {
     "url": "https://mitcommlab.mit.edu/eecs/commkit/elevator-pitch/",
     "title": "MIT EECS Communication Lab: Elevator pitch",
     "category": "Interview prep",
     "summary": "MIT EECS guide to a 20 to 40 second pitch of your work.",
-    "pages": ["advice/non-technical"]
+    "pages": ["advice/getting-hired/non-technical"]
   },
   {
     "url": "https://www.bls.gov/ooh/architecture-and-engineering/electrical-and-electronics-engineers.htm",
@@ -2564,28 +2571,28 @@
     "title": "NACE: Key skills employers seek on resumes",
     "category": "Pay and career data",
     "summary": "NACE Job Outlook 2026 Spring Update: the skills employers look for on student resumes.",
-    "pages": ["advice/non-technical"]
+    "pages": ["advice/getting-hired/non-technical"]
   },
   {
     "url": "https://www.naceweb.org/career-readiness/competencies/the-gap-in-perceptions-of-new-grads-competency-proficiency-and-resources-to-shrink-it",
     "title": "NACE: The gap in perceptions of new grads' proficiency",
     "category": "Pay and career data",
     "summary": "NACE compares how students and employers rate new graduates on eight career competencies.",
-    "pages": ["advice/non-technical"]
+    "pages": ["advice/getting-hired/non-technical"]
   },
   {
     "url": "https://www.naceweb.org/career-readiness/competencies/career-readiness-defined",
     "title": "NACE: Career readiness competencies",
     "category": "Pay and career data",
     "summary": "NACE defines eight career readiness competencies, with sample behaviors for each.",
-    "pages": ["advice/non-technical"]
+    "pages": ["advice/getting-hired/non-technical"]
   },
   {
     "url": "https://www.abet.org/accreditation/accreditation-criteria/criteria-for-accrediting-engineering-programs-2026-2027/",
     "title": "ABET: Criteria for accrediting engineering programs, 2026-27",
     "category": "Pay and career data",
     "summary": "ABET student outcomes every accredited engineering program must teach, including communication and teamwork.",
-    "pages": ["advice/non-technical"]
+    "pages": ["advice/getting-hired/non-technical"]
   },
   {
     "url": "https://students.ieee.org/",
