@@ -341,7 +341,7 @@
     "title": "r/EngineeringResumes: EE senior with no experience",
     "category": "Resume feedback from reviewers and recruiters",
     "summary": "Resume review thread for an electrical engineering senior with no work experience.",
-    "pages": ["advice/resume", "advice/resume/workshop"]
+    "pages": ["advice/resume/workshop"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/1wxcvrq/student_how_do_you_find_good_project_ideas/",
@@ -1094,13 +1094,6 @@
     "title": "NIH: Informational interview handout",
     "category": "Job search and referrals",
     "summary": "NIH training office handout on requesting and following up an informational interview.",
-    "pages": ["advice/getting-hired/networking"]
-  },
-  {
-    "url": "https://www.reddit.com/comments/1rmcm69/",
-    "title": "Reddit: Referral requests from strangers",
-    "category": "Job search and referrals",
-    "summary": "A recruiter and engineers on what happens to referral requests from strangers.",
     "pages": ["advice/getting-hired/networking"]
   },
   {
