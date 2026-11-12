@@ -1,0 +1,96 @@
+---
+import { externalLinks } from '../resume/caption';
+// Figure 6.1 as HTML and CSS. One column of three steps. The last step loops
+// back to the first, so the figure reads as a cycle you repeat after every
+// batch of applications. Every step restates a rule from the page.
+const steps = [
+	{
+		title: 'Ask for a referral',
+		body: 'Alumni, professors, classmates, past coworkers. Apply the way your referrer says.',
+	},
+	{
+		title: 'Apply within two weeks',
+		body: 'Send the application soon after the posting goes up.',
+	},
+	{
+		title: 'About 20 applications, zero interviews?',
+		body: 'Reevaluate the resume, the channel, and the roles you target, then keep going. Talk to a professor or meet recruiters at a career fair.',
+	},
+];
+const alt =
+	'Three steps, repeated after each batch. One, ask for a referral. Two, apply within two weeks of the posting. Three, after about 20 applications with no interviews, pause and reevaluate the resume, the channel, and the targeting, then return to step one.';
+const caption = externalLinks(
+	`After about 20 quiet applications, reevaluate, then keep going. Sources: <a href="https://www.ashbyhq.com/talent-trends-report/reports/referrals">Ashby's referral report</a>, <a href="https://careerdevelopment.princeton.edu/internships-jobs/recruiting-timelines">Princeton's recruiting timelines</a>, and <a href="https://www.reddit.com/r/ElectricalEngineering/comments/1v36dj4/best_ways_to_get_an_internship_as_2nd_year_ee/">a thread on talking to professors</a>.`,
+);
+---
+
+<figure class="eep-fig wide eep-apply-fig" id="fig-6-1">
+	<p class="eep-kicker">The application loop</p>
+	<p class="sr-only">{alt}</p>
+	<div class="eep-apply not-content" aria-hidden="true">
+		<ol>
+			{steps.map((s, i) => (
+				<li class="eep-apply-step">
+					<span class="eep-num">{i + 1}</span>
+					<div>
+						<p class="eep-apply-title">{s.title}</p>
+						<p class="eep-apply-body">{s.body}</p>
+					</div>
+				</li>
+			))}
+		</ol>
+		<p class="eep-apply-loop">Then return to step 1.</p>
+	</div>
+	<figcaption>
+		<span class="eep-fignum"></span> <span set:html={caption} />
+	</figcaption>
+</figure>
+
+<style>
+	.eep-apply {
+		margin-top: 1rem;
+		font-family: var(--eep-font-sans);
+		color: var(--eep-ink);
+	}
+	.eep-apply p {
+		margin: 0;
+		max-width: none;
+		overflow-wrap: anywhere;
+	}
+	.eep-apply ol {
+		display: grid;
+		gap: 0.75rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.eep-apply li {
+		display: grid;
+		grid-template-columns: 1.75rem 1fr;
+		gap: 0.75rem;
+		align-items: start;
+		margin: 0;
+		max-width: none;
+		padding: 0.6rem 0.75rem;
+		border: 1px solid var(--eep-dg-mute);
+		border-radius: var(--eep-radius);
+		background: var(--eep-dg-tint);
+	}
+	.eep-apply .eep-apply-title {
+		font-size: 0.9375rem;
+		font-weight: 600;
+		line-height: 1.3;
+	}
+	.eep-apply .eep-apply-body {
+		margin-top: 0.2rem;
+		font-size: 0.8125rem;
+		line-height: 1.45;
+		color: var(--eep-ink-2);
+	}
+	.eep-apply .eep-apply-loop {
+		margin-top: 0.6rem;
+		font: 0.75rem/1.4 var(--eep-font-serif);
+		color: var(--eep-ink-2);
+		text-align: right;
+	}
+</style>

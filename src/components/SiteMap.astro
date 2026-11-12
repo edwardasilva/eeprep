@@ -1,0 +1,121 @@
+---
+// Every page on the site in one table per section, built from the sidebar so
+// the two can't drift apart. Headings and spacing follow the Sources page, and
+// the tables use the Roadmap table style. A parent-page group (see
+// src/lib/sidebar-parents.mjs) gets its own table, with its parent page first.
+// A page with no sub-pages sits in the table of the section that holds it.
+// Each description is that page's frontmatter description.
+import { getCollection } from 'astro:content';
+import type { StarlightRouteData } from '@astrojs/starlight/route-data';
+import { homeDescription } from '../lib/home';
+import { splitParentGroup } from '../lib/sidebar-parents.mjs';
+
+type Entry = StarlightRouteData['sidebar'][number];
+
+interface Row {
+	label: string;
+	href: string;
+	isCurrent: boolean;
+	description: string;
+}
+
+interface Section {
+	id: string;
+	name: string;
+	rows: Row[];
+}
+
+const descriptions = new Map<string, string>();
+for (const doc of await getCollection('docs')) {
+	descriptions.set(doc.id, doc.data.description ?? '');
+}
+const rowFor = (label: string, href: string, isCurrent: boolean): Row => {
+	const description = descriptions.get(href.replace(/^\/|\/$/g, ''));
+	if (description === undefined)
+		throw new Error(`SiteMap: no docs page for sidebar link "${href}"`);
+	return { label, href, isCurrent, description };
+};
+
+const sectionFor = (name: string, rows: Row[] = []): Section => ({
+	id: `sitemap-${name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
+	name,
+	rows,
+});
+
+// The home page is src/pages/index.astro, not a docs entry or a sidebar link.
+// Its description is in src/lib/home.ts.
+const general = sectionFor('General', [
+	{
+		label: 'Home',
+		href: '/',
+		isCurrent: false,
+		description: homeDescription,
+	},
+]);
+const sections: Section[] = [general];
+
+const walk = (entries: Entry[], section: Section) => {
+	for (const entry of entries) {
+		if (entry.type === 'link') {
+			section.rows.push(rowFor(entry.label, entry.href, entry.isCurrent));
+			continue;
+		}
+		const split = splitParentGroup(entry);
+		const next = sectionFor(split ? split.parent.label : entry.label);
+		if (split) {
+			next.rows.push(
+				rowFor(split.parent.label, split.parent.href, split.parent.isCurrent),
+			);
+		}
+		sections.push(next);
+		walk(split ? split.children : entry.entries, next);
+	}
+};
+walk(Astro.locals.starlightRoute.sidebar, general);
+---
+
+<div class="eep-sitemap">
+	{sections.map((section) => (
+		<section aria-labelledby={section.id}>
+			<h2 id={section.id}>{section.name}</h2>
+			<table class="eep-roadmap" aria-labelledby={section.id}>
+				<thead>
+					<tr>
+						<th scope="col">Page</th>
+						<th scope="col">What it covers</th>
+					</tr>
+				</thead>
+				<tbody>
+					{section.rows.map((row) => (
+						<tr>
+							<td data-label="Page">
+								<a
+									href={row.href}
+									aria-current={row.isCurrent ? 'page' : undefined}
+								>
+									{row.label}
+								</a>
+							</td>
+							<td data-label="What it covers">{row.description}</td>
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</section>
+	))}
+</div>
+
+<style>
+	.eep-sitemap {
+		margin-top: 2rem;
+	}
+	.eep-sitemap section + section {
+		margin-top: 2.5rem;
+	}
+	.eep-sitemap h2 {
+		margin: 0 0 0.75rem;
+		font: 600 var(--eep-text-h3, 1.25rem) / var(--eep-lh-heading, 1.25)
+			var(--eep-font-serif);
+		color: var(--eep-ink);
+	}
+</style>

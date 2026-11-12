@@ -1,0 +1,323 @@
+---
+import { externalLinks } from './caption';
+// Alex's page is real text. The five callouts are a list. Pins repeat those numbers for sighted readers.
+// Callout bodies hold fixed links to the sample resumes, so they render as HTML.
+const notes = [
+	{
+		title: 'Centered header.',
+		body: 'One contact line.',
+	},
+	{
+		title: 'Dates at the right margin.',
+		body: 'Five of the six samples do this.',
+	},
+	{
+		title: 'One line of coursework.',
+		body: 'Courses that match the posting.',
+	},
+	{
+		title: 'Skills right under Education.',
+		body: "Four of the six samples do this. Each of Alex's eight tools appears in a bullet.",
+	},
+	{
+		title: 'Projects above Experience.',
+		body: 'Alex has no engineering job yet.',
+	},
+].map((note) => ({ ...note, body: externalLinks(note.body) }));
+const caption = externalLinks(
+	`Layout from the <a href="https://www.reddit.com/r/EngineeringResumes/wiki/index/">r/EngineeringResumes wiki</a>, plus eeprep's centered header, checked against six career center samples.`,
+);
+---
+
+<figure class="eep-fig wide eep-example" id="fig-finished-page">
+	<p class="eep-kicker">Alex's finished page</p>
+	<p class="eep-figtitle">One page, one column, dates on the right</p>
+	<p class="eep-example-flag">
+		<span class="eep-tag">Made-up example</span>
+		<span>Alex Doe is not a real student.</span>
+	</p>
+	<div class="eep-example-wrap">
+		<div class="eep-example-sheet">
+			<header class="eep-example-head eep-example-mark">
+				<span class="eep-num eep-pin" data-pin="1"></span>
+				<p class="eep-example-name">Alex Doe</p>
+				<p class="eep-example-contact">
+					alex@[school].edu | linkedin.com/in/alex-doe-example |
+					github.com/alex-doe-example
+				</p>
+				<p>[phone] | City, ST | Willing to relocate</p>
+			</header>
+			<p class="eep-example-sec">Education</p>
+			<p>
+				<strong>B.S. Electrical Engineering</strong>, GPA [X.XX]/4.00
+			</p>
+			<div class="eep-example-row">
+				<p>[University]</p>
+				<p class="eep-example-date eep-example-mark">
+					<span class="eep-num eep-pin eep-pin-right" data-pin="2"></span>
+					Expected Spring 2027
+				</p>
+			</div>
+			<p class="eep-example-mark">
+				<span class="eep-num eep-pin" data-pin="3"></span>
+				<strong>Relevant coursework:</strong> Embedded Systems, Power
+				Electronics, Digital Design
+			</p>
+			<p>
+				<strong>Activities:</strong> IEEE student branch, Tau Beta Pi
+			</p>
+			<p class="eep-example-sec">Skills</p>
+			<div class="eep-example-mark">
+				<span class="eep-num eep-pin" data-pin="4"></span>
+				<p>
+					<strong>Software:</strong> KiCad, LTspice, C, Python
+				</p>
+				<p>
+					<strong>Hardware/Lab:</strong> STM32, oscilloscope, electronic load,
+					logic analyzer
+				</p>
+			</div>
+			<div class="eep-example-mark">
+				<span class="eep-num eep-pin" data-pin="5"></span>
+				<p class="eep-example-sec">Projects</p>
+				<div class="eep-example-row">
+					<p>
+						<strong>CubeSat Power Board</strong> (KiCad, LTspice)
+					</p>
+					<p class="eep-example-date">Fall 2025–Spring 2026</p>
+				</div>
+				<ul>
+					<li>
+						Designed a [X] W CubeSat buck converter in KiCad and LTspice,
+						measured at [X]% efficiency on an electronic load
+					</li>
+					<li>
+						Cut output ripple from [X] mV to [X] mV by shrinking the switching
+						loop, verified on an oscilloscope
+					</li>
+				</ul>
+				<div class="eep-example-row">
+					<p>
+						<strong>Bench Data Logger</strong> (STM32, C, Python)
+					</p>
+					<p class="eep-example-date">Spring 2025</p>
+				</div>
+				<ul>
+					<li>
+						Wrote STM32 firmware in C to sample a 4-channel SPI ADC at [X] kHz
+						and stream it to a Python logger
+					</li>
+					<li>
+						Moved UART writes to DMA after a logic analyzer showed dropped
+						samples, cutting losses to [X]%
+					</li>
+				</ul>
+			</div>
+			<p class="eep-example-sec">Experience</p>
+			<div class="eep-example-row">
+				<p>
+					<strong>Sales Associate, [Retail store]</strong>
+				</p>
+				<p class="eep-example-date">Summer 2023–Summer 2024</p>
+			</div>
+			<p>City, ST</p>
+		</div>
+		<ol class="eep-example-notes eep-num-list">
+			{notes.map((note) => (
+				<li>
+					<span>
+						<strong>{note.title}</strong> <Fragment set:html={note.body} />
+					</span>
+				</li>
+			))}
+		</ol>
+	</div>
+	<p class="eep-example-aside">
+		Dashed outlines are callouts and don't appear on the real page.
+	</p>
+	<figcaption>
+		<span class="eep-fignum"></span> <span set:html={caption} />
+	</figcaption>
+</figure>
+
+<style>
+	/* The kicker can wrap on phones. */
+	.eep-example .eep-kicker {
+		line-height: 1.35;
+	}
+	.eep-example {
+		container-type: inline-size;
+	}
+	.eep-example-flag {
+		margin: 0 0 1rem;
+		color: var(--eep-ink-2);
+		font-size: 0.875rem;
+	}
+	.eep-tag {
+		display: inline-block;
+		margin-right: 0.5rem;
+		padding: 0.15rem 0.45rem;
+		border: 1px solid var(--eep-ink-2);
+		border-radius: var(--eep-radius-sm);
+		color: var(--eep-ink-2);
+		font: 600 0.75rem/1.2 var(--eep-font-sans);
+		vertical-align: 0.05em;
+	}
+	.eep-example-wrap {
+		display: grid;
+		grid-template-columns: minmax(0, 1.35fr) minmax(14rem, 0.9fr);
+		gap: 1.5rem;
+		align-items: start;
+	}
+	.eep-example-sheet {
+		position: relative;
+		padding: 1.35rem 1.6rem 1.1rem 1.7rem;
+		background: var(--eep-paper);
+		border: 1px solid var(--eep-rule);
+		color: var(--eep-ink);
+		font: 0.75rem/1.45 var(--eep-font-sans);
+		overflow-wrap: anywhere;
+	}
+	.eep-example-sheet p {
+		margin: 0;
+		max-width: none;
+	}
+	.eep-example-head {
+		text-align: center;
+	}
+	/* The contact line stays on one line whenever the sheet is wide enough
+	   for it. On phones the sheet is narrower, so it may wrap. */
+	@container (min-width: 36rem) {
+		.eep-example-contact {
+			white-space: nowrap;
+		}
+	}
+	.eep-example-name {
+		font-size: 1rem;
+		font-weight: 700;
+	}
+	:global(.sl-markdown-content) p.eep-example-sec {
+		margin: 0.7rem 0 0.2rem;
+		padding-bottom: 0.05rem;
+		border-bottom: 1px solid var(--eep-ink);
+		font: 700 0.75rem/1.3 var(--eep-font-sans);
+		color: var(--eep-ink);
+	}
+	:global(.sl-markdown-content) .eep-example-mark > p.eep-example-sec {
+		margin-top: 0.15rem;
+	}
+	.eep-example-row {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: 0.75rem;
+	}
+	/* The entry title wraps, so the date always keeps the right margin. */
+	.eep-example-row > p:first-child {
+		flex: 1 1 0;
+		min-width: 0;
+	}
+	.eep-example-sheet ul {
+		margin: 0.15rem 0 0;
+		padding-left: 1.1rem;
+	}
+	/* Room for the dashed callout outline, so it never crosses the lines
+	   above and below. */
+	.eep-example-sheet > p.eep-example-mark,
+	.eep-example-sheet > div.eep-example-mark {
+		margin-block: 0.25rem;
+	}
+	.eep-example-row:has(> .eep-example-mark) {
+		margin-bottom: 0.25rem;
+	}
+	.eep-example-mark {
+		position: relative;
+		outline: var(--eep-dg-dash);
+		outline-offset: 2px;
+	}
+	.eep-example-date {
+		flex: none;
+		white-space: nowrap;
+	}
+	.eep-pin {
+		position: absolute;
+		z-index: 1;
+		top: 0.05rem;
+		left: -1.6rem;
+	}
+	.eep-pin::before {
+		content: attr(data-pin);
+		content: attr(data-pin) / '';
+	}
+	.eep-pin-right {
+		left: auto;
+		right: -1.6rem;
+	}
+	.eep-example-notes {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		counter-reset: example;
+	}
+	.eep-example-notes li {
+		display: flex;
+		gap: 0.6rem;
+		align-items: flex-start;
+		margin: 0 0 0.85rem;
+		color: var(--eep-text);
+		font-size: 0.9rem;
+		line-height: 1.45;
+		max-width: none;
+	}
+	.eep-example-notes li > span {
+		min-width: 0;
+	}
+	.eep-example-notes li::before {
+		counter-increment: example;
+		content: counter(example);
+	}
+	.eep-example-notes strong {
+		font-weight: 700;
+	}
+	.eep-example-aside {
+		margin: 0.9rem 0 0;
+		color: var(--eep-mute);
+		font-size: 0.8125rem;
+		max-width: none;
+	}
+	/* The notes sit beside the sheet only when the sheet stays wide enough
+	   for the contact line and the degree line to fit on one line each.
+	   Below that width the notes go under the page. */
+	@container (max-width: 64rem) {
+		.eep-example-wrap {
+			grid-template-columns: minmax(0, 1fr);
+		}
+	}
+	/* On phones the sheet borrows all but 0.75rem of the figure's side
+	   padding, so the page keeps enough width to read like a resume. */
+	@container (max-width: 28rem) {
+		.eep-example-sheet {
+			margin-inline: calc(0.75rem - var(--eep-fig-pad, 2.25rem));
+		}
+		/* A date that doesn't fit beside its title drops below it, still at
+		   the right margin. */
+		.eep-example-row {
+			flex-wrap: wrap;
+		}
+		.eep-example-row > p:first-child {
+			flex: 1 1 auto;
+		}
+		.eep-example-sheet .eep-example-date {
+			margin-left: auto;
+		}
+	}
+	/* On a screen under 316px, which on a phone means zoomed in, a long
+	   date may wrap. */
+	@media (max-width: 19.75rem) {
+		.eep-example-sheet .eep-example-date {
+			flex: 0 1 auto;
+			max-width: 100%;
+			white-space: normal;
+		}
+	}
+</style>

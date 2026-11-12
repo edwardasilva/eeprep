@@ -1,0 +1,258 @@
+---
+import { externalLinks } from './caption';
+// Figure 12.1 as HTML and CSS. Alex's first draft, drawn like the finished
+// page in Figure 4.4, with five pins on the parts that come out or change. The
+// sheet is real text and the notes are a list, so a reader hears both.
+const notes = [
+	{
+		title: 'Cut the objective.',
+		body: 'The wiki keeps a summary only for senior engineers, career changers, and people returning from a gap. This one says nothing a screener can use.',
+	},
+	{
+		title: 'Move Projects above Experience.',
+		body: 'Alex has no engineering job yet, so a retail job at the top wastes the first scan. Education, then Skills, then Projects, then Experience.',
+	},
+	{
+		title: 'Rewrite every bullet as did X with Y to get Z.',
+		body: '"Worked on" hides what Alex did, and there is no number. The finished bullet names the action, the tools, and a measurement.',
+	},
+	{
+		title: 'Put dates at the right margin, in one style.',
+		body: 'Dates in parentheses after a title make the screener hunt for them. Pick semesters or months and use that style on every line.',
+	},
+	{
+		title: 'Cut soft skills and the references line.',
+		body: 'Teamwork and communication show up in interviews, not in a list. Every tool that stays needs a bullet behind it. No resume needs a references line.',
+	},
+];
+const caption = externalLinks(
+	`Alex Doe is a made-up student. The rules come from the <a href="https://www.reddit.com/r/EngineeringResumes/wiki/index/">r/EngineeringResumes wiki</a> and <a href="https://ecs.grainger.illinois.edu/student-resources/resumes-letters/resumes">Illinois Engineering Career Services</a>. The finished page is the Alex's finished page figure on the <a href="/advice/resume/#fig-finished-page">resume page</a>.`,
+);
+---
+
+<figure class="eep-fig wide eep-draft" id="fig-12-1">
+	<p class="eep-kicker">Alex's first draft</p>
+	<p class="eep-figtitle">Five edits turn this into the finished page</p>
+	<p class="eep-draft-flag">
+		<span class="eep-tag">Made-up example</span>
+		<span>Every pin marks something to cut or change.</span>
+	</p>
+	<div class="eep-draft-wrap">
+		<div class="eep-draft-sheet">
+			<header class="eep-draft-head">
+				<p class="eep-draft-name">Alex Doe</p>
+				<p>Phone: [phone] | Email: alex.doe@[school].edu</p>
+			</header>
+			<div class="eep-draft-mark">
+				<span class="eep-num eep-pin" data-pin="1"></span>
+				<p class="eep-draft-sec">Objective</p>
+				<p>
+					Seeking a challenging engineering position where I can apply my skills
+					and grow as a professional.
+				</p>
+			</div>
+			<div class="eep-draft-mark">
+				<span class="eep-num eep-pin" data-pin="2"></span>
+				<p class="eep-draft-sec">Work history</p>
+				<p>
+					<strong>Sales Associate, [Retail store]</strong> (2023–2024)
+				</p>
+				<ul>
+					<li>Responsible for customer service and stocking shelves</li>
+					<li>Worked as part of a team in a fast-paced environment</li>
+				</ul>
+			</div>
+			<p class="eep-draft-sec">Education</p>
+			<p>
+				[University], B.S. Electrical Engineering, GPA [X.XX], graduating 2027
+			</p>
+			<div class="eep-draft-mark">
+				<span class="eep-num eep-pin" data-pin="3"></span>
+				<p class="eep-draft-sec">Projects</p>
+				<p>
+					<strong>CubeSat Power Board Project</strong>
+					<span class="eep-draft-mark-inline">
+						<span class="eep-num eep-pin eep-pin-inline" data-pin="4"></span>
+						(Fall 2025 - 2026)
+					</span>
+				</p>
+				<ul>
+					<li>
+						Worked on a buck converter for a CubeSat using LTspice and KiCad.
+					</li>
+					<li>Helped test the board in the lab.</li>
+				</ul>
+				<p>
+					<strong>Data Logger Project</strong> (2025)
+				</p>
+				<ul>
+					<li>Utilized an STM32 to log data from sensors.</li>
+				</ul>
+			</div>
+			<div class="eep-draft-mark">
+				<span class="eep-num eep-pin" data-pin="5"></span>
+				<p class="eep-draft-sec">Skills</p>
+				<p>
+					Teamwork, Communication, Leadership, Problem Solving, MATLAB, Python,
+					C, KiCad, LTspice, Microsoft Office
+				</p>
+				<p class="eep-draft-refs">References available upon request</p>
+			</div>
+		</div>
+		<ol class="eep-draft-notes eep-num-list">
+			{notes.map((note) => (
+				<li>
+					<span>
+						<strong>{note.title}</strong> {note.body}
+					</span>
+				</li>
+			))}
+		</ol>
+	</div>
+	<figcaption>
+		<span class="eep-fignum"></span> <span set:html={caption} />
+	</figcaption>
+</figure>
+
+<style>
+	.eep-draft .eep-kicker {
+		line-height: 1.35;
+	}
+	.eep-draft {
+		container-type: inline-size;
+	}
+	.eep-draft-flag {
+		margin: 0 0 1rem;
+		color: var(--eep-ink-2);
+		font-size: 0.875rem;
+	}
+	.eep-tag {
+		display: inline-block;
+		margin-right: 0.5rem;
+		padding: 0.15rem 0.45rem;
+		border: 1px solid var(--eep-ink-2);
+		border-radius: var(--eep-radius-sm);
+		color: var(--eep-ink-2);
+		font: 600 0.75rem/1.2 var(--eep-font-sans);
+		vertical-align: 0.05em;
+	}
+	.eep-draft-wrap {
+		display: grid;
+		grid-template-columns: minmax(0, 1.35fr) minmax(14rem, 0.9fr);
+		gap: 1.5rem;
+		align-items: start;
+	}
+	.eep-draft-sheet {
+		position: relative;
+		padding: 1.35rem 1.6rem 1.1rem 1.7rem;
+		background: var(--eep-paper);
+		border: 1px solid var(--eep-rule);
+		color: var(--eep-ink);
+		font: 0.75rem/1.45 var(--eep-font-sans);
+		overflow-wrap: anywhere;
+	}
+	.eep-draft-sheet p {
+		margin: 0;
+		max-width: none;
+	}
+	.eep-draft-head {
+		text-align: center;
+	}
+	.eep-draft-name {
+		font-size: 1rem;
+		font-weight: 700;
+	}
+	:global(.sl-markdown-content) p.eep-draft-sec {
+		margin: 0.7rem 0 0.2rem;
+		padding-bottom: 0.05rem;
+		border-bottom: 1px solid var(--eep-ink);
+		font: 700 0.75rem/1.3 var(--eep-font-sans);
+		color: var(--eep-ink);
+	}
+	:global(.sl-markdown-content) .eep-draft-mark > p.eep-draft-sec {
+		margin-top: 0.15rem;
+	}
+	.eep-draft-sheet ul {
+		margin: 0.15rem 0 0;
+		padding-left: 1.1rem;
+	}
+	.eep-draft-sheet > div.eep-draft-mark {
+		margin-block: 0.45rem;
+	}
+	.eep-draft-mark {
+		position: relative;
+		outline: var(--eep-dg-dash);
+		outline-offset: 2px;
+	}
+	.eep-draft-mark-inline {
+		position: relative;
+		margin-left: 0.25rem;
+		outline: var(--eep-dg-dash);
+		outline-offset: 2px;
+	}
+	.eep-draft-refs {
+		margin-top: 0.5rem;
+	}
+	.eep-pin {
+		position: absolute;
+		z-index: 1;
+		top: 0.05rem;
+		left: -1.6rem;
+	}
+	.eep-pin::before {
+		content: attr(data-pin);
+		content: attr(data-pin) / '';
+	}
+	.eep-pin-inline {
+		top: -0.25rem;
+		left: auto;
+		right: -1.7rem;
+	}
+	.eep-draft-notes {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		counter-reset: draft;
+	}
+	.eep-draft-notes li {
+		display: flex;
+		gap: 0.6rem;
+		align-items: flex-start;
+		margin: 0 0 0.85rem;
+		color: var(--eep-text);
+		font-size: 0.9rem;
+		line-height: 1.45;
+		max-width: none;
+	}
+	.eep-draft-notes li > span {
+		min-width: 0;
+	}
+	.eep-draft-notes li::before {
+		counter-increment: draft;
+		content: counter(draft);
+	}
+	.eep-draft-notes strong {
+		font-weight: 700;
+	}
+	@container (max-width: 36rem) {
+		.eep-draft-wrap {
+			grid-template-columns: minmax(0, 1fr);
+		}
+	}
+	@container (max-width: 28rem) {
+		.eep-draft-sheet {
+			margin-inline: calc(0.75rem - var(--eep-fig-pad, 2.25rem));
+		}
+		/* The inline pin would sit outside the sheet on a phone, so the date takes its own line and the pin moves to the left gutter beside it. */
+		.eep-draft-mark-inline {
+			display: block;
+			width: fit-content;
+			margin-left: 0;
+		}
+		.eep-pin-inline {
+			top: 0.05rem;
+			right: auto;
+			left: -1.6rem;
+		}
+	}
+</style>

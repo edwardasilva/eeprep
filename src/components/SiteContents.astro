@@ -1,0 +1,138 @@
+---
+// The table of contents, table of figures, and table of tables. Pages come
+// from the sidebar, in sidebar order, so a new page appears here with no edit.
+// Headings, figures, and tables come from the page sources (see
+// src/lib/site-index.mjs). Tables use the Roadmap table style.
+import path from 'node:path';
+import { getCollection } from 'astro:content';
+import type { StarlightRouteData } from '@astrojs/starlight/route-data';
+import { headingsOf, itemsOf } from '../lib/site-index.mjs';
+import { figureStarts } from '../lib/figure-numbers';
+
+interface Props {
+	kind: 'contents' | 'figures' | 'tables';
+}
+const { kind } = Astro.props;
+
+type Entry = StarlightRouteData['sidebar'][number];
+
+interface Page {
+	label: string;
+	href: string;
+	headings: ReturnType<typeof headingsOf>;
+	figures: { id: string; title: string }[];
+	tables: { id: string | null; title: string | null }[];
+}
+
+const docs = new Map<string, { body: string; file: string }>();
+for (const doc of await getCollection('docs')) {
+	docs.set(doc.id, {
+		body: doc.body ?? '',
+		file: path.resolve(doc.filePath ?? ''),
+	});
+}
+
+const pages: Page[] = [];
+const walk = (entries: Entry[]) => {
+	for (const entry of entries) {
+		if (entry.type === 'group') {
+			walk(entry.entries);
+			continue;
+		}
+		const doc = docs.get(entry.href.replace(/^\/|\/$/g, ''));
+		if (!doc) throw new Error(`SiteContents: no docs page for "${entry.href}"`);
+		pages.push({
+			label: entry.label,
+			href: entry.href,
+			headings: headingsOf(doc.body),
+			...itemsOf(doc.body, doc.file),
+		});
+	}
+};
+walk(Astro.locals.starlightRoute.sidebar);
+const starts = await figureStarts(Astro.locals.starlightRoute.sidebar);
+
+const rows = pages.flatMap((page) => {
+	if (kind === 'figures') {
+		return page.figures.map((f, i) => ({
+			title: f.title,
+			href: `${page.href}#${f.id}`,
+			page: page.label,
+			pageHref: page.href,
+			detail: `Figure ${(starts.get(page.href) ?? 0) + i + 1}`,
+		}));
+	}
+	return page.tables.map((t) => ({
+		title: t.title ?? page.label,
+		href: t.id ? `${page.href}#${t.id}` : page.href,
+		page: page.label,
+		pageHref: page.href,
+		detail: '',
+	}));
+});
+---
+
+{kind === 'contents' ? (
+	<div class="eep-site-contents">
+		{pages.map((page) => (
+			<section>
+				<h2>
+					<a href={page.href}>{page.label}</a>
+				</h2>
+				{page.headings.length > 0 && (
+					<ul>
+						{page.headings.map((h) => (
+							<li class={h.level === 3 ? 'sub' : undefined}>
+								<a href={`${page.href}#${h.id}`}>{h.text}</a>
+							</li>
+						))}
+					</ul>
+				)}
+			</section>
+		))}
+	</div>
+) : (
+	<table class="eep-roadmap">
+		<thead>
+			<tr>
+				<th scope="col">{kind === 'figures' ? 'Figure' : 'Table'}</th>
+				<th scope="col">Page</th>
+				{kind === 'figures' && <th scope="col">Number</th>}
+			</tr>
+		</thead>
+		<tbody>
+			{rows.map((row) => (
+				<tr>
+					<td data-label={kind === 'figures' ? 'Figure' : 'Table'}>
+						<a href={row.href}>{row.title}</a>
+					</td>
+					<td data-label="Page">
+						<a href={row.pageHref}>{row.page}</a>
+					</td>
+					{kind === 'figures' && <td data-label="Number">{row.detail}</td>}
+				</tr>
+			))}
+		</tbody>
+	</table>
+)}
+
+<style>
+	.eep-site-contents {
+		margin-top: 2rem;
+	}
+	.eep-site-contents section + section {
+		margin-top: 1.75rem;
+	}
+	.eep-site-contents h2 {
+		margin: 0 0 0.5rem;
+		font: 600 var(--eep-text-h3, 1.25rem) / var(--eep-lh-heading, 1.25)
+			var(--eep-font-serif);
+	}
+	.eep-site-contents ul {
+		margin: 0;
+		padding-left: 1.25rem;
+	}
+	.eep-site-contents li.sub {
+		margin-left: 1.25rem;
+	}
+</style>

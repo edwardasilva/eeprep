@@ -1,0 +1,95 @@
+{
+  "name": "eeprep",
+  "private": true,
+  "type": "module",
+  "version": "0.0.1",
+  "license": "(MIT AND CC-BY-4.0)",
+  "engines": {
+    "node": ">=22.23.4 <23"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check:wikilinks": "node .github/scripts/check-wikilinks.mjs",
+    "test:wikilinks": "node .github/scripts/test-wikilinks.mjs",
+    "check:citations": "node .github/scripts/check-citations.mjs",
+    "test:citations": "node .github/scripts/test-citations.mjs",
+    "check:links": "node .github/scripts/check-links.mjs",
+    "check:link-text": "node .github/scripts/check-link-text.mjs",
+    "check:link-case": "node .github/scripts/check-link-case.mjs",
+    "test:link-case": "node .github/scripts/test-link-case.mjs",
+    "check:link-index": "node .github/scripts/check-link-index.mjs",
+    "test:link-index": "node .github/scripts/test-link-index.mjs",
+    "check:dev": "node .github/scripts/check-dev.mjs",
+    "check:mobile": "node .github/scripts/mobile-audit.mjs",
+    "check:deploy": "wrangler deploy --dry-run --env=\"\"",
+    "check:robots": "node .github/scripts/check-robots.mjs",
+    "check:figures": "node .github/scripts/check-figures.mjs",
+    "check:external-links": "node .github/scripts/check-external-links.mjs",
+    "test:sidebar": "node .github/scripts/test-sidebar.mjs",
+    "brand": "node .github/scripts/render-brand.mjs",
+    "lint": "eslint . && markdownlint-cli2 && prettier --check .",
+    "format": "prettier --write . && eslint . --fix"
+  },
+  "dependencies": {
+    "@astrojs/markdown-remark": "7.3.6",
+    "@astrojs/starlight": "0.42.10",
+    "@fontsource-variable/source-code-pro": "5.3.1",
+    "@fontsource-variable/source-serif-4": "5.3.1",
+    "astro": "7.4.7",
+    "github-slugger": "2.0.0",
+    "katex": "0.19.1",
+    "rehype-katex": "7.0.1",
+    "remark-math": "6.0.0",
+    "remark-wiki-link": "2.0.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@resvg/resvg-js": "2.6.2",
+    "eslint": "10.14.0",
+    "eslint-plugin-astro": "3.2.1",
+    "globals": "17.14.0",
+    "markdownlint-cli2": "0.24.0",
+    "playwright": "1.65.0",
+    "prettier": "3.9.10",
+    "prettier-plugin-astro": "1.1.2",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.72.1",
+    "wrangler": "4.158.0"
+  },
+  "overrides": {
+    "katex": "$katex",
+    "minimatch": "^11.0.1",
+    "re2js": "~2.8.7"
+  },
+  "prettier": {
+    "useTabs": true,
+    "singleQuote": true,
+    "plugins": [
+      "prettier-plugin-astro"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "*.md",
+          "*.mdx"
+        ],
+        "options": {
+          "useTabs": false,
+          "embeddedLanguageFormatting": "off"
+        }
+      },
+      {
+        "files": [
+          "*.json",
+          "*.yml",
+          "*.yaml"
+        ],
+        "options": {
+          "useTabs": false
+        }
+      }
+    ]
+  }
+}

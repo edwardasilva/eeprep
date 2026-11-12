@@ -1,0 +1,167 @@
+---
+// Five finished pages from resume-generator,
+// first year to graduation, as stacks of sections. Each box is one entry on
+// that page, so a reader sees what grows and what moves. The Education box
+// drops to the bottom once Experience leads.
+const pages = [
+	{
+		name: 'First year',
+		sections: [
+			{ label: 'Education', count: 1 },
+			{ label: 'Skills', count: 2 },
+			{ label: 'Projects', count: 1 },
+			{ label: 'Experience', count: 1, note: 'one line' },
+		],
+		note: 'Room left at the bottom',
+	},
+	{
+		name: 'Sophomore',
+		sections: [
+			{ label: 'Education', count: 1 },
+			{ label: 'Skills', count: 2 },
+			{ label: 'Projects', count: 2 },
+			{ label: 'Experience', count: 2, note: 'club lead, one-line job' },
+		],
+	},
+	{
+		name: 'Senior',
+		sections: [
+			{ label: 'Education', count: 1 },
+			{ label: 'Skills', count: 2 },
+			{ label: 'Projects', count: 2 },
+			{ label: 'Experience', count: 1, note: 'one line' },
+		],
+		note: 'The finished page on the resume page',
+	},
+	{
+		name: 'New graduate',
+		sections: [
+			{ label: 'Experience', count: 2, note: 'two internships' },
+			{ label: 'Projects', count: 2 },
+			{ label: 'Education', count: 1 },
+			{ label: 'Skills', count: 3, note: 'with certifications' },
+		],
+		note: 'Experience leads',
+	},
+	{
+		name: 'Packed',
+		sections: [
+			{ label: 'Experience', count: 4, note: 'three roles, one-line job' },
+			{ label: 'Projects', count: 3 },
+			{ label: 'Education', count: 1 },
+			{ label: 'Skills', count: 3 },
+		],
+		note: 'Tightened to 10.25 pt to fit',
+	},
+];
+const alt =
+	'Five resume pages side by side. First year: education, two skill lines, one project, a one-line job, with room left at the bottom. Sophomore: education, two skill lines, two projects, a club lead role and a one-line job. Alex, a senior: education, two skill lines, two projects, a one-line job. New graduate: experience with two internships leads, then two projects, education, and three skill lines including certifications. Packed: three engineering roles and a one-line job lead, then three projects, education, and three skill lines, tightened to 10.25 point text to fit.';
+---
+
+<figure class="eep-fig wide eep-stages-fig" id="fig-12-2">
+	<p class="eep-kicker">Five finished pages, first year to graduation</p>
+	<p class="sr-only">{alt}</p>
+	<div class="eep-stages-wrap not-content" aria-hidden="true">
+		<div class="eep-stages">
+			{pages.map((page) => (
+				<div class="eep-stage">
+					<p class="eep-stage-name">{page.name}</p>
+					<div class="eep-stage-sheet">
+						{page.sections.map((section) => (
+							<div class="eep-stage-section">
+								<p class="eep-stage-label">{section.label}</p>
+								<div class="eep-stage-entries">
+									{Array.from({ length: section.count }).map(() => (
+										<span class="eep-stage-entry" />
+									))}
+								</div>
+								{section.note && <p class="eep-stage-note">{section.note}</p>}
+							</div>
+						))}
+					</div>
+					{page.note && <p class="eep-stage-foot">{page.note}</p>}
+				</div>
+			))}
+		</div>
+	</div>
+	<figcaption>
+		<span class="eep-fignum"></span>{' '}
+		<span>
+			The five example resumes that ship with resume-generator, drawn as stacks.
+			Each bar is one entry. The table below links every PDF.
+		</span>
+	</figcaption>
+</figure>
+
+<style>
+	.eep-stages-fig .eep-kicker {
+		line-height: 1.35;
+	}
+	.eep-stages-wrap {
+		container-type: inline-size;
+	}
+	.eep-stages {
+		margin-top: 1rem;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
+		gap: 0.75rem;
+		font-family: var(--eep-font-sans);
+		color: var(--eep-ink);
+	}
+	.eep-stages p {
+		margin: 0;
+		max-width: none;
+		overflow-wrap: anywhere;
+	}
+	.eep-stage-name {
+		margin-bottom: 0.4rem;
+		font-size: 0.875rem;
+		font-weight: 600;
+		line-height: 1.3;
+	}
+	.eep-stage-sheet {
+		display: grid;
+		gap: 0.45rem;
+		padding: 0.6rem 0.55rem 0.7rem;
+		border: 1px solid var(--eep-dg-mute);
+		border-radius: var(--eep-radius);
+		background: var(--eep-dg-fill);
+	}
+	.eep-stage .eep-stage-label {
+		font-size: 0.75rem;
+		font-weight: 600;
+		line-height: 1.3;
+		padding-bottom: 0.1rem;
+		border-bottom: 1px solid var(--eep-dg-ink);
+	}
+	.eep-stage-entries {
+		display: grid;
+		gap: 0.2rem;
+		margin-top: 0.25rem;
+	}
+	.eep-stage-entry {
+		display: block;
+		height: 0.55rem;
+		border: 1px solid var(--eep-dg-mute);
+		border-radius: var(--eep-radius-sm);
+		background: var(--eep-dg-tint);
+	}
+	.eep-stage .eep-stage-note {
+		margin-top: 0.15rem;
+		font-size: 0.75rem;
+		line-height: 1.35;
+		color: var(--eep-ink-2);
+	}
+	.eep-stage .eep-stage-foot {
+		margin-top: 0.4rem;
+		font-size: 0.75rem;
+		line-height: 1.4;
+		color: var(--eep-ink-2);
+	}
+	/* Wide: all five pages in one row, so the eye reads left to right. */
+	@container (min-width: 42rem) {
+		.eep-stages {
+			grid-template-columns: repeat(5, minmax(0, 1fr));
+		}
+	}
+</style>

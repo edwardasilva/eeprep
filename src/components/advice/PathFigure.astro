@@ -1,0 +1,427 @@
+---
+import { externalLinks } from '../resume/caption';
+// Figure 8.1 as HTML and CSS, so the text reflows and stays readable at every
+// width. On wide figures the four routes sit in a row and merge into the main
+// path, which runs left to right. On narrow ones everything hangs off one
+// line down the left side. Dashed boxes are the fallbacks when a step fails.
+const routes = [
+	{
+		title: 'Personal hardware project',
+		body: 'Build one you can defend line by line, such as a small version of what your target company makes. Start free with lab scopes, KiCad and the Altium student license.',
+	},
+	{
+		title: 'Student design team',
+		body: 'Racing and rocket teams count as experience. Join in year one and you have something real to discuss at a career fair.',
+	},
+	{
+		title: 'Research with a professor',
+		body: 'Undergrad research counts as experience. Many professors can also refer students directly.',
+	},
+	{
+		title: 'Bench skills in the lab',
+		body: 'Learn the oscilloscope and function generator until you can use them without help.',
+	},
+];
+const steps = [
+	{
+		title: 'Resume',
+		body: 'Show your year, graduation date, GPA and classes at first glance. List each tool next to the work you did with it.',
+	},
+	{
+		title: 'Career fairs and referrals',
+		body: 'People get you past the resume stack. Meet companies at fairs, and ask professors and alumni. Internships post in late summer and fall.',
+	},
+	{
+		title: 'Hardware interviews',
+		body: 'Drill digital logic, timing, op-amps and filters. After a rejection, study the questions you missed first.',
+	},
+];
+// Each route drops onto one shared line that runs left into the first node.
+const merge = [11.8, 37.3, 62.7, 88.2].map(
+	(x) => `M${x} 0V8Q${x} 12 ${x - 1.5} 12H2.5Q1.0 12 1.0 16V24`,
+);
+const back = 'M13 4H6.5a4 4 0 0 0 0 8H14M4 4l2.5-2.5M4 4l2.5 2.5';
+const caption = externalLinks(
+	`Routes from no experience to a first internship offer. Solid lines are the main path. Dashed lines show what to do when a step fails. Sources: threads on <a href="https://www.reddit.com/r/ElectricalEngineering/comments/1ndmj2u/could_anyone_recommend_a_project_for_ee_majors/">a project you can defend</a>, <a href="https://www.reddit.com/r/ElectricalEngineering/comments/1puvlji/how_to_not_waste_my_undergrad_2nd_year_with_no/">design teams and research</a>, <a href="https://x.com/OnosSpeaks/status/2001938854585270650">bench skills</a>, <a href="https://www.reddit.com/r/ElectricalEngineering/comments/1v36dj4/best_ways_to_get_an_internship_as_2nd_year_ee/">career fairs</a>, <a href="https://www.reddit.com/r/ECE/comments/1mojjy7/how_do_you_actually_get_referralsinterviews_for/">referrals</a>, and <a href="https://www.reddit.com/r/ECE/comments/1vscm44/how_bad_is_it_to_graduate_with_zero_internships/">a summer that falls through</a>. Further reading: <a href="https://www.ashbyhq.com/talent-trends-report/reports/referrals">Ashby's referral report</a>, <a href="https://capd.mit.edu/resources/make-your-resume-ats-friendly/">MIT's career office on working around an ATS</a>.`,
+);
+---
+
+<figure class="eep-fig wide eep-paths-fig" id="fig-8-1">
+	<p class="eep-kicker">Paths to a first internship</p>
+	<div class="eep-paths not-content">
+		<div class="eep-paths-start">
+			<p class="eep-paths-head">No experience yet</p>
+			<p class="eep-paths-body">
+				A first internship comes from proof that you can build and finish
+				something.
+			</p>
+		</div>
+		<p class="eep-paths-pick">Pick one or more</p>
+		<ul class="eep-paths-routes">
+			{routes.map((r) => (
+				<li class="eep-paths-item">
+					<p class="eep-paths-title">{r.title}</p>
+					<p class="eep-paths-body">{r.body}</p>
+				</li>
+			))}
+		</ul>
+		<svg
+			class="eep-paths-merge"
+			viewBox="0 0 100 24"
+			preserveAspectRatio="none"
+			aria-hidden="true"
+			focusable="false"
+		>
+			{merge.map((d) => (
+				<path d={d} />
+			))}
+		</svg>
+		<div class="eep-paths-main">
+			{steps.slice(0, 2).map((s, i) => (
+				<div
+					class:list={[
+						'eep-paths-item',
+						'eep-paths-step',
+						`eep-paths-s${i + 1}`,
+					]}
+				>
+					<p class="eep-paths-title">{s.title}</p>
+					<p class="eep-paths-body">{s.body}</p>
+					<svg
+						class="eep-paths-arrow"
+						viewBox="0 0 10 10"
+						aria-hidden="true"
+						focusable="false"
+					>
+						<path d="M1 1.5L9 5L1 8.5Z"></path>
+					</svg>
+				</div>
+			))}
+			<div class="eep-paths-loop eep-paths-retry">
+				<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+					<path d={back}></path>
+				</svg>
+				<p class="eep-paths-body">
+					No interviews after about 20 applications? Reevaluate the resume, the
+					channel, and the targeting, then keep going.
+				</p>
+			</div>
+			{steps.slice(2).map((s) => (
+				<div class:list={['eep-paths-item', 'eep-paths-step', 'eep-paths-s3']}>
+					<p class="eep-paths-title">{s.title}</p>
+					<p class="eep-paths-body">{s.body}</p>
+					<svg
+						class="eep-paths-arrow"
+						viewBox="0 0 10 10"
+						aria-hidden="true"
+						focusable="false"
+					>
+						<path d="M1 1.5L9 5L1 8.5Z"></path>
+					</svg>
+				</div>
+			))}
+			<div class="eep-paths-item eep-paths-step eep-paths-offer">
+				<p class="eep-paths-head">First internship offer</p>
+			</div>
+			<div class="eep-paths-loop eep-paths-fall">
+				<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+					<path d={back}></path>
+				</svg>
+				<div>
+					<p class="eep-paths-title">If this summer falls through</p>
+					<p class="eep-paths-body">
+						One missed summer is a setback you can recover from. Try a design
+						team, a research seat, an 8 to 12 month internship, or a
+						semester-long co-op. Long internships often lead to full-time
+						offers. Then build more proof.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<figcaption>
+		<span class="eep-fignum"></span> <span set:html={caption} />
+	</figcaption>
+</figure>
+
+<style>
+	/* The kicker can wrap on phones. */
+	.eep-paths-fig .eep-kicker {
+		line-height: 1.35;
+	}
+	.eep-paths {
+		margin-top: 1rem;
+		--node: 0.8rem;
+		container-type: inline-size;
+		position: relative;
+		font-family: var(--eep-font-sans);
+		color: var(--eep-ink);
+	}
+	.eep-paths p {
+		margin: 0;
+		max-width: none;
+	}
+	.eep-paths ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.eep-paths li {
+		margin: 0;
+		max-width: none;
+	}
+	.eep-paths .eep-paths-head {
+		font: 600 1.375rem/1.2 var(--eep-font-serif);
+		color: var(--eep-ink);
+	}
+	.eep-paths .eep-paths-title {
+		font-size: 0.9375rem;
+		font-weight: 600;
+		line-height: 1.3;
+		color: var(--eep-ink);
+	}
+	.eep-paths .eep-paths-body {
+		margin-top: 0.25rem;
+		font-size: 0.8125rem;
+		line-height: 1.45;
+		color: var(--eep-mute);
+	}
+	.eep-paths .eep-paths-pick {
+		margin: 1rem 0 0.6rem;
+		font: 0.75rem/1 var(--eep-font-serif);
+		color: var(--eep-mute);
+	}
+
+	/* Nodes: an open ring on the line, and a filled dot at the start and at
+	   the offer. */
+	.eep-paths-item,
+	.eep-paths-start {
+		position: relative;
+	}
+	.eep-paths-item::before,
+	.eep-paths-start::before {
+		content: '';
+		position: absolute;
+		z-index: 1;
+		box-sizing: border-box;
+		width: var(--node);
+		height: var(--node);
+		border: var(--eep-dg-line) solid var(--eep-dg-ink);
+		border-radius: 50%;
+		background: var(--eep-dg-fill);
+	}
+	.eep-paths-start::before,
+	.eep-paths-offer::before {
+		background: var(--eep-dg-ink);
+	}
+
+	/* Fallback boxes. */
+	.eep-paths-loop {
+		display: flex;
+		gap: 0.5rem;
+		align-items: flex-start;
+		box-sizing: border-box;
+		padding: 0.6rem 0.75rem 0.7rem;
+		border: var(--eep-dg-dash);
+		border-radius: var(--eep-radius);
+	}
+	.eep-paths-loop > svg {
+		flex: none;
+		width: 1rem;
+		height: 1rem;
+		margin-top: 0.1rem;
+		fill: none;
+		stroke: var(--eep-dg-ink);
+		stroke-width: var(--eep-dg-line);
+		stroke-linecap: round;
+		stroke-linejoin: round;
+	}
+	.eep-paths .eep-paths-loop .eep-paths-body {
+		margin-top: 0;
+	}
+	.eep-paths .eep-paths-fall .eep-paths-body {
+		margin-top: 0.25rem;
+	}
+
+	/* Narrow: one line down the left side. Every item hangs off it. */
+	.eep-paths-merge,
+	.eep-paths-arrow {
+		display: none;
+	}
+	.eep-paths::before {
+		content: '';
+		position: absolute;
+		top: 0.5rem;
+		bottom: 2rem;
+		left: calc(var(--node) / 2 - var(--eep-dg-line) / 2);
+		border-left: var(--eep-dg-line) solid var(--eep-dg-ink);
+	}
+	.eep-paths-start,
+	.eep-paths-pick,
+	.eep-paths-item {
+		padding-left: 1.6rem;
+	}
+	.eep-paths-start::before {
+		top: 0.45rem;
+		left: 0;
+	}
+	.eep-paths-item::before {
+		top: 0.2rem;
+		left: 0;
+	}
+	.eep-paths-offer::before {
+		top: 0.45rem;
+	}
+	.eep-paths-routes,
+	.eep-paths-main {
+		display: grid;
+		gap: 1rem;
+	}
+	.eep-paths-main {
+		margin-top: 1.5rem;
+	}
+	.eep-paths-loop {
+		margin-left: 1.6rem;
+	}
+	/* Zoomed in on a phone: items sit closer to the line, the fallback
+	   boxes put their icon above the text, and the two headings shrink, so
+	   the text keeps room to wrap at word breaks. */
+	@media (max-width: 19.75rem) {
+		.eep-paths-start,
+		.eep-paths-pick,
+		.eep-paths-item {
+			padding-left: 1.15rem;
+		}
+		.eep-paths-loop {
+			flex-direction: column;
+			gap: 0.3rem;
+			margin-left: 1.15rem;
+			padding: 0.5rem 0.5rem 0.55rem;
+		}
+		.eep-paths .eep-paths-head {
+			font-size: 1.125rem;
+		}
+	}
+	/* The left line ends at the offer. The line runs behind the last box, so
+	   one cover runs from the offer's dot to the box, and a second runs down
+	   the side of the box. */
+	.eep-paths-fall {
+		position: relative;
+		background: var(--eep-dg-fill);
+	}
+	.eep-paths-offer::after,
+	.eep-paths-fall::before {
+		content: '';
+		position: absolute;
+		width: var(--node);
+		background: var(--eep-dg-fill);
+	}
+	.eep-paths-offer::after {
+		top: calc(0.45rem + var(--node));
+		bottom: -1rem;
+		left: 0;
+	}
+	.eep-paths-fall::before {
+		top: calc(-1 * var(--eep-dg-line));
+		bottom: 0;
+		left: calc(-1.6rem - var(--eep-dg-line));
+	}
+	@media (max-width: 19.75rem) {
+		.eep-paths-fall::before {
+			left: calc(-1.15rem - var(--eep-dg-line));
+		}
+	}
+
+	/* Wide: routes in a row that merge into a left-to-right main path. */
+	@container (min-width: 34rem) {
+		.eep-paths::before,
+		.eep-paths-offer::after,
+		.eep-paths-fall::before {
+			display: none;
+		}
+		.eep-paths-start {
+			padding-left: 1.5rem;
+		}
+		.eep-paths-pick {
+			padding-left: 0;
+		}
+		.eep-paths-routes {
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+			gap: 0.75rem;
+		}
+		.eep-paths-routes .eep-paths-item {
+			padding: 0 0 0.9rem;
+		}
+		.eep-paths-routes .eep-paths-item::before {
+			top: auto;
+			bottom: calc(var(--node) / -2 - var(--eep-dg-line) / 2);
+			left: calc(50% - var(--node) / 2);
+		}
+		.eep-paths-merge {
+			display: block;
+			width: 100%;
+			height: 3.25rem;
+			margin-top: 0.4rem;
+			overflow: visible;
+			fill: none;
+			stroke: var(--eep-dg-ink);
+			stroke-width: var(--eep-dg-line);
+		}
+		.eep-paths-merge path {
+			vector-effect: non-scaling-stroke;
+		}
+		.eep-paths-main {
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+			gap: 1.25rem 0.75rem;
+			margin-top: 0;
+		}
+		.eep-paths-step {
+			padding: 1.35rem 0 0;
+		}
+		.eep-paths-step::before {
+			top: 0;
+			left: 0;
+		}
+		.eep-paths-offer::before {
+			top: -0.125rem;
+		}
+		/* The path line and its arrowhead run to the next node. */
+		.eep-paths-step:not(.eep-paths-offer)::after {
+			content: '';
+			position: absolute;
+			top: calc(var(--node) / 2 - var(--eep-dg-line) / 2);
+			left: var(--node);
+			right: -0.4rem;
+			height: var(--eep-dg-line);
+			background: var(--eep-dg-ink);
+		}
+		.eep-paths-arrow {
+			display: block;
+			position: absolute;
+			top: calc(var(--node) / 2 - 0.3rem);
+			right: -0.75rem;
+			width: 0.6rem;
+			height: 0.6rem;
+			fill: var(--eep-dg-ink);
+		}
+		.eep-paths-step {
+			grid-row: 1;
+		}
+		.eep-paths-loop {
+			grid-row: 2;
+			align-self: start;
+		}
+		.eep-paths-offer .eep-paths-head {
+			font-size: 1.125rem;
+		}
+		.eep-paths-loop {
+			margin-left: 0;
+		}
+		.eep-paths-retry {
+			grid-column: 1 / 3;
+		}
+		.eep-paths-fall {
+			grid-column: 3 / 5;
+		}
+	}
+</style>

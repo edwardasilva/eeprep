@@ -1,0 +1,133 @@
+---
+import config from 'virtual:starlight/user-config';
+
+import Search from 'virtual:starlight/components/Search';
+import SiteTitle from 'virtual:starlight/components/SiteTitle';
+import ThemeSelect from 'virtual:starlight/components/ThemeSelect';
+
+const shouldRenderSearch =
+	config.pagefind ||
+	config.components.Search !== '@astrojs/starlight/components/Search.astro';
+
+const links = [
+	{ href: '/advice/', label: 'Advice', section: '/advice/' },
+	{ href: '/help/', label: 'Help', section: '/help/' },
+	{ href: '/roadmap/', label: 'Roadmap', section: '/roadmap/' },
+	{ href: '/sitemap/', label: 'Sitemap', section: '/sitemap/' },
+];
+
+const suggestions = [
+	{ href: '/advice/resume/', label: 'Resume' },
+	{ href: '/advice/getting-hired/', label: 'Getting hired' },
+	{ href: '/help/', label: 'Help' },
+	{ href: '/roadmap/', label: 'Roadmap' },
+];
+
+const pathname = Astro.url.pathname;
+
+// Only the longest matching section is marked current.
+const currentSection = links
+	.map((link) => link.section)
+	.filter((section) => pathname.startsWith(section))
+	.sort((a, b) => b.length - a.length)[0];
+---
+
+<div class="header">
+	<div class="title-wrapper sl-flex">
+		<SiteTitle />
+	</div>
+	<nav class="eep-nav" aria-label="Sections">
+		{links.map((link) => (
+			<a
+				href={link.href}
+				aria-current={link.section === currentSection ? 'page' : undefined}
+			>
+				{link.label}
+			</a>
+		))}
+	</nav>
+	<div class="sl-flex print:hidden">{shouldRenderSearch && <Search />}</div>
+	<div class="sl-flex print:hidden right-group">
+		<ThemeSelect />
+	</div>
+</div>
+
+<template id="eep-suggest-template">
+	<nav class="eep-suggest" aria-label="Suggested pages">
+		<p>Suggested pages</p>
+		<ul>
+			{suggestions.map((s) => (
+				<li>
+					<a href={s.href}>{s.label}</a>
+				</li>
+			))}
+		</ul>
+	</nav>
+</template>
+
+<script>
+	// The button's accessible name is "Search". Hide the visible "Ctrl K" hint
+	// from assistive tech so the name contains the visible text (WCAG 2.5.3).
+	// The button keeps aria-keyshortcuts, so the shortcut is still announced.
+	document
+		.querySelector('button[data-open-modal] > kbd')
+		?.setAttribute('aria-hidden', 'true');
+</script>
+
+<script>
+	// Show suggested pages in the search dialog while the query is empty.
+	const dialog = document.querySelector('site-search dialog');
+	const template = document.querySelector<HTMLTemplateElement>(
+		'#eep-suggest-template',
+	);
+	const container = dialog?.querySelector('.search-container');
+	if (dialog && template && container) {
+		const node = template.content.firstElementChild!.cloneNode(true);
+		container.append(node);
+		const box = node as HTMLElement;
+		const update = () => {
+			const input = dialog.querySelector('input');
+			box.hidden = Boolean(input?.value.trim());
+		};
+		dialog.addEventListener('input', update);
+		new MutationObserver(update).observe(dialog, { attributes: true });
+	}
+</script>
+
+<style>
+	@layer starlight.core {
+		.header {
+			display: flex;
+			gap: var(--sl-nav-gap);
+			justify-content: space-between;
+			align-items: center;
+			height: 100%;
+		}
+
+		.title-wrapper {
+			overflow: clip;
+			padding: 0.25rem;
+			margin: -0.25rem;
+			min-width: 0;
+		}
+
+		.right-group {
+			gap: 1rem;
+			align-items: center;
+		}
+
+		/* Equal outer columns keep the nav and search centered on the viewport,
+		   so they sit in the same place with or without sidebars. */
+		@media (min-width: 50rem) {
+			.header {
+				display: grid;
+				grid-template-columns: 1fr auto minmax(0, 22rem) 1fr;
+				align-content: center;
+			}
+
+			.right-group {
+				justify-self: end;
+			}
+		}
+	}
+</style>

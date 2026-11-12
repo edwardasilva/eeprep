@@ -1,0 +1,138 @@
+---
+import { externalLinks } from '../resume/caption';
+// Figure 14.1 as HTML and CSS. Two columns of the same boxes: what to hand an
+// AI tool, and what to keep for yourself. Neither column is marked, because
+// the page text says which one matters.
+const hand = [
+	{
+		title: 'Finding postings',
+		body: 'A scraper or a filter that watches the career pages you care about.',
+	},
+	{
+		title: 'Checking a draft',
+		body: 'Gaps against a posting, typos, a bullet that says "helped".',
+	},
+	{
+		title: 'Rehearsing',
+		body: 'Questions on one resume line, five layers deep, before a mock interview.',
+	},
+	{
+		title: 'Explaining a concept',
+		body: 'What volatile does, or how an LDO differs from a buck converter.',
+	},
+];
+const keep = [
+	{
+		title: 'Every bullet',
+		body: 'The verb, the tool, and the number are yours, or they come off.',
+	},
+	{
+		title: 'Application answers',
+		body: 'Read the posting. Some employers set a rule for AI here.',
+	},
+	{
+		title: 'Take-homes and interviews',
+		body: 'Assume AI is banned unless the employer says otherwise.',
+	},
+	{
+		title: 'The measurement',
+		body: 'No tool can read your scope for you. Every [X] is measured.',
+	},
+];
+const alt =
+	'Two columns. Hand to the tool: finding postings with a scraper or a filter, checking a draft for gaps and typos, rehearsing questions on one resume line, and explaining a concept such as volatile or a buck converter against an LDO. Keep for yourself four things. Every bullet, because the verb, tool, and number are yours. Application answers, because some employers set a rule for AI there. Take-homes and interviews, where AI is usually banned. The measurement, because no tool reads your oscilloscope.';
+const caption = externalLinks(
+	`Where a tool helps and where it does not. Sources: <a href="https://x.com/randomrecruiter/status/2081829972415578607">a recruiter on resumes padded with AI</a> and <a href="https://www.anthropic.com/candidate-ai-guidance">one employer's AI rules for candidates</a>.`,
+);
+---
+
+<figure class="eep-fig wide eep-aiuse-fig" id="fig-14-1">
+	<p class="eep-kicker">What to hand the tool, and what to keep</p>
+	<p class="sr-only">{alt}</p>
+	<div class="eep-aiuse not-content" aria-hidden="true">
+		<section class="eep-aiuse-col">
+			<p class="eep-aiuse-head">Hand to the tool</p>
+			<ul>
+				{hand.map((item) => (
+					<li>
+						<p class="eep-aiuse-title">{item.title}</p>
+						<p class="eep-aiuse-body">{item.body}</p>
+					</li>
+				))}
+			</ul>
+		</section>
+		<section class="eep-aiuse-col">
+			<p class="eep-aiuse-head">Keep for yourself</p>
+			<ul>
+				{keep.map((item) => (
+					<li>
+						<p class="eep-aiuse-title">{item.title}</p>
+						<p class="eep-aiuse-body">{item.body}</p>
+					</li>
+				))}
+			</ul>
+		</section>
+	</div>
+	<figcaption>
+		<span class="eep-fignum"></span> <span set:html={caption} />
+	</figcaption>
+</figure>
+
+<style>
+	.eep-aiuse-fig .eep-kicker {
+		line-height: 1.35;
+	}
+	.eep-aiuse {
+		margin-top: 1rem;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+		gap: 1rem;
+		font-family: var(--eep-font-sans);
+		color: var(--eep-ink);
+	}
+	.eep-aiuse p {
+		margin: 0;
+		max-width: none;
+		overflow-wrap: anywhere;
+	}
+	.eep-aiuse-col {
+		padding: 0.75rem 0.85rem 0.85rem;
+		border: 1px solid var(--eep-dg-mute);
+		border-radius: var(--eep-radius);
+		background: var(--eep-dg-fill);
+	}
+	.eep-aiuse .eep-aiuse-head {
+		margin-bottom: 0.6rem;
+		padding-bottom: 0.3rem;
+		border-bottom: 1px solid var(--eep-dg-ink);
+		font-size: 0.9375rem;
+		font-weight: 600;
+		line-height: 1.3;
+	}
+	.eep-aiuse ul {
+		display: grid;
+		gap: 0.5rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.eep-aiuse li {
+		margin: 0;
+		max-width: none;
+		padding: 0.5rem 0.6rem 0.55rem;
+		border: 1px solid var(--eep-dg-mute);
+		border-radius: var(--eep-radius);
+		background: var(--eep-dg-tint);
+	}
+	.eep-aiuse .eep-aiuse-title {
+		font-size: 0.875rem;
+		font-weight: 600;
+		line-height: 1.3;
+	}
+	.eep-aiuse .eep-aiuse-body {
+		margin-top: 0.15rem;
+		font-size: 0.8125rem;
+		line-height: 1.45;
+		color: var(--eep-ink-2);
+	}
+</style>

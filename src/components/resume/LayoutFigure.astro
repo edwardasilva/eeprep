@@ -1,0 +1,369 @@
+---
+import { externalLinks } from './caption';
+// Figure 4.2 as HTML and CSS, so the text reflows and stays readable at every
+// width. Each rule gets a row: a do wireframe, a don't wireframe and a note.
+// The wireframes are schematic drawings with no text, so they stay small
+// inline SVGs hidden from screen readers.
+type Line = [number, number, number];
+interface Frame {
+	label: string;
+	good: boolean;
+	svg: string;
+}
+
+const h = (lines: Line[]) =>
+	lines.map(([x1, y, x2]) => `M${x1} ${y}H${x2}`).join('');
+const text = (d: string) => `<path class="wf-text" d="${d}"/>`;
+const frame = (cls = 'wf-frame') =>
+	`<rect class="${cls}" x="0.5" y="0.5" width="129" height="167" rx="1"/>`;
+const dateLines = h([
+	[12, 20, 62],
+	[12, 28, 112],
+	[12, 36, 104],
+	[12, 60, 58],
+	[12, 68, 114],
+	[12, 76, 100],
+	[12, 100, 66],
+	[12, 108, 110],
+]);
+
+// A correctly formatted page has a centered header. Every "Do" wireframe
+// starts with it, so each one still looks like a good page.
+const header = `<path class="wf-ink" d="${h([
+	[40, 14, 90],
+	[28, 22, 102],
+])}"/>`;
+// Entry titles with a date tick at the right margin.
+const dateTicks = (ys: number[]) =>
+	`<path class="wf-accent" d="${h(ys.map((y): Line => [96, y, 118]))}"/>`;
+
+const rules: { title: string; note: string; frames: [Frame, Frame] }[] = [
+	{
+		title: 'Columns',
+		note: 'A sidebar hides tool use.',
+		frames: [
+			{
+				label: 'Do · one column',
+				good: true,
+				svg:
+					frame() +
+					header +
+					dateTicks([38, 70, 110, 142]) +
+					text(
+						h([
+							[12, 38, 74],
+							[12, 46, 110],
+							[12, 54, 114],
+							[12, 70, 74],
+							[12, 78, 104],
+							[12, 86, 116],
+							[12, 94, 108],
+							[12, 110, 74],
+							[12, 118, 100],
+							[12, 126, 112],
+							[12, 142, 74],
+							[12, 150, 96],
+						]),
+					),
+			},
+			{
+				label: "Don't · sidebar, photo",
+				good: false,
+				svg:
+					frame('wf-frame wf-frame-dont') +
+					'<rect class="wf-soft" x="8" y="8" width="38" height="152"/>' +
+					'<circle class="wf-text" cx="27" cy="26" r="10"/>' +
+					text(
+						h([
+							[14, 46, 40],
+							[14, 54, 36],
+							[14, 62, 40],
+							[14, 80, 38],
+							[14, 88, 32],
+							[54, 14, 120],
+							[54, 30, 122],
+							[54, 38, 116],
+							[54, 46, 120],
+							[54, 62, 122],
+							[54, 70, 110],
+							[54, 78, 118],
+							[54, 94, 120],
+							[54, 102, 114],
+						]),
+					),
+			},
+		],
+	},
+	{
+		title: 'Dates',
+		note: 'Aligned dates are easy to scan.',
+		frames: [
+			{
+				label: 'Do · right margin',
+				good: true,
+				svg:
+					frame() +
+					header +
+					text(
+						h([
+							[12, 44, 62],
+							[12, 52, 112],
+							[12, 60, 104],
+							[12, 84, 58],
+							[12, 92, 114],
+							[12, 100, 100],
+							[12, 124, 66],
+							[12, 132, 110],
+						]),
+					) +
+					dateTicks([44, 84, 124]) +
+					'<path class="wf-guide" d="M118.5 36V132"/>',
+			},
+			{
+				label: "Don't · scattered",
+				good: false,
+				svg:
+					frame() +
+					text(dateLines) +
+					`<path class="wf-mute" d="${h([
+						[68, 20, 92],
+						[64, 60, 90],
+						[12, 116, 38],
+					])}"/>`,
+			},
+		],
+	},
+	{
+		title: 'Space',
+		note: 'Fill the page, no cramming.',
+		frames: [
+			{
+				label: 'Do · full, even gaps',
+				good: true,
+				svg:
+					frame() +
+					header +
+					dateTicks([38, 70, 102, 134]) +
+					text(
+						h([
+							[12, 38, 74],
+							[12, 46, 118],
+							[12, 54, 108],
+							[12, 70, 74],
+							[12, 78, 114],
+							[12, 86, 110],
+							[12, 102, 74],
+							[12, 110, 118],
+							[12, 118, 104],
+							[12, 134, 74],
+							[12, 142, 116],
+							[12, 150, 112],
+						]),
+					),
+			},
+			{
+				label: "Don't · empty or crammed",
+				good: false,
+				svg:
+					frame() +
+					text(
+						h([
+							[12, 16, 118],
+							[12, 24, 40],
+							[12, 44, 96],
+							[12, 52, 30],
+							[12, 80, 110],
+							[12, 88, 34],
+						]),
+					),
+			},
+		],
+	},
+];
+const caption = externalLinks('Wireframes are schematic.');
+---
+
+<figure class="eep-fig wide eep-layout-fig" id="fig-layout">
+	<p class="eep-kicker">Layout do's and don'ts</p>
+	<p class="eep-figtitle">Boring layouts read faster</p>
+	<div class="eep-layout not-content">
+		{rules.map((rule) => (
+			<section class="eep-layout-rule">
+				<p class="eep-layout-title">{rule.title}</p>
+				{rule.frames.map((f) => (
+					<div class:list={['eep-layout-frame', { good: f.good }]}>
+						<svg
+							viewBox="0 0 130 168"
+							aria-hidden="true"
+							focusable="false"
+							set:html={f.svg}
+						/>
+						<p class="eep-layout-label">
+							<span class="eep-layout-lead">
+								<svg
+									class="eep-layout-mark"
+									viewBox="0 0 12 10"
+									aria-hidden="true"
+									focusable="false"
+								>
+									<path
+										d={
+											f.good
+												? 'M1.5 5.5L4.5 8.5L10.5 1.5'
+												: 'M2.5 1.5L9.5 8.5M9.5 1.5L2.5 8.5'
+										}
+									/>
+								</svg>
+								{f.label.split(' · ')[0]}
+								<span class="eep-layout-sep"> · </span>
+							</span>
+							{f.label.split(' · ').slice(1).join(' · ')}
+						</p>
+					</div>
+				))}
+				<p class="eep-layout-note">{rule.note}</p>
+			</section>
+		))}
+	</div>
+	<figcaption>
+		<span class="eep-fignum"></span>
+		<span set:html={caption} />
+	</figcaption>
+</figure>
+
+<style>
+	/* The kicker can wrap on phones. */
+	.eep-layout-fig .eep-kicker {
+		line-height: 1.35;
+	}
+	.eep-layout {
+		container-type: inline-size;
+		display: grid;
+		gap: 0.75rem;
+		margin-top: 1.25rem;
+		font-family: var(--eep-font-sans);
+	}
+	.eep-layout p {
+		margin: 0;
+		max-width: none;
+	}
+	.eep-layout-rule {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.75rem 1rem;
+		padding: 0.9rem 1rem 1rem;
+		border: 1px solid var(--eep-rule-2);
+		border-radius: var(--eep-radius);
+		background: var(--eep-dg-fill);
+	}
+	.eep-layout-title {
+		grid-column: 1 / -1;
+		font-size: 1rem;
+		font-weight: 600;
+		line-height: 1.3;
+		color: var(--eep-ink);
+	}
+	.eep-layout-frame > svg {
+		display: block;
+		width: 100%;
+		max-width: 6.75rem;
+		height: auto;
+		margin: 0 auto;
+	}
+	.eep-layout .eep-layout-label {
+		margin-top: 0.5rem;
+		font-size: 0.75rem;
+		font-weight: 600;
+		line-height: 1.35;
+		text-align: center;
+		text-wrap: balance;
+		overflow-wrap: normal;
+		color: var(--eep-mute);
+	}
+	.good .eep-layout-label {
+		color: var(--eep-ink);
+	}
+	/* Do or Don't gets its own line above the rule, so a label never wraps
+	   mid-phrase. */
+	.eep-layout-lead {
+		display: block;
+	}
+	.eep-layout-sep {
+		display: none;
+	}
+	.eep-layout-mark {
+		display: inline-block;
+		width: 0.7rem;
+		height: 0.6rem;
+		margin-right: 0.3rem;
+		vertical-align: 0;
+		fill: none;
+		stroke: currentColor;
+		stroke-width: 1.6;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+	}
+	.eep-layout-note {
+		grid-column: 1 / -1;
+		font-size: 0.875rem;
+		line-height: 1.5;
+		color: var(--eep-mute);
+	}
+
+	/* Wireframe strokes. */
+	.eep-layout-frame :global(svg *) {
+		fill: none;
+		stroke-width: var(--eep-dg-line);
+		stroke-linecap: round;
+	}
+	.eep-layout-frame :global(.wf-frame) {
+		fill: var(--eep-dg-fill);
+		stroke: var(--eep-dg-ink);
+	}
+	.eep-layout-frame :global(.wf-frame-dont),
+	.eep-layout-frame :global(.wf-text) {
+		stroke: var(--eep-dg-mute);
+	}
+	.eep-layout-frame :global(.wf-ink) {
+		stroke: var(--eep-dg-ink);
+	}
+	.eep-layout-frame :global(.wf-soft) {
+		fill: var(--eep-dg-grid);
+		stroke: none;
+	}
+	.eep-layout-frame :global(.wf-accent) {
+		stroke: var(--eep-dg-ink);
+		stroke-width: var(--eep-dg-line);
+	}
+	.eep-layout-frame :global(.wf-guide) {
+		stroke: var(--eep-dg-ink);
+		stroke-dasharray: var(--eep-dg-dasharray);
+		stroke-linecap: butt;
+	}
+	.eep-layout-frame :global(.wf-mute) {
+		stroke: var(--eep-mute);
+		stroke-width: var(--eep-dg-line);
+	}
+
+	/* Narrow: a little more room for the labels under each wireframe. */
+	@container (width < 32rem) {
+		.eep-layout-rule {
+			column-gap: 0.5rem;
+			padding-inline: 0.75rem;
+		}
+	}
+
+	/* Wide: the note sits beside the two wireframes. */
+	@container (min-width: 32rem) {
+		.eep-layout-rule {
+			grid-template-columns: 8.75rem 8.75rem minmax(0, 1fr);
+			column-gap: 1.25rem;
+			align-items: start;
+		}
+		.eep-layout-note {
+			grid-column: 3;
+			grid-row: 2;
+			align-self: center;
+		}
+	}
+</style>

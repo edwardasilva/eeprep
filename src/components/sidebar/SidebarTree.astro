@@ -1,0 +1,220 @@
+---
+// Starlight's SidebarSublist, plus parent-page groups: the group's first link is
+// its label and a separate summary button opens and closes the sub-pages.
+import { Badge, Icon } from '@astrojs/starlight/components';
+import SidebarRestorePoint from '@astrojs/starlight/components/SidebarRestorePoint.astro';
+import type { StarlightRouteData } from '@astrojs/starlight/route-data';
+import { hasCurrent, splitParentGroup } from '../../lib/sidebar-parents.mjs';
+
+type Entry = StarlightRouteData['sidebar'][number];
+type Link = Extract<Entry, { type: 'link' }>;
+
+interface Props {
+	sublist: Entry[];
+	nested?: boolean;
+}
+
+const { sublist, nested } = Astro.props;
+---
+
+<ul class:list={{ 'top-level': !nested }}>
+	{sublist.map((entry) => {
+		const split = splitParentGroup(entry);
+		const open =
+			entry.type === 'group' && (hasCurrent(entry) || !entry.collapsed);
+		const renderLink = (link: Link, extra?: string) => (
+			<a
+				href={link.href}
+				aria-current={link.isCurrent ? 'page' : undefined}
+				class:list={[{ large: !nested }, extra, link.attrs.class]}
+				{...link.attrs}
+			>
+				<span>{link.label}</span>
+				{link.badge && (
+					<Badge
+						variant={link.badge.variant}
+						class={link.badge.class}
+						text={link.badge.text}
+					/>
+				)}
+			</a>
+		);
+		return (
+			<li class:list={{ 'eep-parent': split && split.children.length > 0 }}>
+				{entry.type === 'link' ? (
+					renderLink(entry)
+				) : split && split.children.length === 0 ? (
+					renderLink(split.parent)
+				) : split ? (
+					<>
+						{renderLink(split.parent, 'eep-parent-link')}
+						<details open={open}>
+							<summary
+								class:list={{ 'eep-parent-toggle': true, large: !nested }}
+							>
+								<span class="sr-only">{split.parent.label} sub-pages</span>
+								<Icon name="right-caret" class="caret" size="1.25rem" />
+							</summary>
+							<SidebarRestorePoint />
+							<Astro.self sublist={split.children} nested />
+						</details>
+					</>
+				) : (
+					<details open={open}>
+						<summary>
+							<span class="group-label">
+								<span class="large">{entry.label}</span>
+								{entry.badge && (
+									<Badge
+										variant={entry.badge.variant}
+										class={entry.badge.class}
+										text={entry.badge.text}
+									/>
+								)}
+							</span>
+							<Icon name="right-caret" class="caret" size="1.25rem" />
+						</summary>
+						<SidebarRestorePoint />
+						<Astro.self sublist={entry.entries} nested />
+					</details>
+				)}
+			</li>
+		);
+	})}
+</ul>
+
+<style>
+	/* Starlight's sidebar list styles, unchanged. */
+	@layer starlight.core {
+		ul {
+			--sl-sidebar-item-padding-inline: 0.5rem;
+			list-style: none;
+			padding: 0;
+		}
+
+		li {
+			overflow-wrap: anywhere;
+		}
+
+		ul ul li {
+			margin-inline-start: var(--sl-sidebar-item-padding-inline);
+			border-inline-start: 1px solid var(--sl-color-hairline-light);
+			padding-inline-start: var(--sl-sidebar-item-padding-inline);
+		}
+
+		.large {
+			font-size: var(--sl-text-lg);
+			font-weight: 600;
+			color: var(--sl-color-white);
+		}
+
+		.top-level > li + li {
+			margin-top: 0.75rem;
+		}
+
+		summary {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 0.2em var(--sl-sidebar-item-padding-inline);
+			line-height: 1.4;
+			cursor: pointer;
+			user-select: none;
+		}
+		summary::marker,
+		summary::-webkit-details-marker {
+			display: none;
+		}
+
+		.caret {
+			transition: transform 0.2s ease-in-out;
+			flex-shrink: 0;
+		}
+		:global([dir='rtl']) .caret {
+			transform: rotateZ(180deg);
+		}
+		[open] > summary .caret {
+			transform: rotateZ(90deg);
+		}
+
+		a {
+			display: block;
+			border-radius: 0.25rem;
+			text-decoration: none;
+			color: var(--sl-color-gray-2);
+			padding: 0.3em var(--sl-sidebar-item-padding-inline);
+			line-height: 1.4;
+		}
+
+		a:hover,
+		a:focus {
+			color: var(--sl-color-white);
+		}
+
+		[aria-current='page'],
+		[aria-current='page']:hover,
+		[aria-current='page']:focus {
+			font-weight: 600;
+			color: var(--sl-color-text-invert);
+			background-color: var(--sl-color-text-accent);
+		}
+
+		a > *:not(:last-child),
+		.group-label > *:not(:last-child) {
+			margin-inline-end: 0.25em;
+		}
+
+		@media (min-width: 50rem) {
+			.top-level > li + li {
+				margin-top: 0.5rem;
+			}
+			.large {
+				font-size: var(--sl-text-base);
+			}
+			a {
+				font-size: var(--sl-text-sm);
+			}
+		}
+	}
+
+	/*
+	 * Parent-page groups. The link fills the row and the summary sits over its
+	 * end, so the two stay separate controls: the link opens the page and the
+	 * summary opens and closes the sub-pages.
+	 */
+	.eep-parent {
+		position: relative;
+	}
+	.eep-parent-link {
+		padding-inline-end: 2.25rem;
+	}
+	.eep-parent-toggle {
+		position: absolute;
+		inset-block-start: 0;
+		inset-inline-end: 0;
+		/* The link row: 1.4 line-height plus 0.3em padding on each side. */
+		block-size: 2em;
+		padding: 0 0.25rem;
+		border-radius: 0.25rem;
+		color: var(--sl-color-gray-2);
+	}
+	.eep-parent-toggle:hover {
+		color: var(--sl-color-white);
+	}
+	/* The current parent link takes its look from theme.css. Its toggle stays readable beside it. */
+	.eep-parent-link[aria-current='page'] + details > .eep-parent-toggle {
+		color: var(--eep-ink, var(--sl-color-white));
+	}
+	/* The toggle matches the font size of the link it sits beside. */
+	.eep-parent-toggle:not(.large) {
+		font-size: var(--eep-text-sm, var(--sl-text-sm));
+	}
+	.top-level > .eep-parent > details > .eep-parent-toggle {
+		font-size: var(--sl-text-lg);
+	}
+	@media (min-width: 50rem) {
+		.top-level > .eep-parent > details > .eep-parent-toggle {
+			font-size: var(--sl-text-base);
+		}
+	}
+</style>
