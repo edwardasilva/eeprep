@@ -466,8 +466,8 @@
     "category": "Resume feedback from reviewers and recruiters",
     "summary": "An embedded-focused sophomore shares the resume behind an NVIDIA offer.",
     "pages": [
+      "advice/getting-hired/career-paths",
       "advice/projects",
-      "advice/projects/career-paths",
       "advice/projects/software",
       "advice/resume/cleanup"
     ]
@@ -811,7 +811,7 @@
     "title": "FCC: Amateur Radio Service",
     "category": "Tools and project resources",
     "summary": "The FCC on amateur radio licenses and the volunteer examiner exams.",
-    "pages": ["advice/projects/career-paths"]
+    "pages": ["advice/getting-hired/career-paths"]
   },
   {
     "url": "https://interrupt.memfault.com/blog/embedded-systems-roadmap-bridging-the-gap",
@@ -1343,14 +1343,14 @@
     "title": "Analog Devices: Student resources",
     "category": "Job search and referrals",
     "summary": "Analog Devices on its internships, co-ops, and example intern projects.",
-    "pages": ["advice/projects/career-paths"]
+    "pages": ["advice/getting-hired/career-paths"]
   },
   {
     "url": "https://selinc.com/company/careers/sel-internships/",
     "title": "SEL: Internships",
     "category": "Job search and referrals",
     "summary": "Schweitzer Engineering Laboratories on its year-round internships.",
-    "pages": ["advice/projects/career-paths"]
+    "pages": ["advice/getting-hired/career-paths"]
   },
   {
     "url": "https://ecs.grainger.illinois.edu/student-resources/offers/evaluation",
@@ -2068,10 +2068,10 @@
     "summary": "Federal data on pay, outlook and duties for electrical and electronics engineers.",
     "pages": [
       "advice/forever-learning",
+      "advice/getting-hired/career-paths",
       "advice/getting-hired/first-full-time-role",
       "advice/getting-hired/job-market",
       "advice/projects",
-      "advice/projects/career-paths",
       "help",
       "help/resources"
     ]
@@ -2138,7 +2138,7 @@
     "title": "NCEES: FE exam",
     "category": "Pay and career data",
     "summary": "NCEES page on the Fundamentals of Engineering exam format and fee.",
-    "pages": ["advice/forever-learning", "advice/projects/career-paths"]
+    "pages": ["advice/forever-learning", "advice/getting-hired/career-paths"]
   },
   {
     "url": "https://ncees.org/licensure/",
@@ -2152,14 +2152,14 @@
     "title": "NCEES: PE Electrical and Computer exam",
     "category": "Pay and career data",
     "summary": "NCEES page on the three PE Electrical and Computer exams.",
-    "pages": ["advice/forever-learning", "advice/projects/career-paths"]
+    "pages": ["advice/forever-learning", "advice/getting-hired/career-paths"]
   },
   {
     "url": "https://ncees.org/exams/pe-exam/control-systems/",
     "title": "NCEES: PE Control Systems exam",
     "category": "Pay and career data",
     "summary": "NCEES PE Control Systems exam: computer-based, given once a year.",
-    "pages": ["advice/forever-learning", "advice/projects/career-paths"]
+    "pages": ["advice/forever-learning", "advice/getting-hired/career-paths"]
   },
   {
     "url": "https://www.onetonline.org/link/summary/17-2071.00",
@@ -2167,7 +2167,7 @@
     "category": "Pay and career data",
     "summary": "Occupation profile listing tasks, skills, tools and pay for electrical engineers.",
     "pages": [
-      "advice/projects/career-paths",
+      "advice/getting-hired/career-paths",
       "help/job-boards",
       "help/resources"
     ]
@@ -2177,14 +2177,14 @@
     "title": "O*NET: Electronics engineers",
     "category": "Pay and career data",
     "summary": "Occupation profile with tasks, tools, and reported titles for electronics engineers.",
-    "pages": ["advice/projects/career-paths"]
+    "pages": ["advice/getting-hired/career-paths"]
   },
   {
     "url": "https://ece.gatech.edu/research/tigs",
     "title": "Georgia Tech ECE: Technical interest groups",
     "category": "Pay and career data",
     "summary": "Georgia Tech's list of ECE areas and the topics under each.",
-    "pages": ["advice/projects/career-paths"]
+    "pages": ["advice/getting-hired/career-paths"]
   },
   {
     "url": "https://joinhandshake.com/network-trends/class-of-2025-graduation/",

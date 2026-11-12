@@ -63,6 +63,7 @@ const redirects = {
 	'/advice/resume/portfolio/': '/advice/projects/portfolio/',
 	'/advice/ai-use/': '/help/ai-use/',
 	'/advice/non-technical/': '/advice/getting-hired/non-technical/',
+	'/advice/projects/career-paths/': '/advice/getting-hired/career-paths/',
 	'/help-links/': '/help/',
 	'/help-links/all-links/': '/help/all-links/',
 	'/help-links/contributing/': '/roadmap/contributing/',
@@ -320,7 +321,6 @@ export default defineConfig({
 								{ label: 'Projects', slug: 'advice/projects' },
 								{ label: 'Software', slug: 'advice/projects/software' },
 								{ label: 'Hardware', slug: 'advice/projects/hardware' },
-								{ label: 'Career paths', slug: 'advice/projects/career-paths' },
 								{ label: 'Portfolio', slug: 'advice/projects/portfolio' },
 							],
 						},
@@ -344,6 +344,10 @@ export default defineConfig({
 								{
 									label: 'Job market',
 									slug: 'advice/getting-hired/job-market',
+								},
+								{
+									label: 'Career paths',
+									slug: 'advice/getting-hired/career-paths',
 								},
 								{
 									label: 'How to interview',
