@@ -33,6 +33,10 @@ export const sidebar = [
 						slug: 'advice/getting-hired/networking',
 					},
 					{
+						label: 'Startups',
+						slug: 'advice/getting-hired/startups',
+					},
+					{
 						label: 'Job market',
 						slug: 'advice/getting-hired/job-market',
 					},

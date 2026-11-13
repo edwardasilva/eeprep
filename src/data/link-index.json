@@ -1805,6 +1805,132 @@
     "pages": ["advice/resume"]
   },
   {
+    "url": "https://news.ycombinator.com/item?id=42857417",
+    "title": "Hacker News: Are YC startups actually hiring?",
+    "category": "Job search and referrals",
+    "summary": "Someone hiring at a YC startup on AI-generated applications flooding a job post.",
+    "pages": ["advice/getting-hired/startups"]
+  },
+  {
+    "url": "https://news.ycombinator.com/item?id=46685912",
+    "title": "Hacker News: Emailing the CEO of a small startup",
+    "category": "Job search and referrals",
+    "summary": "A commenter knew several people hired after emailing the CEO of a small startup.",
+    "pages": ["advice/getting-hired/startups"]
+  },
+  {
+    "url": "https://news.ycombinator.com/item?id=46686128",
+    "title": "Hacker News: A Series A CEO on cold emails",
+    "category": "Job search and referrals",
+    "summary": "A Series A CEO says they reply to cold emails that do not look like spam.",
+    "pages": ["advice/getting-hired/startups"]
+  },
+  {
+    "url": "https://interviewing.io/blog/how-to-get-in-the-door-at-top-companies-cold-out-reach-to-hiring-managers-part-2",
+    "title": "interviewing.io: Cold outreach to hiring managers",
+    "category": "Job search and referrals",
+    "summary": "How to write a short cold email to a hiring manager, with estimated reply rates.",
+    "pages": ["advice/getting-hired/startups"]
+  },
+  {
+    "url": "https://www.reddit.com/r/startups/comments/1t9vjqq/founders_do_you_reply_to_cold_emails_for/",
+    "title": "r/startups: Do founders reply to internship cold emails?",
+    "category": "Job search and referrals",
+    "summary": "Founders on whether they answer cold emails from students.",
+    "pages": ["advice/getting-hired/startups"]
+  },
+  {
+    "url": "https://www.reddit.com/r/jobsearchhacks/comments/1qj1aac/a_candidate_emailed_our_ceo_three_months_later_i/",
+    "title": "r/jobsearchhacks: A candidate emailed our CEO",
+    "category": "Job search and referrals",
+    "summary": "A startup hiring lead says to apply first, then write to the hiring manager.",
+    "pages": ["advice/getting-hired/startups"]
+  },
+  {
+    "url": "https://www.reddit.com/r/startups/comments/1su8h63/to_the_people_with_hiring_power_does_cold/",
+    "title": "r/startups: Does cold outreach work?",
+    "category": "Job search and referrals",
+    "summary": "People who hire at startups on cold outreach and the standard process.",
+    "pages": ["advice/getting-hired/startups"]
+  },
+  {
+    "url": "https://www.reddit.com/r/recruiting/comments/1r8knex/candidates_emailing_your_personal_email/",
+    "title": "r/recruiting: Candidates emailing your personal email",
+    "category": "Job search and referrals",
+    "summary": "A recruiter on candidates who write to a personal email address.",
+    "pages": ["advice/getting-hired/startups"]
+  },
+  {
+    "url": "https://news.ycombinator.com/item?id=46686194",
+    "title": "Hacker News: Cold emails must not look copied",
+    "category": "Job search and referrals",
+    "summary": "A commenter who gets cold emails from candidates on why each must be written for one company.",
+    "pages": ["advice/getting-hired/startups"]
+  },
+  {
+    "url": "https://news.ycombinator.com/item?id=49522897",
+    "title": "Hacker News: Who is hiring? (September 2026)",
+    "category": "Job search and referrals",
+    "summary": "The monthly Hacker News thread where companies post roles and a contact.",
+    "pages": ["advice/getting-hired/startups"]
+  },
+  {
+    "url": "https://news.ycombinator.com/item?id=36160198",
+    "title": "Hacker News: Who got hired from HN?",
+    "category": "Job search and referrals",
+    "summary": "Readers describe jobs and internships found through the Hacker News hiring threads.",
+    "pages": ["advice/getting-hired/startups"]
+  },
+  {
+    "url": "https://ocs.yale.edu/resources/finding-job-opportunities-at-startups-a-guide-for-students/",
+    "title": "Yale: Finding job opportunities at startups",
+    "category": "Job search and referrals",
+    "summary": "Yale career office guide to startup job boards and reaching out directly.",
+    "pages": ["advice/getting-hired/startups"]
+  },
+  {
+    "url": "https://www.sbir.gov/awards",
+    "title": "SBIR.gov: Award search",
+    "category": "Job search and referrals",
+    "summary": "Federal research awards to small businesses, a way to find small hardware companies with no careers page.",
+    "pages": ["advice/getting-hired/startups"]
+  },
+  {
+    "url": "https://news.ycombinator.com/item?id=46686004",
+    "title": "Hacker News: Candidates a team was most excited about",
+    "category": "Job search and referrals",
+    "summary": "A commenter who hires on the project proof that makes an applicant stand out.",
+    "pages": ["advice/getting-hired/startups"]
+  },
+  {
+    "url": "https://careerservices.upenn.edu/blog/2020/01/02/the-right-way-to-ask-for-an-internship-in-an-email-with-examples/",
+    "title": "Penn: Asking for an internship in an email",
+    "category": "Job search and referrals",
+    "summary": "Penn career office templates for an internship email and the follow-up.",
+    "pages": ["advice/getting-hired/startups"]
+  },
+  {
+    "url": "https://joinhandshake.com/blog/students/cold-outreach-in-job-search",
+    "title": "Handshake: 5 tips for cold outreach in your job search",
+    "category": "Job search and referrals",
+    "summary": "Handshake student guidance on cold outreach and follow-ups.",
+    "pages": ["advice/getting-hired/startups"]
+  },
+  {
+    "url": "https://www.reddit.com/r/jobsearchhacks/comments/1w2u07n/",
+    "title": "r/jobsearchhacks: The outbound method that's landed 4 people jobs",
+    "category": "Job search and referrals",
+    "summary": "Commenters on how repeated outreach to hiring managers backfires.",
+    "pages": ["advice/getting-hired/startups"]
+  },
+  {
+    "url": "https://www.welcometothejungle.com/en/articles/contacting-employees-at-your-potential-workplace",
+    "title": "Welcome to the Jungle: Contacting employees at a company",
+    "category": "Job search and referrals",
+    "summary": "How many people at one company to contact, and when.",
+    "pages": ["advice/getting-hired/startups"]
+  },
+  {
     "url": "https://www.reddit.com/r/ECE/comments/1mojjy7/how_do_you_actually_get_referralsinterviews_for/",
     "title": "r/ECE: Getting referrals for hardware internships",
     "category": "Job search stories from students",
@@ -2169,6 +2295,55 @@
     "category": "Job search stories from students",
     "summary": "Laid-off engineer's auto-apply run: 5,000 applications, 20 interviews, same as by hand.",
     "pages": ["advice/getting-hired"]
+  },
+  {
+    "url": "https://www.reddit.com/r/Semiconductors/comments/1wmyx6a/cold_email/",
+    "title": "r/Semiconductors: Cold email",
+    "category": "Job search stories from students",
+    "summary": "Semiconductor engineers tell a student to use alumni instead of cold email.",
+    "pages": ["advice/getting-hired/startups"]
+  },
+  {
+    "url": "https://www.reddit.com/r/bangalorejob/comments/1xtc96l/i_got_4_job_offers_with_one_simple_method/",
+    "title": "r/bangalorejob: I got 4 job offers with one simple method",
+    "category": "Job search stories from students",
+    "summary": "The viral cold-email method that the startups page tests claim by claim.",
+    "pages": ["advice/getting-hired/startups"]
+  },
+  {
+    "url": "https://x.com/jahirsheikh8/status/2121114565077606469",
+    "title": "X: Repost of the four-offers method",
+    "category": "Job search stories from students",
+    "summary": "The X repost that spread the r/bangalorejob cold-email method.",
+    "pages": ["advice/getting-hired/startups"]
+  },
+  {
+    "url": "https://www.reddit.com/r/StartUpIndia/comments/1vagnng/357_cold_email_9_interviews_still_no_offer/",
+    "title": "r/StartUpIndia: 357 cold emails, no offer",
+    "category": "Job search stories from students",
+    "summary": "A student whose cold emails brought interviews but no offer.",
+    "pages": ["advice/getting-hired/startups"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringStudents/comments/1qorvnj/cold_emailing_companies_for_internships/",
+    "title": "r/EngineeringStudents: Cold emailing companies for internships",
+    "category": "Job search stories from students",
+    "summary": "An engineering student found an internship by emailing SBIR award winners.",
+    "pages": ["advice/getting-hired/startups"]
+  },
+  {
+    "url": "https://www.reddit.com/r/ycombinator/comments/1lv5hta/is_there_a_chance_to_get_an_unpaid_internship_at/comment/n8fcsc7/",
+    "title": "r/ycombinator: Emailing 20 startups a day",
+    "category": "Job search stories from students",
+    "summary": "A student who emailed about 20 startups a day for 10 days and got one unpaid offer.",
+    "pages": ["advice/getting-hired/startups"]
+  },
+  {
+    "url": "https://www.reddit.com/r/ycombinator/comments/1lv5hta/is_there_a_chance_to_get_an_unpaid_internship_at/comment/n23jaci/",
+    "title": "r/ycombinator: Learn one product and solve one problem",
+    "category": "Job search stories from students",
+    "summary": "A YC founder on studying one startup product before writing to its team.",
+    "pages": ["advice/getting-hired/startups"]
   },
   {
     "url": "https://barrgroup.com/embedded-systems/how-to/c-volatile-keyword",
@@ -3012,6 +3187,34 @@
     "pages": ["advice/getting-hired/non-technical"]
   },
   {
+    "url": "https://www.ashbyhq.com/talent-trends-report/reports/startup-hiring",
+    "title": "Ashby: State of Startup Hiring",
+    "category": "Pay and career data",
+    "summary": "Hiring software data on who hires at startups, applications per hire, and time to hire.",
+    "pages": ["advice/getting-hired/startups"]
+  },
+  {
+    "url": "https://carta.com/data/startup-compensation-h2-2025/",
+    "title": "Carta: State of Startup Compensation, H2 2025",
+    "category": "Pay and career data",
+    "summary": "Startup hiring, team size, and pay data, with hardware leading headcount growth.",
+    "pages": ["advice/getting-hired/startups"]
+  },
+  {
+    "url": "https://techcrunch.com/2025/01/26/2025-will-likely-be-another-brutal-year-of-failed-startups-data-suggests/",
+    "title": "TechCrunch: Startup shutdowns in 2024",
+    "category": "Pay and career data",
+    "summary": "Carta data on startup shutdowns rising from 2023 to 2024.",
+    "pages": ["advice/getting-hired/startups"]
+  },
+  {
+    "url": "https://www.dol.gov/agencies/whd/fact-sheets/71-flsa-internships",
+    "title": "US Department of Labor: Internship programs under the FLSA",
+    "category": "Pay and career data",
+    "summary": "The primary beneficiary test for whether an intern at a for-profit company must be paid.",
+    "pages": ["advice/getting-hired/startups"]
+  },
+  {
     "url": "https://students.ieee.org/",
     "title": "IEEE Students",
     "category": "Communities",
@@ -3262,5 +3465,12 @@
     "category": "AI in the job search",
     "summary": "What tech hiring managers say about AI help on resumes and cover letters.",
     "pages": ["help/ai-use"]
+  },
+  {
+    "url": "https://www.reddit.com/r/startups/comments/1wan40g/startup_founders_what_actually_makes_you_respond/",
+    "title": "r/startups: What makes founders respond",
+    "category": "AI in the job search",
+    "summary": "Founders say they ignore cold emails that sound AI-written.",
+    "pages": ["advice/getting-hired/startups"]
   }
 ]
