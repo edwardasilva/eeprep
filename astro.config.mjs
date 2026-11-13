@@ -205,6 +205,31 @@ export default defineConfig({
 						media: '(prefers-color-scheme: dark)',
 					},
 				},
+				// Prefetch a same-site page when the reader starts to hover on its
+				// link, so the next page opens faster. Files, new-tab links, and
+				// downloads are left alone. Browsers without speculation rules skip it.
+				{
+					tag: 'script',
+					attrs: { type: 'speculationrules' },
+					content: JSON.stringify({
+						prefetch: [
+							{
+								where: {
+									and: [
+										{ href_matches: '/*' },
+										{ not: { href_matches: '/*.*' } },
+										{
+											not: {
+												selector_matches: '[target="_blank"], [download]',
+											},
+										},
+									],
+								},
+								eagerness: 'moderate',
+							},
+						],
+					}),
+				},
 				{
 					tag: 'link',
 					attrs: {
