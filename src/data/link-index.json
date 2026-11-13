@@ -139,6 +139,7 @@
     "category": "Resume guides",
     "summary": "The subreddit's resume guide, covering layout, sections, bullets and common mistakes.",
     "pages": [
+      "advice/getting-hired/non-technical",
       "advice/resume",
       "advice/resume/cleanup",
       "advice/resume/walkthrough",
@@ -2491,101 +2492,98 @@
     "title": "Purdue ECE: Why get a master's",
     "category": "Pay and career data",
     "summary": "Purdue's case for an ECE master's as a way to specialize.",
-    "pages": [
-      "advice/forever-learning/getting-into-graduate-study",
-      "advice/forever-learning/graduate-study"
-    ]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://catalog.cornell.edu/programs/electrical-computer-engineering-meng/",
     "title": "Cornell: Electrical and Computer Engineering M.Eng.",
     "category": "Pay and career data",
     "summary": "Cornell's course-based M.Eng.: 30 credits over two semesters and a design project.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://engineering.purdue.edu/ECE/Academics/Graduates/MASTERS/MSECE_Handbook_Print_Fall2025.pdf",
     "title": "Purdue ECE: MSECE program handbook",
     "category": "Pay and career data",
     "summary": "Purdue's master's tracks: thesis, professional, course-only, online, and a 4+1 BS/MS.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://ece.rutgers.edu/graduate-faqs",
     "title": "Rutgers ECE: Graduate admissions FAQs",
     "category": "Pay and career data",
     "summary": "Rutgers on PhD entry without a master's, advisors, and assistantships.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://engineering.purdue.edu/ECE/Academics/Graduates/MASTERS/online-track-degree-requirements",
     "title": "Purdue ECE: Online track degree requirements",
     "category": "Pay and career data",
     "summary": "Graduate math credits, pacing, and time limit for Purdue's online MSECE.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://www.eecs.mit.edu/academics/graduate-programs/admission-process/graduate-admissions-faqs/",
     "title": "MIT EECS: Graduate admissions FAQs",
     "category": "Pay and career data",
     "summary": "MIT EECS on essays, letters, deadline, GRE, and full-time on-campus study.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://catalog.gatech.edu/academics/undergraduate/undergraduate-students-taking-graduate-courses/",
     "title": "Georgia Tech catalog: Undergraduates taking graduate courses",
     "category": "Pay and career data",
     "summary": "Georgia Tech's rules for seniors who take graduate courses and count them later.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://ece.gatech.edu/academics/joint-bs-ms",
     "title": "Georgia Tech ECE: Joint BS/MS",
     "category": "Pay and career data",
     "summary": "Georgia Tech ECE's joint BS/MS: early application, waivers, and double-counted hours.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://ece.gatech.edu/graduate/handbook/Information-for-Undergraduate-and-Non-ECE-Students",
     "title": "Georgia Tech ECE: Information for undergraduate students",
     "category": "Pay and career data",
     "summary": "Georgia Tech ECE's BS/MS application steps and statement of purpose.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://cse.umn.edu/ece/program-and-admission-faqs",
     "title": "Minnesota ECE: Program and admission FAQs",
     "category": "Pay and career data",
     "summary": "Minnesota ECE on contacting faculty and advisor funding in PhD admissions.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://www.nsf.gov/funding/opportunities/grfp-nsf-graduate-research-fellowship-program/nsf26-526/solicitation",
     "title": "NSF: Graduate Research Fellowship Program solicitation",
     "category": "Pay and career data",
     "summary": "The official GRFP solicitation: support, duration, and eligibility.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://www.nsf.gov/funding/information/faq-additional-faq-nsf-graduate-research-fellowship-program",
     "title": "NSF: Additional GRFP FAQ",
     "category": "Pay and career data",
     "summary": "NSF's extra answers on the Graduate Research Fellowship Program.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://engineering.purdue.edu/ECE/Academics/Online",
     "title": "Purdue ECE: Online MSECE",
     "category": "Pay and career data",
     "summary": "Purdue's online master's: same degree as on campus, 30 credits.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://engineering.purdue.edu/ECE/Academics/Online/questions",
     "title": "Purdue ECE: Online MSECE FAQ",
     "category": "Pay and career data",
     "summary": "Purdue's answers on the online MSECE and who takes it.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://www.naceweb.org/talent-acquisition/candidate-selection/the-key-skills-employers-seek-on-college-students-resumes",

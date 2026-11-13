@@ -64,6 +64,8 @@ const redirects = {
 	'/advice/ai-use/': '/help/ai-use/',
 	'/advice/non-technical/': '/advice/getting-hired/non-technical/',
 	'/advice/projects/career-paths/': '/advice/getting-hired/career-paths/',
+	'/advice/forever-learning/getting-into-graduate-study/':
+		'/advice/forever-learning/graduate-study/',
 	'/sitemap/figures/': '/sitemap/contents/?show=figures',
 	'/sitemap/tables/': '/sitemap/contents/?show=tables',
 	'/help-links/': '/help/',
@@ -373,10 +375,6 @@ export default defineConfig({
 							label: 'Forever learning',
 							items: [
 								{ label: 'Forever learning', slug: 'advice/forever-learning' },
-								{
-									label: 'Getting into graduate study',
-									slug: 'advice/forever-learning/getting-into-graduate-study',
-								},
 								{
 									label: 'Graduate study',
 									slug: 'advice/forever-learning/graduate-study',
