@@ -40,7 +40,7 @@ const dateTicks = (ys: number[]) =>
 const rules: { title: string; note: string; frames: [Frame, Frame] }[] = [
 	{
 		title: 'Columns',
-		note: 'A sidebar hides tool use.',
+		note: 'Use one column, with no icons, images, or graphics.',
 		frames: [
 			{
 				label: 'Do · one column',
@@ -180,12 +180,14 @@ const rules: { title: string; note: string; frames: [Frame, Frame] }[] = [
 		],
 	},
 ];
-const caption = externalLinks('Wireframes are schematic.');
+const caption = externalLinks(
+	'The wireframes are schematic drawings, not real pages.',
+);
 ---
 
 <figure class="eep-fig wide eep-layout-fig" id="fig-layout">
 	<p class="eep-kicker">Layout do's and don'ts</p>
-	<p class="eep-figtitle">Boring layouts read faster</p>
+	<p class="eep-figtitle">Columns, dates, and spacing</p>
 	<div class="eep-layout not-content">
 		{rules.map((rule) => (
 			<section class="eep-layout-rule">
