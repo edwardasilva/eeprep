@@ -893,6 +893,13 @@
     ]
   },
   {
+    "url": "https://www.ashbyhq.com/talent-trends-report/reports/2023-recruiter-productivity-trends-report",
+    "title": "Ashby: Recruiter Productivity",
+    "category": "Job search and referrals",
+    "summary": "Ashby 2026 data on applications per hire and recruiter workload.",
+    "pages": ["advice/resume/quick-setup"]
+  },
+  {
     "url": "https://www.bluecanyontech.com/",
     "title": "Blue Canyon Technologies",
     "category": "Job search and referrals",
@@ -1936,7 +1943,7 @@
     "title": "Harvard FAS: Interviewing",
     "category": "Interview prep",
     "summary": "Harvard career center interview guide, including preparing to discuss everything on your resume.",
-    "pages": ["advice/resume/cleanup"]
+    "pages": ["advice/resume/cleanup", "advice/resume/quick-setup"]
   },
   {
     "url": "https://www.hardwareinterviews.fyi/t/top-electrical-engineering-interview-questions/807",
