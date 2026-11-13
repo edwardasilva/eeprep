@@ -10,19 +10,29 @@ head:
 import Checklist from '../../../../components/Checklist.astro';
 import AuditFigure from '../../../../components/resume/AuditFigure.astro';
 
-Audit the finished PDF, not the source file, because the PDF is what the screener and the applicant tracking system get. Work top to bottom: the file, the header, each section, then the whole page. Fix what you find, rebuild, and run the audit again. It takes less time than one application.
+Before you send your resume, audit the finished PDF, not the source file, because the PDF is what the screener and the applicant tracking system (ATS) get. Work top to bottom: the file, the header, each section, then the whole page.
+
+## Bottom line
+
+- Extract the text with `pdftotext` or a copy and paste, and check that every heading, entry, and bullet comes out whole and in order.
+- Click every link in the header on the day you send the resume.
+- Cut any number you cannot explain, because the interviewer will ask about it.
+- Trace every tool in Skills to a bullet, and cut any tool that has none.
+- Fix what you find, rebuild, and rerun the audit for each version, then get more than one reviewer, starting with a career advisor.
 
 <AuditFigure />
 
 ## The file
 
-Save the PDF as plain text and read it. [Michigan Engineering](https://career.engin.umich.edu/resumes-cvs-cover-letters/) says LaTeX is incompatible with most ATS, and [MIT's career office](https://capd.mit.edu/resources/make-your-resume-ats-friendly/) warns it can confound one. The text layer is where it goes wrong. Every heading, entry, and bullet has to come out whole and in reading order. Watch for "fi" and "fl" that come out as blank or as odd symbols, which [the pdfTeX manual](https://texdoc.org/serve/pdftex-a.pdf/0) says happens without a Unicode map. If you use [resume-generator](https://github.com/edwardasilva/resume-generator), each build runs this check for you when `pdftotext` is installed.
+Extract the text from the PDF with the command below and read it. [Michigan Engineering](https://career.engin.umich.edu/resumes-cvs-cover-letters/) says LaTeX is incompatible with most ATS, and [MIT's career office](https://capd.mit.edu/resources/make-your-resume-ats-friendly/) warns it can confuse one. The trouble is in the text layer, so check that every heading, entry, and bullet comes out whole and in reading order. If you use [resume-generator](https://github.com/edwardasilva/resume-generator), each build runs this check for you when `pdftotext` is installed.
 
 ```bash
 pdftotext Alex-Doe-Resume.pdf - | less
 ```
 
-Open the PDF's properties. The title reads "Alex Doe Resume" and the author is Alex Doe, set with [hyperref](https://latex.us/macros/latex/contrib/hyperref/doc/hyperref-doc.html). A title left over from a template is a tell. A simple rule: name the file after yourself, such as `Alex-Doe-Resume.pdf`, so it is findable in a recruiter's downloads folder.
+If you cannot run `pdftotext`, such as on Windows or in Overleaf, open the PDF in a browser, select all, copy, and paste the text into a plain text editor. Either way, watch for "fi" and "fl" that come out blank or as odd symbols. These letter pairs are ligatures, printed as one shape, and [the pdfTeX manual](https://texdoc.org/serve/pdftex-a.pdf/0) says search is likely to fail on them without a Unicode map.
+
+Open the PDF's properties, which most PDF viewers call Document Properties, and check the title and author. In LaTeX, you set both with [hyperref](https://latex.us/macros/latex/contrib/hyperref/doc/hyperref-doc.html). On Alex's PDF, the title reads "Alex Doe Resume" and the author is Alex Doe. A title left over from a template gives the template away. Name the file after yourself too, such as `Alex-Doe-Resume.pdf`, so a recruiter can find it in their downloads folder.
 
 Count the pages, and expect one. A CV for a graduate application can take two. [The wiki allows a second page at about 10 years of experience](https://www.reddit.com/r/EngineeringResumes/wiki/index/), and you are not there yet. [Maryland's engineering career office allows more than one page at 5 or more years of experience](https://eng.umd.edu/sites/clark.umd.edu/files/Resume%20Handout%20SU24.pdf), so schools set that line in different places.
 
@@ -40,19 +50,19 @@ Read each bullet against three questions. Does it start with a past-tense verb t
 
 Check the shape of each bullet too. It fills one line or most of a second. It holds one idea. If it joins two results with "and" or "plus", keep the one that matters more, and give the other its own bullet or cut it. [One sophomore cut most bullets from 2 lines to 1](https://www.reddit.com/r/EngineeringResumes/comments/1sj2rgt/student_landed_nvidia_offer_sophomore_cs_major_at/) before an NVIDIA offer. [Oregon Tech's career office asks for short, descriptive bullets that begin with action verbs](https://www.oit.edu/sites/default/files/document/resume-tips-for-engineering-majors.pdf). Two words alone on a second line are wasted space. Symbols are written as words, such as 3-sigma and 48 degrees.
 
-Check for inflation. [One manager said an intern who claims $2 million in yearly savings will be asked to justify it](https://www.reddit.com/r/EngineeringResumes/comments/192hkg8/how_atss_actually_work_from_an_engineering_hiring/). A smaller number you can defend beats a larger one you cannot.
+Check each number for inflation, because a smaller number you can defend beats a larger one you cannot. [One manager said an intern who claims $2 million in yearly savings will be asked to justify it](https://www.reddit.com/r/EngineeringResumes/comments/192hkg8/how_atss_actually_work_from_an_engineering_hiring/).
 
-Once you have engineering work, unrelated jobs get one line, with no bullets. Before that, they can keep bullets. Engineering roles get bullets, and each one still passes the three questions.
+An unrelated job gets one or two bullets until you have an internship or other technical work, and after that it gets one line with no bullets. Its bullets need a past-tense verb and a count you can defend, such as the customers you served in a shift. The [[Resume#Experience|experience]] section on the resume page has more examples. Engineering roles get bullets too, and each of those bullets passes all three questions.
 
 ## Skills
 
-Trace every tool in Skills to a bullet. [Every skill needs a bullet behind it](https://ecs.grainger.illinois.edu/student-resources/resumes-letters/resumes), and [a recruiter on X quotes hiring managers](https://x.com/randomrecruiter/status/2007074490233053671): "If it's not in the work experience, it didn't happen." Cut what has no bullet. Cut soft skills. Cut IDEs, editors, and notebook environments such as VS Code and Jupyter. [Use the exact product names](https://www.reddit.com/r/EngineeringResumes/wiki/typo/), C and C++ as two items and Ansys HFSS with the company's name, and spell them the way the vendor does.
+Trace every tool in Skills to a bullet, and cut any tool that has none. [Illinois Engineering says every skill needs a bullet behind it](https://ecs.grainger.illinois.edu/student-resources/resumes-letters/resumes), and [a recruiter on X quotes hiring managers](https://x.com/randomrecruiter/status/2007074490233053671): "If it's not in the work experience, it didn't happen." Cut soft skills too, along with integrated development environments (IDEs) and editors such as VS Code, and notebook environments such as Jupyter. [The r/EngineeringResumes wiki says to use the exact product names](https://www.reddit.com/r/EngineeringResumes/wiki/typo/), such as C and C++ as two items and HFSS written as Ansys HFSS. Spell each one the way the vendor does.
 
 ## The whole page
 
-Hold the page at arm's length. It has one column, with no photo, no icons, and no tables. Every date sits at the right margin, in one style per section, with months for jobs, and each job's location sits under its date. The gap between every pair of sections is the same, because [the wiki asks for consistent white space](https://www.reddit.com/r/EngineeringResumes/wiki/index/). [MIT's career office also says to pick a standard and consistent format](https://capd.mit.edu/resources/resumes/). Bold appears only on section titles, entry titles, and the coursework, activities, and skills labels.
+Hold the page at arm's length. It has one column, with no photo, no icons, and no tables. Every date sits at the right margin, in one style per section, with months for jobs, and each job's location sits under its date. The gap between every pair of sections is the same, because [the wiki asks for consistent white space](https://www.reddit.com/r/EngineeringResumes/wiki/index/). [MIT's career office also says to pick a standard and consistent format](https://capd.mit.edu/resources/resumes/). Bold appears only on the name, the section titles, the entry titles, and the coursework, activities, and skills labels.
 
-Then hand it to someone else. [MIT's career office says your best proofreader is a career advisor](https://capd.mit.edu/resources/resumes/). After that, post it to [the r/EngineeringResumes forum](https://www.reddit.com/r/EngineeringResumes/) with your name, phone number, address, and email removed, and give more weight to the reviewers who work in the industry.
+Then get more than one reviewer. Start with a career advisor, because [MIT's career office calls an advisor your best proofreader](https://capd.mit.edu/resources/resumes/). After that, post it to [the r/EngineeringResumes forum](https://www.reddit.com/r/EngineeringResumes/) with your name, phone number, address, and email removed, and give more weight to the reviewers who work in the industry.
 
 ## The checklist
 
@@ -64,7 +74,7 @@ Tick every box for each version you send.
 		{
 			heading: 'File',
 			items: [
-				'pdftotext output has every heading, entry, and bullet, whole and in order',
+				'Plain text of the PDF has every heading, entry, and bullet, whole and in order',
 				'No broken fi or fl ligatures in the text',
 				'PDF title is "[Name] Resume", author is [Name]',
 				'File is named [Name]-Resume.pdf',
@@ -83,7 +93,7 @@ Tick every box for each version you send.
 		{
 			heading: 'Education',
 			items: [
-				'GPA listed at 3.50 or higher, judged at 3.0 to 3.49, off below 3.0, decimals matching',
+				'GPA listed at 3.50 or higher, at 3.0 to 3.49 only if the posting sets a minimum you meet, off below 3.0, decimals matching',
 				'Graduation date at the right margin, "Expected" if not yet graduated',
 				'"Relevant coursework:" line that matches the posting',
 				'"Graduate coursework:" line first, if any',
@@ -94,12 +104,12 @@ Tick every box for each version you send.
 		{
 			heading: 'Projects and experience',
 			items: [
-				'Every bullet: past-tense verb, a tool, a number I can explain',
+				'Every engineering bullet: a past-tense verb, a tool, and a number you can explain',
 				'No helped, assisted, worked on, or utilized',
 				'Every bullet fills one line or most of two',
 				'Every bullet holds one idea',
 				'Symbols written as words, such as 3-sigma',
-				'Unrelated jobs on one line, once there is engineering work',
+				'Unrelated jobs with one or two bullets, or one line once there is an internship or other technical work',
 			],
 		},
 		{
@@ -118,8 +128,8 @@ Tick every box for each version you send.
 				'Dates right-aligned, one date style per section',
 				'Location under the date',
 				'Same gap between every pair of sections',
-				'Bold only on titles and labels',
-				'Read by one other person',
+				'Bold only on the name, titles, and labels',
+				'Read by more than one reviewer, starting with a career advisor',
 			],
 		},
 	]}

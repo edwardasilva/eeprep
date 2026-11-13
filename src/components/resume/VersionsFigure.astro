@@ -1,7 +1,7 @@
 ---
-// Figure 4.7 as HTML and CSS. One inventory of facts on the left feeds five
-// resume versions on the right. The facts never change between versions; the
-// order, the depth, and the wording of the skills lines do. Same box for
+// Figure 4.7 as HTML and CSS. One master resume on the left feeds five
+// resume versions on the right. The facts never change between versions, but
+// the order, the depth, and the wording of the skills lines do. Same box for
 // every version, so none is the headline.
 const facts = [
 	'Every project, with its measured numbers',
@@ -22,7 +22,7 @@ const changes = [
 	'The wording on the Skills lines',
 ];
 const alt =
-	'One inventory of facts feeds five versions: embedded firmware, hardware and power, test and validation, signals and controls, and general. Only the lead project, the second lines, the coursework, and the Skills wording change.';
+	'One master resume feeds five versions. The master resume holds every project with its measured numbers, every job, engineering or not, and your courses, tools, and instruments. In the embedded firmware version, firmware projects lead. In hardware and power, board and converter work leads. In test and validation, bench scripts and measurements lead. In signals and controls, DSP and controls projects lead. The general version is for fairs and referrals and names no role. Between versions, only four things change: which project leads, which bullets get a second line, the coursework line, and the wording on the Skills lines. The facts do not.';
 ---
 
 <figure class="eep-fig wide eep-ver-fig" id="fig-versions">
@@ -30,7 +30,7 @@ const alt =
 	<p class="sr-only">{alt}</p>
 	<div class="eep-ver not-content" aria-hidden="true">
 		<div class="eep-ver-facts">
-			<p class="eep-ver-head">The inventory</p>
+			<p class="eep-ver-head">The master resume</p>
 			<ul>
 				{facts.map((f) => (
 					<li>{f}</li>
@@ -58,7 +58,10 @@ const alt =
 	</div>
 	<figcaption>
 		<span class="eep-fignum"></span>{' '}
-		<span>One set of facts feeds every version. Send the closest one.</span>
+		<span>
+			One master resume feeds every version, and you send the version closest to
+			the posting.
+		</span>
 	</figcaption>
 </figure>
 
