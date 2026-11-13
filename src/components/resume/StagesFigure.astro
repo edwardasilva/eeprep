@@ -1,16 +1,18 @@
 ---
 // Five finished pages from resume-generator,
 // first year to graduation, as stacks of sections. Each box is one entry on
-// that page, so a reader sees what grows and what moves. The Education box
-// drops to the bottom once Experience leads.
+// that page, so a reader sees what grows and what moves. The order follows
+// the examples on resume-generator's main branch: Education stays on top and
+// Skills stays last on every page, and Experience moves above Projects once
+// the page has technical work.
 const pages = [
 	{
 		name: 'First year',
 		sections: [
 			{ label: 'Education', count: 1 },
-			{ label: 'Skills', count: 2 },
 			{ label: 'Projects', count: 1 },
-			{ label: 'Experience', count: 1, note: 'one line' },
+			{ label: 'Experience', count: 1, note: 'grocery job, two bullets' },
+			{ label: 'Skills', count: 2 },
 		],
 		note: 'Room left at the bottom',
 	},
@@ -18,44 +20,45 @@ const pages = [
 		name: 'Sophomore',
 		sections: [
 			{ label: 'Education', count: 1 },
-			{ label: 'Skills', count: 2 },
-			{ label: 'Projects', count: 2 },
 			{ label: 'Experience', count: 2, note: 'club lead, one-line job' },
+			{ label: 'Projects', count: 2 },
+			{ label: 'Skills', count: 2 },
 		],
+		note: 'The club role puts Experience above Projects',
 	},
 	{
 		name: 'Senior',
 		sections: [
 			{ label: 'Education', count: 1 },
-			{ label: 'Skills', count: 2 },
 			{ label: 'Projects', count: 2 },
-			{ label: 'Experience', count: 1, note: 'one line' },
+			{ label: 'Experience', count: 1, note: 'retail job, two bullets' },
+			{ label: 'Skills', count: 2 },
 		],
 		note: 'The finished page on the resume page',
 	},
 	{
 		name: 'New graduate',
 		sections: [
+			{ label: 'Education', count: 1 },
 			{ label: 'Experience', count: 2, note: 'two internships' },
 			{ label: 'Projects', count: 2 },
-			{ label: 'Education', count: 1 },
 			{ label: 'Skills', count: 3, note: 'with certifications' },
 		],
-		note: 'Experience leads',
+		note: 'The internships put Experience above Projects',
 	},
 	{
 		name: 'Packed',
 		sections: [
+			{ label: 'Education', count: 1 },
 			{ label: 'Experience', count: 4, note: 'three roles, one-line job' },
 			{ label: 'Projects', count: 3 },
-			{ label: 'Education', count: 1 },
 			{ label: 'Skills', count: 3 },
 		],
 		note: 'Tightened to 10.25 pt to fit',
 	},
 ];
 const alt =
-	'Five resume pages side by side. First year: education, two skill lines, one project, a one-line job, with room left at the bottom. Sophomore: education, two skill lines, two projects, a club lead role and a one-line job. Alex, a senior: education, two skill lines, two projects, a one-line job. New graduate: experience with two internships leads, then two projects, education, and three skill lines including certifications. Packed: three engineering roles and a one-line job lead, then three projects, education, and three skill lines, tightened to 10.25 point text to fit.';
+	'Five resume pages side by side. Each one starts with Education and ends with Skills. First year: education, one project, a grocery job with two bullets, and two skill lines, with room left at the bottom. Sophomore: education, then experience with a club lead role and a one-line job, then two projects and two skill lines. The club role puts Experience above Projects. Senior: education, two projects, a retail job with two bullets, and two skill lines. This is the finished page on the resume page. New graduate: education, then experience with two internships, then two projects and three skill lines with certifications. The internships put Experience above Projects. Packed: education, then three engineering roles and a one-line job, then three projects and three skill lines, tightened to 10.25 point text to fit.';
 ---
 
 <figure class="eep-fig wide eep-stages-fig" id="fig-12-2">
@@ -87,8 +90,9 @@ const alt =
 	<figcaption>
 		<span class="eep-fignum"></span>{' '}
 		<span>
-			The five example resumes that ship with resume-generator, drawn as stacks.
-			Each bar is one entry. The table below links every PDF.
+			Each stack is one of the five example resumes that ship with
+			resume-generator, and each bar is one entry. The table below links every
+			PDF.
 		</span>
 	</figcaption>
 </figure>
