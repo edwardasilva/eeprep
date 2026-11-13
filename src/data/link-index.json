@@ -18,7 +18,7 @@
     "title": "Greenhouse: Auto-reject",
     "category": "Resume guides",
     "summary": "Greenhouse help article on how employers set rules that reject applications automatically.",
-    "pages": ["advice/resume"]
+    "pages": ["advice/resume", "advice/resume/workshop"]
   },
   {
     "url": "https://my.greenhouse.com/blogs/what-really-happens-after-you-apply-for-a-job",
@@ -29,6 +29,7 @@
       "advice/getting-hired",
       "advice/resume",
       "advice/resume/quick-setup",
+      "advice/resume/workshop",
       "help/ai-use",
       "help/job-boards"
     ]
@@ -48,7 +49,8 @@
     "pages": [
       "advice/resume",
       "advice/resume/cleanup",
-      "advice/resume/walkthrough"
+      "advice/resume/walkthrough",
+      "advice/resume/workshop"
     ]
   },
   {
@@ -113,6 +115,34 @@
     ]
   },
   {
+    "url": "https://tips.career.vt.edu/Resumes/objectivevssummary.html",
+    "title": "Virginia Tech: Objective vs. summary of qualifications",
+    "category": "Resume guides",
+    "summary": "Virginia Tech's career center on when a resume objective or a summary of qualifications fits.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://neweraadvising.gatech.edu/news/career-center-insights-navigating-your-first-job-search",
+    "title": "Georgia Tech: Career Center insights for navigating your first job search",
+    "category": "Resume guides",
+    "summary": "Georgia Tech's career center on listing results, not responsibilities, in resume bullets.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://eng.umd.edu/sites/clark.umd.edu/files/Resume%20Handout%20SU24.pdf",
+    "title": "University of Maryland Engineering Career Services: Resume writing",
+    "category": "Resume guides",
+    "summary": "Maryland engineering career office handout on resume length, GPA, and section order.",
+    "pages": ["advice/resume/cleanup"]
+  },
+  {
+    "url": "https://www.oit.edu/sites/default/files/document/resume-tips-for-engineering-majors.pdf",
+    "title": "Oregon Tech: Resume tips for engineering majors",
+    "category": "Resume guides",
+    "summary": "Oregon Tech handout on location, GPA, and bullet style for engineering resumes.",
+    "pages": ["advice/resume/cleanup"]
+  },
+  {
     "url": "https://capd.mit.edu/blog/2023/09/01/enhance-your-resume-a-guide-for-first-year-undergraduates/",
     "title": "MIT CAPD: Enhance your resume, a guide for first-year undergraduates",
     "category": "Resume guides",
@@ -160,7 +190,7 @@
     "title": "UC Berkeley: Resumes",
     "category": "Resume guides",
     "summary": "Berkeley's career center guide to resumes, including how to quantify results.",
-    "pages": ["advice/resume"]
+    "pages": ["advice/resume", "advice/resume/workshop"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/1cms7al/random_thoughts_on_resumes/",
@@ -181,7 +211,7 @@
     "title": "Georgia Tech: Cover letter guide 2026",
     "category": "Resume guides",
     "summary": "Georgia Tech's guide to when and how to write a cover letter.",
-    "pages": ["help/resources"]
+    "pages": ["advice/resume/workshop", "help/resources"]
   },
   {
     "url": "https://capd.mit.edu/resources/graduate-school-application-essays/",
@@ -563,6 +593,13 @@
     "pages": ["advice/resume"]
   },
   {
+    "url": "https://www.bosch-semiconductors.com/glossary/sic-mosfet/",
+    "title": "Bosch Semiconductors: What is a SiC MOSFET?",
+    "category": "Tools and project resources",
+    "summary": "Chip-maker glossary entry on silicon carbide MOSFETs, with junction temperature and cooling compared to silicon.",
+    "pages": ["advice/projects/hardware"]
+  },
+  {
     "url": "https://barrgroup.com/free-downloads",
     "title": "Barr Group: Free downloads",
     "category": "Tools and project resources",
@@ -875,6 +912,41 @@
     "pages": ["advice/projects"]
   },
   {
+    "url": "https://careerservices.cns.utexas.edu/technical-projects-guide",
+    "title": "UT Austin: Technical projects guide",
+    "category": "Tools and project resources",
+    "summary": "A career office on how a project can decide an interview and fill a missing internship.",
+    "pages": ["advice/projects"]
+  },
+  {
+    "url": "https://career.vt.edu/blog/2026/03/23/technical-interviewing/",
+    "title": "Virginia Tech: Technical interviewing",
+    "category": "Tools and project resources",
+    "summary": "Interviewers ask detailed questions about the projects on your resume.",
+    "pages": ["advice/projects"]
+  },
+  {
+    "url": "https://mitcommlab.mit.edu/meche/commkit/portfolio/",
+    "title": "MIT Communication Lab: Portfolio",
+    "category": "Tools and project resources",
+    "summary": "How to match a project to an employer and build a smaller portfolio per recipient.",
+    "pages": ["advice/projects"]
+  },
+  {
+    "url": "https://engineering.utdallas.edu/engage/students/technical-resume-best-standards-and-practices/",
+    "title": "UT Dallas: Technical resume standards",
+    "category": "Tools and project resources",
+    "summary": "Projects show technical skill when a student has no technical work experience yet.",
+    "pages": ["advice/projects"]
+  },
+  {
+    "url": "https://careerhub.ufl.edu/blog/2026/10/07/i-asked-recruiters-what-makes-students-stand-out-heres-what-they-said/",
+    "title": "UF Career Connections: What recruiters say",
+    "category": "Tools and project resources",
+    "summary": "Recruiters accept work from internships, classes, student groups, or personal projects.",
+    "pages": ["advice/projects"]
+  },
+  {
     "url": "https://courses.grainger.illinois.edu/ece431/sp2021/lab/ECE431_lab_report_guide.pdf",
     "title": "Illinois ECE 431: Lab report guide",
     "category": "Tools and project resources",
@@ -916,10 +988,24 @@
     ]
   },
   {
+    "url": "https://www.ashbyhq.com/talent-trends-report/reports/2023-recruiter-productivity-trends-report",
+    "title": "Ashby: Recruiter Productivity",
+    "category": "Job search and referrals",
+    "summary": "Ashby 2026 data on applications per hire and recruiter workload.",
+    "pages": ["advice/resume/quick-setup"]
+  },
+  {
     "url": "https://www.bluecanyontech.com/",
     "title": "Blue Canyon Technologies",
     "category": "Job search and referrals",
     "summary": "Company site for a small-satellite and spacecraft component maker.",
+    "pages": ["advice/projects/hardware"]
+  },
+  {
+    "url": "https://job-boards.greenhouse.io/astranis/jobs/4716087006",
+    "title": "Astranis: Software defined radio hardware intern",
+    "category": "Job search and referrals",
+    "summary": "Astranis posting for a winter 2027 hardware intern with pay, location, and PCB build requirements.",
     "pages": ["advice/projects/hardware"]
   },
   {
@@ -963,6 +1049,13 @@
     "category": "Job search and referrals",
     "summary": "Illinois engineering career services advice on preparing for a career fair.",
     "pages": ["advice/getting-hired"]
+  },
+  {
+    "url": "https://ecs.grainger.illinois.edu/employer-resources/career-fair",
+    "title": "Illinois Engineering: Career fair dates",
+    "category": "Job search and referrals",
+    "summary": "Illinois Grainger spring 2027 career fair: internships and full-time positions on both days.",
+    "pages": ["advice/getting-hired/first-internship"]
   },
   {
     "url": "https://www.indeed.com/",
@@ -1662,6 +1755,13 @@
     "pages": ["advice/getting-hired/non-technical"]
   },
   {
+    "url": "https://www.ualberta.ca/en/youalberta/2026/01/what-employers-really-want-findings-from-the-career-centres-2025-hiring-survey.html",
+    "title": "University of Alberta: What employers really want",
+    "category": "Job search and referrals",
+    "summary": "University of Alberta Career Centre 2025 hiring survey, including how much a cover letter affects interview decisions.",
+    "pages": ["advice/resume"]
+  },
+  {
     "url": "https://www.reddit.com/r/ECE/comments/1mojjy7/how_do_you_actually_get_referralsinterviews_for/",
     "title": "r/ECE: Getting referrals for hardware internships",
     "category": "Job search stories from students",
@@ -2070,6 +2170,13 @@
     "pages": ["advice/getting-hired/how-to-interview"]
   },
   {
+    "url": "https://careerservices.fas.harvard.edu/resources/interviewing/",
+    "title": "Harvard FAS: Interviewing",
+    "category": "Interview prep",
+    "summary": "Harvard career center interview guide, including preparing to discuss everything on your resume.",
+    "pages": ["advice/resume/cleanup", "advice/resume/quick-setup"]
+  },
+  {
     "url": "https://www.hardwareinterviews.fyi/t/top-electrical-engineering-interview-questions/807",
     "title": "Hardware FYI: Top electrical engineering interview questions",
     "category": "Interview prep",
@@ -2290,6 +2397,8 @@
       "advice/getting-hired/first-full-time-role",
       "advice/getting-hired/job-market",
       "advice/projects",
+      "advice/projects/hardware",
+      "advice/resume/workshop",
       "help",
       "help/resources"
     ]
@@ -2331,7 +2440,10 @@
     "title": "NACE: Intern conversion rate hits five-year high",
     "category": "Pay and career data",
     "summary": "NACE data on how many interns received and accepted full-time offers, 2024–25.",
-    "pages": ["advice/getting-hired/first-full-time-role"]
+    "pages": [
+      "advice/getting-hired/first-full-time-role",
+      "advice/getting-hired/first-internship"
+    ]
   },
   {
     "url": "https://www.naceweb.org/talent-acquisition/candidate-selection/internship-experience-often-the-deciding-factor-between-equal-candidates",
@@ -2340,7 +2452,9 @@
     "summary": "NACE Job Outlook 2026: attributes employers use to choose between equal candidates.",
     "pages": [
       "advice/getting-hired/first-full-time-role",
+      "advice/getting-hired/first-internship",
       "advice/projects",
+      "advice/projects/hardware",
       "advice/resume/walkthrough"
     ]
   },
@@ -2445,6 +2559,13 @@
     "category": "Pay and career data",
     "summary": "Spring 2025: Handshake postings down 15% in a year, applications per job up 30%.",
     "pages": ["advice/getting-hired/job-market", "help/job-boards"]
+  },
+  {
+    "url": "https://www.benefitnews.com/articles/internship-hunt-starts-earlier-as-students-parents-stress-over-jobs",
+    "title": "Employee Benefit News: Internship hunt starts earlier",
+    "category": "Pay and career data",
+    "summary": "Handshake data on first-year students applying to internships: almost 15 percent of the class of 2028 versus under 3 percent of the class of 2024.",
+    "pages": ["advice/getting-hired/first-internship"]
   },
   {
     "url": "https://hkn.ieee.org/knowledge-base/what-is-the-cost-of-an-induction?seq_no=2",
@@ -2726,108 +2847,105 @@
     "title": "Purdue ECE: Why get a master's",
     "category": "Pay and career data",
     "summary": "Purdue's case for an ECE master's as a way to specialize.",
-    "pages": [
-      "advice/forever-learning/getting-into-graduate-study",
-      "advice/forever-learning/graduate-study"
-    ]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://catalog.cornell.edu/programs/electrical-computer-engineering-meng/",
     "title": "Cornell: Electrical and Computer Engineering M.Eng.",
     "category": "Pay and career data",
     "summary": "Cornell's course-based M.Eng.: 30 credits over two semesters and a design project.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://engineering.purdue.edu/ECE/Academics/Graduates/MASTERS/MSECE_Handbook_Print_Fall2025.pdf",
     "title": "Purdue ECE: MSECE program handbook",
     "category": "Pay and career data",
     "summary": "Purdue's master's tracks: thesis, professional, course-only, online, and a 4+1 BS/MS.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://ece.rutgers.edu/graduate-faqs",
     "title": "Rutgers ECE: Graduate admissions FAQs",
     "category": "Pay and career data",
     "summary": "Rutgers on PhD entry without a master's, advisors, and assistantships.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://engineering.purdue.edu/ECE/Academics/Graduates/MASTERS/online-track-degree-requirements",
     "title": "Purdue ECE: Online track degree requirements",
     "category": "Pay and career data",
     "summary": "Graduate math credits, pacing, and time limit for Purdue's online MSECE.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://www.eecs.mit.edu/academics/graduate-programs/admission-process/graduate-admissions-faqs/",
     "title": "MIT EECS: Graduate admissions FAQs",
     "category": "Pay and career data",
     "summary": "MIT EECS on essays, letters, deadline, GRE, and full-time on-campus study.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://catalog.gatech.edu/academics/undergraduate/undergraduate-students-taking-graduate-courses/",
     "title": "Georgia Tech catalog: Undergraduates taking graduate courses",
     "category": "Pay and career data",
     "summary": "Georgia Tech's rules for seniors who take graduate courses and count them later.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://ece.gatech.edu/academics/joint-bs-ms",
     "title": "Georgia Tech ECE: Joint BS/MS",
     "category": "Pay and career data",
     "summary": "Georgia Tech ECE's joint BS/MS: early application, waivers, and double-counted hours.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://ece.gatech.edu/graduate/handbook/Information-for-Undergraduate-and-Non-ECE-Students",
     "title": "Georgia Tech ECE: Information for undergraduate students",
     "category": "Pay and career data",
     "summary": "Georgia Tech ECE's BS/MS application steps and statement of purpose.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://cse.umn.edu/ece/program-and-admission-faqs",
     "title": "Minnesota ECE: Program and admission FAQs",
     "category": "Pay and career data",
     "summary": "Minnesota ECE on contacting faculty and advisor funding in PhD admissions.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://www.nsf.gov/funding/opportunities/grfp-nsf-graduate-research-fellowship-program/nsf26-526/solicitation",
     "title": "NSF: Graduate Research Fellowship Program solicitation",
     "category": "Pay and career data",
     "summary": "The official GRFP solicitation: support, duration, and eligibility.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://www.nsf.gov/funding/information/faq-additional-faq-nsf-graduate-research-fellowship-program",
     "title": "NSF: Additional GRFP FAQ",
     "category": "Pay and career data",
     "summary": "NSF's extra answers on the Graduate Research Fellowship Program.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://engineering.purdue.edu/ECE/Academics/Online",
     "title": "Purdue ECE: Online MSECE",
     "category": "Pay and career data",
     "summary": "Purdue's online master's: same degree as on campus, 30 credits.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://engineering.purdue.edu/ECE/Academics/Online/questions",
     "title": "Purdue ECE: Online MSECE FAQ",
     "category": "Pay and career data",
     "summary": "Purdue's answers on the online MSECE and who takes it.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://www.naceweb.org/talent-acquisition/candidate-selection/the-key-skills-employers-seek-on-college-students-resumes",
     "title": "NACE: Key skills employers seek on resumes",
     "category": "Pay and career data",
     "summary": "NACE Job Outlook 2026 Spring Update: the skills employers look for on student resumes.",
-    "pages": ["advice/getting-hired/non-technical"]
+    "pages": ["advice/getting-hired/non-technical", "advice/projects/hardware"]
   },
   {
     "url": "https://www.naceweb.org/career-readiness/competencies/the-gap-in-perceptions-of-new-grads-competency-proficiency-and-resources-to-shrink-it",
