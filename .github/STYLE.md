@@ -44,7 +44,7 @@ The goal is good writing, not beating a detector. Detectors are unreliable and f
 
 5. Do not tack an -ing clause onto a sentence (", highlighting its role", ", making it easy"). Start a new sentence.
 
-6. No em dashes and no semicolons. Write two sentences, or name the relation with "because", "but", or "so".
+6. No em dashes and no semicolons. Write two sentences, or name the relation with "because", "but", or "so". The one exception is the `TLDR;` heading in 4.10.
 
 7. Use one word for one meaning through the whole text. Do not swap synonyms for variety ("the device... the unit... the apparatus").
 
@@ -93,6 +93,8 @@ Also cut "not just X, but Y", "not X, but Y", "Y rather than X" used for drama, 
 8. Write link text as if it were not a link. Capitalize it only at the start of a sentence, a list item, a table cell, or a heading. Also capitalize a proper noun, an acronym, or a brand (IEEE, LinkedIn, Handshake, Alex Doe). Write "the resume page" and "the section on getting a referral first", not "the Resume page" or "the Get a referral first section". A colon does not start a sentence, so "Next: the resume page" stays lowercase. Headings, navigation, sidebar labels, card titles, and figure titles keep their own case.
 
 9. Give a wikilink an explicit alias when its label would be capitalized in the middle of a sentence, as in `[[Resume|resume]] page`. The link target stays as it is. `npm run check:link-case` reads the built pages after `npm run build` and fails on a capitalized link in running text. If the link starts with a real proper noun, add that name, or a phrase that starts with it, to the names list in `.github/scripts/check-link-case.mjs`.
+
+10. Open a long guide page with a summary under the heading `## TLDR;`, written exactly that way. It is the first `##` heading, right after the opening paragraph. Give it three to five bullets, each one sentence that tells the reader what to do or decide, in the order they would do it. Every bullet must be backed by the page body, with no new claims, sources, or external links.
 
 ## 5. Voice and register
 
