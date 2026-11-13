@@ -2,7 +2,7 @@ name: Deploy
 
 # A push to main deploys the dev site: the "dev" branch of the eeprep Pages project,
 # served at https://dev.eeprep.pages.dev/.
-# A version tag, such as v0.1.0, deploys eeprep.com. Tags are cut only when Edward says so.
+# A version tag, such as v0.1.0, deploys eeprep.com. Tags are cut only when the repository owner says so.
 # A manual run can deploy dev from any ref. A manual production run must start
 # from a version tag.
 # Docs-only and .github-only pushes to main skip this workflow. Site pages live
