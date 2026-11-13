@@ -6,11 +6,11 @@ import { externalLinks } from '../resume/caption';
 const steps = [
 	{
 		title: 'Capture',
-		body: 'Point PyVISA at a lab scope and capture a waveform.',
+		body: 'Point PyVISA at a lab scope and read a waveform into Python.',
 	},
 	{
 		title: 'Compute',
-		body: 'Compute the number you would have read by hand.',
+		body: 'Work out the number you would have read by hand.',
 	},
 	{
 		title: 'Check',
@@ -18,11 +18,11 @@ const steps = [
 	},
 	{
 		title: 'Out of spec',
-		body: 'A part out of spec fails the run.',
+		body: 'Any part outside the limits fails the run.',
 	},
 ];
 const alt =
-	'Four steps of a lab script, in order. Capture: point PyVISA at a lab scope and capture a waveform. Compute: compute the number you would have read by hand. Check: put the limits in pytest tests. Out of spec: a part out of spec fails the run.';
+	'Four steps of a lab script, in order. Capture: point PyVISA at a lab scope and read a waveform into Python. Compute: work out the number you would have read by hand. Check: put the limits in pytest tests. Out of spec: any part outside the limits fails the run.';
 const caption = externalLinks(
 	`A lab script turns a bench measurement into a test. Sources: <a href="https://pyvisa.readthedocs.io/en/latest/">PyVISA</a> and <a href="https://docs.pytest.org/en/stable/">pytest</a>.`,
 );
