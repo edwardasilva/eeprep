@@ -863,6 +863,13 @@
     ]
   },
   {
+    "url": "https://www.ashbyhq.com/talent-trends-report/reports/2023-recruiter-productivity-trends-report",
+    "title": "Ashby: Recruiter Productivity",
+    "category": "Job search and referrals",
+    "summary": "Ashby 2026 data on applications per hire and recruiter workload.",
+    "pages": ["advice/resume/quick-setup"]
+  },
+  {
     "url": "https://www.bluecanyontech.com/",
     "title": "Blue Canyon Technologies",
     "category": "Job search and referrals",
@@ -1893,6 +1900,13 @@
     "category": "Interview prep",
     "summary": "Georgia Tech career center interview guide for undergraduates.",
     "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://careerservices.fas.harvard.edu/resources/interviewing/",
+    "title": "Harvard FAS: Interviewing",
+    "category": "Interview prep",
+    "summary": "Harvard career center interview guide, including knowing everything on your resume.",
+    "pages": ["advice/resume/quick-setup"]
   },
   {
     "url": "https://www.hardwareinterviews.fyi/t/top-electrical-engineering-interview-questions/807",
