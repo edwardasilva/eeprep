@@ -10,101 +10,108 @@ head:
 import ProjectPageFigure from '../../../../components/resume/ProjectPageFigure.astro';
 import TallyFigure from '../../../../components/resume/TallyFigure.astro';
 
-A portfolio is a page per project with a photo, a measured result, and the files. It is optional. Expect most screeners to skip the link, and no portfolio replaces the resume. It pays off later, when a hiring manager wants to see the work behind a bullet, and it pays off most for a student with hardware to show: a board you laid out, a bench you built, a scope capture that proves the thing works. If that is you, build one. It takes a weekend, and less with an AI tool doing the layout. Keep it small, keep every link alive, and post the same projects on LinkedIn as you go.
+A portfolio is a page per project with a photo, a measured result, and the files. It is optional, and it never replaces the resume. It pays off most for a student with hardware to show, such as a board you laid out, a bench you built, or a scope capture that proves the thing works.
+
+## Bottom line
+
+- Build the site once you have a hardware build with photos and a measured result, and until then, use pinned GitHub repositories with good READMEs.
+- Show one to three projects, each on its own page with your resume's result line, a photo, a scope capture, and what broke.
+- Let an AI coding tool do the layout so the site takes a weekend or less, and write each project page's text yourself.
+- Put the words from your resume lines in your LinkedIn profile, and post each project there as you build it.
+- Before each application season, open every link on the resume, portfolio, and profile, and fix or remove each dead one.
 
 ## What a reviewer does with the link
 
-Expect the first screener to skip it. The [[Resume#How a resume gets read|section on how a resume gets read]] on the resume page shows how many seconds a page gets. The link gets clicked later, by a hiring manager or an interviewer, and then it has to work. [One hiring manager who reads hundreds of resumes sees dead GitHub and LinkedIn links all the time](https://www.reddit.com/r/EngineeringResumes/comments/1hw10ms/12_yoe_some_long_direct_advice_in_tech_from_a/). A dead link costs more than no link.
+Expect the first screener to skip it. The [[Resume#How a resume gets read|section on how a resume gets read]] on the resume page shows how many seconds a page gets. The link gets clicked later, by a hiring manager or an interviewer, and then it has to work. [One hiring manager who reads hundreds of resumes sees dead GitHub and LinkedIn links all the time](https://www.reddit.com/r/EngineeringResumes/comments/1hw10ms/12_yoe_some_long_direct_advice_in_tech_from_a/) and tells applicants to double-check every URL. Treat a dead link as worse than no link.
 
-The portfolio helps most when you have no internship. [An ECE graduate with no work experience who got an offer in February 2026 kept a master resume, chose 2 of 6 projects per posting, and linked a portfolio that showed the projects in depth](https://www.reddit.com/r/EngineeringResumes/comments/1r4c3rv/0_yoe_i_received_an_offer_recently_i_graduated/), with a web version where the application allowed it.
+A portfolio gives you something to point to when you have no internship. [One electrical and computer engineering graduate with no work experience got an offer in February 2026](https://www.reddit.com/r/EngineeringResumes/comments/1r4c3rv/0_yoe_i_received_an_offer_recently_i_graduated/). They kept a master resume and chose 2 of 6 projects for each posting. They also created a portfolio that showed the projects in depth and included it whenever an online application had a place for it.
 
 ## One page per project
 
 <ProjectPageFigure />
 
-Lead with the result line from your resume, then the photo. [SlateGit, which sells portfolio sites, says to export the schematic and layout as images](https://slategit.com/blog/embedded-firmware-engineer-portfolio-hardware-projects), because readers cannot open the design files, and to include a logic analyzer trace, a scope screenshot, or a terminal log as evidence that the thing works. End with what broke. The bug you found and fixed is the part an interviewer asks about. The [[How to interview#Your projects, line by line|section on your projects, line by line]] on the how to interview page lists the questions.
+Lead with the result line from your resume, then the photo. Export the schematic and layout as images, because readers cannot open the design files. Add a logic analyzer trace, a scope capture, or a terminal log to show that the thing works. [SlateGit, which sells portfolio sites, gives the last two tips](https://slategit.com/blog/embedded-firmware-engineer-portfolio-hardware-projects). End with what broke, because the bug you found and fixed is the part an interviewer asks about. The [[How to interview#Your projects, line by line|section on your projects, line by line]] on the how to interview page lists the questions.
 
-Put the code and the design files in one GitHub repository per project, with a README that repeats the result line. The [[Software#Show it on GitHub|section on showing it on GitHub]] on the software page covers the README and pinned repositories. The portfolio page links to the repository instead of duplicating it.
+Put the code and the design files in one GitHub repository per project, with a README that repeats the result line. The [[Software#Show it on GitHub|section on showing it on GitHub]] on the software page covers the README and pinned repositories. The project page links to the repository instead of copying it.
 
-One project is the minimum, and three are enough. Pick the ones you can defend. The [[Projects|projects page]] covers how to choose them.
+One project is the minimum, and three are enough. Pick the ones you can defend, as the [[Projects|projects page]] explains.
 
-The pages that hold up are the ones that look like a lab report. [Cornell's ECE 4760 final project sites](https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/) have been doing this since the early 2000s: an introduction with the result, the high-level design, the hardware and software in their own sections, the results with measurements, and appendices with the schematic, the code, and the part list. The students who wrote them were your age, and a hiring manager can read one in two minutes and know whether the project is real. Copy that shape before you copy anyone's visual design.
+The pages that hold up are the ones that look like a lab report. [Cornell's ECE 4760 final project sites](https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/) have used that shape since the early 2000s. Most open with an introduction and the result, then cover the high-level design, the hardware and software in their own sections, and the results with measurements. Appendices hold the schematic, the code, and the part list. The students who wrote them were your age, and the format puts the result, the design, and the measurements where a reader can check that the project is real. Copy that shape before you copy anyone's visual design.
 
 ## Who needs one
 
-If your projects are software, a GitHub profile with pinned repositories and good READMEs does the job, and the [[Software#Show it on GitHub|section on showing it on GitHub]] on the software page covers it. A portfolio site earns its keep when the work is physical. A PCB, a power stage, a robot, a test rig, or an RF build has photos, scope captures, and layout images that a README shows badly and a page shows well. One student with no work experience [kept a separate project portfolio that showed the projects in depth](https://www.reddit.com/r/EngineeringResumes/comments/1r4c3rv/0_yoe_i_received_an_offer_recently_i_graduated/) and got an offer in February 2026 on the strength of it.
+If your projects are software, a GitHub profile with pinned repositories and good READMEs does the job, and the [[Software#Show it on GitHub|section on showing it on GitHub]] on the software page covers it. A portfolio site earns its keep when the work is physical. A PCB, a power stage, a robot, a test rig, or an RF build has photos, scope captures, and layout images that a README shows badly and a page shows well.
 
-If you have one finished build and no photos of it, skip the site until you do. A thin portfolio reads worse than none.
+If you have one finished build and no photos of it, skip the site until you have photos. A thin portfolio reads worse than none.
 
 ## Five student portfolios
 
-These are portfolios by EECS students and new graduates, read from their public sites and repositories in November 2026. The first four are linked and credited with their authors' names. Each entry lists what works and what does not. The gaps are as useful as the strengths.
+These are portfolios by EECS students and new graduates, read from their public sites and repositories in November 2026. The first four are linked and credited with their authors' names. Each entry lists what works and what falls short, because the gaps teach as much as the strengths.
 
-- [Byron Bradley](https://byronbradley.me/), a junior at Buffalo, has four projects on one page, and the maze and barcode entries each end with what is not done yet. One robot entry says the firmware compiles and that assembly, calibration, and trials are still ahead. That honesty is the strongest thing on the site.
+- [Byron Bradley](https://byronbradley.me/), a junior at Buffalo, has four projects, and the strongest thing on the site is its honesty about what is unfinished. The maze robot entry, for example, says that the firmware compiles and that assembly, calibration, and trials are still ahead.
 
-  **Pros**
+  What works:
 
   - The Xbox 360 write-up walks from a power-fault code to a shorted MOSFET and the repair.
   - The maze and barcode entries label simulation and generated-image results as such, and say physical trials are still ahead.
   - The repair records and the barcode work link out to public GitHub repositories.
 
-  **Cons**
+  What falls short:
 
   - There are no schematics and no oscilloscope captures, even though the circuit-lab entry says gain, cutoff, and phase were measured on a scope.
   - All four projects sit on one long homepage, so a reviewer cannot open a single project and stay there.
   - The maze robot's GitHub links return a 404, so the one robot entry has no working source link.
 
-- [Yasaman Kheradmand](https://yasamankhe.github.io/), at UBC, gives each of six projects its own page. A lighting controller page has PCB renders, a schematic PDF, a GitHub link, a bring-up video, and the input range and current it runs at.
+- [Yasaman Kheradmand](https://yasamankhe.github.io/), at UBC, gives each of six projects its own page, so a reviewer can sit with one piece of work.
 
-  **Pros**
+  What works:
 
-  - The lighting-controller page shows PCB renders, a schematic PDF, a bring-up video, and the input range and current the board runs at.
+  - The lighting-controller page shows PCB renders, a schematic PDF, a GitHub link, a bring-up video, and the input range and current the board runs at.
   - The robotic-piano page shows machined solenoid parts, wound coils, and several mechanical iterations.
-  - Each project has its own page, so a reviewer can sit with one piece of work.
 
-  **Cons**
+  What falls short:
 
   - An oscilloscope appears in the tool list and nowhere as a capture of a rail, a CAN edge, or an LED-drive waveform.
   - The homepage opens with generic filler, including the line about going "from the circuit and PCB design all the way to programming, bring-up, testing," and long stacks of tool chips that do not add evidence.
-  - The smart thermometer, piano, and smart-shoe pages link no source repository. They show code inline instead.
+  - The smart thermometer, piano, and smart-shoe pages link no source repository and show code inline instead.
 
-- [Panos Dimtsoudis](https://panosdimts.github.io/EE-portfolio/), at Penn, opens with an annotated SRAM layout and a table of predicted against simulated or measured results, and keeps a What broke note on another project, a power-reset problem and its fix. The repository README says two AI coding tools helped build the site, that the student reviewed and directed all of it, and that the project content is the student's own. That is the split this page recommends.
+- [Panos Dimtsoudis](https://panosdimts.github.io/EE-portfolio/), at Penn, opens with an annotated SRAM layout and a table of predicted against simulated or measured results. The repository README says that AI tools, including OpenAI Codex and Claude Code, helped build the site. It also says the student reviewed and directed all of the content and engineering work. That is close to the split this page recommends.
 
-  **Pros**
+  What works:
 
-  - The SRAM MAC page puts predicted numbers next to simulated results and publishes the misses, including runs that missed the prediction.
-  - The Guitar Hero page states what went wrong: the board reset whenever the speaker drew current, and a 12 V pack with two 5 V regulators fixed it.
+  - The SRAM MAC page puts predicted numbers next to simulated results and publishes the runs that missed the prediction.
+  - The Guitar Hero page has a "What went wrong" note on a power-reset problem. The board reset whenever the speaker drew current, and a 12 V pack with two 5 V regulators fixed it.
 
-  **Cons**
+  What falls short:
 
   - No project page shows an oscilloscope capture, though the embedded ECG and metal-detector reports say they include scope measurements. The MAC waveforms are simulation and layout plots.
 
-- [Zaid Saifan](https://zaidsaifan-star.github.io/), at Western, has the cleanest structure of the five on its golf-cart page, with sections named The brief, On the board, Protection, and Validation, which ends on a next step. The repository holds a rules file for an AI coding tool, including a rule against inventing numbers.
+- [Zaid Saifan](https://zaidsaifan-star.github.io/), at Western, has a golf-cart page with the cleanest structure of the five. The repository holds a rules file for an AI coding tool, including a rule against inventing numbers.
 
-  **Pros**
+  What works:
 
-  - The golf-cart page follows a datasheet shape, so a reviewer knows where to find the brief, the board, the protection, and the results.
+  - The golf-cart page follows a datasheet shape, with sections named "The brief", "On the board", "Protection", and "Validation", so a reviewer knows where to find each part. The Validation section ends on a next step.
   - The hospital-robot and RC-car pages include photos of the assembled hardware, and the RC-car page has a demo video.
 
-  **Cons**
+  What falls short:
 
-  - The home page leans on decorative effects (animated traces, 3D card tilt, magnetic buttons, a typed role line) that do not help a reviewer judge the engineering.
-  - The other project pages use their own headings, so the datasheet shape does not carry across the site.
+  - The homepage leans on decorative effects (animated traces, 3D card tilt, magnetic buttons, a typed role line) that do not help a reviewer judge the engineering.
+  - The other project pages vary their section names, so the golf-cart page's shape does not carry across the site.
   - The golf-cart Validation section gives a current range as a design target with no measured current beside it.
-  - The function-generator page says the outputs were captured on an oscilloscope, but the only waveforms on the page are an SVG drawing, with no scope screenshot.
+  - The function-generator page says the outputs were captured on an oscilloscope, but the only waveforms on the page are an SVG drawing, with no scope capture.
 
-- [The Cornell ECE 4760 archive](https://ece4760.github.io/Projects/Projects.html) holds a semester of these pages at a time, 45 in fall 2025 alone. [One of them](https://ece4760.github.io/Projects/Fall2025/hw578/index.html) runs a Julia set on eight RP2040s over a custom multi-slave SPI bus and spends its Program Design section on the bug: the slave kept driving MISO low when idle, which jammed the bus until the pin was switched to a null function. That is the paragraph an interviewer reads twice.
+- [The Cornell ECE 4760 archive](https://ece4760.github.io/Projects/Projects.html) has 45 of these project sites from fall 2025 alone. [One of them](https://ece4760.github.io/Projects/Fall2025/hw578/index.html) runs a Julia set on eight RP2040s over a custom multi-slave bus built on SPI, a common serial link between chips. It spends its Program Design section on one bug. The slave kept driving its data-out line (MISO) low when idle, which jammed the bus until the pin was switched to a null function. That is the paragraph an interviewer reads twice.
 
-  **Pros**
+  What works:
 
-  - The Program Design section explains a real bus bug in enough detail that a reader can see the failure, the SDK limitation, and the pin-function fix.
+  - The Program Design section explains the bug in enough detail that a reader can see the failure, the limitation in the software development kit, and the pin-function fix.
   - The report includes a system diagram and a demo video.
   - The archive publishes a full semester of project sites at a time, so a reader can compare how different students write up similar work.
 
-  **Cons**
+  What falls short:
 
-  - The report title and opening overview stack buzzwords ("leveraging", "tightly integrated system", "push interactive graphics performance") before the evidence.
-  - The write-up never shows a scope or logic-analyzer capture of the stuck MISO line, even though that is the central hardware bug.
+  - The report title and opening overview stack buzzwords ("tightly integrated system", "push interactive graphics performance") before the evidence.
+  - The write-up never shows a scope or logic analyzer capture of the stuck MISO line, even though that is the central hardware bug.
 
 Across the five, four sites have photos of the build, three give a headline number for every project, and one links code for every project. Three show a schematic, three say what broke or what is unfinished, and none shows a scope capture on its pages. If you build one, the scope capture and the What broke section are where you pull ahead.
 
@@ -116,27 +123,27 @@ Every host below is free for a static site of a few pages and compressed images.
 
 - [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits) serves a site straight from a repository. The published site may be no larger than 1 GB, and it has a soft bandwidth limit of 100 GB a month. The repository and the site live together, so a reader can see the commit history.
 - [Cloudflare Pages](https://developers.cloudflare.com/pages/platform/limits) gives the free plan 500 builds a month and one build at a time.
-- [Vercel's Hobby plan](https://vercel.com/docs/plans/hobby-plan) includes 100 GB of data transfer and is limited to non-commercial, personal use. A student portfolio qualifies.
+- [Vercel's Hobby plan](https://vercel.com/docs/plans/hobby-plan) includes 100 GB of data transfer.
 
-Plain HTML is fine. If you want a generator, Astro or Hugo builds the pages from Markdown. Do not spend a weekend on the design. Spend it on the project pages.
+Plain HTML is fine. If you would rather write in Markdown, a static site generator builds the pages from it. Spend the weekend on the project pages, not on the design.
 
 ## Build it with an AI tool
 
-This is the one place in the job search where an AI tool can do most of the work. The site is a container. The project pages are yours, and the tool cannot write them, because it has never seen your board. Give Claude, ChatGPT, or Cursor the list of your projects, the result line for each, and your photos, and ask for a static site with one page per project in the order in the project page figure on this page. Ask for plain HTML or a small Astro project, no framework you cannot explain, and tell it to leave every number as a bracket you fill in. Then write the Design, Results, and What broke sections yourself, from your notebook. The tool saves you the day of layout and leaves you the hour of writing that matters. The [[AI use|AI use page]] has where a tool helps in the rest of the search and where it costs you.
+This is one of the few places in the job search where an AI tool can do most of the work. The site is a container, but the project pages are yours, and the tool cannot write them because it has never seen your board. Give an AI coding tool the list of your projects, the result line for each, and your photos. Ask for a static site with one page per project, each with its sections in the order the project page figure above shows. Ask for plain HTML or a simple static site generator, with no framework you cannot explain. Tell it to leave every number as a bracket you fill in. Then write the Design, Results, and What broke sections yourself, from your notebook. The tool saves you the day of layout and leaves you the hour of writing that matters. The [[AI use|AI use page]] covers where a tool helps in the rest of the search and where it costs you.
 
 ## LinkedIn
 
-A recruiter's search finds the words in your profile, so the profile is where your resume lines get found. [BYU's Design Review says recruiters search LinkedIn for specific skills such as MATLAB or CAD, and a profile without those words may not show up](https://www.designreview.byu.edu/collections/more-than-a-profile). Three rules:
+Put the words from your resume lines in your LinkedIn profile, because that is where a recruiter's search finds them. [BYU's Design Review says recruiters search LinkedIn for specific skills such as MATLAB or CAD, and a profile without those words may not show up](https://www.designreview.byu.edu/collections/more-than-a-profile). [Georgia Tech's College of Computing also says to use industry keywords in the profile, and to add a professional photo](https://www.cc.gatech.edu/sites/default/files/documents/2024/Networking-Tips-Word-Doc.docx).
 
 1. Write a headline with the job you want and one specific, such as "EE student, embedded firmware and test automation, graduating 2027", not "Student at University".
-2. Put the same project bullets in Projects, with the measured number and a link to the portfolio page. [Georgia Tech's College of Computing says to use industry keywords in the profile and a professional photo](https://www.cc.gatech.edu/sites/default/files/documents/2024/Networking-Tips-Word-Doc.docx).
-3. Turn on Open to Work for recruiters only while you search. [LinkedIn says that setting shows your status to people using LinkedIn Recruiter, and that it tries to hide it from recruiters at your current employer but cannot promise complete privacy](https://www.linkedin.com/help/linkedin/answer/a507508/let-recruiters-know-you-re-open-to-work?lang=en).
+2. Put the same project bullets in the Projects section, with the measured number and a link to the portfolio page.
+3. While you search, turn on Open to Work and set it to recruiters only. [LinkedIn says that setting shows your status to people using LinkedIn Recruiter](https://www.linkedin.com/help/linkedin/answer/a507508/let-recruiters-know-you-re-open-to-work?lang=en). LinkedIn also says it tries to hide your status from recruiters at your current employer but cannot promise complete privacy.
 
-Your school's career center has a LinkedIn guide. [Berkeley's](https://career.berkeley.edu/prepare-for-success/networking/using-linkedin/) and [MIT's](https://capd.mit.edu/resources/linkedin/) are public. Use LinkedIn for people, too. The [[Networking#LinkedIn|LinkedIn]] section on the networking page covers the alumni tab.
+Your school's career center has a LinkedIn guide, and [Berkeley's](https://career.berkeley.edu/prepare-for-success/networking/using-linkedin/) and [MIT's](https://capd.mit.edu/resources/linkedin/) are public. Use LinkedIn to find people too, and the [[Networking#LinkedIn|LinkedIn]] section on the networking page covers the alumni tab.
 
 ### Post the work as you go
 
-Post about your projects while you build them, and again when they are done. A photo of the board on the bench, a scope capture with one sentence on what it shows, a short note on the bug that ate your weekend. A recruiter who searches for your tools then finds a profile with proof on it instead of a bare headline. Keep each post to the fact and the picture. Nobody needs the lesson at the end.
+Post about your projects while you build them, and again when they are done. A post can be a photo of the board on the bench, a scope capture with one sentence on what it shows, or a short note on the bug that ate your weekend. A recruiter who searches for your tools then finds a profile with proof on it instead of a bare headline. Keep each post to the fact and the picture, and skip the lesson at the end.
 
 ## Keep it current
 
