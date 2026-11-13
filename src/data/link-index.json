@@ -852,6 +852,41 @@
     "pages": ["advice/projects"]
   },
   {
+    "url": "https://careerservices.cns.utexas.edu/technical-projects-guide",
+    "title": "UT Austin: Technical projects guide",
+    "category": "Tools and project resources",
+    "summary": "A career office on how a project can decide an interview and fill a missing internship.",
+    "pages": ["advice/projects"]
+  },
+  {
+    "url": "https://career.vt.edu/blog/2026/03/23/technical-interviewing/",
+    "title": "Virginia Tech: Technical interviewing",
+    "category": "Tools and project resources",
+    "summary": "Interviewers ask detailed questions about the projects on your resume.",
+    "pages": ["advice/projects"]
+  },
+  {
+    "url": "https://mitcommlab.mit.edu/meche/commkit/portfolio/",
+    "title": "MIT Communication Lab: Portfolio",
+    "category": "Tools and project resources",
+    "summary": "How to match a project to an employer and build a smaller portfolio per recipient.",
+    "pages": ["advice/projects"]
+  },
+  {
+    "url": "https://engineering.utdallas.edu/engage/students/technical-resume-best-standards-and-practices/",
+    "title": "UT Dallas: Technical resume standards",
+    "category": "Tools and project resources",
+    "summary": "Projects show technical skill when a student has no technical work experience yet.",
+    "pages": ["advice/projects"]
+  },
+  {
+    "url": "https://careerhub.ufl.edu/blog/2026/10/07/i-asked-recruiters-what-makes-students-stand-out-heres-what-they-said/",
+    "title": "UF Career Connections: What recruiters say",
+    "category": "Tools and project resources",
+    "summary": "Recruiters accept work from internships, classes, student groups, or personal projects.",
+    "pages": ["advice/projects"]
+  },
+  {
     "url": "https://courses.grainger.illinois.edu/ece431/sp2021/lab/ECE431_lab_report_guide.pdf",
     "title": "Illinois ECE 431: Lab report guide",
     "category": "Tools and project resources",
