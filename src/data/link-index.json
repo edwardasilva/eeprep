@@ -113,6 +113,20 @@
     ]
   },
   {
+    "url": "https://tips.career.vt.edu/Resumes/objectivevssummary.html",
+    "title": "Virginia Tech: Objective vs. summary of qualifications",
+    "category": "Resume guides",
+    "summary": "Virginia Tech's career center on when a resume objective or a summary of qualifications fits.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://neweraadvising.gatech.edu/news/career-center-insights-navigating-your-first-job-search",
+    "title": "Georgia Tech: Career Center insights for navigating your first job search",
+    "category": "Resume guides",
+    "summary": "Georgia Tech's career center on listing results, not responsibilities, in resume bullets.",
+    "pages": ["advice/resume"]
+  },
+  {
     "url": "https://capd.mit.edu/blog/2023/09/01/enhance-your-resume-a-guide-for-first-year-undergraduates/",
     "title": "MIT CAPD: Enhance your resume, a guide for first-year undergraduates",
     "category": "Resume guides",
@@ -1485,6 +1499,13 @@
     "category": "Job search and referrals",
     "summary": "Michigan Tech handbook on how co-op students are expected to work.",
     "pages": ["advice/getting-hired/non-technical"]
+  },
+  {
+    "url": "https://www.ualberta.ca/en/youalberta/2026/01/what-employers-really-want-findings-from-the-career-centres-2025-hiring-survey.html",
+    "title": "University of Alberta: What employers really want",
+    "category": "Job search and referrals",
+    "summary": "University of Alberta Career Centre 2025 hiring survey, including how much a cover letter affects interview decisions.",
+    "pages": ["advice/resume"]
   },
   {
     "url": "https://www.reddit.com/r/ECE/comments/1mojjy7/how_do_you_actually_get_referralsinterviews_for/",
