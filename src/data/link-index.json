@@ -553,7 +553,7 @@
     "title": "Altium for students",
     "category": "Tools and project resources",
     "summary": "Altium's program for free student licenses of its PCB design software.",
-    "pages": ["advice/projects/hardware"]
+    "pages": ["advice/getting-hired/career-paths", "advice/projects/hardware"]
   },
   {
     "url": "https://ansys.synopsys.com/products/electronics/ansys-hfss",
@@ -637,7 +637,11 @@
     "title": "MIT OCW: 6.002 Circuits and Electronics",
     "category": "Tools and project resources",
     "summary": "MIT's free first circuits course for EE and EECS students.",
-    "pages": ["advice/forever-learning", "roadmap"]
+    "pages": [
+      "advice/forever-learning",
+      "advice/getting-hired/career-paths",
+      "roadmap"
+    ]
   },
   {
     "url": "https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/",
@@ -645,6 +649,34 @@
     "category": "Tools and project resources",
     "summary": "MIT's free signals and systems course, from Fourier transforms to sampling.",
     "pages": ["advice/forever-learning", "roadmap"]
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/6-111-introductory-digital-systems-laboratory-spring-2006/",
+    "title": "MIT OCW: 6.111 Introductory Digital Systems Laboratory",
+    "category": "Tools and project resources",
+    "summary": "MIT's free undergraduate digital lab from 2006, with a Verilog final project on an FPGA.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/",
+    "title": "MIT OCW: 6.013 Electromagnetics and Applications",
+    "category": "Tools and project resources",
+    "summary": "MIT's free undergraduate electromagnetics course from 2009, with an open textbook.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/6-302-feedback-systems-spring-2007/",
+    "title": "MIT OCW: 6.302 Feedback Systems",
+    "category": "Tools and project resources",
+    "summary": "MIT's free graduate feedback systems course from 2007, on stability and compensation.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/6-622-power-electronics-spring-2023/pages/syllabus/",
+    "title": "MIT OCW: 6.622 Power Electronics syllabus",
+    "category": "Tools and project resources",
+    "summary": "Syllabus for MIT's free graduate power electronics course from 2023, with its prerequisite and text.",
+    "pages": ["advice/getting-hired/career-paths"]
   },
   {
     "url": "https://www.eecs.mit.edu/academics/subject-numbering/",
@@ -812,6 +844,27 @@
     "title": "FCC: Amateur Radio Service",
     "category": "Tools and project resources",
     "summary": "The FCC on amateur radio licenses and the volunteer examiner exams.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://www.ti.com/video/series/precision-labs.html",
+    "title": "TI Precision Labs",
+    "category": "Tools and project resources",
+    "summary": "TI's free video training on amplifiers, data converters, microcontrollers, and motor drivers.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://users.ece.utexas.edu/~valvano/EE445L/EE445L_SPRING_2025.htm",
+    "title": "UT Austin: ECE 445L Embedded Systems Design Lab",
+    "category": "Tools and project resources",
+    "summary": "Spring 2025 syllabus for UT Austin's embedded systems lab, with its suggested text.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://courses.grainger.illinois.edu/ece457/fa2025/",
+    "title": "Illinois: ECE 457 Microwave Devices and Circuits",
+    "category": "Tools and project resources",
+    "summary": "Fall 2025 course page for Illinois's microwave course, with its prerequisites and textbook.",
     "pages": ["advice/getting-hired/career-paths"]
   },
   {
@@ -1323,7 +1376,31 @@
     "title": "MIT CAPD: Conducting informational interviews",
     "category": "Job search and referrals",
     "summary": "Career-center guide to informational interviews, including thank-you notes.",
-    "pages": ["advice/getting-hired/networking"]
+    "pages": [
+      "advice/getting-hired/career-paths",
+      "advice/getting-hired/networking"
+    ]
+  },
+  {
+    "url": "https://cockrell.utexas.edu/student-life/career-services/co-ops-and-internships/",
+    "title": "UT Austin Cockrell: Co-ops and internships",
+    "category": "Job search and referrals",
+    "summary": "UT Austin's engineering school on co-ops and internships, including testing interest in a field.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://drexel.edu/engineering/academics/departments/electrical-computer-engineering/academic-programs/department-co-ops",
+    "title": "Drexel ECE: Department co-ops",
+    "category": "Job search and referrals",
+    "summary": "Drexel's ECE co-op program, with a graduate on trying out fields through co-op.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://careers.geaerospace.com/global/en/edison-engineering-development-program",
+    "title": "GE Aerospace: Edison Engineering Development Program",
+    "category": "Job search and referrals",
+    "summary": "A two-year new-grad engineering program with 3 to 4 rotations.",
+    "pages": ["advice/getting-hired/career-paths"]
   },
   {
     "url": "https://userapps.support.sap.com/sap/support/knowledge/en/2609981",
@@ -1351,6 +1428,104 @@
     "title": "SEL: Internships",
     "category": "Job search and referrals",
     "summary": "Schweitzer Engineering Laboratories on its year-round internships.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://selinc.com/company/careers/engineer-rotation-program/",
+    "title": "SEL: Engineer Rotation Program",
+    "category": "Job search and referrals",
+    "summary": "SEL's 18-month new-grad rotation through three areas of the company.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://selinc.com/company/careers/hardware-engineering/",
+    "title": "SEL: Hardware engineering",
+    "category": "Job search and referrals",
+    "summary": "SEL on its hardware engineers, who design, build, and test its devices onsite.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://jobs.pge.com/university-programs",
+    "title": "PG&E: University programs",
+    "category": "Job search and referrals",
+    "summary": "PG&E's internships and new-grad rotation programs, including electric engineering.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://burnsmcd.jobs/washington-dc/staff-substation-pc-engineer-transmission-distribution-mid-atlantic-region/7D486F7994A24FC7A3B6BE7F9643D31F/job/",
+    "title": "Burns & McDonnell: Staff Substation P&C Engineer",
+    "category": "Job search and referrals",
+    "summary": "A staff-level substation protection and control posting that asks for 3 years of experience.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://careers.ti.com/en/sites/CX/pages/engineering",
+    "title": "TI: Engineering roles",
+    "category": "Job search and referrals",
+    "summary": "TI's descriptions of its applications, design, test, validation, product, and other engineering roles.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://careers.ti.com/en/sites/CX/job/25017578/",
+    "title": "TI: Test or Validation Engineering Intern",
+    "category": "Job search and referrals",
+    "summary": "A 2026 TI internship posting for validation, product, and test engineering.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://engineering.purdue.edu/ECE/Academics/Graduates/Announcements/20220408_NVIDIA_Jobs",
+    "title": "Purdue ECE: NVIDIA new-grad roles (2022)",
+    "category": "Job search and referrals",
+    "summary": "A 2022 Purdue announcement listing NVIDIA's new-grad hardware roles and degree requirement.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://www.nvidia.com/en-us/about-nvidia/careers/university-recruiting/",
+    "title": "NVIDIA: University recruiting",
+    "category": "Job search and referrals",
+    "summary": "NVIDIA on its internships, which it calls its main pipeline for new college grads.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://jobs.nvidia.com/careers/job/893392585259",
+    "title": "NVIDIA: ASIC Design Verification Engineer, New College Grad 2026",
+    "category": "Job search and referrals",
+    "summary": "A closed NVIDIA new-grad verification posting in Austin that asked for an MS.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://jobs.nvidia.com/careers/job/893397025803",
+    "title": "NVIDIA: 2027 Hardware ASIC Design internship",
+    "category": "Job search and referrals",
+    "summary": "A 2027 NVIDIA internship posting for bachelor's, master's, and PhD students in ASIC design.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://jobs.nvidia.com/careers/job/893397026661",
+    "title": "NVIDIA: 2027 Hardware Physical Design internship",
+    "category": "Job search and referrals",
+    "summary": "A 2027 NVIDIA internship posting in physical design and VLSI.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://careers.micron.com/careers/job/30512424",
+    "title": "Micron: New College Grad, Electrical Design Engineer (FPGA/ASIC)",
+    "category": "Job search and referrals",
+    "summary": "A closed Micron new-grad posting for FPGA and ASIC design on test equipment.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://careers.micron.com/careers/job/42021708",
+    "title": "Micron: New College Grad, Process Integration Engineer",
+    "category": "Job search and referrals",
+    "summary": "A closed Micron new-grad posting for process integration in a fab.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://careers.micron.com/careers/job/42813179",
+    "title": "Micron: New College Grad, Product Yield Enhancement Engineer, HBM",
+    "category": "Job search and referrals",
+    "summary": "A Micron new-grad posting for failure analysis and yield work on high bandwidth memory.",
     "pages": ["advice/getting-hired/career-paths"]
   },
   {
@@ -2028,6 +2203,48 @@
     "pages": ["advice/getting-hired/how-to-interview"]
   },
   {
+    "url": "https://chipinsights.net/p/hardware-engineering-interview-resources",
+    "title": "Chip Insights: Hardware engineering interview resources",
+    "category": "Interview prep",
+    "summary": "An engineer's 2025 list of digital design, verification, and architecture interview topics.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://thedatabus.in/interview_list/",
+    "title": "The Data Bus: RTL design interview topics",
+    "category": "Interview prep",
+    "summary": "An unsigned list of topics for RTL design interviews, from counters to clock domain crossing.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://www.windriver.com/blog/Internal-Job-Interview-Questions-for-Embedded-Systems-Developers",
+    "title": "Wind River: Interview questions for embedded systems developers",
+    "category": "Interview prep",
+    "summary": "A 2026 vendor blog post of embedded interview questions, from interrupts to RTOS tasks.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://www.antenna-theory.com/careers/interview.php",
+    "title": "antenna-theory.com: Antenna engineering interview questions",
+    "category": "Interview prep",
+    "summary": "Topics and sample questions for antenna engineer interviews, including Smith charts.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://careers.ti.com/en/sites/CX/pages/recruitment-process",
+    "title": "TI: Our recruitment process",
+    "category": "Interview prep",
+    "summary": "TI's resume and interview tips, including what its technical questions may cover.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://www.micron.com/about/careers/university-recruiting",
+    "title": "Micron: University recruiting",
+    "category": "Interview prep",
+    "summary": "Micron's student recruiting page, with interview tips and what its technical questions cover.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
     "url": "https://sites.gatech.edu/careercenterdev/files/2024/09/Interviewing_Career-Guide.pdf",
     "title": "Georgia Tech: Interview Ready guide",
     "category": "Interview prep",
@@ -2185,6 +2402,41 @@
     "title": "Georgia Tech ECE: Technical interest groups",
     "category": "Pay and career data",
     "summary": "Georgia Tech's list of ECE areas and the topics under each.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://ece.illinois.edu/academics/ugrad/subdisciplines",
+    "title": "Illinois ECE: Undergraduate subdisciplines",
+    "category": "Pay and career data",
+    "summary": "Illinois ECE on balancing breadth and depth across its EE and computer engineering areas.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://www.bls.gov/ooh/architecture-and-engineering/computer-hardware-engineers.htm",
+    "title": "BLS: Computer hardware engineers",
+    "category": "Pay and career data",
+    "summary": "Federal data on pay, outlook, and the largest employers of computer hardware engineers.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://www.onetonline.org/link/summary/17-2061.00",
+    "title": "O*NET: Computer hardware engineers",
+    "category": "Pay and career data",
+    "summary": "Occupation profile with tasks, reported titles, and new-hire education for computer hardware engineers.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://www.onetonline.org/link/summary/17-2199.05",
+    "title": "O*NET: Mechatronics engineers",
+    "category": "Pay and career data",
+    "summary": "Occupation profile with automation and control titles, tasks, and new-hire education.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://ssti.org/blog/engineering-job-mismatch-spurs-study",
+    "title": "SSTI: Engineering job mismatch spurs study",
+    "category": "Pay and career data",
+    "summary": "A 2016 report on how many trained scientists and engineers work outside their field of study.",
     "pages": ["advice/getting-hired/career-paths"]
   },
   {
@@ -2450,7 +2702,10 @@
     "title": "SIA: Semiconductor labor market gap",
     "category": "Pay and career data",
     "summary": "SIA's projection of new chip industry jobs by 2030 and how many may go unfilled.",
-    "pages": ["advice/getting-hired/job-market"]
+    "pages": [
+      "advice/getting-hired/career-paths",
+      "advice/getting-hired/job-market"
+    ]
   },
   {
     "url": "https://www.newyorkfed.org/research/college-labor-market",
@@ -2608,6 +2863,34 @@
     "category": "Communities",
     "summary": "IEEE's rules for who qualifies as a student member.",
     "pages": ["advice/forever-learning/societies"]
+  },
+  {
+    "url": "https://ieee-pes.org/membership-overview/student-members/",
+    "title": "IEEE PES: Student members",
+    "category": "Communities",
+    "summary": "IEEE Power & Energy Society student membership, scholarships, and conference support.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://sscs.ieee.org/education/sscs-student-circuit-contest/",
+    "title": "IEEE SSCS: Student Circuit Contest",
+    "category": "Communities",
+    "summary": "A Solid-State Circuits Society contest for undergraduate and graduate students.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://ieee-cas.org/society-involvement/student-design-competition",
+    "title": "IEEE CASS: Student Design Competition",
+    "category": "Communities",
+    "summary": "A Circuits and Systems Society design competition for teams of undergraduates.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://ims-ieee.org/students",
+    "title": "IEEE IMS: Students",
+    "category": "Communities",
+    "summary": "The International Microwave Symposium's student design competitions and travel grants.",
+    "pages": ["advice/getting-hired/career-paths"]
   },
   {
     "url": "https://www.reddit.com/r/ECE/",
