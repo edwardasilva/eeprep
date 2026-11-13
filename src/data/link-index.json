@@ -156,6 +156,7 @@
     "summary": "The subreddit's resume guide, covering layout, sections, bullets and common mistakes.",
     "pages": [
       "advice/getting-hired/non-technical",
+      "advice/projects",
       "advice/resume",
       "advice/resume/cleanup",
       "advice/resume/walkthrough",
@@ -380,6 +381,13 @@
     "pages": ["advice/resume"]
   },
   {
+    "url": "https://www.stcloudstate.edu/careercenter/_files/documents/resumes-letters/resumes/res-engineering.pdf",
+    "title": "St. Cloud State: Engineering resume sample",
+    "category": "Sample resumes and templates",
+    "summary": "A computer engineering sample with a senior design project dated to Present.",
+    "pages": ["advice/projects"]
+  },
+  {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/1w1e5dp/student_100_embeddedhardware_intern_applications/",
     "title": "r/EngineeringResumes: 100 embedded applications, nothing yet",
     "category": "Resume feedback from reviewers and recruiters",
@@ -502,6 +510,55 @@
       "advice/projects/software",
       "advice/resume/cleanup"
     ]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1fg3or0/student_mechanical_engineering_junior_resume/",
+    "title": "r/EngineeringResumes: Junior asks about an in-progress project",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "A reply says in-progress work can be fine, ideally with some results to show.",
+    "pages": ["advice/projects"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1u8n3qo/student_ce_did_not_really_apply_for_junior_year/",
+    "title": "r/EngineeringResumes: CE student with no junior-year internship",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "A reply says to list a started project like an ongoing job, dated to Present.",
+    "pages": ["advice/projects"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1c166yv/if_im_applying_for_an_intern_after_becoming_as/",
+    "title": "r/EngineeringResumes: Junior applying for a senior-year internship",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "A moderator says to list accomplishments from an unfinished project, not tasks.",
+    "pages": ["advice/projects"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1nsjy3f/0_yoe_is_it_a_bad_idea_to_add_more_than_one/",
+    "title": "r/EngineeringResumes: More than one in-progress project",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "Replies on listing in-progress projects and explaining them in an interview.",
+    "pages": ["advice/projects"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/nus25t/got_a_good_question_today_should_i_include/",
+    "title": "r/EngineeringResumes: Failed or unfinished projects",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "A post on listing projects that failed or were not finished, and what to say about them.",
+    "pages": ["advice/projects"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/q4rytc/should_i_include_a_project_that_is_currently_in/",
+    "title": "r/EngineeringResumes: IEEE club project still in progress",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "A reply says employers want to know what you are working on now.",
+    "pages": ["advice/projects"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1fwchgg/0_yoe_including_a_project_that_is_currently_being/",
+    "title": "r/EngineeringResumes: Project with its main features done",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "A reply says bullets on only the finished parts are fine if they do not misrepresent the work.",
+    "pages": ["advice/projects"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/1pkixp9/today_i_made_a_top_5_list/",
