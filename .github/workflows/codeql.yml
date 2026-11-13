@@ -1,10 +1,8 @@
-# CodeQL cannot upload results while this repository is private.
-# That failure would turn every pull request red.
-# The analyze job skips while the repository is private. The check stays neutral.
-# After the repository becomes public at launch, the job runs on its own.
+# CodeQL cannot upload results from a private repository, and that failure would turn
+# every run red. So the analyze job skips when the repository is private, and the check
+# stays neutral. eeprep is public, so the job runs.
 #
-# It runs weekly and by hand, not on every pull request or push. While the
-# repository is private, a pull request run only added a skipped check.
+# It runs weekly and by hand, not on every pull request or push.
 
 name: CodeQL
 

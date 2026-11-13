@@ -18,7 +18,7 @@
     "title": "Greenhouse: Auto-reject",
     "category": "Resume guides",
     "summary": "Greenhouse help article on how employers set rules that reject applications automatically.",
-    "pages": ["advice/resume"]
+    "pages": ["advice/resume", "advice/resume/workshop"]
   },
   {
     "url": "https://my.greenhouse.com/blogs/what-really-happens-after-you-apply-for-a-job",
@@ -29,6 +29,7 @@
       "advice/getting-hired",
       "advice/resume",
       "advice/resume/quick-setup",
+      "advice/resume/workshop",
       "help/ai-use",
       "help/job-boards"
     ]
@@ -48,29 +49,34 @@
     "pages": [
       "advice/resume",
       "advice/resume/cleanup",
-      "advice/resume/walkthrough"
+      "advice/resume/walkthrough",
+      "advice/resume/workshop"
     ]
-  },
-  {
-    "url": "https://www.prnewswire.com/news-releases/ladders-updates-popular-recruiter-eye-tracking-study-with-new-key-insights-on-how-job-seekers-can-improve-their-resumes-300744217.html",
-    "title": "Ladders 2018 eye-tracking study press release",
-    "category": "Resume guides",
-    "summary": "Press release with the 7.4-second average resume scan time from Ladders' study.",
-    "pages": ["advice/resume"]
-  },
-  {
-    "url": "https://www.theladders.com/career-advice/is-it-true-that-recruiters-reject-a-resume-in-six-seconds",
-    "title": "Ladders: Do recruiters reject a resume in six seconds?",
-    "category": "Resume guides",
-    "summary": "Ladders article on its 2018 eye-tracking study of how recruiters scan resumes.",
-    "pages": ["advice/resume"]
   },
   {
     "url": "https://career.engin.umich.edu/resumes-cvs-cover-letters/",
     "title": "Michigan Engineering: Resumes, CVs and cover letters",
     "category": "Resume guides",
     "summary": "Michigan engineering career center guide to resumes, CVs and cover letters.",
-    "pages": ["advice/resume", "advice/resume/cleanup"]
+    "pages": [
+      "advice/getting-hired/non-technical",
+      "advice/resume",
+      "advice/resume/cleanup"
+    ]
+  },
+  {
+    "url": "https://gradschool.uky.edu/sites/default/files/2024-12/stuckert-resume-guide-final-2024-2025-1.pdf",
+    "title": "University of Kentucky Stuckert Career Center: Resume Guide",
+    "category": "Resume guides",
+    "summary": "Kentucky resume guide with before-and-after bullets for service jobs, such as a lifeguard.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://www.cc.gatech.edu/sites/default/files/documents/2026/GT%20CS%20Resume%20Guide%20compressed_1.pdf",
+    "title": "Georgia Tech College of Computing: Resume Guide",
+    "category": "Resume guides",
+    "summary": "Georgia Tech CS resume guide: one to two bullets for a job of low relevance, four to six for high relevance.",
+    "pages": ["advice/resume"]
   },
   {
     "url": "https://capd.mit.edu/resources/make-your-resume-ats-friendly/",
@@ -95,11 +101,48 @@
     ]
   },
   {
+    "url": "https://tips.career.vt.edu/Resumes/objectivevssummary.html",
+    "title": "Virginia Tech: Objective vs. summary of qualifications",
+    "category": "Resume guides",
+    "summary": "Virginia Tech's career center on when a resume objective or a summary of qualifications fits.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://neweraadvising.gatech.edu/news/career-center-insights-navigating-your-first-job-search",
+    "title": "Georgia Tech: Career Center insights for navigating your first job search",
+    "category": "Resume guides",
+    "summary": "Georgia Tech's career center on listing results, not responsibilities, in resume bullets.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://eng.umd.edu/sites/clark.umd.edu/files/Resume%20Handout%20SU24.pdf",
+    "title": "University of Maryland Engineering Career Services: Resume writing",
+    "category": "Resume guides",
+    "summary": "Maryland engineering career office handout on resume length, GPA, and section order.",
+    "pages": ["advice/resume/cleanup"]
+  },
+  {
+    "url": "https://www.oit.edu/sites/default/files/document/resume-tips-for-engineering-majors.pdf",
+    "title": "Oregon Tech: Resume tips for engineering majors",
+    "category": "Resume guides",
+    "summary": "Oregon Tech handout on location, GPA, and bullet style for engineering resumes.",
+    "pages": ["advice/resume/cleanup"]
+  },
+  {
+    "url": "https://capd.mit.edu/blog/2023/09/01/enhance-your-resume-a-guide-for-first-year-undergraduates/",
+    "title": "MIT CAPD: Enhance your resume, a guide for first-year undergraduates",
+    "category": "Resume guides",
+    "summary": "MIT CAPD guide for first-year students, including how to describe a part-time job.",
+    "pages": ["advice/resume"]
+  },
+  {
     "url": "https://www.reddit.com/r/EngineeringResumes/wiki/index/",
     "title": "r/EngineeringResumes wiki",
     "category": "Resume guides",
     "summary": "The subreddit's resume guide, covering layout, sections, bullets and common mistakes.",
     "pages": [
+      "advice/getting-hired/non-technical",
+      "advice/projects",
       "advice/resume",
       "advice/resume/cleanup",
       "advice/resume/walkthrough",
@@ -112,7 +155,7 @@
     "url": "https://www.reddit.com/r/EngineeringResumes/wiki/typo/",
     "title": "r/EngineeringResumes wiki: Common mistakes",
     "category": "Resume guides",
-    "summary": "Common resume mistakes, including misspelled software and tool names.",
+    "summary": "Common typos in skill and tool names, such as C, C++ written as two items.",
     "pages": ["advice/resume", "advice/resume/cleanup"]
   },
   {
@@ -134,7 +177,7 @@
     "title": "UC Berkeley: Resumes",
     "category": "Resume guides",
     "summary": "Berkeley's career center guide to resumes, including how to quantify results.",
-    "pages": ["advice/resume"]
+    "pages": ["advice/resume", "advice/resume/workshop"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/1cms7al/random_thoughts_on_resumes/",
@@ -155,7 +198,7 @@
     "title": "Georgia Tech: Cover letter guide 2026",
     "category": "Resume guides",
     "summary": "Georgia Tech's guide to when and how to write a cover letter.",
-    "pages": ["help/resources"]
+    "pages": ["advice/resume/workshop", "help/resources"]
   },
   {
     "url": "https://capd.mit.edu/resources/graduate-school-application-essays/",
@@ -163,6 +206,27 @@
     "category": "Resume guides",
     "summary": "MIT's guide to statements of purpose and personal statements, with examples.",
     "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
+    "url": "https://engineering.virginia.edu/offices-programs/center-engineering-career-development/students/resumes-and-cover-letters",
+    "title": "UVA Engineering: Resumes and cover letters",
+    "category": "Resume guides",
+    "summary": "UVA Engineering resume guide, with prompts for showing teamwork in a bullet.",
+    "pages": ["advice/getting-hired/non-technical"]
+  },
+  {
+    "url": "https://magazine.asme.org/issues/january-2026/career-focus-building-a-competitive-resume-that-gets-noticed",
+    "title": "ASME: Building a competitive resume",
+    "category": "Resume guides",
+    "summary": "ASME magazine column with an engineering manager on what a resume should show.",
+    "pages": ["advice/getting-hired/non-technical"]
+  },
+  {
+    "url": "https://career.colostate.edu/wp-content/uploads/2023/10/Translating-Serivce-Industry-Experience-on-Your-Resume-Fall-2023.pdf",
+    "title": "Colorado State: Service industry experience on a resume",
+    "category": "Resume guides",
+    "summary": "Colorado State slides on turning service jobs into resume bullets with numbers.",
+    "pages": ["advice/getting-hired/non-technical"]
   },
   {
     "url": "https://career.gatech.edu/files/2026/06/JackieJacketResume.docx",
@@ -217,7 +281,7 @@
     "url": "https://www.reddit.com/r/EngineeringResumes/wiki/templates/",
     "title": "r/EngineeringResumes wiki: Recommended templates",
     "category": "Sample resumes and templates",
-    "summary": "The subreddit's recommended resume templates in LaTeX, Word and Google Docs.",
+    "summary": "The subreddit's recommended resume templates, one in Google Docs and one in LaTeX.",
     "pages": [
       "advice/resume",
       "advice/resume/workshop",
@@ -271,14 +335,14 @@
     "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Alex-Doe-Resume-first-year.pdf",
     "title": "resume-generator: Alex-Doe-Resume-first-year.pdf",
     "category": "Sample resumes and templates",
-    "summary": "A first-year student's page: one class project, a one-line job, and a few skills.",
+    "summary": "A first-year student's page: one class project, a job with two bullets, and a few skills.",
     "pages": ["advice/resume/walkthrough"]
   },
   {
     "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Alex-Doe-Resume-sophomore.pdf",
     "title": "resume-generator: Alex-Doe-Resume-sophomore.pdf",
     "category": "Sample resumes and templates",
-    "summary": "A second-year student's page: two projects, a club lead role, and a one-line job.",
+    "summary": "A second-year student's page: two projects, a club lead role, and a job with two bullets.",
     "pages": ["advice/resume/walkthrough"]
   },
   {
@@ -301,6 +365,13 @@
     "category": "Sample resumes and templates",
     "summary": "PDF of an electrical engineering example resume from UIC's engineering career center.",
     "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://www.stcloudstate.edu/careercenter/_files/documents/resumes-letters/resumes/res-engineering.pdf",
+    "title": "St. Cloud State: Engineering resume sample",
+    "category": "Sample resumes and templates",
+    "summary": "A computer engineering sample with a senior design project dated to Present.",
+    "pages": ["advice/projects"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/1w1e5dp/student_100_embeddedhardware_intern_applications/",
@@ -341,7 +412,7 @@
     "title": "r/EngineeringResumes: EE senior with no experience",
     "category": "Resume feedback from reviewers and recruiters",
     "summary": "Resume review thread for an electrical engineering senior with no work experience.",
-    "pages": ["advice/resume", "advice/resume/workshop"]
+    "pages": ["advice/resume/workshop"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/1wxcvrq/student_how_do_you_find_good_project_ideas/",
@@ -420,11 +491,60 @@
     "category": "Resume feedback from reviewers and recruiters",
     "summary": "An embedded-focused sophomore shares the resume behind an NVIDIA offer.",
     "pages": [
+      "advice/getting-hired/career-paths",
       "advice/projects",
-      "advice/projects/career-paths",
       "advice/projects/software",
       "advice/resume/cleanup"
     ]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1fg3or0/student_mechanical_engineering_junior_resume/",
+    "title": "r/EngineeringResumes: Junior asks about an in-progress project",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "A reply says in-progress work can be fine, ideally with some results to show.",
+    "pages": ["advice/projects"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1u8n3qo/student_ce_did_not_really_apply_for_junior_year/",
+    "title": "r/EngineeringResumes: CE student with no junior-year internship",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "A reply says to list a started project like an ongoing job, dated to Present.",
+    "pages": ["advice/projects"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1c166yv/if_im_applying_for_an_intern_after_becoming_as/",
+    "title": "r/EngineeringResumes: Junior applying for a senior-year internship",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "A moderator says to list accomplishments from an unfinished project, not tasks.",
+    "pages": ["advice/projects"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1nsjy3f/0_yoe_is_it_a_bad_idea_to_add_more_than_one/",
+    "title": "r/EngineeringResumes: More than one in-progress project",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "Replies on listing in-progress projects and explaining them in an interview.",
+    "pages": ["advice/projects"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/nus25t/got_a_good_question_today_should_i_include/",
+    "title": "r/EngineeringResumes: Failed or unfinished projects",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "A post on listing projects that failed or were not finished, and what to say about them.",
+    "pages": ["advice/projects"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/q4rytc/should_i_include_a_project_that_is_currently_in/",
+    "title": "r/EngineeringResumes: IEEE club project still in progress",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "A reply says employers want to know what you are working on now.",
+    "pages": ["advice/projects"]
+  },
+  {
+    "url": "https://www.reddit.com/r/EngineeringResumes/comments/1fwchgg/0_yoe_including_a_project_that_is_currently_being/",
+    "title": "r/EngineeringResumes: Project with its main features done",
+    "category": "Resume feedback from reviewers and recruiters",
+    "summary": "A reply says bullets on only the finished parts are fine if they do not misrepresent the work.",
+    "pages": ["advice/projects"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/1pkixp9/today_i_made_a_top_5_list/",
@@ -506,7 +626,7 @@
     "title": "Altium for students",
     "category": "Tools and project resources",
     "summary": "Altium's program for free student licenses of its PCB design software.",
-    "pages": ["advice/projects/hardware"]
+    "pages": ["advice/getting-hired/career-paths", "advice/projects/hardware"]
   },
   {
     "url": "https://ansys.synopsys.com/products/electronics/ansys-hfss",
@@ -514,6 +634,13 @@
     "category": "Tools and project resources",
     "summary": "Ansys HFSS product page, a 3D electromagnetic simulator for RF design.",
     "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://www.bosch-semiconductors.com/glossary/sic-mosfet/",
+    "title": "Bosch Semiconductors: What is a SiC MOSFET?",
+    "category": "Tools and project resources",
+    "summary": "Chip-maker glossary entry on silicon carbide MOSFETs, with junction temperature and cooling compared to silicon.",
+    "pages": ["advice/projects/hardware"]
   },
   {
     "url": "https://barrgroup.com/free-downloads",
@@ -590,7 +717,11 @@
     "title": "MIT OCW: 6.002 Circuits and Electronics",
     "category": "Tools and project resources",
     "summary": "MIT's free first circuits course for EE and EECS students.",
-    "pages": ["advice/forever-learning", "roadmap"]
+    "pages": [
+      "advice/forever-learning",
+      "advice/getting-hired/career-paths",
+      "roadmap"
+    ]
   },
   {
     "url": "https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/",
@@ -598,6 +729,34 @@
     "category": "Tools and project resources",
     "summary": "MIT's free signals and systems course, from Fourier transforms to sampling.",
     "pages": ["advice/forever-learning", "roadmap"]
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/6-111-introductory-digital-systems-laboratory-spring-2006/",
+    "title": "MIT OCW: 6.111 Introductory Digital Systems Laboratory",
+    "category": "Tools and project resources",
+    "summary": "MIT's free undergraduate digital lab from 2006, with a Verilog final project on an FPGA.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/",
+    "title": "MIT OCW: 6.013 Electromagnetics and Applications",
+    "category": "Tools and project resources",
+    "summary": "MIT's free undergraduate electromagnetics course from 2009, with an open textbook.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/6-302-feedback-systems-spring-2007/",
+    "title": "MIT OCW: 6.302 Feedback Systems",
+    "category": "Tools and project resources",
+    "summary": "MIT's free graduate feedback systems course from 2007, on stability and compensation.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://ocw.mit.edu/courses/6-622-power-electronics-spring-2023/pages/syllabus/",
+    "title": "MIT OCW: 6.622 Power Electronics syllabus",
+    "category": "Tools and project resources",
+    "summary": "Syllabus for MIT's free graduate power electronics course from 2023, with its prerequisite and text.",
+    "pages": ["advice/getting-hired/career-paths"]
   },
   {
     "url": "https://www.eecs.mit.edu/academics/subject-numbering/",
@@ -765,7 +924,28 @@
     "title": "FCC: Amateur Radio Service",
     "category": "Tools and project resources",
     "summary": "The FCC on amateur radio licenses and the volunteer examiner exams.",
-    "pages": ["advice/projects/career-paths"]
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://www.ti.com/video/series/precision-labs.html",
+    "title": "TI Precision Labs",
+    "category": "Tools and project resources",
+    "summary": "TI's free video training on amplifiers, data converters, microcontrollers, and motor drivers.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://users.ece.utexas.edu/~valvano/EE445L/EE445L_SPRING_2025.htm",
+    "title": "UT Austin: ECE 445L Embedded Systems Design Lab",
+    "category": "Tools and project resources",
+    "summary": "Spring 2025 syllabus for UT Austin's embedded systems lab, with its suggested text.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://courses.grainger.illinois.edu/ece457/fa2025/",
+    "title": "Illinois: ECE 457 Microwave Devices and Circuits",
+    "category": "Tools and project resources",
+    "summary": "Fall 2025 course page for Illinois's microwave course, with its prerequisites and textbook.",
+    "pages": ["advice/getting-hired/career-paths"]
   },
   {
     "url": "https://interrupt.memfault.com/blog/embedded-systems-roadmap-bridging-the-gap",
@@ -773,6 +953,69 @@
     "category": "Tools and project resources",
     "summary": "A learning path for embedded systems, with curated resources on GitHub.",
     "pages": ["advice/projects"]
+  },
+  {
+    "url": "https://careerservices.cns.utexas.edu/technical-projects-guide",
+    "title": "UT Austin: Technical projects guide",
+    "category": "Tools and project resources",
+    "summary": "A career office on how a project can decide an interview and fill a missing internship.",
+    "pages": ["advice/projects"]
+  },
+  {
+    "url": "https://career.vt.edu/blog/2026/03/23/technical-interviewing/",
+    "title": "Virginia Tech: Technical interviewing",
+    "category": "Tools and project resources",
+    "summary": "Interviewers ask detailed questions about the projects on your resume.",
+    "pages": ["advice/projects"]
+  },
+  {
+    "url": "https://mitcommlab.mit.edu/meche/commkit/portfolio/",
+    "title": "MIT Communication Lab: Portfolio",
+    "category": "Tools and project resources",
+    "summary": "How to match a project to an employer and build a smaller portfolio per recipient.",
+    "pages": ["advice/projects"]
+  },
+  {
+    "url": "https://engineering.utdallas.edu/engage/students/technical-resume-best-standards-and-practices/",
+    "title": "UT Dallas: Technical resume standards",
+    "category": "Tools and project resources",
+    "summary": "Projects show technical skill when a student has no technical work experience yet.",
+    "pages": ["advice/projects"]
+  },
+  {
+    "url": "https://careerhub.ufl.edu/blog/2026/10/07/i-asked-recruiters-what-makes-students-stand-out-heres-what-they-said/",
+    "title": "UF Career Connections: What recruiters say",
+    "category": "Tools and project resources",
+    "summary": "Recruiters accept work from internships, classes, student groups, or personal projects.",
+    "pages": ["advice/projects"]
+  },
+  {
+    "url": "https://courses.grainger.illinois.edu/ece431/sp2021/lab/ECE431_lab_report_guide.pdf",
+    "title": "Illinois ECE 431: Lab report guide",
+    "category": "Tools and project resources",
+    "summary": "An EE lab report guide: units, percent error, numbered equations, and IEEE citations.",
+    "pages": ["advice/getting-hired/non-technical"]
+  },
+  {
+    "url": "https://insight.ieeeusa.org/articles/effective-communication-skills-vital-for-new-and-emerging-leaders/",
+    "title": "IEEE-USA InSight: Communication skills for new leaders",
+    "category": "Tools and project resources",
+    "summary": "An IEEE-USA column on writing design documents that stand alone.",
+    "pages": ["advice/getting-hired/non-technical"]
+  },
+  {
+    "url": "https://nuwrite.northwestern.edu/communities/design/docs/engineering-design-and-communication-principles-and-practice/chapter_09.pdf",
+    "title": "Northwestern: Conducting design reviews",
+    "category": "Tools and project resources",
+    "summary": "Northwestern chapter on running a design review and handling criticism.",
+    "pages": ["advice/getting-hired/non-technical"]
+  },
+  {
+    "url": "https://ece.engr.uky.edu/senior-capstone-design",
+    "title": "Kentucky ECE: Senior capstone design",
+    "category": "Tools and project resources",
+    "summary": "Kentucky ECE capstone: team size, hours, design reviews, and materials budgets.",
+    "pages": ["advice/getting-hired/non-technical"]
   },
   {
     "url": "https://www.ashbyhq.com/talent-trends-report/reports/referrals",
@@ -788,10 +1031,24 @@
     ]
   },
   {
+    "url": "https://www.ashbyhq.com/talent-trends-report/reports/2023-recruiter-productivity-trends-report",
+    "title": "Ashby: Recruiter Productivity",
+    "category": "Job search and referrals",
+    "summary": "Ashby 2026 data on applications per hire and recruiter workload.",
+    "pages": ["advice/resume/quick-setup"]
+  },
+  {
     "url": "https://www.bluecanyontech.com/",
     "title": "Blue Canyon Technologies",
     "category": "Job search and referrals",
     "summary": "Company site for a small-satellite and spacecraft component maker.",
+    "pages": ["advice/projects/hardware"]
+  },
+  {
+    "url": "https://job-boards.greenhouse.io/astranis/jobs/4716087006",
+    "title": "Astranis: Software defined radio hardware intern",
+    "category": "Job search and referrals",
+    "summary": "Astranis posting for a winter 2027 hardware intern with pay, location, and PCB build requirements.",
     "pages": ["advice/projects/hardware"]
   },
   {
@@ -835,6 +1092,13 @@
     "category": "Job search and referrals",
     "summary": "Illinois engineering career services advice on preparing for a career fair.",
     "pages": ["advice/getting-hired"]
+  },
+  {
+    "url": "https://ecs.grainger.illinois.edu/employer-resources/career-fair",
+    "title": "Illinois Engineering: Career fair dates",
+    "category": "Job search and referrals",
+    "summary": "Illinois Grainger spring 2027 career fair: internships and full-time positions on both days.",
+    "pages": ["advice/getting-hired/first-internship"]
   },
   {
     "url": "https://www.indeed.com/",
@@ -944,7 +1208,8 @@
     "summary": "When employers recruit by industry, and advice to apply within two weeks.",
     "pages": [
       "advice/getting-hired",
-      "advice/getting-hired/first-full-time-role"
+      "advice/getting-hired/first-full-time-role",
+      "advice/getting-hired/first-internship"
     ]
   },
   {
@@ -1094,13 +1359,6 @@
     "title": "NIH: Informational interview handout",
     "category": "Job search and referrals",
     "summary": "NIH training office handout on requesting and following up an informational interview.",
-    "pages": ["advice/getting-hired/networking"]
-  },
-  {
-    "url": "https://www.reddit.com/comments/1rmcm69/",
-    "title": "Reddit: Referral requests from strangers",
-    "category": "Job search and referrals",
-    "summary": "A recruiter and engineers on what happens to referral requests from strangers.",
     "pages": ["advice/getting-hired/networking"]
   },
   {
@@ -1254,7 +1512,31 @@
     "title": "MIT CAPD: Conducting informational interviews",
     "category": "Job search and referrals",
     "summary": "Career-center guide to informational interviews, including thank-you notes.",
-    "pages": ["advice/getting-hired/networking"]
+    "pages": [
+      "advice/getting-hired/career-paths",
+      "advice/getting-hired/networking"
+    ]
+  },
+  {
+    "url": "https://cockrell.utexas.edu/student-life/career-services/co-ops-and-internships/",
+    "title": "UT Austin Cockrell: Co-ops and internships",
+    "category": "Job search and referrals",
+    "summary": "UT Austin's engineering school on co-ops and internships, including testing interest in a field.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://drexel.edu/engineering/academics/departments/electrical-computer-engineering/academic-programs/department-co-ops",
+    "title": "Drexel ECE: Department co-ops",
+    "category": "Job search and referrals",
+    "summary": "Drexel's ECE co-op program, with a graduate on trying out fields through co-op.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://careers.geaerospace.com/global/en/edison-engineering-development-program",
+    "title": "GE Aerospace: Edison Engineering Development Program",
+    "category": "Job search and referrals",
+    "summary": "A two-year new-grad engineering program with 3 to 4 rotations.",
+    "pages": ["advice/getting-hired/career-paths"]
   },
   {
     "url": "https://userapps.support.sap.com/sap/support/knowledge/en/2609981",
@@ -1275,14 +1557,112 @@
     "title": "Analog Devices: Student resources",
     "category": "Job search and referrals",
     "summary": "Analog Devices on its internships, co-ops, and example intern projects.",
-    "pages": ["advice/projects/career-paths"]
+    "pages": ["advice/getting-hired/career-paths"]
   },
   {
     "url": "https://selinc.com/company/careers/sel-internships/",
     "title": "SEL: Internships",
     "category": "Job search and referrals",
     "summary": "Schweitzer Engineering Laboratories on its year-round internships.",
-    "pages": ["advice/projects/career-paths"]
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://selinc.com/company/careers/engineer-rotation-program/",
+    "title": "SEL: Engineer Rotation Program",
+    "category": "Job search and referrals",
+    "summary": "SEL's 18-month new-grad rotation through three areas of the company.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://selinc.com/company/careers/hardware-engineering/",
+    "title": "SEL: Hardware engineering",
+    "category": "Job search and referrals",
+    "summary": "SEL on its hardware engineers, who design, build, and test its devices onsite.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://jobs.pge.com/university-programs",
+    "title": "PG&E: University programs",
+    "category": "Job search and referrals",
+    "summary": "PG&E's internships and new-grad rotation programs, including electric engineering.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://burnsmcd.jobs/washington-dc/staff-substation-pc-engineer-transmission-distribution-mid-atlantic-region/7D486F7994A24FC7A3B6BE7F9643D31F/job/",
+    "title": "Burns & McDonnell: Staff Substation P&C Engineer",
+    "category": "Job search and referrals",
+    "summary": "A staff-level substation protection and control posting that asks for 3 years of experience.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://careers.ti.com/en/sites/CX/pages/engineering",
+    "title": "TI: Engineering roles",
+    "category": "Job search and referrals",
+    "summary": "TI's descriptions of its applications, design, test, validation, product, and other engineering roles.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://careers.ti.com/en/sites/CX/job/25017578/",
+    "title": "TI: Test or Validation Engineering Intern",
+    "category": "Job search and referrals",
+    "summary": "A 2026 TI internship posting for validation, product, and test engineering.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://engineering.purdue.edu/ECE/Academics/Graduates/Announcements/20220408_NVIDIA_Jobs",
+    "title": "Purdue ECE: NVIDIA new-grad roles (2022)",
+    "category": "Job search and referrals",
+    "summary": "A 2022 Purdue announcement listing NVIDIA's new-grad hardware roles and degree requirement.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://www.nvidia.com/en-us/about-nvidia/careers/university-recruiting/",
+    "title": "NVIDIA: University recruiting",
+    "category": "Job search and referrals",
+    "summary": "NVIDIA on its internships, which it calls its main pipeline for new college grads.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://jobs.nvidia.com/careers/job/893392585259",
+    "title": "NVIDIA: ASIC Design Verification Engineer, New College Grad 2026",
+    "category": "Job search and referrals",
+    "summary": "A closed NVIDIA new-grad verification posting in Austin that asked for an MS.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://jobs.nvidia.com/careers/job/893397025803",
+    "title": "NVIDIA: 2027 Hardware ASIC Design internship",
+    "category": "Job search and referrals",
+    "summary": "A 2027 NVIDIA internship posting for bachelor's, master's, and PhD students in ASIC design.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://jobs.nvidia.com/careers/job/893397026661",
+    "title": "NVIDIA: 2027 Hardware Physical Design internship",
+    "category": "Job search and referrals",
+    "summary": "A 2027 NVIDIA internship posting in physical design and VLSI.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://careers.micron.com/careers/job/30512424",
+    "title": "Micron: New College Grad, Electrical Design Engineer (FPGA/ASIC)",
+    "category": "Job search and referrals",
+    "summary": "A closed Micron new-grad posting for FPGA and ASIC design on test equipment.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://careers.micron.com/careers/job/42021708",
+    "title": "Micron: New College Grad, Process Integration Engineer",
+    "category": "Job search and referrals",
+    "summary": "A closed Micron new-grad posting for process integration in a fab.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://careers.micron.com/careers/job/42813179",
+    "title": "Micron: New College Grad, Product Yield Enhancement Engineer, HBM",
+    "category": "Job search and referrals",
+    "summary": "A Micron new-grad posting for failure analysis and yield work on high bandwidth memory.",
+    "pages": ["advice/getting-hired/career-paths"]
   },
   {
     "url": "https://ecs.grainger.illinois.edu/student-resources/offers/evaluation",
@@ -1409,6 +1789,20 @@
     "category": "Job search and referrals",
     "summary": "Georgia Tech's guide to outreach messages, follow-ups, and an online profile.",
     "pages": ["advice/getting-hired/networking"]
+  },
+  {
+    "url": "https://www.mtu.edu/career/students/jobs-intern/coop-intern/co-ops/forms/co-op-handbook.pdf",
+    "title": "Michigan Tech: Student co-op guide",
+    "category": "Job search and referrals",
+    "summary": "Michigan Tech handbook on how co-op students are expected to work.",
+    "pages": ["advice/getting-hired/non-technical"]
+  },
+  {
+    "url": "https://www.ualberta.ca/en/youalberta/2026/01/what-employers-really-want-findings-from-the-career-centres-2025-hiring-survey.html",
+    "title": "University of Alberta: What employers really want",
+    "category": "Job search and referrals",
+    "summary": "University of Alberta Career Centre 2025 hiring survey, including how much a cover letter affects interview decisions.",
+    "pages": ["advice/resume"]
   },
   {
     "url": "https://www.reddit.com/r/ECE/comments/1mojjy7/how_do_you_actually_get_referralsinterviews_for/",
@@ -1819,6 +2213,13 @@
     "pages": ["advice/getting-hired/how-to-interview"]
   },
   {
+    "url": "https://careerservices.fas.harvard.edu/resources/interviewing/",
+    "title": "Harvard FAS: Interviewing",
+    "category": "Interview prep",
+    "summary": "Harvard career center interview guide, including preparing to discuss everything on your resume.",
+    "pages": ["advice/resume/cleanup", "advice/resume/quick-setup"]
+  },
+  {
     "url": "https://www.hardwareinterviews.fyi/t/top-electrical-engineering-interview-questions/807",
     "title": "Hardware FYI: Top electrical engineering interview questions",
     "category": "Interview prep",
@@ -1851,7 +2252,10 @@
     "title": "Michigan Engineering: Interviews",
     "category": "Interview prep",
     "summary": "University of Michigan engineering career center guide to interview formats and preparation.",
-    "pages": ["advice/getting-hired/how-to-interview"]
+    "pages": [
+      "advice/getting-hired/how-to-interview",
+      "advice/getting-hired/non-technical"
+    ]
   },
   {
     "url": "https://career.engin.umich.edu/phd-industry-job-search/",
@@ -1949,6 +2353,48 @@
     "pages": ["advice/getting-hired/how-to-interview"]
   },
   {
+    "url": "https://chipinsights.net/p/hardware-engineering-interview-resources",
+    "title": "Chip Insights: Hardware engineering interview resources",
+    "category": "Interview prep",
+    "summary": "An engineer's 2025 list of digital design, verification, and architecture interview topics.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://thedatabus.in/interview_list/",
+    "title": "The Data Bus: RTL design interview topics",
+    "category": "Interview prep",
+    "summary": "An unsigned list of topics for RTL design interviews, from counters to clock domain crossing.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://www.windriver.com/blog/Internal-Job-Interview-Questions-for-Embedded-Systems-Developers",
+    "title": "Wind River: Interview questions for embedded systems developers",
+    "category": "Interview prep",
+    "summary": "A 2026 vendor blog post of embedded interview questions, from interrupts to RTOS tasks.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://www.antenna-theory.com/careers/interview.php",
+    "title": "antenna-theory.com: Antenna engineering interview questions",
+    "category": "Interview prep",
+    "summary": "Topics and sample questions for antenna engineer interviews, including Smith charts.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://careers.ti.com/en/sites/CX/pages/recruitment-process",
+    "title": "TI: Our recruitment process",
+    "category": "Interview prep",
+    "summary": "TI's resume and interview tips, including what its technical questions may cover.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://www.micron.com/about/careers/university-recruiting",
+    "title": "Micron: University recruiting",
+    "category": "Interview prep",
+    "summary": "Micron's student recruiting page, with interview tips and what its technical questions cover.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
     "url": "https://sites.gatech.edu/careercenterdev/files/2024/09/Interviewing_Career-Guide.pdf",
     "title": "Georgia Tech: Interview Ready guide",
     "category": "Interview prep",
@@ -1970,16 +2416,32 @@
     "pages": ["advice/getting-hired/how-to-interview"]
   },
   {
+    "url": "https://mitcommlab.mit.edu/eecs/commkit/email/",
+    "title": "MIT EECS Communication Lab: Email",
+    "category": "Interview prep",
+    "summary": "MIT EECS guide to short, action-first email, with a subject line format.",
+    "pages": ["advice/getting-hired/non-technical"]
+  },
+  {
+    "url": "https://mitcommlab.mit.edu/eecs/commkit/elevator-pitch/",
+    "title": "MIT EECS Communication Lab: Elevator pitch",
+    "category": "Interview prep",
+    "summary": "MIT EECS guide to a 20 to 40 second pitch of your work.",
+    "pages": ["advice/getting-hired/non-technical"]
+  },
+  {
     "url": "https://www.bls.gov/ooh/architecture-and-engineering/electrical-and-electronics-engineers.htm",
     "title": "BLS: Electrical and electronics engineers",
     "category": "Pay and career data",
     "summary": "Federal data on pay, outlook and duties for electrical and electronics engineers.",
     "pages": [
       "advice/forever-learning",
+      "advice/getting-hired/career-paths",
       "advice/getting-hired/first-full-time-role",
       "advice/getting-hired/job-market",
       "advice/projects",
-      "advice/projects/career-paths",
+      "advice/projects/hardware",
+      "advice/resume/workshop",
       "help",
       "help/resources"
     ]
@@ -2021,7 +2483,10 @@
     "title": "NACE: Intern conversion rate hits five-year high",
     "category": "Pay and career data",
     "summary": "NACE data on how many interns received and accepted full-time offers, 2024–25.",
-    "pages": ["advice/getting-hired/first-full-time-role"]
+    "pages": [
+      "advice/getting-hired/first-full-time-role",
+      "advice/getting-hired/first-internship"
+    ]
   },
   {
     "url": "https://www.naceweb.org/talent-acquisition/candidate-selection/internship-experience-often-the-deciding-factor-between-equal-candidates",
@@ -2030,16 +2495,25 @@
     "summary": "NACE Job Outlook 2026: attributes employers use to choose between equal candidates.",
     "pages": [
       "advice/getting-hired/first-full-time-role",
+      "advice/getting-hired/first-internship",
       "advice/projects",
+      "advice/projects/hardware",
       "advice/resume/walkthrough"
     ]
+  },
+  {
+    "url": "https://www.naceweb.org/job-market/trends-and-predictions/employer-use-of-skills-based-hiring-practices-grows",
+    "title": "NACE: Employer use of skills-based hiring practices grows",
+    "category": "Pay and career data",
+    "summary": "NACE Job Outlook 2026: 42 percent of employers screen candidates by GPA, down from 73 percent in 2019.",
+    "pages": ["advice/resume"]
   },
   {
     "url": "https://ncees.org/exams/fe-exam/",
     "title": "NCEES: FE exam",
     "category": "Pay and career data",
     "summary": "NCEES page on the Fundamentals of Engineering exam format and fee.",
-    "pages": ["advice/forever-learning", "advice/projects/career-paths"]
+    "pages": ["advice/forever-learning", "advice/getting-hired/career-paths"]
   },
   {
     "url": "https://ncees.org/licensure/",
@@ -2053,7 +2527,14 @@
     "title": "NCEES: PE Electrical and Computer exam",
     "category": "Pay and career data",
     "summary": "NCEES page on the three PE Electrical and Computer exams.",
-    "pages": ["advice/forever-learning", "advice/projects/career-paths"]
+    "pages": ["advice/forever-learning", "advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://ncees.org/exams/pe-exam/control-systems/",
+    "title": "NCEES: PE Control Systems exam",
+    "category": "Pay and career data",
+    "summary": "NCEES PE Control Systems exam: computer-based, given once a year.",
+    "pages": ["advice/forever-learning", "advice/getting-hired/career-paths"]
   },
   {
     "url": "https://www.onetonline.org/link/summary/17-2071.00",
@@ -2061,7 +2542,7 @@
     "category": "Pay and career data",
     "summary": "Occupation profile listing tasks, skills, tools and pay for electrical engineers.",
     "pages": [
-      "advice/projects/career-paths",
+      "advice/getting-hired/career-paths",
       "help/job-boards",
       "help/resources"
     ]
@@ -2071,14 +2552,49 @@
     "title": "O*NET: Electronics engineers",
     "category": "Pay and career data",
     "summary": "Occupation profile with tasks, tools, and reported titles for electronics engineers.",
-    "pages": ["advice/projects/career-paths"]
+    "pages": ["advice/getting-hired/career-paths"]
   },
   {
     "url": "https://ece.gatech.edu/research/tigs",
     "title": "Georgia Tech ECE: Technical interest groups",
     "category": "Pay and career data",
     "summary": "Georgia Tech's list of ECE areas and the topics under each.",
-    "pages": ["advice/projects/career-paths"]
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://ece.illinois.edu/academics/ugrad/subdisciplines",
+    "title": "Illinois ECE: Undergraduate subdisciplines",
+    "category": "Pay and career data",
+    "summary": "Illinois ECE on balancing breadth and depth across its EE and computer engineering areas.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://www.bls.gov/ooh/architecture-and-engineering/computer-hardware-engineers.htm",
+    "title": "BLS: Computer hardware engineers",
+    "category": "Pay and career data",
+    "summary": "Federal data on pay, outlook, and the largest employers of computer hardware engineers.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://www.onetonline.org/link/summary/17-2061.00",
+    "title": "O*NET: Computer hardware engineers",
+    "category": "Pay and career data",
+    "summary": "Occupation profile with tasks, reported titles, and new-hire education for computer hardware engineers.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://www.onetonline.org/link/summary/17-2199.05",
+    "title": "O*NET: Mechatronics engineers",
+    "category": "Pay and career data",
+    "summary": "Occupation profile with automation and control titles, tasks, and new-hire education.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://ssti.org/blog/engineering-job-mismatch-spurs-study",
+    "title": "SSTI: Engineering job mismatch spurs study",
+    "category": "Pay and career data",
+    "summary": "A 2016 report on how many trained scientists and engineers work outside their field of study.",
+    "pages": ["advice/getting-hired/career-paths"]
   },
   {
     "url": "https://joinhandshake.com/network-trends/class-of-2025-graduation/",
@@ -2086,6 +2602,13 @@
     "category": "Pay and career data",
     "summary": "Spring 2025: Handshake postings down 15% in a year, applications per job up 30%.",
     "pages": ["advice/getting-hired/job-market", "help/job-boards"]
+  },
+  {
+    "url": "https://www.benefitnews.com/articles/internship-hunt-starts-earlier-as-students-parents-stress-over-jobs",
+    "title": "Employee Benefit News: Internship hunt starts earlier",
+    "category": "Pay and career data",
+    "summary": "Handshake data on first-year students applying to internships: almost 15 percent of the class of 2028 versus under 3 percent of the class of 2024.",
+    "pages": ["advice/getting-hired/first-internship"]
   },
   {
     "url": "https://hkn.ieee.org/knowledge-base/what-is-the-cost-of-an-induction?seq_no=2",
@@ -2175,6 +2698,13 @@
     "pages": ["advice/forever-learning/graduate-study"]
   },
   {
+    "url": "https://www.aau.edu/newsroom/new-phd-admissions-data-show-threat-us-stem-workforce",
+    "title": "AAU: New PhD admissions data",
+    "category": "Pay and career data",
+    "summary": "AAU data from 55 member universities: 15 percent fewer doctoral admits for fall 2026 than fall 2025.",
+    "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
     "url": "https://grainger.illinois.edu/academics/graduate/phd-funding-guarantee",
     "title": "Illinois Grainger: Five-year PhD funding guarantee",
     "category": "Pay and career data",
@@ -2201,6 +2731,16 @@
     "category": "Pay and career data",
     "summary": "IRS on the $5,250 tax-free employer education help limit, indexed after 2026.",
     "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
+    "url": "https://www.irs.gov/pub/irs-drop/rp-26-35.pdf",
+    "title": "IRS: Revenue Procedure 2026-35",
+    "category": "Pay and career data",
+    "summary": "IRS inflation adjustments for 2027, including the 5,400 dollar tax-free educational assistance limit.",
+    "pages": [
+      "advice/forever-learning",
+      "advice/forever-learning/graduate-study"
+    ]
   },
   {
     "url": "https://careers.rtx.com/global/en/lifeatrtx",
@@ -2326,7 +2866,10 @@
     "title": "SIA: Semiconductor labor market gap",
     "category": "Pay and career data",
     "summary": "SIA's projection of new chip industry jobs by 2030 and how many may go unfilled.",
-    "pages": ["advice/getting-hired/job-market"]
+    "pages": [
+      "advice/getting-hired/career-paths",
+      "advice/getting-hired/job-market"
+    ]
   },
   {
     "url": "https://www.newyorkfed.org/research/college-labor-market",
@@ -2347,101 +2890,126 @@
     "title": "Purdue ECE: Why get a master's",
     "category": "Pay and career data",
     "summary": "Purdue's case for an ECE master's as a way to specialize.",
-    "pages": [
-      "advice/forever-learning/getting-into-graduate-study",
-      "advice/forever-learning/graduate-study"
-    ]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://catalog.cornell.edu/programs/electrical-computer-engineering-meng/",
     "title": "Cornell: Electrical and Computer Engineering M.Eng.",
     "category": "Pay and career data",
     "summary": "Cornell's course-based M.Eng.: 30 credits over two semesters and a design project.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://engineering.purdue.edu/ECE/Academics/Graduates/MASTERS/MSECE_Handbook_Print_Fall2025.pdf",
     "title": "Purdue ECE: MSECE program handbook",
     "category": "Pay and career data",
     "summary": "Purdue's master's tracks: thesis, professional, course-only, online, and a 4+1 BS/MS.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://ece.rutgers.edu/graduate-faqs",
     "title": "Rutgers ECE: Graduate admissions FAQs",
     "category": "Pay and career data",
     "summary": "Rutgers on PhD entry without a master's, advisors, and assistantships.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://engineering.purdue.edu/ECE/Academics/Graduates/MASTERS/online-track-degree-requirements",
     "title": "Purdue ECE: Online track degree requirements",
     "category": "Pay and career data",
     "summary": "Graduate math credits, pacing, and time limit for Purdue's online MSECE.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://www.eecs.mit.edu/academics/graduate-programs/admission-process/graduate-admissions-faqs/",
     "title": "MIT EECS: Graduate admissions FAQs",
     "category": "Pay and career data",
     "summary": "MIT EECS on essays, letters, deadline, GRE, and full-time on-campus study.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://catalog.gatech.edu/academics/undergraduate/undergraduate-students-taking-graduate-courses/",
     "title": "Georgia Tech catalog: Undergraduates taking graduate courses",
     "category": "Pay and career data",
     "summary": "Georgia Tech's rules for seniors who take graduate courses and count them later.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://ece.gatech.edu/academics/joint-bs-ms",
     "title": "Georgia Tech ECE: Joint BS/MS",
     "category": "Pay and career data",
     "summary": "Georgia Tech ECE's joint BS/MS: early application, waivers, and double-counted hours.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://ece.gatech.edu/graduate/handbook/Information-for-Undergraduate-and-Non-ECE-Students",
     "title": "Georgia Tech ECE: Information for undergraduate students",
     "category": "Pay and career data",
     "summary": "Georgia Tech ECE's BS/MS application steps and statement of purpose.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://cse.umn.edu/ece/program-and-admission-faqs",
     "title": "Minnesota ECE: Program and admission FAQs",
     "category": "Pay and career data",
     "summary": "Minnesota ECE on contacting faculty and advisor funding in PhD admissions.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://www.nsf.gov/funding/opportunities/grfp-nsf-graduate-research-fellowship-program/nsf26-526/solicitation",
     "title": "NSF: Graduate Research Fellowship Program solicitation",
     "category": "Pay and career data",
     "summary": "The official GRFP solicitation: support, duration, and eligibility.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://www.nsf.gov/funding/information/faq-additional-faq-nsf-graduate-research-fellowship-program",
     "title": "NSF: Additional GRFP FAQ",
     "category": "Pay and career data",
     "summary": "NSF's extra answers on the Graduate Research Fellowship Program.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://engineering.purdue.edu/ECE/Academics/Online",
     "title": "Purdue ECE: Online MSECE",
     "category": "Pay and career data",
     "summary": "Purdue's online master's: same degree as on campus, 30 credits.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://engineering.purdue.edu/ECE/Academics/Online/questions",
     "title": "Purdue ECE: Online MSECE FAQ",
     "category": "Pay and career data",
     "summary": "Purdue's answers on the online MSECE and who takes it.",
-    "pages": ["advice/forever-learning/getting-into-graduate-study"]
+    "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
+    "url": "https://www.naceweb.org/talent-acquisition/candidate-selection/the-key-skills-employers-seek-on-college-students-resumes",
+    "title": "NACE: Key skills employers seek on resumes",
+    "category": "Pay and career data",
+    "summary": "NACE Job Outlook 2026 Spring Update: the skills employers look for on student resumes.",
+    "pages": ["advice/getting-hired/non-technical", "advice/projects/hardware"]
+  },
+  {
+    "url": "https://www.naceweb.org/career-readiness/competencies/the-gap-in-perceptions-of-new-grads-competency-proficiency-and-resources-to-shrink-it",
+    "title": "NACE: The gap in perceptions of new grads' proficiency",
+    "category": "Pay and career data",
+    "summary": "NACE compares how students and employers rate new graduates on eight career competencies.",
+    "pages": ["advice/getting-hired/non-technical"]
+  },
+  {
+    "url": "https://www.naceweb.org/career-readiness/competencies/career-readiness-defined",
+    "title": "NACE: Career readiness competencies",
+    "category": "Pay and career data",
+    "summary": "NACE defines eight career readiness competencies, with sample behaviors for each.",
+    "pages": ["advice/getting-hired/non-technical"]
+  },
+  {
+    "url": "https://www.abet.org/accreditation/accreditation-criteria/criteria-for-accrediting-engineering-programs-2026-2027/",
+    "title": "ABET: Criteria for accrediting engineering programs, 2026-27",
+    "category": "Pay and career data",
+    "summary": "ABET student outcomes every accredited engineering program must teach, including communication and teamwork.",
+    "pages": ["advice/getting-hired/non-technical"]
   },
   {
     "url": "https://students.ieee.org/",
@@ -2456,6 +3024,34 @@
     "category": "Communities",
     "summary": "IEEE's rules for who qualifies as a student member.",
     "pages": ["advice/forever-learning/societies"]
+  },
+  {
+    "url": "https://ieee-pes.org/membership-overview/student-members/",
+    "title": "IEEE PES: Student members",
+    "category": "Communities",
+    "summary": "IEEE Power & Energy Society student membership, scholarships, and conference support.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://sscs.ieee.org/education/sscs-student-circuit-contest/",
+    "title": "IEEE SSCS: Student Circuit Contest",
+    "category": "Communities",
+    "summary": "A Solid-State Circuits Society contest for undergraduate and graduate students.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://ieee-cas.org/society-involvement/student-design-competition",
+    "title": "IEEE CASS: Student Design Competition",
+    "category": "Communities",
+    "summary": "A Circuits and Systems Society design competition for teams of undergraduates.",
+    "pages": ["advice/getting-hired/career-paths"]
+  },
+  {
+    "url": "https://ims-ieee.org/students",
+    "title": "IEEE IMS: Students",
+    "category": "Communities",
+    "summary": "The International Microwave Symposium's student design competitions and travel grants.",
+    "pages": ["advice/getting-hired/career-paths"]
   },
   {
     "url": "https://www.reddit.com/r/ECE/",

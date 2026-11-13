@@ -30,7 +30,7 @@ Ask these for each project or role. Never answer them yourself.
 
 - A build with a measured number becomes a project entry with one to three bullets.
 - A build with no number yet gets a bullet with `[X]` where the number goes, and a note to the user to measure it before they send the page.
-- Once the page has engineering work, a job outside engineering gets one line with no bullets. It shows the person can hold a job. Before that, it can keep bullets.
+- A job outside engineering gets one or two bullets, each with a count the person can defend. It shows they can hold a job. Cut it to one line only when the engineering work fills the page without its bullets.
 - A real design-team role goes in Projects, with bullets, not in an Activities line.
 - A course goes in one Relevant coursework line under Education, only if it matches the posting.
 

@@ -7,9 +7,9 @@
 ```json
 {
   "settings": {
-    "sectionOrder": ["education", "skills", "projects", "experience"],
+    "sectionOrder": ["education", "projects", "experience", "skills"],
     "font": "libertinus",
-    "dateStyle": { "education": "semester", "projects": "semester", "experience": "semester" }
+    "dateStyle": { "education": "month", "projects": "semester", "experience": "month" }
   },
   "header": {
     "name": "Alex Doe",
@@ -26,7 +26,7 @@
       "degree": "B.S. Electrical Engineering",
       "gpa": "",
       "school": "Example State University",
-      "gradDate": "Expected Spring 2027",
+      "gradDate": "Expected May 2027",
       "coursework": ["Power Electronics", "Embedded Systems"],
       "activities": ["IEEE student branch"]
     }
@@ -47,10 +47,13 @@
       "title": "Sales Associate",
       "company": "Retail store",
       "location": "Springfield, ST",
-      "start": "Summer 2023",
-      "end": "Summer 2024",
+      "start": "May 2023",
+      "end": "Aug 2024",
       "engineering": false,
-      "bullets": []
+      "bullets": [
+        "Processed about [X] sales and returns a shift at the register",
+        "Trained [X] new hires on the register and the closing checklist"
+      ]
     }
   ],
   "skills": {
@@ -65,7 +68,7 @@
 
 - Every date in a section uses that section's date style, `semester` (Fall 2025) or `month` (Sept 2025, and Sep 2025 also works). Mixing them stops the build.
 - A blank field or an empty list is left out of the PDF.
-- `engineering: false` makes a one-line entry and drops any bullets, with a note. To give a non-engineering job bullets, set `"engineering": true`.
+- `engineering: false` keeps a job's bullets while the page has room for them. Once another job has `"engineering": true` and the rest of the resume fills the page, the false one drops to one line and loses its bullets, with a note. So give a job outside engineering one or two bullets, and let the build decide.
 - `hide: true` leaves an entry out without deleting it. Use it for a version aimed at one niche.
 - Links must be web addresses, `mailto:`, or `tel:`. Inside a bullet, `[text](url)` links the text.
 - The build keeps the margins at 0.5 in and steps text from 11 pt to 10 pt until the page fits, then fills the page by growing the spacing. It never shrinks spacing below the eeprep limits. If it still does not fit, it says about how many lines to cut.

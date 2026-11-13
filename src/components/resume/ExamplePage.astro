@@ -5,7 +5,7 @@ import { externalLinks } from './caption';
 const notes = [
 	{
 		title: 'Centered header.',
-		body: 'One contact line.',
+		body: 'One contact line, then a line for location.',
 	},
 	{
 		title: 'Dates at the right margin.',
@@ -13,19 +13,19 @@ const notes = [
 	},
 	{
 		title: 'One line of coursework.',
-		body: 'Courses that match the posting.',
-	},
-	{
-		title: 'Skills right under Education.',
-		body: "Four of the six samples do this. Each of Alex's eight tools appears in a bullet.",
+		body: 'Upper-level courses that match the posting.',
 	},
 	{
 		title: 'Projects above Experience.',
-		body: 'Alex has no engineering job yet.',
+		body: 'Alex has no internship or other technical work yet.',
+	},
+	{
+		title: 'Skills last.',
+		body: "The wiki's order for a student with no technical work experience. Each of Alex's eight tools appears in a bullet.",
 	},
 ].map((note) => ({ ...note, body: externalLinks(note.body) }));
 const caption = externalLinks(
-	`Layout from the <a href="https://www.reddit.com/r/EngineeringResumes/wiki/index/">r/EngineeringResumes wiki</a>, plus eeprep's centered header, checked against six career center samples.`,
+	`Most of the layout follows the <a href="https://www.reddit.com/r/EngineeringResumes/wiki/index/">r/EngineeringResumes wiki</a>. The centered header, the phone number and LinkedIn link, the coursework line, and the semester dates are eeprep's. The page was checked against six career center samples.`,
 );
 ---
 
@@ -42,10 +42,10 @@ const caption = externalLinks(
 				<span class="eep-num eep-pin" data-pin="1"></span>
 				<p class="eep-example-name">Alex Doe</p>
 				<p class="eep-example-contact">
-					alex@[school].edu | linkedin.com/in/alex-doe-example |
+					[phone] | alex@[school].edu | linkedin.com/in/alex-doe-example |
 					github.com/alex-doe-example
 				</p>
-				<p>[phone] | City, ST | Willing to relocate</p>
+				<p>City, ST | Willing to relocate</p>
 			</header>
 			<p class="eep-example-sec">Education</p>
 			<p>
@@ -55,7 +55,7 @@ const caption = externalLinks(
 				<p>[University]</p>
 				<p class="eep-example-date eep-example-mark">
 					<span class="eep-num eep-pin eep-pin-right" data-pin="2"></span>
-					Expected Spring 2027
+					Expected May 2027
 				</p>
 			</div>
 			<p class="eep-example-mark">
@@ -66,25 +66,14 @@ const caption = externalLinks(
 			<p>
 				<strong>Activities:</strong> IEEE student branch, Tau Beta Pi
 			</p>
-			<p class="eep-example-sec">Skills</p>
 			<div class="eep-example-mark">
 				<span class="eep-num eep-pin" data-pin="4"></span>
-				<p>
-					<strong>Software:</strong> KiCad, LTspice, C, Python
-				</p>
-				<p>
-					<strong>Hardware/Lab:</strong> STM32, oscilloscope, electronic load,
-					logic analyzer
-				</p>
-			</div>
-			<div class="eep-example-mark">
-				<span class="eep-num eep-pin" data-pin="5"></span>
 				<p class="eep-example-sec">Projects</p>
 				<div class="eep-example-row">
 					<p>
 						<strong>CubeSat Power Board</strong> (KiCad, LTspice)
 					</p>
-					<p class="eep-example-date">Fall 2025–Spring 2026</p>
+					<p class="eep-example-date">Fall 2025 – Spring 2026</p>
 				</div>
 				<ul>
 					<li>
@@ -118,9 +107,24 @@ const caption = externalLinks(
 				<p>
 					<strong>Sales Associate, [Retail store]</strong>
 				</p>
-				<p class="eep-example-date">Summer 2023–Summer 2024</p>
+				<p class="eep-example-date">May 2023 – Aug 2024</p>
 			</div>
-			<p>City, ST</p>
+			<p class="eep-example-loc">City, ST</p>
+			<ul>
+				<li>Processed about [X] sales and returns a shift at the register</li>
+				<li>Trained [X] new hires on the register and the closing checklist</li>
+			</ul>
+			<p class="eep-example-sec">Skills</p>
+			<div class="eep-example-mark">
+				<span class="eep-num eep-pin" data-pin="5"></span>
+				<p>
+					<strong>Software:</strong> KiCad, LTspice, C, Python
+				</p>
+				<p>
+					<strong>Hardware/Lab:</strong> STM32, oscilloscope, electronic load,
+					logic analyzer
+				</p>
+			</div>
 		</div>
 		<ol class="eep-example-notes eep-num-list">
 			{notes.map((note) => (
@@ -238,6 +242,10 @@ const caption = externalLinks(
 	.eep-example-date {
 		flex: none;
 		white-space: nowrap;
+	}
+	/* The location sits under the date, at the right margin. */
+	.eep-example-sheet p.eep-example-loc {
+		text-align: right;
 	}
 	.eep-pin {
 		position: absolute;

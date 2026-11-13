@@ -3,12 +3,6 @@
   <img src="public/brand/eeprep-lockup-outlined.svg" alt="eeprep" width="320">
 </picture>
 
-<!-- vale Eeprep.SentenceCase = NO -->
-
-# eeprep
-
-<!-- vale Eeprep.SentenceCase = YES -->
-
 eeprep is a free guide for EECS students and new grads. It shows how to build a resume that works, find real experience, and land a first internship or full-time role.
 
 Status: active development.
@@ -34,7 +28,7 @@ The site is live at [eeprep.com](https://eeprep.com).
 ## Related projects
 
 - [resume-generator](https://github.com/edwardasilva/resume-generator): turns one JSON file into the one-page resume the resume pages describe.
-- [company-lists](https://github.com/edwardasilva/company-lists): a plain list of companies by region, starting with the Denver metro.
+- [company-lists](https://github.com/edwardasilva/company-lists): a plain list of companies by region, covering seven metro areas in Colorado, Texas, California, and Virginia.
 
 ## Get the code
 
@@ -44,7 +38,7 @@ The repo includes [resume-generator](https://github.com/edwardasilva/resume-gene
 git clone --recurse-submodules https://github.com/edwardasilva/eeprep.git
 ```
 
-The site builds without the submodules, so a plain clone also works.
+The build needs the company-lists submodule, because the company list page reads its data. If you cloned without `--recurse-submodules`, run `git submodule update --init company-lists`.
 
 To help with the guide, see [CONTRIBUTING](.github/CONTRIBUTING.md).
 
@@ -56,10 +50,14 @@ Content is licensed under [CC BY 4.0](LICENSE-CONTENT). You may share and adapt 
 
 - the guide pages and their sources in `src/content/`
 - the words and drawings shown by the figures in `src/components/advice/`, `src/components/guide/`, `src/components/home/`, `src/components/hired/`, `src/components/interview/`, `src/components/links/`, `src/components/projects/`, `src/components/resume/`, and `src/components/simple/`
+- the home page text in `src/pages/index.astro` and `src/lib/home.ts`
+- the source titles and summaries in `src/data/link-index.json`
 - the resume skill in `public/skills/eeprep-resume/`
 
-Code is licensed under the [MIT License](LICENSE). Code means everything else, including the components, plugins, styles, scripts, worker, and config files. The resume-generator submodule has its own licenses: MIT for code and CC BY 4.0 for its examples and docs. The company-lists submodule is licensed under MIT.
+Code is licensed under the [MIT License](LICENSE). Code means everything else, including the components, plugins, styles, scripts, worker, and config files. The resume-generator submodule has its own licenses: MIT for code, CC BY 4.0 for its examples, docs, and logo, and the font licenses in its `fonts/` folder for its fonts. The company-lists submodule is licensed under MIT.
 
-The eeprep name and logo files in `src/brand/` and `public/brand/` are not covered by either license.
+The eeprep name and logo files in `src/brand/` and `public/brand/`, and the favicon and touch icon files in `public/`, are not covered by either license.
+
+The site also ships third-party files under their own licenses: the Source Serif 4 and Source Code Pro fonts, through Fontsource, under the SIL Open Font License 1.1, and KaTeX's stylesheet and fonts under KaTeX's MIT License.
 
 Other repos carry their own licenses.

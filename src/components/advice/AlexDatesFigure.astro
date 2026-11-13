@@ -2,30 +2,31 @@
 // Figure 8.2 as HTML and CSS. Alex's lines in date order, with a dot for each
 // one on a line down the left. Wide figures put the date beside the title.
 // Narrow ones stack them.
-// The dashed box is the retail line, which comes off the resume once a build
-// replaces it.
+// The dashed box is the retail line. It keeps its bullets unless engineering
+// work fills the page. If the team role and the lab role fill it, the retail
+// line drops to one line.
 const rows = [
 	{
-		date: 'Summer 2023–Summer 2024',
-		title: 'Sales Associate, Retail store',
+		date: 'May 2023 – Aug 2024',
+		title: 'Sales Associate, [Retail store]',
 		dashed: true,
 	},
 	{ date: 'Fall 2024', title: 'Bluetooth Battery Monitor' },
 	{
-		date: 'Fall 2024–Spring 2026',
+		date: 'Sept 2024 – May 2026',
 		title: 'Power Subsystem Engineer, [Student satellite team]',
 	},
 	{ date: 'Spring 2025', title: 'FPGA [N]-Band Audio Equalizer' },
 	{
-		date: 'Summer 2025',
+		date: 'May 2025 – Aug 2025',
 		title: 'Undergraduate Research Assistant, [University lab]',
 	},
 	{
-		date: 'Fall 2025–Spring 2026',
+		date: 'Fall 2025 – Spring 2026',
 		title: 'Synchronous Buck Converter for a CubeSat Power Board',
 	},
 	{
-		date: 'Expected Spring 2027',
+		date: 'Expected May 2027',
 		title: 'B.S. Electrical Engineering',
 	},
 ];
@@ -47,8 +48,11 @@ const rows = [
 	</ol>
 	<figcaption>
 		<span class="eep-fignum"></span> Alex's dates run from the retail job to
-		Expected Spring 2027. The two Fall 2024 lines fall in the same term. The
-		dashed retail line comes off the resume once a build replaces it.
+		Expected May 2027. Graduation, jobs, and the two-year team role are dated by
+		month, and the shorter projects by semester. The battery monitor and the
+		team role start in the same term. The dashed retail line keeps its bullets
+		unless engineering work fills the page. If the team role and the lab role
+		fill it, the retail line drops to one line.
 	</figcaption>
 </figure>
 

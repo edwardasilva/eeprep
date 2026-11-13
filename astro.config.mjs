@@ -62,6 +62,12 @@ const redirects = {
 	'/advice/resume/simple/': '/advice/resume/quick-setup/',
 	'/advice/resume/portfolio/': '/advice/projects/portfolio/',
 	'/advice/ai-use/': '/help/ai-use/',
+	'/advice/non-technical/': '/advice/getting-hired/non-technical/',
+	'/advice/projects/career-paths/': '/advice/getting-hired/career-paths/',
+	'/advice/forever-learning/getting-into-graduate-study/':
+		'/advice/forever-learning/graduate-study/',
+	'/sitemap/figures/': '/sitemap/contents/?show=figures',
+	'/sitemap/tables/': '/sitemap/contents/?show=tables',
 	'/help-links/': '/help/',
 	'/help-links/all-links/': '/help/all-links/',
 	'/help-links/contributing/': '/roadmap/contributing/',
@@ -319,7 +325,6 @@ export default defineConfig({
 								{ label: 'Projects', slug: 'advice/projects' },
 								{ label: 'Software', slug: 'advice/projects/software' },
 								{ label: 'Hardware', slug: 'advice/projects/hardware' },
-								{ label: 'Career paths', slug: 'advice/projects/career-paths' },
 								{ label: 'Portfolio', slug: 'advice/projects/portfolio' },
 							],
 						},
@@ -345,8 +350,16 @@ export default defineConfig({
 									slug: 'advice/getting-hired/job-market',
 								},
 								{
+									label: 'Career paths',
+									slug: 'advice/getting-hired/career-paths',
+								},
+								{
 									label: 'How to interview',
 									slug: 'advice/getting-hired/how-to-interview',
+								},
+								{
+									label: 'Non-technical skills',
+									slug: 'advice/getting-hired/non-technical',
 								},
 								{
 									label: 'First internship',
@@ -362,10 +375,6 @@ export default defineConfig({
 							label: 'Forever learning',
 							items: [
 								{ label: 'Forever learning', slug: 'advice/forever-learning' },
-								{
-									label: 'Getting into graduate study',
-									slug: 'advice/forever-learning/getting-into-graduate-study',
-								},
 								{
 									label: 'Graduate study',
 									slug: 'advice/forever-learning/graduate-study',
@@ -403,8 +412,6 @@ export default defineConfig({
 					items: [
 						{ label: 'Sitemap', slug: 'sitemap' },
 						{ label: 'Table of contents', slug: 'sitemap/contents' },
-						{ label: 'Table of figures', slug: 'sitemap/figures' },
-						{ label: 'Table of tables', slug: 'sitemap/tables' },
 					],
 				},
 			],

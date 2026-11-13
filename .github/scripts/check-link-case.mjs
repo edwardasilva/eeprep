@@ -148,7 +148,7 @@ let checked = 0;
 for (const file of listHtml(dist)) {
 	const html = fs.readFileSync(file, 'utf8');
 	if (/http-equiv="refresh"/i.test(html)) continue; // redirect stub
-	const rel = path.relative(dist, file);
+	const rel = path.relative(dist, file).split(path.sep).join('/');
 	const body = content(html);
 	if (body === null) {
 		skipped.push(rel);

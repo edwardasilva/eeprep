@@ -9,29 +9,39 @@ head:
 
 import LicenseFigure from '../../../components/advice/LicenseFigure.astro';
 
-Read the datasheet, the app note, and the errata for every part you use. Fill gaps with free university courses, and join your IEEE student branch. Take the FE exam near graduation if you might want a PE license. Once you work, ask whether your employer pays for classes. Keep building, and write down what you learn. The [[Graduate study|graduate study page]] covers when a master's or PhD pays off, and the [[Professional societies|professional societies page]] covers what each society costs and gives you.
+This page is for students and new engineers who want to keep learning, in school and once they start work. The [[Graduate study|graduate study page]] covers when a master's or PhD pays off and how to get ready and apply. The [[Professional societies|professional societies page]] covers what each society gives you.
+
+## TLDR;
+
+- For every chip you use, read the datasheet, the application note on using it in a circuit, and the errata sheet that lists its known problems.
+- Fill gaps with free MIT OpenCourseWare courses, and finish a course before you put it on your resume.
+- If you might want a professional engineer (PE) license, take the Fundamentals of Engineering (FE) exam near graduation.
+- Before you accept an offer, ask whether tuition help runs through a written educational assistance program, which keeps it tax-free up to a yearly limit.
+- Keep a notebook for every build, with the date, board revision, part number, measurement, instrument, and what broke.
 
 ## Read the part's documents
 
-An application note shows how to use a part in a circuit. Alex's buck converter is a good match for [TI's app note on buck converter power stage math](https://www.ti.com/lit/an/slva477/slva477.pdf). It gives the formulas for a buck converter with an integrated switch in continuous conduction mode. Work those formulas by hand before you trust a simulation.
+An application note, or app note, shows how to use a part in a circuit. Alex's buck converter, a circuit that steps a DC voltage down, is a good match for [an app note from Texas Instruments on the math of a buck converter's power stage](https://www.ti.com/lit/an/slva477/slva477.pdf). It gives the formulas for a buck converter with an integrated switch in continuous conduction mode. Work those formulas by hand before you trust a simulation.
 
-An errata sheet lists where the silicon does not match the datasheet. [The MSP430F5529 errata sheet](https://www.ti.com/lit/er/slaz314/slaz314.pdf) describes the chip's known exceptions to its functional specifications, one advisory at a time. Check the errata before you debug firmware that looks right and still fails. Match the advisories to your chip's revision marking.
+An errata sheet lists where the chip does not match its datasheet. [The MSP430F5529 errata sheet](https://www.ti.com/lit/er/slaz314/slaz314.pdf) describes the chip's known exceptions to its functional specifications, one advisory at a time. Check the errata before you debug firmware that looks right and still fails, and match each advisory to the revision marked on your chip.
 
 ## Take free courses
 
-[MIT OpenCourseWare](https://ocw.mit.edu/about/) publishes materials from more than 2,500 MIT courses for free. Three of them cover the core of an EE degree:
+[MIT OpenCourseWare (OCW)](https://ocw.mit.edu/about/) publishes materials from more than 2,500 MIT courses for free. Three of them cover the core of an electrical engineering (EE) degree:
 
-- [6.002 Circuits and Electronics](https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/) is, as taught in 2007, a first course in an undergraduate EE or EECS curriculum.
+- [6.002 Circuits and Electronics](https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/), in its 2007 version, is a first course in an undergraduate EE or EECS curriculum.
 - [6.003 Signals and Systems](https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/) covers Fourier, Laplace, and Z transforms, sampling, and linear time-invariant systems.
 - [6.004 Computation Structures](https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/) covers gates, instruction set design, and pipelined systems.
 
-MIT has renumbered these courses since. [6.002 is now 6.2000, 6.003 is now 6.3000, and 6.004 is now 6.1910](https://www.eecs.mit.edu/academics/subject-numbering/). [OCW says MIT does not offer credit or certification to users of OCW](https://ocw.mit.edu/about/), so use the courses to fill gaps.
+MIT has renumbered these courses since. [6.002 is now 6.2000, 6.003 is now 6.3000, and 6.004 is now 6.1910](https://www.eecs.mit.edu/academics/subject-numbering/). [OCW says MIT does not offer credit or certification to its users](https://ocw.mit.edu/about/), so use the courses to fill gaps.
 
 Pick the course behind the part of your job or project you understand least. Work the problem sets as well as the lectures.
 
-If you are getting ready for a master's or PhD, follow the [[Getting into graduate study|getting into graduate study page]]. It points back here for these courses.
+If you are getting ready for a master's or PhD, follow the path on the [[Graduate study|graduate study page]]. Its [[Graduate study#Build the foundation|section on building the foundation]] points back here for these courses.
 
-Be careful with lists of "free Harvard courses" and the like. Most such courses are free to audit, and the certificate costs money. [CS50 is the exception](https://cs50.harvard.edu/x/2022/faqs), with a free certificate from CS50 itself and a paid one from edX. Before a course goes on your resume, check who made it and finish it. List it under education, never under certifications, and keep the list short. [One commenter on an Ask a Manager open thread](https://www.askamanager.org/2022/04/open-thread-april-22-23-2022.html) suggests not filling a resume with a long list of little trainings and certificates. If a list of courses carries links that earn the author a commission, [the FTC says "paid link" right next to the link is an adequate disclosure](https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking). A list with no disclosure and a sales pitch is an ad.
+Be careful with lists of "free Harvard courses" and the like. Most such courses are free to audit, and the certificate costs money. [CS50 is the exception](https://cs50.harvard.edu/x/2022/faqs), with a free certificate from CS50 itself and a paid one from edX. If a list of courses carries links that earn the author a commission, [the Federal Trade Commission says the label "paid link", placed right next to the link, is an adequate disclosure](https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking). A list with no disclosure and a sales pitch is an ad.
+
+Before a course goes on your resume, check who made it and finish it. List it under education, never under certifications, and keep the list short. [One commenter on an open thread at Ask a Manager](https://www.askamanager.org/2022/04/open-thread-april-22-23-2022.html), a workplace advice blog, suggests not filling a resume with a long list of little trainings and certificates.
 
 ## Join IEEE
 
@@ -39,24 +49,22 @@ IEEE offers [student membership](https://students.ieee.org/) and supports studen
 
 ## The FE exam and the PE license
 
-A professional engineer (PE) license lets you sign and seal engineering drawings. [NCEES says only a licensed engineer can prepare, sign, seal, and submit them](https://ncees.org/licensure/).
+A professional engineer license lets you sign and seal engineering drawings. [The National Council of Examiners for Engineering and Surveying (NCEES) says only a licensed engineer can prepare, sign, seal, and submit them](https://ncees.org/licensure/). If your work will never need a seal, you can skip the license.
 
-[NCEES lists the usual path](https://ncees.org/licensure/). The license figure on this page shows it in the order you do it.
+You do not need a license to start. [The US Bureau of Labor Statistics says licensure is not required for entry-level electrical and electronics engineer positions](https://www.bls.gov/ooh/architecture-and-engineering/electrical-and-electronics-engineers.htm), and that several states require continuing education to keep a license.
+
+[NCEES lists the usual path](https://ncees.org/licensure/), and the license figure on this page shows it in the order you do it.
 
 <LicenseFigure />
 
-[The BLS says licensure is not required for entry-level electrical and electronics engineer positions](https://www.bls.gov/ooh/architecture-and-engineering/electrical-and-electronics-engineers.htm), and that several states require continuing education to keep a license. Read this section if you might want a PE license.
+If you might want the license, take the Fundamentals of Engineering (FE) exam early. [NCEES designs the FE exam](https://ncees.org/exams/fe-exam/) for recent graduates and for students close to finishing an ABET-accredited degree. It is a computer-based exam of 110 questions, offered year-round at Pearson test centers.
 
-If you might want a PE, take the Fundamentals of Engineering (FE) exam early. [NCEES designs the FE exam](https://ncees.org/exams/fe-exam/) for recent graduates and for students close to finishing an ABET-accredited degree. It is a computer-based exam of 110 questions, offered year-round at Pearson test centers.
-
-[The PE Electrical and Computer exam](https://ncees.org/exams/pe-exam/electrical-and-computer/) comes in three versions: Computer Engineering, Electronics, Controls, and Communications (ECC), and Power. NCEES gives Computer Engineering and ECC once a year, and Power year-round. NCEES designs the exam for engineers with at least four years of work experience after college. Your state board sets the final rules, so check its requirements before you register.
+The last step to the license is the Principles and Practice of Engineering (PE) exam. [The PE Electrical and Computer exam](https://ncees.org/exams/pe-exam/electrical-and-computer/) comes in three versions: Computer Engineering, Power, and ECC, which stands for Electronics, Controls, and Communications. NCEES gives Computer Engineering and ECC once a year, and Power year-round. [Controls engineers have a separate PE Control Systems exam](https://ncees.org/exams/pe-exam/control-systems/), also given once a year. NCEES designs the PE exams for engineers with at least four years of work experience after college. Your state board sets the final rules, so check its requirements before you register.
 
 ## Employer tuition help
 
-Ask about tuition help before you accept an offer, and again once you start. [IRS Publication 15-B](https://www.irs.gov/publications/p15b) lets an employer pay up to \$5,250 a year of an employee's education costs tax-free, but only under an educational assistance program, which is a separate written plan. Graduate courses count, and so do student-loan payments. Above \$5,250 the pay is taxable unless it counts as a working condition benefit. The [[Graduate study#How students pay|section on how students pay]] on the graduate study page has what large engineering employers pay above that line.
+Ask about tuition help before you accept an offer, and again once you start. [IRS Publication 15-B](https://www.irs.gov/publications/p15b) says an employer can pay up to \$5,250 a year of an employee's education costs tax-free. That works only under an educational assistance program, which is a separate written plan. [The limit rises to \$5,400 for 2027](https://www.irs.gov/pub/irs-drop/rp-26-35.pdf). Graduate courses count, and so do student-loan payments. Above the limit, the pay is taxable unless it counts as a working condition benefit, such as training that keeps up or improves the skills your current job needs. The [[Graduate study#How students pay|section on how students pay]] on the graduate study page covers tuition programs at large engineering employers, and what to ask before you accept.
 
 ## Keep building and keep notes
 
-Build a project that pushes on what you learned least in school.
-
-Keep a notebook for every build. Write down the part number, the measurement, the instrument, and what broke. Alex writes the date and the board revision on every page, so each number traces back to a test. Those notes become your resume lines and your interview answers. The [[How to interview#Your projects, line by line|section on your projects, line by line]] on the how to interview page lists the questions they answer.
+Build a project that pushes on what you learned least in school, and keep a notebook for every build. Write down the part number, the measurement, the instrument, and what broke. Alex writes the date and the board revision on every page, so each number traces back to a test. Those notes become your resume lines and your interview answers, and the [[How to interview#Your projects, line by line|section on your projects, line by line]] on the how to interview page lists the questions they answer.

@@ -9,54 +9,54 @@ head:
 
 import AiUseFigure from '../../../components/advice/AiUseFigure.astro';
 
-Use AI to find work and to check your work. Do not let it write your resume, your application answers, or your interview answers. Interviewers go layers deep on every line, and a line you did not write is a line you cannot defend. A tool can build you a job-posting scraper. It should not write a line of your resume.
+Use AI tools to find postings, check a draft, and rehearse for interviews, but write your resume and your answers yourself.
+
+## TLDR;
+
+- Have an AI tool write a script that checks your top companies' career pages every day, then apply by hand on each company's site.
+- Write your resume, application answers, and interview answers yourself, because interviewers go layers deep and a line you did not write is hard to defend.
+- Ask AI to find gaps and fix grammar in your draft, and reject any suggestion that adds a tool, number, or result you lack.
+- Follow each posting's rule on AI, and if the posting says nothing, assume take-home tests and interviews ban AI.
+- Rehearse with a chatbot playing the interviewer, then book a mock interview at your career center to practice in front of a person.
 
 <AiUseFigure />
 
 ## Where a tool helps
 
-A scraper that checks the career pages you follow and flags each new role is the best use. Read each posting yourself and apply by hand on the company's site.
-
-Take-home tests and whiteboard interviews often allow no AI tools at all. The [[How to interview#Take-home tests|section on take-home tests]] on the how to interview page covers how to handle that.
+A scraper that checks the career pages you follow and flags each new role is the best use in the search. An AI tool can also build the layout of a portfolio site, as the [[Portfolio#Build it with an AI tool|section on building it with an AI tool]] on the portfolio page explains.
 
 ## Finding postings
 
-This is the best use. Ask the tool to write a script that checks the career pages of your top companies every day and tells you what is new. Ask it to sort a daily list by the titles you want: test, validation, controls, firmware. Then read each posting yourself and apply on the company's own site. Applying early matters, because [most recruiters review applications in the order they arrive](https://my.greenhouse.com/blogs/what-really-happens-after-you-apply-for-a-job). The [[Getting hired#Where to look|section on where to look]] on the getting hired page lists the pages to watch.
+Ask the tool to write a script that checks the career pages of your top companies every day and tells you what is new. Have it sort that daily list by the titles you want: test, validation, controls, firmware. Then read each posting yourself and apply by hand on the company's own site. Apply early, because [most recruiters review applications in the order they arrive](https://my.greenhouse.com/blogs/what-really-happens-after-you-apply-for-a-job). The [[Getting hired#Where to look|section on where to look]] on the getting hired page lists the pages to watch. If you cannot run a script yet, use the job alerts and SimplifyJobs lists on the [[Job boards|job boards page]] instead.
 
 ## Checking a draft
 
-Paste your resume and the posting, and ask for the gaps, not for new bullets. [UC Davis's career office suggests asking the tool to review your resume "like an expert coach"](https://alumni.ucdavis.edu/node/12666) and name five specific changes. Treat the answer as a list of places to look, not as text to paste in.
+Paste your resume and the posting, and ask for the gaps, not for new bullets. [UC Davis's career office suggests asking the tool to review your resume "like an expert coach"](https://alumni.ucdavis.edu/node/12666) and to name five specific changes. Treat the answer as a list of places to look, not as text to paste in. You can accept its grammar and typo fixes on a sentence you wrote, as long as every fact in the sentence stays yours.
 
-Reject any suggestion that adds a tool, a number, or a result you do not have. A keyword you cannot back up in an interview is a fabrication, and [a recruiter on X says candidates who padded their resumes with AI got caught in later rounds](https://x.com/randomrecruiter/status/2081829972415578607). The tool cannot measure your ripple or your efficiency. Every [X] on this site is a number you read off an instrument.
+Reject any suggestion that adds a tool, a number, or a result you do not have. A keyword you cannot back up in an interview is a fabrication, and [a recruiter on X says candidates who padded their resumes with AI got caught in later rounds](https://x.com/randomrecruiter/status/2081829972415578607). The tool cannot measure your ripple or your efficiency, and every [X] on this site is a number you read off an instrument.
 
-A chatbot also smooths everything into the same shape. If three suggestions start with the same verb, you are looking at the pattern, not at your work. Keep the specific version.
+A chatbot also smooths everything into the same shape. If three suggestions start with the same verb, they come from the tool's habits, not from your work. Keep the wording that is specific to your project.
 
-If you draft with a coding agent such as Claude Code or Cursor, give it the rules before it writes. [The eeprep resume skill](/skills/eeprep-resume/README.md) is a folder of plain Markdown files the agent reads first. It holds the layout rules, the bullet pattern, the tailoring steps, and the audit. Its one rule above the rest is that the agent never invents a number, a tool, or a result you did not give it. It writes [X] where a measurement belongs and tells you to go measure it. The README has the install command.
+If you draft with a coding agent such as Claude Code or Cursor, give it the rules before it writes. [The eeprep-resume skill](/skills/eeprep-resume/README.md) is a folder of plain Markdown files the agent reads first. It holds the layout rules, the bullet pattern, the tailoring steps, and the audit. Its main rule is that the agent never invents a number, a tool, or a result you did not give it. It writes [X] where a measurement belongs and tells you to go measure it. The README has the install command.
 
 ## Writing it yourself
 
-Hiring managers are reading for sameness. In [a May 2025 survey of 600 US hiring managers by TopResume, which sells resume writing](https://topresume.com/career-advice/ai-in-hiring-survey), about one in five said they would reject an application that appears fully AI-generated. The same managers found AI use least acceptable in skills assessments, at 40.8 percent, then in resume writing, at 30.3 percent, and in cover letters, at 25 percent. Given four resumes and asked which were written by AI, 33.5 percent spotted them. Detection is the smaller risk. The larger one is a page that reads like everyone else's and a bullet you cannot defend.
+In [a May 2025 survey of 600 US hiring managers by TopResume, which sells resume writing](https://topresume.com/career-advice/ai-in-hiring-survey), about one in five said they would reject an application that appears fully AI-generated. Asked where AI use is not acceptable, 57 percent named real-time tools in interviews, 40.8 percent skills assessments, 30.3 percent resume writing, and 25 percent cover letters. Just over half, 52 percent, said AI help with proofreading or drafting is acceptable. When shown four resumes and asked which were written by AI, 33.5 percent picked them out correctly.
+
+Detection is the smaller risk. The larger risks are a page that reads like everyone else's and a bullet you cannot defend. Read the final page aloud, and if you would not say a line to the interviewer, do not send it.
 
 Tech employers can be more relaxed. [Tech leaders quoted by IEEE-USA InSight had no problem with AI help on a resume or cover letter as long as the content stays accurate](https://insight.ieeeusa.org/articles/what-tech-hiring-managers-really-think-of-ai-created-resumes-and-cover-letters/).
 
-Employers set their own rules. [Anthropic's candidate guidance, updated in July 2025, asks applicants to write their first draft themselves, then use Claude to refine it](https://www.anthropic.com/candidate-ai-guidance). It allows no AI in take-home tests or live interviews unless the company says otherwise. Read each posting's rules and follow them. Assume a take-home or an interview bans it unless the posting says otherwise.
+Employers set their own rules, so read each posting's rules and follow them. [Anthropic's candidate guidance, updated in July 2025, asks applicants to write their first draft themselves, then use Claude to refine it](https://www.anthropic.com/candidate-ai-guidance). It allows no AI in take-home tests or live interviews unless the company says otherwise. Other employers can ban AI tools outright, so if a posting says nothing, assume a take-home or an interview bans AI. The [[How to interview#Take-home tests|section on take-home tests]] on the how to interview page covers how to handle one.
 
-Career centers draw the same line. [Southern Connecticut State University's career center warns](https://southernct.edu/career/ChatGPT-AI-Usage-in-Your-Career-Search) that submitting AI-generated content as your own work, even after you edit it, carries ethical and legal risks.
+One career center draws a similar line. [Southern Connecticut State University's career center warns](https://southernct.edu/career/ChatGPT-AI-Usage-in-Your-Career-Search) that submitting AI-generated content as your own work, even after you edit it, may carry ethical and legal risks.
 
 ## Where students stand
 
-In [NACE's 2025 student survey](https://naceweb.org/job-market/trends-and-predictions/student-concerns-about-ai-tempering-their-use-of-it-in-job-search), 67.1 percent of graduating seniors said they did not use AI in their job search, and the most common reason was concern about the ethics of it, at 28.9 percent. [A year later, 46 percent of graduating seniors said they used it](https://naceweb.org/about-us/press/2026/ready-or-reluctant-employer-expectations-for-ai-skills-meet-student-skepticism). The survey reached more than 17,000 students at 258 schools, and more than 1,860 of them were graduating seniors. The question now is which jobs to hand the tools.
+In [the 2025 student survey by the National Association of Colleges and Employers](https://naceweb.org/job-market/trends-and-predictions/student-concerns-about-ai-tempering-their-use-of-it-in-job-search), 67.1 percent of graduating seniors said they did not use AI in their job search. The most common reason, at 28.9 percent, was concern about the ethics of it. [A year later, 46 percent of graduating seniors said they used it](https://naceweb.org/about-us/press/2026/ready-or-reluctant-employer-expectations-for-ai-skills-meet-student-skepticism). That 2026 survey reached more than 17,000 students at 258 schools, and more than 1,860 of them were graduating seniors.
 
 ## Rehearsing interviews
 
-Ask the tool to play the interviewer. Give it one resume line and have it go five layers deep, with the questions from the [[How to interview#Your projects, line by line|section on your projects, line by line]] on the how to interview page: how did you do that, why that way, what broke, what would you change. Answer out loud, at a whiteboard if you have one. Ask it to explain a fundamental you are shaky on, such as what `volatile` does, and then check the answer against [Nigel Jones's article on volatile](https://barrgroup.com/embedded-systems/how-to/c-volatile-keyword).
+Ask the tool to play the interviewer. Give it one resume line and have it go five layers deep: how did you do that, why that way, what broke, what would you change. The [[How to interview#Your projects, line by line|section on your projects, line by line]] on the how to interview page has more questions to prepare. Answer out loud, at a whiteboard if you have one. Ask it to explain a fundamental you are shaky on, such as what `volatile` does, and then check the answer against [Nigel Jones's article on volatile](https://barrgroup.com/embedded-systems/how-to/c-volatile-keyword).
 
-A chatbot is a rehearsal, not an audience. [In a 2020 study, having an interviewer watch cut performance by more than half](https://par.nsf.gov/servlets/purl/10196170), and a text box does not do that to you. Book a mock interview at your career center as well. [Illinois Engineering Career Services calls it the best way to prepare](https://ecs.grainger.illinois.edu/student-resources/interviewing/mock).
-
-## Rules for using a tool
-
-- Use it to find, sort, and check. Write every line yourself.
-- Never add a tool, a number, or a result it suggests unless you did the work and can defend it at a whiteboard.
-- Follow the posting's rule on AI. Assume take-homes and interviews ban it.
-- Measure every [X] yourself. A tool cannot read your oscilloscope.
-- Read the final page aloud. If you would not say a line to the interviewer, do not send it.
+A chatbot is a rehearsal, not an audience. [In a 2020 study, performance fell by more than half when an interviewer watched](https://par.nsf.gov/servlets/purl/10196170), and a text box does not do that to you. Book a mock interview at your career center as well. [Illinois Engineering Career Services calls it the best way to prepare](https://ecs.grainger.illinois.edu/student-resources/interviewing/mock).

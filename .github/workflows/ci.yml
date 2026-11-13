@@ -20,8 +20,8 @@ concurrency:
 # the checks that read the build. One run lists every problem.
 #
 # The protect-main ruleset requires this job by its name, Checks. Keep the name.
-# The Playwright mobile audit runs from audit.yml on release tags and by hand, not
-# on every pull request.
+# The Playwright mobile audit runs from audit.yml on release tags and by hand, while
+# that workflow is enabled, not on every pull request.
 jobs:
   checks:
     name: Checks
@@ -36,7 +36,7 @@ jobs:
           persist-credentials: false
           submodules: true
 
-      # A pull request that changes only repo docs, such as README.md, CLAUDE.md or
+      # A pull request that changes only repo docs, such as README.md, AGENTS.md or
       # .github/ISSUE_TEMPLATE, skips the tests and the build. Lint and Vale still run, and
       # the Checks job still reports, so the protect-main ruleset is satisfied.
       - name: Find what the pull request changes
