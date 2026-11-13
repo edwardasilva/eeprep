@@ -129,6 +129,20 @@
     "pages": ["advice/resume"]
   },
   {
+    "url": "https://eng.umd.edu/sites/clark.umd.edu/files/Resume%20Handout%20SU24.pdf",
+    "title": "University of Maryland Engineering Career Services: Resume writing",
+    "category": "Resume guides",
+    "summary": "Maryland engineering career office handout on resume length, GPA, and section order.",
+    "pages": ["advice/resume/cleanup"]
+  },
+  {
+    "url": "https://www.oit.edu/sites/default/files/document/resume-tips-for-engineering-majors.pdf",
+    "title": "Oregon Tech: Resume tips for engineering majors",
+    "category": "Resume guides",
+    "summary": "Oregon Tech handout on location, GPA, and bullet style for engineering resumes.",
+    "pages": ["advice/resume/cleanup"]
+  },
+  {
     "url": "https://capd.mit.edu/blog/2023/09/01/enhance-your-resume-a-guide-for-first-year-undergraduates/",
     "title": "MIT CAPD: Enhance your resume, a guide for first-year undergraduates",
     "category": "Resume guides",
@@ -1916,6 +1930,13 @@
     "category": "Interview prep",
     "summary": "Georgia Tech career center interview guide for undergraduates.",
     "pages": ["advice/getting-hired/how-to-interview"]
+  },
+  {
+    "url": "https://careerservices.fas.harvard.edu/resources/interviewing/",
+    "title": "Harvard FAS: Interviewing",
+    "category": "Interview prep",
+    "summary": "Harvard career center interview guide, including preparing to discuss everything on your resume.",
+    "pages": ["advice/resume/cleanup"]
   },
   {
     "url": "https://www.hardwareinterviews.fyi/t/top-electrical-engineering-interview-questions/807",
