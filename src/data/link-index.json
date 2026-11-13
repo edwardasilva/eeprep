@@ -125,6 +125,7 @@
     "category": "Resume guides",
     "summary": "The subreddit's resume guide, covering layout, sections, bullets and common mistakes.",
     "pages": [
+      "advice/getting-hired/non-technical",
       "advice/resume",
       "advice/resume/cleanup",
       "advice/resume/walkthrough",
