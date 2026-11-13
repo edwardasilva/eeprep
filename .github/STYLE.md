@@ -54,7 +54,7 @@ The goal is good writing, not beating a detector. Detectors are unreliable and f
 
 10. Define a technical term in a few words the first time you use it, e.g. "idempotent (safe to run twice)". Do not define product names or standard names.
 
-11. Write a range that stands alone as a label, a span of years, or a resume date with an unspaced en dash: Jul–Aug, 2023–24, 2025–2035, June–August 2025, Fall 2025–Spring 2026. Do not use a hyphen (2024-25) and do not put spaces around the dash. Vale rule Eeprep.YearRange checks year ranges. Dates inside URLs are not linted.
+11. Write a range that stands alone as a label or a span of years with an unspaced en dash: Jul–Aug, 2023–24, 2025–2035, June–August 2025. Between two full dates, as on a resume, put a space on each side of the en dash: May 2023 – Aug 2024, Fall 2025 – Spring 2026, Sept 2025 – Present. The r/EngineeringResumes wiki asks for the same, and resume-generator prints it that way. Do not use a hyphen (2024-25). Vale rule Eeprep.YearRange checks year ranges, and Eeprep.DateRange checks full-date ranges. Dates inside URLs are not linted.
 
 12. Do not use he, she, his, her, hers, or him for an unnamed person. Use "they" or name the role. For a quote in an MDX file, wrap it in the comments `{/* vale Eeprep.Pronouns = NO */}` and `{/* vale Eeprep.Pronouns = YES */}`. Vale rule Eeprep.Pronouns checks it.
 
