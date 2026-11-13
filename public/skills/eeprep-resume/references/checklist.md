@@ -15,7 +15,7 @@ Audit the finished PDF, not the source file. Work top to bottom. Fix what fails,
 
 - Every link clicked today.
 - Links as plain text, no icons, no "Phone:" or "Email:" labels.
-- Location present, and "Willing to relocate" if true.
+- Location optional, on its own line, with "Willing to relocate" if true.
 - One email, checked daily.
 
 ## Education
@@ -27,7 +27,7 @@ Audit the finished PDF, not the source file. Work top to bottom. Fix what fails,
 
 ## Projects and experience
 
-Read each bullet against three questions. Does it start with a past-tense verb that is not helped, assisted, worked on, or utilized? Does it name the tool? Does it end in a number the user measured and can explain? If the user cannot explain a number, it comes off, because the interviewer will ask.
+Read each bullet against three questions. Does it start with a past-tense verb that is not helped, assisted, worked on, or utilized? Does it name the tool? Does it give a number early wherever the user measured one, and can the user explain it? If the user cannot explain a number, it comes off, because the interviewer will ask.
 
 - Every bullet fills one line or most of two.
 - Every bullet holds one idea.
@@ -63,7 +63,7 @@ File
 Header
 [ ] Every link clicked today
 [ ] Links are plain text, no icons, no "Phone:" or "Email:" labels
-[ ] Location present, and "Willing to relocate" if true
+[ ] Location optional, on its own line, with "Willing to relocate" if true
 [ ] One email, checked daily
 
 Education
@@ -73,7 +73,7 @@ Education
 [ ] No high school after the first year
 
 Projects and experience
-[ ] Every bullet: past-tense verb, a tool, a number I can explain
+[ ] Every bullet: past-tense verb, a tool, a number I can explain wherever I measured one
 [ ] No helped, assisted, worked on, or utilized
 [ ] Every bullet fills one line or most of two
 [ ] Every bullet holds one idea

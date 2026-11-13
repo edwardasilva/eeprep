@@ -169,7 +169,7 @@
     "url": "https://www.reddit.com/r/EngineeringResumes/wiki/typo/",
     "title": "r/EngineeringResumes wiki: Common mistakes",
     "category": "Resume guides",
-    "summary": "Common resume mistakes, including misspelled software and tool names.",
+    "summary": "Common typos in skill and tool names, such as C, C++ written as two items.",
     "pages": ["advice/resume", "advice/resume/cleanup"]
   },
   {
@@ -295,7 +295,7 @@
     "url": "https://www.reddit.com/r/EngineeringResumes/wiki/templates/",
     "title": "r/EngineeringResumes wiki: Recommended templates",
     "category": "Sample resumes and templates",
-    "summary": "The subreddit's recommended resume templates in LaTeX, Word and Google Docs.",
+    "summary": "The subreddit's recommended resume templates, one in Google Docs and one in LaTeX.",
     "pages": [
       "advice/resume",
       "advice/resume/workshop",
