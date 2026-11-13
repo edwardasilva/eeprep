@@ -9,7 +9,7 @@
   "settings": {
     "sectionOrder": ["education", "projects", "experience", "skills"],
     "font": "libertinus",
-    "dateStyle": { "education": "semester", "projects": "semester", "experience": "month" }
+    "dateStyle": { "education": "month", "projects": "semester", "experience": "month" }
   },
   "header": {
     "name": "Alex Doe",
@@ -26,7 +26,7 @@
       "degree": "B.S. Electrical Engineering",
       "gpa": "",
       "school": "Example State University",
-      "gradDate": "Expected Spring 2027",
+      "gradDate": "Expected May 2027",
       "coursework": ["Power Electronics", "Embedded Systems"],
       "activities": ["IEEE student branch"]
     }
