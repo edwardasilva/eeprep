@@ -1,6 +1,6 @@
 # Layout and section rules
 
-From [eeprep's resume page](https://eeprep.com/advice/resume/), which condenses the r/EngineeringResumes wiki. Where a rule is the eeprep author's and not the wiki's, it says so.
+From [eeprep's resume page](https://eeprep.com/advice/resume/), which condenses the r/EngineeringResumes wiki and career center guides. Where a rule is the eeprep author's, it says so.
 
 ## Layout
 
@@ -25,7 +25,7 @@ From [eeprep's resume page](https://eeprep.com/advice/resume/), which condenses 
 
 These are the wiki's orders. Skills goes last until the user starts a full-time job. Inside each section, put the most relevant or impressive entry first, and its strongest bullet first.
 
-Cut the objective or summary. The wiki keeps one only for senior engineers, career changers, and people returning from a gap. If the user insists, it is one line that names the role: "Seeking a summer 2027 embedded firmware internship."
+Cut the objective or summary. The wiki keeps a summary only for senior engineers, career changers, and people returning from a gap. It says nothing about an objective, and the author cuts one too. If the user insists, it is one line that names the role: "Seeking a summer 2027 embedded firmware internship."
 
 ## Header
 
@@ -35,7 +35,7 @@ Put "Willing to relocate" next to the location if it is true. A city far from th
 
 ## Education
 
-Degree on the first line with GPA on the same line. School under it with the graduation date at the right margin, "Expected" in front of it before graduation. One line each for "Relevant coursework:" and "Activities:", labels in bold. If you have taken graduate courses, list them first on their own line, labeled "Graduate coursework:". Write course names, such as Digital Signal Processing, never course codes. A code means nothing to a reader from another school. Drop high school after the first year. With a master's, keep the bachelor's line.
+Degree on the first line with GPA on the same line. School under it with the graduation date at the right margin, "Expected" in front of it before graduation. One line each for "Relevant coursework:" and "Activities:", labels in bold. If you have taken graduate courses, list them first on their own line, labeled "Graduate coursework:". Write course names, such as Digital Signal Processing, never course codes. A code means nothing to a reader from another school. Drop high school after the first year (author's advice). The wiki says to leave it off. With a master's, keep the bachelor's line.
 
 Coursework is where EE parts from the wiki. The wiki says to leave it off unless the courses are specialized. ECE interviewers say the courses show whether the student can pass the interview, and recruiters like it. List upper-level electives that match the posting.
 
@@ -43,7 +43,7 @@ GPA, author's rule of thumb: list 3.50 or higher. Michigan's and Berkeley's care
 
 ## Projects
 
-Call the section Projects. Leave the word "project" out of each title. Tools in parentheses after the title, dates at the right margin. Date projects by semester or by month, and use one style on every line of the section. If any project runs longer than a year, use months for the whole section (author's advice). Give the best projects more bullets and cut weak ones. Give firmware its own bullets, and for FPGA work, the testbenches. Move real technical club work out of Activities and into its own Projects entry.
+Call the section Projects. Leave the word "project" out of each title. Tools in parentheses after the title, dates at the right margin. Date projects by semester or by month, and use one style on every line of the section. If any project runs longer than a year, use months for the whole section. These project date rules are the author's. The wiki calls dates generally unnecessary for personal projects, and says not to mix months with seasons or semesters. Give the best projects more bullets and cut weak ones. Give firmware its own bullets, and for FPGA work, the testbenches. Move real technical club work out of Activities and into its own Projects entry.
 
 ## Experience
 
@@ -57,7 +57,7 @@ Two or three comma-separated lines with a bold label, most important first:
 - Hardware/Lab: oscilloscope, electronic load, logic analyzer, soldering
 - Certifications: only ones the user can prove
 
-Cut soft skills. Leave IDEs, editors, and notebook environments such as VS Code and Jupyter out of Skills, and name the tool in the bullet where it produced a result. Cut a vague "Knowledge" line unless it is certifiable. Write exact product names: C, C++ as two items, Ansys HFSS with the company name. When a posting names a skill the user has, use the posting's word. Every skill needs a bullet behind it. One line per group.
+Cut soft skills. Leave IDEs and editors such as VS Code out of Skills, as the wiki says. The author also leaves out notebook environments such as Jupyter. Name the tool in the bullet where it produced a result. Cut a vague "Knowledge" line unless it is certifiable. Write exact product names: C, C++ as two items, Ansys HFSS with the company name. When a posting names a skill the user has, use the posting's word. Every skill needs a bullet behind it. One line per group.
 
 ## A CV for a graduate application
 
@@ -74,7 +74,7 @@ When the user applies to a master's or PhD program, they may need a CV, not a re
 
 ## Dates
 
-One style inside each section. Jobs are always dated by month (author's advice). "Present" for an ongoing role. Spell month names: Jan, Feb, Mar, Apr, May, June, July, Aug, Sept, Oct, Nov, Dec. No days, no abbreviated years.
+One style inside each section, with jobs always dated by month (author's advice). "Present" for an ongoing role. Spell month names: Jan, Feb, Mar, Apr, May, June, July, Aug, Sept, Oct, Nov, Dec. No days, no abbreviated years.
 
 ## Questions students ask
 

@@ -14,7 +14,7 @@ metadata:
 
 <!-- vale Eeprep.SentenceCase = YES -->
 
-You are helping an engineering student or new graduate write a one-page resume that a screener reads in seconds and an interviewer can question for an hour. The rules come from [eeprep.com](https://eeprep.com/advice/resume/), which condenses the r/EngineeringResumes wiki, the threads cited on these pages, and posts from recruiters. They lean toward electrical, embedded, FPGA, and PCB work and follow US and Canadian norms.
+You are helping an engineering student or new graduate write a one-page resume that a screener reads in seconds and an interviewer can question for an hour. The rules come from [eeprep.com](https://eeprep.com/advice/resume/), which condenses the r/EngineeringResumes wiki, career center guides, the threads cited on these pages, and posts from recruiters. They lean toward electrical, embedded, FPGA, and PCB work and follow US and Canadian norms.
 
 ## The one rule that beats every other rule
 
@@ -62,4 +62,4 @@ The rules are on these pages, which link every claim to its source:
 - [The audit to run before you send](https://eeprep.com/advice/resume/cleanup/)
 - [Tailoring, versions, and reviewers](https://eeprep.com/advice/resume/#tailor-it-to-the-posting)
 - [The layout tool, resume-generator](https://github.com/edwardasilva/resume-generator)
-- [The wiki the rules condense](https://www.reddit.com/r/EngineeringResumes/wiki/index/)
+- [The wiki most of the rules condense](https://www.reddit.com/r/EngineeringResumes/wiki/index/)
