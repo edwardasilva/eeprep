@@ -563,6 +563,13 @@
     "pages": ["advice/resume"]
   },
   {
+    "url": "https://www.bosch-semiconductors.com/glossary/sic-mosfet/",
+    "title": "Bosch Semiconductors: What is a SiC MOSFET?",
+    "category": "Tools and project resources",
+    "summary": "Chip-maker glossary entry on silicon carbide MOSFETs, with junction temperature and cooling compared to silicon.",
+    "pages": ["advice/projects/hardware"]
+  },
+  {
     "url": "https://barrgroup.com/free-downloads",
     "title": "Barr Group: Free downloads",
     "category": "Tools and project resources",
@@ -867,6 +874,13 @@
     "title": "Blue Canyon Technologies",
     "category": "Job search and referrals",
     "summary": "Company site for a small-satellite and spacecraft component maker.",
+    "pages": ["advice/projects/hardware"]
+  },
+  {
+    "url": "https://job-boards.greenhouse.io/astranis/jobs/4716087006",
+    "title": "Astranis: Software defined radio hardware intern",
+    "category": "Job search and referrals",
+    "summary": "Astranis posting for a winter 2027 hardware intern with pay, location, and PCB build requirements.",
     "pages": ["advice/projects/hardware"]
   },
   {
@@ -2073,6 +2087,7 @@
       "advice/getting-hired/first-full-time-role",
       "advice/getting-hired/job-market",
       "advice/projects",
+      "advice/projects/hardware",
       "help",
       "help/resources"
     ]
@@ -2124,6 +2139,7 @@
     "pages": [
       "advice/getting-hired/first-full-time-role",
       "advice/projects",
+      "advice/projects/hardware",
       "advice/resume/walkthrough"
     ]
   },
@@ -2572,7 +2588,7 @@
     "title": "NACE: Key skills employers seek on resumes",
     "category": "Pay and career data",
     "summary": "NACE Job Outlook 2026 Spring Update: the skills employers look for on student resumes.",
-    "pages": ["advice/getting-hired/non-technical"]
+    "pages": ["advice/getting-hired/non-technical", "advice/projects/hardware"]
   },
   {
     "url": "https://www.naceweb.org/career-readiness/competencies/the-gap-in-perceptions-of-new-grads-competency-proficiency-and-resources-to-shrink-it",
