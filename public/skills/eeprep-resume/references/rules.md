@@ -17,14 +17,13 @@ From [eeprep's resume page](https://eeprep.com/advice/resume/), which condenses 
 
 ## Section order
 
-| Who                                           | Order                                                     |
-| --------------------------------------------- | --------------------------------------------------------- |
-| Student with no technical job yet             | Education, Skills, Projects, Experience                   |
-| Student whose projects are the strongest part | Projects, Experience, Education, Skills (author's advice) |
-| Graduate at work                              | Experience, Education, Skills                             |
-| Working engineer                              | Experience, Projects, Education, Skills (author's advice) |
+| Who                                                                | Order                                   |
+| ------------------------------------------------------------------ | --------------------------------------- |
+| Student or new graduate with no technical work experience          | Education, Projects, Experience, Skills |
+| Student or new graduate with an internship or other technical work | Education, Experience, Projects, Skills |
+| Graduate in a full-time job                                        | Experience, Skills, Education           |
 
-Skills goes right under Education in every order.
+These are the wiki's orders. Skills goes last until the user starts a full-time job. Inside each section, put the most relevant or impressive entry first, and its strongest bullet first.
 
 Cut the objective or summary. The wiki keeps one only for senior engineers, career changers, and people returning from a gap. If the user insists, it is one line that names the role: "Seeking a summer 2027 embedded firmware internship."
 
@@ -66,7 +65,7 @@ When the user applies to a master's or PhD program, they may need a CV, not a re
 
 - Length: up to two pages.
 - Page break: do not split an entry's heading from its bullets across the page break.
-- Order: Education first, Skills right under it, then Experience.
+- Order: Education first, then research and Experience, with Skills last.
 - Research: add research, papers, and talks.
 - GPA: list the overall GPA with its scale, such as 3.44/4.00, even below the 3.50 cutoff a job resume uses.
 - Graduate GPA: do not put a graduate-only GPA on the degree line in place of the overall GPA.
