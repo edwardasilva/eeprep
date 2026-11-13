@@ -18,7 +18,7 @@
     "title": "Greenhouse: Auto-reject",
     "category": "Resume guides",
     "summary": "Greenhouse help article on how employers set rules that reject applications automatically.",
-    "pages": ["advice/resume"]
+    "pages": ["advice/resume", "advice/resume/workshop"]
   },
   {
     "url": "https://my.greenhouse.com/blogs/what-really-happens-after-you-apply-for-a-job",
@@ -29,6 +29,7 @@
       "advice/getting-hired",
       "advice/resume",
       "advice/resume/quick-setup",
+      "advice/resume/workshop",
       "help/ai-use",
       "help/job-boards"
     ]
@@ -48,7 +49,8 @@
     "pages": [
       "advice/resume",
       "advice/resume/cleanup",
-      "advice/resume/walkthrough"
+      "advice/resume/walkthrough",
+      "advice/resume/workshop"
     ]
   },
   {
@@ -160,7 +162,7 @@
     "title": "UC Berkeley: Resumes",
     "category": "Resume guides",
     "summary": "Berkeley's career center guide to resumes, including how to quantify results.",
-    "pages": ["advice/resume"]
+    "pages": ["advice/resume", "advice/resume/workshop"]
   },
   {
     "url": "https://www.reddit.com/r/EngineeringResumes/comments/1cms7al/random_thoughts_on_resumes/",
@@ -181,7 +183,7 @@
     "title": "Georgia Tech: Cover letter guide 2026",
     "category": "Resume guides",
     "summary": "Georgia Tech's guide to when and how to write a cover letter.",
-    "pages": ["help/resources"]
+    "pages": ["advice/resume/workshop", "help/resources"]
   },
   {
     "url": "https://capd.mit.edu/resources/graduate-school-application-essays/",
@@ -2073,6 +2075,7 @@
       "advice/getting-hired/first-full-time-role",
       "advice/getting-hired/job-market",
       "advice/projects",
+      "advice/resume/workshop",
       "help",
       "help/resources"
     ]
