@@ -21,19 +21,20 @@ const zones: { label: string; check: string; rows?: Row[] }[] = [
 	},
 	{
 		label: 'Header',
-		check: 'Every link clicked. Plain text, no icons. Location and relocation.',
+		check:
+			'Every link clicked. Plain text, no icons. One contact line, then an optional location line with "Willing to relocate" if you will move.',
 		rows: [{ w: 36, bold: true }, { w: 90 }, { w: 40 }],
 	},
 	{
 		label: 'Education',
 		check:
-			'GPA listed at 3.50 or higher, from 3.0 to 3.49 only when the posting sets a minimum you meet, off below 3.0. One line of coursework.',
+			'GPA listed at 3.50 or higher, from 3.0 to 3.49 only when the posting sets a minimum you meet, off below 3.0. One line of upper-level coursework, if you have any.',
 		rows: [{ w: 62, bold: true }, { w: 40, d: true }, { w: 70 }],
 	},
 	{
 		label: 'Projects',
 		check:
-			'Each bullet: a past-tense verb, a tool, and a number you measured and can explain.',
+			'Each bullet: a past-tense verb, a tool, and a number wherever you measured one. Explain every number.',
 		rows: [
 			{ w: 52, bold: true, d: true },
 			{ w: 88 },
@@ -57,7 +58,7 @@ const zones: { label: string; check: string; rows?: Row[] }[] = [
 	},
 ];
 const alt =
-	"A schematic one-page resume with six regions outlined, and one check beside each. File: extract the text and read it in order, one page, title and author set. Header: every link clicked, plain text, no icons, location and relocation. Education: GPA listed at 3.50 or higher, from 3.0 to 3.49 only when the posting sets a minimum you meet, off below 3.0, one line of coursework. Projects: each bullet has a past-tense verb, a tool, and a number you measured and can explain. Experience: unrelated jobs cut to one line once you have an internship or other technical work, and engineering roles get bullets. Skills: every tool appears in a bullet, no soft skills, C and C++ as two items. The page is drawn the way Alex's finished page is formatted: a centered header with a name, one contact line, and relocation, then Education, Projects, Experience, and Skills in that order, left-aligned, with a date at the right margin of each entry and an equal gap between sections.";
+	"A schematic one-page resume with six regions outlined, and one check beside each. File: extract the text and read it in order, one page, title and author set. Header: every link clicked, plain text, no icons, one contact line, then an optional location line that says you are willing to relocate if you will move. Education: GPA listed at 3.50 or higher, from 3.0 to 3.49 only when the posting sets a minimum you meet, off below 3.0, one line of upper-level coursework if you have any. Projects: each bullet has a past-tense verb, a tool, and a number wherever you measured one, and you can explain every number. Experience: unrelated jobs cut to one line once you have an internship or other technical work, and engineering roles get bullets. Skills: every tool appears in a bullet, no soft skills, C and C++ as two items. The page is drawn the way Alex's finished page is formatted: a centered header with a name, one contact line, and a line for location and relocation, then Education, Projects, Experience, and Skills in that order, left-aligned, with a date at the right margin of each entry and an equal gap between sections.";
 const caption = externalLinks(
 	`Each region gets one check, in the order of Alex's page. Check yours in the order your page uses. Sources: the <a href="https://www.reddit.com/r/EngineeringResumes/wiki/index/">r/EngineeringResumes wiki</a>, <a href="https://capd.mit.edu/resources/make-your-resume-ats-friendly/">MIT's career office on ATS-friendly resumes</a>, and <a href="https://ecs.grainger.illinois.edu/student-resources/resumes-letters/resumes">Illinois Engineering Career Services</a>.`,
 );
