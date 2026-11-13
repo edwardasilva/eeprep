@@ -1,6 +1,6 @@
 # Layout and section rules
 
-From [eeprep's resume page](https://eeprep.com/advice/resume/), which condenses the r/EngineeringResumes wiki and career center guides. Where a rule is the eeprep author's, it says so.
+From [eeprep's resume page](https://eeprep.com/advice/resume/), which condenses the r/EngineeringResumes wiki and career center guides. Where a rule is the eeprep author's, it says so. The wiki's rules are a sound default, and the author's rules are what worked for the author in practice. The resume page's section "Where eeprep differs from the wiki" lists each one.
 
 ## Layout
 
