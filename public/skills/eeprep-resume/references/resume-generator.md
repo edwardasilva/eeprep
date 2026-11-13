@@ -68,7 +68,7 @@
 
 - Every date in a section uses that section's date style, `semester` (Fall 2025) or `month` (Sept 2025, and Sep 2025 also works). Mixing them stops the build.
 - A blank field or an empty list is left out of the PDF.
-- `engineering: false` keeps a job's bullets while the resume has no engineering job. Once another job has `"engineering": true`, the false one drops to one line and loses its bullets, with a note.
+- `engineering: false` keeps a job's bullets while the page has room for them. Once another job has `"engineering": true` and the rest of the resume fills the page, the false one drops to one line and loses its bullets, with a note. So give a job outside engineering one or two bullets, and let the build decide.
 - `hide: true` leaves an entry out without deleting it. Use it for a version aimed at one niche.
 - Links must be web addresses, `mailto:`, or `tel:`. Inside a bullet, `[text](url)` links the text.
 - The build keeps the margins at 0.5 in and steps text from 11 pt to 10 pt until the page fits, then fills the page by growing the spacing. It never shrinks spacing below the eeprep limits. If it still does not fit, it says about how many lines to cut.
