@@ -61,7 +61,7 @@ function companyCell(row: (typeof rows)[number]): string {
 	if (!row.careersUrl) {
 		return name;
 	}
-	return `${name} ${extLink(row.careersUrl, 'Careers')}`;
+	return `${name} ${extLink(row.careersUrl, 'careers')}`;
 }
 ---
 
