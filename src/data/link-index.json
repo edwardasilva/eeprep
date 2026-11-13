@@ -864,7 +864,7 @@
     "pages": ["advice/projects/portfolio"]
   },
   {
-    "url": "https://vercel.com/docs/plans/hobby-plan",
+    "url": "https://vercel.com/docs/plans/hobby",
     "title": "Vercel Docs: The Hobby plan",
     "category": "Tools and project resources",
     "summary": "What Vercel's free plan includes and its personal-use rule.",
@@ -1438,7 +1438,7 @@
     "pages": ["help/job-boards"]
   },
   {
-    "url": "https://www.indeed.com/hire/c/info/job-boards",
+    "url": "https://www.indeed.com/hire/resources/howtohub/indeed-vs-job-boards-and-job-search-engines",
     "title": "Indeed: How job postings reach Indeed",
     "category": "Job search and referrals",
     "summary": "Indeed's own explanation that it indexes outside postings and hosts direct posts.",
@@ -2719,7 +2719,7 @@
     "pages": ["advice/forever-learning/graduate-study"]
   },
   {
-    "url": "https://umaine.edu/academics/?p=11111",
+    "url": "https://umaine.edu/academics/electrical-engineering-m-s/",
     "title": "University of Maine: The EE master's",
     "category": "Pay and career data",
     "summary": "One school's description of the one-year and two-year master's paths.",
@@ -3208,7 +3208,7 @@
     "pages": ["help/ai-use"]
   },
   {
-    "url": "https://alumni.ucdavis.edu/node/12666",
+    "url": "https://alumni.ucdavis.edu/news/using-ai-job-search",
     "title": "UC Davis: Using AI in the job search",
     "category": "AI in the job search",
     "summary": "Career office prompts for AI review of a resume against a posting.",
