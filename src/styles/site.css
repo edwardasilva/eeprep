@@ -105,6 +105,10 @@
 .eep-hero p {
 	max-width: var(--eep-measure);
 }
+/* The note under the lead that the guide is mostly opinion. */
+.eep-hero .eep-disclaimer {
+	color: var(--eep-ink-2);
+}
 .eep-hero h1 {
 	font-family: var(--eep-font-serif);
 	font-weight: 500;
