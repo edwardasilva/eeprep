@@ -348,14 +348,14 @@
     "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Alex-Doe-Resume-first-year.pdf",
     "title": "resume-generator: Alex-Doe-Resume-first-year.pdf",
     "category": "Sample resumes and templates",
-    "summary": "A first-year student's page: one class project, a one-line job, and a few skills.",
+    "summary": "A first-year student's page: one class project, a job with two bullets, and a few skills.",
     "pages": ["advice/resume/walkthrough"]
   },
   {
     "url": "https://github.com/edwardasilva/resume-generator/blob/main/examples/Alex-Doe-Resume-sophomore.pdf",
     "title": "resume-generator: Alex-Doe-Resume-sophomore.pdf",
     "category": "Sample resumes and templates",
-    "summary": "A second-year student's page: two projects, a club lead role, and a one-line job.",
+    "summary": "A second-year student's page: two projects, a club lead role, and a job with two bullets.",
     "pages": ["advice/resume/walkthrough"]
   },
   {
