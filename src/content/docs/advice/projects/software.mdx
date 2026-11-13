@@ -9,23 +9,21 @@ head:
 
 import LabScriptFigure from '../../../../components/projects/LabScriptFigure.astro';
 
-Write software that touches hardware. For an EECS student, that means firmware on a microcontroller, Python that runs a lab instrument, or a testbench for an FPGA design. Put each project on GitHub with a README, and give each resume line a measured number. Most of this work needs only a computer and a dev board.
+Write software that touches hardware. For an EECS student, that means firmware on a microcontroller, Python that runs a lab instrument, or a testbench for an FPGA (field-programmable gate array) design. Put each project on GitHub with a README, and give each resume line a measured number. Most of this work needs only a computer and a dev board.
 
 ## Why write software that touches hardware
 
-EE employers hire for software. [Texas Instruments lists software engineer among its new-grad engineering roles](https://careers.ti.com/en/sites/CX/pages/students-new-grads), with work in embedded programming. [A TI posting for a new-grad software engineer](https://career.clemson.edu/jobs/texas-instruments-ti-career-accelerator-program-software-engineer/) accepts a degree in EE or ECE. It prefers C, C++, and assembly.
+EE employers hire for software. [Texas Instruments (TI) lists software engineer among its new-grad engineering roles](https://careers.ti.com/en/sites/CX/pages/students-new-grads), with work in embedded programming. [A TI posting for a new-grad software engineer](https://career.clemson.edu/jobs/texas-instruments-ti-career-accelerator-program-software-engineer/) accepts a degree in electrical engineering or in electrical and computer engineering, and it prefers C, C++, and assembly.
 
-[One recruiter in aerospace and defense wrote that embedded software engineers are the hardest and most expensive candidates to find in that industry](https://www.reddit.com/r/EngineeringResumes/comments/1sj2rgt/student_landed_nvidia_offer_sophomore_cs_major_at/).
-
-Be ready to talk about both hardware and software.
+[One recruiter in aerospace and defense wrote that embedded software engineers are probably the hardest and most expensive candidates to find in that industry](https://www.reddit.com/r/EngineeringResumes/comments/1sj2rgt/student_landed_nvidia_offer_sophomore_cs_major_at/). Be ready to talk about both hardware and software.
 
 ## Embedded firmware
 
-Firmware is the code that runs on a microcontroller. Start bare metal, with no operating system: set up a timer, read an ADC, and handle an interrupt. The long converter entry under the [[Hardware#Hardware builds that count|hardware builds that count]] section on the hardware page has firmware that tunes dead time on an STM32 timer, samples input current at [X] kHz, and cuts the rail within [Y] microseconds of a fault.
+Firmware is the code that runs on a microcontroller. Start bare metal, with no operating system: set up a timer, read an ADC (analog-to-digital converter), and handle an interrupt. For an example, see the long converter entry under the [[Hardware#Hardware builds that count|hardware builds that count]] section on the hardware page. Its firmware tunes dead time on an STM32 timer, samples input current at [X] kHz, and cuts the rail within [Y] microseconds of a fault.
 
-Add a real-time operating system once bare metal works. [FreeRTOS is a free kernel for microcontrollers, under the MIT license](https://www.freertos.org/).
+Once bare metal works, add a real-time operating system. [FreeRTOS is a free kernel for microcontrollers, under the open-source MIT License](https://www.freertos.org/).
 
-Follow a coding standard. [Barr Group offers its Embedded C Coding Standard as a free download](https://barrgroup.com/free-downloads). It sets rules for data types, functions, macros, and variables to keep bugs out of firmware.
+Follow a coding standard. [Barr Group offers its Embedded C Coding Standard as a free download](https://barrgroup.com/free-downloads), and the standard sets rules for data types, functions, macros, and variables to keep bugs out of firmware.
 
 If you have no board yet, the [[Hardware#Starting on a student budget|section on starting on a student budget]] on the hardware page lists a free browser simulator for Arduino, ESP32, and STM32. Interviewers ask about `volatile` and interrupts, and the [[How to interview#Fundamentals from the ground up|fundamentals from the ground up]] section on the how to interview page lists what to know.
 
@@ -60,10 +58,10 @@ Put each project in its own repository with a README. [GitHub says a README tell
 - How to build it and flash it.
 - What broke, and how you fixed it.
 
-[Pin up to six repositories to your GitHub profile](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/pinning-items-to-your-profile), so your best work shows first. [A profile README](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme) can introduce you and link each project.
+[Pin up to six repositories to your GitHub profile](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/pinning-items-to-your-profile), so your best work shows first. [A profile README](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme) can introduce you and link each project. For a class project, check the course policy before you make the repository public.
 
 ## Put it on the resume
 
-Write a software line the way you write a hardware line: the action, the tool, and a measured result. The battery monitor line under the [[Hardware#Hardware builds that count|hardware builds that count]] section on the hardware page follows it: "Tracked [X] Li-ion cells within [Y] mV each on an ESP32 that streams to a Python dashboard."
+Write a software line the way you write a hardware line: the action, the tool, and a measured result. The battery monitor line under the [[Hardware#Hardware builds that count|hardware builds that count]] section on the hardware page follows that pattern: "Tracked [X] Li-ion cells within [Y] mV each on an ESP32 that streams to a Python dashboard."
 
 Expect questions on every line. [A student who landed an NVIDIA internship said the interview questions were about how they built each project and what they did](https://www.reddit.com/r/EngineeringResumes/comments/1sj2rgt/student_landed_nvidia_offer_sophomore_cs_major_at/).
