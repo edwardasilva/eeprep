@@ -998,6 +998,13 @@
     "pages": ["advice/getting-hired"]
   },
   {
+    "url": "https://ecs.grainger.illinois.edu/employer-resources/career-fair",
+    "title": "Illinois Engineering: Career fair dates",
+    "category": "Job search and referrals",
+    "summary": "Illinois Grainger spring 2027 career fair: internships and full-time positions on both days.",
+    "pages": ["advice/getting-hired/first-internship"]
+  },
+  {
     "url": "https://www.indeed.com/",
     "title": "Indeed",
     "category": "Job search and referrals",
@@ -2216,7 +2223,10 @@
     "title": "NACE: Intern conversion rate hits five-year high",
     "category": "Pay and career data",
     "summary": "NACE data on how many interns received and accepted full-time offers, 2024–25.",
-    "pages": ["advice/getting-hired/first-full-time-role"]
+    "pages": [
+      "advice/getting-hired/first-full-time-role",
+      "advice/getting-hired/first-internship"
+    ]
   },
   {
     "url": "https://www.naceweb.org/talent-acquisition/candidate-selection/internship-experience-often-the-deciding-factor-between-equal-candidates",
@@ -2225,6 +2235,7 @@
     "summary": "NACE Job Outlook 2026: attributes employers use to choose between equal candidates.",
     "pages": [
       "advice/getting-hired/first-full-time-role",
+      "advice/getting-hired/first-internship",
       "advice/projects",
       "advice/projects/hardware",
       "advice/resume/walkthrough"
@@ -2296,6 +2307,13 @@
     "category": "Pay and career data",
     "summary": "Spring 2025: Handshake postings down 15% in a year, applications per job up 30%.",
     "pages": ["advice/getting-hired/job-market", "help/job-boards"]
+  },
+  {
+    "url": "https://www.benefitnews.com/articles/internship-hunt-starts-earlier-as-students-parents-stress-over-jobs",
+    "title": "Employee Benefit News: Internship hunt starts earlier",
+    "category": "Pay and career data",
+    "summary": "Handshake data on first-year students applying to internships: almost 15 percent of the class of 2028 versus under 3 percent of the class of 2024.",
+    "pages": ["advice/getting-hired/first-internship"]
   },
   {
     "url": "https://hkn.ieee.org/knowledge-base/what-is-the-cost-of-an-induction?seq_no=2",
