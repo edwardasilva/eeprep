@@ -100,13 +100,12 @@
 	padding: 2.5rem 0 1rem;
 }
 /* The heading uses the full splash column, the same width as the
-   two-column grid below, so the block is one centered measure. The
-   lead keeps the prose measure and the same left edge. */
-.eep-hero p {
+   two-column grid below. The lead about the guide sits under both columns. */
+.eep-home-intro p {
 	max-width: var(--eep-measure);
 }
 /* The note under the lead that the guide is mostly opinion. */
-.eep-hero .eep-disclaimer {
+.eep-home-intro .eep-disclaimer {
 	color: var(--eep-ink-2);
 }
 .eep-hero h1 {
@@ -167,7 +166,7 @@ button[data-open-modal] kbd {
 .eep-home {
 	display: grid;
 	gap: 2.5rem;
-	margin-top: 1.5rem;
+	margin-top: 0.5rem;
 	counter-reset: eep-fig;
 }
 /* Starlight adds a top margin to every block after the first. In this grid
@@ -175,31 +174,47 @@ button[data-open-modal] kbd {
 .eep-home > * {
 	margin-top: 0;
 }
-/* Below 64rem the grid gap spaces the cards, so drop their own margin. */
+/* Below 64rem the grid gap spaces the blocks, so drop the cards' own margin. */
 .eep-home > .eep-cards {
-	margin-bottom: 0;
+	margin: 0;
+}
+.eep-home-intro > :first-child {
+	margin-top: 0;
 }
 @media (min-width: 64rem) {
+	/* Two columns from the top: the cover on the left, and the cards and the
+	   links on the right, starting at the same line. The lead about the guide
+	   runs across both columns underneath. */
 	.eep-home {
-		grid-template-columns: minmax(0, 1fr) 34rem;
-		grid-template-rows: auto 1fr;
-		column-gap: 4rem;
-		row-gap: 0;
+		grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+		grid-template-rows: auto 1fr auto;
+		column-gap: clamp(2rem, 4vw, 4rem);
+		row-gap: 2rem;
 		align-items: start;
 	}
-	/* The cards come first in the markup so the tab order matches the stacked
-	   layout. Here the cover moves to the right column beside cards and text. */
-	.eep-home > .eep-cards {
-		grid-column: 1;
-		grid-row: 1;
-		margin-bottom: 2.5rem;
-	}
+	/* The cards and links come first in the markup so the tab order matches
+	   the stacked layout. Here the cover moves to the left column beside them. */
 	.home-cover {
-		grid-column: 2;
+		grid-column: 1;
 		grid-row: 1 / span 2;
 	}
+	.eep-home-intro {
+		grid-column: 1 / -1;
+		grid-row: 3;
+		padding-top: 2rem;
+		border-top: var(--eep-border);
+	}
+	.eep-home-intro p {
+		max-width: none;
+	}
+	/* Two cards side by side whenever the text column shows, at any zoom. */
+	.eep-home > .eep-cards {
+		grid-column: 2;
+		grid-row: 1;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
 	.eep-home-main {
-		grid-column: 1;
+		grid-column: 2;
 		grid-row: 2;
 	}
 }
