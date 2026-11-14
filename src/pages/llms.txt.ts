@@ -60,7 +60,7 @@ export const GET: APIRoute = async ({ site }) => {
 		'',
 		`- [eeprep resume skill](${new URL('/skills/eeprep-resume/SKILL.md', base).href}): An agent skill that writes, reviews, and tailors a one-page engineering resume to the rules on this site.`,
 		'- [resume-generator](https://github.com/edwardasilva/resume-generator): Turns one JSON file into a one-page PDF resume.',
-		'- [company-lists](https://github.com/edwardasilva/company-lists): Companies by region, each with a public source, for students looking for employers near them.',
+		'- [company-lists](https://github.com/edwardasilva/company-lists): Companies by state and city, each with a public source, for students looking for employers near them.',
 		'- [Source code](https://github.com/edwardasilva/eeprep): The repository that builds eeprep.com.',
 		'',
 	];

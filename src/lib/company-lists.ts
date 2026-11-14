@@ -1,8 +1,8 @@
 // Build-time loader for the company list page. Reads every
-// company-lists/data/<country>/<state>/<region>.csv file in the submodule,
+// company-lists/data/<country>/<state>/<state>.csv file in the submodule,
 // drops staffing-eligibility columns, and returns the rows plus the labels
-// and filter values the page needs. Country, state, and region come from the
-// file path, not from CSV cells. New state files show up with no code
+// and filter values the page needs. Country and state come from the file
+// path, not from CSV cells. New state files show up with no code
 // change. There is no runtime fetch.
 
 import fs from 'node:fs';
@@ -49,24 +49,22 @@ export type CompanyRow = {
 	fieldLabel: string;
 	city: string;
 	state: string;
-	region: string;
 	country: string;
 	sourceUrl: string;
 	notes: string;
 	search: string;
-	// Every location of the company, in a stable order. city, state, and
-	// region hold the same values joined with "; " for display.
+	// Every location of the company, in a stable order. city and state hold
+	// the same values joined with "; " for display.
 	locations: CompanyLocation[];
 };
 
 export type CompanyLocation = {
 	city: string;
 	state: string;
-	region: string;
 };
 
 export type CompanyFilter = {
-	name: 'state' | 'region' | 'industry' | 'field' | 'city';
+	name: 'state' | 'industry' | 'field' | 'city';
 	label: string;
 	options: { value: string; label: string }[];
 };
@@ -181,14 +179,6 @@ function codeFromSlug(slug: string): string {
 	return slug.toUpperCase();
 }
 
-/** "northern-virginia" -> "Northern Virginia". */
-function regionFromSlug(slug: string): string {
-	return slug
-		.split('-')
-		.map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-		.join(' ');
-}
-
 function loadFieldLabels(): Map<string, string> {
 	const labels = new Map<string, string>();
 	if (!fs.existsSync(INDUSTRIES)) {
@@ -267,7 +257,7 @@ function optionList(
 const LOCATION_JOIN = '; ';
 
 /**
- * Key that identifies one company across regions: the website host without
+ * Key that identifies one company across locations: the website host without
  * a leading "www.", or the lowercased name when there is no usable website.
  */
 export function companyKey(row: { name: string; website: string }): string {
@@ -287,7 +277,7 @@ function joinUnique(values: string[]): string {
 }
 
 /**
- * Merge rows that describe the same company in different regions into one
+ * Merge rows that describe the same company in different cities into one
  * row that lists every location. Input order decides which row supplies the
  * shared fields, so sort the input first.
  */
@@ -314,7 +304,6 @@ export function mergeCompanies(rows: CompanyRow[]): CompanyRow[] {
 			careersUrl: group.find((row) => row.careersUrl)?.careersUrl ?? '',
 			city: joinUnique(locations.map((l) => l.city)),
 			state: joinUnique(locations.map((l) => l.state)),
-			region: joinUnique(locations.map((l) => l.region)),
 			locations,
 			search: [...new Set(group.map((row) => row.search))].join(' '),
 		};
@@ -322,16 +311,16 @@ export function mergeCompanies(rows: CompanyRow[]): CompanyRow[] {
 }
 
 /**
- * Companies listed more than once in the same region, as "company (region,
- * state)". Run it on the per-region rows, before mergeCompanies.
+ * Companies listed more than once in the same city, as "company (city,
+ * state)". Run it on the per-location rows, before mergeCompanies.
  */
 export function duplicateCompanies(rows: CompanyRow[]): string[] {
 	const seen = new Set<string>();
 	const dupes = new Set<string>();
 	for (const row of rows) {
-		const key = `${companyKey(row)}|${row.country}|${row.state}|${row.region}`;
+		const key = `${companyKey(row)}|${row.country}|${row.state}|${row.city.trim().toLowerCase()}`;
 		if (seen.has(key)) {
-			dupes.add(`${companyKey(row)} (${row.region}, ${row.state})`);
+			dupes.add(`${companyKey(row)} (${row.city}, ${row.state})`);
 		}
 		seen.add(key);
 	}
@@ -363,7 +352,6 @@ export function loadCompanyList(): CompanyListData {
 		}
 		const country = codeFromSlug(parts[0]);
 		const state = codeFromSlug(parts[1]);
-		const region = regionFromSlug(parts[2].replace(/\.csv$/, ''));
 		const table = parseCsv(fs.readFileSync(file, 'utf8'));
 		if (table.length === 0) {
 			throw new Error(`${rel} is empty.`);
@@ -398,7 +386,6 @@ export function loadCompanyList(): CompanyListData {
 				raw.name,
 				raw.city,
 				state,
-				region,
 				country,
 				industry,
 				industryLabelText,
@@ -420,7 +407,6 @@ export function loadCompanyList(): CompanyListData {
 				fieldLabel,
 				city: raw.city ?? '',
 				state,
-				region,
 				country,
 				sourceUrl: raw.source_url ?? '',
 				notes: raw.notes ?? '',
@@ -429,7 +415,6 @@ export function loadCompanyList(): CompanyListData {
 					{
 						city: raw.city ?? '',
 						state,
-						region,
 					},
 				],
 			});
@@ -439,10 +424,10 @@ export function loadCompanyList(): CompanyListData {
 	if (rows.length === 0) {
 		throw new Error('company-lists/data has no company rows.');
 	}
-	const missing = rows.filter((row) => !row.state || !row.region);
+	const missing = rows.filter((row) => !row.state || !row.city);
 	if (missing.length > 0) {
 		throw new Error(
-			`Company list rows with an empty state or region: ${missing
+			`Company list rows with an empty state or city: ${missing
 				.map((row) => row.id)
 				.join(', ')}.`,
 		);
@@ -457,15 +442,15 @@ export function loadCompanyList(): CompanyListData {
 	});
 
 	// The merge folds every row for one company into one, so check the
-	// per-region rows first.
+	// per-location rows first.
 	const dupes = duplicateCompanies(rows);
 	if (dupes.length > 0) {
 		throw new Error(
-			`Company list has the same company twice in one region: ${dupes.join(', ')}.`,
+			`Company list has the same company twice in one city: ${dupes.join(', ')}.`,
 		);
 	}
 
-	// Filter options come from the per-region rows.
+	// Filter options come from the per-location rows.
 	const merged = mergeCompanies(rows);
 
 	const filters: CompanyFilter[] = [
@@ -475,15 +460,6 @@ export function loadCompanyList(): CompanyListData {
 			options: optionList(
 				rows,
 				(row) => row.state,
-				(value) => value,
-			),
-		},
-		{
-			name: 'region',
-			label: 'Region',
-			options: optionList(
-				rows,
-				(row) => row.region,
 				(value) => value,
 			),
 		},
