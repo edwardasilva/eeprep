@@ -186,9 +186,9 @@ button[data-open-modal] kbd {
 	/* Two columns from the top: the cover on the left, and the lead, the
 	   cards, and the links on the right, all starting at the same line. */
 	.eep-home {
-		grid-template-columns: 30rem minmax(0, 1fr);
+		grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
 		grid-template-rows: auto auto 1fr;
-		column-gap: 4rem;
+		column-gap: clamp(2rem, 4vw, 4rem);
 		row-gap: 2rem;
 		align-items: start;
 	}
@@ -202,9 +202,11 @@ button[data-open-modal] kbd {
 		grid-column: 2;
 		grid-row: 1;
 	}
+	/* Two cards side by side whenever the text column shows, at any zoom. */
 	.eep-home > .eep-cards {
 		grid-column: 2;
 		grid-row: 2;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 	.eep-home-main {
 		grid-column: 2;
