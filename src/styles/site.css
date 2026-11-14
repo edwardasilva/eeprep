@@ -100,8 +100,7 @@
 	padding: 2.5rem 0 1rem;
 }
 /* The heading uses the full splash column, the same width as the
-   two-column grid below. The lead sits in the grid's text column and
-   keeps the prose measure. */
+   two-column grid below. The lead about the guide sits under both columns. */
 .eep-home-intro p {
 	max-width: var(--eep-measure);
 }
@@ -183,34 +182,40 @@ button[data-open-modal] kbd {
 	margin-top: 0;
 }
 @media (min-width: 64rem) {
-	/* Two columns from the top: the cover on the left, and the lead, the
-	   cards, and the links on the right, all starting at the same line. */
+	/* Two columns from the top: the cover on the left, and the cards and the
+	   links on the right, starting at the same line. The lead about the guide
+	   runs across both columns underneath. */
 	.eep-home {
 		grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
-		grid-template-rows: auto auto 1fr;
+		grid-template-rows: auto 1fr auto;
 		column-gap: clamp(2rem, 4vw, 4rem);
 		row-gap: 2rem;
 		align-items: start;
 	}
-	/* The text comes first in the markup so the tab order matches the stacked
-	   layout. Here the cover moves to the left column beside it. */
+	/* The cards and links come first in the markup so the tab order matches
+	   the stacked layout. Here the cover moves to the left column beside them. */
 	.home-cover {
 		grid-column: 1;
-		grid-row: 1 / span 3;
+		grid-row: 1 / span 2;
 	}
 	.eep-home-intro {
-		grid-column: 2;
-		grid-row: 1;
+		grid-column: 1 / -1;
+		grid-row: 3;
+		padding-top: 2rem;
+		border-top: var(--eep-border);
+	}
+	.eep-home-intro p {
+		max-width: none;
 	}
 	/* Two cards side by side whenever the text column shows, at any zoom. */
 	.eep-home > .eep-cards {
 		grid-column: 2;
-		grid-row: 2;
+		grid-row: 1;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 	.eep-home-main {
 		grid-column: 2;
-		grid-row: 3;
+		grid-row: 2;
 	}
 }
 .wikilink-missing {
