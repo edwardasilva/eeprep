@@ -112,15 +112,27 @@ jobs:
       - name: Dev server serves pages
         if: ${{ !cancelled() && steps.install.outcome == 'success' && steps.scope.outputs.code == 'true' }}
         run: npm run check:dev
+      # deploy.yml pins Wrangler once for each target, so every wranglerVersion
+      # line must match, not only the first one.
       - name: Deploy pins the same Wrangler as package.json
         if: ${{ !cancelled() }}
         run: |
           set -euo pipefail
+          file=.github/workflows/deploy.yml
           want="$(node -p "require('./package.json').devDependencies.wrangler")"
-          if ! grep -Eq "^ +wranglerVersion: ${want//./\\.}$" .github/workflows/deploy.yml; then
-            echo "::error file=.github/workflows/deploy.yml::wranglerVersion must be $want, the wrangler version in package.json."
+          lines="$(grep -En '^ +wranglerVersion:' "$file" || true)"
+          if [ -z "$lines" ]; then
+            echo "::error file=$file::$file has no wranglerVersion line. Pin it to $want, the wrangler version in package.json."
             exit 1
           fi
+          bad="$(printf '%s\n' "$lines" | grep -Ev "^[0-9]+: +wranglerVersion: ${want//./\\.}$" || true)"
+          status=0
+          while IFS= read -r entry; do
+            [ -n "$entry" ] || continue
+            echo "::error file=$file,line=${entry%%:*}::wranglerVersion must be $want, the wrangler version in package.json."
+            status=1
+          done <<< "$bad"
+          exit "$status"
 
       # The build, then the checks that read dist/.
       - name: Build
