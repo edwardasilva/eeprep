@@ -77,47 +77,52 @@ function companyCell(row: (typeof rows)[number]): string {
 				spellcheck="false"
 			/>
 		</div>
-		<div class="eep-companies-filters">
-			{filters.map((filter) => (
+		<details class="eep-companies-advanced" data-advanced>
+			<summary>
+				Advanced search<span data-advanced-count></span>
+			</summary>
+			<div class="eep-companies-filters">
+				{filters.map((filter) => (
+					<div class="eep-companies-field">
+						<label for={`eep-companies-${filter.name}`}>{filter.label}</label>
+						<select id={`eep-companies-${filter.name}`} name={filter.name}>
+							<option value="">All</option>
+							{filter.options.map((option) => (
+								<option
+									value={option.value}
+									data-industries={
+										filter.name === 'field'
+											? fieldIndustries.get(option.value)?.join(' ')
+											: undefined
+									}
+								>
+									{option.label}
+								</option>
+							))}
+						</select>
+					</div>
+				))}
 				<div class="eep-companies-field">
-					<label for={`eep-companies-${filter.name}`}>{filter.label}</label>
-					<select id={`eep-companies-${filter.name}`} name={filter.name}>
-						<option value="">All</option>
-						{filter.options.map((option) => (
-							<option
-								value={option.value}
-								data-industries={
-									filter.name === 'field'
-										? fieldIndustries.get(option.value)?.join(' ')
-										: undefined
-								}
-							>
+					<label for="eep-companies-sort">Sort by</label>
+					<select id="eep-companies-sort" name="sort">
+						{sortOptions.map((option) => (
+							<option value={option.value} selected={option.value === 'name'}>
 								{option.label}
 							</option>
 						))}
 					</select>
 				</div>
-			))}
-			<div class="eep-companies-field">
-				<label for="eep-companies-sort">Sort by</label>
-				<select id="eep-companies-sort" name="sort">
-					{sortOptions.map((option) => (
-						<option value={option.value} selected={option.value === 'name'}>
-							{option.label}
+				<div class="eep-companies-field">
+					<label for="eep-companies-dir">Order</label>
+					<select id="eep-companies-dir" name="dir">
+						<option value="asc" selected>
+							A to Z
 						</option>
-					))}
-				</select>
+						<option value="desc">Z to A</option>
+					</select>
+				</div>
 			</div>
-			<div class="eep-companies-field">
-				<label for="eep-companies-dir">Order</label>
-				<select id="eep-companies-dir" name="dir">
-					<option value="asc" selected>
-						A to Z
-					</option>
-					<option value="desc">Z to A</option>
-				</select>
-			</div>
-		</div>
+		</details>
 		<div class="eep-companies-tools">
 			<p class="eep-companies-count" data-result-count aria-live="polite">
 				{countText}
@@ -193,6 +198,10 @@ function companyCell(row: (typeof rows)[number]): string {
 		const industrySelect = root.querySelector('#eep-companies-industry');
 		const fieldSelect = root.querySelector('#eep-companies-field');
 		const count = root.querySelector('[data-result-count]');
+		const advancedCount = root.querySelector('[data-advanced-count]');
+		const advancedFields = [
+			...root.querySelectorAll('.eep-companies-advanced select'),
+		].filter((field) => field instanceof HTMLSelectElement);
 		const table = root.querySelector('#eep-company-list');
 		const tbody = table instanceof HTMLTableElement ? table.tBodies[0] : null;
 		const headers = table
@@ -326,10 +335,26 @@ function companyCell(row: (typeof rows)[number]): string {
 			}
 		};
 
+		// The closed section says how many of its fields differ from their defaults.
+		const updateAdvancedCount = () => {
+			if (!(advancedCount instanceof HTMLElement)) {
+				return;
+			}
+			const set = advancedFields.filter((field) => {
+				const defaultOption =
+					[...field.options].find((option) => option.defaultSelected) ??
+					field.options[0];
+				return field.value !== (defaultOption?.value ?? '');
+			}).length;
+			advancedCount.textContent =
+				set === 0 ? '' : `: ${set} ${set === 1 ? 'field' : 'fields'} set`;
+		};
+
 		const refresh = () => {
 			updateFieldOptions();
 			applyFilters();
 			applySort();
+			updateAdvancedCount();
 		};
 
 		form?.addEventListener('input', refresh);
