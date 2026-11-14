@@ -1,9 +1,9 @@
 // Build-time loader for the company list page. Reads every
-// company-lists/data/<country>/<state>/<state>.csv file in the submodule,
-// drops staffing-eligibility columns, and returns the rows plus the labels
-// and filter values the page needs. Country and state come from the file
-// path, not from CSV cells. New state files show up with no code
-// change. There is no runtime fetch.
+// company-lists/data/<country>/<state>.csv file in the submodule, drops
+// staffing-eligibility columns, and returns the rows plus the labels and
+// filter values the page needs. The country comes from the folder, and the
+// state code from the file's row in schema/states.csv, not from CSV cells.
+// There is no runtime fetch.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -16,6 +16,7 @@ const SUBMODULE = path.join(ROOT, 'company-lists');
 const DATA = path.join(SUBMODULE, 'data');
 const SCHEMA = path.join(SUBMODULE, 'schema', 'company.schema.json');
 const INDUSTRIES = path.join(SUBMODULE, 'schema', 'industries.csv');
+const STATES = path.join(SUBMODULE, 'schema', 'states.csv');
 
 // Column names that must never be rendered or searched, if a future file
 // adds them. Matched against the header, not the cell values.
@@ -174,9 +175,32 @@ function industryLabel(slug: string): string {
 		.join(' ');
 }
 
-/** "us" -> "US", "co" -> "CO". Country and state folders are codes. */
+/** "us" -> "US". Country folders are codes. */
 function codeFromSlug(slug: string): string {
 	return slug.toUpperCase();
+}
+
+/** File stem -> USPS code, such as "new-hampshire" -> "NH", from schema/states.csv. */
+function loadStateCodes(): Map<string, string> {
+	if (!fs.existsSync(STATES)) {
+		throw new Error('company-lists/schema/states.csv is missing.');
+	}
+	const rows = parseCsv(fs.readFileSync(STATES, 'utf8'));
+	const header = rows[0] ?? [];
+	const fileIdx = header.indexOf('file');
+	const codeIdx = header.indexOf('code');
+	if (fileIdx < 0 || codeIdx < 0) {
+		throw new Error(
+			'company-lists/schema/states.csv needs file and code columns.',
+		);
+	}
+	const codes = new Map<string, string>();
+	for (const row of rows.slice(1)) {
+		if (row[fileIdx] && row[codeIdx]) {
+			codes.set(row[fileIdx], row[codeIdx]);
+		}
+	}
+	return codes;
 }
 
 function loadFieldLabels(): Map<string, string> {
@@ -336,6 +360,7 @@ export function loadCompanyList(): CompanyListData {
 
 	const expected = loadExpectedColumns();
 	const fieldLabels = loadFieldLabels();
+	const stateCodes = loadStateCodes();
 	const files: string[] = [];
 	walkCsvFiles(DATA, files);
 	files.sort();
@@ -347,11 +372,14 @@ export function loadCompanyList(): CompanyListData {
 	for (const file of files) {
 		const rel = path.relative(ROOT, file);
 		const parts = path.relative(DATA, file).split(path.sep);
-		if (parts.length !== 3 || !parts[2].endsWith('.csv')) {
+		if (parts.length !== 2 || !parts[1].endsWith('.csv')) {
 			continue;
 		}
 		const country = codeFromSlug(parts[0]);
-		const state = codeFromSlug(parts[1]);
+		const state = stateCodes.get(parts[1].replace(/\.csv$/, '')) ?? '';
+		if (!state) {
+			throw new Error(`${rel} has no row in company-lists/schema/states.csv.`);
+		}
 		const table = parseCsv(fs.readFileSync(file, 'utf8'));
 		if (table.length === 0) {
 			throw new Error(`${rel} is empty.`);
