@@ -28,7 +28,7 @@ The site is live at [eeprep.com](https://eeprep.com).
 ## Related projects
 
 - [resume-generator](https://github.com/edwardasilva/resume-generator): turns one JSON file into the one-page resume the resume pages describe.
-- [company-lists](https://github.com/edwardasilva/company-lists): a plain list of companies by region, covering seven metro areas in Colorado, Texas, California, and Virginia.
+- [company-lists](https://github.com/edwardasilva/company-lists): a plain list of companies by region, covering seven metro areas in Colorado, Texas, California, and Virginia. It also has one file per state for major employers in all 50 states.
 
 ## Get the code
 

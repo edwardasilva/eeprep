@@ -1,4 +1,5 @@
 ---
+import { getEntry } from 'astro:content';
 import Default from '@astrojs/starlight/components/Head.astro';
 import serifUrl from '@fontsource-variable/source-serif-4/files/source-serif-4-latin-opsz-normal.woff2?url';
 
@@ -21,31 +22,96 @@ route.head.push(
 	{ tag: 'meta', attrs: { property: 'og:image:height', content: '612' } },
 	{ tag: 'meta', attrs: { property: 'og:image:alt', content: 'eeprep logo' } },
 );
+
+const websiteId = new URL('/#website', site).href;
+const organizationId = new URL('/#organization', site).href;
+const website = {
+	'@type': 'WebSite',
+	'@id': websiteId,
+	url: site.href,
+	name: 'eeprep',
+	inLanguage: 'en',
+	publisher: { '@id': organizationId },
+};
+const organization = {
+	'@type': 'Organization',
+	'@id': organizationId,
+	name: 'eeprep',
+	url: site.href,
+	logo: shareImage,
+};
+
+// A guide page gets a page node and a breadcrumb trail. The trail walks up
+// the address, so /advice/resume/cleanup/ lists Advice, Resume, and Cleanup.
+// The 404 page is served for every missing URL, so it gets no page data.
+const entryId = route.entry.id;
+const isGuidePage = !isHome && entryId !== '404';
+let pageNodes: object[] = [];
+if (isGuidePage) {
+	const url = new URL(Astro.url.pathname, site).href;
+	const parts = entryId.split('/');
+	const crumbs = await Promise.all(
+		parts.map(async (_, i) => {
+			const id = parts.slice(0, i + 1).join('/');
+			const entry = id === entryId ? route.entry : await getEntry('docs', id);
+			return entry
+				? { name: entry.data.title, item: new URL(`/${id}/`, site).href }
+				: null;
+		}),
+	);
+	const isArticle = parts[0] === 'advice' || parts[0] === 'help';
+	pageNodes = [
+		{
+			'@type': isArticle ? 'TechArticle' : 'WebPage',
+			'@id': `${url}#page`,
+			url,
+			...(isArticle ? { headline: route.entry.data.title } : {}),
+			name: route.entry.data.title,
+			description: route.entry.data.description,
+			inLanguage: 'en',
+			isPartOf: { '@id': websiteId },
+			...(isArticle
+				? {
+						author: { '@id': organizationId },
+						publisher: { '@id': organizationId },
+						image: shareImage,
+					}
+				: {}),
+			...(route.lastUpdated
+				? { dateModified: route.lastUpdated.toISOString() }
+				: {}),
+			breadcrumb: { '@id': `${url}#breadcrumb` },
+		},
+		{
+			'@type': 'BreadcrumbList',
+			'@id': `${url}#breadcrumb`,
+			itemListElement: [
+				{ name: 'eeprep', item: site.href },
+				...crumbs.filter((crumb) => crumb !== null),
+			].map((crumb, i) => ({
+				'@type': 'ListItem',
+				position: i + 1,
+				...crumb,
+			})),
+		},
+	];
+}
+
 // The JSON goes inside a <script> tag, so "<" is escaped and no text in it
 // can close the tag early.
-const structuredData = isHome
-	? JSON.stringify({
-			'@context': 'https://schema.org',
-			'@graph': [
-				{
-					'@type': 'WebSite',
-					'@id': new URL('/#website', site).href,
-					url: site.href,
-					name: 'eeprep',
-					description: route.entry.data.description,
-					inLanguage: 'en',
-					publisher: { '@id': new URL('/#organization', site).href },
-				},
-				{
-					'@type': 'Organization',
-					'@id': new URL('/#organization', site).href,
-					name: 'eeprep',
-					url: site.href,
-					logo: shareImage,
-				},
-			],
-		}).replace(/</g, '\\u003c')
-	: null;
+const structuredData =
+	isHome || isGuidePage
+		? JSON.stringify({
+				'@context': 'https://schema.org',
+				'@graph': [
+					isHome
+						? { ...website, description: route.entry.data.description }
+						: website,
+					organization,
+					...pageNodes,
+				],
+			}).replace(/</g, '\\u003c')
+		: null;
 ---
 
 <Default />

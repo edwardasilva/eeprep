@@ -29,7 +29,7 @@ Cut the objective or summary. The wiki keeps a summary only for senior engineers
 
 ## Header
 
-Name centered in large type, one contact line under it, no rule line between them. Separate items with a vertical bar. No icons and no labels such as "Phone:". Links as plain text, such as linkedin.com/in/alex-doe-example. The wiki calls a phone number and LinkedIn unnecessary, but the author lists both. Every link must work on the day the page goes out.
+Name centered in large type, one contact line under it, no rule line between them. Separate items with a vertical bar. No icons and no labels such as "Phone:". Write each link out without `https://`, such as linkedin.com/in/your-name. The wiki calls a phone number and LinkedIn unnecessary, but the author lists both. Every link must work on the day the page goes out.
 
 Put "Willing to relocate" next to the location if it is true. A city far from the job can count against the candidate.
 

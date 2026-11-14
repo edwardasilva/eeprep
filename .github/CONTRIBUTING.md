@@ -19,7 +19,7 @@ Open an [issue](https://github.com/edwardasilva/eeprep/issues/new/choose) and pi
 
 You can fix a page without installing anything:
 
-1. Find the page's file in this repo. Guide pages live in `src/content/docs`, and the file path follows the page address. The page at `eeprep.com/advice/resume/cleanup/` is the file `src/content/docs/advice/resume/cleanup.mdx`.
+1. Find the page's file in this repo. Guide pages live in `src/content/docs`, and the file path follows the page address. The page at `eeprep.com/advice/resume/cleanup/` is the file `src/content/docs/advice/resume/cleanup.mdx`. If no file has that name, look for `index.mdx` in the folder of that name.
 2. Click the pencil icon (Edit this file). GitHub makes your own copy of the repo the first time.
 3. Make one change: one fix, or one page. A small change is quick to review and easy to undo.
 4. If you add an outside link, paste it in the pull request too. Maintainers add the source entry for you.
@@ -81,6 +81,8 @@ Major changes in the companion repositories, [resume-generator](https://github.c
 
 | Project          | Change                                                                                                                                                                                                                                                                       |
 | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| resume-generator | v0.0.3: `Resume.json` and `Alex.json` name the PDF the same way as `resume.json` and `alex.json`. The short-bullet note names a bullet's last line, and the example CV lists jobs most recent first.                                                                         |
+| company-lists    | v0.0.3: The list adds one file per state for major employers in all 50 states, next to the seven metro files. Every row has `ee_relevant` decided, and notes and sources were fixed in the release sweep.                                                                    |
 | resume-generator | v0.0.2: Students put Skills last, as the r/EngineeringResumes wiki orders the sections. Jobs and graduation take month dates. A non-engineering job keeps its bullets until the rest of the resume fills the page. The fonts folder ships the TeX Gyre notices and the LPPL. |
 | company-lists    | v0.0.2: `ee_relevant` is `true` or empty, never `false`, and the issue form and validator match the schema.                                                                                                                                                                  |
 | resume-generator | Each JSON file writes its own PDF. The file is named `[Name]-Resume.pdf`, and extra inputs add the JSON file name, so `examples/new-grad.json` writes `Alex-Doe-Resume-new-grad.pdf`.                                                                                        |

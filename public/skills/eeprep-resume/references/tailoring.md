@@ -4,7 +4,7 @@ A resume works best when it is tailored to the posting in front of it. Doing tha
 
 ## Versions to keep
 
-Pick the niches from the roles the user actually wants. For an EE student that is often a set like:
+Pick the niches from the roles the user wants. For an EE student that is often a set like:
 
 1. Embedded firmware and low-level software
 2. Hardware design, PCB, and power
@@ -29,7 +29,7 @@ Most employers store applications in an applicant tracking system (ATS). Many of
 
 - An exact-match screen does not expand acronyms. Where both forms are common, use both somewhere on the page: the expansion in a bullet where the work is described, the acronym in Skills. "Digital signal processing (DSP)" the first time, then DSP.
 - "C, C++" as two items, never "C/C++". A search for C++ may not match the slash form.
-- Toolchain, bus, and standard names are the words the filter looks for: I2C, SPI, CAN, UART, FreeRTOS, KiCad, Altium, Verilog, SystemVerilog, IPC-2221, ISO 26262. If the user really used one, name it.
+- Toolchain, bus, and standard names are the words the filter looks for: I2C, SPI, CAN, UART, FreeRTOS, KiCad, Altium, Verilog, SystemVerilog, IPC-2221, ISO 26262. Name one only if the user has used it.
 - Defense and export-controlled work can only be described by its technology class, not its program. Be specific about the transferable layer: the protocol, the method, the measured result.
 
 Never add a keyword to raise a match score. A keyword the user cannot defend in an interview is a fabrication that gets caught in the later rounds.

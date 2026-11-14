@@ -12,6 +12,7 @@ import { unified } from '@astrojs/markdown-remark';
 import wikiLinkPlugin from 'remark-wiki-link';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import { sidebar } from './src/lib/sidebar.mjs';
 import rehypeEqIds from './src/plugins/rehype-eq-ids.mjs';
 import rehypeExternalLinks from './src/plugins/rehype-external-links.mjs';
 import rehypeTableLabels from './src/plugins/rehype-table-labels.mjs';
@@ -205,6 +206,31 @@ export default defineConfig({
 						media: '(prefers-color-scheme: dark)',
 					},
 				},
+				// Prefetch a same-site page when the reader starts to hover on its
+				// link, so the next page opens faster. Files, new-tab links, and
+				// downloads are left alone. Browsers without speculation rules skip it.
+				{
+					tag: 'script',
+					attrs: { type: 'speculationrules' },
+					content: JSON.stringify({
+						prefetch: [
+							{
+								where: {
+									and: [
+										{ href_matches: '/*' },
+										{ not: { href_matches: '/*.*' } },
+										{
+											not: {
+												selector_matches: '[target="_blank"], [download]',
+											},
+										},
+									],
+								},
+								eagerness: 'moderate',
+							},
+						],
+					}),
+				},
 				{
 					tag: 'link',
 					attrs: {
@@ -251,6 +277,16 @@ export default defineConfig({
 						rel: 'apple-touch-icon',
 						href: '/apple-touch-icon-180.png',
 						sizes: '180x180',
+					},
+				},
+				// The plain-text page index for AI tools, built by src/pages/llms.txt.ts.
+				{
+					tag: 'link',
+					attrs: {
+						rel: 'alternate',
+						type: 'text/plain',
+						href: '/llms.txt',
+						title: 'llms.txt',
 					},
 				},
 			],
@@ -313,108 +349,7 @@ export default defineConfig({
 					},
 				},
 			},
-			sidebar: [
-				{
-					label: 'Advice',
-					items: [
-						{ label: 'Advice', slug: 'advice' },
-						{ label: 'Quick setup', slug: 'advice/resume/quick-setup' },
-						{
-							label: 'Projects',
-							items: [
-								{ label: 'Projects', slug: 'advice/projects' },
-								{ label: 'Software', slug: 'advice/projects/software' },
-								{ label: 'Hardware', slug: 'advice/projects/hardware' },
-								{ label: 'Portfolio', slug: 'advice/projects/portfolio' },
-							],
-						},
-						{
-							label: 'Resume',
-							items: [
-								{ label: 'Resume', slug: 'advice/resume' },
-								{ label: 'Walkthrough', slug: 'advice/resume/walkthrough' },
-								{ label: 'Cleanup', slug: 'advice/resume/cleanup' },
-								{ label: 'Workshop', slug: 'advice/resume/workshop' },
-							],
-						},
-						{
-							label: 'Getting hired',
-							items: [
-								{ label: 'Getting hired', slug: 'advice/getting-hired' },
-								{
-									label: 'Networking',
-									slug: 'advice/getting-hired/networking',
-								},
-								{
-									label: 'Job market',
-									slug: 'advice/getting-hired/job-market',
-								},
-								{
-									label: 'Career paths',
-									slug: 'advice/getting-hired/career-paths',
-								},
-								{
-									label: 'How to interview',
-									slug: 'advice/getting-hired/how-to-interview',
-								},
-								{
-									label: 'Non-technical skills',
-									slug: 'advice/getting-hired/non-technical',
-								},
-								{
-									label: 'First internship',
-									slug: 'advice/getting-hired/first-internship',
-								},
-								{
-									label: 'First full-time role',
-									slug: 'advice/getting-hired/first-full-time-role',
-								},
-							],
-						},
-						{
-							label: 'Forever learning',
-							items: [
-								{ label: 'Forever learning', slug: 'advice/forever-learning' },
-								{
-									label: 'Graduate study',
-									slug: 'advice/forever-learning/graduate-study',
-								},
-								{
-									label: 'Professional societies',
-									slug: 'advice/forever-learning/societies',
-								},
-							],
-						},
-						{ label: "Author's story", slug: 'advice/authors-story' },
-					],
-				},
-				{
-					// The Help sub-pages are in alphabetical order.
-					label: 'Help',
-					items: [
-						{ label: 'Help', slug: 'help' },
-						{ label: 'AI use', slug: 'help/ai-use' },
-						{ label: 'Company list', slug: 'help/company-list' },
-						{ label: 'Job boards', slug: 'help/job-boards' },
-						{ label: 'Resources', slug: 'help/resources' },
-						{ label: 'Sources', slug: 'help/all-links' },
-					],
-				},
-				{
-					label: 'Roadmap',
-					items: [
-						{ label: 'Roadmap', slug: 'roadmap' },
-						{ label: 'Contributing', slug: 'roadmap/contributing' },
-					],
-				},
-				{
-					label: 'Sitemap',
-					items: [
-						{ label: 'Sitemap', slug: 'sitemap' },
-						{ label: 'Table of contents', slug: 'sitemap/contents' },
-					],
-				},
-			],
+			sidebar,
 		}),
 		flatNotFoundPage,
 		permanentRedirects,

@@ -1,6 +1,6 @@
-# Bullets: did X with Y to get Z
+# Bullets: action, method, and result
 
-Write results, not duties. X is the action, Y is the tool or method, Z is the result, measured where the user has a number. The wiki asks for STAR, CAR, or XYZ. Its XYZ reads "accomplished X, as measured by Y, by doing Z", so its X is the result and its Z is the action, the reverse of the letters here. Screeners filter on X and Y. Hiring managers choose from the Zs. Put the number early.
+Write results, not duties: did X with Y to get Z. X is the action, Y is the tool or method, Z is the result, measured where the user has a number. The wiki asks for STAR, CAR, or XYZ. Its XYZ reads "accomplished X, as measured by Y, by doing Z", so its X is the result and its Z is the action, the reverse of the letters here. Screeners filter on X and Y. Hiring managers choose from the Zs. Put the number early.
 
 ## The pattern on one bullet
 

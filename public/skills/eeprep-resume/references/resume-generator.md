@@ -15,8 +15,8 @@
     "name": "Alex Doe",
     "phone": "(555) 555-0142",
     "email": "alex.doe@example.com",
-    "linkedin": "linkedin.com/in/alex-doe-example",
-    "github": "github.com/alex-doe-example",
+    "linkedin": "linkedin.com/in/your-name",
+    "github": "github.com/your-username",
     "website": "",
     "location": "Springfield, ST",
     "relocate": true
@@ -71,6 +71,7 @@
 - `engineering: false` keeps a job's bullets while the page has room for them. Once another job has `"engineering": true` and the rest of the resume fills the page, the false one drops to one line and loses its bullets, with a note. So give a job outside engineering one or two bullets, and let the build decide.
 - `hide: true` leaves an entry out without deleting it. Use it for a version aimed at one niche.
 - Links must be web addresses, `mailto:`, or `tel:`. Inside a bullet, `[text](url)` links the text.
+- The example handles `linkedin.com/in/your-name` and `github.com/your-username` print as plain text, so they never link to a real account. Any other value in those fields becomes a live link. Replace them with your own.
 - The build keeps the margins at 0.5 in and steps text from 11 pt to 10 pt until the page fits, then fills the page by growing the spacing. It never shrinks spacing below the eeprep limits. If it still does not fit, it says about how many lines to cut.
 - The PDF is named after the header name, so Alex Doe gives `Alex-Doe-Resume.pdf`.
 - When `pdftotext` is installed, each build extracts the text and checks that every heading, entry, and bullet comes out whole.
