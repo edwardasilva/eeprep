@@ -82,8 +82,9 @@ jobs:
           fi
       - run: npm ci
       - run: npm run build
-      # A tag can sit on any commit, and checks no longer run on pull requests. These
-      # two run on the build that ships. check:robots reads SITE_ENV from the target step.
+      # A tag can point at any commit, so these two checks run again on the build that
+      # ships, whether or not CI ran on a pull request. check:robots reads SITE_ENV from
+      # the target step.
       - name: Robots meta tag matches the target
         run: npm run check:robots
       - name: Links in the build
