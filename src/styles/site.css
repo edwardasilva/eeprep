@@ -661,16 +661,6 @@ a.external-link .eep-ext-last::after {
 	font-size: 0.9375rem;
 	line-height: 1.5;
 }
-.eep-companies .eep-company-list caption {
-	display: block;
-	width: 100%;
-	caption-side: top;
-	margin: 0 0 var(--eep-space-3);
-	text-align: left;
-	font-size: var(--eep-text-caption);
-	line-height: 1.45;
-	color: var(--eep-ink-2);
-}
 .eep-companies .eep-company-list :is(thead, tbody, tr, th, td) {
 	display: block;
 	border: 0;
@@ -815,10 +805,6 @@ a.external-link .eep-ext-last::after {
 	}
 	.eep-companies .eep-company-list td {
 		overflow-wrap: break-word;
-	}
-	.eep-companies .eep-company-list caption {
-		display: table-caption;
-		width: auto;
 	}
 }
 

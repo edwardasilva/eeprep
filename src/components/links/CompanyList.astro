@@ -14,12 +14,9 @@ function extLink(href: string, text: string): string {
 	return externalLinks(`<a href="${escapeHtml(href)}">${escapeHtml(text)}</a>`);
 }
 
-const { rows, filters, coverage } = loadCompanyList();
+const { rows, filters } = loadCompanyList();
 const total = rows.length;
 const countText = `${total} ${total === 1 ? 'company' : 'companies'}`;
-const caption = coverage
-	? `Companies from company-lists in ${coverage}.`
-	: 'Companies from company-lists.';
 
 const fieldIndustries = new Map<string, string[]>();
 for (const row of rows) {
@@ -143,7 +140,7 @@ function companyCell(row: (typeof rows)[number]): string {
 		tabindex="0"
 	>
 		<table class="eep-company-list" id="eep-company-list">
-			<caption>{caption}</caption>
+			<caption class="sr-only">Company list</caption>
 			<thead>
 				<tr>
 					{columns.map((column, index) => (
