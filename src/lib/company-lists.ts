@@ -322,14 +322,17 @@ export function mergeCompanies(rows: CompanyRow[]): CompanyRow[] {
 	});
 }
 
-/** Keys of companies that appear on more than one row. */
+/**
+ * Companies listed more than once in the same region, as "company (region,
+ * state)". Run it on the per-region rows, before mergeCompanies.
+ */
 export function duplicateCompanies(rows: CompanyRow[]): string[] {
 	const seen = new Set<string>();
 	const dupes = new Set<string>();
 	for (const row of rows) {
-		const key = companyKey(row);
+		const key = `${companyKey(row)}|${row.country}|${row.state}|${row.region}`;
 		if (seen.has(key)) {
-			dupes.add(key);
+			dupes.add(`${companyKey(row)} (${row.region}, ${row.state})`);
 		}
 		seen.add(key);
 	}
@@ -485,12 +488,17 @@ export function loadCompanyList(): CompanyListData {
 		return a.city.localeCompare(b.city, 'en', { sensitivity: 'base' });
 	});
 
+	// The merge folds every row for one company into one, so check the
+	// per-region rows first.
+	const dupes = duplicateCompanies(rows);
+	if (dupes.length > 0) {
+		throw new Error(
+			`Company list has the same company twice in one region: ${dupes.join(', ')}.`,
+		);
+	}
+
 	// Filter options and the coverage sentence come from the per-region rows.
 	const merged = mergeCompanies(rows);
-	const dupes = duplicateCompanies(merged);
-	if (dupes.length > 0) {
-		throw new Error(`Company list has repeated rows for: ${dupes.join(', ')}.`);
-	}
 
 	const filters: CompanyFilter[] = [
 		{
