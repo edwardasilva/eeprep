@@ -19,7 +19,7 @@ Open an [issue](https://github.com/edwardasilva/eeprep/issues/new/choose) and pi
 
 You can fix a page without installing anything:
 
-1. Find the page's file in this repo. Guide pages live in `src/content/docs`, and the file path follows the page address. The page at `eeprep.com/advice/resume/cleanup/` is the file `src/content/docs/advice/resume/cleanup.mdx`.
+1. Find the page's file in this repo. Guide pages live in `src/content/docs`, and the file path follows the page address. The page at `eeprep.com/advice/resume/cleanup/` is the file `src/content/docs/advice/resume/cleanup.mdx`. If no file has that name, look for `index.mdx` in the folder of that name.
 2. Click the pencil icon (Edit this file). GitHub makes your own copy of the repo the first time.
 3. Make one change: one fix, or one page. A small change is quick to review and easy to undo.
 4. If you add an outside link, paste it in the pull request too. Maintainers add the source entry for you.
