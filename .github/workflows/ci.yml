@@ -68,8 +68,9 @@ jobs:
           echo "4bf5c5176b682b1da0830f471584d3494f1c2e27ee3029e1ad6f6661d4962182  /tmp/vale.tar.gz" | sha256sum -c -
           mkdir -p "$HOME/vale-$VALE_VERSION"
           tar -xzf /tmp/vale.tar.gz -C "$HOME/vale-$VALE_VERSION" vale
-      - name: Vale (guide prose)
-        run: '"$HOME/vale-$VALE_VERSION/vale" --config .github/vale/.vale.ini src/content/docs'
+      # The same paths as the Vale command in CONTRIBUTING.md and AGENTS.md.
+      - name: Vale (guide, resume skill, and README prose)
+        run: '"$HOME/vale-$VALE_VERSION/vale" --config .github/vale/.vale.ini src/content/docs public/skills README.md'
 
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         if: ${{ !cancelled() }}
