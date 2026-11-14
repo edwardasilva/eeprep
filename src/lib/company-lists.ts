@@ -74,7 +74,6 @@ export type CompanyFilter = {
 export type CompanyListData = {
 	rows: CompanyRow[];
 	filters: CompanyFilter[];
-	coverage: string;
 };
 
 /**
@@ -339,37 +338,6 @@ export function duplicateCompanies(rows: CompanyRow[]): string[] {
 	return [...dupes];
 }
 
-function coverageSentence(rows: CompanyRow[]): string {
-	const byState = new Map<string, Set<string>>();
-	for (const row of rows) {
-		const regions = byState.get(row.state) ?? new Set();
-		regions.add(row.region);
-		byState.set(row.state, regions);
-	}
-	const parts = [...byState.entries()]
-		.sort((a, b) => a[0].localeCompare(b[0], 'en'))
-		.map(([state, regions]) => {
-			const list = [...regions].sort((a, b) => a.localeCompare(b, 'en'));
-			if (list.length === 1) {
-				return `${list[0]}, ${state}`;
-			}
-			if (list.length === 2) {
-				return `${list[0]} and ${list[1]}, ${state}`;
-			}
-			return `${list.slice(0, -1).join(', ')}, and ${list.at(-1)}, ${state}`;
-		});
-	if (parts.length === 0) {
-		return '';
-	}
-	if (parts.length === 1) {
-		return parts[0];
-	}
-	if (parts.length === 2) {
-		return `${parts[0]} and ${parts[1]}`;
-	}
-	return `${parts.slice(0, -1).join(', ')}, and ${parts.at(-1)}`;
-}
-
 export function loadCompanyList(): CompanyListData {
 	if (!fs.existsSync(DATA)) {
 		throw new Error(
@@ -497,7 +465,7 @@ export function loadCompanyList(): CompanyListData {
 		);
 	}
 
-	// Filter options and the coverage sentence come from the per-region rows.
+	// Filter options come from the per-region rows.
 	const merged = mergeCompanies(rows);
 
 	const filters: CompanyFilter[] = [
@@ -548,5 +516,5 @@ export function loadCompanyList(): CompanyListData {
 		},
 	];
 
-	return { rows: merged, filters, coverage: coverageSentence(rows) };
+	return { rows: merged, filters };
 }
