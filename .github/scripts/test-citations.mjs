@@ -54,10 +54,18 @@ assert.match(title.stderr, /citation entry "no-title" is missing a title/);
 
 const locator = check('missing-locator');
 assert.equal(locator.status, 1);
+assert.match(locator.stderr, /citation entry "no-locator" is missing a url/);
+assert.doesNotMatch(locator.stderr, /not linked from any page/);
+
+const doiOnly = check('doi-only');
+assert.equal(doiOnly.status, 1);
+assert.match(doiOnly.stderr, /citation entry "doi-only" is missing a url/);
 assert.match(
-	locator.stderr,
-	/citation entry "no-locator" is missing a url, doi, or publisher/,
+	doiOnly.stderr,
+	/citation entry "publisher-only" is missing a url/,
 );
+assert.doesNotMatch(doiOnly.stderr, /not linked from any page/);
+assert.doesNotMatch(doiOnly.stderr, /entry "with-url"/);
 
 const absent = check('no-bib');
 assert.equal(absent.status, 1);

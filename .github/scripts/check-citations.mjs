@@ -3,6 +3,7 @@
 // Also fails on a Pandoc [@key] cite, on Markdown link text that is a
 // citation key, a handle, or a bare URL, on an @handle in page prose,
 // and on a content line made only of Markdown links.
+// Every bibliography entry needs a url. A doi or publisher alone is not enough.
 // Bibliography matching is on the url, not on link text.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -49,14 +50,11 @@ for (const entry of entries) {
 			`${display(bibPath)}:${entry.line}: citation entry "${entry.key}" is missing a title`,
 		);
 	}
-	if (
-		!hasField(entry, 'url') &&
-		!hasField(entry, 'doi') &&
-		!hasField(entry, 'publisher')
-	) {
+	if (!hasField(entry, 'url')) {
 		failures.push(
-			`${display(bibPath)}:${entry.line}: citation entry "${entry.key}" is missing a url, doi, or publisher`,
+			`${display(bibPath)}:${entry.line}: citation entry "${entry.key}" is missing a url`,
 		);
+		continue;
 	}
 	const canonical = canonicalUrl(entry.fields.get('url') ?? '');
 	if (!canonical) continue;
@@ -99,7 +97,7 @@ if (!fs.existsSync(contentRoot)) {
 }
 
 for (const entry of entries) {
-	if (!entry.key) continue;
+	if (!entry.key || !hasField(entry, 'url')) continue;
 	const canonical = canonicalUrl(entry.fields.get('url') ?? '');
 	if (canonical && cited.has(canonical)) continue;
 	failures.push(
