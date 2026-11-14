@@ -34,7 +34,7 @@ Before you push, from the repo root:
 ```bash
 npm ci
 npm run build
-vale --config .github/vale/.vale.ini src/content/docs
+vale --config .github/vale/.vale.ini src/content/docs public/skills README.md
 ```
 
 ## Secrets
