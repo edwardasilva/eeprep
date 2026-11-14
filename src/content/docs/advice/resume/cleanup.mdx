@@ -30,7 +30,7 @@ Extract the text from the PDF with the command below and read it. [Michigan Engi
 pdftotext Alex-Doe-Resume.pdf - | less
 ```
 
-If you cannot run `pdftotext`, such as on Windows or in Overleaf, open the PDF in a browser, select all, copy, and paste the text into a plain text editor. Either way, watch for "fi" and "fl" that come out blank or as odd symbols. These letter pairs are ligatures, printed as one shape, and [the pdfTeX manual](https://texdoc.org/serve/pdftex-a.pdf/0) says search is likely to fail on them without a Unicode map.
+If you cannot run `pdftotext`, such as on Windows or in Overleaf, open the PDF in a browser, select all, copy, and paste the text into a plain text editor. Either way, watch for "fi" and "fl" that come out blank or as odd symbols. These letter pairs are ligatures, printed as one shape, and [the pdfTeX manual](https://latex.us/systems/doc/pdftex/manual/pdftex-a.pdf) says search is likely to fail on them without a Unicode map.
 
 Open the PDF's properties, which most PDF viewers call Document Properties, and check the title and author. In LaTeX, you set both with [hyperref](https://latex.us/macros/latex/contrib/hyperref/doc/hyperref-doc.html). On Alex's PDF, the title reads "Alex Doe Resume" and the author is Alex Doe. A title left over from a template gives the template away. Name the file after yourself too, such as `Alex-Doe-Resume.pdf`, so a recruiter can find it in their downloads folder.
 

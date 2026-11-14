@@ -166,7 +166,7 @@
     "pages": ["advice/resume"]
   },
   {
-    "url": "https://texdoc.org/serve/pdftex-a.pdf/0",
+    "url": "https://latex.us/systems/doc/pdftex/manual/pdftex-a.pdf",
     "title": "The pdfTeX user manual",
     "category": "Resume guides",
     "summary": "Reference manual for pdfTeX, the engine that turns LaTeX source into PDF.",

@@ -67,7 +67,7 @@ If you write in pdfLaTeX, check that the preamble, the part above `\begin{docume
 \hypersetup{pdftitle={Alex Doe Resume}, pdfauthor={Alex Doe}}
 ```
 
-The first 2 lines map each glyph, the shape the PDF draws, to its Unicode character. [The pdfTeX manual](https://texdoc.org/serve/pdftex-a.pdf/0) says that without them, search is likely to fail on ligatures, where two letters such as "fi" print as one shape. XeLaTeX and LuaLaTeX do not need them. The third line uses [hyperref](https://latex.us/macros/latex/contrib/hyperref/doc/hyperref-doc.html) to set the PDF's title and author, and no source says an ATS reads them.
+The first 2 lines map each glyph, the shape the PDF draws, to its Unicode character. [The pdfTeX manual](https://latex.us/systems/doc/pdftex/manual/pdftex-a.pdf) says that without them, search is likely to fail on ligatures, where two letters such as "fi" print as one shape. XeLaTeX and LuaLaTeX do not need them. The third line uses [hyperref](https://latex.us/macros/latex/contrib/hyperref/doc/hyperref-doc.html) to set the PDF's title and author, and no source says an ATS reads them.
 
 ## Section order
 
