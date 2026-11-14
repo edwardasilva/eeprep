@@ -36,7 +36,6 @@ const sortOptions = [
 	{ value: 'field', label: 'Field' },
 	{ value: 'city', label: 'City' },
 	{ value: 'state', label: 'State' },
-	{ value: 'region', label: 'Region' },
 ];
 
 const columns = [
@@ -45,7 +44,6 @@ const columns = [
 	{ key: 'field', label: 'Field' },
 	{ key: 'city', label: 'City' },
 	{ key: 'state', label: 'State' },
-	{ key: 'region', label: 'Region' },
 ] as const;
 
 const repo = 'https://github.com/edwardasilva/company-lists';
@@ -164,10 +162,8 @@ function companyCell(row: (typeof rows)[number]): string {
 						data-field-label={row.fieldLabel}
 						data-city={row.city}
 						data-state={row.state}
-						data-region={row.region}
 						data-cities={row.locations.map((l) => l.city).join('|')}
 						data-states={row.locations.map((l) => l.state).join('|')}
-						data-regions={row.locations.map((l) => l.region).join('|')}
 						data-search={row.search}
 					>
 						<td data-label="Company" set:html={companyCell(row)} />
@@ -175,7 +171,6 @@ function companyCell(row: (typeof rows)[number]): string {
 						<td data-label="Field">{row.fieldLabel || '–'}</td>
 						<td data-label="City">{row.city}</td>
 						<td data-label="State">{row.state}</td>
-						<td data-label="Region">{row.region}</td>
 					</tr>
 				))}
 			</tbody>
@@ -275,7 +270,6 @@ function companyCell(row: (typeof rows)[number]): string {
 				.split(/\s+/)
 				.filter(Boolean);
 			const state = inputValue('state');
-			const region = inputValue('region');
 			const industry = inputValue('industry');
 			const field = inputValue('field');
 			const city = inputValue('city');
@@ -285,7 +279,6 @@ function companyCell(row: (typeof rows)[number]): string {
 				const match =
 					query.every((word) => hay.includes(word)) &&
 					(!state || hasValue(row.dataset.states, state)) &&
-					(!region || hasValue(row.dataset.regions, region)) &&
 					(!industry || row.dataset.industry === industry) &&
 					(!field || row.dataset.field === field) &&
 					(!city || hasValue(row.dataset.cities, city));
