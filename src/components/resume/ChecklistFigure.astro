@@ -5,7 +5,7 @@ const content = [
 	'Section order from the table, no objective',
 	'One contact line, then location and relocation if listed',
 	'Degree, GPA if listed, one coursework line if you have upper-level courses',
-	'Each bullet has an action, a tool, and a measured number where you have one',
+	'Each bullet follows XYZ, CAR, or STAR, with any measured number near the front',
 	'Projects get the most room',
 	'Non-engineering jobs cut to one line only when engineering work fills the page',
 	'Skills on a couple of lines, no soft skills',
@@ -95,13 +95,13 @@ const polish = [
 	}
 	:global(.sl-markdown-content) p.eep-pass-title {
 		margin: 0;
-		font: 600 1.125rem/1.2 var(--eep-font-serif);
+		font: 600 var(--eep-text-h5)/1.2 var(--eep-font-serif);
 		color: var(--eep-ink);
 	}
 	.eep-pass-sub {
 		margin: 0.15rem 0 0.55rem;
 		color: var(--eep-mute);
-		font-size: 0.8125rem;
+		font-size: var(--eep-text-caption);
 	}
 	.eep-pass ul {
 		margin: 0;
@@ -113,7 +113,7 @@ const polish = [
 		gap: 0.55rem;
 		margin: 0.35rem 0;
 		max-width: none;
-		font-size: 0.875rem;
+		font-size: var(--eep-text-sm);
 		line-height: 1.4;
 	}
 	.eep-box {

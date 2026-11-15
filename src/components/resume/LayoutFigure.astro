@@ -234,10 +234,6 @@ const caption = externalLinks(
 </figure>
 
 <style>
-	/* The kicker can wrap on phones. */
-	.eep-layout-fig .eep-kicker {
-		line-height: 1.35;
-	}
 	.eep-layout {
 		container-type: inline-size;
 		display: grid;
@@ -260,7 +256,7 @@ const caption = externalLinks(
 	}
 	.eep-layout-title {
 		grid-column: 1 / -1;
-		font-size: 1rem;
+		font-size: var(--eep-text-body);
 		font-weight: 600;
 		line-height: 1.3;
 		color: var(--eep-ink);
@@ -274,7 +270,7 @@ const caption = externalLinks(
 	}
 	.eep-layout .eep-layout-label {
 		margin-top: 0.5rem;
-		font-size: 0.75rem;
+		font-size: var(--eep-text-eyebrow);
 		font-weight: 600;
 		line-height: 1.35;
 		text-align: center;
@@ -307,7 +303,7 @@ const caption = externalLinks(
 	}
 	.eep-layout-note {
 		grid-column: 1 / -1;
-		font-size: 0.875rem;
+		font-size: var(--eep-text-sm);
 		line-height: 1.5;
 		color: var(--eep-mute);
 	}

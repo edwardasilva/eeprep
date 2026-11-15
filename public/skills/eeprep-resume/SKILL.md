@@ -25,7 +25,7 @@ Never invent a fact. Not a number, a tool, a date, a title, a result, a course, 
 | The user wants                       | Do this                                                                                                                                          | Read first                |
 | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------- |
 | A resume from scratch                | Run the inventory in `references/inventory.md`, then build the page to `references/rules.md`, then write every bullet to `references/bullets.md` | inventory, rules, bullets |
-| Better bullets                       | Rewrite each bullet as did X with Y to get Z, with the user's own numbers or `[X]`                                                               | bullets                   |
+| Better bullets                       | Rewrite each bullet with XYZ, CAR, or STAR, number first, with the user's own numbers or `[X]`                                                   | bullets                   |
 | A review of a draft                  | Run `references/checklist.md` top to bottom and report what fails, with the fix for each                                                         | checklist, rules          |
 | A version for one posting            | Follow `references/tailoring.md`. Map the posting to what the user has done, and change only what is true                                        | tailoring                 |
 | To know if it will parse             | Run the file checks in `references/checklist.md`, then the ATS notes in `references/tailoring.md`                                                | checklist                 |
@@ -39,7 +39,7 @@ Read the reference file before you act. Each one is short.
 1. Ask for the raw material before you write. A list of every project, lab, club build, repair, and job beats a draft. The inventory file has the questions.
 2. Put the strongest material first, in the wiki's section order. A student or new graduate with no technical work goes Education, Projects, Experience, Skills. One with an internship or other technical work goes Education, Experience, Projects, Skills. A graduate in a full-time job goes Experience, Skills, Education. Inside each section, the most relevant or impressive entry and bullet go first.
 3. Keep it to one page. The second page arrives at about ten years of experience.
-4. Write results, not duties. Every bullet names the action, the tool, and a measured result where the user has one, in that order, with the number early. Do not force a number.
+4. Write results, not duties. Build every bullet with XYZ, CAR, or STAR, so it names the action, the tool, and a measured result where the user has one. If there is a measured number, move it toward the front. Do not force a number.
 5. Spell out an uncommon abbreviation the first time, such as computer-aided design (CAD). Write for a reader who is not an engineer.
 6. Put every skill in a bullet. A tool listed in Skills with no bullet behind it comes off.
 7. Run the checklist on the finished PDF, not on the source file. The PDF is what the screener and the applicant tracking system get.

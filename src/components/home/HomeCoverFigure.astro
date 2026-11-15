@@ -127,8 +127,9 @@ const alt =
 	.home-cover {
 		container-type: inline-size;
 		counter-increment: eep-fig;
+		/* As wide as the cards above it, so the caption rule and the card
+		   edges line up when the page is one column. */
 		width: 100%;
-		max-width: 40rem;
 		margin: 0;
 		font-family: var(--eep-font-sans);
 	}
@@ -188,16 +189,17 @@ const alt =
 	}
 	.home-cover figcaption {
 		display: flex;
+		align-items: baseline;
 		gap: var(--eep-space-3);
-		margin-top: 1.25rem;
-		padding-top: 0.75rem;
+		margin-top: 1.125rem;
+		padding-top: 0.875rem;
 		border-top: var(--eep-border);
 		font-size: var(--eep-text-caption);
-		line-height: 1.55;
+		line-height: var(--eep-lh-ui);
 		color: var(--eep-ink-2);
 	}
 	.home-cover-fignum {
-		font: 600 var(--eep-text-eyebrow) / 1.9 var(--eep-font-serif);
+		font: 600 var(--eep-text-eyebrow) / var(--eep-lh-ui) var(--eep-font-serif);
 		color: var(--eep-mute);
 		white-space: nowrap;
 	}

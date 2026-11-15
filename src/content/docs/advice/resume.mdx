@@ -15,13 +15,13 @@ import ChecklistFigure from '../../../components/resume/ChecklistFigure.astro';
 import RunFigure from '../../../components/resume/RunFigure.astro';
 import VersionsFigure from '../../../components/resume/VersionsFigure.astro';
 
-This page shows you how to write a one-page resume for electrical engineering (EE) jobs under US and Canadian norms. That includes embedded, field-programmable gate array (FPGA), and printed circuit board (PCB) work. It draws on the [r/EngineeringResumes wiki](https://www.reddit.com/r/EngineeringResumes/wiki/index/), the threads and career center guides cited on these pages, and posts from recruiters on X. Where the advice is eeprep's own, the page says so, and the [[Resume#Where eeprep differs from the wiki|section on where eeprep differs from the wiki]] lists those rules in one place. A bracket such as [X] is a number you measure yourself, and one such as [Retail store] is a word you fill in.
+Keep an electrical engineering (EE) resume to one page in one column, with a measured number in every bullet you can. These rules follow US and Canadian norms for embedded, field-programmable gate array (FPGA), and printed circuit board (PCB) jobs. They draw on the [r/EngineeringResumes wiki](https://www.reddit.com/r/EngineeringResumes/wiki/index/), the threads and career center guides cited on these pages, and posts from recruiters on X. Where a rule is my own, I say so, and the [[Resume#Where eeprep differs from the wiki|section on where I differ from the wiki]] lists those rules in one place. A bracket such as [X] is a number you measure yourself, and one such as [Retail store] is a word you fill in.
 
 ## TLDR;
 
 - Start from the wiki's LaTeX template, keep the resume to one page in one column, and check that the PDF reads correctly as plain text.
 - Follow the table's section order, with Education first and Skills last until your first full-time job, and put the strongest entry and bullet first in each section.
-- Write each bullet as an action, the tool or method, and the result, with a measured number in every bullet you can.
+- Build each bullet with the XYZ, CAR, or STAR formula, with a measured number in every bullet you can, and put that number near the front.
 - Build one master resume, then keep one version for each kind of role you apply to, up to 4 or 5, and send the closest.
 - Try to get a [referral](/advice/getting-hired/#get-a-referral-first) before you apply, then apply early, because most recruiters review applications in the order they arrive.
 
@@ -53,7 +53,7 @@ These [wiki rules](https://www.reddit.com/r/EngineeringResumes/wiki/index/) carr
 - Use bold sparingly, and never on keywords inside a bullet.
 - Keep the gap between every pair of sections the same. In LaTeX, use one `\vspace` value everywhere.
 
-eeprep adds two rules. The first is to keep text at 10 to 11 pt and margins at 0.5 in. [Michigan](https://career.engin.umich.edu/resumes-cvs-cover-letters/), [Georgia Tech](https://bpb-us-e1.wpmucdn.com/sites.gatech.edu/dist/7/2441/files/2026/01/Career-Fair-Prep-PDF.pdf), [Mines](https://careers.mines.edu/resumes-and-cover-letters/), [MIT](https://capd.mit.edu/resources/resumes/), and [Berkeley](https://career.berkeley.edu/prepare-for-success/resumes/) all set 0.5 in as the smallest margin. Georgia Tech, Mines, MIT, and Berkeley also set 10 pt as the smallest text size, while the wiki asks for 10.5. The second rule is to center the header and left-align everything below it.
+I add two rules. The first is to keep text at 10 to 11 pt and margins at 0.5 in. [Michigan](https://career.engin.umich.edu/resumes-cvs-cover-letters/), [Georgia Tech](https://bpb-us-e1.wpmucdn.com/sites.gatech.edu/dist/7/2441/files/2026/01/Career-Fair-Prep-PDF.pdf), [Mines](https://careers.mines.edu/resumes-and-cover-letters/), [MIT](https://capd.mit.edu/resources/resumes/), and [Berkeley](https://career.berkeley.edu/prepare-for-success/resumes/) all set 0.5 in as the smallest margin. Georgia Tech, Mines, MIT, and Berkeley also set 10 pt as the smallest text size, while the wiki asks for 10.5. The second rule is to center the header and left-align everything below it.
 
 <LayoutFigure />
 
@@ -81,7 +81,7 @@ The first 2 lines map each glyph, the shape the PDF draws, to its Unicode charac
 
 Skills goes last until you start a full-time job. Inside each section, put the most relevant or impressive entry first, and inside each entry, put the strongest bullet first. [The wiki says to put your best stuff first](https://www.reddit.com/r/EngineeringResumes/wiki/index/), because some hiring managers only have time to read the first bullets.
 
-Cut the objective or summary. [The wiki keeps a summary only for senior engineers, career changers, and people returning from a gap](https://www.reddit.com/r/EngineeringResumes/wiki/index/). It says nothing about an objective, and eeprep cuts one too. Virginia Tech's career center takes a different view. [It lists being new to the workforce or changing industries as a reason to use an objective](https://tips.career.vt.edu/Resumes/objectivevssummary.html), but calls one optional when you apply to a specific job. As a student applying to specific postings, leave it off. If you keep one, make it one line that names the role.
+Cut the objective or summary. [The wiki keeps a summary only for senior engineers, career changers, and people returning from a gap](https://www.reddit.com/r/EngineeringResumes/wiki/index/). It says nothing about an objective, and I cut one too. Virginia Tech's career center takes a different view. [It lists being new to the workforce or changing industries as a reason to use an objective](https://tips.career.vt.edu/Resumes/objectivevssummary.html), but calls one optional when you apply to a specific job. As a student applying to specific postings, leave it off. If you keep one, make it one line that names the role.
 
 ## Header
 
@@ -89,21 +89,37 @@ Center your name in large type. Under it, put one contact line, then a line for 
 
 ## Education
 
-Put the degree and GPA on the first line, and the school under it with the graduation date at the right margin. Date graduation by month, as in Expected May 2027, which is also [the wiki's format](https://www.reddit.com/r/EngineeringResumes/wiki/index/). Then add one line each for "Relevant coursework:" and "Activities:", with the label in bold. If you have taken graduate courses, list them first on their own line, labeled "Graduate coursework:". Write course names, such as Digital Signal Processing, never course codes, because a code means nothing to a reader from another school. The wiki says to drop high school, and eeprep allows it in your first year only. With a master's degree, [keep the bachelor's line too](https://www.reddit.com/r/EngineeringResumes/comments/1si2l4m/resume_advice_from_a_hiring_manager/).
+Put the degree and GPA on the first line, and the school under it with the graduation date at the right margin. Date graduation by month, as in Expected May 2027, which is also [the wiki's format](https://www.reddit.com/r/EngineeringResumes/wiki/index/). Then add one line each for "Relevant coursework:" and "Activities:", with the label in bold. If you have taken graduate courses, list them first on their own line, labeled "Graduate coursework:". Write course names, such as Digital Signal Processing, never course codes, because a code means nothing to a reader from another school. The wiki says to drop high school, and I allow it in your first year only. With a master's degree, [keep the bachelor's line too](https://www.reddit.com/r/EngineeringResumes/comments/1si2l4m/resume_advice_from_a_hiring_manager/).
 
-The wiki says to leave coursework off unless it is extremely specialized. eeprep keeps one line of upper-level electives that match the posting, such as Power Electronics or Digital Design. If you have not taken any yet, leave the line off. List topics such as orbital mechanics in that line, not in Skills.
+The wiki says to leave coursework off unless it is extremely specialized. I keep one line of upper-level electives that match the posting, such as Power Electronics or Digital Design. If you have not taken any yet, leave the line off. List topics such as orbital mechanics in that line, not in Skills.
 
-eeprep's rule of thumb is to list a GPA of 3.50 or higher and leave off anything below 3.0. From 3.0 to 3.49, list it when the posting sets a minimum you meet, and otherwise leave it off unless someone asks, as the [[Getting hired|getting hired page]] says. So a 3.44 stays off a version with no posting behind it, such as one for a career fair. [Match the decimals](https://www.reddit.com/r/EngineeringResumes/comments/15i3d8v/my_boss_said_my_resume_could_use_a_lot_of_work/) of the GPA and its scale, as in 3.30/4.00. These cutoffs are for a job resume, but a curriculum vitae (CV) for a graduate application lists the overall GPA, as the [[Resume#A CV for a graduate application|CV section]] below says.
+My rule of thumb is to list a GPA of 3.50 or higher and leave off anything below 3.0. From 3.0 to 3.49, list it when the posting sets a minimum you meet, and otherwise leave it off unless someone asks, as the [[Getting hired|getting hired page]] says. So a 3.44 stays off a version with no posting behind it, such as one for a career fair. [Match the decimals](https://www.reddit.com/r/EngineeringResumes/comments/15i3d8v/my_boss_said_my_resume_could_use_a_lot_of_work/) of the GPA and its scale, as in 3.30/4.00. These cutoffs are for a job resume, but a curriculum vitae (CV) for a graduate application lists the overall GPA, as the [[Resume#A CV for a graduate application|CV section]] below says.
 
-Two career centers set the cutoff lower than eeprep does. [Michigan Engineering says to list a GPA above 3.0](https://career.engin.umich.edu/resumes-cvs-cover-letters/), and [Berkeley's career center says to list it if it is 3.0 or above](https://career.berkeley.edu/prepare-for-success/resumes/). The wiki sets it higher, at above 3.75. Fewer employers screen by GPA than before. In the Job Outlook 2026 survey by the National Association of Colleges and Employers, [42 percent of employers screened candidates by GPA, down from 73 percent in 2019](https://www.naceweb.org/job-market/trends-and-predictions/employer-use-of-skills-based-hiring-practices-grows).
+Two career centers set the cutoff lower than I do. [Michigan Engineering says to list a GPA above 3.0](https://career.engin.umich.edu/resumes-cvs-cover-letters/), and [Berkeley's career center says to list it if it is 3.0 or above](https://career.berkeley.edu/prepare-for-success/resumes/). The wiki sets it higher, at above 3.75. Fewer employers screen by GPA than before. In the Job Outlook 2026 survey by the National Association of Colleges and Employers, [42 percent of employers screened candidates by GPA, down from 73 percent in 2019](https://www.naceweb.org/job-market/trends-and-predictions/employer-use-of-skills-based-hiring-practices-grows).
 
 ## Bullets
 
-Write results, not duties. A recruiter on X calls generic responsibilities [the most common resume mistake](https://x.com/randomrecruiter/status/1615808809133346824). [Georgia Tech's career center also says to avoid listing responsibilities and to focus on skills, results, and achievements](https://neweraadvising.gatech.edu/news/career-center-insights-navigating-your-first-job-search). Use one pattern: did X with Y to get Z. X is the action, Y is the tool or method, and Z is the result. The wiki asks for STAR (situation, task, action, result), CAR (challenge, action, result), or XYZ. Its XYZ reads "accomplished X, as measured by Y, by doing Z", so its X is the result and its Z is the action. [A reviewer's guide](https://www.reddit.com/r/EngineeringResumes/comments/1m6nzkm/8_yoe_readable_resumes_a_guide_to_allowing_anyone/) explains why the pattern works. Put the number early.
+Write results, not duties. A recruiter on X calls generic responsibilities [the most common resume mistake](https://x.com/randomrecruiter/status/1615808809133346824). [Georgia Tech's career center also says to avoid listing responsibilities and to focus on skills, results, and achievements](https://neweraadvising.gatech.edu/news/career-center-insights-navigating-your-first-job-search). [The wiki asks for one of three formulas](https://www.reddit.com/r/EngineeringResumes/wiki/index/): XYZ, CAR, or STAR. I would build every bullet with one of them, and the rest of this guide uses the same three.
+
+- XYZ reads "accomplished X, as measured by Y, by doing Z" in the wiki. X is the result, Y is the number that measures it, and Z is what you did, with the tool or method. Most project bullets fit it.
+- CAR stands for challenge, action, result. [TopResume describes the challenge as a problem, something that needs to be done and has not been](https://www.topresume.com/career-advice/how-to-get-more-results-with-a-car-resume), and it wants a result you can count, not one that "went well". CAR fits a fault you tracked down or a spec you had to fight for.
+- STAR stands for situation, task, action, result. [Levels.fyi calls it a framework for answering behavioral interview questions](https://www.levels.fyi/blog/applying-star-method-resumes.html), and says you can apply its principles to a resume. [Resume Genius says one STAR statement can be a single bullet or several, and that the situation and task can be grouped together](https://resumegenius.com/blog/resume-help/star-method-resume). On a resume, cut the situation and task to a few words, and save the full story for the [[How to interview#Behavioral stories|interview]].
+
+My own rule for all three is about order. If you measured the result, move the number toward the start of the bullet. [TopResume gives the same advice for CAR](https://www.topresume.com/career-advice/how-to-get-more-results-with-a-car-resume): front-load the important information, and do not hide the payoff at the end. I read the letters as the parts a bullet needs, not the order they go in.
+
+The figure below uses the short form, did X with Y to get Z, where X is the action, Y is the tool or method, and Z is the result. It is XYZ written in the order you did the work. [A reviewer's guide](https://www.reddit.com/r/EngineeringResumes/comments/1m6nzkm/8_yoe_readable_resumes_a_guide_to_allowing_anyone/) explains why the pattern works.
 
 <BulletFigure />
 
-Rules for each bullet:
+Alex's after bullet ends on its number. With the number moved to the front, the same facts read as XYZ.
+
+Example: "Reached [X]% efficiency on a [X] W CubeSat buck converter, measured on an electronic load, by designing it in KiCad and LTspice"
+
+A CAR bullet can open on its number too. Here the challenge is the read errors, the action is the logic analyzer and the resistor, and the result is the drop.
+
+Example: "Cut I2C read errors on a rover sensor board from [X] to [X] an hour by finding a missing pull-up resistor with a logic analyzer"
+
+Rules for each bullet, where the last three are my own:
 
 - Start with a past-tense verb such as designed, built, or reduced. Skip helped, assisted, worked on, and utilized.
 - Fill one line, or most of a second one. Count 2 words alone on a second line as wasted space.
@@ -111,17 +127,17 @@ Rules for each bullet:
 - Check a simulation with a hand calculation, and say so. The wiki says engineers like that check and tells you to bring it up in the interview.
 - Ask what happened next: did the design fix the problem?
 - Do not inflate. [One manager said](https://www.reddit.com/r/EngineeringResumes/comments/192hkg8/how_atss_actually_work_from_an_engineering_hiring/) an intern who claims $2 million in yearly savings will be asked to justify it.
-- Count honestly. When a bullet counts sources, links, or pages, count unique items, and leave out links back to your own repositories or pages. This is eeprep's advice.
-- Give each bullet one idea. Pick the result that matters most, and do not join a second one with "and" or "plus". A second result gets its own bullet, or comes off. This is eeprep's advice.
-- Write symbols as words. Use 3-sigma instead of the Greek letter, 48 degrees instead of the degree sign, and at most 1 m/s instead of the less-than-or-equal sign. This is eeprep's advice.
+- Count honestly. When a bullet counts sources, links, or pages, count unique items, and leave out links back to your own repositories or pages.
+- Give each bullet one idea. Pick the result that matters most, and do not join a second one with "and" or "plus". A second result gets its own bullet, or comes off.
+- Write symbols as words. Use 3-sigma instead of the Greek letter, 48 degrees instead of the degree sign, and at most 1 m/s instead of the less-than-or-equal sign.
 
-For embedded work, lead with the action and do not force a number. [One reviewer told a student](https://www.reddit.com/r/EngineeringResumes/comments/1w1e5dp/student_100_embeddedhardware_intern_applications/) that "designed a PCB in KiCad" says more than exact step-down voltages. A spec belongs in the bullet when it shows difficulty, such as register-level SPI setup. [The wiki's sample bullets](https://www.reddit.com/r/EngineeringResumes/wiki/sample-bullet-points/) include six for electrical hardware, all in chip design, and its embedded and FPGA sections are empty.
+For embedded work, lead with the action and do not force a number. [One reviewer told a student](https://www.reddit.com/r/EngineeringResumes/comments/1w1e5dp/student_100_embeddedhardware_intern_applications/) that "designed a PCB in KiCad" says more than exact step-down voltages. A spec belongs in the bullet when it shows difficulty, such as register-level SPI setup. So my number-first rule is for a result you measured, not for a spec you could copy from a datasheet. [The wiki's sample bullets](https://www.reddit.com/r/EngineeringResumes/wiki/sample-bullet-points/) include six for electrical hardware, all in chip design, and its embedded and FPGA sections are empty.
 
 ## Projects
 
 Projects is often a student's strongest section, so give it the most room. Leave the word "project" out of each title. Put the tools in parentheses after the name, and put the dates at the right margin, as in `\textbf{CubeSat Power Board} (KiCad, LTspice) \hfill Fall 2025 -- Spring 2026`.
 
-Use one date style inside each section. Date jobs by month, such as May 2023 – Aug 2024. Projects can use semesters, but if any project runs longer than a year, date the whole Projects section by month. That is eeprep's advice. The wiki says that if you use months, do not mix in seasons or semesters.
+Use one date style inside each section. Date jobs by month, such as May 2023 – Aug 2024. Projects can use semesters, but if any project runs longer than a year, date the whole Projects section by month. That last rule is mine. The wiki says that if you use months, do not mix in seasons or semesters.
 
 Give your best projects more bullets, and cut weak ones. Firmware gets its own bullets, and so do FPGA testbenches, the code that tests a design in simulation. When you choose a new project, [pick a problem first and build toward it](https://www.reddit.com/r/EngineeringResumes/comments/1wxcvrq/student_how_do_you_find_good_project_ideas/).
 
@@ -131,7 +147,7 @@ Class work beats an empty section, and a senior design project that missed its s
 
 Call the section Experience, not Work History. Give each role a bold job title and company, with the dates at the right margin. Put the location on the next line, at the right margin under the dates, and start the bullets below it.
 
-Give a non-engineering job one or two bullets. Cut it to one line only when your engineering work fills the page without them. [Georgia Tech's College of Computing gives a job of low relevance one to two bullets](https://www.cc.gatech.edu/sites/default/files/documents/2026/GT%20CS%20Resume%20Guide%20compressed_1.pdf). In those bullets, skip the duty every reader already knows. [MIT's career office says a grocery bagger gains nothing from a bullet that says they bagged groceries](https://capd.mit.edu/blog/2023/09/01/enhance-your-resume-a-guide-for-first-year-undergraduates/), while inventory, asset protection, or cash handling tells the reader more. Count what you can defend: the money you handled, the customers or transactions in a shift, a safety rule you kept, or the people you trained. [Kentucky's career center rewrites "Worked as the lifeguard on duty" as a certification in emergency protocol for 2,500 daily guests](https://gradschool.uky.edu/sites/default/files/2024-12/stuckert-resume-guide-final-2024-2025-1.pdf).
+Give a non-engineering job one or two bullets. Cut it to one line only when your engineering work fills the page without them. [Georgia Tech's College of Computing gives a job of low relevance one to two bullets](https://www.cc.gatech.edu/sites/default/files/documents/2026/GT%20CS%20Resume%20Guide%20compressed_1.pdf). In those bullets, skip the duty every reader already knows. [MIT's career office says a grocery bagger gains nothing from a bullet that says they bagged groceries](https://capd.mit.edu/blog/2023/09/01/enhance-your-resume-a-guide-for-first-year-undergraduates/), while inventory, asset protection, or cash handling tells the reader more. Count what you can defend: the money you handled, the customers or transactions in a shift, a safety rule you kept, or the people you trained. Build these bullets with the same XYZ, CAR, or STAR formulas as the engineering ones, with the count near the front. [Kentucky's career center rewrites "Worked as the lifeguard on duty" as a certification in emergency protocol for 2,500 daily guests](https://gradschool.uky.edu/sites/default/files/2024-12/stuckert-resume-guide-final-2024-2025-1.pdf).
 
 ## Skills
 
@@ -141,7 +157,7 @@ Keep skills to a couple of lines, written as comma-separated lists with a bold l
 
 ## Tailor it to the posting
 
-A resume works best when it matches the posting in front of it. [An aerospace chief engineer](https://www.reddit.com/r/EngineeringResumes/comments/1cms7al/random_thoughts_on_resumes/) says to customize your resume for each job you apply to, starting from a master resume, one file that holds everything you have done. Over dozens of applications, tailoring by hand every time is often unrealistic. [Ask a Manager](https://www.askamanager.org/2014/01/do-you-need-multiple-versions-of-your-resume.html), a workplace advice site, says one version is enough for one kind of job, and multiple versions make sense for a few categories of jobs. eeprep's rule of thumb is to keep one version for each kind of role you apply to, up to 4 or 5, and send the closest. Only the order, the depth, and the wording change between versions, and nothing goes on one version that is not true on all of them.
+[An aerospace chief engineer](https://www.reddit.com/r/EngineeringResumes/comments/1cms7al/random_thoughts_on_resumes/) says to customize your resume for each job you apply to, starting from a master resume, one file that holds everything you have done. Over dozens of applications, tailoring by hand every time is often unrealistic. [Ask a Manager](https://www.askamanager.org/2014/01/do-you-need-multiple-versions-of-your-resume.html), a workplace advice site, says one version is enough for one kind of job, and multiple versions make sense for a few categories of jobs. My rule of thumb is to keep one version for each kind of role you apply to, up to 4 or 5, and send the closest. Only the order, the depth, and the wording change between versions, and nothing goes on one version that is not true on all of them.
 
 <VersionsFigure />
 
@@ -155,7 +171,7 @@ To have a coding agent follow these rules, see [[AI use#Checking a draft|the AI 
 
 ## Where eeprep differs from the wiki
 
-The [r/EngineeringResumes wiki](https://www.reddit.com/r/EngineeringResumes/wiki/index/) is a good default, and this page follows it on most points. On the points below, eeprep's advice differs, so both are listed here. The wiki's rules are sound. In practice, the advice on this page is what worked for the author.
+The [r/EngineeringResumes wiki](https://www.reddit.com/r/EngineeringResumes/wiki/index/) is a good default, and I follow it on most points. On the points below, my advice differs, so the table lists both. The wiki's rules are sound. My versions are what worked for me.
 
 | Topic                 | The wiki                                                            | eeprep                                                                                   |
 | --------------------- | ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
@@ -174,7 +190,7 @@ The [r/EngineeringResumes wiki](https://www.reddit.com/r/EngineeringResumes/wiki
 
 ## A CV for a graduate application
 
-A master's or PhD application often asks for a CV, not a resume. The rules on this page still apply, with the differences below, which are eeprep's advice.
+A master's or PhD application often asks for a CV, not a resume. The rules on this page still apply, with the differences below, which are my own advice.
 
 - Length: up to two pages.
 - Page break: do not split an entry's heading from its bullets across the page break.

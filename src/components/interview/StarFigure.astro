@@ -39,9 +39,6 @@ const caption = externalLinks(
 </figure>
 
 <style>
-	.eep-star-fig .eep-kicker {
-		line-height: 1.35;
-	}
 	.eep-star {
 		margin-top: 1rem;
 		--muted: color-mix(in srgb, var(--eep-dg-mute) 35%, var(--eep-dg-fill));
@@ -88,14 +85,14 @@ const caption = externalLinks(
 	.eep-star-label {
 		margin: 0;
 		max-width: none;
-		font-size: 0.75rem;
+		font-size: var(--eep-text-eyebrow);
 		line-height: 1.35;
 		color: var(--eep-ink-2);
 		text-align: center;
 		overflow-wrap: anywhere;
 	}
 	.eep-star-label.eep-star-a {
-		font-size: 0.8125rem;
+		font-size: var(--eep-text-caption);
 		font-weight: 600;
 		color: var(--eep-ink);
 		text-wrap: balance;

@@ -13,7 +13,7 @@ The most useful help is a correction with a public source behind it. In order of
 
 ## Suggest an idea or a fix
 
-Open an [issue](https://github.com/edwardasilva/eeprep/issues/new/choose) and pick "Fix something" or "Idea or suggestion". A short description is all it needs. Naming the page and linking a public source help when you can. Maintainers check every claim against a real public source during review.
+Open an [issue](https://github.com/edwardasilva/eeprep/issues/new/choose) and pick "Fix something" or "Idea or suggestion". A short description is all it needs. Naming the page and linking a public source help when you can. I check every claim against a real public source during review.
 
 ## Edit a page in your browser
 
@@ -22,7 +22,7 @@ You can fix a page without installing anything:
 1. Find the page's file in this repo. Guide pages live in `src/content/docs`, and the file path follows the page address. The page at `eeprep.com/advice/resume/cleanup/` is the file `src/content/docs/advice/resume/cleanup.mdx`. If no file has that name, look for `index.mdx` in the folder of that name.
 2. Click the pencil icon (Edit this file). GitHub makes your own copy of the repo the first time.
 3. Make one change: one fix, or one page. A small change is quick to review and easy to undo.
-4. If you add an outside link, paste it in the pull request too. Maintainers add the source entry for you.
+4. If you add an outside link, paste it in the pull request too. I add the source entry for you.
 5. Click "Commit changes", then "Propose changes", then "Create pull request". Write a sentence or two on what you changed and why. That is all a pull request needs. An issue link is optional.
 
 ## Work on your computer
@@ -40,11 +40,11 @@ npm run dev
 
 ### Sources
 
-Every claim needs a public source. Cite it in `src/content/references.bib`, as [STYLE.md](STYLE.md) explains. Each outside URL on a page also needs an entry in `src/data/link-index.json`. If either step is new to you, paste the links in the pull request and a maintainer adds the entries.
+Every claim needs a public source. Cite it in `src/content/references.bib`, as [STYLE.md](STYLE.md) explains. Each outside URL on a page also needs an entry in `src/data/link-index.json`. If either step is new to you, paste the links in the pull request and I add the entries.
 
 ### Checks
 
-These are optional for you. Maintainers run them before a change goes in. From the repo root:
+These are optional for you. I run them before a change goes in. From the repo root:
 
 ```bash
 npm run lint              # ESLint, markdownlint, and Prettier
@@ -57,7 +57,7 @@ Vale checks the writing style against [STYLE.md](STYLE.md). To run it, [install 
 
 ## What happens next
 
-A maintainer reviews the pull request and may ask a question or suggest a change. Each accepted change goes in as one squashed commit. Merges to `main` update a preview site that search engines skip, and eeprep.com updates with the next release.
+I review the pull request and may ask a question or suggest a change. Each accepted change goes in as one squashed commit. Merges to `main` update a preview site that search engines skip, and eeprep.com updates with the next release.
 
 ## Coding agents
 

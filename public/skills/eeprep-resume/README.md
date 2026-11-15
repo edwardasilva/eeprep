@@ -31,7 +31,7 @@ Cursor and other agents that read a rules file: paste `SKILL.md` into `.cursor/r
 | `SKILL.md`                       | The workflow and the main rule: never invent a fact                                                 |
 | `references/inventory.md`        | The questions that pull real material out of the student                                            |
 | `references/rules.md`            | Layout, section order, header, education, projects, experience, skills                              |
-| `references/bullets.md`          | Did X with Y to get Z, with the verbs to use and to avoid                                           |
+| `references/bullets.md`          | XYZ, CAR, and STAR, number first, with the verbs to use and to avoid                                |
 | `references/tailoring.md`        | Tailoring to a posting, the 4 or 5 versions to keep, acronyms and the ATS, and how to use reviewers |
 | `references/checklist.md`        | The audit to run on the finished PDF                                                                |
 | `references/humanize.md`         | The tells that make a page read as machine-written, and how to remove them                          |

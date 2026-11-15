@@ -3,17 +3,15 @@
   <img src="public/brand/eeprep-lockup-outlined.svg" alt="eeprep" width="320">
 </picture>
 
-eeprep is a free guide for EECS students and new grads. It shows how to build a resume that works, find real experience, and land a first internship or full-time role.
-
-Status: active development.
+eeprep is a free job-search guide for EECS students and new grads. It covers one-page resumes, projects, referrals, interviews, and graduate study, for a first internship or a first full-time role.
 
 ## Why it exists
 
-Courses teach circuits and signals, but they rarely teach how to turn coursework into a first job. eeprep puts that advice in one place.
+Courses teach circuits and signals, but they rarely teach how to turn coursework into a first job. I wrote eeprep to put that advice in one place.
 
 ## What you'll find
 
-- Advice covers projects and a portfolio, resumes, networking and getting hired for an internship or a first full-time role, interviews, graduate study, and professional societies. Quick setup is the whole guide on one page, and Author's story is a short note on where the advice comes from.
+- Advice covers projects and a portfolio, resumes, networking, and getting hired for an internship or a first full-time role. It also covers interviews, graduate study, and professional societies. Quick setup is the whole guide on one page, and Author's story is a short note on where the advice comes from.
 - Help has the job boards and where each one misleads, the repos and lists behind the site, pay data and forums, and where an AI tool helps in the search.
 - Roadmap lists what is coming next and how to contribute.
 
@@ -28,7 +26,7 @@ The site is live at [eeprep.com](https://eeprep.com).
 ## Related projects
 
 - [resume-generator](https://github.com/edwardasilva/resume-generator): turns one JSON file into the one-page resume the resume pages describe.
-- [company-lists](https://github.com/edwardasilva/company-lists): a plain list of companies by region, covering seven metro areas in Colorado, Texas, California, and Virginia. It also has one file per state for major employers in all 50 states.
+- [company-lists](https://github.com/edwardasilva/company-lists): a plain list of companies by state, with one file for each of the 50 states and 851 rows. A company gets one row for each city it is in.
 
 ## Get the code
 

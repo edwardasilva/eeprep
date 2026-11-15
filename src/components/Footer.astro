@@ -19,10 +19,16 @@ const notice = externalLinks(
 <style>
 	.eep-license {
 		margin-top: 2rem;
-		font-size: var(--sl-text-xs);
+		font-size: var(--eep-text-caption);
+		line-height: var(--eep-lh-ui);
 		color: var(--sl-color-gray-3);
 	}
 	.eep-license :global(a) {
 		color: inherit;
+	}
+	/* Keep each link on one line, so "CC BY 4.0" and "resume-generator" never
+	   break across two lines on a phone. In body text, link words may wrap. */
+	.eep-license :global(a.external-link > .eep-ext-text) {
+		white-space: nowrap;
 	}
 </style>

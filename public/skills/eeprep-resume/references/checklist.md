@@ -27,7 +27,7 @@ Audit the finished PDF, not the source file. Work top to bottom. Fix what fails,
 
 ## Projects and experience
 
-Read each bullet against three questions. Does it start with a past-tense verb that is not helped, assisted, worked on, or utilized? Does it name the tool? Does it give a number early wherever the user measured one, and can the user explain it? If the user cannot explain a number, it comes off, because the interviewer will ask.
+Read each bullet against four questions. Does it start with a past-tense verb that is not helped, assisted, worked on, or utilized? Does it name the tool? Does it give a number early wherever the user measured one, and can the user explain it? Does it follow XYZ, CAR, or STAR from `bullets.md`? If the user cannot explain a number, it comes off, because the interviewer will ask.
 
 - Every bullet fills one line or most of two.
 - Every bullet holds one idea.
@@ -74,6 +74,7 @@ Education
 
 Projects and experience
 [ ] Every bullet: past-tense verb, a tool, a number I can explain wherever I measured one
+[ ] Every bullet follows XYZ, CAR, or STAR, any measured number near the front
 [ ] No helped, assisted, worked on, or utilized
 [ ] Every bullet fills one line or most of two
 [ ] Every bullet holds one idea

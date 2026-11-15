@@ -115,16 +115,13 @@ const caption = externalLinks(
 </figure>
 
 <style>
-	.eep-draft .eep-kicker {
-		line-height: 1.35;
-	}
 	.eep-draft {
 		container-type: inline-size;
 	}
 	.eep-draft-flag {
 		margin: 0 0 1rem;
 		color: var(--eep-ink-2);
-		font-size: 0.875rem;
+		font-size: var(--eep-text-sm);
 	}
 	.eep-tag {
 		display: inline-block;
@@ -133,7 +130,7 @@ const caption = externalLinks(
 		border: 1px solid var(--eep-ink-2);
 		border-radius: var(--eep-radius-sm);
 		color: var(--eep-ink-2);
-		font: 600 0.75rem/1.2 var(--eep-font-sans);
+		font: 600 var(--eep-text-eyebrow)/1.2 var(--eep-font-sans);
 		vertical-align: 0.05em;
 	}
 	.eep-draft-wrap {
@@ -148,7 +145,7 @@ const caption = externalLinks(
 		background: var(--eep-paper);
 		border: 1px solid var(--eep-rule);
 		color: var(--eep-ink);
-		font: 0.75rem/1.45 var(--eep-font-sans);
+		font: var(--eep-text-eyebrow)/1.45 var(--eep-font-sans);
 		overflow-wrap: anywhere;
 	}
 	.eep-draft-sheet p {
@@ -159,14 +156,14 @@ const caption = externalLinks(
 		text-align: center;
 	}
 	.eep-draft-name {
-		font-size: 1rem;
+		font-size: var(--eep-text-body);
 		font-weight: 700;
 	}
 	:global(.sl-markdown-content) p.eep-draft-sec {
 		margin: 0.7rem 0 0.2rem;
 		padding-bottom: 0.05rem;
 		border-bottom: 1px solid var(--eep-ink);
-		font: 700 0.75rem/1.3 var(--eep-font-sans);
+		font: 700 var(--eep-text-eyebrow)/1.3 var(--eep-font-sans);
 		color: var(--eep-ink);
 	}
 	:global(.sl-markdown-content) .eep-draft-mark > p.eep-draft-sec {
@@ -220,7 +217,7 @@ const caption = externalLinks(
 		align-items: flex-start;
 		margin: 0 0 0.85rem;
 		color: var(--eep-text);
-		font-size: 0.9rem;
+		font-size: var(--eep-text-ui);
 		line-height: 1.45;
 		max-width: none;
 	}
