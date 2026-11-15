@@ -104,10 +104,6 @@
 .eep-home-intro p {
 	max-width: var(--eep-measure);
 }
-/* The note under the lead that the guide is mostly opinion. */
-.eep-home-intro .eep-disclaimer {
-	color: var(--eep-ink-2);
-}
 /* The same size, weight and leading as the title on every other page. */
 .eep-hero h1 {
 	font-family: var(--eep-font-serif);
@@ -161,10 +157,9 @@ button[data-open-modal] kbd {
 }
 .eep-generator {
 	max-width: var(--eep-measure);
-	color: var(--eep-ink-2);
 }
 .eep-cards span:last-child {
-	color: var(--eep-ink-2);
+	color: var(--eep-ink);
 	font-size: var(--eep-text-ui);
 	line-height: var(--eep-lh-ui);
 }
@@ -597,8 +592,10 @@ a.external-link .eep-ext-last::after {
 	}
 }
 
-/* Company list: same stacked-row treatment as the roadmap table on
-   narrow screens, with a labeled filter bar above it. */
+/* Company list: a labeled filter bar above a table. On narrow screens each
+   company is two short lines instead of five labeled fields: the name, then
+   industry, field, city, and state on one line, so a phone shows several
+   companies at once. */
 .eep-companies {
 	margin: var(--eep-space-5) 0 var(--eep-space-6);
 	color: var(--eep-ink);
@@ -680,6 +677,37 @@ a.external-link .eep-ext-last::after {
 	line-height: 1.4;
 	color: var(--eep-ink-2);
 }
+/* The page size sits in the tools row, its label beside the menu. */
+.eep-companies-size {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+.eep-companies-size label {
+	font-size: var(--eep-text-sm);
+	line-height: 1.4;
+	color: var(--eep-ink-2);
+}
+.eep-companies .eep-companies-size select {
+	width: auto;
+}
+/* Under the table: Show more on the left, Previous and Next on the right. */
+.eep-companies-pager {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--eep-space-3);
+	margin-top: var(--eep-space-4);
+}
+.eep-companies-pager[hidden] {
+	display: none;
+}
+.eep-companies-pager [data-prev] {
+	margin-inline-start: auto;
+}
+.eep-companies button:disabled {
+	color: var(--eep-ink-2);
+	cursor: default;
+}
 .eep-companies-form noscript p {
 	margin: var(--eep-space-3) 0 0;
 	font-size: var(--eep-text-sm);
@@ -716,7 +744,7 @@ a.external-link .eep-ext-last::after {
 	white-space: nowrap;
 }
 .eep-companies .eep-company-list tbody tr {
-	padding: 0.75rem 0;
+	padding: 0.625rem 0;
 	border-top: 1px solid var(--eep-rule-2);
 }
 .eep-companies .eep-company-list tbody tr[hidden] {
@@ -728,22 +756,36 @@ a.external-link .eep-ext-last::after {
 	vertical-align: top;
 	overflow-wrap: break-word;
 }
-.eep-companies .eep-company-list td + td {
-	margin-top: 0.5rem;
-}
 .eep-companies .eep-company-list td a {
 	display: inline-block;
 	min-height: 1.5rem;
 	line-height: 1.5rem;
 }
-.eep-companies .eep-company-list td[data-label]::before {
-	content: attr(data-label);
-	display: block;
-	margin-bottom: 0.15rem;
-	font-size: var(--eep-text-caption);
-	font-weight: 600;
-	line-height: var(--eep-lh-label);
-	color: var(--eep-ink-2);
+/* Narrow: the name on its own line, then the other four cells run inline,
+   split by a middle dot. A one-place company reads "Tulsa, OK". A company in
+   several places keeps its city list and state list apart, because the two
+   lists are not in matching order. An empty field is left out. */
+@media (width < 34rem) {
+	.eep-companies .eep-company-list tbody td {
+		display: inline;
+	}
+	.eep-companies .eep-company-list tbody td:first-child {
+		display: block;
+		margin-bottom: 0.125rem;
+	}
+	.eep-companies .eep-company-list tbody td:nth-child(n + 3)::before {
+		content: '\00a0\00b7\0020' / '';
+	}
+	.eep-companies
+		.eep-company-list
+		tbody
+		tr[data-one-place]
+		td:last-child::before {
+		content: ', ' / '';
+	}
+	.eep-companies .eep-company-list tbody td[data-empty] {
+		display: none;
+	}
 }
 .eep-companies-note {
 	margin: var(--eep-space-4) 0 0;
@@ -843,9 +885,6 @@ a.external-link .eep-ext-last::after {
 	.eep-companies .eep-company-list tbody tr {
 		border-top: 1px solid var(--eep-rule-2);
 	}
-	.eep-companies .eep-company-list td[data-label]::before {
-		content: none;
-	}
 	.eep-companies .eep-company-list td {
 		overflow-wrap: break-word;
 	}
@@ -857,13 +896,9 @@ a.external-link .eep-ext-last::after {
 	}
 }
 
-/* Footer: the date line, the license line and the page edges line up on
-   the left, in the same small size. Starlight pushes a lone date to the
-   right and sets it a size larger than the license. */
-footer .meta {
-	font-size: var(--eep-text-caption);
-	line-height: var(--eep-lh-ui);
-}
-footer .meta > p:only-child {
-	margin-inline-start: 0;
+/* The site has one "Last updated" date, in the license line. Starlight still
+   prints its empty per-page date box, which would add a gap above the
+   previous and next links. */
+footer .meta:empty {
+	display: none;
 }

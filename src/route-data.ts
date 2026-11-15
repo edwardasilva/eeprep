@@ -18,13 +18,26 @@ export const onRequest = defineRouteMiddleware(async (context) => {
 			content: '.sl-markdown-content{counter-reset:eep-fig ' + start + '}',
 		});
 	}
-	if (route.id !== linkIndexPage || !route.toc) return;
-	route.toc.items.push(
-		...linkGroups.map((group) => ({
-			depth: 2,
-			slug: group.id,
-			text: group.name,
-			children: [],
-		})),
-	);
+	if (route.id === linkIndexPage && route.toc) {
+		route.toc.items.push(
+			...linkGroups.map((group) => ({
+				depth: 2,
+				slug: group.id,
+				text: group.name,
+				children: [],
+			})),
+		);
+	}
+	// A page with no headings would get an "On this page" list that holds only
+	// "Overview", plus a bar for it on phones. Hide both. The right column
+	// stays, so "Linked from" keeps its place and the text column keeps its
+	// width.
+	const items = route.toc?.items ?? [];
+	if (items.length <= 1 && !items[0]?.children.length) {
+		route.head.push({
+			tag: 'style',
+			content:
+				':root{--sl-mobile-toc-height:0rem}starlight-toc,mobile-starlight-toc{display:none}',
+		});
+	}
 });
