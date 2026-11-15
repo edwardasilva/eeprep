@@ -18,19 +18,27 @@
 		'Source Code Pro Variable', 'Source Code Pro', ui-monospace, SFMono-Regular,
 		Menlo, monospace;
 
-	/* Type scale (rem @ 16px root) */
-	--eep-text-h1: 3.5rem; /* 56  chapter title (2.5rem < 50em) */
+	/* Type scale (rem @ 16px root). Every font size on the site comes from
+	   this list, so one kind of text has one size on every page. */
+	--eep-text-h1: 3.5rem; /* 56  page title (2.5rem on phones) */
 	--eep-text-h2: 2.125rem; /* 34  section */
-	--eep-text-h3: 1.5rem; /* 24  subsection */
+	--eep-text-h3: 1.5rem; /* 24  subsection, figure title */
+	--eep-text-title: 1.375rem; /* 22  card title, figure heading */
 	--eep-text-h4: 1.1875rem; /* 19 */
-	--eep-text-body: 1.0625rem; /* 17 */
-	--eep-text-sm: 0.875rem; /* 14  sidebar, UI */
-	--eep-text-caption: 0.84375rem; /* 13.5 figure captions, margin column */
+	--eep-text-h5: 1.125rem; /* 18  box title, side-column heading */
+	--eep-text-body: 1rem; /* 16  prose, list items, pagination */
+	--eep-text-ui: 0.9375rem; /* 15  tables, card text, asides, figure body text */
+	--eep-text-sm: 0.875rem; /* 14  sidebar, top nav, form labels */
+	--eep-text-caption: 0.8125rem; /* 13  captions, table headers, footer, TOC, labels */
 	--eep-text-eyebrow: 0.75rem; /* 12  kickers and figure numbers, sentence case */
 	--eep-text-code: 0.875rem; /* 14 */
 	--eep-text-eq: 1.12em; /* KaTeX relative to body */
-	--eep-lh-body: 1.7;
-	--eep-lh-heading: 1.08;
+	/* Line heights, one per kind of text. */
+	--eep-lh-body: 1.7; /* prose */
+	--eep-lh-ui: 1.5; /* tables, card text, captions, footer */
+	--eep-lh-label: 1.35; /* kickers, labels, table headers */
+	--eep-lh-title: 1.2; /* card and box titles */
+	--eep-lh-heading: 1.08; /* h1 to h4 */
 	--eep-track-h1: -0.025em;
 
 	/* Spacing (4px base) */
@@ -137,7 +145,7 @@
 	border-radius: 50%;
 	background: var(--eep-dg-fill);
 	color: var(--eep-dg-ink);
-	font: 600 0.8125rem/1 var(--eep-font-sans);
+	font: 600 var(--eep-text-caption)/1 var(--eep-font-sans);
 }
 
 /* ---------- 5. Map onto Starlight --sl-* (both modes; values resolve per mode) ---------- */
@@ -188,7 +196,14 @@
 	--sl-shadow-sm: none;
 	--sl-shadow-md: 0 1px 0 var(--eep-rule);
 	--sl-shadow-lg: 0 8px 24px rgb(0 0 0 / 0.08);
+	/* Starlight's own sizes follow the same scale, so its chrome (table of
+	   contents, sidebar, pagination, footer) matches the theme's text. */
+	--sl-text-xs: var(--eep-text-caption);
+	--sl-text-sm: var(--eep-text-sm);
+	--sl-text-base: var(--eep-text-body);
+	--sl-text-lg: var(--eep-text-h5);
 	--sl-text-body: var(--eep-text-body);
+	--sl-text-body-sm: var(--eep-text-caption);
 	--sl-text-code: var(--eep-text-code);
 	--sl-line-height: var(--eep-lh-body);
 	--sl-line-height-headings: var(--eep-lh-heading);
@@ -216,8 +231,9 @@ h1#_top {
 	font-variation-settings: 'opsz' 72;
 	letter-spacing: -0.015em;
 }
+/* The page title, and the home page title, which shares this size. */
 h1#_top {
-	font-size: clamp(2.5rem, 5vw, var(--eep-text-h1));
+	font-size: clamp(2.25rem, 5vw, var(--eep-text-h1));
 	letter-spacing: var(--eep-track-h1);
 	line-height: 1.02;
 }
@@ -234,6 +250,13 @@ h1#_top {
 }
 .sl-markdown-content :is(p, li) {
 	max-width: var(--eep-measure);
+}
+/* Lists in the guide text: the marker sits just inside the paragraph edge
+   instead of 40px in, so list text lines up closer to the text around it
+   and phones keep more of the line. Zero specificity, so a component that
+   styles its own list wins. */
+:where(.sl-markdown-content) :where(ul, ol):where(:not([class])) {
+	padding-inline-start: 1.5rem;
 }
 .sl-markdown-content a {
 	color: var(--eep-ink);
@@ -275,7 +298,7 @@ h1#_top {
 	--c: var(--eep-accent);
 }
 .starlight-aside__title {
-	font: 600 0.8125rem/1.2 var(--eep-font-sans);
+	font: 600 var(--eep-text-caption)/var(--eep-lh-label) var(--eep-font-sans);
 	color: var(--eep-ink-2);
 	display: flex;
 	gap: var(--eep-space-3);
@@ -286,13 +309,14 @@ h1#_top {
 	display: none;
 }
 .starlight-aside__content {
-	font-size: 0.96875rem;
+	font-size: var(--eep-text-ui);
 	color: var(--eep-ink);
 }
 
 /* ---------- 8. Figures ---------- */
 figure.eep-fig {
-	margin: var(--eep-space-7) 0 var(--eep-space-2);
+	/* The same space above and below as an aside. */
+	margin: var(--eep-space-7) 0;
 	/* The padding shrinks only on screens narrower than 316px, which on a
 	   phone means 200% zoom or more. From a 320px screen up at 100% zoom it
 	   stays at the full 2.25rem. It follows the screen width, not the
@@ -316,12 +340,14 @@ figure.eep-fig.wide > :is(svg, img) {
 }
 figure.eep-fig figcaption {
 	display: flex;
+	/* The figure number and the first line of the caption share a baseline. */
+	align-items: baseline;
 	gap: var(--eep-space-3);
 	margin-top: 1.125rem;
 	padding-top: 0.875rem;
 	border-top: var(--eep-border);
 	font-size: var(--eep-text-caption);
-	line-height: 1.55;
+	line-height: var(--eep-lh-ui);
 	color: var(--eep-ink-2);
 }
 /* Figures are numbered through the whole site in sidebar order. Each page sets
@@ -337,7 +363,7 @@ figure.eep-fig figcaption .eep-fignum::before {
 	content: 'Figure ' counter(eep-fig);
 }
 figure.eep-fig figcaption .eep-fignum {
-	font: 600 var(--eep-text-eyebrow)/1.9 var(--eep-font-serif);
+	font: 600 var(--eep-text-eyebrow)/var(--eep-lh-ui) var(--eep-font-serif);
 	color: var(--eep-mute);
 	white-space: nowrap;
 }

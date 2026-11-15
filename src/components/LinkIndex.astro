@@ -124,7 +124,7 @@ const groups = linkGroups.map((group) => ({
 		flex-wrap: wrap;
 		gap: 0.375rem 1.25rem;
 		margin: 0 0 2rem;
-		font-size: 0.875rem;
+		font-size: var(--eep-text-sm);
 	}
 	.eep-links .eep-links-jump li + li {
 		margin-top: 0;
@@ -152,7 +152,7 @@ const groups = linkGroups.map((group) => ({
 		content: '+';
 		inline-size: 1rem;
 		color: var(--eep-ink-2);
-		font: 500 1rem/1 var(--eep-font-sans);
+		font: 500 var(--eep-text-body)/1 var(--eep-font-sans);
 	}
 	.eep-links-group[open] > summary::before {
 		content: '\2212';
@@ -166,29 +166,31 @@ const groups = linkGroups.map((group) => ({
 	}
 	.eep-links h2 {
 		margin: 0;
-		font: 600 var(--eep-text-h3, 1.25rem) / var(--eep-lh-heading, 1.25)
-			var(--eep-font-serif);
+		/* The same look as an h3 in the guide text. */
+		font: 500 var(--eep-text-h3) / var(--eep-lh-heading) var(--eep-font-serif);
+		font-variation-settings: 'opsz' 72;
+		letter-spacing: -0.015em;
 		color: var(--eep-ink);
 	}
 	.eep-links table {
 		width: 100%;
 		border-collapse: collapse;
 		table-layout: fixed;
-		font-size: 0.875rem;
-		line-height: 1.5;
+		font-size: var(--eep-text-ui);
+		line-height: var(--eep-lh-ui);
 	}
 	.eep-links th,
 	.eep-links td {
 		padding: 0.625rem 0.75rem 0.625rem 0;
-		border-bottom: 1px solid var(--eep-rule);
+		border-bottom: 1px solid var(--eep-rule-2);
 		text-align: start;
 		vertical-align: top;
 		overflow-wrap: anywhere;
 	}
 	.eep-links thead th {
 		padding-block: 0 0.5rem;
-		border-bottom-color: var(--eep-rule);
-		font: 500 0.75rem/1.4 var(--eep-font-sans);
+		border-bottom-color: var(--eep-rule-2);
+		font: 600 var(--eep-text-caption) / var(--eep-lh-label) var(--eep-font-sans);
 		color: var(--eep-ink-2);
 	}
 	.eep-links thead th:nth-child(1) {
@@ -232,10 +234,10 @@ const groups = linkGroups.map((group) => ({
 		}
 		.eep-links tbody tr {
 			padding: 0.75rem 0;
-			border-bottom: 1px solid var(--eep-rule);
+			border-bottom: 1px solid var(--eep-rule-2);
 		}
 		.eep-links tbody tr:first-child {
-			border-top: 1px solid var(--eep-rule);
+			border-top: 1px solid var(--eep-rule-2);
 		}
 		.eep-links th,
 		.eep-links td {
@@ -253,7 +255,8 @@ const groups = linkGroups.map((group) => ({
 			content: attr(data-label) / '';
 			display: block;
 			margin-bottom: 0.125rem;
-			font: 500 0.75rem/1.4 var(--eep-font-sans);
+			font: 600 var(--eep-text-caption) / var(--eep-lh-label)
+				var(--eep-font-sans);
 			color: var(--eep-ink-2);
 		}
 	}

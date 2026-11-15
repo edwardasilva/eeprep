@@ -145,10 +145,6 @@ const caption = externalLinks(
 </figure>
 
 <style>
-	/* The kicker can wrap on phones. */
-	.eep-paths-fig .eep-kicker {
-		line-height: 1.35;
-	}
 	.eep-paths {
 		margin-top: 1rem;
 		--node: 0.8rem;
@@ -171,24 +167,24 @@ const caption = externalLinks(
 		max-width: none;
 	}
 	.eep-paths .eep-paths-head {
-		font: 600 1.375rem/1.2 var(--eep-font-serif);
+		font: 600 var(--eep-text-title)/1.2 var(--eep-font-serif);
 		color: var(--eep-ink);
 	}
 	.eep-paths .eep-paths-title {
-		font-size: 0.9375rem;
+		font-size: var(--eep-text-ui);
 		font-weight: 600;
 		line-height: 1.3;
 		color: var(--eep-ink);
 	}
 	.eep-paths .eep-paths-body {
 		margin-top: 0.25rem;
-		font-size: 0.8125rem;
+		font-size: var(--eep-text-caption);
 		line-height: 1.45;
 		color: var(--eep-mute);
 	}
 	.eep-paths .eep-paths-pick {
 		margin: 1rem 0 0.6rem;
-		font: 0.75rem/1 var(--eep-font-serif);
+		font: var(--eep-text-eyebrow)/1 var(--eep-font-serif);
 		color: var(--eep-mute);
 	}
 
@@ -299,7 +295,7 @@ const caption = externalLinks(
 			padding: 0.5rem 0.5rem 0.55rem;
 		}
 		.eep-paths .eep-paths-head {
-			font-size: 1.125rem;
+			font-size: var(--eep-text-h5);
 		}
 	}
 	/* The left line ends at the offer. The line runs behind the last box, so
@@ -412,7 +408,7 @@ const caption = externalLinks(
 			align-self: start;
 		}
 		.eep-paths-offer .eep-paths-head {
-			font-size: 1.125rem;
+			font-size: var(--eep-text-h5);
 		}
 		.eep-paths-loop {
 			margin-left: 0;

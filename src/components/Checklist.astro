@@ -68,7 +68,7 @@ const { title, groups } = Astro.props;
 		margin: 0;
 	}
 	.eep-list-title {
-		font: 600 1.125rem/1.2 var(--eep-font-serif);
+		font: 600 var(--eep-text-h5)/1.2 var(--eep-font-serif);
 		margin-bottom: 0.6rem;
 	}
 	.eep-list-group {
@@ -76,7 +76,7 @@ const { title, groups } = Astro.props;
 		break-inside: avoid;
 	}
 	.eep-list-heading {
-		font: 600 1rem/1.3 var(--eep-font-serif);
+		font: 600 var(--eep-text-body)/1.3 var(--eep-font-serif);
 		margin-bottom: 0.3rem;
 	}
 	.eep-list ul,
@@ -90,7 +90,7 @@ const { title, groups } = Astro.props;
 		gap: 0.6rem;
 		margin: 0.3rem 0;
 		max-width: none;
-		font-size: 0.9375rem;
+		font-size: var(--eep-text-ui);
 		line-height: 1.45;
 		overflow-wrap: anywhere;
 	}
@@ -108,7 +108,7 @@ const { title, groups } = Astro.props;
 	.eep-list-fields li {
 		margin: 0.3rem 0;
 		max-width: none;
-		font-size: 0.9375rem;
+		font-size: var(--eep-text-ui);
 		line-height: 1.45;
 		overflow-wrap: anywhere;
 	}

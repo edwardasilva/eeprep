@@ -154,9 +154,19 @@ export default defineConfig({
 				rehypeKatex,
 				rehypeEqIds,
 				rehypeExternalLinks,
+				// Every table in the guide stacks its rows on phones. The roadmap
+				// also gets fixed column widths.
 				[
 					rehypeTableLabels,
-					{ files: ['src/content/docs/roadmap.md'], className: 'eep-roadmap' },
+					{
+						className: 'eep-table',
+						extra: [
+							{
+								files: ['src/content/docs/roadmap.md'],
+								className: 'eep-roadmap',
+							},
+						],
+					},
 				],
 			],
 		}),

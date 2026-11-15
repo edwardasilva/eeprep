@@ -1,32 +1,38 @@
 /**
  * Give each body cell of a Markdown table a data-label with its column's
  * header text, and mark the table with a class, so CSS can stack rows on
- * narrow screens with the column name above each cell. Runs only on the
- * files listed in `files` (matched by path suffix).
+ * narrow screens with the column name above each cell. Every table gets
+ * `className`. A table in a file listed in an `extra` rule (matched by path
+ * suffix) also gets that rule's class.
  *
- * @param {{ files: string[], className: string }} options
+ * @param {{ className: string, extra?: { files: string[], className: string }[] }} options
  */
-export default function rehypeTableLabels({ files, className }) {
+export default function rehypeTableLabels({ className, extra = [] }) {
 	return (tree, file) => {
 		const path = String(file.path ?? file.history?.[0] ?? '');
-		if (!files.some((f) => path.endsWith(f))) return;
-		walk(tree, className);
+		const classes = [
+			className,
+			...extra
+				.filter((rule) => rule.files.some((f) => path.endsWith(f)))
+				.map((rule) => rule.className),
+		];
+		walk(tree, classes);
 	};
 }
 
-/** @param {any} node @param {string} className */
-function walk(node, className) {
+/** @param {any} node @param {string[]} classes */
+function walk(node, classes) {
 	if (node?.type === 'element' && node.tagName === 'table') {
-		label(node, className);
+		label(node, classes);
 		return;
 	}
-	for (const child of node?.children ?? []) walk(child, className);
+	for (const child of node?.children ?? []) walk(child, classes);
 }
 
-/** @param {any} table @param {string} className */
-function label(table, className) {
-	const classes = table.properties.className ?? [];
-	table.properties.className = [...classes, className];
+/** @param {any} table @param {string[]} classes */
+function label(table, classes) {
+	const existing = table.properties.className ?? [];
+	table.properties.className = [...existing, ...classes];
 	const sections = table.children.filter((n) => n.type === 'element');
 	const head = sections.find((n) => n.tagName === 'thead');
 	const body = sections.find((n) => n.tagName === 'tbody');

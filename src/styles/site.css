@@ -8,7 +8,7 @@
 	min-width: 0;
 }
 .eep-nav a {
-	font: 500 0.875rem/1 var(--eep-font-sans);
+	font: 500 var(--eep-text-sm)/1 var(--eep-font-sans);
 	color: var(--eep-ink);
 	text-decoration: none;
 	white-space: nowrap;
@@ -70,7 +70,7 @@
 }
 .eep-suggest p {
 	margin: 0 0 0.5rem;
-	font: 600 0.75rem/1 var(--eep-font-sans);
+	font: 600 var(--eep-text-eyebrow)/1 var(--eep-font-sans);
 	color: var(--eep-ink-2);
 }
 .eep-suggest ul {
@@ -108,11 +108,12 @@
 .eep-home-intro .eep-disclaimer {
 	color: var(--eep-ink-2);
 }
+/* The same size, weight and leading as the title on every other page. */
 .eep-hero h1 {
 	font-family: var(--eep-font-serif);
 	font-weight: 500;
-	font-size: clamp(2.25rem, 4vw, 3.25rem);
-	line-height: 1.08;
+	font-size: clamp(2.25rem, 5vw, var(--eep-text-h1));
+	line-height: 1.02;
 	letter-spacing: var(--eep-track-h1);
 	color: var(--eep-ink);
 	font-variation-settings: 'opsz' 72;
@@ -137,6 +138,9 @@ button[data-open-modal] kbd {
 }
 .eep-cards a {
 	display: grid;
+	/* Rows keep their own height, so the description sits right under the
+	   title in every card, even when one card is taller than the other. */
+	align-content: start;
 	gap: 0.4rem;
 	height: 100%;
 	padding: 1.1rem 1.15rem 1.2rem;
@@ -152,7 +156,7 @@ button[data-open-modal] kbd {
 	}
 }
 .eep-cards strong {
-	font: 550 1.35rem/1.2 var(--eep-font-serif);
+	font: 550 var(--eep-text-title)/var(--eep-lh-title) var(--eep-font-serif);
 	color: var(--eep-ink);
 }
 .eep-generator {
@@ -161,7 +165,8 @@ button[data-open-modal] kbd {
 }
 .eep-cards span:last-child {
 	color: var(--eep-ink-2);
-	font-size: 0.9375rem;
+	font-size: var(--eep-text-ui);
+	line-height: var(--eep-lh-ui);
 }
 .eep-home {
 	display: grid;
@@ -228,7 +233,7 @@ button[data-open-modal] kbd {
 }
 .eep-backlinks h2 {
 	color: var(--sl-color-white);
-	font-size: var(--sl-text-h5);
+	font-size: var(--eep-text-h5);
 	font-weight: 600;
 	line-height: var(--sl-line-height-headings);
 	margin-bottom: 0.5rem;
@@ -241,7 +246,7 @@ button[data-open-modal] kbd {
 .eep-backlinks a {
 	display: block;
 	padding-block: 0.25rem;
-	font-size: var(--sl-text-xs);
+	font-size: var(--eep-text-caption);
 	color: var(--sl-color-gray-2);
 	text-decoration: none;
 	overflow-wrap: anywhere;
@@ -341,10 +346,6 @@ button[data-open-modal] kbd {
 	.eep-hero {
 		padding-top: 1.5rem;
 	}
-	.eep-hero h1 {
-		font-size: clamp(1.875rem, 5vw + 0.75rem, 2.25rem);
-		line-height: 1.12;
-	}
 }
 
 /* Keep the end of the page above Safari's bottom bar (viewport-fit=cover). */
@@ -355,13 +356,14 @@ body {
 .sl-markdown-content .eep-kicker {
 	margin: 0 0 0.35rem;
 	max-width: none;
-	font: 600 var(--eep-text-eyebrow)/1 var(--eep-font-serif);
+	/* Room for a second line when the kicker wraps on a phone. */
+	font: 600 var(--eep-text-eyebrow)/var(--eep-lh-label) var(--eep-font-serif);
 	color: var(--eep-mute);
 }
 .sl-markdown-content .eep-figtitle {
 	margin: 0 0 0.6rem;
 	max-width: none;
-	font: 600 1.625rem/1.2 var(--eep-font-serif);
+	font: 600 var(--eep-text-h3)/var(--eep-lh-title) var(--eep-font-serif);
 	color: var(--eep-ink);
 }
 .eep-figtitle,
@@ -469,25 +471,26 @@ a.external-link .eep-ext-last::after {
 	background: var(--eep-paper);
 }
 
-/* Roadmap: a plain table. Rules between rows only, no
-   stripes or card. Narrow screens stack each row, with the column name
-   (from data-label) above each cell. */
-.sl-markdown-content table.eep-roadmap {
+/* Tables: one plain style for every table in the guide text, the roadmap
+   and the sitemap. Rules between rows only, no stripes or card, and the
+   first and last columns sit flush with the paragraph edges. Narrow screens
+   stack each row, with the column name (from data-label, added by the
+   rehype-table-labels plugin) above each cell, so no column is cut off. */
+.sl-markdown-content table.eep-table {
 	display: block;
 	width: 100%;
-	margin-top: 1rem;
 	border: 0;
 	border-collapse: collapse;
 	color: var(--eep-ink);
-	font-size: 0.9375rem;
-	line-height: 1.5;
+	font-size: var(--eep-text-ui);
+	line-height: var(--eep-lh-ui);
 }
-.sl-markdown-content .eep-roadmap :is(thead, tbody, tr, th, td) {
+.sl-markdown-content .eep-table :is(thead, tbody, tr, th, td) {
 	display: block;
 	border: 0;
 	background: none;
 }
-.sl-markdown-content .eep-roadmap thead {
+.sl-markdown-content .eep-table thead {
 	position: absolute;
 	width: 1px;
 	height: 1px;
@@ -495,18 +498,26 @@ a.external-link .eep-ext-last::after {
 	clip-path: inset(50%);
 	white-space: nowrap;
 }
-.sl-markdown-content .eep-roadmap tbody tr {
+.sl-markdown-content .eep-table tbody tr {
 	padding: 0.75rem 0;
-	border-top: 1px solid var(--eep-silver);
+	border-top: 1px solid var(--eep-rule-2);
 }
-.sl-markdown-content .eep-roadmap td {
+.sl-markdown-content .eep-table tbody tr:last-child {
+	border-bottom: 1px solid var(--eep-rule-2);
+}
+.sl-markdown-content .eep-table td {
 	padding: 0;
 	text-align: left;
 	vertical-align: top;
-	overflow-wrap: anywhere;
+	overflow-wrap: break-word;
 }
-.sl-markdown-content .eep-roadmap td + td {
+.sl-markdown-content .eep-table td + td {
 	margin-top: 0.5rem;
+}
+/* The roadmap and sitemap have fixed columns, so a long link breaks
+   anywhere instead of widening its column. */
+.sl-markdown-content .eep-roadmap td {
+	overflow-wrap: anywhere;
 }
 /* Links stacked with <br /> must each be at least 24px tall (WCAG 2.5.8). */
 .sl-markdown-content .eep-roadmap td a {
@@ -514,21 +525,25 @@ a.external-link .eep-ext-last::after {
 	min-height: 1.5rem;
 	line-height: 1.5rem;
 }
-.sl-markdown-content .eep-roadmap td[data-label]::before {
+/* Column names: the same small label as the column headers on wide screens. */
+.sl-markdown-content .eep-table td[data-label]::before {
 	content: attr(data-label);
 	display: block;
 	margin-bottom: 0.15rem;
-	font-size: 0.8125rem;
-	line-height: 1.45;
+	font-size: var(--eep-text-caption);
+	font-weight: 600;
+	line-height: var(--eep-lh-label);
 	color: var(--eep-ink-2);
 }
 
 @media (min-width: 34rem) {
-	.sl-markdown-content table.eep-roadmap {
+	.sl-markdown-content table.eep-table {
 		display: table;
+	}
+	.sl-markdown-content table.eep-roadmap {
 		table-layout: fixed;
 	}
-	.sl-markdown-content .eep-roadmap thead {
+	.sl-markdown-content .eep-table thead {
 		position: static;
 		display: table-header-group;
 		width: auto;
@@ -537,36 +552,39 @@ a.external-link .eep-ext-last::after {
 		clip-path: none;
 		white-space: normal;
 	}
-	.sl-markdown-content .eep-roadmap tbody {
+	.sl-markdown-content .eep-table tbody {
 		display: table-row-group;
 	}
-	.sl-markdown-content .eep-roadmap tr,
-	.sl-markdown-content .eep-roadmap tbody tr {
+	.sl-markdown-content .eep-table tr,
+	.sl-markdown-content .eep-table tbody tr {
 		display: table-row;
 		padding: 0;
 	}
-	.sl-markdown-content .eep-roadmap :is(th, td),
-	.sl-markdown-content .eep-roadmap td + td {
+	.sl-markdown-content .eep-table :is(th, td),
+	.sl-markdown-content .eep-table td + td {
 		display: table-cell;
 		margin: 0;
 		padding: 0.6rem 0.75rem 0.65rem;
 		text-align: left;
 		vertical-align: top;
 	}
-	.sl-markdown-content .eep-roadmap :is(th, td):first-child {
-		width: 40%;
+	.sl-markdown-content .eep-table :is(th, td):first-child {
 		padding-left: 0;
 	}
-	.sl-markdown-content .eep-roadmap thead th {
-		font-size: 0.8125rem;
-		font-weight: 400;
-		line-height: 1.3;
+	.sl-markdown-content .eep-table :is(th, td):last-child {
+		padding-right: 0;
+	}
+	.sl-markdown-content .eep-roadmap :is(th, td):first-child {
+		width: 40%;
+	}
+	.sl-markdown-content .eep-table thead th {
+		padding-top: 0;
+		font-size: var(--eep-text-caption);
+		font-weight: 600;
+		line-height: var(--eep-lh-label);
 		color: var(--eep-ink-2);
 	}
-	.sl-markdown-content .eep-roadmap tbody tr {
-		border-top: 1px solid var(--eep-silver);
-	}
-	.sl-markdown-content .eep-roadmap td[data-label]::before {
+	.sl-markdown-content .eep-table td[data-label]::before {
 		content: none;
 	}
 }
@@ -673,8 +691,8 @@ a.external-link .eep-ext-last::after {
 	margin: 0;
 	border: 0;
 	border-collapse: collapse;
-	font-size: 0.9375rem;
-	line-height: 1.5;
+	font-size: var(--eep-text-ui);
+	line-height: var(--eep-lh-ui);
 }
 .eep-companies .eep-company-list :is(thead, tbody, tr, th, td) {
 	display: block;
@@ -691,7 +709,7 @@ a.external-link .eep-ext-last::after {
 }
 .eep-companies .eep-company-list tbody tr {
 	padding: 0.75rem 0;
-	border-top: 1px solid var(--eep-silver);
+	border-top: 1px solid var(--eep-rule-2);
 }
 .eep-companies .eep-company-list tbody tr[hidden] {
 	display: none;
@@ -714,14 +732,15 @@ a.external-link .eep-ext-last::after {
 	content: attr(data-label);
 	display: block;
 	margin-bottom: 0.15rem;
-	font-size: 0.8125rem;
-	line-height: 1.45;
+	font-size: var(--eep-text-caption);
+	font-weight: 600;
+	line-height: var(--eep-lh-label);
 	color: var(--eep-ink-2);
 }
 .eep-companies-note {
 	margin: var(--eep-space-4) 0 0;
 	font-size: var(--eep-text-sm);
-	line-height: 1.5;
+	line-height: var(--eep-lh-ui);
 	color: var(--eep-ink-2);
 }
 
@@ -758,7 +777,7 @@ a.external-link .eep-ext-last::after {
 	.eep-companies .eep-company-list td + td {
 		display: table-cell;
 		margin: 0;
-		padding: 0.55rem 0.65rem 0.6rem;
+		padding: 0.6rem 0.75rem 0.65rem;
 		text-align: left;
 		vertical-align: top;
 	}
@@ -769,9 +788,10 @@ a.external-link .eep-ext-last::after {
 		padding-right: 0;
 	}
 	.eep-companies .eep-company-list thead th {
-		font-size: 0.8125rem;
-		font-weight: 400;
-		line-height: 1.3;
+		padding-top: 0;
+		font-size: var(--eep-text-caption);
+		font-weight: 600;
+		line-height: var(--eep-lh-label);
 		color: var(--eep-ink-2);
 		overflow-wrap: normal;
 	}
@@ -813,7 +833,7 @@ a.external-link .eep-ext-last::after {
 		content: ' \2193';
 	}
 	.eep-companies .eep-company-list tbody tr {
-		border-top: 1px solid var(--eep-silver);
+		border-top: 1px solid var(--eep-rule-2);
 	}
 	.eep-companies .eep-company-list td[data-label]::before {
 		content: none;
@@ -827,4 +847,15 @@ a.external-link .eep-ext-last::after {
 	.eep-companies-filters {
 		grid-template-columns: repeat(4, minmax(0, 1fr));
 	}
+}
+
+/* Footer: the date line, the license line and the page edges line up on
+   the left, in the same small size. Starlight pushes a lone date to the
+   right and sets it a size larger than the license. */
+footer .meta {
+	font-size: var(--eep-text-caption);
+	line-height: var(--eep-lh-ui);
+}
+footer .meta > p:only-child {
+	margin-inline-start: 0;
 }
