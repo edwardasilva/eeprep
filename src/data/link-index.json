@@ -229,6 +229,27 @@
     "pages": ["advice/getting-hired/non-technical"]
   },
   {
+    "url": "https://www.topresume.com/career-advice/how-to-get-more-results-with-a-car-resume",
+    "title": "TopResume: How to get more results with a CAR resume",
+    "category": "Resume guides",
+    "summary": "TopResume explains the challenge, action, result formula for resume bullets and says to put the payoff first.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://resumegenius.com/blog/resume-help/star-method-resume",
+    "title": "Resume Genius: How to write a STAR method resume",
+    "category": "Resume guides",
+    "summary": "Resume Genius shows how to turn situation, task, action, result into one resume bullet or several.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://www.levels.fyi/blog/applying-star-method-resumes.html",
+    "title": "Levels.fyi: How to apply the STAR method to resumes",
+    "category": "Resume guides",
+    "summary": "Levels.fyi shows how a STAR answer from a behavioral interview becomes resume bullets with measured outcomes.",
+    "pages": ["advice/getting-hired/how-to-interview", "advice/resume"]
+  },
+  {
     "url": "https://career.gatech.edu/files/2026/06/JackieJacketResume.docx",
     "title": "Georgia Tech: Computer engineering sample resume",
     "category": "Sample resumes and templates",

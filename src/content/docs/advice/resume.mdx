@@ -21,7 +21,7 @@ Keep an electrical engineering (EE) resume to one page in one column, with a mea
 
 - Start from the wiki's LaTeX template, keep the resume to one page in one column, and check that the PDF reads correctly as plain text.
 - Follow the table's section order, with Education first and Skills last until your first full-time job, and put the strongest entry and bullet first in each section.
-- Write each bullet as an action, the tool or method, and the result, with a measured number in every bullet you can.
+- Build each bullet with the XYZ, CAR, or STAR formula, with a measured number in every bullet you can, and put that number near the front.
 - Build one master resume, then keep one version for each kind of role you apply to, up to 4 or 5, and send the closest.
 - Try to get a [referral](/advice/getting-hired/#get-a-referral-first) before you apply, then apply early, because most recruiters review applications in the order they arrive.
 
@@ -99,9 +99,25 @@ Two career centers set the cutoff lower than I do. [Michigan Engineering says to
 
 ## Bullets
 
-Write results, not duties. A recruiter on X calls generic responsibilities [the most common resume mistake](https://x.com/randomrecruiter/status/1615808809133346824). [Georgia Tech's career center also says to avoid listing responsibilities and to focus on skills, results, and achievements](https://neweraadvising.gatech.edu/news/career-center-insights-navigating-your-first-job-search). Use one pattern: did X with Y to get Z. X is the action, Y is the tool or method, and Z is the result. The wiki asks for STAR (situation, task, action, result), CAR (challenge, action, result), or XYZ. Its XYZ reads "accomplished X, as measured by Y, by doing Z", so its X is the result and its Z is the action. [A reviewer's guide](https://www.reddit.com/r/EngineeringResumes/comments/1m6nzkm/8_yoe_readable_resumes_a_guide_to_allowing_anyone/) explains why the pattern works. Put the number early.
+Write results, not duties. A recruiter on X calls generic responsibilities [the most common resume mistake](https://x.com/randomrecruiter/status/1615808809133346824). [Georgia Tech's career center also says to avoid listing responsibilities and to focus on skills, results, and achievements](https://neweraadvising.gatech.edu/news/career-center-insights-navigating-your-first-job-search). [The wiki asks for one of three formulas](https://www.reddit.com/r/EngineeringResumes/wiki/index/): XYZ, CAR, or STAR. I would build every bullet with one of them, and the rest of this guide uses the same three.
+
+- XYZ reads "accomplished X, as measured by Y, by doing Z" in the wiki. X is the result, Y is the number that measures it, and Z is what you did, with the tool or method. Most project bullets fit it.
+- CAR stands for challenge, action, result. [TopResume describes the challenge as a problem, something that needs to be done and has not been](https://www.topresume.com/career-advice/how-to-get-more-results-with-a-car-resume), and it wants a result you can count, not one that "went well". CAR fits a fault you tracked down or a spec you had to fight for.
+- STAR stands for situation, task, action, result. [Levels.fyi calls it a framework for answering behavioral interview questions](https://www.levels.fyi/blog/applying-star-method-resumes.html), and says you can apply its principles to a resume. [Resume Genius says one STAR statement can be a single bullet or several, and that the situation and task can be grouped together](https://resumegenius.com/blog/resume-help/star-method-resume). On a resume, cut the situation and task to a few words, and save the full story for the [[How to interview#Behavioral stories|interview]].
+
+My own rule for all three is about order. If you measured the result, move the number toward the start of the bullet. [TopResume gives the same advice for CAR](https://www.topresume.com/career-advice/how-to-get-more-results-with-a-car-resume): front-load the important information, and do not hide the payoff at the end. I read the letters as the parts a bullet needs, not the order they go in.
+
+The figure below uses the short form, did X with Y to get Z, where X is the action, Y is the tool or method, and Z is the result. It is XYZ written in the order you did the work. [A reviewer's guide](https://www.reddit.com/r/EngineeringResumes/comments/1m6nzkm/8_yoe_readable_resumes_a_guide_to_allowing_anyone/) explains why the pattern works.
 
 <BulletFigure />
+
+Alex's after bullet ends on its number. With the number moved to the front, the same facts read as XYZ.
+
+Example: "Reached [X]% efficiency on a [X] W CubeSat buck converter, measured on an electronic load, by designing it in KiCad and LTspice"
+
+A CAR bullet can open on its number too. Here the challenge is the read errors, the action is the logic analyzer and the resistor, and the result is the drop.
+
+Example: "Cut I2C read errors on a rover sensor board from [X] to [X] an hour by finding a missing pull-up resistor with a logic analyzer"
 
 Rules for each bullet, where the last three are my own:
 
@@ -115,7 +131,7 @@ Rules for each bullet, where the last three are my own:
 - Give each bullet one idea. Pick the result that matters most, and do not join a second one with "and" or "plus". A second result gets its own bullet, or comes off.
 - Write symbols as words. Use 3-sigma instead of the Greek letter, 48 degrees instead of the degree sign, and at most 1 m/s instead of the less-than-or-equal sign.
 
-For embedded work, lead with the action and do not force a number. [One reviewer told a student](https://www.reddit.com/r/EngineeringResumes/comments/1w1e5dp/student_100_embeddedhardware_intern_applications/) that "designed a PCB in KiCad" says more than exact step-down voltages. A spec belongs in the bullet when it shows difficulty, such as register-level SPI setup. [The wiki's sample bullets](https://www.reddit.com/r/EngineeringResumes/wiki/sample-bullet-points/) include six for electrical hardware, all in chip design, and its embedded and FPGA sections are empty.
+For embedded work, lead with the action and do not force a number. [One reviewer told a student](https://www.reddit.com/r/EngineeringResumes/comments/1w1e5dp/student_100_embeddedhardware_intern_applications/) that "designed a PCB in KiCad" says more than exact step-down voltages. A spec belongs in the bullet when it shows difficulty, such as register-level SPI setup. So my number-first rule is for a result you measured, not for a spec you could copy from a datasheet. [The wiki's sample bullets](https://www.reddit.com/r/EngineeringResumes/wiki/sample-bullet-points/) include six for electrical hardware, all in chip design, and its embedded and FPGA sections are empty.
 
 ## Projects
 
@@ -131,7 +147,7 @@ Class work beats an empty section, and a senior design project that missed its s
 
 Call the section Experience, not Work History. Give each role a bold job title and company, with the dates at the right margin. Put the location on the next line, at the right margin under the dates, and start the bullets below it.
 
-Give a non-engineering job one or two bullets. Cut it to one line only when your engineering work fills the page without them. [Georgia Tech's College of Computing gives a job of low relevance one to two bullets](https://www.cc.gatech.edu/sites/default/files/documents/2026/GT%20CS%20Resume%20Guide%20compressed_1.pdf). In those bullets, skip the duty every reader already knows. [MIT's career office says a grocery bagger gains nothing from a bullet that says they bagged groceries](https://capd.mit.edu/blog/2023/09/01/enhance-your-resume-a-guide-for-first-year-undergraduates/), while inventory, asset protection, or cash handling tells the reader more. Count what you can defend: the money you handled, the customers or transactions in a shift, a safety rule you kept, or the people you trained. [Kentucky's career center rewrites "Worked as the lifeguard on duty" as a certification in emergency protocol for 2,500 daily guests](https://gradschool.uky.edu/sites/default/files/2024-12/stuckert-resume-guide-final-2024-2025-1.pdf).
+Give a non-engineering job one or two bullets. Cut it to one line only when your engineering work fills the page without them. [Georgia Tech's College of Computing gives a job of low relevance one to two bullets](https://www.cc.gatech.edu/sites/default/files/documents/2026/GT%20CS%20Resume%20Guide%20compressed_1.pdf). In those bullets, skip the duty every reader already knows. [MIT's career office says a grocery bagger gains nothing from a bullet that says they bagged groceries](https://capd.mit.edu/blog/2023/09/01/enhance-your-resume-a-guide-for-first-year-undergraduates/), while inventory, asset protection, or cash handling tells the reader more. Count what you can defend: the money you handled, the customers or transactions in a shift, a safety rule you kept, or the people you trained. Build these bullets with the same XYZ, CAR, or STAR formulas as the engineering ones, with the count near the front. [Kentucky's career center rewrites "Worked as the lifeguard on duty" as a certification in emergency protocol for 2,500 daily guests](https://gradschool.uky.edu/sites/default/files/2024-12/stuckert-resume-guide-final-2024-2025-1.pdf).
 
 ## Skills
 
