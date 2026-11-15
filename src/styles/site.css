@@ -203,14 +203,22 @@ button[data-open-modal] kbd {
 		grid-column: 1;
 		grid-row: 1 / span 2;
 	}
+	/* The two intro paragraphs sit side by side on the same 2:3 split as the
+	   cover and the cards above, so each column starts on the edge above it
+	   and no line runs the full 67.5rem. */
 	.eep-home-intro {
 		grid-column: 1 / -1;
 		grid-row: 3;
+		display: grid;
+		grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+		column-gap: clamp(2rem, 4vw, 4rem);
+		align-items: start;
 		padding-top: 2rem;
 		border-top: var(--eep-border);
 	}
 	.eep-home-intro p {
 		max-width: none;
+		margin-top: 0;
 	}
 	/* Two cards side by side whenever the text column shows, at any zoom. */
 	.eep-home > .eep-cards {
