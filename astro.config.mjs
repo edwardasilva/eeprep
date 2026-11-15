@@ -175,7 +175,6 @@ export default defineConfig({
 		starlight({
 			disable404Route: true,
 			title: 'eeprep',
-			lastUpdated: true,
 			description:
 				'A guide to job searching for electrical engineers & computer scientists.',
 			credits: false,

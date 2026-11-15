@@ -865,13 +865,9 @@ a.external-link .eep-ext-last::after {
 	}
 }
 
-/* Footer: the date line, the license line and the page edges line up on
-   the left, in the same small size. Starlight pushes a lone date to the
-   right and sets it a size larger than the license. */
-footer .meta {
-	font-size: var(--eep-text-caption);
-	line-height: var(--eep-lh-ui);
-}
-footer .meta > p:only-child {
-	margin-inline-start: 0;
+/* The site has one "Last updated" date, in the license line. Starlight still
+   prints its empty per-page date box, which would add a gap above the
+   previous and next links. */
+footer .meta:empty {
+	display: none;
 }

@@ -77,9 +77,6 @@ if (isGuidePage) {
 						image: shareImage,
 					}
 				: {}),
-			...(route.lastUpdated
-				? { dateModified: route.lastUpdated.toISOString() }
-				: {}),
 			breadcrumb: { '@id': `${url}#breadcrumb` },
 		},
 		{
