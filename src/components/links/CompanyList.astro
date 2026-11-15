@@ -165,10 +165,13 @@ function companyCell(row: (typeof rows)[number]): string {
 						data-cities={row.locations.map((l) => l.city).join('|')}
 						data-states={row.locations.map((l) => l.state).join('|')}
 						data-search={row.search}
+						data-one-place={row.locations.length === 1 ? '' : undefined}
 					>
 						<td data-label="Company" set:html={companyCell(row)} />
 						<td data-label="Industry">{row.industryLabel}</td>
-						<td data-label="Field">{row.fieldLabel || '–'}</td>
+						<td data-label="Field" data-empty={row.fieldLabel ? undefined : ''}>
+							{row.fieldLabel || '–'}
+						</td>
 						<td data-label="City">{row.city}</td>
 						<td data-label="State">{row.state}</td>
 					</tr>

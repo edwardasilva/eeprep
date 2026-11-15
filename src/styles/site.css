@@ -592,8 +592,10 @@ a.external-link .eep-ext-last::after {
 	}
 }
 
-/* Company list: same stacked-row treatment as the roadmap table on
-   narrow screens, with a labeled filter bar above it. */
+/* Company list: a labeled filter bar above a table. On narrow screens each
+   company is two short lines instead of five labeled fields: the name, then
+   industry, field, city, and state on one line, so a phone shows several
+   companies at once. */
 .eep-companies {
 	margin: var(--eep-space-5) 0 var(--eep-space-6);
 	color: var(--eep-ink);
@@ -711,7 +713,7 @@ a.external-link .eep-ext-last::after {
 	white-space: nowrap;
 }
 .eep-companies .eep-company-list tbody tr {
-	padding: 0.75rem 0;
+	padding: 0.625rem 0;
 	border-top: 1px solid var(--eep-rule-2);
 }
 .eep-companies .eep-company-list tbody tr[hidden] {
@@ -723,22 +725,36 @@ a.external-link .eep-ext-last::after {
 	vertical-align: top;
 	overflow-wrap: break-word;
 }
-.eep-companies .eep-company-list td + td {
-	margin-top: 0.5rem;
-}
 .eep-companies .eep-company-list td a {
 	display: inline-block;
 	min-height: 1.5rem;
 	line-height: 1.5rem;
 }
-.eep-companies .eep-company-list td[data-label]::before {
-	content: attr(data-label);
-	display: block;
-	margin-bottom: 0.15rem;
-	font-size: var(--eep-text-caption);
-	font-weight: 600;
-	line-height: var(--eep-lh-label);
-	color: var(--eep-ink-2);
+/* Narrow: the name on its own line, then the other four cells run inline,
+   split by a middle dot. A one-place company reads "Tulsa, OK". A company in
+   several places keeps its city list and state list apart, because the two
+   lists are not in matching order. An empty field is left out. */
+@media (width < 34rem) {
+	.eep-companies .eep-company-list tbody td {
+		display: inline;
+	}
+	.eep-companies .eep-company-list tbody td:first-child {
+		display: block;
+		margin-bottom: 0.125rem;
+	}
+	.eep-companies .eep-company-list tbody td:nth-child(n + 3)::before {
+		content: '\00a0\00b7\0020' / '';
+	}
+	.eep-companies
+		.eep-company-list
+		tbody
+		tr[data-one-place]
+		td:last-child::before {
+		content: ', ' / '';
+	}
+	.eep-companies .eep-company-list tbody td[data-empty] {
+		display: none;
+	}
 }
 .eep-companies-note {
 	margin: var(--eep-space-4) 0 0;
@@ -837,9 +853,6 @@ a.external-link .eep-ext-last::after {
 	}
 	.eep-companies .eep-company-list tbody tr {
 		border-top: 1px solid var(--eep-rule-2);
-	}
-	.eep-companies .eep-company-list td[data-label]::before {
-		content: none;
 	}
 	.eep-companies .eep-company-list td {
 		overflow-wrap: break-word;
