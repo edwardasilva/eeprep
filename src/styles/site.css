@@ -677,6 +677,37 @@ a.external-link .eep-ext-last::after {
 	line-height: 1.4;
 	color: var(--eep-ink-2);
 }
+/* The page size sits in the tools row, its label beside the menu. */
+.eep-companies-size {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+.eep-companies-size label {
+	font-size: var(--eep-text-sm);
+	line-height: 1.4;
+	color: var(--eep-ink-2);
+}
+.eep-companies .eep-companies-size select {
+	width: auto;
+}
+/* Under the table: Show more on the left, Previous and Next on the right. */
+.eep-companies-pager {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--eep-space-3);
+	margin-top: var(--eep-space-4);
+}
+.eep-companies-pager[hidden] {
+	display: none;
+}
+.eep-companies-pager [data-prev] {
+	margin-inline-start: auto;
+}
+.eep-companies button:disabled {
+	color: var(--eep-ink-2);
+	cursor: default;
+}
 .eep-companies-form noscript p {
 	margin: var(--eep-space-3) 0 0;
 	font-size: var(--eep-text-sm);

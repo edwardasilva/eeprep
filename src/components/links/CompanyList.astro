@@ -14,9 +14,41 @@ function extLink(href: string, text: string): string {
 	return externalLinks(`<a href="${escapeHtml(href)}">${escapeHtml(text)}</a>`);
 }
 
-const { rows, filters } = loadCompanyList();
-const total = rows.length;
-const countText = `${total} ${total === 1 ? 'company' : 'companies'}`;
+const { rows: allRows, filters } = loadCompanyList();
+const total = allRows.length;
+
+// The same order the page script sorts by, so the first page does not jump
+// when the script takes over.
+const compare = (a: string, b: string) =>
+	a.localeCompare(b, 'en', { sensitivity: 'base', numeric: true });
+const rows = [...allRows].sort(
+	(a, b) => compare(a.name, b.name) || compare(a.city, b.city),
+);
+
+// Only one page of rows is HTML. The rest ship as compact data that the page
+// script turns into rows when a reader asks for them, so a phone does not
+// build and lay out 700 rows it never shows.
+const pageSizes = [25, 50, 100];
+const pageSize = pageSizes[0];
+const firstPage = rows.slice(0, pageSize);
+const countText = `1–${Math.min(pageSize, total)} of ${total} companies`;
+const data = JSON.stringify(
+	rows.map((row) => ({
+		n: row.name,
+		w: row.website,
+		c: row.careersUrl || undefined,
+		i: row.industry,
+		il: row.industryLabel,
+		f: row.field || undefined,
+		fl: row.fieldLabel || undefined,
+		ci: row.city,
+		s: row.state,
+		cs: row.locations.length > 1 ? row.locations.map((l) => l.city) : undefined,
+		ss:
+			row.locations.length > 1 ? row.locations.map((l) => l.state) : undefined,
+		q: row.search,
+	})),
+).replaceAll('<', '\\u003c');
 
 const fieldIndustries = new Map<string, string[]>();
 for (const row of rows) {
@@ -122,11 +154,24 @@ function companyCell(row: (typeof rows)[number]): string {
 			<p class="eep-companies-count" data-result-count aria-live="polite">
 				{countText}
 			</p>
+			<div class="eep-companies-size">
+				<label for="eep-companies-size">Per page</label>
+				<select id="eep-companies-size" name="size">
+					{pageSizes.map((size) => (
+						<option value={size} selected={size === pageSize}>
+							{size}
+						</option>
+					))}
+					<option value="all">All</option>
+				</select>
+			</div>
 			<button type="reset">Clear filters</button>
 		</div>
 		<noscript>
 			<p>
-				Search, filters, and sorting need JavaScript. The full list is below.
+				Search, filters, and paging need JavaScript. The first {pageSize}{' '}
+				companies are below, and the full list is in the company-lists
+				repository.
 			</p>
 		</noscript>
 	</form>
@@ -153,40 +198,66 @@ function companyCell(row: (typeof rows)[number]): string {
 				</tr>
 			</thead>
 			<tbody>
-				{rows.map((row) => (
-					<tr
-						data-name={row.name}
-						data-industry={row.industry}
-						data-industry-label={row.industryLabel}
-						data-field={row.field}
-						data-field-label={row.fieldLabel}
-						data-city={row.city}
-						data-state={row.state}
-						data-cities={row.locations.map((l) => l.city).join('|')}
-						data-states={row.locations.map((l) => l.state).join('|')}
-						data-search={row.search}
-						data-one-place={row.locations.length === 1 ? '' : undefined}
-					>
-						<td data-label="Company" set:html={companyCell(row)} />
-						<td data-label="Industry">{row.industryLabel}</td>
-						<td data-label="Field" data-empty={row.fieldLabel ? undefined : ''}>
+				{firstPage.map((row) => (
+					<tr data-one-place={row.locations.length === 1 ? '' : undefined}>
+						<td set:html={companyCell(row)} />
+						<td>{row.industryLabel}</td>
+						<td data-empty={row.fieldLabel ? undefined : ''}>
 							{row.fieldLabel || '–'}
 						</td>
-						<td data-label="City">{row.city}</td>
-						<td data-label="State">{row.state}</td>
+						<td>{row.city}</td>
+						<td>{row.state}</td>
 					</tr>
 				))}
 			</tbody>
 		</table>
 	</div>
 
+	<div class="eep-companies-pager" data-pager hidden>
+		<button type="button" data-more>
+			Show more
+		</button>
+		<button type="button" data-prev>
+			Previous
+		</button>
+		<button type="button" data-next>
+			Next
+		</button>
+	</div>
+
 	<p class="eep-companies-note" set:html={note} />
+	<script
+		is:inline
+		type="application/json"
+		id="eep-companies-data"
+		set:html={data}
+	/>
 </div>
 
 <script>
-	const root = document.querySelector('[data-company-list]');
+	import { splitTail } from '../../plugins/external-link-tail.mjs';
 
-	if (root instanceof HTMLElement) {
+	type Company = {
+		n: string;
+		w: string;
+		c?: string;
+		i: string;
+		il: string;
+		f?: string;
+		fl?: string;
+		ci: string;
+		s: string;
+		cs?: string[];
+		ss?: string[];
+		q: string;
+	};
+
+	const root = document.querySelector('[data-company-list]');
+	const source = document.getElementById('eep-companies-data');
+
+	if (root instanceof HTMLElement && source) {
+		const companies: Company[] = JSON.parse(source.textContent ?? '[]');
+		const total = companies.length;
 		const form = root.querySelector('form');
 		const sortSelect = root.querySelector('#eep-companies-sort');
 		const dirSelect = root.querySelector('#eep-companies-dir');
@@ -199,11 +270,41 @@ function companyCell(row: (typeof rows)[number]): string {
 		].filter((field) => field instanceof HTMLSelectElement);
 		const table = root.querySelector('#eep-company-list');
 		const tbody = table instanceof HTMLTableElement ? table.tBodies[0] : null;
+		const scroll = root.querySelector('.eep-company-scroll');
 		const headers = table
 			? [...table.querySelectorAll('thead th[data-sort]')]
 			: [];
-		const rows = tbody ? [...tbody.rows] : [];
-		const total = rows.length;
+		const pager = root.querySelector('[data-pager]');
+		const moreButton = root.querySelector('[data-more]');
+		const prevButton = root.querySelector('[data-prev]');
+		const nextButton = root.querySelector('[data-next]');
+
+		// The rows that match the filters, in sort order, and the slice of them
+		// on screen: start is the first row shown, shown is how many.
+		let matches: Company[] = companies;
+		let start = 0;
+		let shown = 0;
+
+		const escape = (value: string) =>
+			value
+				.replaceAll('&', '&amp;')
+				.replaceAll('<', '&lt;')
+				.replaceAll('>', '&gt;')
+				.replaceAll('"', '&quot;');
+
+		// The same markup the server gives an external link.
+		const extLink = (href: string, text: string) => {
+			const [head, tail] = splitTail(text);
+			return `<a href="${escape(href)}" class="external-link" target="_blank" rel="noopener noreferrer"><span class="eep-ext-text">${escape(head)}<span class="eep-ext-last">${escape(tail)}</span></span><span class="sr-only"> (opens in a new tab)</span></a>`;
+		};
+
+		const rowHtml = (c: Company) => {
+			const name = extLink(c.w, c.n);
+			const company = c.c ? `${name} ${extLink(c.c, 'careers')}` : name;
+			const field = c.fl ? `<td>${escape(c.fl)}</td>` : '<td data-empty>–</td>';
+			const onePlace = c.cs ? '' : ' data-one-place';
+			return `<tr${onePlace}><td>${company}</td><td>${escape(c.il)}</td>${field}<td>${escape(c.ci)}</td><td>${escape(c.s)}</td></tr>`;
+		};
 
 		const inputValue = (name: string) => {
 			const field = form?.elements.namedItem(name);
@@ -216,30 +317,32 @@ function companyCell(row: (typeof rows)[number]): string {
 			return '';
 		};
 
+		const pageSize = () => {
+			const value = inputValue('size');
+			return value === 'all' ? Infinity : Number(value) || 25;
+		};
+
 		const compare = (a: string, b: string) =>
 			a.localeCompare(b, 'en', { sensitivity: 'base', numeric: true });
 
-		const hasValue = (list: string | undefined, value: string) =>
-			(list ?? '').split('|').includes(value);
-
-		const sortKey = (row: HTMLTableRowElement, key: string) => {
+		const sortKey = (c: Company, key: string) => {
 			if (key === 'industry') {
-				return row.dataset.industryLabel ?? '';
+				return c.il;
 			}
 			if (key === 'field') {
-				return row.dataset.fieldLabel ?? '';
+				return c.fl ?? '';
 			}
-			return row.dataset[key] ?? '';
+			if (key === 'city') {
+				return c.ci;
+			}
+			if (key === 'state') {
+				return c.s;
+			}
+			return c.n;
 		};
 
-		const updateCount = (shown: number) => {
-			if (!(count instanceof HTMLElement)) {
-				return;
-			}
-			const noun = shown === 1 ? 'company' : 'companies';
-			count.textContent =
-				shown === total ? `${shown} ${noun}` : `${shown} of ${total} companies`;
-		};
+		const hasValue = (list: string[] | undefined, one: string, value: string) =>
+			(list ?? [one]).includes(value);
 
 		const updateFieldOptions = () => {
 			if (!(fieldSelect instanceof HTMLSelectElement)) {
@@ -266,7 +369,7 @@ function companyCell(row: (typeof rows)[number]): string {
 			}
 		};
 
-		const applyFilters = () => {
+		const filterAndSort = () => {
 			const query = inputValue('q')
 				.trim()
 				.toLowerCase()
@@ -276,55 +379,64 @@ function companyCell(row: (typeof rows)[number]): string {
 			const industry = inputValue('industry');
 			const field = inputValue('field');
 			const city = inputValue('city');
-			let shown = 0;
-			for (const row of rows) {
-				const hay = row.dataset.search ?? '';
-				const match =
-					query.every((word) => hay.includes(word)) &&
-					(!state || hasValue(row.dataset.states, state)) &&
-					(!industry || row.dataset.industry === industry) &&
-					(!field || row.dataset.field === field) &&
-					(!city || hasValue(row.dataset.cities, city));
-				row.hidden = !match;
-				if (match) {
-					shown += 1;
-				}
-			}
-			updateCount(shown);
-		};
-
-		const applySort = () => {
 			const key =
 				sortSelect instanceof HTMLSelectElement ? sortSelect.value : 'name';
-			const dir =
-				dirSelect instanceof HTMLSelectElement ? dirSelect.value : 'asc';
-			const factor = dir === 'desc' ? -1 : 1;
-			rows.sort((a, b) => {
-				const primary = compare(sortKey(a, key), sortKey(b, key));
-				if (primary !== 0) {
-					return factor * primary;
+			const factor =
+				dirSelect instanceof HTMLSelectElement && dirSelect.value === 'desc'
+					? -1
+					: 1;
+			matches = companies
+				.filter(
+					(c) =>
+						query.every((word) => c.q.includes(word)) &&
+						(!state || hasValue(c.ss, c.s, state)) &&
+						(!industry || c.i === industry) &&
+						(!field || c.f === field) &&
+						(!city || hasValue(c.cs, c.ci, city)),
+				)
+				.sort(
+					(a, b) =>
+						factor * compare(sortKey(a, key), sortKey(b, key)) ||
+						compare(a.n, b.n) ||
+						compare(a.ci, b.ci),
+				);
+			for (const header of headers) {
+				let sort = 'none';
+				if (header.getAttribute('data-sort') === key) {
+					sort = factor < 0 ? 'descending' : 'ascending';
 				}
-				const byName = compare(sortKey(a, 'name'), sortKey(b, 'name'));
-				if (byName !== 0) {
-					return byName;
-				}
-				return compare(sortKey(a, 'city'), sortKey(b, 'city'));
-			});
+				header.setAttribute('aria-sort', sort);
+			}
+		};
+
+		const render = () => {
+			const end = Math.min(matches.length, start + shown);
 			if (tbody) {
-				for (const row of rows) {
-					tbody.append(row);
+				tbody.innerHTML = matches.slice(start, end).map(rowHtml).join('');
+			}
+			if (count instanceof HTMLElement) {
+				const n = matches.length;
+				const noun = n === 1 ? 'company' : 'companies';
+				const what = n === total ? `${n} ${noun}` : `${n} matching ${noun}`;
+				if (n === 0) {
+					count.textContent = 'No matching companies';
+				} else if (start === 0 && end === n) {
+					count.textContent = what;
+				} else {
+					count.textContent = `${start + 1}–${end} of ${what}`;
 				}
 			}
-			for (const header of headers) {
-				const headerKey = header.getAttribute('data-sort');
-				if (headerKey === key) {
-					header.setAttribute(
-						'aria-sort',
-						dir === 'desc' ? 'descending' : 'ascending',
-					);
-				} else {
-					header.setAttribute('aria-sort', 'none');
-				}
+			if (pager instanceof HTMLElement) {
+				pager.hidden = start === 0 && end >= matches.length;
+			}
+			if (moreButton instanceof HTMLButtonElement) {
+				moreButton.disabled = end >= matches.length;
+			}
+			if (prevButton instanceof HTMLButtonElement) {
+				prevButton.disabled = start === 0;
+			}
+			if (nextButton instanceof HTMLButtonElement) {
+				nextButton.disabled = end >= matches.length;
 			}
 		};
 
@@ -343,12 +455,44 @@ function companyCell(row: (typeof rows)[number]): string {
 				set === 0 ? '' : `: ${set} ${set === 1 ? 'field' : 'fields'} set`;
 		};
 
+		// Back to the first page whenever the search, a filter, the sort, or the
+		// page size changes.
 		const refresh = () => {
 			updateFieldOptions();
-			applyFilters();
-			applySort();
+			filterAndSort();
+			start = 0;
+			shown = pageSize();
+			render();
 			updateAdvancedCount();
 		};
+
+		// After Previous or Next, bring the top of the table back into view if
+		// the reader has scrolled past it.
+		const toTop = () => {
+			if (
+				scroll instanceof HTMLElement &&
+				scroll.getBoundingClientRect().top < 0
+			) {
+				scroll.scrollIntoView({ block: 'start' });
+			}
+		};
+
+		moreButton?.addEventListener('click', () => {
+			shown += pageSize();
+			render();
+		});
+		nextButton?.addEventListener('click', () => {
+			start += shown;
+			shown = pageSize();
+			render();
+			toTop();
+		});
+		prevButton?.addEventListener('click', () => {
+			start = Math.max(0, start - pageSize());
+			shown = pageSize();
+			render();
+			toTop();
+		});
 
 		form?.addEventListener('input', refresh);
 		form?.addEventListener('change', refresh);
@@ -356,8 +500,10 @@ function companyCell(row: (typeof rows)[number]): string {
 			event.preventDefault();
 			refresh();
 		});
+		// The reset event fires before the browser resets the fields, so read
+		// them on the next task.
 		form?.addEventListener('reset', () => {
-			queueMicrotask(refresh);
+			setTimeout(refresh);
 		});
 
 		for (const header of headers) {
