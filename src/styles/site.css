@@ -104,10 +104,6 @@
 .eep-home-intro p {
 	max-width: var(--eep-measure);
 }
-/* The note under the lead that the guide is mostly opinion. */
-.eep-home-intro .eep-disclaimer {
-	color: var(--eep-ink-2);
-}
 /* The same size, weight and leading as the title on every other page. */
 .eep-hero h1 {
 	font-family: var(--eep-font-serif);
@@ -161,10 +157,9 @@ button[data-open-modal] kbd {
 }
 .eep-generator {
 	max-width: var(--eep-measure);
-	color: var(--eep-ink-2);
 }
 .eep-cards span:last-child {
-	color: var(--eep-ink-2);
+	color: var(--eep-ink);
 	font-size: var(--eep-text-ui);
 	line-height: var(--eep-lh-ui);
 }

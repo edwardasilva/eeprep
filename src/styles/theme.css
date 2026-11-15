@@ -73,7 +73,10 @@
 	--eep-rule-2: #c4c8cf; /* breadcrumb separators, stronger rules */
 	--eep-ink: #16233a; /* headings, diagram strokes */
 	/* Three text roles: ink, ink-2 (secondary) and accent (current item and
-	   site chrome only; never figures). Silver is never text. Older names alias onto them. */
+	   site chrome only; never figures). Silver is never text. Older names alias onto them.
+	   Every sentence a reader reads is ink: paragraphs, list items, card text, and the
+	   home page lines. ink-2 is only for labels and metadata: captions, figure numbers
+	   and kickers, the footer, the table of contents, and small notes inside figures. */
 	--eep-text: var(--eep-ink);
 	--eep-ink-2: #424d63; /* secondary text, lede */
 	--eep-mute: var(--eep-ink-2);
