@@ -2,6 +2,7 @@
 import { getEntry } from 'astro:content';
 import Default from '@astrojs/starlight/components/Head.astro';
 import serifUrl from '@fontsource-variable/source-serif-4/files/source-serif-4-latin-opsz-normal.woff2?url';
+import { contentLicense } from '../lib/site';
 
 const site = Astro.site ?? new URL('https://eeprep.com');
 // The share image is the stacked logo, which is taller than wide, so the
@@ -9,24 +10,22 @@ const site = Astro.site ?? new URL('https://eeprep.com');
 const shareImage = new URL('/brand/eeprep-lockup-stacked.png', site).href;
 const isHome = Astro.url.pathname === '/';
 
-// Guide text is CC BY 4.0 (LICENSE-CONTENT). The page says so in a license
-// link and in the structured data, so a crawler can read it without the footer.
-const contentLicense = 'https://creativecommons.org/licenses/by/4.0/';
-
 // Starlight renders this list, so edit it here instead of adding duplicates.
 // The 404 page is served for every missing URL, so it gets no canonical or
-// og:url that would name /404/ as its address. The home page is the site
-// itself, so its Open Graph type is website, not article.
+// og:url that would name /404/ as its address, and no page data below. The
+// home page is the site itself, so its Open Graph type is website, not
+// article.
 const route = Astro.locals.starlightRoute;
-const isNotFound = route.entry.id === '404';
+const entryId = route.entry.id;
+const isNotFound = entryId === '404';
 route.head = route.head
-	.filter((tag) => !(tag.tag === 'meta' && tag.attrs?.name === 'twitter:card'))
 	.filter(
 		(tag) =>
-			!isNotFound ||
+			!(tag.tag === 'meta' && tag.attrs?.name === 'twitter:card') &&
 			!(
-				(tag.tag === 'link' && tag.attrs?.rel === 'canonical') ||
-				(tag.tag === 'meta' && tag.attrs?.property === 'og:url')
+				isNotFound &&
+				((tag.tag === 'link' && tag.attrs?.rel === 'canonical') ||
+					(tag.tag === 'meta' && tag.attrs?.property === 'og:url'))
 			),
 	)
 	.map((tag) =>
@@ -34,6 +33,8 @@ route.head = route.head
 			? { ...tag, attrs: { ...tag.attrs, content: 'website' } }
 			: tag,
 	);
+// The guide text licence goes in a license link and in the structured data,
+// so a crawler can read it without the footer.
 route.head.push(
 	{ tag: 'link', attrs: { rel: 'license', href: contentLicense } },
 	{ tag: 'meta', attrs: { name: 'twitter:card', content: 'summary' } },
@@ -65,8 +66,6 @@ const organization = {
 
 // A guide page gets a page node and a breadcrumb trail. The trail walks up
 // the address, so /advice/resume/cleanup/ lists Advice, Resume, and Cleanup.
-// The 404 page is served for every missing URL, so it gets no page data.
-const entryId = route.entry.id;
 const isGuidePage = !isHome && !isNotFound;
 let pageNodes: object[] = [];
 if (isGuidePage) {

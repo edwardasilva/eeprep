@@ -2,26 +2,12 @@
 // have <meta name="robots" content="noindex"> on every page. Any other build
 // must have it on none, except 404.html, which has it in every build.
 // Canonical links must point at https://eeprep.com in both, and the 404 page
-// has none. robots.txt must allow every crawler, name each AI crawler below
-// in an allowing group, and list the sitemap.
+// has none. robots.txt must allow every crawler in every group, have a group
+// for *, keep its group of named AI crawlers, and list the sitemap.
+// robots.txt is the one list of crawler names; this check does not repeat it.
 // Run `npm run build` first.
 import fs from 'node:fs';
 import path from 'node:path';
-
-// The AI crawlers robots.txt names, each by the token its operator documents.
-const aiCrawlers = [
-	'GPTBot',
-	'OAI-SearchBot',
-	'ChatGPT-User',
-	'ClaudeBot',
-	'Claude-SearchBot',
-	'Claude-User',
-	'PerplexityBot',
-	'Perplexity-User',
-	'Google-Extended',
-	'Applebot-Extended',
-	'CCBot',
-];
 
 const dev = process.env.SITE_ENV === 'dev';
 const dist = path.resolve('dist');
@@ -119,11 +105,20 @@ function robotsTxtProblems(file) {
 			);
 		}
 	}
-	for (const name of ['*', ...aiCrawlers]) {
-		const g = groups.find((x) => x.agents.includes(name.toLowerCase()));
-		if (!g || !g.rules.includes('allow:/')) {
-			found.push(`robots.txt: no group says "Allow: /" for ${name}`);
+	for (const g of groups) {
+		if (!g.rules.includes('allow:/')) {
+			found.push(
+				`robots.txt: the group for ${g.agents.join(', ')} does not say "Allow: /"`,
+			);
 		}
+	}
+	if (!groups.some((g) => g.agents.includes('*'))) {
+		found.push('robots.txt: no group for User-agent: *');
+	}
+	// The named crawlers share one group, so the choice to allow them stays
+	// explicit even if the list is edited.
+	if (!groups.some((g) => g.agents.filter((a) => a !== '*').length > 1)) {
+		found.push('robots.txt: no group names more than one crawler');
 	}
 	if (!sitemap) {
 		found.push(

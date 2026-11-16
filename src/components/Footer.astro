@@ -4,13 +4,14 @@ import Backlinks from './Backlinks.astro';
 
 import { externalLinks } from './resume/caption';
 import { siteUpdated, siteUpdatedText } from '../lib/site-updated';
+import { contentLicense } from '../lib/site';
 
 // Plain-text license and source notice under every page, after the one
 // "Last updated" date for the whole site. The links get the same external-link
 // markup as links in the guide text.
 const splash = Astro.locals.starlightRoute.entry.data.template === 'splash';
 const notice = externalLinks(
-	`Content by <a href="https://github.com/edwardasilva/eeprep">eeprep contributors</a>, licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Code licensed <a href="https://opensource.org/license/mit">MIT</a>. Source is in the <a href="https://github.com/edwardasilva/eeprep">eeprep</a>, <a href="https://github.com/edwardasilva/resume-generator">resume-generator</a>, and <a href="https://github.com/edwardasilva/company-lists">company-lists</a> repositories.`,
+	`Content by <a href="https://github.com/edwardasilva/eeprep">eeprep contributors</a>, licensed <a href="${contentLicense}">CC BY 4.0</a>. Code licensed <a href="https://opensource.org/license/mit">MIT</a>. Source is in the <a href="https://github.com/edwardasilva/eeprep">eeprep</a>, <a href="https://github.com/edwardasilva/resume-generator">resume-generator</a>, and <a href="https://github.com/edwardasilva/company-lists">company-lists</a> repositories.`,
 );
 ---
 

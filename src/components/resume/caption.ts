@@ -16,3 +16,16 @@ export function externalLinks(html: string): string {
 		},
 	);
 }
+
+export function escapeHtml(value: string): string {
+	return value
+		.replaceAll('&', '&amp;')
+		.replaceAll('<', '&lt;')
+		.replaceAll('>', '&gt;')
+		.replaceAll('"', '&quot;');
+}
+
+/** One external link to href with plain text, in the markup above. */
+export function extLink(href: string, text: string): string {
+	return externalLinks(`<a href="${escapeHtml(href)}">${escapeHtml(text)}</a>`);
+}

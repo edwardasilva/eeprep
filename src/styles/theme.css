@@ -241,6 +241,14 @@ h1#_top {
 .sl-markdown-content h3 {
 	font-size: var(--eep-text-h3);
 }
+/* The h2s of the link index, the site map, and the contents list look like
+   an h3 in the guide text. Each component sets its own margin. */
+:is(.eep-links, .eep-sitemap, .eep-toc-page) h2 {
+	font: 500 var(--eep-text-h3) / var(--eep-lh-heading) var(--eep-font-serif);
+	font-variation-settings: 'opsz' 72;
+	letter-spacing: -0.015em;
+	color: var(--eep-ink);
+}
 .sl-markdown-content h4 {
 	font-size: var(--eep-text-h4);
 	font-weight: 600;
@@ -336,7 +344,9 @@ figure.eep-fig > :is(svg, img) {
 figure.eep-fig.wide > :is(svg, img) {
 	max-width: none;
 }
-figure.eep-fig figcaption {
+/* The home page cover figure shares the caption. */
+figure.eep-fig figcaption,
+.home-cover figcaption {
 	display: flex;
 	/* The figure number and the first line of the caption share a baseline. */
 	align-items: baseline;
@@ -357,10 +367,12 @@ figure.eep-fig figcaption {
 figure.eep-fig {
 	counter-increment: eep-fig;
 }
-figure.eep-fig figcaption .eep-fignum::before {
+figure.eep-fig figcaption .eep-fignum::before,
+.home-cover-fignum::before {
 	content: 'Figure ' counter(eep-fig);
 }
-figure.eep-fig figcaption .eep-fignum {
+figure.eep-fig figcaption .eep-fignum,
+.home-cover-fignum {
 	font: 600 var(--eep-text-eyebrow)/var(--eep-lh-ui) var(--eep-font-serif);
 	color: var(--eep-mute);
 	white-space: nowrap;

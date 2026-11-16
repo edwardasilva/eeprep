@@ -187,25 +187,6 @@ const alt =
 		outline: 2px solid var(--eep-dg-ink);
 		outline-offset: -2px;
 	}
-	.home-cover figcaption {
-		display: flex;
-		align-items: baseline;
-		gap: var(--eep-space-3);
-		margin-top: 1.125rem;
-		padding-top: 0.875rem;
-		border-top: var(--eep-border);
-		font-size: var(--eep-text-caption);
-		line-height: var(--eep-lh-ui);
-		color: var(--eep-ink-2);
-	}
-	.home-cover-fignum {
-		font: 600 var(--eep-text-eyebrow) / var(--eep-lh-ui) var(--eep-font-serif);
-		color: var(--eep-mute);
-		white-space: nowrap;
-	}
-	.home-cover-fignum::before {
-		content: 'Figure ' counter(eep-fig);
-	}
 	@container (max-width: 25rem) {
 		.home-cover figcaption {
 			flex-direction: column;

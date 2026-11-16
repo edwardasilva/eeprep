@@ -5,6 +5,7 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { homeDescription } from '../lib/home';
+import { contentLicense } from '../lib/site';
 import { sidebar } from '../lib/sidebar.mjs';
 
 type Item = { slug?: string; items?: Item[] };
@@ -46,7 +47,7 @@ export const GET: APIRoute = async ({ site }) => {
 		'',
 		`> ${oneLine(homeDescription)}`,
 		'',
-		'Every claim on the site cites a public source. Guide text is licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), credited to eeprep contributors, and code is MIT.',
+		`Every claim on the site cites a public source. Guide text is licensed CC BY 4.0 (${contentLicense}), credited to eeprep contributors, and code is MIT.`,
 		'',
 		...groups
 			.filter((group) => group.ids.length > 0)
