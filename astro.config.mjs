@@ -288,15 +288,12 @@ export default defineConfig({
 						sizes: '180x180',
 					},
 				},
-				// The plain-text page index for AI tools, built by src/pages/llms.txt.ts.
+				// The page index for AI tools, built by src/pages/llms.txt.ts. The
+				// llms.txt proposal (https://llmstxt.org) names rel="describedby" for
+				// the link from a page to the llms.txt file that covers it.
 				{
 					tag: 'link',
-					attrs: {
-						rel: 'alternate',
-						type: 'text/plain',
-						href: '/llms.txt',
-						title: 'llms.txt',
-					},
+					attrs: { rel: 'describedby', href: '/llms.txt' },
 				},
 			],
 			components: {

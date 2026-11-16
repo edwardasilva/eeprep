@@ -41,7 +41,6 @@ const caption = externalLinks(
 <style>
 	.eep-star {
 		margin-top: 1rem;
-		--muted: color-mix(in srgb, var(--eep-dg-mute) 35%, var(--eep-dg-fill));
 		container-type: inline-size;
 		font-family: var(--eep-font-sans);
 		color: var(--eep-ink);
@@ -58,7 +57,7 @@ const caption = externalLinks(
 	.eep-star-swatch {
 		box-sizing: border-box;
 		border: 1px solid var(--eep-dg-mute);
-		background: var(--muted);
+		background: var(--eep-dg-tint);
 	}
 	.eep-star .eep-star-a {
 		flex: 0 0 60%;
@@ -86,7 +85,7 @@ const caption = externalLinks(
 		margin: 0;
 		max-width: none;
 		font-size: var(--eep-text-eyebrow);
-		line-height: 1.35;
+		line-height: var(--eep-lh-label);
 		color: var(--eep-ink-2);
 		text-align: center;
 		overflow-wrap: anywhere;

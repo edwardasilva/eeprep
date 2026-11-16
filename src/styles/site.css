@@ -104,15 +104,9 @@
 .eep-home-intro p {
 	max-width: var(--eep-measure);
 }
-/* The same size, weight and leading as the title on every other page. */
+/* The home title is h1#_top, so the page-title rule in theme.css sets its
+   type. Only its spacing differs. */
 .eep-hero h1 {
-	font-family: var(--eep-font-serif);
-	font-weight: 500;
-	font-size: clamp(2.25rem, 5vw, var(--eep-text-h1));
-	line-height: 1.02;
-	letter-spacing: var(--eep-track-h1);
-	color: var(--eep-ink);
-	font-variation-settings: 'opsz' 72;
 	margin: 0.75rem 0 1rem;
 }
 /* Starlight sets the shortcut in the UI font. The theme's code font is mono. */
@@ -317,9 +311,6 @@ button[data-open-modal] kbd {
 		min-width: var(--eep-tap);
 		min-height: var(--eep-tap);
 		padding-inline: 0.25rem;
-	}
-	.eep-nav a[aria-current='page'] {
-		box-shadow: inset 0 calc(-1 * var(--eep-toc-bar)) 0 var(--eep-accent);
 	}
 	.eep-theme,
 	.header button[data-open-modal] {
@@ -616,7 +607,7 @@ a.external-link .eep-ext-last::after {
 .eep-companies-search label,
 .eep-companies-field label {
 	font-size: var(--eep-text-sm);
-	line-height: 1.4;
+	line-height: var(--eep-lh-ui);
 	color: var(--eep-ink-2);
 }
 .eep-companies-advanced > summary {
@@ -674,7 +665,7 @@ a.external-link .eep-ext-last::after {
 .eep-companies-count {
 	margin: 0;
 	font-size: var(--eep-text-sm);
-	line-height: 1.4;
+	line-height: var(--eep-lh-ui);
 	color: var(--eep-ink-2);
 }
 /* The page size sits in the tools row, its label beside the menu. */
@@ -685,7 +676,7 @@ a.external-link .eep-ext-last::after {
 }
 .eep-companies-size label {
 	font-size: var(--eep-text-sm);
-	line-height: 1.4;
+	line-height: var(--eep-lh-ui);
 	color: var(--eep-ink-2);
 }
 .eep-companies .eep-companies-size select {
@@ -820,9 +811,6 @@ a.external-link .eep-ext-last::after {
 		display: table-row;
 		padding: 0;
 	}
-	.eep-companies .eep-company-list tbody tr[hidden] {
-		display: none;
-	}
 	.eep-companies .eep-company-list :is(th, td),
 	.eep-companies .eep-company-list td + td {
 		display: table-cell;
@@ -881,12 +869,6 @@ a.external-link .eep-ext-last::after {
 		th[aria-sort='descending']
 		button::after {
 		content: ' \2193';
-	}
-	.eep-companies .eep-company-list tbody tr {
-		border-top: 1px solid var(--eep-rule-2);
-	}
-	.eep-companies .eep-company-list td {
-		overflow-wrap: break-word;
 	}
 }
 

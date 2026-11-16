@@ -1,5 +1,24 @@
+# Every crawler, search engine or AI, may read every page. The guide text
+# is licensed CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
+
+# The main AI crawlers are named so the choice is explicit. Each token is
+# the one its operator documents, and the rule is the same as for the rest.
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+Allow: /
+
 User-agent: *
 Allow: /
+
 Sitemap: https://eeprep.com/sitemap-index.xml
 
 # Page index for language models: https://eeprep.com/llms.txt
