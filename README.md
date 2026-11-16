@@ -26,7 +26,7 @@ The site is live at [eeprep.com](https://eeprep.com).
 ## Related projects
 
 - [resume-generator](https://github.com/edwardasilva/resume-generator): turns one JSON file into the one-page resume the resume pages describe.
-- [company-lists](https://github.com/edwardasilva/company-lists): a plain list of companies by state, with one file for each of the 50 states and 851 rows. A company gets one row for each city it is in.
+- [company-lists](https://github.com/edwardasilva/company-lists): a plain list of companies by state, with one file for each of the 50 states and 1,993 rows. A company gets one row for each city it is in.
 
 ## Get the code
 
