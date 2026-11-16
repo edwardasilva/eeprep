@@ -2,7 +2,7 @@
 
 Write results, not duties. Build every bullet with one of the three formulas the wiki asks for: XYZ, CAR, or STAR. All three include a result, measured where the user has a number, and the number goes toward the front.
 
-## XYZ, CAR, and STAR
+## The three formulas
 
 - XYZ: "accomplished X, as measured by Y, by doing Z". Inc. traces it to Google's resume advice. X is the result, Y is the number that measures it, and Z is what the user did, with the tool or method. It fits most project bullets.
 - CAR: challenge, action, result. The challenge is a problem, something that needed doing and had not been done. It fits a fault the user tracked down, a failed or stalled project, or a spec they missed and recovered from. TopResume asks for a result you can count, not one that "went well".

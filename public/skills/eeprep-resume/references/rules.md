@@ -67,7 +67,7 @@ When the user applies to a master's or PhD program, they may need a CV, not a re
 - Page break: do not split an entry's heading from its bullets across the page break.
 - Order: Education first, then research and Experience, with Skills last.
 - Research: add research, papers, and talks.
-- GPA: list the overall GPA with its scale, such as 3.40/4.00, even below the 3.50 cutoff a job resume uses.
+- GPA: list the overall GPA with its scale, such as 3.44/4.00, even below the 3.50 cutoff a job resume uses.
 - Graduate GPA: do not put a graduate-only GPA on the degree line in place of the overall GPA.
 - Teaching: grading, tutoring, or peer mentoring can sit under its own Teaching heading. Say how many students and how many classes.
 - Type: 10.75 pt text is a good size for a two-page CV, 10.5 pt the smallest, with 0.5 in margins. These numbers are for the CV only. A job resume stays one page.
