@@ -38,7 +38,7 @@
       "start": "Fall 2025",
       "end": "Spring 2026",
       "bullets": [
-        "Reached [X]% efficiency on a [X] W CubeSat buck converter, measured on an electronic load, by designing it in KiCad and LTspice"
+        "Reached [X]% efficiency on an electronic load with a [X] W CubeSat buck converter designed in KiCad and LTspice"
       ]
     }
   ],
