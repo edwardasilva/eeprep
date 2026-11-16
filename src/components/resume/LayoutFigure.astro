@@ -258,7 +258,7 @@ const caption = externalLinks(
 		grid-column: 1 / -1;
 		font-size: var(--eep-text-body);
 		font-weight: 600;
-		line-height: 1.3;
+		line-height: var(--eep-lh-fig-title);
 		color: var(--eep-ink);
 	}
 	.eep-layout-frame > svg {
@@ -272,7 +272,7 @@ const caption = externalLinks(
 		margin-top: 0.5rem;
 		font-size: var(--eep-text-eyebrow);
 		font-weight: 600;
-		line-height: 1.35;
+		line-height: var(--eep-lh-label);
 		text-align: center;
 		text-wrap: balance;
 		overflow-wrap: normal;
@@ -326,7 +326,7 @@ const caption = externalLinks(
 		stroke: var(--eep-dg-ink);
 	}
 	.eep-layout-frame :global(.wf-soft) {
-		fill: var(--eep-dg-grid);
+		fill: var(--eep-dg-tint);
 		stroke: none;
 	}
 	.eep-layout-frame :global(.wf-accent) {

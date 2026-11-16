@@ -5,6 +5,7 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { homeDescription } from '../lib/home';
+import { contentLicense } from '../lib/site';
 import { sidebar } from '../lib/sidebar.mjs';
 
 type Item = { slug?: string; items?: Item[] };
@@ -46,7 +47,7 @@ export const GET: APIRoute = async ({ site }) => {
 		'',
 		`> ${oneLine(homeDescription)}`,
 		'',
-		'Every claim on the site cites a public source. Guide text is licensed CC BY 4.0, and code is MIT.',
+		`Every claim on the site cites a public source. Guide text is licensed CC BY 4.0 (${contentLicense}), credited to eeprep contributors, and code is MIT.`,
 		'',
 		...groups
 			.filter((group) => group.ids.length > 0)
@@ -59,6 +60,7 @@ export const GET: APIRoute = async ({ site }) => {
 		'## Tools',
 		'',
 		`- [eeprep resume skill](${new URL('/skills/eeprep-resume/SKILL.md', base).href}): An agent skill that writes, reviews, and tailors a one-page engineering resume to the rules on this site.`,
+		`- [eeprep resume skill install guide](${new URL('/skills/eeprep-resume/README.md', base).href}): How to install the skill, and what each of its reference files holds.`,
 		'- [resume-generator](https://github.com/edwardasilva/resume-generator): Turns one JSON file into a one-page PDF resume.',
 		'- [company-lists](https://github.com/edwardasilva/company-lists): Companies by state and city, each with a public source, for students looking for employers near them.',
 		'- [Source code](https://github.com/edwardasilva/eeprep): The repository that builds eeprep.com.',

@@ -1,6 +1,6 @@
 # Tailoring a resume to a posting
 
-A resume works best when it is tailored to the posting in front of it. Doing that for every single application is often unrealistic, so the eeprep author recommends keeping 4 or 5 versions, each aimed at one niche or one level of effort, and picking the closest one for each application. Tailor the one that matters most by hand.
+A resume works best when it is tailored to the posting in front of it. Doing that for every application is often unrealistic. The eeprep author recommends keeping 4 or 5 versions, each aimed at one niche or one level of effort, and picking the closest one for each application. Tailor the one that matters most by hand.
 
 ## Versions to keep
 

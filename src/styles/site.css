@@ -104,15 +104,9 @@
 .eep-home-intro p {
 	max-width: var(--eep-measure);
 }
-/* The same size, weight and leading as the title on every other page. */
+/* The home title is h1#_top, so the page-title rule in theme.css sets its
+   type. Only its spacing differs. */
 .eep-hero h1 {
-	font-family: var(--eep-font-serif);
-	font-weight: 500;
-	font-size: clamp(2.25rem, 5vw, var(--eep-text-h1));
-	line-height: 1.02;
-	letter-spacing: var(--eep-track-h1);
-	color: var(--eep-ink);
-	font-variation-settings: 'opsz' 72;
 	margin: 0.75rem 0 1rem;
 }
 /* Starlight sets the shortcut in the UI font. The theme's code font is mono. */
@@ -235,7 +229,7 @@ button[data-open-modal] kbd {
 	padding: 1rem var(--sl-sidebar-pad-x);
 }
 .eep-backlinks h2 {
-	color: var(--sl-color-white);
+	color: var(--eep-ink);
 	font-size: var(--eep-text-h5);
 	font-weight: 600;
 	line-height: var(--sl-line-height-headings);
@@ -250,20 +244,24 @@ button[data-open-modal] kbd {
 	display: block;
 	padding-block: 0.25rem;
 	font-size: var(--eep-text-caption);
-	color: var(--sl-color-gray-2);
+	color: var(--eep-ink);
 	text-decoration: none;
 	overflow-wrap: anywhere;
 }
 /* Below 72rem the list follows the content instead, set off by a rule. */
 .eep-backlinks-end {
 	margin-top: 2rem;
-	border-top: 1px solid var(--sl-color-hairline);
+	border-top: var(--eep-border);
 	padding-inline: 0;
 }
+/* The same hover and focus color as the sidebar and "On this page" links. */
 @media (hover: hover) {
 	.eep-backlinks a:hover {
-		color: var(--sl-color-white);
+		color: var(--eep-accent);
 	}
+}
+.eep-backlinks a:focus-visible {
+	color: var(--eep-accent);
 }
 
 /* Phone header: two fixed rows inside Starlight's header, so nothing spills
@@ -317,9 +315,6 @@ button[data-open-modal] kbd {
 		min-width: var(--eep-tap);
 		min-height: var(--eep-tap);
 		padding-inline: 0.25rem;
-	}
-	.eep-nav a[aria-current='page'] {
-		box-shadow: inset 0 calc(-1 * var(--eep-toc-bar)) 0 var(--eep-accent);
 	}
 	.eep-theme,
 	.header button[data-open-modal] {
@@ -479,21 +474,31 @@ a.external-link .eep-ext-last::after {
    first and last columns sit flush with the paragraph edges. Narrow screens
    stack each row, with the column name (from data-label, added by the
    rehype-table-labels plugin) above each cell, so no column is cut off. */
-.sl-markdown-content table.eep-table {
+/* The stacked layout below is shared with the company list table. */
+:is(
+	.sl-markdown-content table.eep-table,
+	.eep-companies table.eep-company-list
+) {
 	display: block;
 	width: 100%;
 	border: 0;
 	border-collapse: collapse;
-	color: var(--eep-ink);
 	font-size: var(--eep-text-ui);
 	line-height: var(--eep-lh-ui);
 }
-.sl-markdown-content .eep-table :is(thead, tbody, tr, th, td) {
+.sl-markdown-content table.eep-table {
+	color: var(--eep-ink);
+}
+.eep-companies table.eep-company-list {
+	margin: 0;
+}
+:is(.sl-markdown-content .eep-table, .eep-companies .eep-company-list)
+	:is(thead, tbody, tr, th, td) {
 	display: block;
 	border: 0;
 	background: none;
 }
-.sl-markdown-content .eep-table thead {
+:is(.sl-markdown-content .eep-table, .eep-companies .eep-company-list) thead {
 	position: absolute;
 	width: 1px;
 	height: 1px;
@@ -501,14 +506,24 @@ a.external-link .eep-ext-last::after {
 	clip-path: inset(50%);
 	white-space: nowrap;
 }
+:is(.sl-markdown-content .eep-table, .eep-companies .eep-company-list)
+	tbody
+	tr {
+	border-top: 1px solid var(--eep-rule-2);
+}
 .sl-markdown-content .eep-table tbody tr {
 	padding: 0.75rem 0;
-	border-top: 1px solid var(--eep-rule-2);
+}
+.eep-companies .eep-company-list tbody tr {
+	padding: 0.625rem 0;
 }
 .sl-markdown-content .eep-table tbody tr:last-child {
 	border-bottom: 1px solid var(--eep-rule-2);
 }
-.sl-markdown-content .eep-table td {
+.eep-companies .eep-company-list tbody tr[hidden] {
+	display: none;
+}
+:is(.sl-markdown-content .eep-table, .eep-companies .eep-company-list) td {
 	padding: 0;
 	text-align: left;
 	vertical-align: top;
@@ -523,7 +538,7 @@ a.external-link .eep-ext-last::after {
 	overflow-wrap: anywhere;
 }
 /* Links stacked with <br /> must each be at least 24px tall (WCAG 2.5.8). */
-.sl-markdown-content .eep-roadmap td a {
+:is(.sl-markdown-content .eep-roadmap, .eep-companies .eep-company-list) td a {
 	display: inline-block;
 	min-height: 1.5rem;
 	line-height: 1.5rem;
@@ -540,13 +555,16 @@ a.external-link .eep-ext-last::after {
 }
 
 @media (min-width: 34rem) {
-	.sl-markdown-content table.eep-table {
+	:is(
+		.sl-markdown-content table.eep-table,
+		.eep-companies table.eep-company-list
+	) {
 		display: table;
 	}
 	.sl-markdown-content table.eep-roadmap {
 		table-layout: fixed;
 	}
-	.sl-markdown-content .eep-table thead {
+	:is(.sl-markdown-content .eep-table, .eep-companies .eep-company-list) thead {
 		position: static;
 		display: table-header-group;
 		width: auto;
@@ -555,15 +573,18 @@ a.external-link .eep-ext-last::after {
 		clip-path: none;
 		white-space: normal;
 	}
-	.sl-markdown-content .eep-table tbody {
+	:is(.sl-markdown-content .eep-table, .eep-companies .eep-company-list) tbody {
 		display: table-row-group;
 	}
-	.sl-markdown-content .eep-table tr,
-	.sl-markdown-content .eep-table tbody tr {
+	:is(.sl-markdown-content .eep-table, .eep-companies .eep-company-list) tr,
+	:is(.sl-markdown-content .eep-table, .eep-companies .eep-company-list)
+		tbody
+		tr {
 		display: table-row;
 		padding: 0;
 	}
-	.sl-markdown-content .eep-table :is(th, td),
+	:is(.sl-markdown-content .eep-table, .eep-companies .eep-company-list)
+		:is(th, td),
 	.sl-markdown-content .eep-table td + td {
 		display: table-cell;
 		margin: 0;
@@ -571,16 +592,20 @@ a.external-link .eep-ext-last::after {
 		text-align: left;
 		vertical-align: top;
 	}
-	.sl-markdown-content .eep-table :is(th, td):first-child {
+	:is(.sl-markdown-content .eep-table, .eep-companies .eep-company-list)
+		:is(th, td):first-child {
 		padding-left: 0;
 	}
-	.sl-markdown-content .eep-table :is(th, td):last-child {
+	:is(.sl-markdown-content .eep-table, .eep-companies .eep-company-list)
+		:is(th, td):last-child {
 		padding-right: 0;
 	}
 	.sl-markdown-content .eep-roadmap :is(th, td):first-child {
 		width: 40%;
 	}
-	.sl-markdown-content .eep-table thead th {
+	:is(.sl-markdown-content .eep-table, .eep-companies .eep-company-list)
+		thead
+		th {
 		padding-top: 0;
 		font-size: var(--eep-text-caption);
 		font-weight: 600;
@@ -616,7 +641,7 @@ a.external-link .eep-ext-last::after {
 .eep-companies-search label,
 .eep-companies-field label {
 	font-size: var(--eep-text-sm);
-	line-height: 1.4;
+	line-height: var(--eep-lh-ui);
 	color: var(--eep-ink-2);
 }
 .eep-companies-advanced > summary {
@@ -674,7 +699,7 @@ a.external-link .eep-ext-last::after {
 .eep-companies-count {
 	margin: 0;
 	font-size: var(--eep-text-sm);
-	line-height: 1.4;
+	line-height: var(--eep-lh-ui);
 	color: var(--eep-ink-2);
 }
 /* The page size sits in the tools row, its label beside the menu. */
@@ -685,7 +710,7 @@ a.external-link .eep-ext-last::after {
 }
 .eep-companies-size label {
 	font-size: var(--eep-text-sm);
-	line-height: 1.4;
+	line-height: var(--eep-lh-ui);
 	color: var(--eep-ink-2);
 }
 .eep-companies .eep-companies-size select {
@@ -720,46 +745,6 @@ a.external-link .eep-ext-last::after {
 .eep-companies .eep-company-scroll:focus-visible {
 	outline: 2px solid var(--eep-accent);
 	outline-offset: 2px;
-}
-.eep-companies table.eep-company-list {
-	display: block;
-	width: 100%;
-	margin: 0;
-	border: 0;
-	border-collapse: collapse;
-	font-size: var(--eep-text-ui);
-	line-height: var(--eep-lh-ui);
-}
-.eep-companies .eep-company-list :is(thead, tbody, tr, th, td) {
-	display: block;
-	border: 0;
-	background: none;
-}
-.eep-companies .eep-company-list thead {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	overflow: hidden;
-	clip-path: inset(50%);
-	white-space: nowrap;
-}
-.eep-companies .eep-company-list tbody tr {
-	padding: 0.625rem 0;
-	border-top: 1px solid var(--eep-rule-2);
-}
-.eep-companies .eep-company-list tbody tr[hidden] {
-	display: none;
-}
-.eep-companies .eep-company-list td {
-	padding: 0;
-	text-align: left;
-	vertical-align: top;
-	overflow-wrap: break-word;
-}
-.eep-companies .eep-company-list td a {
-	display: inline-block;
-	min-height: 1.5rem;
-	line-height: 1.5rem;
 }
 /* Narrow: the name on its own line, then the other four cells run inline,
    split by a middle dot. A one-place company reads "Tulsa, OK". A company in
@@ -799,50 +784,10 @@ a.external-link .eep-ext-last::after {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 	.eep-companies table.eep-company-list {
-		display: table;
 		table-layout: auto;
 		min-width: 34rem;
 	}
-	.eep-companies .eep-company-list thead {
-		position: static;
-		display: table-header-group;
-		width: auto;
-		height: auto;
-		overflow: visible;
-		clip-path: none;
-		white-space: normal;
-	}
-	.eep-companies .eep-company-list tbody {
-		display: table-row-group;
-	}
-	.eep-companies .eep-company-list tr,
-	.eep-companies .eep-company-list tbody tr {
-		display: table-row;
-		padding: 0;
-	}
-	.eep-companies .eep-company-list tbody tr[hidden] {
-		display: none;
-	}
-	.eep-companies .eep-company-list :is(th, td),
-	.eep-companies .eep-company-list td + td {
-		display: table-cell;
-		margin: 0;
-		padding: 0.6rem 0.75rem 0.65rem;
-		text-align: left;
-		vertical-align: top;
-	}
-	.eep-companies .eep-company-list :is(th, td):first-child {
-		padding-left: 0;
-	}
-	.eep-companies .eep-company-list :is(th, td):last-child {
-		padding-right: 0;
-	}
 	.eep-companies .eep-company-list thead th {
-		padding-top: 0;
-		font-size: var(--eep-text-caption);
-		font-weight: 600;
-		line-height: var(--eep-lh-label);
-		color: var(--eep-ink-2);
 		overflow-wrap: normal;
 	}
 	.eep-companies .eep-company-list thead th button {
@@ -872,21 +817,25 @@ a.external-link .eep-ext-last::after {
 		thead
 		th[aria-sort='descending']
 		button::after {
-		content: ' \2191';
-		text-decoration: none;
+		/* An SVG mask in the text color, like the external-link arrow, so no
+		   platform can draw the arrow as an emoji. aria-sort says the order. */
+		--eep-sort-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 10.5V1.75M2.5 5.25L6 1.75l3.5 3.5'/%3E%3C/svg%3E");
+		content: '';
+		display: inline-block;
+		width: 0.75em;
+		height: 0.75em;
+		margin-inline-start: 0.25em;
+		background-color: currentColor;
+		forced-color-adjust: none;
+		-webkit-mask: var(--eep-sort-arrow) no-repeat center / contain;
+		mask: var(--eep-sort-arrow) no-repeat center / contain;
 	}
 	.eep-companies
 		.eep-company-list
 		thead
 		th[aria-sort='descending']
 		button::after {
-		content: ' \2193';
-	}
-	.eep-companies .eep-company-list tbody tr {
-		border-top: 1px solid var(--eep-rule-2);
-	}
-	.eep-companies .eep-company-list td {
-		overflow-wrap: break-word;
+		transform: rotate(180deg);
 	}
 }
 

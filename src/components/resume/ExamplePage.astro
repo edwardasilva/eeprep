@@ -77,8 +77,8 @@ const caption = externalLinks(
 				</div>
 				<ul>
 					<li>
-						Designed a [X] W CubeSat buck converter in KiCad and LTspice,
-						measured at [X]% efficiency on an electronic load
+						Reached [X]% efficiency on an electronic load with a [X] W CubeSat
+						buck converter designed in KiCad and LTspice
 					</li>
 					<li>
 						Cut output ripple from [X] mV to [X] mV by shrinking the switching
@@ -97,8 +97,8 @@ const caption = externalLinks(
 						and stream it to a Python logger
 					</li>
 					<li>
-						Moved UART writes to DMA after a logic analyzer showed dropped
-						samples, cutting losses to [X]%
+						Cut dropped samples to [X]% by moving UART writes to DMA, after a
+						logic analyzer showed the losses
 					</li>
 				</ul>
 			</div>
@@ -121,8 +121,8 @@ const caption = externalLinks(
 					<strong>Software:</strong> KiCad, LTspice, C, Python
 				</p>
 				<p>
-					<strong>Hardware/Lab:</strong> STM32, oscilloscope, electronic load,
-					logic analyzer
+					<strong>Hardware/Lab:</strong> STM32, Oscilloscope, Electronic load,
+					Logic analyzer
 				</p>
 			</div>
 		</div>
@@ -270,7 +270,7 @@ const caption = externalLinks(
 		margin: 0 0 0.85rem;
 		color: var(--eep-text);
 		font-size: var(--eep-text-ui);
-		line-height: 1.45;
+		line-height: var(--eep-lh-fig);
 		max-width: none;
 	}
 	.eep-example-notes li > span {

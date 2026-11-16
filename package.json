@@ -26,6 +26,7 @@
     "check:deploy": "wrangler deploy --dry-run --env=\"\"",
     "check:robots": "node .github/scripts/check-robots.mjs",
     "check:figures": "node .github/scripts/check-figures.mjs",
+    "check:theme": "node .github/scripts/check-theme.mjs",
     "check:external-links": "node .github/scripts/check-external-links.mjs",
     "test:sidebar": "node .github/scripts/test-sidebar.mjs",
     "brand": "node .github/scripts/render-brand.mjs",

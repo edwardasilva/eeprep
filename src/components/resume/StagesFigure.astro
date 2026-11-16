@@ -54,11 +54,11 @@ const pages = [
 			{ label: 'Projects', count: 3 },
 			{ label: 'Skills', count: 3 },
 		],
-		note: 'Tightened to 10.25 pt to fit',
+		note: 'Tightened to 10 pt to fit',
 	},
 ];
 const alt =
-	'Five resume pages side by side. Each one starts with Education and ends with Skills. First year: education, one project, a grocery job with two bullets, and two skill lines, with room left at the bottom. Sophomore: education, then experience with a club lead role and a barista job with two bullets, then two projects and two skill lines. The club role puts Experience above Projects. Senior: education, two projects, a retail job with two bullets, and two skill lines. This is the finished page on the resume page. New graduate: education, then experience with two internships, then two projects and three skill lines with certifications. The internships put Experience above Projects. Packed: education, then three engineering roles and a one-line job, then three projects and three skill lines, tightened to 10.25 point text to fit.';
+	'Five resume pages side by side. Each one starts with Education and ends with Skills. First year: education, one project, a grocery job with two bullets, and two skill lines, with room left at the bottom. Sophomore: education, then experience with a club lead role and a barista job with two bullets, then two projects and two skill lines. The club role puts Experience above Projects. Senior: education, two projects, a retail job with two bullets, and two skill lines. This is the finished page on the resume page. New graduate: education, then experience with two internships, then two projects and three skill lines with certifications. The internships put Experience above Projects. Packed: education, then three engineering roles and a one-line job, then three projects and three skill lines, tightened to 10 point text to fit.';
 ---
 
 <figure class="eep-fig wide eep-stages-fig" id="fig-12-2">
@@ -118,7 +118,7 @@ const alt =
 		margin-bottom: 0.4rem;
 		font-size: var(--eep-text-sm);
 		font-weight: 600;
-		line-height: 1.3;
+		line-height: var(--eep-lh-fig-title);
 	}
 	.eep-stage-sheet {
 		display: grid;
@@ -131,7 +131,7 @@ const alt =
 	.eep-stage .eep-stage-label {
 		font-size: var(--eep-text-eyebrow);
 		font-weight: 600;
-		line-height: 1.3;
+		line-height: var(--eep-lh-fig-title);
 		padding-bottom: 0.1rem;
 		border-bottom: 1px solid var(--eep-dg-ink);
 	}
@@ -150,13 +150,13 @@ const alt =
 	.eep-stage .eep-stage-note {
 		margin-top: 0.15rem;
 		font-size: var(--eep-text-eyebrow);
-		line-height: 1.35;
+		line-height: var(--eep-lh-label);
 		color: var(--eep-ink-2);
 	}
 	.eep-stage .eep-stage-foot {
 		margin-top: 0.4rem;
 		font-size: var(--eep-text-eyebrow);
-		line-height: 1.4;
+		line-height: var(--eep-lh-fig);
 		color: var(--eep-ink-2);
 	}
 	/* Wide: all five pages in one row, so the eye reads left to right. */

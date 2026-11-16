@@ -1,26 +1,13 @@
 ---
 import { loadCompanyList } from '../../lib/company-lists';
-import { externalLinks } from '../resume/caption';
-
-function escapeHtml(value: string): string {
-	return value
-		.replaceAll('&', '&amp;')
-		.replaceAll('<', '&lt;')
-		.replaceAll('>', '&gt;')
-		.replaceAll('"', '&quot;');
-}
-
-function extLink(href: string, text: string): string {
-	return externalLinks(`<a href="${escapeHtml(href)}">${escapeHtml(text)}</a>`);
-}
+import { compare, searchText, type Company } from '../../lib/company-data';
+import { externalLinks, extLink } from '../resume/caption';
 
 const { rows: allRows, filters } = loadCompanyList();
 const total = allRows.length;
 
 // The same order the page script sorts by, so the first page does not jump
 // when the script takes over.
-const compare = (a: string, b: string) =>
-	a.localeCompare(b, 'en', { sensitivity: 'base', numeric: true });
 const rows = [...allRows].sort(
 	(a, b) => compare(a.name, b.name) || compare(a.city, b.city),
 );
@@ -33,21 +20,32 @@ const pageSize = pageSizes[0];
 const firstPage = rows.slice(0, pageSize);
 const countText = `1–${Math.min(pageSize, total)} of ${total} companies`;
 const data = JSON.stringify(
-	rows.map((row) => ({
-		n: row.name,
-		w: row.website,
-		c: row.careersUrl || undefined,
-		i: row.industry,
-		il: row.industryLabel,
-		f: row.field || undefined,
-		fl: row.fieldLabel || undefined,
-		ci: row.city,
-		s: row.state,
-		cs: row.locations.length > 1 ? row.locations.map((l) => l.city) : undefined,
-		ss:
-			row.locations.length > 1 ? row.locations.map((l) => l.state) : undefined,
-		q: row.search,
-	})),
+	rows.map((row) => {
+		const company: Company = {
+			n: row.name,
+			w: row.website,
+			c: row.careersUrl || undefined,
+			i: row.industry,
+			il: row.industryLabel,
+			f: row.field || undefined,
+			fl: row.fieldLabel || undefined,
+			ci: row.city,
+			s: row.state,
+			cs:
+				row.locations.length > 1 ? row.locations.map((l) => l.city) : undefined,
+			ss:
+				row.locations.length > 1
+					? row.locations.map((l) => l.state)
+					: undefined,
+			x: row.notes || undefined,
+			k: row.country === 'US' ? undefined : row.country,
+		};
+		// The browser rebuilds the search text from these fields. A row it
+		// cannot rebuild, such as a merged company, ships the text whole.
+		return searchText(company) === row.search
+			? company
+			: { ...company, x: undefined, q: row.search };
+	}),
 ).replaceAll('<', '\\u003c');
 
 const fieldIndustries = new Map<string, string[]>();
@@ -235,28 +233,22 @@ function companyCell(row: (typeof rows)[number]): string {
 </div>
 
 <script>
-	import { splitTail } from '../../plugins/external-link-tail.mjs';
-
-	type Company = {
-		n: string;
-		w: string;
-		c?: string;
-		i: string;
-		il: string;
-		f?: string;
-		fl?: string;
-		ci: string;
-		s: string;
-		cs?: string[];
-		ss?: string[];
-		q: string;
-	};
+	import {
+		compare,
+		searchText,
+		sortKeys,
+		type Company,
+	} from '../../lib/company-data';
+	import { escapeHtml, extLink } from '../resume/caption';
 
 	const root = document.querySelector('[data-company-list]');
 	const source = document.getElementById('eep-companies-data');
 
 	if (root instanceof HTMLElement && source) {
-		const companies: Company[] = JSON.parse(source.textContent ?? '[]');
+		// Build each row's search text once, here, rather than ship it.
+		const companies = (JSON.parse(source.textContent ?? '[]') as Company[]).map(
+			(c) => ({ ...c, q: searchText(c) }),
+		);
 		const total = companies.length;
 		const form = root.querySelector('form');
 		const sortSelect = root.querySelector('#eep-companies-sort');
@@ -281,29 +273,18 @@ function companyCell(row: (typeof rows)[number]): string {
 
 		// The rows that match the filters, in sort order, and the slice of them
 		// on screen: start is the first row shown, shown is how many.
-		let matches: Company[] = companies;
+		let matches = companies;
 		let start = 0;
 		let shown = 0;
-
-		const escape = (value: string) =>
-			value
-				.replaceAll('&', '&amp;')
-				.replaceAll('<', '&lt;')
-				.replaceAll('>', '&gt;')
-				.replaceAll('"', '&quot;');
-
-		// The same markup the server gives an external link.
-		const extLink = (href: string, text: string) => {
-			const [head, tail] = splitTail(text);
-			return `<a href="${escape(href)}" class="external-link" target="_blank" rel="noopener noreferrer"><span class="eep-ext-text">${escape(head)}<span class="eep-ext-last">${escape(tail)}</span></span><span class="sr-only"> (opens in a new tab)</span></a>`;
-		};
 
 		const rowHtml = (c: Company) => {
 			const name = extLink(c.w, c.n);
 			const company = c.c ? `${name} ${extLink(c.c, 'careers')}` : name;
-			const field = c.fl ? `<td>${escape(c.fl)}</td>` : '<td data-empty>–</td>';
+			const field = c.fl
+				? `<td>${escapeHtml(c.fl)}</td>`
+				: '<td data-empty>–</td>';
 			const onePlace = c.cs ? '' : ' data-one-place';
-			return `<tr${onePlace}><td>${company}</td><td>${escape(c.il)}</td>${field}<td>${escape(c.ci)}</td><td>${escape(c.s)}</td></tr>`;
+			return `<tr${onePlace}><td>${company}</td><td>${escapeHtml(c.il)}</td>${field}<td>${escapeHtml(c.ci)}</td><td>${escapeHtml(c.s)}</td></tr>`;
 		};
 
 		const inputValue = (name: string) => {
@@ -322,24 +303,8 @@ function companyCell(row: (typeof rows)[number]): string {
 			return value === 'all' ? Infinity : Number(value) || 25;
 		};
 
-		const compare = (a: string, b: string) =>
-			a.localeCompare(b, 'en', { sensitivity: 'base', numeric: true });
-
-		const sortKey = (c: Company, key: string) => {
-			if (key === 'industry') {
-				return c.il;
-			}
-			if (key === 'field') {
-				return c.fl ?? '';
-			}
-			if (key === 'city') {
-				return c.ci;
-			}
-			if (key === 'state') {
-				return c.s;
-			}
-			return c.n;
-		};
+		const sortKey = (c: Company, key: string) =>
+			(sortKeys[key] ?? sortKeys.name)(c);
 
 		const hasValue = (list: string[] | undefined, one: string, value: string) =>
 			(list ?? [one]).includes(value);
@@ -494,8 +459,8 @@ function companyCell(row: (typeof rows)[number]): string {
 			toTop();
 		});
 
+		// Every control, the selects included, fires input on each change.
 		form?.addEventListener('input', refresh);
-		form?.addEventListener('change', refresh);
 		form?.addEventListener('submit', (event) => {
 			event.preventDefault();
 			refresh();

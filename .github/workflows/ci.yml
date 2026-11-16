@@ -86,6 +86,9 @@ jobs:
       - name: Lint (ESLint, markdownlint, Prettier)
         if: ${{ !cancelled() && steps.install.outcome == 'success' }}
         run: npm run lint
+      - name: Theme colour copies
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: npm run check:theme
       - name: Wikilink checker tests
         if: ${{ !cancelled() && steps.install.outcome == 'success' && steps.scope.outputs.code == 'true' }}
         run: npm run test:wikilinks

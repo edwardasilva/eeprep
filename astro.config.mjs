@@ -199,6 +199,8 @@ export default defineConfig({
 						content: 'width=device-width, initial-scale=1, viewport-fit=cover',
 					},
 				},
+				// The browser bar takes the page color. A meta tag cannot read CSS
+				// variables, so these copy --eep-paper from src/styles/theme.css.
 				{
 					tag: 'meta',
 					attrs: {
@@ -211,7 +213,7 @@ export default defineConfig({
 					tag: 'meta',
 					attrs: {
 						name: 'theme-color',
-						content: '#0d1524',
+						content: '#151618',
 						media: '(prefers-color-scheme: dark)',
 					},
 				},
@@ -288,15 +290,12 @@ export default defineConfig({
 						sizes: '180x180',
 					},
 				},
-				// The plain-text page index for AI tools, built by src/pages/llms.txt.ts.
+				// The page index for AI tools, built by src/pages/llms.txt.ts. The
+				// llms.txt proposal (https://llmstxt.org) names rel="describedby" for
+				// the link from a page to the llms.txt file that covers it.
 				{
 					tag: 'link',
-					attrs: {
-						rel: 'alternate',
-						type: 'text/plain',
-						href: '/llms.txt',
-						title: 'llms.txt',
-					},
+					attrs: { rel: 'describedby', href: '/llms.txt' },
 				},
 			],
 			components: {

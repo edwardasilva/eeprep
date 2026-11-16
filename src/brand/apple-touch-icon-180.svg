@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="180" height="180"><rect width="64" height="64" rx="0" fill="#fbfbfc"/><g transform="translate(10.88 10.88) scale(0.6600)">  <g fill="none" stroke="#16233a" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="180" height="180"><rect width="64" height="64" rx="0" fill="#fbfbfc"/><g transform="translate(10.88 10.88) scale(0.6600)">  <g fill="none" stroke="#24272b" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter">
     <path d="M18 24V56L46 40Z"/>
     <path d="M21 32H27"/>
     <path d="M21 48H27M24 45.5V50.5"/>
@@ -10,4 +10,4 @@
     <circle cx="6" cy="48" r="2.5"/>
     <circle cx="58" cy="40" r="2.5"/>
   </g>
-  <circle cx="52" cy="40" r="2.5" fill="#16233a"/></g></svg>
+  <circle cx="52" cy="40" r="2.5" fill="#24272b"/></g></svg>

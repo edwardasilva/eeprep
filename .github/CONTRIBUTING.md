@@ -57,7 +57,7 @@ Vale checks the writing style against [STYLE.md](STYLE.md). To run it, [install 
 
 ## What happens next
 
-I review the pull request and may ask a question or suggest a change. Each accepted change goes in as one squashed commit. Merges to `main` update a preview site that search engines skip, and eeprep.com updates with the next release.
+I review the pull request and may ask a question or suggest a change. Each accepted change goes in as one squashed commit. The squashed commit names the repository owner as its only author, so leave `Co-authored-by` lines and other trailers out of your commit messages and the pull request description. Merges to `main` update a preview site that search engines skip, and eeprep.com updates with the next release.
 
 ## Coding agents
 

@@ -1,14 +1,14 @@
 # Bullets: action, method, and result
 
-Write results, not duties. Build every bullet with one of the three formulas the wiki asks for: XYZ, CAR, or STAR. All three end in a result, measured where the user has a number.
+Write results, not duties. Build every bullet with one of the three formulas the wiki asks for: XYZ, CAR, or STAR. All three include a result, measured where the user has a number, and the number goes toward the front.
 
-## XYZ, CAR, and STAR
+## The three formulas
 
-- XYZ: "accomplished X, as measured by Y, by doing Z". X is the result, Y is the number that measures it, and Z is what the user did, with the tool or method. It fits most project bullets.
+- XYZ: "accomplished X, as measured by Y, by doing Z". Inc. traces it to Google's resume advice. X is the result, Y is the number that measures it, and Z is what the user did, with the tool or method. It fits most project bullets.
 - CAR: challenge, action, result. The challenge is a problem, something that needed doing and had not been done. It fits a fault the user tracked down, a failed or stalled project, or a spec they missed and recovered from. TopResume asks for a result you can count, not one that "went well".
 - STAR: situation, task, action, result. It is the formula for behavioral interview answers, and it works on a resume when the situation and task shrink to a few words. One STAR story can become one bullet or several. Keep the full story for the interview.
 
-Number first (author's rule). If the user measured the result, move the number toward the start of the bullet, whichever formula you use. TopResume says to front-load the important information and not hide the payoff at the end. The letters name the parts a bullet needs, not their order. The number-first rule is for a measured result, not for a spec the user could copy from a datasheet.
+Number first (author's rule). If the user measured the result, move the number toward the start of the bullet, whichever formula you use. TopResume says to front-load the important information and not hide the payoff at the end. Eleven Recruiting orders an XYZ bullet as an action verb, the achievement, the measurement, and then what the user did. The letters name the parts a bullet needs, not their order. The number-first rule is for a measured result, not for a spec the user could copy from a datasheet.
 
 The short form, did X with Y to get Z, is XYZ written in the order the work happened: X is the action, Y is the tool or method, and Z is the result. Screeners filter on the action and the tool. Hiring managers choose from the results. Use the short form when there is no number worth leading with.
 
@@ -16,11 +16,11 @@ The short form, did X with Y to get Z, is XYZ written in the order the work happ
 
 Before: "Worked on a buck converter for a CubeSat using LTspice and KiCad"
 
-After: "Designed a [X] W CubeSat buck converter in KiCad and LTspice, measured at [X]% efficiency on an electronic load"
+After, number first (XYZ): "Reached [X]% efficiency on a [X] W CubeSat buck converter, measured on an electronic load, by designing it in KiCad and LTspice"
 
-The rewrite names the action, the tools, one spec that shows difficulty, and a check against the real board. Every `[X]` is a number the user measures. Never fill one in yourself.
+The rewrite names the result, one spec that shows difficulty, the check against the real board, and the tools. Every `[X]` is a number the user measures. Never fill one in yourself.
 
-Number first, the same facts read as XYZ: "Reached [X]% efficiency on a [X] W CubeSat buck converter, measured on an electronic load, by designing it in KiCad and LTspice"
+The same facts in the short form, as on eeprep's bullet figure, end on the number: "Designed a [X] W CubeSat buck converter in KiCad and LTspice, measured at [X]% efficiency on an electronic load". Prefer the number-first version when the user measured the result.
 
 A CAR bullet, number first: "Cut I2C read errors on a rover sensor board from [X] to [X] an hour by finding a missing pull-up resistor with a logic analyzer"
 

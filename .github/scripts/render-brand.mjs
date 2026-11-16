@@ -1,4 +1,7 @@
-// Rebuild the favicon and README logo PNGs from their SVG sources.
+// Rebuild the favicon, touch icon, and stacked logo PNGs from their SVG
+// sources. The light stacked logo is the share image (og:image), so it gets
+// the light page color behind it: a transparent PNG shows charcoal on black
+// in a dark-mode feed.
 import fs from 'node:fs';
 import { Resvg } from '@resvg/resvg-js';
 
@@ -16,6 +19,7 @@ const jobs = [
 		'public/brand/eeprep-lockup-stacked-outlined.svg',
 		'public/brand/eeprep-lockup-stacked.png',
 		486,
+		'#fbfbfc',
 	],
 	[
 		'public/brand/eeprep-lockup-stacked-dark-outlined.svg',
@@ -24,10 +28,11 @@ const jobs = [
 	],
 ];
 
-for (const [source, target, width] of jobs) {
+for (const [source, target, width, background] of jobs) {
 	const svg = fs.readFileSync(source, 'utf8');
 	const png = new Resvg(svg, {
 		fitTo: { mode: 'width', value: width },
+		...(background ? { background } : {}),
 		font: { loadSystemFonts: false },
 	})
 		.render()

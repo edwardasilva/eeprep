@@ -20,7 +20,7 @@
 
 	/* Type scale (rem @ 16px root). Every font size on the site comes from
 	   this list, so one kind of text has one size on every page. */
-	--eep-text-h1: 3.5rem; /* 56  page title (2.5rem on phones) */
+	--eep-text-h1: 3.5rem; /* 56  page title, down to 2.25rem (36) on phones */
 	--eep-text-h2: 2.125rem; /* 34  section */
 	--eep-text-h3: 1.5rem; /* 24  subsection, figure title */
 	--eep-text-title: 1.375rem; /* 22  card title, figure heading */
@@ -39,6 +39,9 @@
 	--eep-lh-label: 1.35; /* kickers, labels, table headers */
 	--eep-lh-title: 1.2; /* card and box titles */
 	--eep-lh-heading: 1.08; /* h1 to h4 */
+	/* Figures: a box title and the text under it. */
+	--eep-lh-fig-title: 1.3;
+	--eep-lh-fig: 1.45;
 	--eep-track-h1: -0.025em;
 
 	/* Spacing (4px base) */
@@ -71,25 +74,20 @@
 	--eep-sunken: #f3f4f6; /* code blocks */
 	--eep-rule: #e2e4e8; /* hairlines */
 	--eep-rule-2: #c4c8cf; /* breadcrumb separators, stronger rules */
-	--eep-ink: #16233a; /* headings, diagram strokes */
+	--eep-ink: #24272b; /* headings, diagram strokes */
 	/* Three text roles: ink, ink-2 (secondary) and accent (current item and
 	   site chrome only; never figures). Silver is never text. Older names alias onto them.
 	   Every sentence a reader reads is ink: paragraphs, list items, card text, and the
 	   home page lines. ink-2 is only for labels and metadata: captions, figure numbers
 	   and kickers, the footer, the table of contents, and small notes inside figures. */
 	--eep-text: var(--eep-ink);
-	--eep-ink-2: #424d63; /* secondary text, lede */
+	--eep-ink-2: #50555c; /* secondary text, lede */
 	--eep-mute: var(--eep-ink-2);
-	--eep-silver: #838c9a; /* lines, icons, chart mute series: never text (3.3:1) */
+	--eep-silver: #878b91; /* lines, icons, chart mute series: never text (3.3:1) */
 	--eep-accent: #a3201d; /* the ONE accent: crimson */
 	--eep-accent-hover: #7d1714;
 	--eep-accent-soft: #f8ecea; /* tip bg */
 	--eep-on-accent: #ffffff;
-	/* semantic colours (desaturated, textbook-appropriate) */
-	--eep-ex: #1d5f8a;
-	--eep-ex-soft: #eef4f8;
-	--eep-check: #3f6b22;
-	--eep-check-soft: #eff4ea;
 	/* diagram palette (inline SVG reads these) */
 	--eep-dg-ink: var(--eep-ink);
 	--eep-dg-mute: var(--eep-silver);
@@ -100,29 +98,24 @@
 	--eep-dg-line: 1.5px;
 	--eep-dg-dash: var(--eep-dg-line) dashed var(--eep-dg-ink);
 	--eep-dg-dasharray: 3 3;
-	--eep-dg-grid: #e9ecf0;
 }
 
-/* ---------- 4. Colour tokens: DARK ("night navy": navy-black paper, cool silver ink) ---------- */
+/* ---------- 4. Colour tokens: DARK ("night charcoal": charcoal paper, silver ink) ---------- */
 :root {
-	--eep-paper: #0d1524;
-	--eep-surface: #131c2e;
-	--eep-sunken: #101828;
-	--eep-rule: #232b3a;
-	--eep-rule-2: #3b4352;
+	--eep-paper: #151618;
+	--eep-surface: #1c1d20;
+	--eep-sunken: #18191b;
+	--eep-rule: #2b2d31;
+	--eep-rule-2: #44474c;
 	--eep-ink: #eceef2;
 	--eep-text: var(--eep-ink);
-	--eep-ink-2: #a6afbf;
+	--eep-ink-2: #aeb1b7;
 	--eep-mute: var(--eep-ink-2);
-	--eep-silver: #76808f;
-	--eep-accent: #e06a5f; /* crimson lifted to 5.6:1 on navy paper */
+	--eep-silver: #7c8087;
+	--eep-accent: #e06a5f; /* crimson lifted to 5.5:1 on charcoal paper */
 	--eep-accent-hover: #f08b81;
-	--eep-accent-soft: #2a1a24;
-	--eep-on-accent: #0d1524;
-	--eep-ex: #7fb3d9;
-	--eep-ex-soft: #14243a;
-	--eep-check: #9cc77a;
-	--eep-check-soft: #16241f;
+	--eep-accent-soft: #2a1b1b;
+	--eep-on-accent: #151618;
 	--eep-dg-ink: var(--eep-ink);
 	--eep-dg-mute: var(--eep-silver);
 	--eep-dg-fill: var(--eep-surface);
@@ -132,7 +125,6 @@
 	--eep-dg-line: 1.5px;
 	--eep-dg-dash: var(--eep-dg-line) dashed var(--eep-dg-ink);
 	--eep-dg-dasharray: 3 3;
-	--eep-dg-grid: #1c2537;
 }
 
 /* One numbered marker for every figure: a step, region or pin number in an outlined circle. Put .eep-num on a span, or .eep-num-list on an ol so its counter marker draws the circle. Position and spacing stay with the figure. */
@@ -184,12 +176,14 @@
 	--sl-color-orange: var(--eep-accent);
 	--sl-color-orange-low: var(--eep-sunken);
 	--sl-color-orange-high: var(--eep-accent);
-	--sl-color-blue: var(--eep-ex);
-	--sl-color-blue-low: var(--eep-ex-soft);
-	--sl-color-blue-high: var(--eep-ex);
-	--sl-color-green: var(--eep-check);
-	--sl-color-green-low: var(--eep-check-soft);
-	--sl-color-green-high: var(--eep-check);
+	/* Starlight's note and success colors (badges, its own asides) stay
+	   neutral: crimson is the only accent. */
+	--sl-color-blue: var(--eep-ink-2);
+	--sl-color-blue-low: var(--eep-sunken);
+	--sl-color-blue-high: var(--eep-ink);
+	--sl-color-green: var(--eep-ink-2);
+	--sl-color-green-low: var(--eep-sunken);
+	--sl-color-green-high: var(--eep-ink);
 	--sl-color-purple: var(--eep-accent);
 	--sl-color-purple-low: var(--eep-accent-soft);
 	--sl-color-purple-high: var(--eep-accent);
@@ -247,6 +241,14 @@ h1#_top {
 .sl-markdown-content h3 {
 	font-size: var(--eep-text-h3);
 }
+/* The h2s of the link index, the site map, and the contents list look like
+   an h3 in the guide text. Each component sets its own margin. */
+:is(.eep-links, .eep-sitemap, .eep-toc-page) h2 {
+	font: 500 var(--eep-text-h3) / var(--eep-lh-heading) var(--eep-font-serif);
+	font-variation-settings: 'opsz' 72;
+	letter-spacing: -0.015em;
+	color: var(--eep-ink);
+}
 .sl-markdown-content h4 {
 	font-size: var(--eep-text-h4);
 	font-weight: 600;
@@ -281,7 +283,8 @@ h1#_top {
 .sl-markdown-content code:not(pre code) {
 	border-radius: var(--eep-radius-sm);
 	padding: 0.1em 0.35em;
-	font-size: 0.88em;
+	/* 14px in body text, the same as --eep-text-code. */
+	font-size: 0.875em;
 }
 
 /* ---------- 7. Starlight asides (.starlight-aside--tip|caution|note|danger) ---------- */
@@ -341,7 +344,9 @@ figure.eep-fig > :is(svg, img) {
 figure.eep-fig.wide > :is(svg, img) {
 	max-width: none;
 }
-figure.eep-fig figcaption {
+/* The home page cover figure shares the caption. */
+figure.eep-fig figcaption,
+.home-cover figcaption {
 	display: flex;
 	/* The figure number and the first line of the caption share a baseline. */
 	align-items: baseline;
@@ -362,10 +367,12 @@ figure.eep-fig figcaption {
 figure.eep-fig {
 	counter-increment: eep-fig;
 }
-figure.eep-fig figcaption .eep-fignum::before {
+figure.eep-fig figcaption .eep-fignum::before,
+.home-cover-fignum::before {
 	content: 'Figure ' counter(eep-fig);
 }
-figure.eep-fig figcaption .eep-fignum {
+figure.eep-fig figcaption .eep-fignum,
+.home-cover-fignum {
 	font: 600 var(--eep-text-eyebrow)/var(--eep-lh-ui) var(--eep-font-serif);
 	color: var(--eep-mute);
 	white-space: nowrap;

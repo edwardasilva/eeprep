@@ -20,7 +20,7 @@ Audit the finished PDF, not the source file. Work top to bottom. Fix what fails,
 
 ## Education
 
-- GPA listed at 3.50 or higher, judged at 3.0 to 3.49, left off below 3.0, with matching decimals. A graduate-application CV lists the overall GPA with its scale.
+- GPA listed at 3.50 or higher, at 3.0 to 3.49 only if the posting sets a minimum the user meets, left off below 3.0, with matching decimals. A graduate-application CV lists the overall GPA with its scale.
 - Graduation month at the right margin, "Expected" if not yet graduated, as in Expected May 2027.
 - One line of coursework that matches the posting, with a "Graduate coursework:" line first if there is one.
 - No high school after the first year.
@@ -67,7 +67,7 @@ Header
 [ ] One email, checked daily
 
 Education
-[ ] GPA listed at 3.50 or higher, judged at 3.0 to 3.49, off below 3.0, decimals matching (a CV lists the overall GPA)
+[ ] GPA at 3.50 or higher, at 3.0 to 3.49 only for a posting minimum I meet, off below 3.0, decimals matching (a CV lists the overall GPA)
 [ ] Graduation month at the right margin, "Expected" if not yet graduated
 [ ] One line of coursework that matches the posting, graduate coursework first
 [ ] No high school after the first year

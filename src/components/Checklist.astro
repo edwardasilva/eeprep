@@ -60,7 +60,7 @@ const { title, groups } = Astro.props;
 		padding: 0.9rem 1.1rem 0.4rem;
 		border: 1px solid var(--eep-dg-mute);
 		border-radius: var(--eep-radius);
-		background: color-mix(in srgb, var(--eep-dg-ink) 6%, var(--eep-dg-fill));
+		background: var(--eep-dg-tint);
 		color: var(--eep-ink);
 		font-family: var(--eep-font-serif);
 	}
@@ -91,7 +91,7 @@ const { title, groups } = Astro.props;
 		margin: 0.3rem 0;
 		max-width: none;
 		font-size: var(--eep-text-ui);
-		line-height: 1.45;
+		line-height: var(--eep-lh-fig);
 		overflow-wrap: anywhere;
 	}
 	.eep-box {
@@ -109,7 +109,7 @@ const { title, groups } = Astro.props;
 		margin: 0.3rem 0;
 		max-width: none;
 		font-size: var(--eep-text-ui);
-		line-height: 1.45;
+		line-height: var(--eep-lh-fig);
 		overflow-wrap: anywhere;
 	}
 	ol.eep-list-fields li::before {
