@@ -1,0 +1,14 @@
+---
+title: Company list
+description: "A searchable list of companies for EECS students, built from company-lists, with filters by state, city, industry, and field."
+pageType: resources
+head:
+  - tag: title
+    content: "Company list for the EECS job search | eeprep"
+---
+
+import CompanyList from '../../../components/links/CompanyList.astro';
+
+This searchable list of companies is built from [company-lists](https://github.com/edwardasilva/company-lists), with one file for each US state, and new rows appear here when they are added to that repository. Use it to pick employers, then apply on each company's career page. The [[Job boards|job boards page]] covers where to find the openings, including at companies this list does not cover yet.
+
+<CompanyList />

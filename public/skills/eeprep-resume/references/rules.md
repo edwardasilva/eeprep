@@ -1,0 +1,84 @@
+# Layout and section rules
+
+From [eeprep's resume page](https://eeprep.com/advice/resume/), which condenses the r/EngineeringResumes wiki and career center guides. Where a rule is the eeprep author's, it says so. The wiki's rules are a sound default, and the author's rules are what worked for the author in practice. The resume page's section "Where eeprep differs from the wiki" lists each one.
+
+## Layout
+
+- One page. The wiki allows a second page at about 10 years of experience.
+- One column. No icons, images, graphics, photo, logos, tables, or text boxes.
+- Black text. Line spacing of at least 1.07.
+- No justified text. No hand indents.
+- Every date right-aligned to the right margin.
+- Bold only on the name, section titles, entry titles, and the coursework, activities, and skills labels. Never on a keyword inside a bullet.
+- Author's rule: 10 to 11 pt text and 0.5 in margins. The wiki asks for 10.5 pt or larger, and eeprep allows 10 pt so a full page still fits.
+- Author's rule: center the header, left-align everything below it.
+- Fill the page without cramming it. Empty gaps and half-used lines are wasted space. Never shrink white space to fit one more line.
+- The same gap between every pair of sections and every pair of entries.
+
+## Section order
+
+| Who                                                                | Order                                   |
+| ------------------------------------------------------------------ | --------------------------------------- |
+| Student or new graduate with no technical work experience          | Education, Projects, Experience, Skills |
+| Student or new graduate with an internship or other technical work | Education, Experience, Projects, Skills |
+| Graduate in a full-time job                                        | Experience, Skills, Education           |
+
+These are the wiki's orders. Skills goes last until the user starts a full-time job. Inside each section, put the most relevant or impressive entry first, and its strongest bullet first.
+
+Cut the objective or summary. The wiki keeps a summary only for senior engineers, career changers, and people returning from a gap. It says nothing about an objective, and the author cuts one too. If the user insists, it is one line that names the role: "Seeking a summer 2027 embedded firmware internship."
+
+## Header
+
+Name centered in large type, one contact line under it, no rule line between them. Separate items with a vertical bar. No icons and no labels such as "Phone:". Write each link out without `https://`, such as linkedin.com/in/your-name. The wiki calls a phone number and LinkedIn unnecessary, but the author lists both. Every link must work on the day the page goes out.
+
+Put "Willing to relocate" next to the location if it is true. A city far from the job can count against the candidate.
+
+## Education
+
+Degree on the first line with GPA on the same line. School under it with the graduation date at the right margin, by month, "Expected" in front of it before graduation, as in Expected May 2027. One line each for "Relevant coursework:" and "Activities:", labels in bold. If you have taken graduate courses, list them first on their own line, labeled "Graduate coursework:". Write course names, such as Digital Signal Processing, never course codes. A code means nothing to a reader from another school. Drop high school after the first year (author's advice). The wiki says to leave it off. With a master's, keep the bachelor's line.
+
+Coursework is where the author parts from the wiki. The wiki says to leave it off unless the courses are extremely specialized. The author keeps one line of upper-level electives that match the posting, and leaves the line off if the user has not taken any yet.
+
+GPA, author's rule of thumb: list 3.50 or higher. Michigan's and Berkeley's career centers use 3.0, so say this rule is stricter. If the posting asks for a GPA, list it. From 3.0 to 3.49, list it when the posting sets a minimum the user meets, and leave it off otherwise. Below 3.0, leave it off. If listed, match the decimals, as in 3.30/4.00.
+
+## Projects
+
+Call the section Projects. Leave the word "project" out of each title. Tools in parentheses after the title, dates at the right margin. Date projects by semester or by month, and use one style on every line of the section. If any project runs longer than a year, use months for the whole section. These project date rules are the author's. The wiki calls dates generally unnecessary for personal projects, and says not to mix months with seasons or semesters. Give the best projects more bullets and cut weak ones. Give firmware its own bullets, and for FPGA work, the testbenches. Move real technical club work out of Activities and into its own Projects entry.
+
+## Experience
+
+Call it Experience. Engineering roles get a bold title and company with dates at the right margin. The location goes on the next line, under the date at the right margin, then the bullets. A job outside engineering gets one or two bullets. When the engineering work fills the page without them, it gets one line with no bullets, or goes. Skip the duty a reader already knows. Count what the user can defend: money handled, customers or transactions in a shift, a safety rule kept, or people trained. These bullets use the same XYZ, CAR, or STAR formulas as the engineering ones in `bullets.md`, with the count near the front.
+
+## Skills
+
+Two or three comma-separated lines with a bold label, most important first:
+
+- Software: KiCad, LTspice, C, Python
+- Hardware/Lab: oscilloscope, electronic load, logic analyzer, soldering
+- Certifications: only ones the user can prove
+
+Cut soft skills. Leave IDEs and editors such as VS Code out of Skills, as the wiki says. The author also leaves out notebook environments such as Jupyter. Name the tool in the bullet where it produced a result. Cut a vague "Knowledge" line unless it is certifiable. Write exact product names: C, C++ as two items, Ansys HFSS with the company name. When a posting names a skill the user has, use the posting's word. Every skill needs a bullet behind it. One line per group.
+
+## A CV for a graduate application
+
+When the user applies to a master's or PhD program, they may need a CV, not a resume. The other rules still apply, with these differences:
+
+- Length: up to two pages.
+- Page break: do not split an entry's heading from its bullets across the page break.
+- Order: Education first, then research and Experience, with Skills last.
+- Research: add research, papers, and talks.
+- GPA: list the overall GPA with its scale, such as 3.44/4.00, even below the 3.50 cutoff a job resume uses.
+- Graduate GPA: do not put a graduate-only GPA on the degree line in place of the overall GPA.
+- Teaching: grading, tutoring, or peer mentoring can sit under its own Teaching heading. Say how many students and how many classes.
+- Type: 10.75 pt text is a good size for a two-page CV, 10.5 pt the smallest, with 0.5 in margins. These numbers are for the CV only. A job resume stays one page.
+
+## Dates
+
+One style inside each section, with jobs always dated by month (author's advice). "Present" for an ongoing role. Spell month names: Jan, Feb, Mar, Apr, May, June, July, Aug, Sept, Oct, Nov, Dec. No days, no abbreviated years.
+
+## Questions students ask
+
+- Missing some requirements? Apply anyway for tools and years. The degree is different: a required degree is usually a hard filter.
+- A senior design project that did not work? List it. Describe the user's part with verbs such as designed and tested, and give the numbers they did reach.
+- Interests? Only specific ones. If the user cannot name specifics, delete the section.
+- Cover letter? Write one when the resume is not an obvious fit. One founder of Hardware FYI, a site on hardware engineering interviews, said many big tech recruiters throw them out, while defense contractors may read them and Midwest firms do. Two short paragraphs on why the user meets the posting.

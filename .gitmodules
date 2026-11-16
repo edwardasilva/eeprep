@@ -1,0 +1,8 @@
+[submodule "resume-generator"]
+	path = resume-generator
+	url = https://github.com/edwardasilva/resume-generator.git
+	branch = main
+[submodule "company-lists"]
+	path = company-lists
+	url = https://github.com/edwardasilva/company-lists.git
+	branch = main

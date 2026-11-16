@@ -1,0 +1,524 @@
+// Build-time loader for the company list page. Reads every
+// company-lists/data/<country>/<state>.csv file in the submodule, drops
+// staffing-eligibility columns, and returns the rows plus the labels and
+// filter values the page needs. The country comes from the folder, and the
+// state code from the file's row in schema/states.csv, not from CSV cells.
+// There is no runtime fetch.
+
+import fs from 'node:fs';
+import path from 'node:path';
+
+// Astro bundles this file into dist/ during the build, so import.meta.url
+// is no longer the source path. process.cwd() is the repo root for
+// `astro build` and `astro dev`.
+const ROOT = process.cwd();
+const SUBMODULE = path.join(ROOT, 'company-lists');
+const DATA = path.join(SUBMODULE, 'data');
+const SCHEMA = path.join(SUBMODULE, 'schema', 'company.schema.json');
+const INDUSTRIES = path.join(SUBMODULE, 'schema', 'industries.csv');
+const STATES = path.join(SUBMODULE, 'schema', 'states.csv');
+
+// Column names that must never be rendered or searched, if a future file
+// adds them. Matched against the header, not the cell values.
+const HIDDEN_COLUMN =
+	/visa|clearance|citizenship|sponsor|sponsorship|work[_-]?auth/i;
+
+const INDUSTRY_LABELS: Record<string, string> = {
+	'aerospace-defense': 'Aerospace and defense',
+	automotive: 'Automotive',
+	'construction-engineering': 'Construction and engineering',
+	'consumer-products': 'Consumer products',
+	'education-research': 'Education and research',
+	electronics: 'Electronics',
+	'energy-utilities': 'Energy and utilities',
+	government: 'Government',
+	healthcare: 'Healthcare',
+	industrial: 'Industrial',
+	'mining-materials': 'Mining and materials',
+	'software-it': 'Software and IT',
+	telecommunications: 'Telecommunications',
+};
+
+export type CompanyRow = {
+	id: string;
+	name: string;
+	website: string;
+	careersUrl: string;
+	industry: string;
+	industryLabel: string;
+	field: string;
+	fieldLabel: string;
+	city: string;
+	state: string;
+	country: string;
+	sourceUrl: string;
+	notes: string;
+	search: string;
+	// Every location of the company, in a stable order. city and state hold
+	// the same values joined with "; " for display.
+	locations: CompanyLocation[];
+};
+
+export type CompanyLocation = {
+	city: string;
+	state: string;
+};
+
+export type CompanyFilter = {
+	name: 'state' | 'industry' | 'field' | 'city';
+	label: string;
+	options: { value: string; label: string }[];
+};
+
+export type CompanyListData = {
+	rows: CompanyRow[];
+	filters: CompanyFilter[];
+};
+
+/**
+ * Parse a CSV string into rows of cells. Handles quoted fields, escaped
+ * quotes, and LF or CRLF line breaks inside quotes.
+ */
+export function parseCsv(text: string): string[][] {
+	const input = text.charCodeAt(0) === 0xfeff ? text.slice(1) : text;
+	const rows: string[][] = [];
+	let row: string[] = [];
+	let cell = '';
+	let i = 0;
+	let quoted = false;
+
+	const pushCell = () => {
+		row.push(cell);
+		cell = '';
+	};
+	const pushRow = () => {
+		pushCell();
+		if (row.length > 1 || row[0] !== '') {
+			rows.push(row);
+		}
+		row = [];
+	};
+
+	while (i < input.length) {
+		const ch = input[i];
+		if (quoted) {
+			if (ch === '"') {
+				if (input[i + 1] === '"') {
+					cell += '"';
+					i += 2;
+					continue;
+				}
+				quoted = false;
+				i += 1;
+				continue;
+			}
+			cell += ch;
+			i += 1;
+			continue;
+		}
+		if (ch === '"') {
+			quoted = true;
+			i += 1;
+			continue;
+		}
+		if (ch === ',') {
+			pushCell();
+			i += 1;
+			continue;
+		}
+		if (ch === '\n') {
+			pushRow();
+			i += 1;
+			continue;
+		}
+		if (ch === '\r') {
+			if (input[i + 1] === '\n') {
+				i += 1;
+			}
+			pushRow();
+			i += 1;
+			continue;
+		}
+		cell += ch;
+		i += 1;
+	}
+	if (quoted) {
+		throw new Error('CSV ends inside a quoted field.');
+	}
+	if (cell !== '' || row.length > 0) {
+		pushRow();
+	}
+	return rows;
+}
+
+function industryLabel(slug: string): string {
+	if (!slug) {
+		return '';
+	}
+	if (INDUSTRY_LABELS[slug]) {
+		return INDUSTRY_LABELS[slug];
+	}
+	return slug
+		.split('-')
+		.map((part, index) => {
+			if (part === 'it') {
+				return 'IT';
+			}
+			if (part === 'ee') {
+				return 'EE';
+			}
+			if (index === 0) {
+				return part.charAt(0).toUpperCase() + part.slice(1);
+			}
+			return part;
+		})
+		.join(' ');
+}
+
+/** "us" -> "US". Country folders are codes. */
+function codeFromSlug(slug: string): string {
+	return slug.toUpperCase();
+}
+
+/** File stem -> USPS code, such as "new-hampshire" -> "NH", from schema/states.csv. */
+function loadStateCodes(): Map<string, string> {
+	if (!fs.existsSync(STATES)) {
+		throw new Error('company-lists/schema/states.csv is missing.');
+	}
+	const rows = parseCsv(fs.readFileSync(STATES, 'utf8'));
+	const header = rows[0] ?? [];
+	const fileIdx = header.indexOf('file');
+	const codeIdx = header.indexOf('code');
+	if (fileIdx < 0 || codeIdx < 0) {
+		throw new Error(
+			'company-lists/schema/states.csv needs file and code columns.',
+		);
+	}
+	const codes = new Map<string, string>();
+	for (const row of rows.slice(1)) {
+		if (row[fileIdx] && row[codeIdx]) {
+			codes.set(row[fileIdx], row[codeIdx]);
+		}
+	}
+	return codes;
+}
+
+function loadFieldLabels(): Map<string, string> {
+	const labels = new Map<string, string>();
+	if (!fs.existsSync(INDUSTRIES)) {
+		return labels;
+	}
+	const rows = parseCsv(fs.readFileSync(INDUSTRIES, 'utf8'));
+	const header = rows[0] ?? [];
+	const industryIdx = header.indexOf('industry');
+	const fieldIdx = header.indexOf('field');
+	const labelIdx = header.indexOf('label');
+	if (industryIdx === -1 || fieldIdx === -1 || labelIdx === -1) {
+		throw new Error(
+			'schema/industries.csv is missing industry, field, or label.',
+		);
+	}
+	for (const row of rows.slice(1)) {
+		const field = row[fieldIdx] ?? '';
+		const label = row[labelIdx] ?? '';
+		if (field && label) {
+			labels.set(field, label);
+		}
+	}
+	return labels;
+}
+
+function loadExpectedColumns(): string[] {
+	if (!fs.existsSync(SCHEMA)) {
+		throw new Error(
+			`Missing ${path.relative(ROOT, SCHEMA)}. Initialize the company-lists submodule.`,
+		);
+	}
+	const schema = JSON.parse(fs.readFileSync(SCHEMA, 'utf8')) as {
+		['x-columns']?: string[];
+	};
+	const columns = schema['x-columns'];
+	if (!Array.isArray(columns) || columns.length === 0) {
+		throw new Error('company.schema.json is missing x-columns.');
+	}
+	return columns;
+}
+
+function walkCsvFiles(dir: string, acc: string[]): void {
+	if (!fs.existsSync(dir)) {
+		return;
+	}
+	for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+		const full = path.join(dir, entry.name);
+		if (entry.isDirectory()) {
+			walkCsvFiles(full, acc);
+			continue;
+		}
+		if (entry.isFile() && entry.name.endsWith('.csv')) {
+			acc.push(full);
+		}
+	}
+}
+
+function optionList(
+	rows: CompanyRow[],
+	valueOf: (row: CompanyRow) => string,
+	labelOf: (value: string, row: CompanyRow) => string,
+): { value: string; label: string }[] {
+	const seen = new Map<string, string>();
+	for (const row of rows) {
+		const value = valueOf(row);
+		if (!value || seen.has(value)) {
+			continue;
+		}
+		seen.set(value, labelOf(value, row));
+	}
+	return [...seen.entries()]
+		.sort((a, b) => a[1].localeCompare(b[1], 'en', { sensitivity: 'base' }))
+		.map(([value, label]) => ({ value, label }));
+}
+
+const LOCATION_JOIN = '; ';
+
+/**
+ * Key that identifies one company across locations: the website host without
+ * a leading "www.", or the lowercased name when there is no usable website.
+ */
+export function companyKey(row: { name: string; website: string }): string {
+	try {
+		const host = new URL(row.website).hostname.toLowerCase();
+		if (host) {
+			return host.replace(/^www\./, '');
+		}
+	} catch {
+		// Fall through to the name.
+	}
+	return row.name.trim().toLowerCase();
+}
+
+function joinUnique(values: string[]): string {
+	return [...new Set(values.filter(Boolean))].join(LOCATION_JOIN);
+}
+
+/**
+ * Merge rows that describe the same company in different cities into one
+ * row that lists every location. Input order decides which row supplies the
+ * shared fields, so sort the input first.
+ */
+export function mergeCompanies(rows: CompanyRow[]): CompanyRow[] {
+	const byKey = new Map<string, CompanyRow[]>();
+	for (const row of rows) {
+		const key = companyKey(row);
+		byKey.set(key, [...(byKey.get(key) ?? []), row]);
+	}
+	return [...byKey.values()].map((group) => {
+		const first = group[0];
+		if (group.length === 1) {
+			return first;
+		}
+		const locations = group
+			.flatMap((row) => row.locations)
+			.sort(
+				(a, b) =>
+					a.state.localeCompare(b.state, 'en') ||
+					a.city.localeCompare(b.city, 'en', { sensitivity: 'base' }),
+			);
+		return {
+			...first,
+			careersUrl: group.find((row) => row.careersUrl)?.careersUrl ?? '',
+			city: joinUnique(locations.map((l) => l.city)),
+			state: joinUnique(locations.map((l) => l.state)),
+			locations,
+			search: [...new Set(group.map((row) => row.search))].join(' '),
+		};
+	});
+}
+
+/**
+ * Companies listed more than once in the same city, as "company (city,
+ * state)". Run it on the per-location rows, before mergeCompanies.
+ */
+export function duplicateCompanies(rows: CompanyRow[]): string[] {
+	const seen = new Set<string>();
+	const dupes = new Set<string>();
+	for (const row of rows) {
+		const key = `${companyKey(row)}|${row.country}|${row.state}|${row.city.trim().toLowerCase()}`;
+		if (seen.has(key)) {
+			dupes.add(`${companyKey(row)} (${row.city}, ${row.state})`);
+		}
+		seen.add(key);
+	}
+	return [...dupes];
+}
+
+export function loadCompanyList(): CompanyListData {
+	if (!fs.existsSync(DATA)) {
+		throw new Error(
+			'company-lists/data is missing. Run git submodule update --init company-lists.',
+		);
+	}
+
+	const expected = loadExpectedColumns();
+	const fieldLabels = loadFieldLabels();
+	const stateCodes = loadStateCodes();
+	const files: string[] = [];
+	walkCsvFiles(DATA, files);
+	files.sort();
+	if (files.length === 0) {
+		throw new Error('company-lists/data has no CSV files.');
+	}
+
+	const rows: CompanyRow[] = [];
+	for (const file of files) {
+		const rel = path.relative(ROOT, file);
+		const parts = path.relative(DATA, file).split(path.sep);
+		if (parts.length !== 2 || !parts[1].endsWith('.csv')) {
+			continue;
+		}
+		const country = codeFromSlug(parts[0]);
+		const state = stateCodes.get(parts[1].replace(/\.csv$/, '')) ?? '';
+		if (!state) {
+			throw new Error(`${rel} has no row in company-lists/schema/states.csv.`);
+		}
+		const table = parseCsv(fs.readFileSync(file, 'utf8'));
+		if (table.length === 0) {
+			throw new Error(`${rel} is empty.`);
+		}
+		const header = table[0];
+		if (header.join(',') !== expected.join(',')) {
+			throw new Error(
+				`${rel} header does not match schema/company.schema.json.`,
+			);
+		}
+		const hidden = new Set(header.filter((name) => HIDDEN_COLUMN.test(name)));
+		for (let i = 1; i < table.length; i += 1) {
+			const cells = table[i];
+			if (cells.length !== header.length) {
+				throw new Error(
+					`${rel}:${i + 1} has ${cells.length} cells, expected ${header.length}.`,
+				);
+			}
+			const raw: Record<string, string> = {};
+			header.forEach((name, index) => {
+				if (!hidden.has(name)) {
+					raw[name] = cells[index] ?? '';
+				}
+			});
+			const field = raw.field ?? '';
+			const industry = raw.industry ?? '';
+			const industryLabelText = industryLabel(industry);
+			const fieldLabel = field
+				? (fieldLabels.get(field) ?? industryLabel(field))
+				: '';
+			const search = [
+				raw.name,
+				raw.city,
+				state,
+				country,
+				industry,
+				industryLabelText,
+				field,
+				fieldLabel,
+				raw.notes,
+			]
+				.filter(Boolean)
+				.join(' ')
+				.toLowerCase();
+			rows.push({
+				id: raw.id ?? '',
+				name: raw.name ?? '',
+				website: raw.website ?? '',
+				careersUrl: raw.careers_url ?? '',
+				industry,
+				industryLabel: industryLabelText,
+				field,
+				fieldLabel,
+				city: raw.city ?? '',
+				state,
+				country,
+				sourceUrl: raw.source_url ?? '',
+				notes: raw.notes ?? '',
+				search,
+				locations: [
+					{
+						city: raw.city ?? '',
+						state,
+					},
+				],
+			});
+		}
+	}
+
+	if (rows.length === 0) {
+		throw new Error('company-lists/data has no company rows.');
+	}
+	const missing = rows.filter((row) => !row.state || !row.city);
+	if (missing.length > 0) {
+		throw new Error(
+			`Company list rows with an empty state or city: ${missing
+				.map((row) => row.id)
+				.join(', ')}.`,
+		);
+	}
+
+	rows.sort((a, b) => {
+		const byName = a.name.localeCompare(b.name, 'en', { sensitivity: 'base' });
+		if (byName !== 0) {
+			return byName;
+		}
+		return a.city.localeCompare(b.city, 'en', { sensitivity: 'base' });
+	});
+
+	// The merge folds every row for one company into one, so check the
+	// per-location rows first.
+	const dupes = duplicateCompanies(rows);
+	if (dupes.length > 0) {
+		throw new Error(
+			`Company list has the same company twice in one city: ${dupes.join(', ')}.`,
+		);
+	}
+
+	// Filter options come from the per-location rows.
+	const merged = mergeCompanies(rows);
+
+	const filters: CompanyFilter[] = [
+		{
+			name: 'state',
+			label: 'State',
+			options: optionList(
+				rows,
+				(row) => row.state,
+				(value) => value,
+			),
+		},
+		{
+			name: 'industry',
+			label: 'Industry',
+			options: optionList(
+				rows,
+				(row) => row.industry,
+				(_value, row) => row.industryLabel,
+			),
+		},
+		{
+			name: 'field',
+			label: 'Field',
+			options: optionList(
+				rows,
+				(row) => row.field,
+				(_value, row) => row.fieldLabel,
+			),
+		},
+		{
+			name: 'city',
+			label: 'City',
+			options: optionList(
+				rows,
+				(row) => row.city,
+				(value) => value,
+			),
+		},
+	];
+
+	return { rows: merged, filters };
+}

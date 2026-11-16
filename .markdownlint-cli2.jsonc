@@ -1,0 +1,47 @@
+{
+	"$schema": "https://raw.githubusercontent.com/DavidAnson/markdownlint-cli2/main/schema/markdownlint-cli2-config-schema.json",
+	"gitignore": true,
+	"noBanner": true,
+	"noProgress": true,
+	"globs": ["**/*.{md,mdx}"],
+	"ignores": ["resume-generator/**", "company-lists/**"],
+	// Starlight pages and the PR templates open with YAML front matter, not a heading.
+	"frontMatter": "(^---\\s*$)[\\s\\S]*?(^---\\s*$)(\\r\\n|\\r|\\n|$)",
+	"config": {
+		// Prettier owns wrapping, emphasis markers, list spacing, and fences.
+		// https://github.com/DavidAnson/markdownlint/blob/main/style/prettier.json
+		"blanks-around-fences": false,
+		"blanks-around-headings": false,
+		"blanks-around-lists": false,
+		"code-fence-style": false,
+		"emphasis-style": false,
+		"heading-start-left": false,
+		"heading-style": false,
+		"hr-style": false,
+		"line-length": false,
+		"list-indent": false,
+		"list-marker-space": false,
+		"no-blanks-blockquote": false,
+		"no-hard-tabs": false,
+		"no-missing-space-atx": false,
+		"no-missing-space-closed-atx": false,
+		"no-multiple-blanks": false,
+		"no-multiple-space-atx": false,
+		"no-multiple-space-blockquote": false,
+		"no-multiple-space-closed-atx": false,
+		"no-trailing-spaces": false,
+		"ol-prefix": false,
+		"strong-style": false,
+		"ul-indent": false,
+
+		// House style. Vale checks sentence case. Pages repeat headings, use MDX
+		// components, KaTeX, wiki links, and unlabeled fences for literal examples.
+		"fenced-code-language": false,
+		"first-line-h1": false,
+		"link-fragments": false,
+		"no-duplicate-heading": false,
+		"no-emphasis-as-heading": false,
+		"no-inline-html": false,
+		"no-trailing-punctuation": false,
+	},
+}

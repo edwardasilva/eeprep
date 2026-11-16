@@ -1,0 +1,238 @@
+---
+import { externalLinks } from '../resume/caption';
+// The path into graduate study as HTML and CSS. Five numbered steps, then the
+// path splits into three degree types. On wide figures the steps run left to
+// right and the outcomes sit in one row under them. On narrow ones everything
+// stacks. Every connector is placed from the same column centers as the boxes.
+const steps = [
+	{
+		title: 'Foundation courses',
+		body: 'Circuits, signals and systems, computation structures, and math such as linear algebra. See the section on building the foundation.',
+	},
+	{
+		title: 'Research or a team',
+		body: 'A lab seat or a design team in the first two years, mainly for a PhD. See the section on getting research experience early.',
+	},
+	{
+		title: 'A graduate course as a senior',
+		body: "One or two courses that can count toward a master's. See the section on graduate courses as an undergraduate.",
+	},
+	{
+		title: 'Fit and funding',
+		body: 'An advisor, a funded PhD, or another way to pay. See the sections on research fit and on how students pay.',
+	},
+	{
+		title: 'The application',
+		body: 'A statement with evidence, and letters from people who saw the work. See the section on the application.',
+	},
+];
+const outcomes = [
+	{
+		title: 'MEng',
+		body: 'Master of Engineering: course-based, about a year, ending in a design project and a report.',
+	},
+	{
+		title: 'MS',
+		body: 'Master of Science: a thesis, professional, course-only, or online track, depending on the school.',
+	},
+	{
+		title: 'PhD',
+		body: 'Doctorate: funded research. Do not pay for one.',
+	},
+];
+const alt =
+	"Five steps in order, then three degree types. One, foundation courses: circuits, signals and systems, computation structures, and math such as linear algebra. Two, research or a team: a lab seat or a design team in the first two years, mainly for a PhD. Three, a graduate course as a senior: one or two courses that can count toward a master's. Four, fit and funding: an advisor, a funded PhD, or another way to pay. Five, the application: a statement with evidence, and letters from people who saw the work. After the application the path splits into three degree types. The Master of Engineering (MEng) is course-based, takes about a year, and ends in a design project and a report. The Master of Science (MS) can be a thesis, professional, course-only, or online track, depending on the school. The doctorate (PhD) is funded research, and you do not pay for one.";
+const caption = externalLinks(
+	`The path into graduate study, from foundation courses to the application, then the three degree types. Each credit-hour limit and program rule in the later sections is one school's example, so ask your own department for its rules. If your field does not expect a graduate degree, the section on studying while you work covers the part-time route.`,
+);
+---
+
+<figure class="eep-fig wide eep-gradpath-fig" id="fig-grad-path">
+	<p class="eep-kicker">The path into graduate study</p>
+	<p class="sr-only">{alt}</p>
+	<div class="eep-gradpath not-content" aria-hidden="true">
+		<ol class="eep-gradpath-steps">
+			{steps.map((s, i) => (
+				<li>
+					<span class="eep-num">{i + 1}</span>
+					<div>
+						<p class="eep-gradpath-title">{s.title}</p>
+						<p class="eep-gradpath-body">{s.body}</p>
+					</div>
+				</li>
+			))}
+		</ol>
+		<div class="eep-gradpath-links">
+			<span class="eep-gradpath-trunk"></span>
+			<span class="eep-gradpath-bar"></span>
+			<span class="eep-gradpath-stub s1"></span>
+			<span class="eep-gradpath-stub s2"></span>
+			<span class="eep-gradpath-stub s3"></span>
+		</div>
+		<ul class="eep-gradpath-outcomes">
+			{outcomes.map((o) => (
+				<li>
+					<p class="eep-gradpath-title">{o.title}</p>
+					<p class="eep-gradpath-body">{o.body}</p>
+				</li>
+			))}
+		</ul>
+	</div>
+	<figcaption>
+		<span class="eep-fignum"></span> <span set:html={caption} />
+	</figcaption>
+</figure>
+
+<style>
+	.eep-gradpath {
+		--rail: 1.625rem;
+		--line: 1.5px solid var(--eep-dg-ink);
+		margin-top: 1rem;
+		container-type: inline-size;
+		font-family: var(--eep-font-sans);
+		color: var(--eep-ink);
+	}
+	.eep-gradpath p {
+		margin: 0;
+		max-width: none;
+		overflow-wrap: anywhere;
+	}
+	.eep-gradpath ol,
+	.eep-gradpath ul {
+		display: grid;
+		gap: 0.75rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.eep-gradpath li {
+		margin: 0;
+		max-width: none;
+		padding: 0.6rem 0.75rem;
+		border: 1px solid var(--eep-dg-mute);
+		border-radius: var(--eep-radius);
+		background: var(--eep-dg-tint);
+	}
+	.eep-gradpath-steps li {
+		display: grid;
+		grid-template-columns: 1.75rem 1fr;
+		gap: 0.75rem;
+		align-items: start;
+	}
+	.eep-gradpath .eep-gradpath-title {
+		font-size: var(--eep-text-ui);
+		font-weight: 600;
+		line-height: var(--eep-lh-fig-title);
+	}
+	.eep-gradpath .eep-gradpath-body {
+		margin-top: 0.2rem;
+		font-size: var(--eep-text-caption);
+		line-height: var(--eep-lh-fig);
+		color: var(--eep-ink-2);
+	}
+	/* Narrow: one trunk from step 5 down to a rail. Each outcome has an L. */
+	.eep-gradpath-links {
+		height: 0.75rem;
+		margin-left: var(--rail);
+	}
+	.eep-gradpath-trunk {
+		display: block;
+		height: 100%;
+		width: 0;
+		border-left: var(--line);
+	}
+	.eep-gradpath-bar,
+	.eep-gradpath-stub {
+		display: none;
+	}
+	.eep-gradpath ul.eep-gradpath-outcomes {
+		margin-left: var(--rail);
+		padding-left: 1rem;
+	}
+	.eep-gradpath-outcomes li {
+		position: relative;
+	}
+	.eep-gradpath-outcomes li::before {
+		content: '';
+		position: absolute;
+		left: -1rem;
+		top: -0.75rem;
+		width: 1rem;
+		height: calc(50% + 0.75rem);
+		border-left: var(--line);
+		border-bottom: var(--line);
+	}
+	@container (min-width: 36rem) {
+		.eep-gradpath-steps p {
+			overflow-wrap: normal;
+			hyphens: auto;
+		}
+		.eep-gradpath-steps li {
+			padding-inline: 0.5rem;
+		}
+		.eep-gradpath ol,
+		.eep-gradpath ul {
+			gap: 0;
+		}
+		.eep-gradpath-steps {
+			grid-template-columns: repeat(5, 1fr);
+		}
+		.eep-gradpath ul.eep-gradpath-outcomes {
+			grid-template-columns: repeat(3, 1fr);
+			margin-left: 0;
+			padding-left: 0;
+		}
+		.eep-gradpath-steps li,
+		.eep-gradpath-outcomes li {
+			margin: 0 0.375rem;
+		}
+		.eep-gradpath-steps li {
+			grid-template-columns: 1fr;
+			grid-template-rows: auto 1fr;
+			gap: 0.5rem;
+		}
+		.eep-gradpath-outcomes li::before {
+			display: none;
+		}
+		/* Centers: step 5 at 90%, outcomes at 1/6, 1/2, and 5/6 of the width. */
+		.eep-gradpath-links {
+			position: relative;
+			height: 2rem;
+			margin-left: 0;
+		}
+		.eep-gradpath-trunk {
+			position: absolute;
+			left: 90%;
+			top: 0;
+			height: 50%;
+			transform: translateX(-0.75px);
+		}
+		.eep-gradpath-bar {
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: calc(100% / 6);
+			width: calc(90% - 100% / 6);
+			border-top: var(--line);
+			transform: translateY(-0.75px);
+		}
+		.eep-gradpath-stub {
+			display: block;
+			position: absolute;
+			top: 50%;
+			bottom: 0;
+			width: 0;
+			border-left: var(--line);
+			transform: translateX(-0.75px);
+		}
+		.eep-gradpath-stub.s1 {
+			left: calc(100% / 6);
+		}
+		.eep-gradpath-stub.s2 {
+			left: 50%;
+		}
+		.eep-gradpath-stub.s3 {
+			left: calc(100% * 5 / 6);
+		}
+	}
+</style>

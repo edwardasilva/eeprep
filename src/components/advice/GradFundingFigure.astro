@@ -1,0 +1,101 @@
+---
+import { externalLinks } from '../resume/caption';
+// Figure 21.1 as HTML and CSS. Three ways an EE pays for a graduate degree,
+// with what each one costs you in years and money. Same box for each.
+const ways = [
+	{
+		title: 'A funded PhD',
+		years: 'At least five years',
+		money: 'Tuition waived and a stipend.',
+	},
+	{
+		title: "A master's",
+		years: 'One to three years',
+		money:
+			'You pay tuition unless an assistantship or a fellowship covers it. An accelerated program at your own school can take one extra year.',
+	},
+	{
+		title: 'Employer tuition help',
+		years: 'Part time, while you work',
+		money:
+			'In 2026, up to $5,250 a year is tax-free, and the amount above it is usually taxed. Some engineering employers run their own tuition programs.',
+	},
+];
+const alt =
+	"Three ways to pay for a graduate degree. A funded PhD: at least five years, tuition waived and a stipend. A master's: one to three years, and you pay tuition unless an assistantship or a fellowship covers it, though an accelerated program at your own school can take one extra year. Employer tuition help: part time while you work, with up to 5,250 dollars a year tax-free in 2026, the amount above it usually taxed, and tuition programs at some engineering employers.";
+const caption = externalLinks(
+	`What each path costs in time and money. Sources: <a href="https://eecs.berkeley.edu/resources/undergrads/grad-school/">Berkeley EECS on how long each degree takes</a>, <a href="https://www.eecs.mit.edu/wp-content/uploads/2023/11/Funding-Guide-for-Graduate-Students-in-EECS-AY23-24.pdf">MIT EECS's funding guide</a>, <a href="https://umaine.edu/academics/electrical-engineering-m-s/">the University of Maine on its accelerated master's</a>, and <a href="https://www.irs.gov/publications/p15b">IRS Publication 15-B</a>.`,
+);
+---
+
+<figure class="eep-fig wide eep-grad-fig" id="fig-21-1">
+	<p class="eep-kicker">Three ways to pay for the degree</p>
+	<p class="sr-only">{alt}</p>
+	<div class="eep-grad not-content" aria-hidden="true">
+		<ol>
+			{ways.map((w) => (
+				<li>
+					<p class="eep-grad-title">{w.title}</p>
+					<p class="eep-grad-years">{w.years}</p>
+					<p class="eep-grad-money">{w.money}</p>
+				</li>
+			))}
+		</ol>
+	</div>
+	<figcaption>
+		<span class="eep-fignum"></span> <span set:html={caption} />
+	</figcaption>
+</figure>
+
+<style>
+	.eep-grad {
+		margin-top: 1rem;
+		container-type: inline-size;
+		font-family: var(--eep-font-sans);
+		color: var(--eep-ink);
+	}
+	.eep-grad p {
+		margin: 0;
+		max-width: none;
+		overflow-wrap: anywhere;
+	}
+	.eep-grad ol {
+		display: grid;
+		gap: 0.75rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.eep-grad li {
+		display: grid;
+		gap: 0.3rem;
+		align-content: start;
+		margin: 0;
+		max-width: none;
+		padding: 0.6rem 0.75rem;
+		border: 1px solid var(--eep-dg-mute);
+		border-radius: var(--eep-radius);
+		background: var(--eep-dg-tint);
+	}
+	.eep-grad-title {
+		font-size: var(--eep-text-ui);
+		font-weight: 600;
+		line-height: var(--eep-lh-fig-title);
+	}
+	.eep-grad-years {
+		padding-bottom: 0.35rem;
+		border-bottom: 1px solid var(--eep-dg-mute);
+		font-size: var(--eep-text-caption);
+		line-height: var(--eep-lh-fig);
+	}
+	.eep-grad-money {
+		font-size: var(--eep-text-caption);
+		line-height: var(--eep-lh-fig);
+		color: var(--eep-ink-2);
+	}
+	@container (min-width: 36rem) {
+		.eep-grad ol {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+</style>
