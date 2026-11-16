@@ -1,0 +1,27 @@
+name: Source links
+
+# Outside sites go down on their own schedule, so this check runs monthly and
+# by hand, never on a pull request. It reads every url in references.bib and
+# lists the ones that no longer answer in the run summary.
+on:
+  schedule:
+    - cron: '17 11 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    name: Source links
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+      - name: Check every source URL
+        run: npm run check:external-links -- --report

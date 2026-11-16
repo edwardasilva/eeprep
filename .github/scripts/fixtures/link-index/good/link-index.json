@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://example.com/tools/?id=2",
+    "title": "Example tools",
+    "category": "Tools",
+    "summary": "A tools page.",
+    "pages": ["index", "guide"]
+  },
+  {
+    "url": "http://docs.example.net/a/b",
+    "title": "Example docs",
+    "category": "Tools",
+    "summary": "A docs page.",
+    "pages": ["guide"]
+  }
+]

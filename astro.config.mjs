@@ -1,0 +1,365 @@
+import {
+	existsSync,
+	readFileSync,
+	renameSync,
+	rmdirSync,
+	writeFileSync,
+} from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { defineConfig } from 'astro/config';
+import starlight from '@astrojs/starlight';
+import { unified } from '@astrojs/markdown-remark';
+import wikiLinkPlugin from 'remark-wiki-link';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import { sidebar } from './src/lib/sidebar.mjs';
+import rehypeEqIds from './src/plugins/rehype-eq-ids.mjs';
+import rehypeExternalLinks from './src/plugins/rehype-external-links.mjs';
+import rehypeTableLabels from './src/plugins/rehype-table-labels.mjs';
+import remarkWikilinkLabels from './src/plugins/remark-wikilink-labels.mjs';
+import {
+	loadWikiIndex,
+	normalizeWikiName,
+	resolveWikiTarget,
+	splitWikiTarget,
+} from './src/lib/wiki-index.mjs';
+
+const wiki = loadWikiIndex();
+
+// The 404 page is a docs page (src/content/docs/404.md), so Astro writes it to
+// dist/404/index.html. Cloudflare's not_found_handling "404-page" looks for
+// dist/404.html, so move it there after the build.
+const flatNotFoundPage = {
+	name: 'flat-404-page',
+	hooks: {
+		'astro:build:done': ({ dir }) => {
+			const from = fileURLToPath(new URL('404/index.html', dir));
+			const to = fileURLToPath(new URL('404.html', dir));
+			if (!existsSync(from)) return;
+			renameSync(from, to);
+			rmdirSync(fileURLToPath(new URL('404/', dir)));
+		},
+	},
+};
+
+// Old URLs: moved pages go to their new address, removed pages to the closest
+// page that is left.
+const redirects = {
+	'/get-hired/': '/advice/resume/',
+	'/get-hired/resume/': '/advice/resume/',
+	'/get-hired/resume-workshop/': '/advice/resume/workshop/',
+	'/get-hired/first-internship/': '/advice/getting-hired/first-internship/',
+	'/get-hired/the-job-market/': '/help/',
+	'/succeed-in-school/': '/',
+	'/succeed-in-school/how-to-study/': '/',
+	'/advice/resume-workshop/': '/advice/resume/workshop/',
+	'/advice/first-internship/': '/advice/getting-hired/first-internship/',
+	'/advice/hardware-experience/': '/advice/projects/hardware/',
+	'/advice/how-to-interview/': '/advice/getting-hired/how-to-interview/',
+	'/advice/getting-hired/authors-story/': '/advice/authors-story/',
+	'/advice/about/': '/advice/authors-story/',
+	'/about/': '/advice/authors-story/',
+	'/advice/simple/': '/advice/resume/quick-setup/',
+	'/advice/resume/simple/': '/advice/resume/quick-setup/',
+	'/advice/resume/portfolio/': '/advice/projects/portfolio/',
+	'/advice/ai-use/': '/help/ai-use/',
+	'/advice/non-technical/': '/advice/getting-hired/non-technical/',
+	'/advice/projects/career-paths/': '/advice/getting-hired/career-paths/',
+	'/advice/forever-learning/getting-into-graduate-study/':
+		'/advice/forever-learning/graduate-study/',
+	'/sitemap/figures/': '/sitemap/contents/?show=figures',
+	'/sitemap/tables/': '/sitemap/contents/?show=tables',
+	'/help-links/': '/help/',
+	'/help-links/all-links/': '/help/all-links/',
+	'/help-links/contributing/': '/roadmap/contributing/',
+	'/help/contributing/': '/roadmap/contributing/',
+	'/help-links/sitemap/': '/sitemap/',
+	'/help/sitemap/': '/sitemap/',
+	'/reference/': '/help/',
+	'/reference/job-links/': '/help/',
+	'/reference/signals-and-dsp/': '/help/',
+};
+
+// Astro builds each redirect as a 200 page with a meta refresh. Cloudflare
+// reads dist/_redirects and answers with a real 301 before it serves that page.
+// Both slash forms get a rule, because a rule matches the literal path.
+// Write the file from the list above so the two cannot drift apart.
+const permanentRedirects = {
+	name: 'permanent-redirects',
+	hooks: {
+		'astro:build:done': ({ dir }) => {
+			const lines = Object.entries(redirects).flatMap(([from, to]) => [
+				`${from} ${to} 301`,
+				`${from.replace(/\/$/, '')} ${to} 301`,
+			]);
+			writeFileSync(
+				fileURLToPath(new URL('_redirects', dir)),
+				`${lines.join('\n')}\n`,
+			);
+		},
+	},
+};
+const lightCodeTheme = JSON.parse(
+	readFileSync(
+		new URL('./src/styles/ec-eeprep-light.json', import.meta.url),
+		'utf8',
+	),
+);
+const darkCodeTheme = JSON.parse(
+	readFileSync(
+		new URL('./src/styles/ec-eeprep-dark.json', import.meta.url),
+		'utf8',
+	),
+);
+
+export default defineConfig({
+	site: 'https://eeprep.com',
+	redirects,
+	trailingSlash: 'always',
+	markdown: {
+		processor: unified({
+			gfm: true,
+			smartypants: false,
+			remarkPlugins: [
+				[
+					wikiLinkPlugin,
+					{
+						aliasDivider: '|',
+						// remark-wiki-link only calls permalinks.indexOf() to decide whether a link
+						// exists. A permalink here is "page" or "page#heading", and it exists when the
+						// page part does, so the #heading survives to hrefTemplate.
+						permalinks: {
+							indexOf: (permalink) =>
+								wiki.byKey.has(permalink.split('#')[0] ?? '') ? 0 : -1,
+						},
+						pageResolver(name) {
+							const { page, heading } = splitWikiTarget(name);
+							const key = normalizeWikiName(page);
+							return [heading ? `${key}#${heading}` : key];
+						},
+						hrefTemplate(permalink) {
+							const { href } = resolveWikiTarget(permalink, wiki.byKey);
+							return (
+								href ?? `/missing-wikilink/${encodeURIComponent(permalink)}/`
+							);
+						},
+						wikiLinkClassName: 'wikilink',
+						newClassName: 'wikilink-missing',
+					},
+				],
+				[remarkWikilinkLabels, { wiki }],
+				remarkMath,
+			],
+			rehypePlugins: [
+				rehypeKatex,
+				rehypeEqIds,
+				rehypeExternalLinks,
+				// Every table in the guide stacks its rows on phones. The roadmap
+				// also gets fixed column widths.
+				[
+					rehypeTableLabels,
+					{
+						className: 'eep-table',
+						extra: [
+							{
+								files: ['src/content/docs/roadmap.md'],
+								className: 'eep-roadmap',
+							},
+						],
+					},
+				],
+			],
+		}),
+	},
+	integrations: [
+		starlight({
+			disable404Route: true,
+			title: 'eeprep',
+			description:
+				'A guide to job searching for electrical engineers & computer scientists.',
+			credits: false,
+			routeMiddleware: './src/route-data.ts',
+			favicon: '/favicon.svg',
+			customCss: [
+				'./src/styles/fonts.css',
+				'./src/styles/theme.css',
+				'./src/styles/site.css',
+				'katex/dist/katex.min.css',
+			],
+			head: [
+				// The dev site must never be indexed. Production builds leave SITE_ENV unset.
+				...(process.env.SITE_ENV === 'dev'
+					? [{ tag: 'meta', attrs: { name: 'robots', content: 'noindex' } }]
+					: []),
+				// Starlight replaces its own viewport tag with this one.
+				{
+					tag: 'meta',
+					attrs: {
+						name: 'viewport',
+						content: 'width=device-width, initial-scale=1, viewport-fit=cover',
+					},
+				},
+				// The browser bar takes the page color. A meta tag cannot read CSS
+				// variables, so these copy --eep-paper from src/styles/theme.css.
+				{
+					tag: 'meta',
+					attrs: {
+						name: 'theme-color',
+						content: '#fbfbfc',
+						media: '(prefers-color-scheme: light)',
+					},
+				},
+				{
+					tag: 'meta',
+					attrs: {
+						name: 'theme-color',
+						content: '#151618',
+						media: '(prefers-color-scheme: dark)',
+					},
+				},
+				// Prefetch a same-site page when the reader starts to hover on its
+				// link, so the next page opens faster. Files, new-tab links, and
+				// downloads are left alone. Browsers without speculation rules skip it.
+				{
+					tag: 'script',
+					attrs: { type: 'speculationrules' },
+					content: JSON.stringify({
+						prefetch: [
+							{
+								where: {
+									and: [
+										{ href_matches: '/*' },
+										{ not: { href_matches: '/*.*' } },
+										{
+											not: {
+												selector_matches: '[target="_blank"], [download]',
+											},
+										},
+									],
+								},
+								eagerness: 'moderate',
+							},
+						],
+					}),
+				},
+				{
+					tag: 'link',
+					attrs: {
+						rel: 'icon',
+						href: '/favicon-32.png',
+						type: 'image/png',
+						sizes: '32x32',
+						media: '(prefers-color-scheme: light)',
+					},
+				},
+				{
+					tag: 'link',
+					attrs: {
+						rel: 'icon',
+						href: '/favicon-32-dark.png',
+						type: 'image/png',
+						sizes: '32x32',
+						media: '(prefers-color-scheme: dark)',
+					},
+				},
+				{
+					tag: 'link',
+					attrs: {
+						rel: 'icon',
+						href: '/favicon-16.png',
+						type: 'image/png',
+						sizes: '16x16',
+						media: '(prefers-color-scheme: light)',
+					},
+				},
+				{
+					tag: 'link',
+					attrs: {
+						rel: 'icon',
+						href: '/favicon-16-dark.png',
+						type: 'image/png',
+						sizes: '16x16',
+						media: '(prefers-color-scheme: dark)',
+					},
+				},
+				{
+					tag: 'link',
+					attrs: {
+						rel: 'apple-touch-icon',
+						href: '/apple-touch-icon-180.png',
+						sizes: '180x180',
+					},
+				},
+				// The page index for AI tools, built by src/pages/llms.txt.ts. The
+				// llms.txt proposal (https://llmstxt.org) names rel="describedby" for
+				// the link from a page to the llms.txt file that covers it.
+				{
+					tag: 'link',
+					attrs: { rel: 'describedby', href: '/llms.txt' },
+				},
+			],
+			components: {
+				Head: './src/components/Head.astro',
+				Footer: './src/components/Footer.astro',
+				Header: './src/components/Header.astro',
+				ThemeSelect: './src/components/ThemeSelect.astro',
+				PageTitle: './src/components/PageTitle.astro',
+				PageFrame: './src/components/PageFrame.astro',
+				PageSidebar: './src/components/PageSidebar.astro',
+				Sidebar: './src/components/Sidebar.astro',
+				SiteTitle: './src/components/SiteTitle.astro',
+			},
+			// First dark theme, then first light theme. Starlight maps those to the site theme.
+			expressiveCode: {
+				themes: [darkCodeTheme, lightCodeTheme],
+				useStarlightDarkModeSwitch: true,
+				// Keep exact palette colors; no automatic contrast shifts.
+				minSyntaxHighlightingColorContrast: 0,
+				// Shell snippets get the plain code frame, not a fake terminal window.
+				defaultProps: { frame: 'code' },
+				styleOverrides: {
+					// Expressive Code adds the border width, so the outer radius matches figures.
+					borderRadius: 'calc(var(--eep-radius) - 1px)',
+					borderColor: 'var(--eep-silver)',
+					borderWidth: '1px',
+					codeBackground: 'var(--eep-sunken)',
+					codeForeground: 'var(--eep-ink)',
+					codeFontFamily: 'var(--eep-font-mono)',
+					codeFontSize: '0.875rem',
+					codeLineHeight: '1.75',
+					codePaddingBlock: '1.125rem',
+					codePaddingInline: '1.375rem',
+					uiFontFamily: 'var(--eep-font-serif)',
+					uiFontSize: '0.8125rem',
+					uiFontWeight: '400',
+					frames: {
+						shadowColor: 'transparent',
+						frameBoxShadowCssValue: 'none',
+						editorBackground: 'var(--eep-sunken)',
+						editorTabBarBackground: 'var(--eep-sunken)',
+						editorTabBarBorderColor: 'transparent',
+						editorTabBarBorderBottomColor: 'var(--eep-silver)',
+						editorActiveTabBackground: 'var(--eep-sunken)',
+						editorActiveTabForeground: 'var(--eep-ink-2)',
+						editorActiveTabBorderColor: 'transparent',
+						editorActiveTabIndicatorTopColor: 'transparent',
+						editorActiveTabIndicatorBottomColor: 'transparent',
+						terminalBackground: 'var(--eep-sunken)',
+						terminalTitlebarBackground: 'var(--eep-sunken)',
+						terminalTitlebarForeground: 'var(--eep-ink-2)',
+						terminalTitlebarBorderBottomColor: 'var(--eep-silver)',
+						terminalTitlebarDotsOpacity: '0',
+						inlineButtonBackground: 'transparent',
+						inlineButtonBorder: 'transparent',
+						inlineButtonForeground: 'var(--eep-ink-2)',
+						tooltipSuccessBackground: 'var(--eep-ink)',
+						tooltipSuccessForeground: 'var(--eep-paper)',
+					},
+				},
+			},
+			sidebar,
+		}),
+		flatNotFoundPage,
+		permanentRedirects,
+	],
+});

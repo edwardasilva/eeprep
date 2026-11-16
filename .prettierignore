@@ -1,0 +1,17 @@
+# Build output
+dist
+.astro
+coverage
+
+# Dependencies
+node_modules
+
+# Lockfiles
+package-lock.json
+
+# Generated figures
+*.svg
+
+# Submodules with their own formatting rules
+resume-generator
+company-lists

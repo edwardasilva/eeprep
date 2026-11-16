@@ -1,0 +1,496 @@
+---
+import { loadCompanyList } from '../../lib/company-lists';
+import { compare, searchText, type Company } from '../../lib/company-data';
+import { externalLinks, extLink } from '../resume/caption';
+
+const { rows: allRows, filters } = loadCompanyList();
+const total = allRows.length;
+
+// The same order the page script sorts by, so the first page does not jump
+// when the script takes over.
+const rows = [...allRows].sort(
+	(a, b) => compare(a.name, b.name) || compare(a.city, b.city),
+);
+
+// Only one page of rows is HTML. The rest ship as compact data that the page
+// script turns into rows when a reader asks for them, so a phone does not
+// build and lay out 700 rows it never shows.
+const pageSizes = [25, 50, 100];
+const pageSize = pageSizes[0];
+const firstPage = rows.slice(0, pageSize);
+const countText = `1–${Math.min(pageSize, total)} of ${total} companies`;
+const data = JSON.stringify(
+	rows.map((row) => {
+		const company: Company = {
+			n: row.name,
+			w: row.website,
+			c: row.careersUrl || undefined,
+			i: row.industry,
+			il: row.industryLabel,
+			f: row.field || undefined,
+			fl: row.fieldLabel || undefined,
+			ci: row.city,
+			s: row.state,
+			cs:
+				row.locations.length > 1 ? row.locations.map((l) => l.city) : undefined,
+			ss:
+				row.locations.length > 1
+					? row.locations.map((l) => l.state)
+					: undefined,
+			x: row.notes || undefined,
+			k: row.country === 'US' ? undefined : row.country,
+		};
+		// The browser rebuilds the search text from these fields. A row it
+		// cannot rebuild, such as a merged company, ships the text whole.
+		return searchText(company) === row.search
+			? company
+			: { ...company, x: undefined, q: row.search };
+	}),
+).replaceAll('<', '\\u003c');
+
+const fieldIndustries = new Map<string, string[]>();
+for (const row of rows) {
+	if (!row.field) {
+		continue;
+	}
+	const list = fieldIndustries.get(row.field) ?? [];
+	if (!list.includes(row.industry)) {
+		list.push(row.industry);
+	}
+	fieldIndustries.set(row.field, list);
+}
+
+const sortOptions = [
+	{ value: 'name', label: 'Company' },
+	{ value: 'industry', label: 'Industry' },
+	{ value: 'field', label: 'Field' },
+	{ value: 'city', label: 'City' },
+	{ value: 'state', label: 'State' },
+];
+
+const columns = [
+	{ key: 'name', label: 'Company' },
+	{ key: 'industry', label: 'Industry' },
+	{ key: 'field', label: 'Field' },
+	{ key: 'city', label: 'City' },
+	{ key: 'state', label: 'State' },
+] as const;
+
+const repo = 'https://github.com/edwardasilva/company-lists';
+const note = externalLinks(
+	`Data from <a href="${repo}">company-lists</a>, credited to <a href="${repo}">company-lists contributors</a>. If a row is wrong or a company is missing, open an issue or a pull request in that repository.`,
+);
+
+function companyCell(row: (typeof rows)[number]): string {
+	const name = extLink(row.website, row.name);
+	if (!row.careersUrl) {
+		return name;
+	}
+	return `${name} ${extLink(row.careersUrl, 'careers')}`;
+}
+---
+
+<div class="eep-companies not-content" data-company-list>
+	<form class="eep-companies-form" aria-label="Filter the company list">
+		<div class="eep-companies-search">
+			<label for="eep-companies-q">Search</label>
+			<input
+				id="eep-companies-q"
+				type="search"
+				name="q"
+				autocomplete="off"
+				spellcheck="false"
+			/>
+		</div>
+		<details class="eep-companies-advanced" data-advanced>
+			<summary>
+				Advanced search<span data-advanced-count></span>
+			</summary>
+			<div class="eep-companies-filters">
+				{filters.map((filter) => (
+					<div class="eep-companies-field">
+						<label for={`eep-companies-${filter.name}`}>{filter.label}</label>
+						<select id={`eep-companies-${filter.name}`} name={filter.name}>
+							<option value="">All</option>
+							{filter.options.map((option) => (
+								<option
+									value={option.value}
+									data-industries={
+										filter.name === 'field'
+											? fieldIndustries.get(option.value)?.join(' ')
+											: undefined
+									}
+								>
+									{option.label}
+								</option>
+							))}
+						</select>
+					</div>
+				))}
+				<div class="eep-companies-field">
+					<label for="eep-companies-sort">Sort by</label>
+					<select id="eep-companies-sort" name="sort">
+						{sortOptions.map((option) => (
+							<option value={option.value} selected={option.value === 'name'}>
+								{option.label}
+							</option>
+						))}
+					</select>
+				</div>
+				<div class="eep-companies-field">
+					<label for="eep-companies-dir">Order</label>
+					<select id="eep-companies-dir" name="dir">
+						<option value="asc" selected>
+							A to Z
+						</option>
+						<option value="desc">Z to A</option>
+					</select>
+				</div>
+			</div>
+		</details>
+		<div class="eep-companies-tools">
+			<p class="eep-companies-count" data-result-count aria-live="polite">
+				{countText}
+			</p>
+			<div class="eep-companies-size">
+				<label for="eep-companies-size">Per page</label>
+				<select id="eep-companies-size" name="size">
+					{pageSizes.map((size) => (
+						<option value={size} selected={size === pageSize}>
+							{size}
+						</option>
+					))}
+					<option value="all">All</option>
+				</select>
+			</div>
+			<button type="reset">Clear filters</button>
+		</div>
+		<noscript>
+			<p>
+				Search, filters, and paging need JavaScript. The first {pageSize}{' '}
+				companies are below, and the full list is in the company-lists
+				repository.
+			</p>
+		</noscript>
+	</form>
+
+	<div
+		class="eep-company-scroll"
+		role="region"
+		aria-label="Company list table"
+		tabindex="0"
+	>
+		<table class="eep-company-list" id="eep-company-list">
+			<caption class="sr-only">Company list</caption>
+			<thead>
+				<tr>
+					{columns.map((column, index) => (
+						<th
+							scope="col"
+							data-sort={column.key}
+							aria-sort={index === 0 ? 'ascending' : 'none'}
+						>
+							<button type="button">{column.label}</button>
+						</th>
+					))}
+				</tr>
+			</thead>
+			<tbody>
+				{firstPage.map((row) => (
+					<tr data-one-place={row.locations.length === 1 ? '' : undefined}>
+						<td set:html={companyCell(row)} />
+						<td>{row.industryLabel}</td>
+						<td data-empty={row.fieldLabel ? undefined : ''}>
+							{row.fieldLabel || '–'}
+						</td>
+						<td>{row.city}</td>
+						<td>{row.state}</td>
+					</tr>
+				))}
+			</tbody>
+		</table>
+	</div>
+
+	<div class="eep-companies-pager" data-pager hidden>
+		<button type="button" data-more>
+			Show more
+		</button>
+		<button type="button" data-prev>
+			Previous
+		</button>
+		<button type="button" data-next>
+			Next
+		</button>
+	</div>
+
+	<p class="eep-companies-note" set:html={note} />
+	<script
+		is:inline
+		type="application/json"
+		id="eep-companies-data"
+		set:html={data}
+	/>
+</div>
+
+<script>
+	import {
+		compare,
+		searchText,
+		sortKeys,
+		type Company,
+	} from '../../lib/company-data';
+	import { escapeHtml, extLink } from '../resume/caption';
+
+	const root = document.querySelector('[data-company-list]');
+	const source = document.getElementById('eep-companies-data');
+
+	if (root instanceof HTMLElement && source) {
+		// Build each row's search text once, here, rather than ship it.
+		const companies = (JSON.parse(source.textContent ?? '[]') as Company[]).map(
+			(c) => ({ ...c, q: searchText(c) }),
+		);
+		const total = companies.length;
+		const form = root.querySelector('form');
+		const sortSelect = root.querySelector('#eep-companies-sort');
+		const dirSelect = root.querySelector('#eep-companies-dir');
+		const industrySelect = root.querySelector('#eep-companies-industry');
+		const fieldSelect = root.querySelector('#eep-companies-field');
+		const count = root.querySelector('[data-result-count]');
+		const advancedCount = root.querySelector('[data-advanced-count]');
+		const advancedFields = [
+			...root.querySelectorAll('.eep-companies-advanced select'),
+		].filter((field) => field instanceof HTMLSelectElement);
+		const table = root.querySelector('#eep-company-list');
+		const tbody = table instanceof HTMLTableElement ? table.tBodies[0] : null;
+		const scroll = root.querySelector('.eep-company-scroll');
+		const headers = table
+			? [...table.querySelectorAll('thead th[data-sort]')]
+			: [];
+		const pager = root.querySelector('[data-pager]');
+		const moreButton = root.querySelector('[data-more]');
+		const prevButton = root.querySelector('[data-prev]');
+		const nextButton = root.querySelector('[data-next]');
+
+		// The rows that match the filters, in sort order, and the slice of them
+		// on screen: start is the first row shown, shown is how many.
+		let matches = companies;
+		let start = 0;
+		let shown = 0;
+
+		const rowHtml = (c: Company) => {
+			const name = extLink(c.w, c.n);
+			const company = c.c ? `${name} ${extLink(c.c, 'careers')}` : name;
+			const field = c.fl
+				? `<td>${escapeHtml(c.fl)}</td>`
+				: '<td data-empty>–</td>';
+			const onePlace = c.cs ? '' : ' data-one-place';
+			return `<tr${onePlace}><td>${company}</td><td>${escapeHtml(c.il)}</td>${field}<td>${escapeHtml(c.ci)}</td><td>${escapeHtml(c.s)}</td></tr>`;
+		};
+
+		const inputValue = (name: string) => {
+			const field = form?.elements.namedItem(name);
+			if (
+				field instanceof HTMLInputElement ||
+				field instanceof HTMLSelectElement
+			) {
+				return field.value;
+			}
+			return '';
+		};
+
+		const pageSize = () => {
+			const value = inputValue('size');
+			return value === 'all' ? Infinity : Number(value) || 25;
+		};
+
+		const sortKey = (c: Company, key: string) =>
+			(sortKeys[key] ?? sortKeys.name)(c);
+
+		const hasValue = (list: string[] | undefined, one: string, value: string) =>
+			(list ?? [one]).includes(value);
+
+		const updateFieldOptions = () => {
+			if (!(fieldSelect instanceof HTMLSelectElement)) {
+				return;
+			}
+			const industry =
+				industrySelect instanceof HTMLSelectElement ? industrySelect.value : '';
+			let stillValid = true;
+			for (const option of fieldSelect.options) {
+				if (!option.value) {
+					option.hidden = false;
+					continue;
+				}
+				const industries =
+					option.dataset.industries?.split(' ').filter(Boolean) ?? [];
+				const visible = !industry || industries.includes(industry);
+				option.hidden = !visible;
+				if (option.selected && !visible) {
+					stillValid = false;
+				}
+			}
+			if (!stillValid) {
+				fieldSelect.value = '';
+			}
+		};
+
+		const filterAndSort = () => {
+			const query = inputValue('q')
+				.trim()
+				.toLowerCase()
+				.split(/\s+/)
+				.filter(Boolean);
+			const state = inputValue('state');
+			const industry = inputValue('industry');
+			const field = inputValue('field');
+			const city = inputValue('city');
+			const key =
+				sortSelect instanceof HTMLSelectElement ? sortSelect.value : 'name';
+			const factor =
+				dirSelect instanceof HTMLSelectElement && dirSelect.value === 'desc'
+					? -1
+					: 1;
+			matches = companies
+				.filter(
+					(c) =>
+						query.every((word) => c.q.includes(word)) &&
+						(!state || hasValue(c.ss, c.s, state)) &&
+						(!industry || c.i === industry) &&
+						(!field || c.f === field) &&
+						(!city || hasValue(c.cs, c.ci, city)),
+				)
+				.sort(
+					(a, b) =>
+						factor * compare(sortKey(a, key), sortKey(b, key)) ||
+						compare(a.n, b.n) ||
+						compare(a.ci, b.ci),
+				);
+			for (const header of headers) {
+				let sort = 'none';
+				if (header.getAttribute('data-sort') === key) {
+					sort = factor < 0 ? 'descending' : 'ascending';
+				}
+				header.setAttribute('aria-sort', sort);
+			}
+		};
+
+		const render = () => {
+			const end = Math.min(matches.length, start + shown);
+			if (tbody) {
+				tbody.innerHTML = matches.slice(start, end).map(rowHtml).join('');
+			}
+			if (count instanceof HTMLElement) {
+				const n = matches.length;
+				const noun = n === 1 ? 'company' : 'companies';
+				const what = n === total ? `${n} ${noun}` : `${n} matching ${noun}`;
+				if (n === 0) {
+					count.textContent = 'No matching companies';
+				} else if (start === 0 && end === n) {
+					count.textContent = what;
+				} else {
+					count.textContent = `${start + 1}–${end} of ${what}`;
+				}
+			}
+			if (pager instanceof HTMLElement) {
+				pager.hidden = start === 0 && end >= matches.length;
+			}
+			if (moreButton instanceof HTMLButtonElement) {
+				moreButton.disabled = end >= matches.length;
+			}
+			if (prevButton instanceof HTMLButtonElement) {
+				prevButton.disabled = start === 0;
+			}
+			if (nextButton instanceof HTMLButtonElement) {
+				nextButton.disabled = end >= matches.length;
+			}
+		};
+
+		// The closed section says how many of its fields differ from their defaults.
+		const updateAdvancedCount = () => {
+			if (!(advancedCount instanceof HTMLElement)) {
+				return;
+			}
+			const set = advancedFields.filter((field) => {
+				const defaultOption =
+					[...field.options].find((option) => option.defaultSelected) ??
+					field.options[0];
+				return field.value !== (defaultOption?.value ?? '');
+			}).length;
+			advancedCount.textContent =
+				set === 0 ? '' : `: ${set} ${set === 1 ? 'field' : 'fields'} set`;
+		};
+
+		// Back to the first page whenever the search, a filter, the sort, or the
+		// page size changes.
+		const refresh = () => {
+			updateFieldOptions();
+			filterAndSort();
+			start = 0;
+			shown = pageSize();
+			render();
+			updateAdvancedCount();
+		};
+
+		// After Previous or Next, bring the top of the table back into view if
+		// the reader has scrolled past it.
+		const toTop = () => {
+			if (
+				scroll instanceof HTMLElement &&
+				scroll.getBoundingClientRect().top < 0
+			) {
+				scroll.scrollIntoView({ block: 'start' });
+			}
+		};
+
+		moreButton?.addEventListener('click', () => {
+			shown += pageSize();
+			render();
+		});
+		nextButton?.addEventListener('click', () => {
+			start += shown;
+			shown = pageSize();
+			render();
+			toTop();
+		});
+		prevButton?.addEventListener('click', () => {
+			start = Math.max(0, start - pageSize());
+			shown = pageSize();
+			render();
+			toTop();
+		});
+
+		// Every control, the selects included, fires input on each change.
+		form?.addEventListener('input', refresh);
+		form?.addEventListener('submit', (event) => {
+			event.preventDefault();
+			refresh();
+		});
+		// The reset event fires before the browser resets the fields, so read
+		// them on the next task.
+		form?.addEventListener('reset', () => {
+			setTimeout(refresh);
+		});
+
+		for (const header of headers) {
+			const button = header.querySelector('button');
+			button?.addEventListener('click', () => {
+				const key = header.getAttribute('data-sort') ?? 'name';
+				if (
+					!(sortSelect instanceof HTMLSelectElement) ||
+					!(dirSelect instanceof HTMLSelectElement)
+				) {
+					return;
+				}
+				if (sortSelect.value === key) {
+					dirSelect.value = dirSelect.value === 'asc' ? 'desc' : 'asc';
+				} else {
+					sortSelect.value = key;
+					dirSelect.value = 'asc';
+				}
+				refresh();
+			});
+		}
+
+		refresh();
+	}
+</script>
