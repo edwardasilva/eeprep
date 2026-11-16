@@ -229,7 +229,7 @@ button[data-open-modal] kbd {
 	padding: 1rem var(--sl-sidebar-pad-x);
 }
 .eep-backlinks h2 {
-	color: var(--sl-color-white);
+	color: var(--eep-ink);
 	font-size: var(--eep-text-h5);
 	font-weight: 600;
 	line-height: var(--sl-line-height-headings);
@@ -244,20 +244,24 @@ button[data-open-modal] kbd {
 	display: block;
 	padding-block: 0.25rem;
 	font-size: var(--eep-text-caption);
-	color: var(--sl-color-gray-2);
+	color: var(--eep-ink);
 	text-decoration: none;
 	overflow-wrap: anywhere;
 }
 /* Below 72rem the list follows the content instead, set off by a rule. */
 .eep-backlinks-end {
 	margin-top: 2rem;
-	border-top: 1px solid var(--sl-color-hairline);
+	border-top: var(--eep-border);
 	padding-inline: 0;
 }
+/* The same hover and focus color as the sidebar and "On this page" links. */
 @media (hover: hover) {
 	.eep-backlinks a:hover {
-		color: var(--sl-color-white);
+		color: var(--eep-accent);
 	}
+}
+.eep-backlinks a:focus-visible {
+	color: var(--eep-accent);
 }
 
 /* Phone header: two fixed rows inside Starlight's header, so nothing spills
@@ -860,15 +864,25 @@ a.external-link .eep-ext-last::after {
 		thead
 		th[aria-sort='descending']
 		button::after {
-		content: ' \2191';
-		text-decoration: none;
+		/* An SVG mask in the text color, like the external-link arrow, so no
+		   platform can draw the arrow as an emoji. aria-sort says the order. */
+		--eep-sort-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 10.5V1.75M2.5 5.25L6 1.75l3.5 3.5'/%3E%3C/svg%3E");
+		content: '';
+		display: inline-block;
+		width: 0.75em;
+		height: 0.75em;
+		margin-inline-start: 0.25em;
+		background-color: currentColor;
+		forced-color-adjust: none;
+		-webkit-mask: var(--eep-sort-arrow) no-repeat center / contain;
+		mask: var(--eep-sort-arrow) no-repeat center / contain;
 	}
 	.eep-companies
 		.eep-company-list
 		thead
 		th[aria-sort='descending']
 		button::after {
-		content: ' \2193';
+		transform: rotate(180deg);
 	}
 }
 

@@ -98,7 +98,6 @@
 	--eep-dg-line: 1.5px;
 	--eep-dg-dash: var(--eep-dg-line) dashed var(--eep-dg-ink);
 	--eep-dg-dasharray: 3 3;
-	--eep-dg-grid: #e9ecf0;
 }
 
 /* ---------- 4. Colour tokens: DARK ("night charcoal": charcoal paper, silver ink) ---------- */
@@ -126,7 +125,6 @@
 	--eep-dg-line: 1.5px;
 	--eep-dg-dash: var(--eep-dg-line) dashed var(--eep-dg-ink);
 	--eep-dg-dasharray: 3 3;
-	--eep-dg-grid: #232529;
 }
 
 /* One numbered marker for every figure: a step, region or pin number in an outlined circle. Put .eep-num on a span, or .eep-num-list on an ol so its counter marker draws the circle. Position and spacing stay with the figure. */

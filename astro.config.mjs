@@ -199,6 +199,8 @@ export default defineConfig({
 						content: 'width=device-width, initial-scale=1, viewport-fit=cover',
 					},
 				},
+				// The browser bar takes the page color. A meta tag cannot read CSS
+				// variables, so these copy --eep-paper from src/styles/theme.css.
 				{
 					tag: 'meta',
 					attrs: {
