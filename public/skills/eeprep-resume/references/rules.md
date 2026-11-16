@@ -9,7 +9,7 @@ From [eeprep's resume page](https://eeprep.com/advice/resume/), which condenses 
 - Black text. Line spacing of at least 1.07.
 - No justified text. No hand indents.
 - Every date right-aligned to the right margin.
-- Bold only on section titles, entry titles, and the coursework, activities, and skills labels. Never on a keyword inside a bullet.
+- Bold only on the name, section titles, entry titles, and the coursework, activities, and skills labels. Never on a keyword inside a bullet.
 - Author's rule: 10 to 11 pt text and 0.5 in margins. The wiki asks for 10.5 pt or larger, and eeprep allows 10 pt so a full page still fits.
 - Author's rule: center the header, left-align everything below it.
 - Fill the page without cramming it. Empty gaps and half-used lines are wasted space. Never shrink white space to fit one more line.
@@ -37,7 +37,7 @@ Put "Willing to relocate" next to the location if it is true. A city far from th
 
 Degree on the first line with GPA on the same line. School under it with the graduation date at the right margin, by month, "Expected" in front of it before graduation, as in Expected May 2027. One line each for "Relevant coursework:" and "Activities:", labels in bold. If you have taken graduate courses, list them first on their own line, labeled "Graduate coursework:". Write course names, such as Digital Signal Processing, never course codes. A code means nothing to a reader from another school. Drop high school after the first year (author's advice). The wiki says to leave it off. With a master's, keep the bachelor's line.
 
-Coursework is where EE parts from the wiki. The wiki says to leave it off unless the courses are specialized. ECE interviewers say the courses show whether the student can pass the interview, and recruiters like it. List upper-level electives that match the posting.
+Coursework is where the author parts from the wiki. The wiki says to leave it off unless the courses are extremely specialized. The author keeps one line of upper-level electives that match the posting, and leaves the line off if the user has not taken any yet.
 
 GPA, author's rule of thumb: list 3.50 or higher. Michigan's and Berkeley's career centers use 3.0, so say this rule is stricter. If the posting asks for a GPA, list it. From 3.0 to 3.49, list it when the posting sets a minimum the user meets, and leave it off otherwise. Below 3.0, leave it off. If listed, match the decimals, as in 3.30/4.00.
 
@@ -81,4 +81,4 @@ One style inside each section, with jobs always dated by month (author's advice)
 - Missing some requirements? Apply anyway for tools and years. The degree is different: a required degree is usually a hard filter.
 - A senior design project that did not work? List it. Describe the user's part with verbs such as designed and tested, and give the numbers they did reach.
 - Interests? Only specific ones. If the user cannot name specifics, delete the section.
-- Cover letter? Write one when the resume is not an obvious fit. Big tech recruiters often skip them, but defense contractors and Midwest firms tend to read them. Two short paragraphs on why the user meets the posting.
+- Cover letter? Write one when the resume is not an obvious fit. One founder of Hardware FYI, a site on hardware engineering interviews, said many big tech recruiters throw them out, while defense contractors may read them and Midwest firms do. Two short paragraphs on why the user meets the posting.

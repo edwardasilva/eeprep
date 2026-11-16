@@ -250,6 +250,27 @@
     "pages": ["advice/getting-hired/how-to-interview", "advice/resume"]
   },
   {
+    "url": "https://www.inc.com/bill-murphy-jr/google-recruiters-say-these-5-resume-tips-including-x-y-z-formula-will-improve-your-odds-of-getting-hired-at-google.html",
+    "title": "Inc.: Google recruiters on the X-Y-Z resume formula",
+    "category": "Resume guides",
+    "summary": "Inc. reports Google's resume tips, including the formula accomplished [X] as measured by [Y], by doing [Z].",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://elevenrecruiting.com/create-an-effective-resume-xyz-resume-format/",
+    "title": "Eleven Recruiting: How to create an effective resume with the XYZ format",
+    "category": "Resume guides",
+    "summary": "Eleven Recruiting orders an XYZ bullet as an action verb, the achievement, the measurement, and what you did.",
+    "pages": ["advice/resume"]
+  },
+  {
+    "url": "https://ca.indeed.com/career-advice/resumes-cover-letters/challenge-action-result-resume",
+    "title": "Indeed Canada: How to write a challenge action result resume",
+    "category": "Resume guides",
+    "summary": "Indeed Canada's guide to writing resume bullets with the challenge, action, result formula.",
+    "pages": ["advice/resume"]
+  },
+  {
     "url": "https://career.gatech.edu/files/2026/06/JackieJacketResume.docx",
     "title": "Georgia Tech: Computer engineering sample resume",
     "category": "Sample resumes and templates",
