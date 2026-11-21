@@ -1025,6 +1025,13 @@
     "pages": ["advice/projects"]
   },
   {
+    "url": "https://mitcommlab.mit.edu/eecs/use-the-commkit/",
+    "title": "MIT EECS Communication Lab: The CommKit",
+    "category": "Tools and project resources",
+    "summary": "Short MIT EECS guides to technical writing and talks, with annotated examples.",
+    "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
     "url": "https://engineering.utdallas.edu/engage/students/technical-resume-best-standards-and-practices/",
     "title": "UT Dallas: Technical resume standards",
     "category": "Tools and project resources",
