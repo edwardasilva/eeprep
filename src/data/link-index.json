@@ -208,6 +208,13 @@
     "pages": ["advice/forever-learning/graduate-study"]
   },
   {
+    "url": "https://mitcommlab.mit.edu/eecs/commkit/graduate-school-statement-of-purpose/",
+    "title": "MIT EECS Communication Lab: Graduate school statement of purpose",
+    "category": "Resume guides",
+    "summary": "How to structure a graduate statement of purpose, with criteria and annotated examples.",
+    "pages": ["advice/forever-learning/graduate-study"]
+  },
+  {
     "url": "https://engineering.virginia.edu/offices-programs/center-engineering-career-development/students/resumes-and-cover-letters",
     "title": "UVA Engineering: Resumes and cover letters",
     "category": "Resume guides",
@@ -269,13 +276,6 @@
     "category": "Resume guides",
     "summary": "Indeed Canada's guide to writing resume bullets with the challenge, action, result formula.",
     "pages": ["advice/resume"]
-  },
-  {
-    "url": "https://mitcommlab.mit.edu/eecs/commkit/graduate-school-statement-of-purpose/",
-    "title": "MIT EECS Communication Lab: Graduate school statement of purpose",
-    "category": "Resume guides",
-    "summary": "How to structure a graduate statement of purpose, with criteria and annotated examples.",
-    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://career.gatech.edu/files/2026/06/JackieJacketResume.docx",
@@ -1023,6 +1023,13 @@
     "category": "Tools and project resources",
     "summary": "How to match a project to an employer and build a smaller portfolio per recipient.",
     "pages": ["advice/projects"]
+  },
+  {
+    "url": "https://mitcommlab.mit.edu/eecs/use-the-commkit/",
+    "title": "MIT EECS Communication Lab: The CommKit",
+    "category": "Tools and project resources",
+    "summary": "Short MIT EECS guides to technical writing and talks, with annotated examples.",
+    "pages": ["advice/forever-learning/graduate-study"]
   },
   {
     "url": "https://engineering.utdallas.edu/engage/students/technical-resume-best-standards-and-practices/",
@@ -2652,6 +2659,13 @@
     "category": "Interview prep",
     "summary": "MIT EECS guide to a 20 to 40 second pitch of your work.",
     "pages": ["advice/getting-hired/non-technical"]
+  },
+  {
+    "url": "https://www.reddit.com/r/interviews/comments/1jcirdj/i_smash_every_interview_here_are_some_tips_and_ama/",
+    "title": "r/interviews: I smash every interview here are some tips and ama",
+    "category": "Interview prep",
+    "summary": "A marketing and PR professional shares interview habits and a personal job-search count.",
+    "pages": ["advice/getting-hired/how-to-interview"]
   },
   {
     "url": "https://www.bls.gov/ooh/architecture-and-engineering/electrical-and-electronics-engineers.htm",
